@@ -1,2 +1,2 @@
 # Discovery-Tools
-Repository for Open Source Tools meant discover service endpoints between in parties in the 4-Corners BPC model.  
+Repository for Open Source Tools meant to discover service endpoints between parties in the BPC 4-Corners e-invoice model.  
