@@ -11,7 +11,8 @@ Important items for consideration include:
     - Includng documentation using Sphinx and reStructuredText.
 - Including Docker and flask
 - Incorporating Test Drive Development as a matter of practice.
-- Optionally, installing JupyterLab.
+- Logging
+- Editors and other IDEs
 - Links to additional resources.
 
 
@@ -39,9 +40,13 @@ brew install --cask powershell
 ```
 
 
-Upgrade pip to latest version right OOB. 
+Upgrade pip to latest version right OOB.  (Note this is done using the Python3/pip3 call to avoid conflict with OS installed version of Python.)
 ```
 pip3 install --upgrade pip
+```
+The pip update can also be doing using a call to Python itself, but the `python3` install!
+```
+python3 -m pip install --upgrade pip
 ```
 
 Get a list of what's been installed in a "clean" install of Python.
@@ -65,6 +70,13 @@ virtualenv-clone 0.5.4
 
 ## Create a virtual environment to use for Dev
 
+Creating virtual environments to use in Python programming can be done entirely with a packages that comes in the Pthyon install.  
+
+There are other tool-sets such as [Anaconda](https://www.anaconda.com/products/individual) which provide a full set of development tools and frameworks to pick from, and include the ability to create and manage Python virtual environments with its Conda virtual environment manager.    
+
+There are other additional packages for Python such as ```pyenv```, and ```pipenv``` which can be installed separately.  The example of shown offers one way to create the virtual environments which comes OOB in the Python install and offers a lot of manual control over the packages installed in the virtual environments themselves.
+
+
 Step|Command|What it's doing/output
 ---|---|---
 1.|cd|Change to user home dir
@@ -81,13 +93,14 @@ Step|Command|What it's doing/output
 9.|cd ../bin|Change into the bin directory
 10.|source ./activate | source the activate file and make the current virtual environment active.
 11.|python -m pip install --upgrade pip | update version of pip 
-12.|pip list | list the installed default modules and packages for this virtual env.
+12.|pip list | List the installed packages for this virtual env.  This will be a very small list to start as this is a clean virtual env, including ```pip```, ```setuptools```, and ```wheel```.
 
 Additional packages or modules to be installed in e-Invoice include:
 Docker, flask, requests
 
+<br /><br />
 ## Add support for Style and Code checking and Unit Testing.
-A Python package can be installed to do style checking consistent to [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
+The Python package ```pep8``` can be installed to do style checking consistent to [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
 
 ```
 pip install pep8
@@ -117,7 +130,7 @@ The ```tox``` tool can be used to manage dependencies in virtual environments an
 pip install tox
 ```
 
-
+<br /><br />
 ## Docker and flask
 
 This project utilize [Docker](https://www.docker.com) and [flask](https://pypi.org/project/Flask/).
@@ -133,9 +146,14 @@ Install the flask framework using pip as well.
 ```
 pip install flask
 ```
+<br /><br />
 
-## Include documentation
-To incorporate documentation into the application at every step, bring in the Sphinx package.  
+## Include Documentation
+To incorporate documentation into the application at every step, bring in the Sphinx package. 
+
+```
+pip install sphinx
+```
 
 Then run sphix-quickstart in your project's top-level directory.
 
@@ -145,20 +163,25 @@ Additonal support documenting the project may include utilzing a resource like [
 
 - See also: [PEP-257 Docstring Conventions](https://www.python.org/dev/peps/pep-0257/) 
 
-
+<br /><br />
 
 ## Test Driven Development
 
-Incorporate the goals of Test Driven Development.  Create the test scenarios before the actual coding.  
+Incorporate [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) methodologies.   
+Create the test scenarios before the actual coding.  
 
 Primary source material for review can be found at [obeythetestinggoat.com](https://www.obeythetestinggoat.com)
 
 
+<br /><br />
 
+## Text Editors and IDEs
+There are numerous tools for text editing and softwre development.  Personal preference, specialization versus generalization, and cost may all play a part in choice of tools used for development.  Here is a short list of well known and supported tools available for free or under an Open Source license.  (No compensation isß received for any reference to materials on this page.)
+- [Visual Studio Code](https://code.visualstudio.com/) by Microsoft.  "Built on Open Source" the Code version is free and has many plug-ins.  It's a mature IDE with the polish of a Microsoft product.  Not the behemouth of the full Visual Studio IDE.  Available for Windows/Mac/Linux.  There is a version of Visual Studio Code compiled with all the non-Open Source components removed called [VSCodium](https://vscodium.com/).  Or compile it from source available at GitHub resulting in a product called [Code - OSS](https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run).
+- [Atom Text Editor](https://atom.io/).  A highly customizable text editor which is programming language agnostic and completely open source and available (packaged and source) on GitHub.  Available for Windows/Mac/Linux. 
+- [PyCharm Community Edition](https://www.jetbrains.com/pycharm/) by JetBrains. A Python specific IDE.  The Community Edition is Free and Open Source, albeit with some limited functionality. Available for Windows/Mac/Linux.
 
-## (Optional) Install Jupyter lab and notebooks.
-
-Jupyter notebooks (deprecated in favor of JupyterLab, though the notebook format remains the same) are especially popular for use in Data Science and ML.  They are convenient to document in Markdown and code that might not scale to an entire program.  
+ - (Optional) Install Jupyter lab and notebooks.Jupyter notebooks (deprecated in favor of JupyterLab, though the notebook format remains the same) are especially popular for use in Data Science and ML.  Runs locally on a Python framework. They are used to create documentation in Markdown and write and execute code that might not require an entire program.  Supports other languages such as R and Julia.  Can also be installed through Anaconda.  
 
 ```
 cd /Users/kelly/Dev/virtualenvs
@@ -173,10 +196,12 @@ At runtime, point it to the location of your GITHub root, e.g.,
 ```
 ./jupyter-lab --notebook-dir /Users/kelly/GitHub
 ```
-                                                                                                            
+
+<br /><br />                                          
+
 ## Additional Resources
 
-There is a wealth of high quality documentation and writing about Python in digital and paper print and on the web in addition to that directly refered to above.  As a starting point, see the following materials.  (No compensation is received for any reference to materials on this page.)
+There is a wealth of high quality documentation and writing about Python in digital and paper print and on the web in addition to that directly refered to above.  As a starting point, see the following materials.  (Again, no compensation is received for any reference to materials on this page.)
 - [The Hitchhiker's Guide to Python](https://docs.python-guide.org) by Kenneth Reitz and Tanya Schlusser.
 - [Serious Python](https://nostarch.com/seriouspython) by Julien Danjoy
 - [Guiding Design Principles](https://nsls-ii.github.io/scientific-python-cookiecutter/guiding-design-principles.html) from the [Scientific Python Cookiecutter](https://nsls-ii.github.io/scientific-python-cookiecutter/index.html).
