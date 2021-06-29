@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../../GitHub/CDM"
+		}
+	],
+	"settings": {
+		"editor.fontFamily": "monospace"
+	}
+}
