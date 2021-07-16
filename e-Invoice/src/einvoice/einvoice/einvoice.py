@@ -1,197 +1,192 @@
-#!/Users/kelly/Dev/virtualenvs/e-Invoice/bin python
-
-# Author: Kelly Kinney
-# Date: 2021-06-20 (June 20, 2021)
+#!/usr/bin/env python3
+#
 # File: einvoice.py
-# About: Class definition of an einvoice object.  Based on
-# Notes: chmod 755 create_dev_struct.sh in order to execute.
+# About: Class definition of an einvoice object.
+# Development: Kelly Kinney, Leo Rubiano
+# Date: 2021-06-20 (June 20, 2021)
 #
 # LICENSE
-# Copyright (C) 2021 Kelly Kinney
+# Copyright (C) 2021 Business Payments Coalition
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# Permission is hereby granted, free of charge, to any person obtaining
+# a copy of this software and associated documentation files
+# (the "Software"), to deal in the Software without restriction,
+# including without limitation the rights to use, copy, modify, merge,
+# publish, distribute, sublicense, and/or sell copies of the Software,
+# and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
 #
-# A copy of the GNU General Public License is included in the GitHub
-# repository root which contained this file.
-# If not, see <http://www.gnu.org/licenses/>.
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+# THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """The classes and functions which define a prototype e-Invoice.
 
-This is a model definitiontion of an e-Inoice which can be used in a four
+This is a model definition of an e-Inoice which can be used in a four
 corners distrubuted e-services implementation.
 
     Usage:
     my_einvoice = einvoice()
 """
-import json
-from uuid import uuid1
+from dataclasses import dataclass
 from datetime import datetime
+from json import dumps
+from uuid import uuid4
+import logging
 
 
+
+# Create a logger instance.
+# NOTE: This is a baseline logger to implement core fucntionality.
+# It would desireable to externalize this config so it can be
+# utilized by multiple apps.
+FORMAT='%(asctime)s - $(levelname)s - $(funcName)s - $(message)s'
+DATEFMT='%m/%d/%Y %I:%M:%S %p'
+logging.basicConfig(format=FORMAT, datefmt=DATEFMT, level=logging.INFO)
+
+
+@dataclass
 class Address:
+    """A dataclass representing a physical address.
 
-    def __init__(self):
-        self.OrgID = ''     # Unique Identifier for Organiazation (a PK)
-        self.name = ''     # A common name for the Org (to go on an address)
-        self.addr_1 = ''    # Address Line 1
-        self.addr_2 = ''    # Address line 2                                                                                                                                                                                             dr_2 = ''           # Address Line 2
-        self.city = ''      # Address city
-        self.state = ''     # Address state
-        self.zip = ''       # Address zip
-"""An object representing a physical address.
+    Used to store the address of the buyer and seller.
 
-Used to store the address of the buyer and seller.
+    Args:
 
-Args:
-    OrgID:
-        A unique identifier to reference the Address object.  Default
-        value is empty.
-    name:
-        A common name for the business of Address owner.  Default
-        value is empty.
-    addr_1:
-        Address line #1 (usually Attn:).  Default value is empty.
-    addr_2:
-        Adresss line #2 (usually street address). Default value
-        is empty.
-    city:
-        The city where the business address is located. Default
-        value is empty.
-    state:
-        The state where the business address is located. Default
-        value is empty.
-    zip:
-        The zop code where the business address is located. Default
-        value is empty.
+    Attributes:
+        org_id: str
+            A unique identifier to reference the Address object.  Default
+            value is undefined.
+        name: str
+            A common name for the business of Address owner.  Default
+            value is undefined.
+        addr_1: str
+            Address line #1.  Default value is undefined.
+        addr_2: str
+            Adresss line #2. Default value is undefined.
+        city: str
+            The city where the business address is located. Default
+            value is undefined.
+        state: str
+            The state where the business address is located. Default
+            value is undefined.
+        zip: str
+            The zip code where the business address is located. Default
+            value is undefined.
 
-Returns:
+    Returns:
 
-Raises:
-"""
+    Raises:
+    """
+    org_id: str
+    name: str
+    addr_1: str
+    addr_2: str
+    city: str
+    state: str
+    zip: str
 
 
+@dataclass
 class LineItem:
+    """Dataclass which represents a single line item on an invoice.
+
+    An e-Invoice will contain 1-n LineItem objects.
+
+    Args:
+
+    Attributes:
+        li_id: str
+            A unique identifier for the LineItem.  Default value is undefined.
+        li_per_item: str
+            Units of measure of the item., e.g., individiaul, bundle roll, etc.
+            Default value is undefined.
+        li_name: str
+            Short name of items sold. Default value is undefined.
+        li_desc: str
+            Additional descriptive details to differentiate the item.
+            Default value is undefined.
+        li_qty: int
+            Quantity of items covered by this line item.  Default value is 0.
+        li_ppi: float
+            The price per item in dollars and cents (two decimal
+            places).  Default value is 0.
+        li_total: float
+            The line item total cost. This is calculated as li_qty * li_ppi.
+
+    Returns:
+
+    Raises:
+    """
+    li_id: str
+    li_per_item: str
+    li_name: str
+    li_desc: str
+    li_qty: int = 0
+    li_ppi: float = 0
+
+    def li_total(self) -> float:
+        """Compute line item total."""
+        return self.li_qty * self.li_ppi
+
+
+class  EInvoice:
+    """Represents an e-Inovice object.
+
+    Args:
+
+    Attributes:
+        inv_uuid:
+            (String) UUID created from CreateUUID
+            class as a String,
+        invoice_date:
+            The date of the Invoice expressed as a String.
+        seller_address:
+            Seller's place of busines as an Address() object.
+        buyer_address:
+            Buy's place of business as an Address() object.
+        line_items[]:
+            An array of line_item() objects.
+        invoice_total:
+            A flost representing the total cost of all line_items
+
+    """
+
+    @staticmethod
+    def sum_ei_lineitem_totals(_line_items):
+        """Sum all line items for an invoice total."""
+        line_item_total = 0
+        for obj in _line_items:
+            line_item_total = line_item_total + obj.li_total
+        return line_item_total
+
 
     def __init__(self):
-        self.LIID = ''       # A unique idenitifier for an invoice item,
-        self.LIQty = 0       # Quantity of items.
-        self.LIPerItem = ''  # Units of measure of item, e.g., individual, bundle,  roll, etc.
-        self.LIPPI = 0       # Price Per Item
-        self.LIName = ''     # Short name of goods or services sold (2-3 words)
-        self.LIDesc = ''           # Additional details to differentiate the item if necessary.
-
-        def calculateLITotal(LIQty, LIPPI):
-            """Calculates the total list item value multiplying the ListItem
-            quantity by the ListItem price."""
-            return (LIQty * LIPPI)
-
-        self.LITotal = calculateLITotal()       # The line item total.
-"""Represents a single line item on an invoice.
-
-An e-Invoice will contain 1-n LineItem objects.
-
-Args:
-    LIID:
-        A unique identifier for the LineItem.  Default value is empty.
-    LIQty:
-        Quantity of items covered by this line item.  Default value
-        is 0.
-    LIPerItem:
-        Units of measure of the item., e.g., individiaul, bundle
-        roll, etc. Default value is empty.
-    LIPPI:
-        Per per item.  Default value is 0.
-    LIName:
-        Short name of items sold. Default value is empoty.
-    LIDesc:
-        Additional descriptive details to differentiate the item.
-        Default value is empy.
-    LITotal:
-        The line item total cost. This is calculated as LIQty * LIPPI.
-        Default value is empty.
-
-Returns:
-
-Raises:
-"""
+        logging.info("Creating an e-Invoice")
+        self.ei_uuid = str(uuid4())
+        self.ei_date = datetime.now().strftime("%Y-%m-%d")
+        self.ei_seller_address = Address()
+        self.ei_buyer_address = Address()
+        self.ei_line_items = [LineItem] # Line Items is list of LineITem
+        self.ei_invoice_total = self.sum_ei_lineitem_totals(self.ei_line_items)
 
 
-class UniqueIdentifier:
-
-    def __init__(self):
-        self.InvUID = uuid.uuid1()
-        return(self.InvUID)
-"""Generates a unique identifier for an invoice.
-
-Call uuid1() method to obtain a unique identifier for the e-Invoice.
-
-Args:
-    InvUID: The unique identifier of the e-Invoice to be generated.
-
-Returns:
-    UniqueIdentifier: The unique identifier of the e-Invoice object.
-
-Raises:
-"""
-
-class  eInvoice:
+    @staticmethod
+    def add_li_to_einvoice(_line_items,_line_item):
+        """Take a line_item and add it to List of line_items[]"""
+        logging.info("Adding a line item to the invoice: %s", str(_line_item))
+        _line_items.append(_line_item)
+        print(_line_items)
+        return _line_items
 
 
-    def __init__(self):
-        self.InvUID = UniqueIdentifier()
-        self.invDate = datetime.now().strftime("%Y-%m-%d")     # Invoice date
-        self.SAddr = Address()           # Address instance for the Seller.
-        self.BAddr = Address()           # Address instance for the Buyer.
-        LineItems = []             # Create an empty list to contain line items.
-
-        def AddItemToEInvocie(_LineItems,_LineItem):
-            """Take a LineItem and add it to List of LineItems[]"""
-            _LineItems.append(_LineItem)
-            print(_LineItems)
-            return (_LineItems)
-
-        def CalcLineItemTotal(LineItems):
-            """Caluculate the sum of all LineItem objects in the
-             List of LineItems[]"""
-            total = sum(item.LITotal for item in LineItems)
-            return(total)
-
-
-        self.InvoiceTotal = CalcLineItemTotal(LineItems)   # Total value of
-                                                        # all items on invoice
-
-        # def writeEInvoiceXML(eInvoice):
-
-        def writeEInvoiceJSON(eInvoice,fn='eInvoice.json'):
-            """Writes the e-Inovice to a JSON file."""
-            jsonStr = json.dumps(eInvoice.__dict__)
-            with open(fn, 'w') as output:
-                output.write(jsonStr)
-"""Represents an e-Inovice object.
-
-Args:
-    InvUID:
-        UniqueIdentifier created from UniqueIdentifier
-        class as a String,
-    InvDate:
-        The date of the Invoice expressed as a Sting.
-    SAddr:
-        Seller's place of busines as an Address() object.
-    BAddr:
-        Buy's place of business as an Address() object.
-    LineItems[]:
-        An array of LineItem() objects.
-    InvoiceTotal:
-        A flost representing the total cost of all LineItems
-
-Returns:
-
-Raises:
-"""
+def write_einovice_to_json(_einvoice,filename='einvoice.json'):
+    """Writes the e-Inovice to a JSON file."""
+    json_str = dumps(_einvoice.__dict__)
+    with open(filename, 'w') as output:
+        output.write(json_str)
