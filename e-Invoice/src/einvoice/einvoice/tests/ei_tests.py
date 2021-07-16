@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
-# File: __init__.py
-# About: Creates a deployable package.
+# File: ei_tests.py
+# About: e-Invoice testing suite.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
 #
@@ -26,7 +26,14 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 # THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from einvoice import einvoice
 
-myInvoice = einvoice
+# from selenium import webdriver
 
+# browser = webdriver.Firefox()
+# browser.get('http://localhost:8000')
+
+# assert 'Django' in browser.title
+
+import einvoice
+
+my_einvoice = einvoice()

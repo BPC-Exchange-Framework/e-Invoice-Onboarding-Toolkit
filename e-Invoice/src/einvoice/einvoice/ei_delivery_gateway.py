@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
-# File: __init__.py
-# About: Creates a deployable package.
+# File: ei_delivery_gateway.py
+# About: Hand off from SML/SMP lookup to invoice delivery.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
 #
@@ -25,8 +25,3 @@
 # DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 # THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-from einvoice import einvoice
-
-myInvoice = einvoice
-

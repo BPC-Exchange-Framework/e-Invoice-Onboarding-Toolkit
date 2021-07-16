@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
-# File: __init__.py
-# About: Creates a deployable package.
+# File: ei_handler.py
+# About: Responsible for discovery compontents of 4-corners model.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
 #
@@ -25,8 +25,3 @@
 # DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 # THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-from einvoice import einvoice
-
-myInvoice = einvoice
-
