@@ -32,11 +32,15 @@ def test_smp_config():
     party_id = os.getenv("PARTY_ID")
     party_id_schema = os.getenv("PARTY_ID_SCHEMA")
     smp_endpoint_url = os.getenv("SMP_ENDPOINT_URL")
+    post_url = os.getenv("POST_URL")
+    x_api_key = os.getenv("X-API-KEY")
 
     from src.einvoice.einvoice.conf.smp_config import SMP_CONFIG
     assert SMP_CONFIG["party_id"] == party_id
     assert SMP_CONFIG["party_id_schema"] == party_id_schema
     assert SMP_CONFIG["smp_endpoint_url"] == smp_endpoint_url
+    assert SMP_CONFIG["post_url"] == post_url
+    assert SMP_CONFIG["api_key"] == x_api_key
 
 def test_configure_smp_body():
     smp_body = configure_smp_body()
@@ -44,3 +48,5 @@ def test_configure_smp_body():
     assert "party_id" in smp_body_dict.keys()
     assert "party_id_schema" in smp_body_dict.keys()
     assert "smp_endpoint_url" in smp_body_dict.keys()
+    assert "post_url" in smp_body_dict.keys()
+    assert "api_key" in smp_body_dict.keys()
