@@ -40,13 +40,12 @@ from uuid import uuid4
 import logging
 
 
-
 # Create a logger instance.
 # NOTE: This is a baseline logger to implement core fucntionality.
 # It would desireable to externalize this config so it can be
 # utilized by multiple apps.
-FORMAT='%(asctime)s - $(levelname)s - $(funcName)s - $(message)s'
-DATEFMT='%m/%d/%Y %I:%M:%S %p'
+_format = '%(asctime)s - $(levelname)s - $(funcName)s - $(message)s'
+datefmt = '%m/%d/%Y %I:%M:%S %p'
 logging.basicConfig(format=FORMAT, datefmt=DATEFMT, level=logging.INFO)
 
 
@@ -135,7 +134,7 @@ class LineItem:
         return self.li_qty * self.li_ppi
 
 
-class  EInvoice:
+class EInvoice:
     """Represents an e-Inovice object.
 
     Args:

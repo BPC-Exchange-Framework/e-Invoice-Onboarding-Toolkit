@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 #
-# File: ei_tests.py
-# About: e-Invoice testing suite.
+# File: ei_config_tool.py
+# About: e-Invoice configuration management tool.
 # Development: Kelly Kinney, Leo Rubiano
-# Date: 2021-07-16 (July 16th, 2021)
+# Date: 2021-07-17 (July 17th, 2021)
 #
 # LICENSE
 # Copyright (C) 2021 Business Payments Coalition
@@ -25,28 +25,23 @@
 # DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 # THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+"""The classes and functions which support programatic configuration updates.
 
+The configuration values are stored in a dictionary written to a JSON file.  The values are read on demand by other package and module files as necessary.   This allows for the programtic maintenance of the file.  
 
-# from selenium import webdriver
+    Args: str
+        ei_conf_fn: the file name containing the values to load.  This is filename can be dynamiclaly saved to support multiple versions.  
 
-# browser = webdriver.Firefox()
-# browser.get('http://localhost:8000')
+    Attributes:
 
-# assert 'Django' in browser.title
+    Raises:
 
-import unittest
+    Returns:
 
-#import conf.ei_config_tool
-# import einvoice
-from ei_logging import create_logger
+"""
+from json import dumps
+import logging
 
-log = create_logger('ei_tests')
-# my_einvoice = einvoice()ß
-
-# my_ei_config_tool = ei_config_tool
-
-class ei_tests:
-
-    def __init__(self) -> None:
-        log.debug("Began ei_tests")
-        pass
+# Note that the values for logging configuration are included
+# in the dictionary so a default logging config will be loaded
+# until it can be updated in the runtime.

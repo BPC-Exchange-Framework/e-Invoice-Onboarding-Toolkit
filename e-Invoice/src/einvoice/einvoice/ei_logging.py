@@ -28,46 +28,52 @@
 """
 A class to standardize log formatting across all application artifacts.
 
-Define common loggers and format to be used across the application.  
-NOTE: These logs are localized and non-persistent. 
-If used with a Docker container, 
+Define common loggers and format to be used across the application.
+NOTE: These logs are localized and non-persistent.
+If used with a Docker container,
 they cease to exist when the container does.
 
     Usage: (not meant to be called directly)
-    ei_logging = eILogger()
-    eILog.logging()
+    ei_logging = create_logger("ei_logging")
+    ei_logging.debug("This message will be logged.")
 
 """
 import logging
 
-logger = logging.getLogger('ei_logger')
+def create_logger(name):
+    """This function creates a logger template for the einvoice package.
 
-# It's okay to run INFO in Dev.  Turn it down to DEBUG for QA 
-# and WARN for Prod unless troubleshooting an issue.
-logger.setLevel(logging.DEBUG)
+    This funtion creates a consistant format and location for
+    all application log files to write to.
+    """
+    logger = logging.getLogger(name)
 
-# create file handler which writes to a file.
-ei_file_logger = logging.FileHandler('ei_output.log')
-ei_file_logger.setLevel(logging.DEBUG)
+    # It's okay to run INFO in Dev.  Turn it down to DEBUG for QA
+    # and WARN for Prod unless troubleshooting an issue.
+    logger.setLevel(logging.DEBUG)
 
-# create console handler with a higher log level
-ei_console_logger = logging.StreamHandler()
-ei_console_logger.setLevel(logging.INFO)
+    # create file handler which writes to a file.
+    ei_file_logger = logging.FileHandler('ei_output.log')
+    ei_file_logger.setLevel(logging.DEBUG)
 
-# Create a custom formatter and add it to the handlers
-FORMAT='%(asctime)s - $(levelname)s - $(funcName)s - $(message)s'
-DATEFMT='%m/%d/%Y %I:%M:%S %p'
+    # create console handler with a higher log level
+    ei_console_logger = logging.StreamHandler()
+    ei_console_logger.setLevel(logging.INFO)
 
-ei_file_logger.setFormatter(FORMAT, DATEFMT)
-ei_console_logger.setFormatter(FORMAT, DATEFMT)
+    # Create a custom formatter and add it to the handlers
+    _format='%(asctime)s - %(levelname)s - %(name)s - %(message)s'
+    datefmt='%m/%d/%Y %I:%M:%S %p'
+    formatter = logging.Formatter(_format, datefmt)
 
-# Associate the the handlers to the loggers
-logger.addHandler(ei_file_logger)
-logger.addHandler(ei_console_logger)
+    ei_file_logger.setFormatter(formatter)
+    ei_console_logger.setFormatter(formatter)
 
-# Test each log level.
-logger.debug('e-Invoice Debug Message')
-logger.info('e-Invoice Info Message')
-logger.warning('e-Invoice Warn Message')
-logger.error('e-Invoice Error Message')
-logger.critical('e-Invoice Critical Message')
+    # Associate the the handlers to the loggers
+    logger.addHandler(ei_file_logger)
+    logger.addHandler(ei_console_logger)
+
+    return logger
+
+
+ei_logger = create_logger("ei_logger")
+ei_logger.info("ei_logger log instance created")
