@@ -48,5 +48,3 @@ def test_configure_smp_body():
     assert "party_id" in smp_body_dict.keys()
     assert "party_id_schema" in smp_body_dict.keys()
     assert "smp_endpoint_url" in smp_body_dict.keys()
-    assert "post_url" in smp_body_dict.keys()
-    assert "api_key" in smp_body_dict.keys()
