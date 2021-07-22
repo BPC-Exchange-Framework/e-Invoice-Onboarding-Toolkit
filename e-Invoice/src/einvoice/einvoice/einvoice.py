@@ -135,7 +135,7 @@ class LineItem:
         return self.li_qty * self.li_ppi
 
 
-class  EInvoice:
+class EInvoice:
     """Represents an e-Inovice object.
 
     Args:
