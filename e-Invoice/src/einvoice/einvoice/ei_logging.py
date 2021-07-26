@@ -34,11 +34,12 @@ If used with a Docker container,
 they cease to exist when the container does.
 
     Usage: (not meant to be called directly)
-    ei_logging = create_logger("ei_logging")
-    ei_logging.debug("This message will be logged.")
+    log = create_logger("ei_logging")
+    log.debug("This message will be logged.")
 
 """
 import logging
+
 
 def create_logger(name):
     """This function creates a logger template for the einvoice package.
@@ -46,6 +47,7 @@ def create_logger(name):
     This funtion creates a consistant format and location for
     all application log files to write to.
     """
+    print("Create logger with name %s" % name)
     logger = logging.getLogger(name)
 
     # It's okay to run INFO in Dev.  Turn it down to DEBUG for QA
@@ -53,7 +55,7 @@ def create_logger(name):
     logger.setLevel(logging.DEBUG)
 
     # create file handler which writes to a file.
-    ei_file_logger = logging.FileHandler('ei_output.log')
+    ei_file_logger = logging.FileHandler("ei_output.log")
     ei_file_logger.setLevel(logging.DEBUG)
 
     # create console handler with a higher log level
@@ -61,8 +63,8 @@ def create_logger(name):
     ei_console_logger.setLevel(logging.INFO)
 
     # Create a custom formatter and add it to the handlers
-    _format='%(asctime)s - %(levelname)s - %(name)s - %(message)s'
-    datefmt='%m/%d/%Y %I:%M:%S %p'
+    _format = "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
+    datefmt = "%m/%d/%Y %I:%M:%S %p"
     formatter = logging.Formatter(_format, datefmt)
 
     ei_file_logger.setFormatter(formatter)
@@ -75,5 +77,5 @@ def create_logger(name):
     return logger
 
 
-ei_logger = create_logger("ei_logger")
-ei_logger.info("ei_logger log instance created")
+# log = create_logger("ei_logger")
+# log.info("ei_logger log instance created")

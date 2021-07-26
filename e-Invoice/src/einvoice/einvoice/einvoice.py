@@ -45,8 +45,8 @@ import logging
 # It would desireable to externalize this config so it can be
 # utilized by multiple apps.
 _format = '%(asctime)s - $(levelname)s - $(funcName)s - $(message)s'
-datefmt = '%m/%d/%Y %I:%M:%S %p'
-logging.basicConfig(format=FORMAT, datefmt=DATEFMT, level=logging.INFO)
+_datefmt = '%m/%d/%Y %I:%M:%S %p'
+logging.basicConfig(format=_format, datefmt=_datefmt, level=logging.INFO)
 
 
 @dataclass
@@ -163,7 +163,6 @@ class EInvoice:
         for obj in _line_items:
             line_item_total = line_item_total + obj.li_total
         return line_item_total
-
 
     def __init__(self):
         logging.info("Creating an e-Invoice")
