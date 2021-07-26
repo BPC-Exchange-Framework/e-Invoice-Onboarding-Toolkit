@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 #
-# File: ei_tests.py
-# About: e-Invoice testing suite.
+# File: __init__.py
+# About: Package definition.
 # Development: Kelly Kinney, Leo Rubiano
-# Date: 2021-07-16 (July 16th, 2021)
+# Date: 2021-06-20 (June 20, 2021)
 #
 # LICENSE
 # Copyright (C) 2021 Business Payments Coalition
@@ -25,28 +25,3 @@
 # DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 # THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-# from selenium import webdriver
-
-# browser = webdriver.Firefox()
-# browser.get('http://localhost:8000')
-
-# assert 'Django' in browser.title
-
-import unittest
-
-#import conf.ei_config_tool
-# import einvoice
-from ei_logging import create_logger
-
-log = create_logger('ei_tests')
-# my_einvoice = einvoice()ß
-
-# my_ei_config_tool = ei_config_tool
-
-class ei_tests:
-
-    def __init__(self) -> None:
-        log.debug("Began ei_tests")
-        pass

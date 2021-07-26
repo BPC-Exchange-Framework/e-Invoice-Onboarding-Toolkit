@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 #
 # File: __init__.py
-# About: Creates a deployable package.
+# About: Package definition.
 # Development: Kelly Kinney, Leo Rubiano
-# Date: 2021-07-16 (July 16th, 2021)
+# Date: 2021-06-20 (June 20, 2021)
 #
 # LICENSE
 # Copyright (C) 2021 Business Payments Coalition
@@ -25,8 +25,8 @@
 # DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 # THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-from einvoice import einvoice
-
-myInvoice = einvoice
-
+from conf import ei_config_tool
+from tests import ei_tests
+from data import ei_data
+# from . import ei_logging
+# from . import ei_handler

@@ -44,10 +44,11 @@ The output of this sample list of line items is writen to a JSON file.
 
 """
 from faker import Faker
-from csv import reader
-from random import randint, choice
-from logging import basicConfig, logging
+import csv
+import random
+import logging
 from json import dumps
+
 
 
 # Create a logger.
@@ -182,7 +183,7 @@ def writeJSONtoStr(_object):
         return
     
     for i in range(len(_object)):
-        jsonStr = json.dumps(_object[i].__dict__)
+        jsonStr = dumps(_object[i].__dict__)
         logging.debug("List item " + str(i) + ": " + jsonStr)
         print(jsonStr)
 
