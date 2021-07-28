@@ -25,8 +25,3 @@
 # DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 # THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-from conf import ei_config_tool
-from tests import ei_tests
-from data import ei_data
-# from . import ei_logging
-# from . import ei_handler

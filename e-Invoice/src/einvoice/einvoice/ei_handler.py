@@ -83,8 +83,8 @@ class SMLURN:
 
     def prty_urn(self) -> str:
         """Construct string for the party's URN"""
-        return self.prty_id_spec + ":" + self.prty_id_schma_type + "::" +self.prty_id
-
+        return self.prty_id_spec + ":" + self.prty_id_schma_type + "::" \
+            + self.prty_id
 
 
 def createSMLookup(_urn="", _schema="", _id=""):
@@ -99,20 +99,23 @@ def createSMLookup(_urn="", _schema="", _id=""):
     urn = lookup_str.prty_urn()
     return urn
 
+
 def apply256Hash(_data):
     """Applys SHA256 hash to the lookup"""
     output = hashlib.sha256(_data.encode()).hexdigest()
     return output
 
+
 def applyBase32(_string):
     """Apply Base32 encoding per the spec"""
-    b_string = _string.encode('utf-8')
+    b_string = _string.encode("utf-8")
     output = base64.b32encode(b_string)
     return output
 
-sml_lookup = createSMLookup('','','')
-print (sml_lookup)
+
+sml_lookup = createSMLookup("", "", "")
+print(sml_lookup)
 sml_lookup256 = apply256Hash(sml_lookup)
 print(sml_lookup256)
 sml_lookup256toB32 = applyBase32(sml_lookup256)
-print (sml_lookup256toB32)
+print(sml_lookup256toB32)
