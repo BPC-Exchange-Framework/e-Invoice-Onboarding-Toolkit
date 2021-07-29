@@ -60,7 +60,7 @@ def create_logger(name):
 
     # create console handler with a higher log level
     ei_console_logger = logging.StreamHandler()
-    ei_console_logger.setLevel(logging.INFO)
+    ei_console_logger.setLevel(logging.DEBUG)
 
     # Create a custom formatter and add it to the handlers
     _format = "%(asctime)s - %(levelname)s - %(name)s - %(message)s"

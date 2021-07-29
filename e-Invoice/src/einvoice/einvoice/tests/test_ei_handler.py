@@ -1,9 +1,9 @@
 #!/usr/local/bin python3
 #
-# File: ei_tests.py
-# About: e-Invoice testing suite.
+# File: test_ei_handler.py
+# About: e-Invoice testing suite; ei_handler.
 # Development: Kelly Kinney, Leo Rubiano
-# Date: 2021-07-16 (July 16th, 2021)
+# Date: 2021-07-27 (July 27th, 2021)
 #
 # LICENSE
 # Copyright (C) 2021 Business Payments Coalition
@@ -25,28 +25,12 @@
 # DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 # THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+from ei_logging import (create_logger)
+from ei_handler import (SMLURN, createSMLLookup, apply256Hash, applyBase32, writeURNtoJSON)
 
+def test_SMLURN():
+    smlurn = createSMLLookup("","","")
+    assert smlurn.prty_id_spec == "urn:oasis:names:tc:ebcore:partyid-type"
+    assert smlurn.prty_id_schma_type == "iso6523"
+    assert smlurn.ßprty_id == "0123456789"
 
-# from selenium import webdriver
-
-# browser = webdriver.Firefox()
-# browser.get('http://localhost:8000')
-
-# assert 'Django' in browser.title
-
-import unittest
-
-#import conf.ei_config_tool
-# import einvoice
-from ei_logging import create_logger
-
-log = create_logger('ei_tests')
-# my_einvoice = einvoice()ß
-
-# my_ei_config_tool = ei_config_tool
-
-class ei_tests:
-
-    def __init__(self) -> None:
-        log.debug("Began ei_tests")
-        pass
