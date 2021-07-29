@@ -52,7 +52,7 @@ from dataclasses import dataclass
 import hashlib
 import base64
 from json import dumps
-from ei_logging import create_logger
+from einvoice.ei_logging import create_logger
 
 ulog = create_logger("ei_handler")
 
@@ -141,22 +141,22 @@ def writeURNtoJSON(_smlurn, _f_n):
     with open(_f_n, "w") as f:
         f.write(json_str)
 
+if __name__ == "__main__":
+    # Everything that happens to follow takes place on 
+    # an SMLURN dataclass object which is handed between the 
+    # function calls.
 
-# Everything that happens to follow takes place on 
-# an SMLURN dataclass object which is handed between the 
-# function calls.
+    # Create an intial SMLURN oject using defaults.
+    sml_lookup = createSMLLookup("", "", "")
 
-# Create an intial SMLURN oject using defaults.
-sml_lookup = createSMLLookup("", "", "")
+    # apply the shaw256 hash to the urn
+    sml_lookup256 = apply256Hash(sml_lookup)
 
-# apply the shaw256 hash to the urn
-sml_lookup256 = apply256Hash(sml_lookup)
+    # apply the base32 hash to the shaw256 hash
+    sml_lookup256toB32 = applyBase32(sml_lookup256)
 
-# apply the base32 hash to the shaw256 hash
-sml_lookup256toB32 = applyBase32(sml_lookup256)
+    # give the variable a more friendy name
+    final_sml_obj = sml_lookup256toB32
 
-# give the variable a more friendy name
-final_sml_obj = sml_lookup256toB32
-
-# write the SMLURN dataclass object to a file
-writeURNtoJSON(final_sml_obj, "./sml_urn.json")
+    # write the SMLURN dataclass object to a file
+    writeURNtoJSON(final_sml_obj, "./sml_urn.json")

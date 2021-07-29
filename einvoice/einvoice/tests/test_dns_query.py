@@ -1,11 +1,11 @@
 import json
-from src.einvoice.einvoice.dns_query import (
+from einvoice.dns_query import (
     get_registry_entry_fqdn,
     configure_smp_body,
 )
 
 def test_get_registry_entry_fqdn():
-    sample_data_path = "e-Invoice/src/einvoice/einvoice/tests/sample_data/unaptr_response.json"
+    sample_data_path = "einvoice/tests/sample_data/unaptr_response.json"
     
     # Test retrieval from a valid unaptr response
     with open(sample_data_path) as f:
@@ -35,7 +35,7 @@ def test_smp_config():
     post_url = os.getenv("POST_URL")
     x_api_key = os.getenv("X-API-KEY")
 
-    from src.einvoice.einvoice.conf.smp_config import SMP_CONFIG
+    from einvoice.conf.smp_config import SMP_CONFIG
     assert SMP_CONFIG["party_id"] == party_id
     assert SMP_CONFIG["party_id_schema"] == party_id_schema
     assert SMP_CONFIG["smp_endpoint_url"] == smp_endpoint_url

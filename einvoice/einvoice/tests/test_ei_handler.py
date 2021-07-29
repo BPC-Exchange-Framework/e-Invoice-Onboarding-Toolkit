@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/local/bin python3
 #
-# File: __init__.py
-# About: Package definition.
+# File: test_ei_handler.py
+# About: e-Invoice testing suite; ei_handler.
 # Development: Kelly Kinney, Leo Rubiano
-# Date: 2021-06-20 (June 20, 2021)
+# Date: 2021-07-27 (July 27th, 2021)
 #
 # LICENSE
 # Copyright (C) 2021 Business Payments Coalition
@@ -25,3 +25,11 @@
 # DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
 # THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+from einvoice.ei_logging import (create_logger)
+from einvoice.ei_handler import (SMLURN, createSMLLookup, apply256Hash, applyBase32, writeURNtoJSON)
+
+def test_SMLURN():
+    smlurn = createSMLLookup("","","")
+    assert smlurn.prty_id_spec == "urn:oasis:names:tc:ebcore:partyid-type"
+    assert smlurn.prty_id_schma_type == "iso6523"
+    assert smlurn.prty_id == "0123456789"
