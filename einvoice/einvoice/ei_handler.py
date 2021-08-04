@@ -52,7 +52,7 @@ from dataclasses import dataclass
 import hashlib
 import base64
 from json import dumps
-from einvoice.ei_logging import create_logger
+from ei_logging import create_logger
 
 handler_log = create_logger("ei_handler")
 
@@ -84,21 +84,29 @@ class SMLURN:
             The urn that has been hashed a second time from shaw256 to base32.
 
     Returns:
-
+w
     Raises:
     """
     handler_log.debug("Created an instance of SMLURN")
     party_id_specification: str = "urn:oasis:names:tc:ebcore:partyid-type"
+    handler_log.debug("party_id_specification: %s" % party_id_specification)
     party_id_schema_type: str = "iso6523"
+    handler_log.debug("party_id_schema_type: %s" % party_id_schema_type)
     party_id: str = "0123456789"
+    handler_log.debug("party_id: %s" % party_id)
 
     def party_urn(self) -> str:
         """Construct string for the party's URN"""
         return (self.party_id_specification + ":"
                 + self.party_id_schema_type
                 + "::" + self.party_id)
+    handler_log.debug("party_urn: %s" % party_urn)
 
-    final_urn: str = ""
+    def final_urn(self) -> str:
+        """Return the urn as essetially a constant."""
+        return (str(self.party_urn))
+    handler_log.debug("final_urn: %s" % final_urn)
+
     urn_shaw256_hash: str = ""
     urn_base32_hash: str = ""
 
@@ -111,15 +119,16 @@ def create_sml_lookup(_urn="", _schema="", _id=""):
     if _schema != "":
         lookup_str.party_id_schema_type = _schema
     if _id != "":
-        lookup_str.party_id = id
+        lookup_str.party_id = _id
     lookup_str.final_urn = lookup_str.party_urn()
+    # lookup_str.final_urn = (_urn + ":" + _schema + "::" + _id)
     log_msg = ("Constructed urn from dataclass definition %s"
                % lookup_str.final_urn)
     handler_log.debug(log_msg)
     return lookup_str
 
 
-def apply_245_hash(_smlurn_obj):
+def apply_shaw256_hash(_smlurn_obj):
     """Applys SHA256 hash to the lookup"""
     handler_log.debug("Applying shaw256 hash.")
     _data = _smlurn_obj.final_urn
@@ -166,7 +175,7 @@ if __name__ == "__main__":
     sml_lookup = create_sml_lookup("", "", "")
 
     # apply the shaw256 hash to the urn
-    sml_lookup256 = apply_245_hash(sml_lookup)
+    sml_lookup256 = apply_shaw256_hash(sml_lookup)
 
     # apply the base32 hash to the shaw256 hash
     sml_lookup256toB32 = apply_base32_hash(sml_lookup256)
