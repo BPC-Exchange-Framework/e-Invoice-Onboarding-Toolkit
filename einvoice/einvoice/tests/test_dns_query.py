@@ -1,11 +1,13 @@
 import json
+import sys
+sys.path.append("../../einvoice")
 from einvoice.dns_query import (
     get_registry_entry_fqdn,
     configure_smp_body,
 )
 
 def test_get_registry_entry_fqdn():
-    sample_data_path = "einvoice/tests/sample_data/unaptr_response.json"
+    sample_data_path = "einvoice/einvoice/tests/sample_data/unaptr_response.json"
     
     # Test retrieval from a valid unaptr response
     with open(sample_data_path) as f:
