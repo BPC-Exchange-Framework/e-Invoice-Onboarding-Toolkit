@@ -29,9 +29,12 @@
 
 
 """
+import sys
+sys.path.append("../../einvoice")
+
 from uuid import uuid4
-from ei_logging import create_logger
-from ei_handler import create_sml_lookup, apply_shaw256_hash, apply_base32_hash
+from einvoice.ei_logging import create_logger
+from einvoice.ei_handler import create_sml_lookup, apply_shaw256_hash, apply_base32_hash
 
 # Creat a logger to use for our own purposes.
 log = create_logger("test_ei_handler")

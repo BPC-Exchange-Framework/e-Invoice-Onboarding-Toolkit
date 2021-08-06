@@ -52,7 +52,7 @@ from dataclasses import dataclass
 import hashlib
 import base64
 from json import dumps
-from ei_logging import create_logger
+from einvoice.ei_logging import create_logger
 
 handler_log = create_logger("ei_handler")
 
