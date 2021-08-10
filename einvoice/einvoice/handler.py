@@ -1,30 +1,9 @@
 #!/usr/bin/env python3
 #
-# File: ei_handler.py
+# File: ei_handlpy
 # About: Responsible for discovery compontents of 4-corners model.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
-#
-# LICENSE
-# Copyright (C) 2021 Business Payments Coalition
-#
-# Permission is hereby granted, free of charge, to any person obtaining
-# a copy of this software and associated documentation files
-# (the "Software"), to deal in the Software without restriction,
-# including without limitation the rights to use, copy, modify, merge,
-# publish, distribute, sublicense, and/or sell copies of the Software,
-# and to permit persons to whom the Software is furnished to do so,
-# subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included
-# in all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
-# THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """The classes and functions responsoble for 4-corners participant discovery.
 
 This module is responsible for retaining the inovice while work is done to
@@ -54,11 +33,9 @@ import base64
 from json import dumps
 from ei_logging import create_logger
 
-handler_log = create_logger("ei_handler")
-
 
 @dataclass
-class SMLURN:
+class Smlurn:
     """Dataclass which represents the base URN for the SML query.
 
     The base URN to be constructed as a string.
@@ -84,15 +61,20 @@ class SMLURN:
             The urn that has been hashed a second time from shaw256 to base32.
 
     Returns:
-w
+
     Raises:
     """
-    handler_log.debug("Created an instance of SMLURN")
-    party_id_specification: str = "urn:oasis:names:tc:ebcore:partyid-type"
-    handler_log.debug("party_id_specification: %s" % party_id_specification)
-    party_id_schema_type: str = "iso6523"
-    handler_log.debug("party_id_schema_type: %s" % party_id_schema_type)
-    party_id: str = "0123456789"
+    handler_log = create_logger("handler")
+
+    handler_log.debug("Created an instance of Smlurn")
+
+    self.party_id_specification: str = "urn:oasis:names:tc:ebcore:partyid-type"
+    handler_log.debug("party_id_specification: %s" % self.party_id_specification)
+
+    self.party_id_schema_type: str = "iso6523"
+    handler_log.debug("party_id_schema_type: %s" % self.party_id_schema_type)
+
+    self.party_id: str = "0123456789"
     handler_log.debug("party_id: %s" % party_id)
 
     def party_urn(self) -> str:
@@ -113,7 +95,7 @@ w
 
 def create_sml_lookup(_urn="", _schema="", _id=""):
     """Constructs the full URN for lookup"""
-    lookup_str = SMLURN()
+    lookup_str = Smlurn()
     if _urn != "":
         lookup_str.party_id_specification = _urn
     if _schema != "":
@@ -160,7 +142,7 @@ def apply_base32_hash(_smlurn_obj):
 
 def write_urn_to_json(_smlurn, _filename):
     """Write the urn values to a file"""
-    handler_log.debug("Writing the SMLURN object to file.")
+    handler_log.debug("Writing the Smlurn object to file.")
     json_str = dumps(_smlurn.__dict__)
     with open(_filename, "w") as my_file:
         my_file.write(json_str)
@@ -168,10 +150,10 @@ def write_urn_to_json(_smlurn, _filename):
 
 if __name__ == "__main__":
     # Everything that happens to follow takes place on
-    # an SMLURN dataclass object which is handed between the
+    # an Smlurn dataclass object which is handed between the
     # function calls.
 
-    # Create an intial SMLURN oject using defaults.
+    # Create an intial Smlurn oject using defaults.
     sml_lookup = create_sml_lookup("", "", "")
 
     # apply the shaw256 hash to the urn
@@ -183,5 +165,5 @@ if __name__ == "__main__":
     # give the variable a more friendy name
     final_sml_obj = sml_lookup256toB32
 
-    # write the SMLURN dataclass object to a file
+    # write the Smlurn dataclass object to a file
     write_urn_to_json(final_sml_obj, "./sml_urn.json")
