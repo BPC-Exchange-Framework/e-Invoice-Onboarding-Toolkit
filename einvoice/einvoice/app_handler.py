@@ -12,10 +12,10 @@ the UNAPTR DNS look-up and perform SMP query on the URI returned,
 
     Args:
         _party_id: str
-        The unique identifier of the party being searched for.
+        The ique idefier tw the party being searched for.
 
-        _prty_id_schema_type: str
-        An alternate Party ID Schema if not using the default.Schema
+        _prty_idschema_type: str
+        An alternate Party ID schema if not using the default.schema
 
         _einvoice: obj (einvoice)
         An einvoice object (which is a JSON file)
@@ -27,22 +27,22 @@ the UNAPTR DNS look-up and perform SMP query on the URI returned,
     Returns:
 
 """
-from dataclasses import dataclass
 import hashlib
 import base64
 from json import dumps
-from app_logging import create_logger
-from urn import Urn
+from einvoice.app_logging import create_logger
+from einvoice.urn import Urn
+
 
 class CreateUrn:
     """Constructs a base URN for the SML query and prepares the hashes.
 
     The base URN to be constructed as a string, and then hashed.
 
-    Args:
+    Ar:
 
-    Attributes:
-        party_id_specification: str
+    Aibutetw
+        party_id_specification:twtr
             The party ID specification.
         party_id_schema_type: str
             The party ID schema type.
@@ -54,7 +54,7 @@ class CreateUrn:
         final_urn: str
             A version of the full urn which is not constructed on the
             fly but held (essentially as a constant)
-        urn_shaw256_hash: str
+        urn_sha256_hash: str
             The urn that has been hashed using the shaw256 hash.
         urn_base32_hash: str
             The urn that has been hashed a second time from shaw256 to base32.
@@ -64,86 +64,85 @@ class CreateUrn:
     Raises:
 
     """
+    log = create_logger("app_handler")
+    specification = None
+    schema = None
+    party_id = None
+    urn = None
+    final_urn = None
+    encoded_data = None
+    hash_256 = None
+    urn_sha_256_hash = None
+    b_string = None
+    b_string_base_32_hash = None
+    urn_sha_256_hash = None
+    urn_base32_hash = None
 
 
-    
+    def __init__(self):
+        return None
 
 
-def __init__(self):
-    self.log = create_logger("app_handler")
-    self.party_id_specification = ""
-    self.party_id_schema_type = ""
-    self.party_id = ""
-    self.urn = ""
-    self.final_urn = ""
-    self.urn_shaw256_hash = ""
-    self.urn_base32_hash = ""
+    def create_urn_lookup(self, party_id):
+        """Constructs the full URN for lookup"""
+        self.specification = "urn:oasis:names:tc:ebcore:partyid-type"
+        self.schema = "iso6523"
+        self.urn = Urn(self.specification, self.schema, party_id)
+        self.final_urn = self.urn.party_urn()
+        self.log.debug("Created urn: %s", self.final_urn)
+        return self.final_urn
 
+    def apply_sha_256_hash(self, final_urn):
+        """Apply SHA256 hash to the lookup"""
+        self.log.debug("Applying shaw256 hash.")
+        self.encoded_data = final_urn.encode()    # pylint disable=W0201
+        self.hash_256 = hashlib.sha256(self.encoded_data)  # pylint disable=W0201
+        self.urn_sha_256_hash = self.hash_256.hexdigest()   # pylint disable=W0201
+        self.log.debug("Hex version of shaw256 hash  is  %s",
+                       self.urn_sha_256_hash)
+        return self.urn_sha_256_hash
 
-def create_urn_lookup(urn_="", schema_="", id_=""):
-    """Constructs the full URN for lookup"""
-    urn_lookup = Urn(urn_, schema_, id_)
-    final_urn = urn_lookup.party_urn()
-    self.log.debug("Created urn: %s", final_urn)
-    return final_urn
+    def apply_base_32_hash(self, urn_sha_256_hash):
+        """Apply Base32 encoding per the spec"""
+        self.log.debug("Applying Base32 to shaw256 hash.")
+        # first convert to a byte-like object
+        self.b_string = urn_sha_256_hash.encode("utf-8")
+        self.b_string_base_32_hash = base64.b32encode(self.b_string)
+        # Convert it back to a string so it can be handled by json
+        self.urn_base_32_hash = self.b_string_base_32_hash.decode("utf-8")
+        self.log.debug("Base32 conversion of shaw256 is %s",
+                       self.urn_base32_hash)
+        return self.urn_base_32_hash
 
+    def write_urn_to_json(self, urn_dictionary, filename):
+        """Write the urn values to a file"""
+        self.log.debug("Writing the dictionary of urn values to file %s",
+                       filename)
+        self.json_str = dumps(urn_dictionary.__dict__)
+        with open(filename, "w") as my_file:
+            my_file.write(self.json_str)
 
-def apply_shaw256_hash(_smlurn_obj):
-    """Applys SHA256 hash to the lookup"""
-    self.log.debug("Applying shaw256 hash.")
-    _data = _smlurn_obj.final_urn
-    encoded_data = _data.encode()
-    hash256 = hashlib.sha256(encoded_data)
-    _smlurn_obj.urn_shaw256_hash = hash256.hexdigest()
-    log_msg = ("Hex version of shaw256 hash  is  %s"
-               % _smlurn_obj.urn_shaw256_hash)
-    self.log.debug(log_msg)
-    return _smlurn_obj
+    def meatgrinder(self, party_id):
+        """Find the values of all steps necessary to prepare the urn lookup."""
+        # Create a dictionary to hold the accumlated data points.
+        self.urn_values = {     # pylint disable=W0201
+            "Party ID Specification": self.specification,
+            "Party ID schema": self.schema,
+            "Party ID": party_id,
+        }
 
+        # Construct the unencoded urn.
+        self.sml_lookup = self.create_urn_lookup(party_id)
+        self.urn_values["Base urn"] = self.sml_lookup   # pylint disable=W0201
 
-def apply_base32_hash(_smlurn_obj):
-    """Apply Base32 encoding per the spec"""
-    self.log.debug("Applying Base32 to shaw256 hash.")
-    _string = _smlurn_obj.urn_shaw256_hash
-    # first convert to a byte-like object
-    b_string = _string.encode("utf-8")
-    # do the base32 conversion
-    b_string_base32_hash = base64.b32encode(b_string)
+        # apply the shaw256 hash to the urn
+        self.sml_lookup_sha_255_applied = self.apply_sha_256_hash(self.sml_lookup)  # pylint disable=W0201
+        self.urn_values["SHA256 Hashed urn"] = self.sml_lookup_sha_255_applied
 
-    # Convert it back to a string so it can be handled by json
-    _smlurn_obj.urn_base32_hash = b_string_base32_hash.decode('utf-8')
-    log_msg = ("Base32 conversion of shaw256 is %s"
-               % _smlurn_obj.urn_base32_hash)
-    self.log.debug(log_msg)
-    return _smlurn_obj
+        # apply the base32 hash to the shaw256 hash
+        self.sml_lookup_256_to_b32 = self.apply_base_32_hash(self.ssml_lookup_sha_255_applied)  # pylint disable=W0201
+        self.urn_values["Base32 Hashed urn"] = self.sml_lookup_256_to_b32
 
-
-def write_urn_to_json(_smlurn, _filename):
-    """Write the urn values to a file"""
-    self.log.debug("Writing ths CreateSmlUrnclass" 
-                      " CreateSmlUrn object to file.")
-    json_str = dumps(_smlurn.__dict__)
-    with open(_filename, "w") as my_file:
-        my_file.write(json_str)
-
-
-if __name__ == "__main__":
-    # Everything that happens to follow takes place on
-    # as CreateSmlUrnclass CreateSmlUrn dataclass object 
-    # which is handed between the
-    # function calls.
-
-    # Create an intias CreateSmlUrnclass CreateSmlUrn oject using defaults.
-    sml_lookup = create_urn_lookup("", "", "")
-
-    # apply the shaw256 hash to the urn
-    sml_lookup256 = apply_shaw256_hash(sml_lookup)
-
-    # apply the base32 hash to the shaw256 hash
-    sml_lookup256toB32 = apply_base32_hash(sml_lookup256)
-
-    # give the variable a more friendy name
-    final_sml_obj = sml_lookup256toB32
-
-    # write ths CreateSmlUrnclass CreateSmlUrn dataclass object to a file
-    write_urn_to_json(final_sml_obj, "./sml_urn.json")
+        # write ths CreateSmlUrnclass CreateSmlUrn dataclass object to a file
+        self.write_urn_to_json(self.urn_values, "./final_urn.json")
+        return self.urn_values
