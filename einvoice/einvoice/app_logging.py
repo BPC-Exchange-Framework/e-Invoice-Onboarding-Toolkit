@@ -1,30 +1,10 @@
 #!/usr/bin/env python3
 #
-# File: ei_logging.py
+# File: app_logging.py
 # About: Logging provider
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
 #
-# LICENSE
-# Copyright (C) 2021 Business Payments Coalition
-#
-# Permission is hereby granted, free of charge, to any person obtaining
-# a copy of this software and associated documentation files
-# (the "Software"), to deal in the Software without restriction,
-# including without limitation the rights to use, copy, modify, merge,
-# publish, distribute, sublicense, and/or sell copies of the Software,
-# and to permit persons to whom the Software is furnished to do so,
-# subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included
-# in all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
-# THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 A class to standardize log formatting across all application artifacts.
 
@@ -34,7 +14,7 @@ If used with a Docker container,
 they cease to exist when the container does.
 
     Usage: (not meant to be called directly)
-    log = create_logger("ei_logging")
+    log = create_logger("app_logging")
     log.debug("This message will be logged.")
 
 """
@@ -55,27 +35,23 @@ def create_logger(name):
     logger.setLevel(logging.DEBUG)
 
     # create file handler which writes to a file.
-    ei_file_logger = logging.FileHandler("ei_output.log")
-    ei_file_logger.setLevel(logging.DEBUG)
+    file_logger = logging.FileHandler("./einvoice_output.log")
+    file_logger.setLevel(logging.DEBUG)
 
     # create console handler with a higher log level
-    ei_console_logger = logging.StreamHandler()
-    ei_console_logger.setLevel(logging.DEBUG)
+    console_logger = logging.StreamHandler()
+    console_logger.setLevel(logging.DEBUG)
 
     # Create a custom formatter and add it to the handlers
     _format = "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
     datefmt = "%m/%d/%Y %I:%M:%S %p"
     formatter = logging.Formatter(_format, datefmt)
 
-    ei_file_logger.setFormatter(formatter)
-    ei_console_logger.setFormatter(formatter)
+    file_logger.setFormatter(formatter)
+    console_logger.setFormatter(formatter)
 
     # Associate the the handlers to the loggers
-    logger.addHandler(ei_file_logger)
-    logger.addHandler(ei_console_logger)
+    logger.addHandler(file_logger)
+    logger.addHandler(console_logger)
 
     return logger
-
-
-# log = create_logger("ei_logger")
-# log.info("ei_logger log instance created")
