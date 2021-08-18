@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 # File: create_sample_data.py
-# About: Create test e-Invoices using fake data sets.  
+# About: Create test e-Invoices using fake data sets.
 # Development: Kelly Kinney
 # Date: 2021-06-22 (June 22, 2021)
 #
@@ -21,23 +21,18 @@ The output of this sample list of line items is writen to a JSON file.
     genLI.
 
 """
-from faker import Faker
 import csv
 import random
 import logging
 from json import dumps
-
-# Create a logger.
-FORMAT='%(asctime)s - $(levelname)s - $(funcName)s - $(message)s'
-DATEFMT='%m/%d/%Y %I:%M:%S %p'
-logging.basicConfig(format=FORMAT, datefmt=DATEFMT, level=logging.INFO)
+from einvoice.app_logging import create_logger
+from faker import Faker
+# from einvoice.line_item import LineItem
+# from einvoice.party_address import Address
 
 
 class CreateSampleData:
-
-    def __init__(self):
-        logging.info("Generating e-Invoice Data!")
-    """An instance of the CreateSampleData object.  
+    """An instance of the CreateSampleData object.
 
     The job of this class/object is to generate sample data for
     an e-Invoice.
@@ -45,39 +40,49 @@ class CreateSampleData:
     Args:
 
     Attributes:
-        Items[]: A list of line_items to populate an e-Invoice.  Populated by
+        items[]: A list of line_items to populate an e-Invoice.  Populated by
             reading in from a CSV file.
-        PerItem[]: A list of item sizes/groups/types to populate an e-Invoice.  
+        f.per_item[]: A list of item sizes/groups/types to
+            populate an e-Invoice.
             Populated by reading in from a CSV file.
 
     Returns:
 
     Raises:
     """
+    def __init__(self):
+        self.log = create_logger("create_sample_data")
+        self.log.info("Generating e-Invoice Data!")
+        self.fake = Faker()
+        self.companies = []
+        self.org_id = ""
+        self.name = ""
+        self.address_1 = ""
+        self.address_2 = ""
+        self.city = ""
+        self.state = ""
+        self.zip_code = ""
+        self.company = ""
+        self.reader = None
+        self.items = []
+        self.per_item = []
+        self.line_items = []
+        self.line_item_id = ""
+        self.line_item_quantity = 0
+        self.line_item_per_item = ""
+        self.line_item_price_per_item = 0.0
+        self.line_item_name = ""
+        self.line_item_total = 0.0
+        self.sample_line_item = ""
 
-    # Read the CSV files in
+    # fake = Faker()
+    # Faker.seed(0)
 
-    Items = []
-    with open('./item_list.csv', newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        for row in reader:
-            Items.append(row)
-
-    PerItem = []
-    with open('./per_item_list.csv', newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        for row in reader:
-            PerItem.append(row)
-
-
-    fake = Faker()
-    Faker.seed(0)
-
-    def generateFakeCo(_count=1):
+    def generate_fake_address(self, count=1):
         """Generate as many fake addresses as requested.
 
         Args:
-            _count:
+            count:
                 The number of addresses reqested.
 
         Raises:
@@ -86,33 +91,39 @@ class CreateSampleData:
             A list of JSON entries with each one representing an
             address.
         """
+        self.log = create_logger("create_sample_data")
+        # self.fake = Faker()
+        Faker.seed(0)
 
-        companies = []
+        # self.companies = []
 
-        for _ in range (_count):
-            orgID = fake.bothify(text='????-######',
-                letters='ACDEFGHIJKLMNOPQRSQSTeUVWXYZ')
-            name = fake.company()
-            addr_1 = "Attn: " + fake.name()
-            addr_2 = fake.street_address()
-            city = fake.city()
-            state = fake.state()
-            zip = fake.postcode()
+        for _ in range(count):
+            self.org_id = self.fake.bothify(text='????-######',
+                                            letters='ACDEFGHIJKLMNOPQR'
+                                            'SQSTeUVWXYZ')
+            self.name = self.fake.company()
+            self.address_1 = "Attn: " + self.fake.name()
+            self.address_2 = self.fake.street_address()
+            self.city = self.fake.city()
+            self.state = self.fake.state()
+            self.zip_code = self.fake.postcode()
 
             # Create a JSON string of the Company.
-            company = str({'orgID': orgID, "name": name, "addr_1":addr_1,
-                "addr_2":addr_2, "city":city, "state":state, "zip":zip})
+            self.company = str({"org_id":   self.org_id, "name": self.name,
+                                "address_1": self.address_1,
+                                "address_2": self.address_2,
+                                "city": self.city, "state": self.state,
+                                "zip_code": self.zip_code})
 
-            companies.append(company)
+            self.companies.append(self.company)
 
-            logging.debug("Created a data for comapny: " + company)
+            self.log.debug("Created a data for comapny: %s", self.company)
 
-        return companies
+        return self.companies
 
-
-    def create_sample_list_items(_count=1):
+    def create_sample_list_items(self, count=1):
         """Generate as many fake line_items as requested.
-        
+
         Args:
             _count:
                 The number of line_items reqested.
@@ -122,37 +133,57 @@ class CreateSampleData:
         Returns:
             A list of JSON entries with each one representing a line item.
         """
+        self.log = create_logger("create_sample_data")
+        # self.items = []
+        with open('./item_list.csv', newline='') as csvfile:
+            self.reader = csv.reader(csvfile)
+            for row in self.reader:
+                self.items.append(row)
 
-        line_items = []
+        # self.per_item = []
+        with open('./per_item_list.csv', newline='') as csvfile:
+            self.reader = csv.reader(csvfile)
+            for row in self.reader:
+                self.per_item.append(row)
 
-        for _ in range (_count):
-            line_iten_id = fake.bothify(text='??????-###',
-                letters='ACDEFGHIJKLMNOPQRSQSTeUVWXYZ')
-            line_item_quantity = random.randint(1,10)
-            line_item_per_item = random.choice(PerItem)
-            line_item_price_per_item = (random.randint(100, 10000))/100
-            line_item_name = random.choice(Items)
-            line_item_total = line_item_quantity * line_item_price_per_item
-            
+        # self.line_items = []
+
+        for _ in range(count):
+            self.line_item_id = self.fake.bothify(text='??????-###',
+                                                  letters='ACDEFGHIJKLMN'
+                                                  'OPQRSQSTeUVWXYZ')
+            self.line_item_quantity = random.randint(1, 10)
+            self.line_item_per_item = random.choice(self.per_item)
+            self.line_item_price_per_item = (random.randint(100, 10000))/100
+            self.line_item_name = random.choice(self.items)
+            self.line_item_total = (self.line_item_quantity
+                                    * self.line_item_price_per_item)
+
             # Create a JSON string of the sample_line_item
-            sample_line_item = str({'Item ID':line_iten_id, 'Quantity':line_item_quantity,
-                'Per Item':line_item_per_item, 'Price per Item':line_item_price_per_item, 'Item':line_item_name,
-                'Total':line_item_total})
+            self.sample_line_item = str({'Item ID': self.line_item_id,
+                                         'Quantity': self.line_item_quantity,
+                                         'Per Item': self.line_item_per_item,
+                                         'Price per Item':
+                                         self.line_item_price_per_item,
+                                         'Item': self.line_item_name,
+                                         'Total': self.line_item_total})
 
-            line_items.append(sample_line_item)
+            self.line_items.append(self.sample_line_item)
 
-            logging.debug("Created line item entry: " + sample_line_item)
+            self.log.debug("Created line item entry: %s",
+                           self.sample_line_item)
 
-        return line_items
+        return self.line_items
 
+    def write_json_to_file(self, json_object):
+        """Writes data to a json file."""
+        self.log = create_logger("create_sample_data")
 
-    def write_json_to_file(_object):
-        if len(_object) < 1:
-            logging.warn("Do you WANT an index out of bounds " 
-                "error, cuz you're just asking for one.")
+        if len(json_object) < 1:
+            self.log.debug("Risk of EOB with no objects to write.")
             return
-        
-        for i in range(len(_object)):
-            jsonStr = dumps(_object[i].__dict__)
-            logging.debug("List item " + str(i) + ": " + jsonStr)
-            print(jsonStr)
+
+        for i in range(len(json_object)):
+            json_str = dumps(json_object[i].__dict__)
+            logging.debug("List item %s: %s", str(i), json_str)
+            print(json_str)
