@@ -24,7 +24,7 @@ This allows for the programtic maintenance of the file.
 """
 import os.path
 from json import dumps
-from .. app_logging import create_logger
+from einvoice.app_logging import create_logger
 
 
 class EInvoiceConfig:
@@ -45,7 +45,16 @@ class EInvoiceConfig:
     Returns:
     """
 
-    def write_json_to_file(_data, _fn):
+    def __init__(self):
+        self.defaults = {}
+        self.config_logger = create_logger("config_tool")
+        self.f_n = "./config_tool.json"
+        self._defaults = ""
+        self.json_str = ""
+        if not os.path.exists(self.f_n):
+            self.config_tool = self.load_defaults(self.defaults, self.f_n)
+
+    def write_json_to_file(self, _data, _fn):
         """Writes the e-Inovice to a JSON file."""
         json_str = dumps(_data.__dict__)
 
@@ -55,13 +64,7 @@ class EInvoiceConfig:
         except ValueError as err:
             print("Error writing to file", err)
 
-    def __init__(self):
-        self.defaults = {}
-        self.config_logger = create_logger("config_tool")
-        self.f_n = "./config_tool.json"
-        if not os.path.exists(self.f_n):
-            self.config_tool = self.load_defaults(self.defaults, self.f_n)
-
+    @classmethod
     def load_defaults(cls, _defaults, _filename):
         """A classmethod to define library of default values.
 
@@ -82,11 +85,12 @@ class EInvoiceConfig:
             _defaults: obj
             Dictionary {} object containing default values.
         """
-        _defaults["default_log_level"] = "INFO"
-        _defaults["default_party_id_spec"] = \
+        cls._defaults["default_log_level"] = "INFO"
+        cls._defaults["default_party_id_spec"] = \
             "urn:oasis:names:tc:ebcore:partyid-type"
-        _defaults["def_prty_schma_typ"] = "iso6523"
-        _defaults["default_party_id"] = "0123456789"
-        config_logger.debug(_defaults)
-        write_json_to_file(_defaults, _filename)
-        return _defaults
+        cls._defaults["def_prty_schma_typ"] = "iso6523"
+        cls._defaults["default_party_id"] = "0123456789"
+        cls._filename = "./einvoice.config"
+        cls.config_logger.debug(cls._defaults)
+        cls.write_json_to_file(cls._defaults, cls._filename)
+        return cls._defaults
