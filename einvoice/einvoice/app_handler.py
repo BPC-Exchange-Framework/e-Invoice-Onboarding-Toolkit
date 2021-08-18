@@ -18,7 +18,7 @@ from einvoice.app_logging import create_logger
 from einvoice.urn import Urn
 
 
-class UrnHandler:
+class UrnHandler:  # pytest disable=R0902
     """Constructs a base URN for the SML query and prepares the hashes.
 
     The base URN to be constructed as a string, and then hashed.
@@ -75,33 +75,50 @@ class UrnHandler:
     Raises:
 
     """
-    log = create_logger("app_handler")
-    specification = None
-    schema = None
-    party_id = None
-    urn = None
-    final_urn = None
-    pre_sha256_encoded_data = None
-    urn_sha256_hashed = None
-    urn_readable_sha256_hash = None
-    urn_sha256_byte_obj = None
-    urn_b32_byte_obj = None
-    urn_b32_hash_decoded = None
-    urn_values = None
-    urn_formatter = None
-    urn_sha256_applied = None
-    urn_b32_applied = None
-    json_str = None
+    # log = create_logger("app_handler")
+    # specification = None
+    # schema = None
+    # party_id = None
+    # urn = None
+    # final_urn = None
+    # pre_sha256_encoded_data = None
+    # urn_sha256_hashed = None
+    # urn_readable_sha256_hash = None
+    # urn_sha256_byte_obj = None
+    # urn_b32_byte_obj = None
+    # urn_b32_hash_decoded = None
+    # urn_values = None
+    # urn_formatter = None
+    # urn_sha256_applied = None
+    # urn_b32_applied = None
+    # json_str = None
 
     def __init__(self):
-        return None
+        self.log = create_logger("app_handler")
+        self.specification = None
+        self.schema = None
+        self.party_id = None
+        self.urn = None
+        self.final_urn = None
+        self.pre_sha256_encoded_data = None
+        self.urn_sha256_hashed = None
+        self.urn_readable_sha256_hash = None
+        self.urn_sha256_byte_obj = None
+        self.urn_b32_byte_obj = None
+        self.urn_b32_hash_decoded = None
+        self.urn_values = None
+        self.urn_formatter = None
+        self.urn_sha256_applied = None
+        self.urn_b32_applied = None
+        self.json_str = None
 
     def create_urn_lookup(self, party_id):
         """Constructs the full URN for lookup"""
+        self.log.debug("Began create_urn_lookup with party_id=%s", party_id)
         self.specification = "urn:oasis:names:tc:ebcore:partyid-type"
         self.schema = "iso6523"
         self.urn = Urn(self.specification, self.schema, party_id)
-        self.final_urn = self.urn.party_urn()
+        self.final_urn = self.urn.urn()
         self.log.debug("Created urn: %s", self.final_urn)
         return self.final_urn
 
@@ -137,10 +154,10 @@ class UrnHandler:
         with open(filename, "w") as my_file:
             my_file.write(self.json_str)
 
-    def meatgrinder(self, party_id):
+    def urn_handler(self, party_id):
         """Find the values of all steps necessary to prepare the urn lookup."""
         # Create a dictionary to hold the accumlated data points.
-        self.urn_values = {  # pylint disable=W0201
+        self.urn_values = {
             "Party ID Specification": self.specification,
             "Party ID schema": self.schema,
             "Party ID": party_id,

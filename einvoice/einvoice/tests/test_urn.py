@@ -25,13 +25,13 @@ def test_urn():
     log.debug("Begin testing urn creation.")
     another_urn = create_urn()
     assert (
-        another_urn.party_id_specification
+        another_urn.specification
         == "urn:oasis:names:tc:ebcore:partyid-type"
     )
-    assert another_urn.party_id_schema_type == "iso6523"
+    assert another_urn.schema == "iso6523"
     assert another_urn.party_id == "0123456789"
     assert (
-        another_urn.party_urn()
+        another_urn.urn()
         == "urn:oasis:names:tc:ebcore:partyid-type:iso6523::0123456789"
     )
     log.debug("Completed testing urn creation.")

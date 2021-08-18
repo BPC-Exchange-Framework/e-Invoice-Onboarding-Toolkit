@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# File: test_ei_handler.py
+# File: test_app_handler.py
 # About: e-Invoice testing suite; app_handler.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-27 (July 27th, 2021)
@@ -10,14 +10,11 @@
 """
 from uuid import uuid4
 from einvoice.app_logging import create_logger
-from einvoice.app_handler import CreateUrn
-
-# Creat a logger to use for our own purposes.
-log = create_logger("test_app_handler")
+from einvoice.app_handler import UrnHandler
 
 
 # Test the logging fuctionality using built-in Pytest "caplog"
-def test_baz(caplog):
+def test_log_insert(caplog):
     """This is a pytest to validate loggig is writing properly to a log."""
     log = create_logger("Pytest_test_logger_1")
     log_test_uuid = str(uuid4())
@@ -28,6 +25,7 @@ def test_baz(caplog):
     if log_test_uuid in caplog.text:
         log.debug("Found uuid %s in log", log_test_uuid)
 
+
 # Another quick test of the log functionality as a baseline - has handlers.
 def test_logger():
     """This is a pytest to validate the log handlers are being created."""
@@ -35,165 +33,207 @@ def test_logger():
     assert log.hasHandlers()
     if log.hasHandlers():
         log.debug("Logger has handlers.")
-        
 
 
-# Test core dataclass structure, creation and construction of urn
-def test_create_urn_lookup():
-    """Default test case - create urn lookup"""
-    _test_case_id="Create Urn Lookup",
-    logger_name = ("Test Case ID: Default Test Case")
+# Three tests for each party ID
+# create urn
+# create sha256 hash
+# create b32 hash
+def test_create_urn_lookup_1():
+    """Test case #1 create_urn_lookup"""
+    logger_name = ("Test case #1 create_urn_lookup")
     log = create_logger(logger_name)
-    log.debug("Starting test cases.")
-    _test_case_party_id="0123456789",
-    _test_urn = CreateUrn()
-    _test_value = _test_urn.create_urn_lookup(_test_case_party_id)
-
+    log.debug("||Begin test case.")
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
+        "iso6523::0123456789"
+    test_case_party_id = "0123456789"
+    test_urn = UrnHandler()
+    test_value = test_urn.create_urn_lookup(test_case_party_id)
+    log.debug("||Value received from app_handler: %s||", test_value)
     assert (
-        _test_value.party_urn() == "urn:oasis:names:tc:ebcore:partyid-"
-        "type:iso6523::0123456789"
+        test_value == test_case_urn
     )
-
-    # assert value_final_urn == smlurn.final_urn
-    # applied_shaw256_hash = apply_shaw256_hash(smlurn).urn_shaw256_hash
-    # log.debug("Shaw256 hash value is %s", applied_shaw256_hash)
-    # assert (
-    #     applied_shaw256_hash
-    #     == "f0b5ca560fbc4b8b1208616ec9530cd8429ab90aa598c40e14ce81ace70850f0"
-    # )
-    # applied_base32_hash = apply_base32_hash(smlurn)
-    # assert (
-    #     applied_base32_hash.urn_base32_hash
-    #     == "MYYGENLDME2TMMDGMJRTIYRYMIYTEMBYGYYTMZLDHE2TGMDDMQ4DIMRZ"
-    #     "MFRDSMDBME2TSODDGQYGKMJUMNSTQMLBMNSTOMBYGUYGMMA="
-    # )
+    log.debug("||End test cases.||")
 
 
-# def test_smlurn_1(
-#     _test_case_id="1",
-#     _test_case_id_spec="urn:oasis:names:tc:ebcore:partyid-type",
-#     _test_case_party_schema_type="iso6523",
-#     _test_case_party_id="EAN-7638725972413",
-# ):
-#     """Test case #1"""
-#     log_msg = ("Test case for party id {}", _test_case_party_id)
-#     log.debug(log_msg)
-#     smlurn = create_sml_lookup(
-#         _test_case_id_spec, _test_case_party_schema_type, _test_case_party_id
-#     )
-#     assert smlurn.party_id_specification == "urn:oasis:names:tc:"\
-#         "ebcore:partyid-type"
-#     assert smlurn.party_id_schema_type == "iso6523"
-#     assert smlurn.party_id == "EAN-7638725972413"
-#     value_final_urn = (
-#         smlurn.party_id_specification
-#         + ":"
-#         + smlurn.party_id_schema_type
-#         + "::"
-#         + smlurn.party_id
-#     )
-
-#     assert (
-#         smlurn.final_urn
-#         == "urn:oasis:names:tc:ebcore:partyid-type:iso6523::EAN-7638725972413"
-#     )
-#     assert value_final_urn == smlurn.final_urn
-#     applied_shaw256_hash = apply_shaw256_hash(smlurn).urn_shaw256_hash
-#     log_msg = "Shaw256 hash value is %s" % applied_shaw256_hash
-#     log.debug(log_msg)
-#     assert (
-#         applied_shaw256_hash
-#         == "93bb91efa204b16933652ece6897ebf265cd10f1533d24c127d5dc812e9d9de0"
-#     )
-#     applied_base32_hash = apply_base32_hash(smlurn)
-#     assert (
-#         applied_base32_hash.urn_base32_hash
-#         == "HEZWEYRZGFSWMYJSGA2GEMJWHEZTGNRVGJSWGZJWHA4TOZLCM"
-#         "YZDMNLDMQYTAZRRGUZTGZBSGRRTCMRXMQ2WIYZYGEZGKOLEHFSGKMA="
-#     )
+def test_apply_sha256_hash_1():
+    """Test case #1 apply_sha256_hash"""
+    logger_name = ("Test case #1 apply_sha256_hash")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
+        "iso6523::0123456789"
+    test_case_sha256_hash = "f0b5ca560fbc4b8b1208616ec95"\
+        "30cd8429ab90aa598c40e14ce81ace70850f0"
+    test_urn = UrnHandler()
+    test_value = test_urn.apply_sha256_hash(test_case_urn)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert test_value == test_case_sha256_hash
+    log.debug("||End test cases.||")
 
 
-# def test_smlurn_2(
-#     _test_case_id="2",
-#     _test_case_id_spec="urn:oasis:names:tc:ebcore:partyid-type",
-#     _test_case_party_schema_type="iso6523",
-#     _test_case_party_id="bpc-2343030383",
-# ):
-#     """Test case #2"""
-#     log_msg = ("Test case for party id {}", _test_case_party_id)
-#     log.debug(log_msg)
-#     smlurn = create_sml_lookup(
-#         _test_case_id_spec, _test_case_party_schema_type, _test_case_party_id
-#     )
-#     assert smlurn.party_id_specification == "urn:oasis:names:tc:ebcore:"\
-#         "partyid-type"
-#     assert smlurn.party_id_schema_type == "iso6523"
-#     assert smlurn.party_id == "bpc-2343030383"
-#     value_final_urn = (
-#         smlurn.party_id_specification
-#         + ":"
-#         + smlurn.party_id_schema_type
-#         + "::"
-#         + smlurn.party_id
-#     )
-#     assert (
-#         smlurn.final_urn
-#         == "urn:oasis:names:tc:ebcore:partyid-type:iso6523::bpc-2343030383"
-#     )
-#     assert value_final_urn == smlurn.final_urn
-#     applied_shaw256_hash = apply_shaw256_hash(smlurn).urn_shaw256_hash
-#     log_msg = ("Shaw256 hash value is {}", applied_shaw256_hash)
-#     log.debug(log_msg)
-#     assert (
-#         applied_shaw256_hash
-#         == "ae9520550626abdb6a3d8812bc8cc4925524be6f2614b0cf0b9f8d2855e4179f"
-#     )
-#     applied_base32_hash = apply_base32_hash(smlurn)
-#     assert (
-#         applied_base32_hash.urn_base32_hash
-#         == "MFSTSNJSGA2TKMBWGI3GCYTEMI3GCM3EHA4DCMTCMM4GGYZUHEZD"
-#         "KNJSGRRGKNTGGI3DCNDCGBRWMMDCHFTDQZBSHA2TKZJUGE3TSZQ="
-#     )
+def test_apply_b32_hash_1():
+    """Test case #1 apply_b32_hash"""
+    logger_name = ("Test case #1 apply_b32_hash")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_sha256_hash = "f0b5ca560fbc4b8b1208616ec95"\
+        "30cd8429ab90aa598c40e14ce81ace70850f0"
+    test_case_b32_hash = "MYYGENLDME2TMMDGMJRTIYRYMIYTEMBYGYYTMZ"\
+        "LDHE2TGMDDMQ4DIMRZMFRDSMDBME2TSO"\
+        "DDGQYGKMJUMNSTQMLBMNSTOMBYGUYGMMA="
+    test_urn = UrnHandler()
+    test_value = test_urn.apply_b32_hash(test_case_sha256_hash)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert test_value == test_case_b32_hash
+    log.debug("||End test cases.||")
 
 
-# def test_smlurn_(
-#     _test_case_id="3",
-#     _test_case_id_spec="urn:oasis:names:tc:ebcore:partyid-type",
-#     _test_case_party_schema_type="iso6523",
-#     _test_case_party_id="4035811991021",
-# ):
-#     """Test case #3"""
-#     log_msg = ("Test case for party id {}", _test_case_party_id)
-#     log.debug(log_msg)
-#     smlurn = create_sml_lookup(
-#         _test_case_id_spec, _test_case_party_schema_type, _test_case_party_id
-#     )
-#     assert smlurn.party_id_specification == "urn:oasis:names:tc:ebcore:"\
-#         "partyid-type"
-#     assert smlurn.party_id_schema_type == "iso6523"
-#     assert smlurn.party_id == "4035811991021"
-#     value_final_urn = (
-#         smlurn.party_id_specification
-#         + ":"
-#         + smlurn.party_id_schema_type
-#         + "::"
-#         + smlurn.party_id
-#     )
-#     assert (
-#         smlurn.final_urn
-#         == "urn:oasis:names:tc:ebcore:partyid-type:iso6523::4035811991021"
-#     )
-#     assert value_final_urn == smlurn.final_urn
-#     applied_shaw256_hash = apply_shaw256_hash(smlurn).urn_shaw256_hash
-#     log_msg = ("Shaw256 hash value is {}", applied_shaw256_hash)
-#     log.debug(log_msg)
-#     assert (
-#         applied_shaw256_hash
-#         == "50e3e2082ac4cc5feee392d27ff8698ce45c49b13741afd5b79306521c81dc84"
-#     )
-#     applied_base32_hash = apply_base32_hash(smlurn)
-#     assert (
-#         applied_base32_hash.urn_base32_hash
-#         == "GUYGKM3FGIYDQMTBMM2GGYZVMZSWKZJTHEZGIMRXMZTDQ"
-#         "NRZHBRWKNBVMM2DSYRRGM3TIMLBMZSDKYRXHEZTANRVGIYWGOBRMRRTQNA="
-#     )
+def test_create_urn_lookup_2():
+    """Test case #2 create_urn_lookup"""
+    logger_name = ("Test case #2 create_urn_lookup")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
+        "iso6523::EAN-7638725972413"
+    test_case_party_id = "EAN-7638725972413"
+    test_urn = UrnHandler()
+    test_value = test_urn.create_urn_lookup(test_case_party_id)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert (
+        test_value == test_case_urn
+    )
+    log.debug("||End test cases.||")
+
+
+def test_apply_sha256_hash_2():
+    """Test case #2 apply_sha256_hash"""
+    logger_name = ("Test case #2 apply_sha256_hash")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
+        "iso6523::EAN-7638725972413"
+    test_case_sha256_hash = "93bb91efa204b16933652ece6897ebf"\
+        "265cd10f1533d24c127d5dc812e9d9de0"
+    test_urn = UrnHandler()
+    test_value = test_urn.apply_sha256_hash(test_case_urn)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert test_value == test_case_sha256_hash
+    log.debug("||End test cases.||")
+
+
+def test_apply_b32_hash_2():
+    """Test case #2 apply_b32_hash"""
+    logger_name = ("Test case #2 apply_b32_hash")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_sha256_hash = "93bb91efa204b16933652ece6897ebf"\
+        "265cd10f1533d24c127d5dc812e9d9de0"
+    test_case_b32_hash = "HEZWEYRZGFSWMYJSGA2GEMJWHEZT"\
+        "GNRVGJSWGZJWHA4TOZLCMYZDMNLDMQYTAZRRGUZTGZB"\
+        "SGRRTCMRXMQ2WIYZYGEZGKOLEHFSGKMA="
+    test_urn = UrnHandler()
+    test_value = test_urn.apply_b32_hash(test_case_sha256_hash)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert test_value == test_case_b32_hash
+    log.debug("||End test cases.||")
+
+
+def test_create_urn_lookup_3():
+    """Test case #3 create_urn_lookup"""
+    logger_name = ("Test case #3 create_urn_lookup")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
+        "iso6523::bpc-2343030383"
+    test_case_party_id = "bpc-2343030383"
+    test_urn = UrnHandler()
+    test_value = test_urn.create_urn_lookup(test_case_party_id)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert (
+        test_value == test_case_urn
+    )
+    log.debug("||End test cases.||")
+
+
+def test_apply_sha256_hash_3():
+    """Test case #3 apply_sha256_hash"""
+    logger_name = ("Test case #3 apply_sha256_hash")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
+        "iso6523::bpc-2343030383"
+    test_case_sha256_hash = "ae9520550626abdb6a3d8812bc8cc492"\
+        "5524be6f2614b0cf0b9f8d2855e4179f"
+    test_urn = UrnHandler()
+    test_value = test_urn.apply_sha256_hash(test_case_urn)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert test_value == test_case_sha256_hash
+    log.debug("||End test cases.||")
+
+
+def test_apply_b32_hash_3():
+    """Test case #3 apply_b32_hash"""
+    logger_name = ("Test case #3 apply_b32_hash")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_sha256_hash = "ae9520550626abdb6a3d8812bc8cc492"\
+        "5524be6f2614b0cf0b9f8d2855e4179f"
+    test_case_b32_hash = "MFSTSNJSGA2TKMBWGI3GCYTEMI3GCM3EHA4DCMTC"\
+        "MM4GGYZUHEZDKNJSGRRGKNTGGI3DCNDCGBRWMMD"\
+        "CHFTDQZBSHA2TKZJUGE3TSZQ="
+    test_urn = UrnHandler()
+    test_value = test_urn.apply_b32_hash(test_case_sha256_hash)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert test_value == test_case_b32_hash
+    log.debug("||End test cases.||")
+
+
+def test_create_urn_lookup_4():
+    """Test case #4 create_urn_lookup"""
+    logger_name = ("Test case #4 create_urn_lookup")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
+        "iso6523::4035811991021"
+    test_case_party_id = "4035811991021"
+    test_urn = UrnHandler()
+    test_value = test_urn.create_urn_lookup(test_case_party_id)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert (
+        test_value == test_case_urn
+    )
+    log.debug("||End test cases.||")
+
+
+def test_apply_sha256_hash_4():
+    """Test case #4 apply_sha256_hash"""
+    logger_name = ("Test case #1 apply_sha256_hash")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
+        "iso6523::4035811991021"
+    test_case_sha256_hash = "50e3e2082ac4cc5feee392d27ff8698"\
+        "ce45c49b13741afd5b79306521c81dc84"
+    test_urn = UrnHandler()
+    test_value = test_urn.apply_sha256_hash(test_case_urn)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert test_value == test_case_sha256_hash
+    log.debug("||End test cases.||")
+
+
+def test_apply_b32_hash_4():
+    """Test case #4 apply_b32_hash"""
+    logger_name = ("Test case #1 apply_b32_hash")
+    log = create_logger(logger_name)
+    log.debug("||Begin test case.")
+    test_case_sha256_hash = "50e3e2082ac4cc5feee392d27ff8698"\
+        "ce45c49b13741afd5b79306521c81dc84"
+    test_case_b32_hash = "GUYGKM3FGIYDQMTBMM2GGYZVMZSWKZJTHEZG"\
+        "IMRXMZTDQNRZHBRWKNBVMM2DSYRRGM3TIM"\
+        "LBMZSDKYRXHEZTANRVGIYWGOBRMRRTQNA="
+    test_urn = UrnHandler()
+    test_value = test_urn.apply_b32_hash(test_case_sha256_hash)
+    log.debug("||Value received from app_handler: %s||", test_value)
+    assert test_value == test_case_b32_hash
+    log.debug("||End test cases.||")
