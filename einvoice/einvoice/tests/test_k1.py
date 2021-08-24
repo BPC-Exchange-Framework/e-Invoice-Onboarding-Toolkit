@@ -4,7 +4,7 @@ Sandbox of test cases.
 # test_k1.py
 # from einvoice.einvoice.app_handler import UrnHandler
 from einvoice.urn import Urn
-from einvoice.app_handler import UrnHandler
+from einvoice.urn_hasher import Hasher
 from einvoice.app_logging import create_logger
 
 
