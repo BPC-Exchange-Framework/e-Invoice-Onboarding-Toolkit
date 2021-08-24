@@ -32,15 +32,15 @@ def create_logger(name):
 
     # It's okay to run INFO in Dev.  Turn it down to DEBUG for QA
     # and WARN for Prod unless troubleshooting an issue.
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(logging.INFO)
 
     # create file handler which writes to a file.
     file_logger = logging.FileHandler("./einvoice_output.log")
-    file_logger.setLevel(logging.DEBUG)
+    file_logger.setLevel(logging.INFO)
 
     # create console handler with a higher log level
     console_logger = logging.StreamHandler()
-    console_logger.setLevel(logging.DEBUG)
+    console_logger.setLevel(logging.INFO)
 
     # Create a custom formatter and add it to the handlers
     _format = "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
