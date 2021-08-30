@@ -20,7 +20,7 @@ There will be gaps at first.  The hope is that we will pick up speed as we go, a
 ### Next...
 For next steps, take a look at the:  
 [Dev Roadmap](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/roadmap.md)  
-[Creating A Dev Environment]((https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/roadmap.md)    
+[Creating A Dev Environment](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/roadmap.md)    
 [Pull Some Code](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/pull_code.md)   
 [Create a DNS server](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/dns_server.md)   
 [Register a URN](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/register_urn.md)   
