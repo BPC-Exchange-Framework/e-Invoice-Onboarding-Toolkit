@@ -51,9 +51,10 @@ def ash_hash(urn):
 
 def test_hasher_1():
     """Test case #1 hasher"""
+
     test_case_spec = "urn:oasis:names:tc:ebcore:partyid-"\
         "type:unregistered:myscheme"
-    test_case_schema = "BPC01"
+    test_case_schema = "BPC01:"
     test_case_party_id = "bpcBusid01"
     test_hasher = Hasher()
     test_value = test_hasher.hasher(test_case_spec,
@@ -97,7 +98,7 @@ def test_hasher_1_case_3():
 def test_hasher_2():
     """Test case #2 hasher"""
     test_case_spec = "urn:oasis:names:tc:ebcore:partyid-type"
-    test_case_schema = "iso6523"
+    test_case_schema = "iso6523:"
     test_case_party_id = "0123456789"
     test_hasher = Hasher()
     test_value = test_hasher.hasher(test_case_spec,
@@ -139,9 +140,9 @@ def test_hasher_2_case_3():
 
 
 def test_hasher_3():
-    """Test case #1 hasher"""
+    """Test case #3 hasher"""
     test_case_spec = "urn:oasis:names:tc:ebcore:partyid-type"
-    test_case_schema = "iso6523"
+    test_case_schema = "iso6523:0088:"
     test_case_party_id = "EAN-7638725972413"
     test_hasher = Hasher()
     test_value = test_hasher.hasher(test_case_spec,
@@ -152,8 +153,8 @@ def test_hasher_3():
 
 def test_hasher_3_case_1():
     case_dict = test_hasher_3()
-    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:i"\
-        "so6523::ean-7638725972413"
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:iso6523"\
+        ":0088::ean-7638725972413"
     assert (
         case_dict.get('final_urn') == test_case_urn
     )
@@ -161,7 +162,7 @@ def test_hasher_3_case_1():
 
 def test_hasher_3_case_2():
     case_dict = test_hasher_3()
-    test_case_hash = "i55t5ar6sh7j7t2lwcnrazu4goovnpkfxnlzqyvcmi5np2nhrl3q"
+    test_case_hash = "bc2ntkxz42amx3a5rmjbsaesp5ucuc3iciposkd3qwnj6b4wjh2q"
     assert (
         case_dict.get('urn_hash') == test_case_hash
     )
@@ -183,9 +184,9 @@ def test_hasher_3_case_3():
 
 
 def test_hasher_4():
-    """Test case #1 hasher"""
+    """Test case #4 hasher"""
     test_case_spec = "urn:oasis:names:tc:ebcore:partyid-type"
-    test_case_schema = "iso6523"
+    test_case_schema = "iso6523:0088:"
     test_case_party_id = "bpc-2343030383"
     test_hasher = Hasher()
     test_value = test_hasher.hasher(test_case_spec,
@@ -196,8 +197,8 @@ def test_hasher_4():
 
 def test_hasher_4_case_1():
     case_dict = test_hasher_4()
-    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
-        "iso6523::bpc-2343030383"
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:iso6523:"\
+        "0088::bpc-2343030383"
     assert (
         case_dict.get('final_urn') == test_case_urn
     )
@@ -205,7 +206,7 @@ def test_hasher_4_case_1():
 
 def test_hasher_4_case_2():
     case_dict = test_hasher_4()
-    test_case_hash = "v2ksavige2v5w2r5rajlzdgesjksjptpeyklbtylt6gsqvpec6pq"
+    test_case_hash = "rixkdb2u5xxf7vtieezqvakx5r2bc3iugzeqd35ibeddloeapf6a"
     assert (
         case_dict.get('urn_hash') == test_case_hash
     )
@@ -229,7 +230,7 @@ def test_hasher_4_case_3():
 def test_hasher_5():
     """Test case #5 hasher"""
     test_case_spec = "urn:oasis:names:tc:ebcore:partyid-type"
-    test_case_schema = "iso6523"
+    test_case_schema = "iso6523:0088"
     test_case_party_id = "4035811991021"
     test_hasher = Hasher()
     test_value = test_hasher.hasher(test_case_spec,
@@ -240,8 +241,7 @@ def test_hasher_5():
 
 def test_hasher_5_case_1():
     case_dict = test_hasher_5()
-    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
-        "iso6523::4035811991021"
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088:4035811991021"
     assert (
         case_dict.get('final_urn') == test_case_urn
     )
@@ -249,7 +249,7 @@ def test_hasher_5_case_1():
 
 def test_hasher_5_case_2():
     case_dict = test_hasher_5()
-    test_case_hash = "kdr6ecbkytgf73xdsljh76djrtsfysnrg5a27vnxsmdfeheb3sca"
+    test_case_hash = "i3qyb36ctayrfgthbycqzdtojfhgazjeglfooe7727egvdwrk5qq"
     assert (
         case_dict.get('urn_hash') == test_case_hash
     )
