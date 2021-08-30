@@ -14,13 +14,13 @@ The unofficial goal (as a developer) of the e-Invoice Tool-kit is to demystify (
 ### Caveats
 This is a work in progress.  
 The 4-Corners Model for e-Invoice processing is pretty complex.  
-We have been balancing taking bites that we can chew verus trying to get the whole thing, or even just portions of it, in one go.  
+We have been balancing taking bites that we can chew versus trying to get the whole thing, or even just portions of it, in one go.  
 There will be gaps at first.  The hope is that we will pick up speed as we go, and the community will give feedback in terms of priorty and directon for areas of focus.   
 
 ### Next...
 For next steps, take a look at the:  
 [Dev Roadmap](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/roadmap.md)  
-[Creating A Dev Environment](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/roadmap.md)    
+[Creating A Dev Environment](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/dev_env.md)    
 [Pull Some Code](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/pull_code.md)   
 [Create a DNS server](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/dns_server.md)   
 [Register a URN](https://github.com/BPC-OpenSourceTools/Discovery-Tools/blob/main/einvoice/docs/register_urn.md)   
