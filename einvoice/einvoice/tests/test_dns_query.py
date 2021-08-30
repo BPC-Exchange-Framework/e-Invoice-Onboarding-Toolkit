@@ -2,8 +2,9 @@
 Test cases for dns_query
 
 """
-# pylint: disable=C0415, E0401
-# import outside toplevel (os), unable to import 'dovenv'
+# pylint: disable=C0415, E0401, W1514
+# import outside toplevel (os), unable to import 'dovenv',
+# using open without explictly specifying an encoding
 import json
 import sys
 from einvoice.dns_query import (
@@ -19,7 +20,7 @@ def test_get_registry_entry_fqdn():
         "e_data/unaptr_response.json"
 
     # Test retrieval from a valid unaptr response
-    with open(sample_data_path, encoding=str) as fname:
+    with open(sample_data_path) as fname:
         sample_unaptr_response = json.load(fname)
         expected_ref_value = "jfw63g2zdjoljk4y2h5tzed6mqeqcncjbxk7"\
             "ekbn6pjphjfkejfq.aisaac.us"
