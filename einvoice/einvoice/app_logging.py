@@ -27,7 +27,7 @@ def create_logger(name):
     This funtion creates a consistant format and location for
     all application log files to write to.
     """
-    print("Create logger with name %s" % name)
+    # print("Create logger with name %s" % name)
     logger = logging.getLogger(name)
 
     # It's okay to run INFO in Dev.  Turn it down to DEBUG for QA
