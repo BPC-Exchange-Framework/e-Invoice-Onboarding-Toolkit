@@ -1,3 +1,0 @@
-""08/29/2021 11:01:51 PM" INFO Adding uuid to log for testing db8cf59a-4368-48c0-84bf-c1f73d65fc18"
-""08/29/2021 11:01:51 PM" INFO Found uuid db8cf59a-4368-48c0-84bf-c1f73d65fc18 in log"
-""08/29/2021 11:01:51 PM" INFO Logger has handlers."
