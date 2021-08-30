@@ -1,18 +1,28 @@
+"""
+Test cases for dns_query
+
+"""
+# pylint: disable=C0415, E0401
+# import outside toplevel (os), unable to import 'dovenv'
 import json
 import sys
-sys.path.append("../../einvoice")
 from einvoice.dns_query import (
     get_registry_entry_fqdn,
     configure_smp_body,
 )
+sys.path.append("../einvoice")
+
 
 def test_get_registry_entry_fqdn():
-    sample_data_path = "einvoice/einvoice/tests/sample_data/unaptr_response.json"
-    
+    """ Test registry entry fqdn"""
+    sample_data_path = "einvoice/einvoice/tests/sampl"\
+        "e_data/unaptr_response.json"
+
     # Test retrieval from a valid unaptr response
-    with open(sample_data_path) as f:
-        sample_unaptr_response = json.load(f)
-        expected_ref_value = "jfw63g2zdjoljk4y2h5tzed6mqeqcncjbxk7ekbn6pjphjfkejfq.aisaac.us"
+    with open(sample_data_path, encoding=str) as fname:
+        sample_unaptr_response = json.load(fname)
+        expected_ref_value = "jfw63g2zdjoljk4y2h5tzed6mqeqcncjbxk7"\
+            "ekbn6pjphjfkejfq.aisaac.us"
         actual_ref_value = get_registry_entry_fqdn(sample_unaptr_response)
         assert actual_ref_value == expected_ref_value
 
@@ -24,13 +34,15 @@ def test_get_registry_entry_fqdn():
     actual_ref_value = get_registry_entry_fqdn(invalid_unaptr_response)
     assert actual_ref_value == expected_ref_value
 
+
 def test_smp_config():
-    import os 
+    """ Test the SMP config"""
+    import os
     from os.path import join, dirname
     from dotenv import load_dotenv
     dotenv_path = join(dirname(__file__), '../.env')
     load_dotenv(dotenv_path)
-    
+
     party_id = os.getenv("PARTY_ID")
     party_id_schema = os.getenv("PARTY_ID_SCHEMA")
     smp_endpoint_url = os.getenv("SMP_ENDPOINT_URL")
@@ -44,7 +56,9 @@ def test_smp_config():
     assert SMP_CONFIG["post_url"] == post_url
     assert SMP_CONFIG["api_key"] == x_api_key
 
+
 def test_configure_smp_body():
+    """Test configuration of smp body"""
     smp_body = configure_smp_body()
     smp_body_dict = json.loads(smp_body)
     assert "party_id" in smp_body_dict.keys()
