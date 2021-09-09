@@ -84,8 +84,8 @@ class CreateCA:
 
         return self.certificate
 
-    @staticmethod
-    def write_private_key_to_file(private_key_file_name, private_key,
+    @classmethod
+    def write_private_key_to_file(cls, private_key_file_name, private_key,
                                   secret_password):
         """A method to write the private key to a file as PEM"""
         private_encoding = serialization.Encoding.PEM

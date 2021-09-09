@@ -140,3 +140,6 @@ Discovery-Tools.code-workspace
 workspace.code-workspace
 ~$einvoice_design.xlsx
 /tests/logs/pytest-logs.txt
+cert.log
+pytest-logs.txt
+einvoice/einvoice/conf/certauth/
