@@ -3,7 +3,7 @@
 # pylint: disable=R0902
 # disable: too many attributes
 # File: urn_hasher.py
-# About: create the urn hashes for a buy NPTR record look-up
+# About: create the urn hashes for a buy NAPTR record look-up
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
 """The classes and functions to create the urn hashes for a NAPTR look-up
@@ -26,7 +26,7 @@ class Hasher:
 
     Args:
 
-    Atributes:
+    Attributes:
         log: object
             A custom logging object.
         msg: str
@@ -42,7 +42,7 @@ class Hasher:
             when called.
         final_urn: str
             A version of the full urn which is not constructed on the
-            fly but staticly (essentially as a constant)
+            fly but static (essentially as a constant)
         final_urn_lower_case: str
             The full urn normalized to lower case.
         urn_lower_encoded: byte-like object.
@@ -111,9 +111,9 @@ class Hasher:
         self.msg = ("Created a hash for look-up: ", self.final_urn_b32)
         self.log.debug(self.msg)
         return {
-            "prty_id_spec": specification,
-            "prty_id_schma_type": schema,
-            "prty_id": party_id,
+            "party_id_spec": specification,
+            "party_id_schema_type": schema,
+            "party_id": party_id,
             "final_urn": self.final_urn_lower_case,
             "urn_hash": self.final_urn_b32,
         }

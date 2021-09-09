@@ -15,7 +15,7 @@ from einvoice.app_logging import create_logger
 from einvoice.urn_hasher import Hasher
 
 
-# Test the logging fuctionality using built-in Pytest "caplog"
+# Test the logging functionality using built-in Pytest "caplog"
 def test_log_insert(caplog):
     """This is a pytest to validate loggig is writing properly to a log."""
     log = create_logger("Pytest_test_logger_1")
@@ -241,7 +241,8 @@ def test_hasher_5():
 
 def test_hasher_5_case_1():
     case_dict = test_hasher_5()
-    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088:4035811991021"
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:"\
+        "iso6523:0088:4035811991021"
     assert (
         case_dict.get('final_urn') == test_case_urn
     )

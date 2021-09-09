@@ -13,7 +13,7 @@ This allows for the programtic maintenance of the file.
 
     Args: str
         ei_conf_fn: the file name containing the values to load.
-        This is filename can be dynamiclaly saved to support multiple versions.
+        This is filename can be saved to support multiple versions.
 
     Attributes:
 
@@ -55,7 +55,7 @@ class EInvoiceConfig:
             self.config_tool = self.load_defaults(self.defaults, self.f_n)
 
     def write_json_to_file(self, _data, _fn):
-        """Writes the e-Inovice to a JSON file."""
+        """Writes the e-Invoice to a JSON file."""
         json_str = dumps(_data.__dict__)
 
         try:
@@ -88,7 +88,7 @@ class EInvoiceConfig:
         cls._defaults["default_log_level"] = "INFO"
         cls._defaults["default_party_id_spec"] = \
             "urn:oasis:names:tc:ebcore:partyid-type"
-        cls._defaults["def_prty_schma_typ"] = "iso6523"
+        cls._defaults["def_party_schema_typ"] = "iso6523"
         cls._defaults["default_party_id"] = "0123456789"
         cls._filename = "./einvoice.config"
         cls.config_logger.debug(cls._defaults)

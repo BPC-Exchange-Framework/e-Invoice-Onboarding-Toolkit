@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# File: app_logging.py
+# File: cert_logging.py
 # About: Logging provider
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
@@ -35,7 +35,7 @@ def create_logger(name):
     logger.setLevel(logging.INFO)
 
     # create file handler which writes to a file.
-    file_logger = logging.FileHandler("./einvoice_output.log")
+    file_logger = logging.FileHandler("./cert.log")
     file_logger.setLevel(logging.INFO)
 
     # create console handler with a higher log level
