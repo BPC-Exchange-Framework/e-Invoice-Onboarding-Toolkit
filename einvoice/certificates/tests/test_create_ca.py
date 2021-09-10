@@ -59,7 +59,8 @@ def test_encryption():
     key = os.getenv("KEY_SIZE")
     text = os.getenv("RANDOM_TXT")
     bknd = os.getenv("BACKEND")
-    private_1 = rsa.generate_private_key(65537, 2048, bknd)
+    private_1 = rsa.generate_private_key(65537, 2048,
+                                         backend=default_backend())
     public_1 = private_1.public_key()
 
     create_ca = CreateCA()

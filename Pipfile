@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+atomicwrites = "==1.4.0"
+attrs = "==21.2.0"
+certifi = "==2021.5.30"
+colorama = "==0.4.4"
+iniconfig = "==1.1.1"
+pluggy = "==0.13.1"
+py = "==1.10.0"
+pyparsing = "==2.4.7"
+pytest = "==6.2.4"
+python-dotenv = "==0.18.0"
+toml = "==0.10.2"
+
+[dev-packages]
+pycodestyle = "*"
+bandit = "*"
+
+[requires]
+python_version = "3.9"
