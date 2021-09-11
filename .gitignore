@@ -139,4 +139,7 @@ data_handlery.ipynb
 Discovery-Tools.code-workspace
 workspace.code-workspace
 ~$einvoice_design.xlsx
-/tests/logs/pytest-logs.txt
+einvoice/certificates/tests/logs/pytest-logs.txt
+einvoice/einvoice/tests/logs/pytest-logs.txt
+pytest-logs.txt
+cert.log
