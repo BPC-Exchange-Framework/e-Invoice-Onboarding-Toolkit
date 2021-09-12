@@ -7,8 +7,8 @@
 #
 """The dataclass definition of a party's address.
 
-This is a model defined for the Address of aparty in
-an e-Inoice which can be used in a four
+This is a model defined for the Address of a party in
+an e-Invoice which can be used in a four
 corners distrubuted e-services implementation.
 
     Usage:
@@ -35,7 +35,7 @@ class Address:
         address_1: str
             Address line #1.  Default value is undefined.
         address_2: str
-            Adresss line #2. Default value is undefined.
+            Address line #2. Default value is undefined.
         city: str
             The city where the business address is located. Default
             value is undefined.

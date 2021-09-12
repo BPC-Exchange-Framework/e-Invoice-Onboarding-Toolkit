@@ -66,25 +66,25 @@ class SmlUrn:
 w
     Raises:
     """
-    log.debug("Created an instance of SMLURN")
+    log.debug("Created an instance of SmlUrn")
     party_id_specification: str = "urn:oasis:names:tc:ebcore:partyid-type"
-    log.debug("party_id_specification: %s" % party_id_specification)
+    log.debug("party_id_specification: %s", party_id_specification)
     party_id_schema_type: str = "iso6523"
-    log.debug("party_id_schema_type: %s" % party_id_schema_type)
+    log.debug("party_id_schema_type: %s", party_id_schema_type)
     party_id: str = "0123456789"
-    log.debug("party_id: %s" % party_id)
+    log.debug("party_id: %s", party_id)
 
     def party_urn(self) -> str:
         """Construct string for the party's URN"""
         return (self.party_id_specification + ":"
                 + self.party_id_schema_type
                 + "::" + self.party_id)
-    log.debug("party_urn: %s" % party_urn)
+    log.debug("party_urn: %s", party_urn)
 
     def final_urn(self) -> str:
-        """Return the urn as essetially a constant."""
-        return (str(self.party_urn))
-    log.debug("final_urn: %s" % final_urn)
+        """Return the urn as essentially a constant."""
+        return str(self.party_urn)
+    log.debug("final_urn: %s", final_urn)
 
     urn_shaw256_hash: str = ""
     urn_base32_hash: str = ""
@@ -101,8 +101,8 @@ def create_sml_lookup(_urn="", _schema="", _id=""):
         lookup_str.party_id = _id
     lookup_str.final_urn = lookup_str.party_urn()
     # lookup_str.final_urn = (_urn + ":" + _schema + "::" + _id)
-    log_msg = ("Constructed urn from dataclass definition %s"
-               % lookup_str.final_urn)
+    log_msg = ("Constructed urn from dataclass definition %s",
+               lookup_str.final_urn)
     log.debug(log_msg)
     return lookup_str
 
@@ -114,8 +114,8 @@ def apply_shaw256_hash(_smlurn_obj):
     encoded_data = _data.encode()
     hash256 = hashlib.sha256(encoded_data)
     _smlurn_obj.urn_shaw256_hash = hash256.hexdigest()
-    log_msg = ("Hex version of shaw256 hash  is  %s"
-               % _smlurn_obj.urn_shaw256_hash)
+    log_msg = ("Hex version of shaw256 hash  is  %s",
+               _smlurn_obj.urn_shaw256_hash)
     log.debug(log_msg)
     return _smlurn_obj
 
@@ -131,9 +131,9 @@ def apply_base32_hash(_smlurn_obj):
 
     # Convert it back to a string so it can be handled by json
     _smlurn_obj.urn_base32_hash = b_string_base32_hash.decode('utf-8')
-    log_msg = ("Base32 conversion of shaw256 is %s"
-               % _smlurn_obj.urn_base32_hash)
-    log.debug(log_msg)
+    # log_msg = ("Base32 conversion of shaw256 is %s".
+    #          str(_smlurn_obj.urn_base32_hash))
+    # log.debug(log_msg)
     return _smlurn_obj
 
 
@@ -141,7 +141,7 @@ def write_urn_to_json(_smlurn, _filename):
     """Write the urn values to a file"""
     log.debug("Writing the SMLURN object to file.")
     json_str = dumps(_smlurn.__dict__)
-    with open(_filename, "w") as my_file:
+    with open(_filename, "w", encoding=str) as my_file:
         my_file.write(json_str)
 
 
