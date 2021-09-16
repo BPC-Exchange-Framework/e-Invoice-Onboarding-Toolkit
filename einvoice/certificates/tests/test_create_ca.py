@@ -6,13 +6,11 @@ Test cases for create_ca
 """
 import os
 from os.path import join, dirname
-# import sys
-# sys.path.append("../certificates")
 from dotenv import load_dotenv
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.asymmetric import rsa
-from certificates.create_ca import CreateCA
-from certificates.cert_logging import create_logger
+from certs.create_ca import CreateCA
+from certs.cert_logging import create_logger
 
 
 def test_private_key():
@@ -22,7 +20,9 @@ def test_private_key():
     load_dotenv(dotenv_path)
     pub_exp = int(os.getenv("PUBLIC_EXPONENT"))
     key_size = int(os.getenv("KEY_SIZE"))
+    log.info("Exponent is type: %s", type(pub_exp))
     log.info("Exponent is: %s", str(pub_exp))
+    log.info("Key size is type: %s", type(key_size))
     log.info("Key size is: %s", str(key_size))
     create_ca_private = CreateCA()
     private_key = create_ca_private.create_private_key(pub_exp, key_size)
@@ -39,7 +39,9 @@ def test_public_key():
     load_dotenv(dotenv_path)
     pub_exp = int(os.getenv("PUBLIC_EXPONENT"))
     key_size = int(os.getenv("KEY_SIZE"))
+    log.info("Exponent is type: %s", type(pub_exp))
     log.info("Exponent is: %s", str(pub_exp))
+    log.info("Key size is type: %s", type(key_size))
     log.info("Key size is: %s", str(key_size))
     create_ca = CreateCA()
     private_key = create_ca.create_private_key(pub_exp, key_size)
@@ -68,6 +70,7 @@ def test_encryption():
     public_2 = create_ca.create_public_key(private_2)
     # assert private_1 == private_2
     # assert public_1 == public_2
+
 
 def test_create_ca():
     """Test creation of the ca cert"""

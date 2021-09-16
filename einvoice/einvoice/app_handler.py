@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 #
 # File: handler.py
-# About: Responsible for discovery compontents of 4-corners model.
+# About: Responsible for discovery components of 4-corners model.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
-"""The classes and functions responsoble for 4-corners participant discovery.
+"""The classes and functions responsible for 4-corners participant discovery.
 
-This module is responsible for retaining the inovice while work is done to
+This module is responsible for retaining the invoice while work is done to
 prepare the request do a UNAPTR DNS look-up to obtain the SMP URI, perform
 the UNAPTR DNS look-up and perform SMP query on the URI returned,
 
@@ -14,7 +14,7 @@ the UNAPTR DNS look-up and perform SMP query on the URI returned,
         _party_id: str
         The unique identifier of the party being searched for.
 
-        _prty_id_schema_type: str
+        _party_id_schema_type: str
         An alternate Party ID Schema if not using the default.Schema
 
         _einvoice: obj (einvoice)
@@ -108,7 +108,7 @@ def create_sml_lookup(_urn="", _schema="", _id=""):
 
 
 def apply_shaw256_hash(_smlurn_obj):
-    """Applys SHA256 hash to the lookup"""
+    """Apply SHA256 hash to the lookup"""
     log.debug("Applying shaw256 hash.")
     _data = _smlurn_obj.final_urn
     encoded_data = _data.encode()
@@ -150,7 +150,7 @@ if __name__ == "__main__":
     # an SMLURN dataclass object which is handed between the
     # function calls.
 
-    # Create an intial SMLURN oject using defaults.
+    # Create an initial SMLURN object using defaults.
     sml_lookup = create_sml_lookup("", "", "")
 
     # apply the shaw256 hash to the urn
@@ -159,7 +159,7 @@ if __name__ == "__main__":
     # apply the base32 hash to the shaw256 hash
     sml_lookup256toB32 = apply_base32_hash(sml_lookup256)
 
-    # give the variable a more friendy name
+    # give the variable a more friendly name
     final_sml_obj = sml_lookup256toB32
 
     # write the SMLURN dataclass object to a file

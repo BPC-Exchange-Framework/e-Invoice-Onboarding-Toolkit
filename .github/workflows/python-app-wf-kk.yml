@@ -1,4 +1,4 @@
-# This workflow runs on on every PR & MERGE to main
+pip# This workflow runs on on every PR & MERGE to main
 # on PR: Build, Test and CDK Synth
 # on MERGE: Build, Test and CDK Deploy
 name: Python App Build Health Check Workflow

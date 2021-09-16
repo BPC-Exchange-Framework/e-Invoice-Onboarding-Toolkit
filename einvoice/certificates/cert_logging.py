@@ -9,24 +9,32 @@
 A class to standardize log formatting across all application artifacts.
 
 Define common loggers and format to be used across the application.
-NOTE: These logs are localized and non-persistent.
-If used with a Docker container,
-they cease to exist when the container does.
 
     Usage: (not meant to be called directly)
     log = create_logger("app_logging")
-    log.debug("This message will be logged.")
+    log.info("This message will be logged.")
 
 """
 import logging
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
 
 
 def create_logger(name):
-    """This function creates a logger template for the einvoice package.
+    """This function creates a logger template for all packages.
 
     This function creates a consistant format and location for
     all application log files to write to.
     """
+
+    dotenv_path = join(dirname(__file__), './.env')
+    load_dotenv(dotenv_path)
+    log_file_out = str(os.getenv("LOG_FILE"))
+    # if !isinstance(type(log_file_out), str):
+    print(f'Location of log file: {log_file_out}')
+
+
     # print("Create logger with name %s" % name)
     logger = logging.getLogger(name)
 
@@ -35,7 +43,7 @@ def create_logger(name):
     logger.setLevel(logging.INFO)
 
     # create file handler which writes to a file.
-    file_logger = logging.FileHandler("./cert.log")
+    file_logger = logging.FileHandler(log_file_out)
     file_logger.setLevel(logging.INFO)
 
     # create console handler with a higher log level
