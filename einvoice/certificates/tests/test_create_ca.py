@@ -9,8 +9,8 @@ from os.path import join, dirname
 from dotenv import load_dotenv
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.asymmetric import rsa
-from certs.create_ca import CreateCA
-from certs.cert_logging import create_logger
+from certificates.create_ca import CreateCA
+from certificates.cert_logging import create_logger
 
 
 def test_private_key():
