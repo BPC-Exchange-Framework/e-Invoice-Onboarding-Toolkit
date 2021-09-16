@@ -8,7 +8,7 @@
 """The dataclass definition of a line items in an einvoice.
 
 This is a model defined for a line item of in
-an e-Inoice which can be used in a four
+an e-Invoice which can be used in a four
 corners distrubuted e-services implementation.
 
     Usage:
@@ -29,7 +29,7 @@ class LineItem:
         line_item_id: str
             A unique identifier for the LineItem.  Default value is undefined.
         line_item_per: str
-            Units of measure of the item., e.g., individiaul, bundle roll, etc.
+            Units of measure of the item., e.g., individual, bundle roll, etc.
             Default value is undefined.
         line_item_name: str
             Short name of items sold. Default value is undefined.

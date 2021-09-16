@@ -7,7 +7,7 @@
 #
 """The classes and functions which define a prototype e-Invoice.
 
-This is a model definition of an e-Inoice which can be used in a four
+This is a model definition of an e-Invoice which can be used in a four
 corners distrubuted e-services implementation.
 
     Usage:
@@ -20,7 +20,7 @@ from line_item import LineItem
 
 @dataclass
 class EInvoice:
-    """Represents an e-Inovice object.
+    """Represents an e-Invoice object.
 
     Args:
 
@@ -46,6 +46,6 @@ class EInvoice:
 
     einvoice_uuid: str
     einvoice_date: str
-    einvoice_sellers_address: Address
-    einvoice_buyers_addres: Address
-    einvoice_line_items: LineItem
+    einvoice_sellers_address: Address()
+    einvoice_buyers_addres: Address()
+    einvoice_line_items: LineItem()
