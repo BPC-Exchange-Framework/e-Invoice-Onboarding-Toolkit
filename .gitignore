@@ -114,6 +114,7 @@ venv.bak/
 jupyterlab/
 bin/
 lib/
+.env.example.dev
 
 # Spyder project settings
 .spyderproject
@@ -130,6 +131,12 @@ lib/
 .dmypy.json
 dmypy.json
 
+# pycache
+__pycache__
+.pyc
+.pyc
+.pyo
+
 # mnkellyk additional files
 fluent_python.ipynb
 Discovery-1-Requirements.ipynb
@@ -142,3 +149,9 @@ einvoice/certificates/tests/logs/pytest-logs.txt
 einvoice/einvoice/tests/logs/pytest-logs.txt
 pytest-logs.txt
 cert.log
+.env
+einvoice/certificates/.env
+
+# certificate work
+.pem
+.pub

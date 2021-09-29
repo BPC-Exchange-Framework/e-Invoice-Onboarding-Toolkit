@@ -11,16 +11,15 @@
 
 """
 import datetime
-import uuid
 from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.asymmetric import rsa
-from cryptography.hazmat.primitives import serialization, hashes
+from cryptography.hazmat.primitives import hashes
 from cryptography.x509.oid import NameOID
 
 
 class CreateCA:
-    """Class to crete a Certificate Authority"""
+    """Class to create a Certificate Authority"""
 
     def __init__(self):
         """Entry point for the app."""
@@ -71,7 +70,7 @@ class CreateCA:
         self.ca_cert = self.ca_cert.not_valid_after(
             datetime.datetime.today() + self.one_year)
 
-        self.ca_cert = self.ca_cert.serial_number(int(uuid.uuid4()))
+        self.ca_cert = self.ca_cert.serial_number(x509.random_serial_number())
         self.ca_cert = self.ca_cert.public_key(ca_public_key)
         self.ca_cert = self.ca_cert.add_extension(
             x509.BasicConstraints(ca=True, path_length=None), critical=True,
@@ -83,25 +82,3 @@ class CreateCA:
         print(isinstance(self.certificate, x509.Certificate))
 
         return self.certificate
-
-    @classmethod
-    def write_private_key_to_file(cls, private_key_file_name, private_key,
-                                  secret_password):
-        """A method to write the private key to a file as PEM"""
-        private_encoding = serialization.Encoding.PEM
-        private_output_format = serialization.PrivateFormat.TraditionalOpenSSL
-        encryption_algorithm = serialization.BestAvailableEncryption(
-            bytes(secret_password, "utf-8"))
-        with open(private_key_file_name, "wb") as file_name:
-            file_name.write(private_key.private_bytes(private_encoding,
-                                                      private_output_format,
-                                                      encryption_algorithm))
-
-    @staticmethod
-    def write_public_key_to_file(public_key_file_name, public_key):
-        """A method to write the public key to a file as SSH"""
-        public_encoding = serialization.Encoding.OpenSSH
-        public_output_format = serialization.PublicFormat.OpenSSH
-        with open(public_key_file_name, "wb") as file_name:
-            file_name.write(public_key.public_bytes(
-                public_encoding, public_output_format))

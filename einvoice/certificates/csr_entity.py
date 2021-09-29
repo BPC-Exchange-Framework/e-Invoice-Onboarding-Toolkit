@@ -15,6 +15,8 @@ from dataclasses import dataclass
 
 @dataclass
 class CertificateSigningRequest():
+    """A dataclass representing elements required for a certificate
+    signing """
 
     subject_name: str
     country_name: str
