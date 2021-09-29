@@ -1,6 +1,5 @@
 # pylint: disable=W0612, W0611
 # Unused variables, unused imports
-
 """
 Test cases for create_ca
 """
@@ -34,8 +33,6 @@ def create_private_key():
     return private_key
 
 
-
-
 def test_create_private_key():
     """Testing creation of a private key and writing to a file."""
     log = create_logger("test_create_private_key")
@@ -48,10 +45,7 @@ def test_create_private_key():
     log.info(private_key)
     writer = Serialize()
     writer.write_private_key_to_file(private_key_file_name, private_key,
-                                    private_key_file_password)
-
-
-
+                                     private_key_file_password)
 
 
 def create_public_key():
@@ -82,11 +76,10 @@ def test_create_public_key():
     dotenv_path = join(dirname(__file__), '../.env')
     load_dotenv(dotenv_path)
     public_key_file_name = str(os.getenv("PUBLIC_KEY_FILE_NAME"))
-    public_key=create_public_key()
+    public_key = create_public_key()
     log.info("Attempting to write public key to file. ")
     writer = Serialize()
     writer.write_public_key_to_file(public_key_file_name, public_key)
-
 
 
 # def test_encryption():
@@ -107,7 +100,6 @@ def test_create_public_key():
     # public_2 = create_ca.create_public_key(private_2)
     # assert private_1 == private_2
     # assert public_1 == public_2
-
 
 def test_create_ca():
     """Test creation of the ca cert"""

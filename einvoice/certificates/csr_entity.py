@@ -13,6 +13,7 @@ a csr.
 """
 from dataclasses import dataclass
 
+
 @dataclass
 class CertificateSigningRequest():
     """A dataclass representing elements required for a certificate
