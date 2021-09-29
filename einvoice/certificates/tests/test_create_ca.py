@@ -111,9 +111,9 @@ def test_create_ca():
     subject_org_name = str(os.getenv("SUBJECT_ORGANIZATION_NAME"))
     subject_org_unit_name = str(os.getenv("SUBJECT_ORGANIZATIONAL_UNIT_NAME"))
     issuer_common_name = str(os.getenv("ISSUER_COMMON_NAME"))
-    private_key_file_name = "CA_" + str(os.getenv("PRIVATE_KEY_FILE_NAME"))
+    private_key_file_name = "./certs/CA_private.pem"
     private_key_file_pwd = str(os.getenv("PRIVATE_KEY_SECRET_PASSWORD"))
-    public_key_file_name = "CA_" + str(os.getenv("PUBLIC_KEY_FILE_NAME"))
+    public_key_file_name = "./certs/CA_public.pub"
     pub_exp = int(os.getenv("PUBLIC_EXPONENT"))
     key_size = int(os.getenv("KEY_SIZE"))
     create_ca = CreateCA()
