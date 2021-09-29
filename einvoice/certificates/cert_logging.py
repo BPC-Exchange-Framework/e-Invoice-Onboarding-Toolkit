@@ -34,7 +34,6 @@ def create_logger(name):
     # if !isinstance(type(log_file_out), str):
     print(f'Location of log file: {log_file_out}')
 
-
     # print("Create logger with name %s" % name)
     logger = logging.getLogger(name)
 
