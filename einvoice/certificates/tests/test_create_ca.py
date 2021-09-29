@@ -1,5 +1,5 @@
-# # pylint: disable=W0612, W0611
-# # Unused variables, unused imports
+# pylint: disable=W0612, W0611
+# Unused variables, unused imports
 # """
 # Test cases for create_ca
 # """
@@ -87,19 +87,19 @@
 #     dotenv_path = join(dirname(__file__), '../.env')
 #     load_dotenv(dotenv_path)
 #     log = create_logger("test_create_ca")
-    # exp = os.getenv("PUBLIC_EXPONENT")
-    # key = os.getenv("KEY_SIZE")
-    # text = os.getenv("RANDOM_TXT")
-    # bknd = os.getenv("BACKEND")
-    # private_1 = rsa.generate_private_key(65537, 2048,
-    #  backend=default_backend())
-    # public_1 = private_1.public_key()
+#     exp = os.getenv("PUBLIC_EXPONENT")
+#     key = os.getenv("KEY_SIZE")
+#     text = os.getenv("RANDOM_TXT")
+#     bknd = os.getenv("BACKEND")
+#     private_1 = rsa.generate_private_key(65537, 2048,
+#     backend=default_backend())
+#     public_1 = private_1.public_key()
 
-    # create_ca = CreateCA()
-    # private_2 = create_ca.create_private_key(exp, key)
-    # public_2 = create_ca.create_public_key(private_2)
-    # assert private_1 == private_2
-    # assert public_1 == public_2
+#     create_ca = CreateCA()
+#     private_2 = create_ca.create_private_key(exp, key)
+#     public_2 = create_ca.create_public_key(private_2)
+#     assert private_1 == private_2
+#     assert public_1 == public_2
 
 # def test_create_ca():
 #     """Test creation of the ca cert"""
