@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
-# pylint: disable=R0902, R0913
-# Too many instance attributes, Too many arguments
+# pylint: disable=R0902, R0913, C0103
+# Too many instance attributes, Too many arguments, snake naming convention
 # File: serialization.py
 # About: File to handle serialization of certs.
 # Development: Kelly Kinney, Leo Rubiano
@@ -51,6 +51,14 @@ class Serialize:
         public_output_format = serialization.PublicFormat.SubjectPublicKeyInfo
         pem = public_key.public_bytes(public_encoding, public_output_format)
         with open(public_key_file_name, "wb") as file_name:
+            file_name.write(pem)
+
+    @staticmethod
+    def write_CA_to_file(CA_file_name, CA):
+        """A method to write the CA to file.  """
+        public_encoding = serialization.Encoding.PEM
+        pem = CA.public_bytes(public_encoding)
+        with open(CA_file_name, "wb") as file_name:
             file_name.write(pem)
 
     @staticmethod
