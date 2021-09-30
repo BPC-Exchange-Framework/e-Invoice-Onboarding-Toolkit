@@ -38,3 +38,4 @@ jobs:
       run: |
         cp einvoice/certificates/.env.example einvoice/certificates/.env
         pytest
+        rm einvoice/certificates/.env

@@ -1,5 +1,5 @@
-# pylint: disable=W0612, W0611
-# Unused variables, unused imports
+# pylint: disable=W0612, W0611, R0914, C0103
+# Unused variables, unused imports, too many local variables, snake case
 # """
 # Test cases for create_ca
 # """
@@ -7,6 +7,7 @@
 # from os.path import join, dirname
 # from dotenv import load_dotenv
 # # from cryptography.hazmat.backends import default_backend
+# from cryptography import x509
 # from cryptography.hazmat.primitives.asymmetric import rsa
 # from certificates.create_ca import CreateCA
 # from certificates.cert_logging import create_logger
@@ -18,7 +19,6 @@
 #     log = create_logger("create_private_key")
 #     dotenv_path = join(dirname(__file__), '../.env')
 #     load_dotenv(dotenv_path)
-
 #     pub_exp = int(os.getenv("PUBLIC_EXPONENT"))
 #     key_size = int(os.getenv("KEY_SIZE"))
 #     log.info("Exponent is type: %s", type(pub_exp))
@@ -111,17 +111,17 @@
 #     subject_org_name = str(os.getenv("SUBJECT_ORGANIZATION_NAME"))
 #     subject_org_unit_name = str(os.getenv("SUBJECT_ORGANIZATIONAL_UNIT_NAME"))
 #     issuer_common_name = str(os.getenv("ISSUER_COMMON_NAME"))
-#     private_key_file_pwd = str(os.getenv("PRIVATE_KEY_SECRET_PASSWORD"))
 #     ca_private_key_file_name = str(os.getenv("CA_PRIVATE_KEY_FILE_NAME"))
 #     ca_public_key_file_name = str(os.getenv("CA_PUBLIC_KEY_FILE_NAME"))
 #     ca_private_key_file_pwd = str(os.getenv("CA_PRIVATE_KEY_SECRET_PASSWORD"))
+#     ca_file_name = str(os.getenv("CA_FILE_NAME"))
 #     pub_exp = int(os.getenv("PUBLIC_EXPONENT"))
 #     key_size = int(os.getenv("KEY_SIZE"))
 #     create_ca = CreateCA()
 #     writer = Serialize()
 #     ca_private_key = create_ca.create_private_key(pub_exp, key_size)
 #     writer.write_private_key_to_file(ca_private_key_file_name, ca_private_key,
-#                                      private_key_file_pwd)
+#                                      ca_private_key_file_pwd)
 #     ca_public_key = create_ca.create_public_key(ca_private_key)
 #     writer.write_public_key_to_file(ca_public_key_file_name, ca_public_key)
 #     CA = create_ca.create_ca(subject_common_name,
@@ -131,3 +131,5 @@
 #                              ca_public_key,
 #                              ca_private_key)
 #     log.info(CA)
+#     writer.write_CA_to_file(ca_file_name, CA)
+#     assert isinstance(CA, x509.Certificate)
