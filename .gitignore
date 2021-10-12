@@ -153,5 +153,7 @@ cert.log
 einvoice/certificates/.env
 
 # certificate work
-.pem
-.pub
+
+*.pem
+*.pub
+*.ca
