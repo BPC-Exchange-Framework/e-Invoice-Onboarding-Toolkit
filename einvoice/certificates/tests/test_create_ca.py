@@ -1,8 +1,6 @@
 # pylint: disable=W0612, W0611, R0914, C0103
 # Unused variables, unused imports, too many local variables, snake case
-"""
-Test cases for create_ca
-"""
+"""  Test cases for create_ca """
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv
@@ -32,8 +30,12 @@ def test_write_private_key():
     dotenv_path = join(dirname(__file__), '../.env')
     load_dotenv(dotenv_path)
     private_key = create_private_key()
-    private_key_file_name = str(os.getenv("PRIVATE_KEY_FILE_NAME"))
+    CERT_STORE = str(os.getenv("CERTIFICATE_STORE"))
+    log.info("Cert store at: %s", CERT_STORE)
+    private_key_file_name = CERT_STORE +\
+        str(os.getenv("PRIVATE_KEY_FILE_NAME"))
     private_key_file_pwd = str(os.getenv("PRIVATE_KEY_SECRET_PASSWORD"))
+    log.info("write to file at: %s", private_key_file_name)
     log.info("Attempting to write private key to file. ")
     log.info(private_key)
     writer = Serialize()
@@ -58,7 +60,10 @@ def test_create_public_key():
     log = create_logger("test_create_public_key")
     dotenv_path = join(dirname(__file__), '../.env')
     load_dotenv(dotenv_path)
-    public_key_file_name = str(os.getenv("PUBLIC_KEY_FILE_NAME"))
+    CERT_STORE = str(os.getenv("CERTIFICATE_STORE"))
+    log.info("Cert store at: %s", CERT_STORE)
+    public_key_file_name = CERT_STORE + str(os.getenv("PUBLIC_KEY_FILE_NAME"))
+    log.info("write to file at: %s", public_key_file_name)
     public_key = create_public_key()
     log.info("Attempting to write public key to file. ")
     writer = Serialize()
@@ -88,10 +93,7 @@ def test_create_ca():
     """Test creation of the ca cert"""
     log = create_logger("test_create_ca")
     log.info("Attempting to create a CA")
-    dotenv_path = join(dirname(__file__), '../.env')
-    load_dotenv(dotenv_path)
-    log = create_logger("test_create_ca")
     create_ca = CreateCA()
     CA = create_ca.create_ca()
     log.info(CA)
-    assert isinstance(CA, x509.Certificate)
+    #  assert isinstance(CA, x509.Certificate)
