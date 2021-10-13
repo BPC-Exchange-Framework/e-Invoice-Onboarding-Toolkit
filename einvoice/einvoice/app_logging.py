@@ -35,7 +35,7 @@ def create_logger(name):
     logger.setLevel(logging.INFO)
 
     # create file handler which writes to a file.
-    file_logger = logging.FileHandler("./einvoice_output.log")
+    file_logger = logging.FileHandler("./einvoice.log")
     file_logger.setLevel(logging.INFO)
 
     # create console handler with a higher log level

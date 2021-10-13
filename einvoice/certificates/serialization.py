@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# pylint: disable=R0902, R0913, C0103
+# pylint: disable=C0103
 # Too many instance attributes, Too many arguments, snake naming convention
 # File: serialization.py
 # About: File to handle serialization of certs.
@@ -31,58 +31,53 @@ class Serialize:
     """Class to handle file io using serialization"""
 
     @staticmethod
-    def write_private_key_to_file(private_key_file_name, private_key,
-                                  secret_password):
+    def write_private_key_to_file(file_name, key, password):
         """A method to write the private key to a file as PEM"""
-        private_encoding = serialization.Encoding.PEM
-        private_output_format = serialization.PrivateFormat.PKCS8
+        encoding = serialization.Encoding.PEM
+        output_format = serialization.PrivateFormat.PKCS8
         encryption_algorithm = serialization.BestAvailableEncryption(
-            bytes(secret_password, "utf-8"))
-        pem = private_key.private_bytes(private_encoding,
-                                        private_output_format,
-                                        encryption_algorithm)
-        with open(private_key_file_name, "wb") as file_name:
-            file_name.write(pem)
+            bytes(password, "utf-8"))
+        pem = key.private_bytes(encoding, output_format, encryption_algorithm)
+        with open(file_name, "wb") as file_out:
+            file_out.write(pem)
 
     @staticmethod
-    def write_public_key_to_file(public_key_file_name, public_key):
+    def write_public_key_to_file(file_name, key):
         """A method to write the public key to a file as PEM"""
-        public_encoding = serialization.Encoding.PEM
-        public_output_format = serialization.PublicFormat.SubjectPublicKeyInfo
-        pem = public_key.public_bytes(public_encoding, public_output_format)
-        with open(public_key_file_name, "wb") as file_name:
-            file_name.write(pem)
+        encoding = serialization.Encoding.PEM
+        output_format = serialization.PublicFormat.SubjectPublicKeyInfo
+        pem = key.public_bytes(encoding, output_format)
+        with open(file_name, "wb") as file_out:
+            file_out.write(pem)
 
     @staticmethod
-    def write_CA_to_file(CA_file_name, CA):
+    def write_CA_to_file(file_name, CA):
         """A method to write the CA to file.  """
-        public_encoding = serialization.Encoding.PEM
-        pem = CA.public_bytes(public_encoding)
-        with open(CA_file_name, "wb") as file_name:
-            file_name.write(pem)
+        encoding = serialization.Encoding.PEM
+        pem = CA.public_bytes(encoding)
+        with open(file_name, "wb") as file_out:
+            file_out.write(pem)
 
     @staticmethod
-    def read_private_key_in(file_name, key_file_password=None):
+    def read_private_key_in(file_name, password=None):
         """A method to read the private key in from a file"""
-        password = None
-        if key_file_password is not None:
-            password = key_file_password.encode('utf-8')
-        with open(file_name, 'rb') as key_file:
-            private_key = serialization.load_pem_private_key(
-                key_file.read(),
+        if password is not None:
+            password = password.encode('utf-8')
+        with open(file_name, 'rb') as file_in:
+            key = serialization.load_pem_private_key(
+                file_in.read(),
                 password
             )
-        return private_key
+        return key
 
     @staticmethod
-    def read_public_key_in(file_name, key_file_password=None):
+    def read_public_key_in(file_name, password=None):
         """A method to read the public key in from a file"""
-        password = None
-        if key_file_password is not None:
-            password = key_file_password.encode('utf-8')
-        with open(file_name, 'rb') as key_file:
-            public_key = serialization.load_pem_public_key(
-                key_file.read(),
+        if password is not None:
+            password = password.encode('utf-8')
+        with open(file_name, 'rb') as file_in:
+            key = serialization.load_pem_public_key(
+                file_in.read(),
                 password
             )
-        return public_key
+        return key
