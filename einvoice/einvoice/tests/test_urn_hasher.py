@@ -241,7 +241,8 @@ def test_hasher_5():
 
 def test_hasher_5_case_1():
     case_dict = test_hasher_5()
-    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088:4035811991021"
+    test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:iso6523:"\
+        "0088:4035811991021"
     assert (
         case_dict.get('final_urn') == test_case_urn
     )

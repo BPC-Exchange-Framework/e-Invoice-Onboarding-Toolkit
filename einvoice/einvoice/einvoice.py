@@ -8,7 +8,7 @@
 """The classes and functions which define a prototype e-Invoice.
 
 This is a model definition of an e-Invoice which can be used in a four
-corners distrubuted e-services implementation.
+corners distributed e-services implementation.
 
     Usage:
     my_einvoice = einvoice()
@@ -48,4 +48,14 @@ class EInvoice:
     einvoice_date: str
     einvoice_sellers_address: Address()
     einvoice_buyers_addres: Address()
-    einvoice_line_items: LineItem()
+    einvoice_line_items: list(LineItem())
+
+    def invoice_total(self) -> float:
+        """Sum the line items to get an invoice total."""
+        self.total = 0.0
+        if (len(self.einvoice_line_items)) > 0:
+            for i in range(len(self.einvoice_line_items)):
+                if type(self.einvoice_line_items[i].line_item_total) is float:
+                    self.total = (self.total +
+                                  self.einvoice_line_items[i].line_item_total)
+        return self.total

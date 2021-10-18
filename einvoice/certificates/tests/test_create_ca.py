@@ -26,18 +26,18 @@ def create_private_key():
 
 def test_write_private_key():
     """Testing creation of a private key and writing to a file."""
-    log = create_logger("test_write_private_key")
+    log1 = create_logger("test_write_private_key")
     dotenv_path = join(dirname(__file__), '../.env')
     load_dotenv(dotenv_path)
     private_key = create_private_key()
-    CERT_STORE = str(os.getenv("CERTIFICATE_STORE"))
-    log.info("Cert store at: %s", CERT_STORE)
+    CERT_STORE = str(os.getenv("CERT_STORE"))
+    log1.info("Cert store at: %s", CERT_STORE)
     private_key_file_name = CERT_STORE +\
-        str(os.getenv("PRIVATE_KEY_FILE_NAME"))
+        str(os.getenv("PRIVATE_KEY_FILE"))
     private_key_file_pwd = str(os.getenv("PRIVATE_KEY_SECRET_PASSWORD"))
-    log.info("write to file at: %s", private_key_file_name)
-    log.info("Attempting to write private key to file. ")
-    log.info(private_key)
+    log1.info("write to file at: %s", private_key_file_name)
+    log1.info("Attempting to write private key to file. ")
+    log1.info(private_key)
     writer = Serialize()
     writer.write_private_key_to_file(private_key_file_name, private_key,
                                      private_key_file_pwd)
@@ -45,27 +45,27 @@ def test_write_private_key():
 
 def create_public_key():
     """Test creation of the public key"""
-    log = create_logger("create_public_key")
+    log2 = create_logger("create_public_key")
     create_ca = CreateKeypair()
     private_key = create_ca.create_private_key()
     public_key = create_ca.create_public_key(private_key)
     is_public_key = isinstance(public_key, rsa.RSAPublicKey)
-    log.info("Is public key RSAPublicKey?: %s", str(is_public_key))
+    log2.info("Is public key RSAPublicKey?: %s", str(is_public_key))
     assert is_public_key
     return public_key
 
 
 def test_create_public_key():
     """Testing creation of a public key and writing to a file."""
-    log = create_logger("test_create_public_key")
+    log3 = create_logger("test_create_public_key")
     dotenv_path = join(dirname(__file__), '../.env')
     load_dotenv(dotenv_path)
-    CERT_STORE = str(os.getenv("CERTIFICATE_STORE"))
-    log.info("Cert store at: %s", CERT_STORE)
-    public_key_file_name = CERT_STORE + str(os.getenv("PUBLIC_KEY_FILE_NAME"))
-    log.info("write to file at: %s", public_key_file_name)
+    CERT_STORE = str(os.getenv("CERT_STORE"))
+    log3.info("Cert store at: %s", CERT_STORE)
+    public_key_file_name = CERT_STORE + str(os.getenv("PUBLIC_KEY_FILE"))
+    log3.info("write to file at: %s", public_key_file_name)
     public_key = create_public_key()
-    log.info("Attempting to write public key to file. ")
+    log3.info("Attempting to write public key to file. ")
     writer = Serialize()
     writer.write_public_key_to_file(public_key_file_name, public_key)
 
@@ -91,9 +91,9 @@ def test_create_public_key():
 
 def test_create_ca():
     """Test creation of the ca cert"""
-    log = create_logger("test_create_ca")
-    log.info("Attempting to create a CA")
+    log4 = create_logger("test_create_ca")
+    log4.info("Attempting to create a CA")
     create_ca = CreateCA()
     CA = create_ca.create_ca()
-    log.info(CA)
-    #  assert isinstance(CA, x509.Certificate)
+    log4.info(CA)
+    assert isinstance(CA, x509.Certificate)

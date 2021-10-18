@@ -53,7 +53,7 @@ class CreateCA:
         self.subject_org_name = str(os.getenv("CA_SUBJECT_ORG_NAME"))
         self.subject_org_unit_name =\
             str(os.getenv("CA_SUBJECT_ORG_UNIT_NAME"))
-        self.cert_home = str(os.getenv("CERTIFICATE_STORE"))
+        self.cert_home = str(os.getenv("CERT_STORE"))
         self.private_key_file = self.cert_home +\
             str(os.getenv("CA_PRIVATE_KEY_FILE"))
         self.public_key_file = self.cert_home +\
