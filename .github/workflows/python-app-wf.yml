@@ -36,7 +36,6 @@ jobs:
 
       - name: Run unit tests
         run: |
-          mkdir /home/github/cert_store
           cp einvoice/certificates/.env.example einvoice/certificates/.env
           pytest
           rm einvoice/certificates/.env

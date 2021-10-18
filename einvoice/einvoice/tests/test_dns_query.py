@@ -16,8 +16,10 @@ sys.path.append("../einvoice")
 
 def test_get_registry_entry_fqdn():
     """ Test registry entry fqdn"""
-    sample_data_path = "einvoice/einvoice/tests/sampl"\
-        "e_data/unaptr_response.json"
+    # sample_data_path = "einvoice/einvoice/tests/sampl"\
+    #     "e_data/unaptr_response.json"
+
+    sample_data_path = "./tests/sample_data/unaptr_response.json"
 
     # Test retrieval from a valid unaptr response
     with open(sample_data_path) as fname:
