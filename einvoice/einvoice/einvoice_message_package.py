@@ -8,11 +8,13 @@
 """ Dataclass Object to define the e-invoice message package."""
 
 from einvoice.urn import Urn
+from einvoice.einvoice import EInvoice
+from dataclasses import dataclass
+
 
 @dataclass
 class EinvoiceMessagePackageP():
     """Class defining the einvoice message package"""
 
     einvoice_urn: Urn
-    einvoice_invoice: obj
-
+    einvoice_invoice: EInvoice
