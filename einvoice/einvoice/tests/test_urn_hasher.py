@@ -54,7 +54,7 @@ def test_hasher_1():
 
     test_case_spec = "urn:oasis:names:tc:ebcore:partyid-"\
         "type:unregistered:myscheme"
-    test_case_schema = "BPC01:"
+    test_case_schema = "BPC01"
     test_case_party_id = "bpcBusid01"
     test_hasher = Hasher()
     test_value = test_hasher.hasher(test_case_spec,
@@ -98,7 +98,7 @@ def test_hasher_1_case_3():
 def test_hasher_2():
     """Test case #2 hasher"""
     test_case_spec = "urn:oasis:names:tc:ebcore:partyid-type"
-    test_case_schema = "iso6523:"
+    test_case_schema = "iso6523"
     test_case_party_id = "0123456789"
     test_hasher = Hasher()
     test_value = test_hasher.hasher(test_case_spec,
@@ -142,7 +142,7 @@ def test_hasher_2_case_3():
 def test_hasher_3():
     """Test case #3 hasher"""
     test_case_spec = "urn:oasis:names:tc:ebcore:partyid-type"
-    test_case_schema = "iso6523:0088:"
+    test_case_schema = "iso6523:0088"
     test_case_party_id = "EAN-7638725972413"
     test_hasher = Hasher()
     test_value = test_hasher.hasher(test_case_spec,
@@ -186,7 +186,7 @@ def test_hasher_3_case_3():
 def test_hasher_4():
     """Test case #4 hasher"""
     test_case_spec = "urn:oasis:names:tc:ebcore:partyid-type"
-    test_case_schema = "iso6523:0088:"
+    test_case_schema = "iso6523:0088"
     test_case_party_id = "bpc-2343030383"
     test_hasher = Hasher()
     test_value = test_hasher.hasher(test_case_spec,
@@ -242,7 +242,7 @@ def test_hasher_5():
 def test_hasher_5_case_1():
     case_dict = test_hasher_5()
     test_case_urn = "urn:oasis:names:tc:ebcore:partyid-type:iso6523:"\
-        "0088:4035811991021"
+        "0088::4035811991021"
     assert (
         case_dict.get('final_urn') == test_case_urn
     )
@@ -250,7 +250,7 @@ def test_hasher_5_case_1():
 
 def test_hasher_5_case_2():
     case_dict = test_hasher_5()
-    test_case_hash = "i3qyb36ctayrfgthbycqzdtojfhgazjeglfooe7727egvdwrk5qq"
+    test_case_hash = "jc4swjyiphrll4gfhlu2edehpwlkmqmsncc2lc3so7m5jvgjkewa"
     assert (
         case_dict.get('urn_hash') == test_case_hash
     )

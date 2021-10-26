@@ -10,24 +10,29 @@ class SMPQuery:
     See the ebXML standards for request API format."""
 
     def __init__(self):
+        self.party_id = None
+        self.smp_uri = None
         self.query_1 = None
         self.query_1_response = None
         self.query_2 = None
         self.query_2_response = None
 
-    def smp_create_query_1:
+    def smp_create_query_1(self, party_id):
+        """Function to create first smp api query"""
 
         return self.query_1
 
-    def smp_execute_query_1(query_1):
+    def smp_execute_query_1(self, query_1, smp_uri):
+        """Function to execute first smp api query"""
 
         return self.query_1_response
 
-    def smp_create_query_2:
+    def smp_create_query_2(self, query_1_response):
+        """Function to create second smp api query"""
 
         return self.query_2
 
-    def smp_execute_query_2(query_2):
+    def smp_execute_query_2(self, query_2, smp_uri):
+        """Function to execute second smp api query"""
 
         return self.query_2_response
-    

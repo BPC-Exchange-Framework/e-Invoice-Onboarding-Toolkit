@@ -24,7 +24,7 @@ import logging
 def create_logger(name):
     """This function creates a logger template for the einvoice package.
 
-    This funtion creates a consistant format and location for
+    This function creates a consistant format and location for
     all application log files to write to.
     """
     # print("Create logger with name %s" % name)
