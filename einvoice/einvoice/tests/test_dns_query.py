@@ -19,7 +19,7 @@ def test_get_registry_entry_fqdn():
     # sample_data_path = "einvoice/einvoice/tests/sampl"\
     #     "e_data/unaptr_response.json"
 
-    sample_data_path = "./sample_data/unaptr_response.json"
+    sample_data_path = "./unaptr_response.json"
 
     # Test retrieval from a valid unaptr response
     with open(sample_data_path) as fname:
