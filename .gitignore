@@ -111,10 +111,8 @@ venv/
 ENV/
 env.bak/gg
 venv.bak/
-jupyterlab/
 bin/
 lib/
-.env.example.dev
 
 # Spyder project settings
 .spyderproject

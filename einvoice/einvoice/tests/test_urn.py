@@ -27,13 +27,13 @@ def test_urn():
     log.info(f"specification: {another_urn.specification}")
     assert another_urn.specification == "urn:oasis:names:tc:ebcore:"\
         "partyid-type"
-    log.info(f"schema: {another_urn.schema}")
-    assert another_urn.schema == "iso6523"
+    log.info(f"schema_id: {another_urn.schema_id}")
+    assert another_urn.schema_id == "iso6523"
     log.info(f"party_id {another_urn.party_id}")
     assert another_urn.party_id == "0123456789"
     log.info(f"urn: {another_urn.urn()}")
     assert (
         another_urn.urn()
-        == "urn:oasis:names:tc:ebcore:partyid-type:iso6523:0123456789"
+        == "urn:oasis:names:tc:ebcore:partyid-type:iso6523::0123456789"
     )
     log.info("Completed testing urn creation.")

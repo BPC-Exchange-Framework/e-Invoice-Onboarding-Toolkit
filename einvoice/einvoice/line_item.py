@@ -9,7 +9,7 @@
 
 This is a model defined for a line item of in
 an e-Invoice which can be used in a four
-corners distrubuted e-services implementation.
+corners distributed e-services implementation.
 
     Usage:
     my_line_item = LineItem()

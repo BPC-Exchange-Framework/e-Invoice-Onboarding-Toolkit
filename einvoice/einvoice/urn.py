@@ -43,11 +43,11 @@ class Urn:
 
     """
 
-    specification: str
-    schema_id: str
-    party_id: str
+    specification: str = ""
+    schema_id: str = ""
+    party_id: str = ""
 
     def urn(self) -> str:
         """Construct string for the party's URN"""
         # return str(f"{self.specification}:{self.schema_id}::{self.party_id}")
-        return f"{self.specification}:{self.schema_id}:{self.party_id}"
+        return f"{self.specification}:{self.schema_id}::{self.party_id}"

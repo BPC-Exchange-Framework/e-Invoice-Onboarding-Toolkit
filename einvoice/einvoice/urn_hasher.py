@@ -111,8 +111,8 @@ class Hasher:
         self.msg = ("Created a hash for look-up: ", self.final_urn_b32)
         self.log.debug(self.msg)
         return {
-            "party_id_spec": specification,
-            "party_id_schema_type": schema,
+            "specification": specification,
+            "schema_type_id": schema,
             "party_id": party_id,
             "final_urn": self.final_urn_lower_case,
             "urn_hash": self.final_urn_b32,
