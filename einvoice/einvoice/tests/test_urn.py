@@ -14,7 +14,7 @@ from einvoice.urn import Urn
 
 def create_urn():
     """Test helper to create an instace of an object to test."""
-    some_urn = Urn("urn:oasis:names:tc:ebcore:partyid-type",
+    some_urn = Urn("ABCDEFG123", "urn:oasis:names:tc:ebcore:partyid-type",
                    "iso6523", "0123456789")
     return some_urn
 
@@ -24,14 +24,10 @@ def test_urn():
     log = create_logger("test_urn")
     log.info("Begin testing urn creation.")
     another_urn = create_urn()
-    log.info(f"specification: {another_urn.specification}")
     assert another_urn.specification == "urn:oasis:names:tc:ebcore:"\
         "partyid-type"
-    log.info(f"schema_id: {another_urn.schema_id}")
     assert another_urn.schema_id == "iso6523"
-    log.info(f"party_id {another_urn.party_id}")
     assert another_urn.party_id == "0123456789"
-    log.info(f"urn: {another_urn.urn()}")
     assert (
         another_urn.urn()
         == "urn:oasis:names:tc:ebcore:partyid-type:iso6523::0123456789"

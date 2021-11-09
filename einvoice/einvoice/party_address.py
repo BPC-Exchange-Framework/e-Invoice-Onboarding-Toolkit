@@ -51,10 +51,10 @@ class Address:
     Raises:
     """
 
-    org_id: str
-    name: str
-    address_1: str
-    address_2: str
-    city: str
-    state: str
-    zip_: str
+    org_id: str = ""
+    name: str = ""
+    address_1: str = ""
+    address_2: str = ""
+    city: str = ""
+    state: str = ""
+    zip_: str = ""

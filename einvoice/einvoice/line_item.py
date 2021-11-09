@@ -51,13 +51,14 @@ class LineItem:
     Raises:
     """
 
-    line_item_id: str
-    line_item_per: str
-    line_item_name: str
-    line_item_description: str
+    line_item_id: str = ""
+    line_item_per: str = ""
+    line_item_name: str = ""
+    line_item_description: ""
     line_item_quantity: int = 0
-    line_item_price_per_item: float = 0
+    line_item_price_per_item: float = 0.0
+    line_item_total: float = 0.0
 
-    def line_item_total(self) -> float:
+    def calculate_line_item_total(self) -> float:
         """Compute line item total."""
         return self.line_item_quantity * self.line_item_price_per_item

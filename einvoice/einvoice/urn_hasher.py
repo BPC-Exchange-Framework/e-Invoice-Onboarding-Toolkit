@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
-# pylint: disable=R0902
-# disable: too many attributes
+# pylint: disable=R0902. R0915. W1203
+# disable: too many attributes. too many statements, use lazy formatting.
 # File: urn_hasher.py
 # About: create the urn hashes for a dns NPTR record look-up
 # Development: Kelly Kinney, Leo Rubiano
@@ -16,6 +16,7 @@ import hashlib
 import base64
 from json import dumps
 from einvoice.app_logging import create_logger
+from einvoice.create_tracking_id import CreateTrackingID
 from einvoice.urn import Urn
 
 
@@ -73,7 +74,9 @@ class Hasher:
 
     def __init__(self):
         self.log = create_logger("urn_hasher")
-        self.msg = None
+        self.einvoice_id_creator = None
+        self.einvoice_id = ""
+        self.msg = ""
         self.specification = None
         self.schema = None
         self.party_id = None
@@ -91,31 +94,107 @@ class Hasher:
 
     def hasher(self, specification, schema, party_id):
         """Constructs the hashed urn for lookup"""
-        self.log.debug("Checkpoint - Created hasher()")
-        self.urn = Urn(specification, schema, party_id)
+        # Create the tracking id
+        self.einvoice_id_creator = CreateTrackingID()
+        self.einvoice_id = self.einvoice_id_creator.create_tracking_id(10)
+
+        # Create a urn object
+        self.urn = Urn(self.einvoice_id, specification, schema, party_id)
+
+        # Call the method which actually puts the urn together.
         self.final_urn = self.urn.urn()
+        self.log.info(f"Created urn from input - {self.final_urn}\
+            - {self.einvoice_id}")
+        self.log.info(f"Implemented via the urn dataclass in the urn module.\
+            - {self.einvoice_id}")
+
+        # Make sure the urn is in all lowercase
         self.final_urn_lower_case = self.final_urn.lower()
-        self.log.debug("Checkpoint - constructed urn for hashing")
-        self.msg = ("Captured a urn for hashing: ",
-                    self.final_urn_lower_case)
-        self.log.debug(self.msg)
+        self.log.info(
+            f"Converted urn to lower case - {self.final_urn_lower_case}\
+            - {self.einvoice_id}"
+        )
+        self.log.info(
+            f"Implemented using the lower() string method\
+            - {self.einvoice_id}"
+        )
+
+        # encode the urn to a byte-like object.
         self.urn_lower_encoded = self.final_urn_lower_case.encode("utf-8")
+        self.log.info(
+            f"Encoded the urn as a \'byte-like\' object: \
+            {self.final_urn_lower_case} - {self.einvoice_id}"
+        )
+        self.log.info(
+            f"Implemented using the .encode(\"utf-8\") string method \
+            - {self.einvoice_id}"
+        )
+
+        # Apply the sha256 to the urn.
         self.urn_sha256_hashed = hashlib.sha256(self.urn_lower_encoded)
+        self.log.info(
+            f"Apply the SHA256 hash to the urn: {self.urn_sha256_hashed}\
+            - {self.einvoice_id}")
+        self.log.info(
+            f"Implemented using hashlib.sha256() - {self.einvoice_id}")
+
+        # Obtain the hash digest of the sha256 urn
         self.urn_sha256_digest = self.urn_sha256_hashed.digest()
-        self.log.debug("Checkpoint - Created sha256 hash")
+        self.log.info(
+            f"Obtain the hex digest of the SHA256 hashed urn: \
+            {self.urn_sha256_digest} - {self.einvoice_id}")
+        self.log.info(
+            f"Implemented using .digest of the hashlib module. \
+            Output returned is the digest of the byte string. - \
+            {self.einvoice_id}"
+        )
+
+        # Obtain the base32 has of the hex digest of the sha256 encoded urn
         self.urn_b32_hash = base64.b32encode(self.urn_sha256_digest)
+        self.log.info(
+            f"Obtain the base32 hash of the hex digest of the SHA256\
+            encoded urn: {self.urn_sha256_digest} - {self.einvoice_id}"
+        )
+        self.log.info(
+            f"Implemented using the b32encode method of the base64 package. \
+            - {self.einvoice_id}")
+
+        # Strip the output of extraneous equal signs
         self.urn_b32_cleaned = self.urn_b32_hash.rstrip(b"=")
+        self.log.info(
+            f"Strip out the equals sign from the output: \
+            {self.urn_b32_cleaned} - {self.einvoice_id}")
+        self.log.info(
+            f"Implements rstrip() method of String - {self.einvoice_id}")
+
+        # Convert the the output to lower case.
         self.lower_case_b32 = self.urn_b32_cleaned.lower()
+        self.log.info(
+            f"Convert all characters to lowercase: {self.lower_case_b32} \
+            - {self.einvoice_id}"
+        )
+        self.log.info(
+            f"Implements .lower() method of String. - {self.einvoice_id}")
+
+        # Decode the byte-like object back into string.
         self.final_urn_b32 = self.lower_case_b32.decode("utf-8")
-        self.log.debug("Checkpoint - Created base32 hash.")
-        self.msg = ("Created a hash for look-up: ", self.final_urn_b32)
-        self.log.debug(self.msg)
+        self.log.info(
+            f"Decode the byte-like object back into a string: \
+            {self.final_urn_b32} - {self.einvoice_id}"
+        )
+        self.log.info(
+            f"Implements the .decode(\"utf-8\") from String. -\
+                 {self.einvoice_id}")
+
+        self.log.info(f"Final hash for urn is: {self.final_urn_b32}")
+
         return {
             "specification": specification,
             "schema_type_id": schema,
             "party_id": party_id,
             "final_urn": self.final_urn_lower_case,
             "urn_hash": self.final_urn_b32,
+            "einvoice_id": self.einvoice_id
         }
 
     def write_hashes_to_file(self, urn_dictionary, filename):

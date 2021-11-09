@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-#
-# File: ei_smp_query.py
+# pylint: disable=W0613
+# unused arguments
+# File: smp_query.py
 # About: Query SMP REST API.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
 #
+""""Provides functionality for an SMPQuery 4-corner
+discovery"""
 class SMPQuery:
     """Class to create and execute a RESt API query.
     See the ebXML standards for request API format."""

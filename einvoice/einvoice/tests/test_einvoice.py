@@ -10,6 +10,6 @@
 """
 
 from einvoice.app_logging import create_logger
-from einvoice.party_address import Address
-from einvoice.line_item import LineItem
-from einvoice.data.create_sample_data import CreateSampleData
+# from einvoice.party_address import Address
+# from einvoice.line_item import LineItem
+# from einvoice.data.create_sample_data import CreateSampleData
