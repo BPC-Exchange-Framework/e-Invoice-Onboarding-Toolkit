@@ -26,6 +26,8 @@ class Urn:
     Args:
 
     Attributes:
+        einvoice_tracking_id: str
+            This will be an 8 bit hash of a urn
         specification: str
             OASIS urn specification.
         schema_id: str
@@ -42,7 +44,7 @@ class Urn:
     Raises:
 
     """
-
+    einvoice_id: str = ""
     specification: str = ""
     schema_id: str = ""
     party_id: str = ""

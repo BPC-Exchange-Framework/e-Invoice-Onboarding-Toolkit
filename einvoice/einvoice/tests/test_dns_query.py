@@ -2,16 +2,23 @@
 Test cases for dns_query
 
 """
-# pylint: disable=C0415, E0401, W1514
-# import outside toplevel (os), unable to import 'dovenv',
-# using open without explictly specifying an encoding
-import json
-import sys
-from einvoice.dns_query import (
-    get_registry_entry_fqdn,
-    configure_smp_body,
-)
-sys.path.append("../einvoice")
+# pylint: disable=C0415, E0401, W1514, W0611
+# import outside toplevel (os), unable to import 'dotvenv',
+# using open without explicitly specifying an encoding
+
+# from einvoice.dns_query import naptr_lookup
+from einvoice.dns_query import DNSQuery
+
+# def test_naptr_lookup():
+#     """Test the naptr lookup"""
+#     test_urn = (
+#         "6c24uvqpxrfyweqimfxmsuym"
+#         "3bbjvoikuwmmidquz2a2zzyikdya"
+#         )
+#     test_domain = "sc-b2b.us"
+#     query_object = DNSQuery()
+#     uri = query_object.naptr_lookup(test_urn, test_domain)
+#     print(str(uri))
 
 
 # def test_get_registry_entry_fqdn():
@@ -24,8 +31,10 @@ sys.path.append("../einvoice")
 #     # Test retrieval from a valid unaptr response
 #     with open(sample_data_path) as fname:
 #         sample_unaptr_response = json.load(fname)
-#         expected_ref_value = "jfw63g2zdjoljk4y2h5tzed6mqeqcncjbxk7"\
-#             "ekbn6pjphjfkejfq.aisaac.us"
+#         expected_ref_value = (
+#           "jfw63g2zdjoljk4y2h5tzed6mqeqcncjbxk7"
+#           "ekbn6pjphjfkejfq.aisaac.us"
+#        )
 #         actual_ref_value = get_registry_entry_fqdn(sample_unaptr_response)
 #         assert actual_ref_value == expected_ref_value
 
@@ -60,10 +69,10 @@ def test_smp_config():
     assert SMP_CONFIG["api_key"] == x_api_key
 
 
-def test_configure_smp_body():
-    """Test configuration of smp body"""
-    smp_body = configure_smp_body()
-    smp_body_dict = json.loads(smp_body)
-    assert "party_id" in smp_body_dict.keys()
-    assert "party_id_schema" in smp_body_dict.keys()
-    assert "smp_endpoint_url" in smp_body_dict.keys()
+# def test_configure_smp_body():
+#     """Test configuration of smp body"""
+#     smp_body = configure_smp_body()
+#     smp_body_dict = json.loads(smp_body)
+#     assert "party_id" in smp_body_dict.keys()
+#     assert "party_id_schema" in smp_body_dict.keys()
+#     assert "smp_endpoint_url" in smp_body_dict.keys()

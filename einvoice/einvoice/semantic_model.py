@@ -14,8 +14,8 @@ corners distributed e-services implementation.
     my_einvoice = einvoice()
 """
 from dataclasses import dataclass
-from party_address import Address
-from line_item import LineItem
+from einvoice.party_address import Address
+from einvoice.line_item import LineItem
 
 
 @dataclass
@@ -25,17 +25,17 @@ class EInvoice:
     Args:
 
     Attributes:
-        invoice_uuid: str
+        einvoice_uuid: str
             UUID created from CreateUUID class as a String,
-        invoice_date: str
+        einvoice_date: str
             The date of the Invoice expressed as a String.
-        seller_address: obj
+        einvoice_sellers_address: obj
             Seller's place of busines as an Address() object.
-        buyer_address: obj
+        einvoice_buyers_address: obj
             Buy's place of business as an Address() object.
-        line_items[]: obj
-            An array of line_item() objects.
-        invoice_total: float
+        einvoice_line_items: list(LineItem[])
+            A list of line_item() objects.
+        einvoice_total: float
             The total cost of all line_items.
 
     Raises:
@@ -49,13 +49,18 @@ class EInvoice:
     einvoice_sellers_address: Address()
     einvoice_buyers_addres: Address()
     einvoice_line_items: list(LineItem())
+    einvoice_total: float = 0.0
 
-    def invoice_total(self) -> float:
+    def calculate_einvoice_total(self) -> float:
         """Sum the line items to get an invoice total."""
-        self.total = 0.0
+        self.einvoice_total = 0.0
         if (len(self.einvoice_line_items)) > 0:
-            for i in range(len(self.einvoice_line_items)):
-                if type(self.einvoice_line_items[i].line_item_total) is float:
-                    self.total = (self.total +
-                                  self.einvoice_line_items[i].line_item_total)
-        return self.total
+            for i, self.einvoice_total in enumerate(self.einvoice_line_items):
+                if isinstance(
+                    float, self.einvoice_line_items[i].line_item_total
+                ):
+                    self.einvoice_total = (
+                        self.einvoice_total +
+                        self.einvoice_line_items[i].line_item_total
+                        )
+        return self.einvoice_total

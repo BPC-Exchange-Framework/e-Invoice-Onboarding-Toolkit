@@ -1,28 +1,32 @@
-"""
-Module to do a dns query
-"""
-# pylint: disable=W0511
-import json
-from einvoice.conf.smp_config import SMP_CONFIG
+#!/usr/bin/env python3
+# pylint: disable=R0903, W1203
+# Too fw public methods, use lazy formating.
+# File: dns_query.py
+# About: Discovery of smp from dns query
+# Development: Kelly Kinney, Leo Rubiano
+# Date: 2021-10-27 (October 27th, 2021)
+#
+"""Queries DNS services for NAPTR records"""
+from dns.resolver import resolve
+from einvoice.app_logging import create_logger
 
 
-def get_registry_entry_fqdn(unaptr_response: dict) -> str:
-    """ Get registry entry"""
-    return unaptr_response.get("registry_entry_fqdn", "")
+class DNSQuery:
+    """Class to handle dns query/naptr look-up of hashed urn."""
 
+    def __init__(self):
+        """Entry point for the module.  Defines instance variables."""
+        self.naptr_record = None
+        self.lookup_response = None
+        self.smp_uri = None
+        self.log = create_logger("DNSQuery")
 
-def configure_smp_body():
-    """ Configure smp body"""
-    smp_body_dict = {
-        "party_id": SMP_CONFIG["party_id"],
-        "party_id_schema": SMP_CONFIG["party_id_schema"],
-        "smp_endpoint_url": SMP_CONFIG["smp_endpoint_url"],
-    }
-
-    return json.dumps(smp_body_dict)
-
-
-def make_smp_post_request():
-    """post to smp"""
-    # smp_body = configure_smp_body()
-    # TODO: finishing configuring POST request using SMP config
+    def naptr_lookup(self, urn, domain):
+        """Module to do the naptr dns query/look-up."""
+        self.naptr_record = urn + domain
+        self.log.info(f"Look-up for urn: {self.naptr_record}")
+        self.lookup_response = dict[resolve(self.naptr_record, "NAPTR")]
+        for answer in self.lookup_response.rrset:
+            self.smp_uri = answer.regexp
+            self.smp_uri = self.smp_uri.decode()
+        return self.smp_uri

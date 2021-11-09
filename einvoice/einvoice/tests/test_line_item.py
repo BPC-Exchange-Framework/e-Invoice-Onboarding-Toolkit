@@ -32,7 +32,7 @@ def test_line_item():
         == "Tastes better than Slurm."
     assert another_line_item.line_item_quantity == 144
     assert another_line_item.line_item_price_per_item == 10.29
-    assert another_line_item.line_item_total() \
+    assert another_line_item.calculate_line_item_total() \
         == another_line_item.line_item_quantity \
         * another_line_item.line_item_price_per_item
     log.debug("Completed testing party_address.")

@@ -7,9 +7,9 @@
 #
 """ Dataclass Object to define the e-invoice message package."""
 
-from einvoice.urn import Urn
-from einvoice.einvoice import EInvoice
 from dataclasses import dataclass
+from einvoice.urn import Urn
+from einvoice.semantic_model import EInvoice
 
 
 @dataclass
