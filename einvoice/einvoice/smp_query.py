@@ -8,6 +8,8 @@
 #
 """"Provides functionality for an SMPQuery 4-corner
 discovery"""
+
+
 class SMPQuery:
     """Class to create and execute a RESt API query.
     See the ebXML standards for request API format."""

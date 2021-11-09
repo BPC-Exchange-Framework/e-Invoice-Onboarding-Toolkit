@@ -33,7 +33,7 @@ class EInvoice:
             Seller's place of busines as an Address() object.
         einvoice_buyers_address: obj
             Buy's place of business as an Address() object.
-        einovice_line_items: list(LineItem[])
+        einvoice_line_items: list(LineItem[])
             A list of line_item() objects.
         einvoice_total: float
             The total cost of all line_items.
@@ -56,7 +56,11 @@ class EInvoice:
         self.einvoice_total = 0.0
         if (len(self.einvoice_line_items)) > 0:
             for i, self.einvoice_total in enumerate(self.einvoice_line_items):
-                if isinstance(float, self.einvoice_line_items[i].line_item_total):
-                    self.einvoice_total = (self.einvoice_total +
-                                  self.einvoice_line_items[i].line_item_total)
+                if isinstance(
+                    float, self.einvoice_line_items[i].line_item_total
+                ):
+                    self.einvoice_total = (
+                        self.einvoice_total +
+                        self.einvoice_line_items[i].line_item_total
+                        )
         return self.einvoice_total

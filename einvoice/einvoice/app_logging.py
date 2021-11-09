@@ -7,13 +7,16 @@
 #
 """
 A class to standardize log formatting across all application artifacts.
+
 Define common loggers and format to be used across the application.
 NOTE: These logs are localized and non-persistent.
 If used with a Docker container,
 they cease to exist when the container does.
+
     Usage: (not meant to be called directly)
     log = create_logger("app_logging")
     log.debug("This message will be logged.")
+
 """
 import logging
 import os
@@ -23,6 +26,7 @@ from dotenv import load_dotenv
 
 def create_logger(name):
     """This function creates a logger template for the einvoice package.
+
     This function creates a consistant format and location for
     all application log files to write to.
     """
@@ -33,15 +37,11 @@ def create_logger(name):
 
     logger = logging.getLogger(name)
 
-    # It's okay to run INFO in Dev.  Turn it down to DEBUG for QA
-    # and WARN for Prod unless troubleshooting an issue.
-    logger.setLevel(logging.INFO)
-
-    # create file handler which writes to a file.
+    # create file handler which writes to an application log view.
     file_logger = logging.FileHandler(einvoice_log_file)
     file_logger.setLevel(logging.INFO)
 
-    # create console handler with a higher log level
+    # create console handler which writes to the console
     console_logger = logging.StreamHandler()
     console_logger.setLevel(logging.INFO)
 
@@ -60,7 +60,8 @@ def create_logger(name):
     # Create a custom formatter for the response_logger
     response_format = "%(asctime)s - %(message)s"
     response_datefmt = "%Y%m%d:%H:%M:%S"
-    response_formatter = logging.Formatter(response_format, response_datefmt)
+    response_formatter = logging.Formatter(response_format,
+                                           response_datefmt)
 
     response_logger.setFormatter(response_formatter)
 

@@ -9,7 +9,7 @@
 
 from dataclasses import dataclass
 from einvoice.urn import Urn
-from einvoice.einvoice import EInvoice
+from einvoice.semantic_model import EInvoice
 
 
 @dataclass

@@ -25,8 +25,7 @@ class DNSQuery:
         """Module to do the naptr dns query/look-up."""
         self.naptr_record = urn + domain
         self.log.info(f"Look-up for urn: {self.naptr_record}")
-        self.lookup_response = dict[resolve(self.naptr_record,
-                                                     'NAPTR')]
+        self.lookup_response = dict[resolve(self.naptr_record, "NAPTR")]
         for answer in self.lookup_response.rrset:
             self.smp_uri = answer.regexp
             self.smp_uri = self.smp_uri.decode()

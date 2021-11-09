@@ -54,7 +54,7 @@ class LineItem:
     line_item_id: str = ""
     line_item_per: str = ""
     line_item_name: str = ""
-    line_item_description: ""
+    line_item_description: str = ""
     line_item_quantity: int = 0
     line_item_price_per_item: float = 0.0
     line_item_total: float = 0.0
