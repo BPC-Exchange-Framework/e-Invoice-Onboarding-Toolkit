@@ -7,7 +7,7 @@ Test cases for dns_query
 # using open without explicitly specifying an encoding
 from einvoice.dns_query import naptr_lookup
 
-def test_naptr_lookup:
+def test_naptr_lookup():
     test_urn = "6c24uvqpxrfyweqimfxmsuym3bbjvoikuwmmidquz2a2zzyikdya"
     test_domain = "sc-b2b.us"
     query_object = DNSQuery()
