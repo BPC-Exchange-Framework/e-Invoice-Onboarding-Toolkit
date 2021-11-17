@@ -36,8 +36,6 @@ jobs:
 
       - name: Run unit tests
         run: |
-          cp einvoice/certificates/.env.example einvoice/certificates/.env
           cp einvoice/einvoice/.env.example.dev einvoice/einvoice/.env
           pytest
-          rm einvoice/certificates/.env
           rm einvoice/einvoice/.env
