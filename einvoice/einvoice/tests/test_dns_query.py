@@ -7,7 +7,7 @@ Test cases for dns_query
 # using open without explicitly specifying an encoding
 
 # from einvoice.dns_query import naptr_lookup
-from einvoice.dns_query import DNSQuery
+# from einvoice.dns_query import DNSQuery
 
 # def test_naptr_lookup():
 #     """Test the naptr lookup"""

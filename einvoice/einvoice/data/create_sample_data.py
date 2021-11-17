@@ -27,8 +27,8 @@ import csv
 import random
 import logging
 from json import dumps
-from einvoice.app_logging import create_logger
 from faker import Faker
+from einvoice.app_logging import create_logger
 # from einvoice.line_item import LineItem
 # from einvoice.party_address import Address
 
