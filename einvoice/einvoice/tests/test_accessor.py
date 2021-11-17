@@ -12,11 +12,11 @@ import os
 from os.path import join, dirname
 from dotenv import load_dotenv
 from einvoice.app_logging import create_logger
-from einvoice.implementation import Implementation
+from einvoice.accessor import Accessor
 
 
-def test_implementation():
-    """Pytest case for test_implementation """
+def test_accesspr():
+    """Pytest case for test_accesspr."""
     log = create_logger("test_implementation")
     log.info("Start implementation test")
     dotenv_path = join(dirname(__file__), '../../certificates/.env')
@@ -27,15 +27,24 @@ def test_implementation():
     log.info("schema_id: %s", schema_id)
     party_id = str(os.getenv("TEST_PARTY_ID"))
     log.info("party_id: %s", party_id)
-    implementation_tester = Implementation()
-    test_urn = implementation_tester.create_urn(specification, schema_id,
-                                                party_id)
-    example_urn = (f"{test_urn.specification}:{test_urn.schema_id}::"
-                   f"{test_urn.party_id}")
-    log.info("Urn is: %s", example_urn)
-    assert test_urn.urn() == example_urn
 
-    hashed_urn = implementation_tester.hash_urn(test_urn)
+    accessor_test = Accessor()
+
+    test_urn = accessor_test.call_hash(specification, schema_id,
+                                       party_id)
+
+    test_specification = test_urn["specification"]
+    test_schema_type_id = test_urn["schema_type_id"]
+    test_party_id = test_urn["party_id"]
+    example_urn = (f"{test_specification}:{test_schema_type_id}::"
+                   f"{test_party_id}")
+
+    log.info("Urn is: %s", example_urn)
+    test_final_urn = test_urn["final_urn"]
+    assert test_final_urn == example_urn
+
+    hashed_urn = accessor_test.call_hash(test_specification,
+                                         test_schema_type_id, test_party_id)
     log.info("Hashed urn: %s", hashed_urn)
     # assert hashed_urn["urn_hash"] == (
     #     "yn5tj7bteln4c5o4mtul7yv"

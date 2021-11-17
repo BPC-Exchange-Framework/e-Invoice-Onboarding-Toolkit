@@ -12,32 +12,54 @@ discovery"""
 
 class SMPQuery:
     """Class to create and execute a RESt API query.
-    See the ebXML standards for request API format."""
+    See the ebXML standards for request API format.
+
+    Args:
+    NA
+
+    Attributes:
+    NA
+
+    Returns:
+    NA
+
+    Raises:
+    NA
+
+    """
 
     def __init__(self):
-        self.party_id = None
         self.smp_uri = None
         self.query_1 = None
         self.query_1_response = None
         self.query_2 = None
-        self.query_2_response = None
+        self.access_point_3 = None
 
-    def smp_create_query_1(self, party_id):
-        """Function to create first smp api query"""
+    def get_access_point_3(self, uri):
+        """Make required calls to the SMP to obain access point 3 endpoint."""
 
+        self.query_1 = self.smp_create_query_1()
+        self.query_1_response = self.smp_execute_query_1(self.query_1, uri)
+        self.query_2 = self.smp_create_query_2(self.query_1_response)
+        self.access_point_3 = self.smp_execute_query_2(self.query_2, uri)
+        return self.access_point_3
+
+    def smp_create_query_1(self):
+        """Create first smp api query."""
+        self.query_1 = "some query"
         return self.query_1
 
     def smp_execute_query_1(self, query_1, smp_uri):
-        """Function to execute first smp api query"""
-
+        """Execute first smp api query."""
+        self.query_1_response = f"results of {query_1} against {smp_uri}"
         return self.query_1_response
 
     def smp_create_query_2(self, query_1_response):
-        """Function to create second smp api query"""
-
+        """Create second smp api query."""
+        self.query_2 = f"make another query from {query_1_response}"
         return self.query_2
 
     def smp_execute_query_2(self, query_2, smp_uri):
-        """Function to execute second smp api query"""
-
-        return self.query_2_response
+        """Execute second smp api query."""
+        self.access_point_3 = f"results of {query_2} against {smp_uri}"
+        return self.access_point_3
