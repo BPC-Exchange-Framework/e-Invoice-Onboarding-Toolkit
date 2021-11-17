@@ -29,7 +29,7 @@ Python code to:
     - [x] SML query Notebook
     - [ ] SMP query Notebook
 - [ ] Implementation Guide written by SEs and prepared with BSAs to facilitate utilization of the code and work product to be delivered via readthedocs.org site.
-    - [x] readthedocs.org site registration/creation
+    - [x] ~~readthedocs.org site registration/creation~~
     - [ ] [In-progress] Create list of assumptions for starting point/baseline.
     - [ ] Aggregation of above referenced artifacts.
     - [ ] Documentation of supporting infrastructure inc;luding DNS and SMP provisioning specifically called out as a parallel value-add result of the project.
