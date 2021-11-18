@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-#
+# pylint: disable=W1203
+# Not using lazy logging.
 # File: test_line_item.py
 # About: e-Invoice testing suite; line_item.
 # Development: Kelly Kinney, Leo Rubiano
@@ -15,10 +16,10 @@ from einvoice.app_logging import create_logger
 from einvoice.accessor import Accessor
 
 
-def test_accesspr():
+def test_accessor():
     """Pytest case for test_accesspr."""
-    log = create_logger("test_implementation")
-    log.info("Start implementation test")
+    log = create_logger("test_accessor")
+    log.info("Start accessor test")
     dotenv_path = join(dirname(__file__), '../../certificates/.env')
     load_dotenv(dotenv_path)
     specification = str(os.getenv("TEST_SPECIFICATION"))
@@ -32,7 +33,7 @@ def test_accesspr():
 
     test_urn = accessor_test.call_hash(specification, schema_id,
                                        party_id)
-
+    log.info(f"returned urn dict: {test_urn}")
     test_specification = test_urn["specification"]
     test_schema_type_id = test_urn["schema_type_id"]
     test_party_id = test_urn["party_id"]
@@ -41,12 +42,12 @@ def test_accesspr():
 
     log.info("Urn is: %s", example_urn)
     test_final_urn = test_urn["final_urn"]
-    assert test_final_urn == example_urn
+    assert test_final_urn == example_urn.lower()
 
     hashed_urn = accessor_test.call_hash(test_specification,
                                          test_schema_type_id, test_party_id)
     log.info("Hashed urn: %s", hashed_urn)
-    # assert hashed_urn["urn_hash"] == (
-    #     "yn5tj7bteln4c5o4mtul7yv"
-    #     "nq3pwu6dpmipcof4pwcbsd3avvn7a"
-    # )
+    assert hashed_urn["urn_hash"] == (
+        "yn5tj7bteln4c5o4mtul7yv"
+        "nq3pwu6dpmipcof4pwcbsd3avvn7a"
+    )

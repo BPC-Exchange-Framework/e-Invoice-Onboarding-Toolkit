@@ -6,34 +6,21 @@
 # Date: 2021-07-27 (July 27th, 2021)
 #
 """This is a test file to be run using pytest.
+Args:
+NA
 
+Attributes:
+NA
+
+Raises:
+NA
+
+Returns:
+NA
 """
 from hashlib import sha256
 from base64 import b32encode
-from einvoice.app_logging import create_logger
 from einvoice.urn_hasher import Hasher
-
-
-# Test the logging functionality using built-in Pytest "caplog"
-# def test_log_insert(caplog):
-#     """This is a pytest to validate loggig is writing properly to a log."""
-#     log = create_logger("Pytest_test_logger_1")
-#     log_test_uuid = str(uuid4())
-#     log.info("Adding uuid to log for testing %s", log_test_uuid)
-#     for record in caplog.records:
-#         assert record.levelname != "CRITITAL"
-#     assert log_test_uuid in caplog.text
-#     if log_test_uuid in caplog.text:
-#         log.info("Found uuid %s in log", log_test_uuid)
-
-
-# Another quick test of the log functionality as a baseline - has handlers.
-def test_logger():
-    """This is a pytest to validate the log handlers are being created."""
-    log = create_logger("Pytest_test_logger_2")
-    assert log.hasHandlers()
-    if log.hasHandlers():
-        log.info("Logger has handlers.")
 
 
 def ash_hash(urn):

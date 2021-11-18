@@ -10,7 +10,7 @@
 """Module created to execute sml/smp look-up e-to-e."""
 from einvoice.dns_query import DNSQuery
 from einvoice.smp_query import SMPQuery
-from einvoice.urn import Urn
+# from einvoice.urn import Urn
 from einvoice.urn_hasher import Hasher
 from einvoice.app_logging import create_logger
 
@@ -51,18 +51,17 @@ class Accessor:
         self.access_point_3_uri = None
         self.log = create_logger("implementation")
 
-    def create_urn(self, specification, schema_id, party_id):
-        """Construct a sml_urn from values provided."""
-        self.sml_urn = Urn(specification, schema_id, party_id)
-        return self.sml_urn
+    # def create_urn(self, specification, schema_id, party_id):
+    #     """Construct a sml_urn from values provided."""
+    #     self.sml_urn = Urn(specification, schema_id, party_id)
+    #     return self.sml_urn
 
     def call_hash(self, specification, schema_id, party_id):
         """Hash the urn to obtain sml lookup value."""
-        self.sml_urn = self.create_urn(specification, schema_id, party_id)
         # Pull out the individual attrributes from the urn object
-        self.specification = self.sml_urn.specification
-        self.schema_id = self.sml_urn.schema_id
-        self.party_id = self.sml_urn.party_id
+        self.specification = specification
+        self.schema_id = schema_id
+        self.party_id = party_id
         self.hash_action = Hasher()
         self.hash_dict = self.hash_action.hasher(self.specification,
                                                  self.schema_id,
