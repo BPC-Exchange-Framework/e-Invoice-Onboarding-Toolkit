@@ -36,6 +36,7 @@ def create_logger(name):
     web_response_file = str(os.getenv("WEB_RESPONSE_FILE"))
 
     logger = logging.getLogger(name)
+    logger.setLevel(logging.INFO)
 
     # create file handler which writes to an application log view.
     file_logger = logging.FileHandler(einvoice_log_file)

@@ -44,10 +44,10 @@ class Urn:
     Raises:
 
     """
-    einvoice_id: str = ""
-    specification: str = ""
-    schema_id: str = ""
-    party_id: str = ""
+    einvoice_id: str
+    specification: str
+    schema_id: str
+    party_id: str
 
     def urn(self) -> str:
         """Construct string for the party's URN"""

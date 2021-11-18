@@ -92,14 +92,21 @@ class Hasher:
         self.final_urn_b32 = None
         self.json_str = None
 
-    def hasher(self, specification, schema, party_id):
+    def hasher(self, in_specification, in_schema, in_party_id):
         """Constructs the hashed urn for lookup"""
         # Create the tracking id
+        self.specification = in_specification
+        self.log.info(f"Using specification {self.specification}")
+        self.schema = in_schema
+        self.log.info(f"Using schema: {self.schema}")
+        self.party_id = in_party_id
+        self.log.info(f"Using party_id: {self.party_id}")
         self.einvoice_id_creator = CreateTrackingID()
         self.einvoice_id = self.einvoice_id_creator.create_tracking_id(10)
 
         # Create a urn object
-        self.urn = Urn(self.einvoice_id, specification, schema, party_id)
+        self.urn = Urn(self.einvoice_id, self.specification, self.schema,
+                       self.party_id)
 
         # Call the method which actually puts the urn together.
         self.final_urn = self.urn.urn()
@@ -189,9 +196,9 @@ class Hasher:
         self.log.info(f"Final hash for urn is: {self.final_urn_b32}")
 
         return {
-            "specification": specification,
-            "schema_type_id": schema,
-            "party_id": party_id,
+            "specification": self.specification,
+            "schema_type_id": self.schema,
+            "party_id": self.party_id,
             "final_urn": self.final_urn_lower_case,
             "urn_hash": self.final_urn_b32,
             "einvoice_id": self.einvoice_id
