@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-# pylint: disable=W0613
-# unused arguments
+# pylint: disable=W0613, W1203. R0902
+# unused arguments, use of lazy % formating,
+# too many instance attributes
 # File: smp_query.py
 # About: Query SMP REST API.
 # Development: Kelly Kinney, Leo Rubiano
@@ -8,6 +9,12 @@
 #
 """"Provides functionality for an SMPQuery 4-corner
 discovery"""
+import re
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+import requests
+from einvoice.app_logging import create_logger
 
 
 class SMPQuery:
@@ -29,37 +36,62 @@ class SMPQuery:
     """
 
     def __init__(self):
+        dotenv_path = join(dirname(__file__), './.env')
+        load_dotenv(dotenv_path)
+        self.protocol = str(os.getenv("PROTOCOL"))
+        self.standard = str(os.getenv("STANDARD"))
+        self.service_id = str(os.getenv("SERVICE_ID"))
+        self.services = str(os.getenv("SERVICES"))
+        self.domain = str(os.getenv("DOMAIN"))
+        self.log = create_logger("smp_query")
+        self.request_url = None
+        self.urn = None
         self.smp_uri = None
-        self.query_1 = None
-        self.query_1_response = None
-        self.query_2 = None
-        self.access_point_3 = None
+        self.srvc_grp_url_qry = None
+        self.srvc_grp_url_reply = None
+        self.srvc_url_qry = None
+        self.srvc_url_reply = None
+        self.response = None
 
-    def get_access_point_3(self, uri):
-        """Make required calls to the SMP to obain access point 3 endpoint."""
+    def query_service_group_url(self, urn):
+        """Make required calls to the SMP to obain service group url info."""
+        self.urn = urn
+        self.srvc_grp_url_qry = self.smp_create_srvc_group_url_query(self.urn)
+        self.srvc_grp_url_reply = self.smp_execute_qry(self.srvc_grp_url_qry)
+        self.log.info(f"Service group url response: {self.srvc_grp_url_reply}")
+        return self.srvc_grp_url_reply
 
-        self.query_1 = self.smp_create_query_1()
-        self.query_1_response = self.smp_execute_query_1(self.query_1, uri)
-        self.query_2 = self.smp_create_query_2(self.query_1_response)
-        self.access_point_3 = self.smp_execute_query_2(self.query_2, uri)
-        return self.access_point_3
+    def query_service_url(self, urn):
+        """Make required calls to the SMP to obain service url info."""
+        self.urn = urn
+        self.srvc_url_qry = self.smp_create_service_url_query(self.urn)
+        self.srvc_url_reply = self.smp_execute_qry(self.srvc_url_qry)
+        self.log.info(f"Service group url response: {self.srvc_url_reply}")
+        return self.srvc_url_reply
 
-    def smp_create_query_1(self):
+    def smp_create_srvc_group_url_query(self, urn):
         """Create first smp api query."""
-        self.query_1 = "some query"
-        return self.query_1
+        self.urn = urn
+        self.request_url = (self.protocol + "://" + self.domain + "/" +
+                            self.standard + "/" + self.urn)
+        self.request_url = re.sub(":", "%3A", self.request_url)
+        self.request_url = re.sub("https%3A", "https:", self.request_url)
+        self.log.info(f"Service group url created: {self.request_url}")
+        return self.request_url
 
-    def smp_execute_query_1(self, query_1, smp_uri):
-        """Execute first smp api query."""
-        self.query_1_response = f"results of {query_1} against {smp_uri}"
-        return self.query_1_response
-
-    def smp_create_query_2(self, query_1_response):
+    def smp_create_service_url_query(self, urn):
         """Create second smp api query."""
-        self.query_2 = f"make another query from {query_1_response}"
-        return self.query_2
+        self.urn = urn
+        self.request_url = (self.protocol + "://" + self.domain + "/" +
+                            self.standard + "/" + self.urn + "/" +
+                            self.services + "/" + self.service_id)
+        self.request_url = re.sub(":", "%3A", self.request_url)
+        self.request_url = re.sub("#", "%23", self.request_url)
+        self.request_url = re.sub("https%3A", "https:", self.request_url)
+        self.log.info(f"Service url created: {self.request_url}")
+        return self.request_url
 
-    def smp_execute_query_2(self, query_2, smp_uri):
-        """Execute second smp api query."""
-        self.access_point_3 = f"results of {query_2} against {smp_uri}"
-        return self.access_point_3
+    def smp_execute_qry(self, url):
+        """Execute an api query."""
+        self.response = requests.get(url)
+        return self.response.text
