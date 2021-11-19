@@ -20,14 +20,15 @@ def test_accessor():
     """Pytest case for test_accesspr."""
     log = create_logger("test_accessor")
     log.info("Start accessor test")
-    dotenv_path = join(dirname(__file__), '../../certificates/.env')
+    dotenv_path = join(dirname(__file__), '../.env')
     load_dotenv(dotenv_path)
-    specification = str(os.getenv("TEST_SPECIFICATION"))
+    specification = str(os.getenv("TEST_SPECIFICATION_2"))
     log.info("Specification: %s", specification)
-    schema_id = str(os.getenv("TEST_SCHEMA_ID"))
+    schema_id = str(os.getenv("TEST_SCHEMA_ID_2"))
     log.info("schema_id: %s", schema_id)
-    party_id = str(os.getenv("TEST_PARTY_ID"))
+    party_id = str(os.getenv("TEST_PARTY_ID_2"))
     log.info("party_id: %s", party_id)
+    domain = str(os.getenv("TEST_SML_DOMAIN"))
 
     accessor_test = Accessor()
 
@@ -48,6 +49,9 @@ def test_accessor():
                                          test_schema_type_id, test_party_id)
     log.info("Hashed urn: %s", hashed_urn)
     assert hashed_urn["urn_hash"] == (
-        "yn5tj7bteln4c5o4mtul7yv"
-        "nq3pwu6dpmipcof4pwcbsd3avvn7a"
+        "vs2l6dxjq4it3hrsosbhb75"
+        "xo4wpa4agukpprc2nnm3jepvdbjya"
     )
+    test_urn = hashed_urn["urn_hash"]
+    smp_uri = accessor_test.call_dns_lookup(hashed_urn["urn_hash"], domain)
+    assert smp_uri == "https://my-smp-url.com/"
