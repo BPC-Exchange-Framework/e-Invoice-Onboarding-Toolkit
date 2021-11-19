@@ -49,6 +49,8 @@ class Accessor:
         self.smp_api_call_2 = None
         self.smp_api_response_2 = None
         self.access_point_3_uri = None
+        self.smp_service_group_url_response = None
+        self.smp_service_url_response = None
         self.log = create_logger("implementation")
 
     # def create_urn(self, specification, schema_id, party_id):
@@ -75,12 +77,19 @@ class Accessor:
                                                       domain)
         return self.smp_uri
 
-    def call_smp(self, smp_uri):
-        """Create handler for SMP tasks."""
-        smp_query_handler = SMPQuery()
-        self.access_point_3_uri = smp_query_handler.\
-            get_access_point_3(smp_uri)
-        return self.access_point_3_uri
+    def call_smp_service_group_url(self, urn):
+        """Create smp service group url query."""
+        smp_handler = SMPQuery()
+        self.smp_service_group_url_response = smp_handler.\
+            query_service_group_url(urn)
+        return self.smp_service_group_url_response
+
+    def call_smp_service_url(self, urn):
+        """Create smp service group url query."""
+        smp_handler = SMPQuery()
+        self.smp_service_url_response = smp_handler.\
+            query_service_url(urn)
+        return self.smp_service_url_response
 
     # if __name__ == "__main__":
     #     urn = create_urn(specification="urn:oasis:"
