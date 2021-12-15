@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-#
+# pylint: disable=C0200
+# Use enumerate inteated of interating (it doesn't work on this list.)
 # File: einvoice.py v2
 # About: Dataclass definition of an einvoice object.
 # Development: Kelly Kinney, Leo Rubiano
@@ -55,7 +56,7 @@ class EInvoice:
         """Sum the line items to get an invoice total."""
         self.einvoice_total = 0.0
         if (len(self.einvoice_line_items)) > 0:
-            for i, self.einvoice_total in enumerate(self.einvoice_line_items):
+            for i in range(len(self.einvoice_line_items)):
                 if isinstance(
                     float, self.einvoice_line_items[i].line_item_total
                 ):

@@ -80,10 +80,10 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+#docs/_build/
 geckodriver.log
 pyenv.cfg
-e-Invoice/src/einvoice/docs/doctrees/
+#e-Invoice/src/einvoice/docs/doctrees/
 
 # PyBuilder
 target/
