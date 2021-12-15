@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>einvoice.tests.test_urn_hasher &mdash; e-invoice Onboarding Toolkit 0.24.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> e-invoice Onboarding Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">einvoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../einvoice.html">einvoice package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">e-invoice Onboarding Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>einvoice.tests.test_urn_hasher</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for einvoice.tests.test_urn_hasher</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1">#</span>
+<span class="c1"># File: test_hasher_hasher.py</span>
+<span class="c1"># About: e-Invoice testing suite; app_handler.</span>
+<span class="c1"># Development: Kelly Kinney, Leo Rubiano</span>
+<span class="c1"># Date: 2021-07-27 (July 27th, 2021)</span>
+<span class="c1">#</span>
+<span class="sd">&quot;&quot;&quot;This is a test file to be run using pytest.</span>
+<span class="sd">Args:</span>
+<span class="sd">NA</span>
+
+<span class="sd">Attributes:</span>
+<span class="sd">NA</span>
+
+<span class="sd">Raises:</span>
+<span class="sd">NA</span>
+
+<span class="sd">Returns:</span>
+<span class="sd">NA</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">sha256</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b32encode</span>
+<span class="kn">from</span> <span class="nn">einvoice.urn_hasher</span> <span class="kn">import</span> <span class="n">Hasher</span>
+
+
+<div class="viewcode-block" id="ash_hash"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.ash_hash">[docs]</a><span class="k">def</span> <span class="nf">ash_hash</span><span class="p">(</span><span class="n">urn</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Test case scenario of the Ash-Hash&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">b32encode</span><span class="p">(</span><span class="n">sha256</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">urn</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">digest</span><span class="p">())</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;=&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">lower</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span></div>
+
+
+<span class="c1">#############################################</span>
+<span class="c1">#</span>
+<span class="c1">#  Test Case 1</span>
+<span class="c1">#</span>
+<span class="c1">#############################################</span>
+
+
+<div class="viewcode-block" id="test_hasher_1"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_1">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_1</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test case #1 hasher&quot;&quot;&quot;</span>
+
+    <span class="n">test_case_spec</span> <span class="o">=</span> <span class="s2">&quot;urn:oasis:names:tc:ebcore:partyid-&quot;</span>\
+        <span class="s2">&quot;type:unregistered:myscheme&quot;</span>
+    <span class="n">test_case_schema</span> <span class="o">=</span> <span class="s2">&quot;BPC01&quot;</span>
+    <span class="n">test_case_party_id</span> <span class="o">=</span> <span class="s2">&quot;bpcBusid01&quot;</span>
+    <span class="n">test_hasher</span> <span class="o">=</span> <span class="n">Hasher</span><span class="p">()</span>
+    <span class="n">test_value</span> <span class="o">=</span> <span class="n">test_hasher</span><span class="o">.</span><span class="n">hasher</span><span class="p">(</span>
+        <span class="n">test_case_spec</span><span class="p">,</span> <span class="n">test_case_schema</span><span class="p">,</span> <span class="n">test_case_party_id</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">test_value</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_1_case_1"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_1_case_1">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_1_case_1</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_1 case_1&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_1</span><span class="p">()</span>
+    <span class="n">test_case_urn</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;urn:oasis:names:tc:ebcore:partyid-type:&quot;</span>
+        <span class="s2">&quot;unregistered:myscheme:bpc01::bpcbusid01&quot;</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;final_urn&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_case_urn</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_1_case_2"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_1_case_2">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_1_case_2</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_1 case_2&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_1</span><span class="p">()</span>
+    <span class="n">test_case_hash</span> <span class="o">=</span> <span class="s2">&quot;yn5tj7bteln4c5o4mtul7yvnq3pwu6dpmipcof4pwcbsd3avvn7a&quot;</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;urn_hash&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_case_hash</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_1_case_3"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_1_case_3">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_1_case_3</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_1 case_3&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_1</span><span class="p">()</span>
+    <span class="n">urn</span> <span class="o">=</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;final_urn&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;urn_hash&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">ash_hash</span><span class="p">(</span><span class="n">urn</span><span class="p">)</span></div>
+
+
+<span class="c1">#############################################</span>
+<span class="c1">#</span>
+<span class="c1">#  Test Case 2</span>
+<span class="c1">#</span>
+<span class="c1">#############################################</span>
+
+
+<div class="viewcode-block" id="test_hasher_2"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_2">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_2</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test case #2 hasher&quot;&quot;&quot;</span>
+    <span class="n">test_case_spec</span> <span class="o">=</span> <span class="s2">&quot;urn:oasis:names:tc:ebcore:partyid-type&quot;</span>
+    <span class="n">test_case_schema</span> <span class="o">=</span> <span class="s2">&quot;iso6523&quot;</span>
+    <span class="n">test_case_party_id</span> <span class="o">=</span> <span class="s2">&quot;0123456789&quot;</span>
+    <span class="n">test_hasher</span> <span class="o">=</span> <span class="n">Hasher</span><span class="p">()</span>
+    <span class="n">test_value</span> <span class="o">=</span> <span class="n">test_hasher</span><span class="o">.</span><span class="n">hasher</span><span class="p">(</span>
+        <span class="n">test_case_spec</span><span class="p">,</span> <span class="n">test_case_schema</span><span class="p">,</span> <span class="n">test_case_party_id</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">test_value</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_2_case_1"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_2_case_1">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_2_case_1</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_2 case_1&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_2</span><span class="p">()</span>
+    <span class="n">test_case_urn</span> <span class="o">=</span> <span class="s2">&quot;urn:oasis:names:tc:ebcore:pa&quot;</span>\
+        <span class="s2">&quot;rtyid-type:iso6523::0123456789&quot;</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;final_urn&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_case_urn</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_2_case_2"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_2_case_2">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_2_case_2</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_2 case_2&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_2</span><span class="p">()</span>
+    <span class="n">test_case_hash</span> <span class="o">=</span> <span class="s2">&quot;6c24uvqpxrfyweqimfxmsuym3bbjvoikuwmmidquz2a2zzyikdya&quot;</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;urn_hash&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_case_hash</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_2_case_3"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_2_case_3">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_2_case_3</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_2 case_3&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_2</span><span class="p">()</span>
+    <span class="n">urn</span> <span class="o">=</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;final_urn&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;urn_hash&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">ash_hash</span><span class="p">(</span><span class="n">urn</span><span class="p">)</span></div>
+
+
+<span class="c1">#############################################</span>
+<span class="c1">#</span>
+<span class="c1">#  Test Case 3</span>
+<span class="c1">#</span>
+<span class="c1">#############################################</span>
+
+
+<div class="viewcode-block" id="test_hasher_3"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_3">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_3</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test case #3 hasher&quot;&quot;&quot;</span>
+    <span class="n">test_case_spec</span> <span class="o">=</span> <span class="s2">&quot;urn:oasis:names:tc:ebcore:partyid-type&quot;</span>
+    <span class="n">test_case_schema</span> <span class="o">=</span> <span class="s2">&quot;iso6523:0088&quot;</span>
+    <span class="n">test_case_party_id</span> <span class="o">=</span> <span class="s2">&quot;EAN-7638725972413&quot;</span>
+    <span class="n">test_hasher</span> <span class="o">=</span> <span class="n">Hasher</span><span class="p">()</span>
+    <span class="n">test_value</span> <span class="o">=</span> <span class="n">test_hasher</span><span class="o">.</span><span class="n">hasher</span><span class="p">(</span>
+        <span class="n">test_case_spec</span><span class="p">,</span> <span class="n">test_case_schema</span><span class="p">,</span> <span class="n">test_case_party_id</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">test_value</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_3_case_1"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_3_case_1">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_3_case_1</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_3 case_1&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_3</span><span class="p">()</span>
+    <span class="n">test_case_urn</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;urn:oasis:names:tc:ebcore:partyid-type:iso6523&quot;</span>
+        <span class="s2">&quot;:0088::ean-7638725972413&quot;</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;final_urn&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_case_urn</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_3_case_2"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_3_case_2">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_3_case_2</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_3 case_2&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_3</span><span class="p">()</span>
+    <span class="n">test_case_hash</span> <span class="o">=</span> <span class="s2">&quot;bc2ntkxz42amx3a5rmjbsaesp5ucuc3iciposkd3qwnj6b4wjh2q&quot;</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;urn_hash&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_case_hash</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_3_case_3"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_3_case_3">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_3_case_3</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_3 case_3&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_3</span><span class="p">()</span>
+    <span class="n">urn</span> <span class="o">=</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;final_urn&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;urn_hash&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">ash_hash</span><span class="p">(</span><span class="n">urn</span><span class="p">)</span></div>
+
+
+<span class="c1">#############################################</span>
+<span class="c1">#</span>
+<span class="c1">#  Test Case 4</span>
+<span class="c1">#</span>
+<span class="c1">#############################################</span>
+
+
+<div class="viewcode-block" id="test_hasher_4"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_4">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_4</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test case #4 hasher&quot;&quot;&quot;</span>
+    <span class="n">test_case_spec</span> <span class="o">=</span> <span class="s2">&quot;urn:oasis:names:tc:ebcore:partyid-type&quot;</span>
+    <span class="n">test_case_schema</span> <span class="o">=</span> <span class="s2">&quot;iso6523:0088&quot;</span>
+    <span class="n">test_case_party_id</span> <span class="o">=</span> <span class="s2">&quot;bpc-2343030383&quot;</span>
+    <span class="n">test_hasher</span> <span class="o">=</span> <span class="n">Hasher</span><span class="p">()</span>
+    <span class="n">test_value</span> <span class="o">=</span> <span class="n">test_hasher</span><span class="o">.</span><span class="n">hasher</span><span class="p">(</span>
+        <span class="n">test_case_spec</span><span class="p">,</span> <span class="n">test_case_schema</span><span class="p">,</span> <span class="n">test_case_party_id</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">test_value</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_4_case_1"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_4_case_1">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_4_case_1</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_4 case_1&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_4</span><span class="p">()</span>
+    <span class="n">test_case_urn</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;urn:oasis:names:tc:ebcore:partyid-type:iso6523:&quot;</span>
+        <span class="s2">&quot;0088::bpc-2343030383&quot;</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;final_urn&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_case_urn</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_4_case_2"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_4_case_2">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_4_case_2</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_4 case_2&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_4</span><span class="p">()</span>
+    <span class="n">test_case_hash</span> <span class="o">=</span> <span class="s2">&quot;rixkdb2u5xxf7vtieezqvakx5r2bc3iugzeqd35ibeddloeapf6a&quot;</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;urn_hash&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_case_hash</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_4_case_3"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_4_case_3">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_4_case_3</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_4 case_3&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_4</span><span class="p">()</span>
+    <span class="n">urn</span> <span class="o">=</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;final_urn&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;urn_hash&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">ash_hash</span><span class="p">(</span><span class="n">urn</span><span class="p">)</span></div>
+
+
+<span class="c1">#############################################</span>
+<span class="c1">#</span>
+<span class="c1">#  Test Case 5</span>
+<span class="c1">#</span>
+<span class="c1">#############################################</span>
+
+
+<div class="viewcode-block" id="test_hasher_5"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_5">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_5</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test case #5 hasher&quot;&quot;&quot;</span>
+    <span class="n">test_case_spec</span> <span class="o">=</span> <span class="s2">&quot;urn:oasis:names:tc:ebcore:partyid-type&quot;</span>
+    <span class="n">test_case_schema</span> <span class="o">=</span> <span class="s2">&quot;iso6523:0088&quot;</span>
+    <span class="n">test_case_party_id</span> <span class="o">=</span> <span class="s2">&quot;4035811991021&quot;</span>
+    <span class="n">test_hasher</span> <span class="o">=</span> <span class="n">Hasher</span><span class="p">()</span>
+    <span class="n">test_value</span> <span class="o">=</span> <span class="n">test_hasher</span><span class="o">.</span><span class="n">hasher</span><span class="p">(</span>
+        <span class="n">test_case_spec</span><span class="p">,</span> <span class="n">test_case_schema</span><span class="p">,</span> <span class="n">test_case_party_id</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">test_value</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_5_case_1"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_5_case_1">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_5_case_1</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_5 case_1&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_5</span><span class="p">()</span>
+    <span class="n">test_case_urn</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;urn:oasis:names:tc:ebcore:partyid-type:iso6523:&quot;</span>
+        <span class="s2">&quot;0088::4035811991021&quot;</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;final_urn&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_case_urn</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_5_case_2"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_5_case_2">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_5_case_2</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_5 case_2&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_5</span><span class="p">()</span>
+    <span class="n">test_case_hash</span> <span class="o">=</span> <span class="s2">&quot;jc4swjyiphrll4gfhlu2edehpwlkmqmsncc2lc3so7m5jvgjkewa&quot;</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;urn_hash&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_case_hash</span></div>
+
+
+<div class="viewcode-block" id="test_hasher_5_case_3"><a class="viewcode-back" href="../../../einvoice.tests.html#einvoice.tests.test_urn_hasher.test_hasher_5_case_3">[docs]</a><span class="k">def</span> <span class="nf">test_hasher_5_case_3</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test hasher_5 case_3&quot;&quot;&quot;</span>
+    <span class="n">case_dict</span> <span class="o">=</span> <span class="n">test_hasher_5</span><span class="p">()</span>
+    <span class="n">urn</span> <span class="o">=</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;final_urn&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">case_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;urn_hash&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">ash_hash</span><span class="p">(</span><span class="n">urn</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Kelly Kinney.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
