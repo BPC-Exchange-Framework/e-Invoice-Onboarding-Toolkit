@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>einvoice.conf.config_tool &mdash; e-invoice Onboarding Toolkit 0.24.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> e-invoice Onboarding Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">einvoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../einvoice.html">einvoice package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">e-invoice Onboarding Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>einvoice.conf.config_tool</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for einvoice.conf.config_tool</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># pylint: disable=W1514, R0201, E1120</span>
+<span class="c1"># False positive on requiring explicit encoding, method could be a function</span>
+<span class="c1"># known bug with E1120 false positive</span>
+<span class="c1"># File: config_tool.py</span>
+<span class="c1"># About: Create default einvoice values in correct format</span>
+<span class="c1"># if none are known.</span>
+<span class="c1"># Development: Kelly Kinney, Leo Rubiano</span>
+<span class="c1"># Date: 2021-07-17 (July 17th, 2021)</span>
+<span class="c1">#</span>
+<span class="sd">&quot;&quot;&quot;The classes and functions which support programatic configuration updates.</span>
+
+<span class="sd">The configuration values are stored in a dictionary written to a JSON file.</span>
+<span class="sd">The values are read on demand by other package and module files as necessary.</span>
+<span class="sd">This allows for the programtic maintenance of the file.</span>
+
+<span class="sd">Args: str</span>
+<span class="sd">ei_conf_fn: the file name containing the values to load.</span>
+<span class="sd">This is filename can be dynamiclaly saved to support multiple versions.</span>
+
+<span class="sd">Attributes:</span>
+<span class="sd">None</span>
+
+<span class="sd">Raises:</span>
+<span class="sd">None</span>
+
+<span class="sd">Returns:</span>
+<span class="sd">None</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">from</span> <span class="nn">json</span> <span class="kn">import</span> <span class="n">dumps</span>
+<span class="kn">from</span> <span class="nn">einvoice.app_logging</span> <span class="kn">import</span> <span class="n">create_logger</span>
+
+
+<div class="viewcode-block" id="EInvoiceConfig"><a class="viewcode-back" href="../../../einvoice.conf.html#einvoice.conf.config_tool.EInvoiceConfig">[docs]</a><span class="k">class</span> <span class="nc">EInvoiceConfig</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Configure default settings for e-Invoice.</span>
+
+<span class="sd">    This class creates some baseline configurations for e-Invoice handling.py</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">    defaults: obj</span>
+<span class="sd">    This is a dictionary {} object to hold config key/value pairs</span>
+<span class="sd">    f_n: str</span>
+<span class="sd">    filename which represents both output path and filename</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">    NA</span>
+
+<span class="sd">    Return:</span>
+<span class="sd">    NA</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="EInvoiceConfig.__init__"><a class="viewcode-back" href="../../../einvoice.conf.html#einvoice.conf.config_tool.EInvoiceConfig.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Define values made available across the application.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span> <span class="o">=</span> <span class="n">create_logger</span><span class="p">(</span><span class="s2">&quot;config_tool&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;./einvoice.json&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">json_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="c1"># Check to see if a default file exists and if not</span>
+        <span class="c1"># create one.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">load_defaults</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EInvoiceConfig.write_json_to_file"><a class="viewcode-back" href="../../../einvoice.conf.html#einvoice.conf.config_tool.EInvoiceConfig.write_json_to_file">[docs]</a>    <span class="k">def</span> <span class="nf">write_json_to_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">einvoice_data</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Write the e-Inovice to a JSON file.&quot;&quot;&quot;</span>
+        <span class="n">json_str</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">(</span><span class="n">einvoice_data</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error writing to file&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="EInvoiceConfig.load_defaults"><a class="viewcode-back" href="../../../einvoice.conf.html#einvoice.conf.config_tool.EInvoiceConfig.load_defaults">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_defaults</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;./einvoice.json&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize library of default values.</span>
+
+<span class="sd">        Args:</span>
+
+<span class="sd">        Attributes:</span>
+<span class="sd">        default_log_level: str</span>
+<span class="sd">        Default logging level</span>
+<span class="sd">        default_party_id_spec: str</span>
+<span class="sd">        Default party id specification</span>
+<span class="sd">        default_party_schema_type: str</span>
+<span class="sd">        Default party id schema type</span>
+<span class="sd">        default_party_id: str</span>
+<span class="sd">        Default party id</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">        NA</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        defaults: obj</span>
+<span class="sd">        Dictionary {} object containing default values.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">defaults</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+
+        <span class="bp">cls</span><span class="o">.</span><span class="n">defaults</span><span class="p">[</span><span class="s2">&quot;default_log_level&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;info&quot;</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">defaults</span><span class="p">[</span><span class="s2">&quot;default_party_id_spec&quot;</span><span class="p">]</span> <span class="o">=</span> \
+            <span class="s2">&quot;urn:oasis:names:tc:ebcore:partyid-&quot;</span>\
+            <span class="s2">&quot;type:unregistered:myscheme&quot;</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">defaults</span><span class="p">[</span><span class="s2">&quot;def_prty_schma_typ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;BPC01&quot;</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">defaults</span><span class="p">[</span><span class="s2">&quot;default_party_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bpcBusid01&quot;</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">write_json_to_file</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">defaults</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">defaults</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Kelly Kinney.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

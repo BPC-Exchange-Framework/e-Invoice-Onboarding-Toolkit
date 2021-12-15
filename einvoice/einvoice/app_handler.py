@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# File: handler.py
+# File: app_handler.py
 # About: Responsible for discovery components of 4-corners model.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
@@ -63,9 +63,13 @@ class SmlUrn:
             The urn that has been hashed a second time from shaw256 to base32.
 
     Returns:
-w
+        NA
+    
     Raises:
+        NA
+
     """
+
     log.debug("Created an instance of SmlUrn")
     party_id_specification: str = "urn:oasis:names:tc:ebcore:partyid-type"
     log.debug("party_id_specification: %s", party_id_specification)

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>einvoice.line_item &mdash; e-invoice Onboarding Toolkit 0.24.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> e-invoice Onboarding Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">einvoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../einvoice.html">einvoice package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">e-invoice Onboarding Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>einvoice.line_item</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for einvoice.line_item</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1">#</span>
+<span class="c1"># File: line_item.py</span>
+<span class="c1"># About: Dataclass definition of a line item in an einvoice.</span>
+<span class="c1"># Development: Kelly Kinney, Leo Rubiano</span>
+<span class="c1"># Date: 2021-06-20 (June 20, 2021)</span>
+<span class="c1">#</span>
+<span class="sd">&quot;&quot;&quot;The dataclass definition of a line items in an einvoice.</span>
+
+<span class="sd">This is a model defined for a line item of in</span>
+<span class="sd">an e-Invoice which can be used in a four</span>
+<span class="sd">corners distributed e-services implementation.</span>
+
+<span class="sd">    Usage:</span>
+<span class="sd">    my_line_item = LineItem()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+
+<div class="viewcode-block" id="LineItem"><a class="viewcode-back" href="../../einvoice.html#einvoice.line_item.LineItem">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">LineItem</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Dataclass which represents a single line item on an invoice.</span>
+
+<span class="sd">    An e-Invoice will contain 1-n LineItem objects.</span>
+
+<span class="sd">    Args:</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        line_item_id: str</span>
+<span class="sd">            A unique identifier for the LineItem.  Default value is undefined.</span>
+<span class="sd">        line_item_per: str</span>
+<span class="sd">            Units of measure of the item., e.g., individual, bundle roll, etc.</span>
+<span class="sd">            Default value is undefined.</span>
+<span class="sd">        line_item_name: str</span>
+<span class="sd">            Short name of items sold. Default value is undefined.</span>
+<span class="sd">        line_item_description: str</span>
+<span class="sd">            Additional descriptive details to differentiate the item.</span>
+<span class="sd">            Default value is undefined.</span>
+<span class="sd">        line_item_quantity: int</span>
+<span class="sd">            Quantity of items covered by this line item.  Default value is 0.</span>
+<span class="sd">        line_item_price_per_item: float</span>
+<span class="sd">            The price per item in dollars and cents (two decimal</span>
+<span class="sd">            places).  Default value is 0.</span>
+<span class="sd">        line_item_total: float</span>
+<span class="sd">            The line item total cost.</span>
+<span class="sd">            This is calculated as</span>
+<span class="sd">            line_item_quantity * line_item_price_per_item.</span>
+
+<span class="sd">    Returns:</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">line_item_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">line_item_per</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">line_item_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">line_item_description</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">line_item_quantity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">line_item_price_per_item</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">line_item_total</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<div class="viewcode-block" id="LineItem.calculate_line_item_total"><a class="viewcode-back" href="../../einvoice.html#einvoice.line_item.LineItem.calculate_line_item_total">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_line_item_total</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Compute line item total.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_item_quantity</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">line_item_price_per_item</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Kelly Kinney.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

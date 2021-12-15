@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>einvoice package &mdash; e-invoice Onboarding Toolkit 0.24.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="einvoice.conf package" href="einvoice.conf.html" />
+    <link rel="prev" title="einvoice" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> e-invoice Onboarding Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="modules.html">einvoice</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">einvoice package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="einvoice.conf.html">einvoice.conf package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="einvoice.data.html">einvoice.data package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="einvoice.tests.html">einvoice.tests package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice.accessor">einvoice.accessor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice.app_handler">einvoice.app_handler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice.app_logging">einvoice.app_logging module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice.create_tracking_id">einvoice.create_tracking_id module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice.dns_query">einvoice.dns_query module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#einvoice-einvoice-message-package-module">einvoice.einvoice_message_package module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice.line_item">einvoice.line_item module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice.party_address">einvoice.party_address module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#einvoice-semantic-model-module">einvoice.semantic_model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice.smp_query">einvoice.smp_query module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice.urn">einvoice.urn module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice.urn_hasher">einvoice.urn_hasher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-einvoice">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">e-invoice Onboarding Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">einvoice</a> &raquo;</li>
+      <li>einvoice package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/einvoice.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="einvoice-package">
+<h1>einvoice package<a class="headerlink" href="#einvoice-package" title="Permalink to this headline"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="einvoice.conf.html">einvoice.conf package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.conf.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.conf.html#module-einvoice.conf.config_tool">einvoice.conf.config_tool module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.conf.html#module-einvoice.conf.smp_config">einvoice.conf.smp_config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.conf.html#module-einvoice.conf">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="einvoice.data.html">einvoice.data package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.data.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.data.html#module-einvoice.data.create_sample_data">einvoice.data.create_sample_data module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.data.html#module-einvoice.data">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="einvoice.tests.html">einvoice.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.magic_linter">einvoice.tests.magic_linter module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_accessor">einvoice.tests.test_accessor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_app_logging">einvoice.tests.test_app_logging module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_create_sample_data">einvoice.tests.test_create_sample_data module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_create_tracking_id">einvoice.tests.test_create_tracking_id module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_dns_query">einvoice.tests.test_dns_query module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_line_item">einvoice.tests.test_line_item module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_party_address">einvoice.tests.test_party_address module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_semantic_model">einvoice.tests.test_semantic_model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_smp_query">einvoice.tests.test_smp_query module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_urn">einvoice.tests.test_urn module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests.test_urn_hasher">einvoice.tests.test_urn_hasher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="einvoice.tests.html#module-einvoice.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-einvoice.accessor">
+<span id="einvoice-accessor-module"></span><h2>einvoice.accessor module<a class="headerlink" href="#module-einvoice.accessor" title="Permalink to this headline"></a></h2>
+<p>Module created to execute sml/smp look-up e-to-e.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="einvoice.accessor.Accessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">einvoice.accessor.</span></span><span class="sig-name descname"><span class="pre">Accessor</span></span><a class="reference internal" href="_modules/einvoice/accessor.html#Accessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.accessor.Accessor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to define walk through of end-to-end processing.</p>
+<p>Args:
+NA</p>
+<p>Attributes:
+NA</p>
+<p>Returns:
+NA</p>
+<p>Raises:
+NA</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.accessor.Accessor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/accessor.html#Accessor.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.accessor.Accessor.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Define values for an instance of the is class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.accessor.Accessor.call_dns_lookup">
+<span class="sig-name descname"><span class="pre">call_dns_lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hashed_urn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/accessor.html#Accessor.call_dns_lookup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.accessor.Accessor.call_dns_lookup" title="Permalink to this definition"></a></dt>
+<dd><p>Look-up NAPTR record in the DNS.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.accessor.Accessor.call_hash">
+<span class="sig-name descname"><span class="pre">call_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specification</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">party_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/accessor.html#Accessor.call_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.accessor.Accessor.call_hash" title="Permalink to this definition"></a></dt>
+<dd><p>Hash the urn to obtain sml lookup value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.accessor.Accessor.call_smp_service_group_url">
+<span class="sig-name descname"><span class="pre">call_smp_service_group_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/accessor.html#Accessor.call_smp_service_group_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.accessor.Accessor.call_smp_service_group_url" title="Permalink to this definition"></a></dt>
+<dd><p>Create smp service group url query.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.accessor.Accessor.call_smp_service_url">
+<span class="sig-name descname"><span class="pre">call_smp_service_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/accessor.html#Accessor.call_smp_service_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.accessor.Accessor.call_smp_service_url" title="Permalink to this definition"></a></dt>
+<dd><p>Create smp service group url query.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-einvoice.app_handler">
+<span id="einvoice-app-handler-module"></span><h2>einvoice.app_handler module<a class="headerlink" href="#module-einvoice.app_handler" title="Permalink to this headline"></a></h2>
+<p>The classes and functions responsible for 4-corners participant discovery.</p>
+<p>This module is responsible for retaining the invoice while work is done to
+prepare the request do a UNAPTR DNS look-up to obtain the SMP URI, perform
+the UNAPTR DNS look-up and perform SMP query on the URI returned,</p>
+<blockquote>
+<div><dl>
+<dt>Args:</dt><dd><p>_party_id: str
+The unique identifier of the party being searched for.</p>
+<p>_party_id_schema_type: str
+An alternate Party ID Schema if not using the default.Schema</p>
+<p>_einvoice: obj (einvoice)
+An einvoice object (which is a JSON file)</p>
+</dd>
+</dl>
+<p>Attributes:</p>
+<p>Raises:</p>
+<p>Returns:</p>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="einvoice.app_handler.SmlUrn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">einvoice.app_handler.</span></span><span class="sig-name descname"><span class="pre">SmlUrn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">party_id_specification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'urn:oasis:names:tc:ebcore:partyid-type'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">party_id_schema_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'iso6523'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">party_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'0123456789'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">urn_shaw256_hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">urn_base32_hash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/app_handler.html#SmlUrn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.app_handler.SmlUrn" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Dataclass which represents the base URN for the SML query.</p>
+<p>The base URN to be constructed as a string.</p>
+<p>Args:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.app_handler.SmlUrn.party_id_specification">
+<span class="sig-name descname"><span class="pre">party_id_specification</span></span><a class="headerlink" href="#einvoice.app_handler.SmlUrn.party_id_specification" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The party ID specification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.app_handler.SmlUrn.party_id_schema_type">
+<span class="sig-name descname"><span class="pre">party_id_schema_type</span></span><a class="headerlink" href="#einvoice.app_handler.SmlUrn.party_id_schema_type" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The party ID schema type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.app_handler.SmlUrn.party_id">
+<span class="sig-name descname"><span class="pre">party_id</span></span><a class="headerlink" href="#einvoice.app_handler.SmlUrn.party_id" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The party ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.app_handler.SmlUrn.party_urn">
+<span class="sig-name descname"><span class="pre">party_urn</span></span><a class="reference internal" href="_modules/einvoice/app_handler.html#SmlUrn.party_urn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.app_handler.SmlUrn.party_urn" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The full urn constructed by default values or passed into class
+when called.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.app_handler.SmlUrn.final_urn">
+<span class="sig-name descname"><span class="pre">final_urn</span></span><a class="reference internal" href="_modules/einvoice/app_handler.html#SmlUrn.final_urn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.app_handler.SmlUrn.final_urn" title="Permalink to this definition"></a></dt>
+<dd><p>str
+A version of the full urn which is not constructed on the
+fly but held (essentially as a constant)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.app_handler.SmlUrn.urn_shaw256_hash">
+<span class="sig-name descname"><span class="pre">urn_shaw256_hash</span></span><a class="headerlink" href="#einvoice.app_handler.SmlUrn.urn_shaw256_hash" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The urn that has been hashed using the shaw256 hash.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.app_handler.SmlUrn.urn_base32_hash">
+<span class="sig-name descname"><span class="pre">urn_base32_hash</span></span><a class="headerlink" href="#einvoice.app_handler.SmlUrn.urn_base32_hash" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The urn that has been hashed a second time from shaw256 to base32.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>NA</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NA</strong> – </p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">final_urn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/einvoice/app_handler.html#SmlUrn.final_urn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Return the urn as essentially a constant.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">party_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'0123456789'</span></em><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">party_id_schema_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'iso6523'</span></em><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">party_id_specification</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'urn:oasis:names:tc:ebcore:partyid-type'</span></em><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">party_urn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/einvoice/app_handler.html#SmlUrn.party_urn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Permalink to this definition"></a></dt>
+<dd><p>Construct string for the party’s URN</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">urn_base32_hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id5" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">urn_shaw256_hash</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id6" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="einvoice.app_handler.apply_base32_hash">
+<span class="sig-prename descclassname"><span class="pre">einvoice.app_handler.</span></span><span class="sig-name descname"><span class="pre">apply_base32_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_smlurn_obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/app_handler.html#apply_base32_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.app_handler.apply_base32_hash" title="Permalink to this definition"></a></dt>
+<dd><p>Apply Base32 encoding per the spec</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="einvoice.app_handler.apply_shaw256_hash">
+<span class="sig-prename descclassname"><span class="pre">einvoice.app_handler.</span></span><span class="sig-name descname"><span class="pre">apply_shaw256_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_smlurn_obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/app_handler.html#apply_shaw256_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.app_handler.apply_shaw256_hash" title="Permalink to this definition"></a></dt>
+<dd><p>Apply SHA256 hash to the lookup</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="einvoice.app_handler.create_sml_lookup">
+<span class="sig-prename descclassname"><span class="pre">einvoice.app_handler.</span></span><span class="sig-name descname"><span class="pre">create_sml_lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_urn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/app_handler.html#create_sml_lookup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.app_handler.create_sml_lookup" title="Permalink to this definition"></a></dt>
+<dd><p>Constructs the full URN for lookup</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="einvoice.app_handler.write_urn_to_json">
+<span class="sig-prename descclassname"><span class="pre">einvoice.app_handler.</span></span><span class="sig-name descname"><span class="pre">write_urn_to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_smlurn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/app_handler.html#write_urn_to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.app_handler.write_urn_to_json" title="Permalink to this definition"></a></dt>
+<dd><p>Write the urn values to a file</p>
+</dd></dl>
+
+</section>
+<section id="module-einvoice.app_logging">
+<span id="einvoice-app-logging-module"></span><h2>einvoice.app_logging module<a class="headerlink" href="#module-einvoice.app_logging" title="Permalink to this headline"></a></h2>
+<p>A class to standardize log formatting across all application artifacts.</p>
+<p>Define common loggers and format to be used across the application.
+NOTE: These logs are localized and non-persistent.
+If used with a Docker container,
+they cease to exist when the container does.</p>
+<blockquote>
+<div><p>Usage: (not meant to be called directly)
+log = create_logger(“app_logging”)
+log.debug(“This message will be logged.”)</p>
+</div></blockquote>
+<dl class="py function">
+<dt class="sig sig-object py" id="einvoice.app_logging.create_logger">
+<span class="sig-prename descclassname"><span class="pre">einvoice.app_logging.</span></span><span class="sig-name descname"><span class="pre">create_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/app_logging.html#create_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.app_logging.create_logger" title="Permalink to this definition"></a></dt>
+<dd><p>This function creates a logger template for the einvoice package.</p>
+<p>This function creates a consistant format and location for
+all application log files to write to.</p>
+</dd></dl>
+
+</section>
+<section id="module-einvoice.create_tracking_id">
+<span id="einvoice-create-tracking-id-module"></span><h2>einvoice.create_tracking_id module<a class="headerlink" href="#module-einvoice.create_tracking_id" title="Permalink to this headline"></a></h2>
+<p>This class creates a random 10 character alphanumeric id to
+track the request
+through the process end-to-end.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="einvoice.create_tracking_id.CreateTrackingID">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">einvoice.create_tracking_id.</span></span><span class="sig-name descname"><span class="pre">CreateTrackingID</span></span><a class="reference internal" href="_modules/einvoice/create_tracking_id.html#CreateTrackingID"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.create_tracking_id.CreateTrackingID" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to create a tracking Id for the einvoice.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.create_tracking_id.CreateTrackingID.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/create_tracking_id.html#CreateTrackingID.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.create_tracking_id.CreateTrackingID.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Entry point into the application and define variables upon
+class instantiation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.create_tracking_id.CreateTrackingID.create_tracking_id">
+<span class="sig-name descname"><span class="pre">create_tracking_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/create_tracking_id.html#CreateTrackingID.create_tracking_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.create_tracking_id.CreateTrackingID.create_tracking_id" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a completely random uuid not associated with mac address,
+node or timestamp.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-einvoice.dns_query">
+<span id="einvoice-dns-query-module"></span><h2>einvoice.dns_query module<a class="headerlink" href="#module-einvoice.dns_query" title="Permalink to this headline"></a></h2>
+<p>Queries DNS services for NAPTR records</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="einvoice.dns_query.DNSQuery">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">einvoice.dns_query.</span></span><span class="sig-name descname"><span class="pre">DNSQuery</span></span><a class="reference internal" href="_modules/einvoice/dns_query.html#DNSQuery"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.dns_query.DNSQuery" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to handle dns query/naptr look-up of hashed urn.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.dns_query.DNSQuery.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/dns_query.html#DNSQuery.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.dns_query.DNSQuery.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Entry point for the module.  Defines instance variables.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.dns_query.DNSQuery.naptr_lookup">
+<span class="sig-name descname"><span class="pre">naptr_lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/dns_query.html#DNSQuery.naptr_lookup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.dns_query.DNSQuery.naptr_lookup" title="Permalink to this definition"></a></dt>
+<dd><p>Module to do the naptr dns query/look-up.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="einvoice-einvoice-message-package-module">
+<h2>einvoice.einvoice_message_package module<a class="headerlink" href="#einvoice-einvoice-message-package-module" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-einvoice.line_item">
+<span id="einvoice-line-item-module"></span><h2>einvoice.line_item module<a class="headerlink" href="#module-einvoice.line_item" title="Permalink to this headline"></a></h2>
+<p>The dataclass definition of a line items in an einvoice.</p>
+<p>This is a model defined for a line item of in
+an e-Invoice which can be used in a four
+corners distributed e-services implementation.</p>
+<blockquote>
+<div><p>Usage:
+my_line_item = LineItem()</p>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="einvoice.line_item.LineItem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">einvoice.line_item.</span></span><span class="sig-name descname"><span class="pre">LineItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line_item_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_item_per</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_item_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_item_description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_item_quantity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_item_price_per_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_item_total</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/line_item.html#LineItem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.line_item.LineItem" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Dataclass which represents a single line item on an invoice.</p>
+<p>An e-Invoice will contain 1-n LineItem objects.</p>
+<p>Args:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.line_item.LineItem.line_item_id">
+<span class="sig-name descname"><span class="pre">line_item_id</span></span><a class="headerlink" href="#einvoice.line_item.LineItem.line_item_id" title="Permalink to this definition"></a></dt>
+<dd><p>str
+A unique identifier for the LineItem.  Default value is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.line_item.LineItem.line_item_per">
+<span class="sig-name descname"><span class="pre">line_item_per</span></span><a class="headerlink" href="#einvoice.line_item.LineItem.line_item_per" title="Permalink to this definition"></a></dt>
+<dd><p>str
+Units of measure of the item., e.g., individual, bundle roll, etc.
+Default value is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.line_item.LineItem.line_item_name">
+<span class="sig-name descname"><span class="pre">line_item_name</span></span><a class="headerlink" href="#einvoice.line_item.LineItem.line_item_name" title="Permalink to this definition"></a></dt>
+<dd><p>str
+Short name of items sold. Default value is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.line_item.LineItem.line_item_description">
+<span class="sig-name descname"><span class="pre">line_item_description</span></span><a class="headerlink" href="#einvoice.line_item.LineItem.line_item_description" title="Permalink to this definition"></a></dt>
+<dd><p>str
+Additional descriptive details to differentiate the item.
+Default value is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.line_item.LineItem.line_item_quantity">
+<span class="sig-name descname"><span class="pre">line_item_quantity</span></span><a class="headerlink" href="#einvoice.line_item.LineItem.line_item_quantity" title="Permalink to this definition"></a></dt>
+<dd><p>int
+Quantity of items covered by this line item.  Default value is 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.line_item.LineItem.line_item_price_per_item">
+<span class="sig-name descname"><span class="pre">line_item_price_per_item</span></span><a class="headerlink" href="#einvoice.line_item.LineItem.line_item_price_per_item" title="Permalink to this definition"></a></dt>
+<dd><p>float
+The price per item in dollars and cents (two decimal
+places).  Default value is 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.line_item.LineItem.line_item_total">
+<span class="sig-name descname"><span class="pre">line_item_total</span></span><a class="headerlink" href="#einvoice.line_item.LineItem.line_item_total" title="Permalink to this definition"></a></dt>
+<dd><p>float
+The line item total cost.
+This is calculated as
+line_item_quantity * line_item_price_per_item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Returns:</p>
+<p>Raises:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.line_item.LineItem.calculate_line_item_total">
+<span class="sig-name descname"><span class="pre">calculate_line_item_total</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/einvoice/line_item.html#LineItem.calculate_line_item_total"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.line_item.LineItem.calculate_line_item_total" title="Permalink to this definition"></a></dt>
+<dd><p>Compute line item total.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">line_item_description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id7" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">line_item_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id8" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">line_item_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id9" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">line_item_per</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id10" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">line_item_price_per_item</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></em><a class="headerlink" href="#id11" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">line_item_quantity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#id12" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-name descname"><span class="pre">line_item_total</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></em><a class="headerlink" href="#id13" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-einvoice.party_address">
+<span id="einvoice-party-address-module"></span><h2>einvoice.party_address module<a class="headerlink" href="#module-einvoice.party_address" title="Permalink to this headline"></a></h2>
+<p>The dataclass definition of a party’s address.</p>
+<p>This is a model defined for the Address of a party in
+an e-Invoice which can be used in a four
+corners distributed e-services implementation.</p>
+<blockquote>
+<div><p>Usage:
+my_address = Address()</p>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="einvoice.party_address.Address">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">einvoice.party_address.</span></span><span class="sig-name descname"><span class="pre">Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">org_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address_2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">city</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zip_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/party_address.html#Address"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.party_address.Address" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A dataclass representing a physical address.</p>
+<p>Used to store the address of the buyer and seller.</p>
+<p>Args:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.party_address.Address.org_id">
+<span class="sig-name descname"><span class="pre">org_id</span></span><a class="headerlink" href="#einvoice.party_address.Address.org_id" title="Permalink to this definition"></a></dt>
+<dd><p>str
+A unique identifier to reference the Address object.  Default
+value is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.party_address.Address.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#einvoice.party_address.Address.name" title="Permalink to this definition"></a></dt>
+<dd><p>str
+A common name for the business of Address owner.  Default
+value is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.party_address.Address.address_1">
+<span class="sig-name descname"><span class="pre">address_1</span></span><a class="headerlink" href="#einvoice.party_address.Address.address_1" title="Permalink to this definition"></a></dt>
+<dd><p>str
+Address line #1.  Default value is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.party_address.Address.address_2">
+<span class="sig-name descname"><span class="pre">address_2</span></span><a class="headerlink" href="#einvoice.party_address.Address.address_2" title="Permalink to this definition"></a></dt>
+<dd><p>str
+Address line #2. Default value is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.party_address.Address.city">
+<span class="sig-name descname"><span class="pre">city</span></span><a class="headerlink" href="#einvoice.party_address.Address.city" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The city where the business address is located. Default
+value is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.party_address.Address.state">
+<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#einvoice.party_address.Address.state" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The state where the business address is located. Default
+value is undefined.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.party_address.Address._zip">
+<span class="sig-name descname"><span class="pre">_zip</span></span><a class="headerlink" href="#einvoice.party_address.Address._zip" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The zip code where the business address is located. Default
+value is undefined.</p>
+</dd></dl>
+
+<p>Returns:</p>
+<p>Raises:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-name descname"><span class="pre">address_1</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id14" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id15">
+<span class="sig-name descname"><span class="pre">address_2</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id15" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-name descname"><span class="pre">city</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id16" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id17" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-name descname"><span class="pre">org_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id18" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id19">
+<span class="sig-name descname"><span class="pre">state</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#id19" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.party_address.Address.zip_">
+<span class="sig-name descname"><span class="pre">zip_</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#einvoice.party_address.Address.zip_" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="einvoice-semantic-model-module">
+<h2>einvoice.semantic_model module<a class="headerlink" href="#einvoice-semantic-model-module" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-einvoice.smp_query">
+<span id="einvoice-smp-query-module"></span><h2>einvoice.smp_query module<a class="headerlink" href="#module-einvoice.smp_query" title="Permalink to this headline"></a></h2>
+<p>“Provides functionality for an SMPQuery 4-corner
+discovery</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="einvoice.smp_query.SMPQuery">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">einvoice.smp_query.</span></span><span class="sig-name descname"><span class="pre">SMPQuery</span></span><a class="reference internal" href="_modules/einvoice/smp_query.html#SMPQuery"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.smp_query.SMPQuery" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to create and execute a RESt API query.
+See the ebXML standards for request API format.</p>
+<p>Args:
+NA</p>
+<p>Attributes:
+NA</p>
+<p>Returns:
+NA</p>
+<p>Raises:
+NA</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.smp_query.SMPQuery.query_service_group_url">
+<span class="sig-name descname"><span class="pre">query_service_group_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/smp_query.html#SMPQuery.query_service_group_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.smp_query.SMPQuery.query_service_group_url" title="Permalink to this definition"></a></dt>
+<dd><p>Make required calls to the SMP to obain service group url info.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.smp_query.SMPQuery.query_service_url">
+<span class="sig-name descname"><span class="pre">query_service_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/smp_query.html#SMPQuery.query_service_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.smp_query.SMPQuery.query_service_url" title="Permalink to this definition"></a></dt>
+<dd><p>Make required calls to the SMP to obain service url info.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.smp_query.SMPQuery.smp_create_service_url_query">
+<span class="sig-name descname"><span class="pre">smp_create_service_url_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/smp_query.html#SMPQuery.smp_create_service_url_query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.smp_query.SMPQuery.smp_create_service_url_query" title="Permalink to this definition"></a></dt>
+<dd><p>Create second smp api query.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.smp_query.SMPQuery.smp_create_srvc_group_url_query">
+<span class="sig-name descname"><span class="pre">smp_create_srvc_group_url_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/smp_query.html#SMPQuery.smp_create_srvc_group_url_query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.smp_query.SMPQuery.smp_create_srvc_group_url_query" title="Permalink to this definition"></a></dt>
+<dd><p>Create first smp api query.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.smp_query.SMPQuery.smp_execute_qry">
+<span class="sig-name descname"><span class="pre">smp_execute_qry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/smp_query.html#SMPQuery.smp_execute_qry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.smp_query.SMPQuery.smp_execute_qry" title="Permalink to this definition"></a></dt>
+<dd><p>Execute an api query.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-einvoice.urn">
+<span id="einvoice-urn-module"></span><h2>einvoice.urn module<a class="headerlink" href="#module-einvoice.urn" title="Permalink to this headline"></a></h2>
+<p>The dataclass object representing a urn for lookup.</p>
+<p>The small class encapsulates the necessary information to work
+with the urn as an object.</p>
+<blockquote>
+<div><p>Usage:
+my_urn = einvoice()</p>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="einvoice.urn.Urn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">einvoice.urn.</span></span><span class="sig-name descname"><span class="pre">Urn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">einvoice_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">party_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/urn.html#Urn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.urn.Urn" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Dataclass which represents the base URN for the SML query.</p>
+<p>The base URN to be constructed as a string.</p>
+<p>Args:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn.Urn.einvoice_tracking_id">
+<span class="sig-name descname"><span class="pre">einvoice_tracking_id</span></span><a class="headerlink" href="#einvoice.urn.Urn.einvoice_tracking_id" title="Permalink to this definition"></a></dt>
+<dd><p>str
+This will be an 8 bit hash of a urn</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn.Urn.specification">
+<span class="sig-name descname"><span class="pre">specification</span></span><a class="headerlink" href="#einvoice.urn.Urn.specification" title="Permalink to this definition"></a></dt>
+<dd><p>str
+OASIS urn specification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn.Urn.schema_id">
+<span class="sig-name descname"><span class="pre">schema_id</span></span><a class="headerlink" href="#einvoice.urn.Urn.schema_id" title="Permalink to this definition"></a></dt>
+<dd><p>str
+OASIS schema identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn.Urn.party_id">
+<span class="sig-name descname"><span class="pre">party_id</span></span><a class="headerlink" href="#einvoice.urn.Urn.party_id" title="Permalink to this definition"></a></dt>
+<dd><p>str
+Unique identifier for the party.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn.Urn.urn">
+<span class="sig-name descname"><span class="pre">urn</span></span><a class="reference internal" href="_modules/einvoice/urn.html#Urn.urn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.urn.Urn.urn" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The urn constructed by default values or passed into the
+dataclass when called.</p>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Urn as str.</p>
+</dd>
+</dl>
+<p>Raises:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn.Urn.einvoice_id">
+<span class="sig-name descname"><span class="pre">einvoice_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#einvoice.urn.Urn.einvoice_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id20">
+<span class="sig-name descname"><span class="pre">party_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#id20" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id21">
+<span class="sig-name descname"><span class="pre">schema_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#id21" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-name descname"><span class="pre">specification</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#id22" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id23">
+<span class="sig-name descname"><span class="pre">urn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/einvoice/urn.html#Urn.urn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id23" title="Permalink to this definition"></a></dt>
+<dd><p>Construct string for the party’s URN</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-einvoice.urn_hasher">
+<span id="einvoice-urn-hasher-module"></span><h2>einvoice.urn_hasher module<a class="headerlink" href="#module-einvoice.urn_hasher" title="Permalink to this headline"></a></h2>
+<p>The classes and functions to create the urn hashes for a NAPTR look-up</p>
+<p>This module is responsible for transforming a urn of into a
+sha256 hash and then hashing it with base32.
+This is to prepare it for the UNAPTR DNS look-up to obtain the SMP URI.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">einvoice.urn_hasher.</span></span><span class="sig-name descname"><span class="pre">Hasher</span></span><a class="reference internal" href="_modules/einvoice/urn_hasher.html#Hasher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.urn_hasher.Hasher" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Constructs a base URN for the SML query and prepares the hashes.</p>
+<p>The base URN to be constructed as a string, and then hashed.</p>
+<p>Args:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.log">
+<span class="sig-name descname"><span class="pre">log</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.log" title="Permalink to this definition"></a></dt>
+<dd><p>object
+A custom logging object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.msg">
+<span class="sig-name descname"><span class="pre">msg</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.msg" title="Permalink to this definition"></a></dt>
+<dd><p>str
+A custom string handler for a log message.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.specification">
+<span class="sig-name descname"><span class="pre">specification</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.specification" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The party ID specification.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.schema">
+<span class="sig-name descname"><span class="pre">schema</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.schema" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The party ID schema type.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.party_id">
+<span class="sig-name descname"><span class="pre">party_id</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.party_id" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The party ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.urn">
+<span class="sig-name descname"><span class="pre">urn</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.urn" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The full urn constructed by default values or passed into class
+when called.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.final_urn">
+<span class="sig-name descname"><span class="pre">final_urn</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.final_urn" title="Permalink to this definition"></a></dt>
+<dd><p>str
+A version of the full urn which is not constructed on the
+fly but static (essentially as a constant)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.final_urn_lower_case">
+<span class="sig-name descname"><span class="pre">final_urn_lower_case</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.final_urn_lower_case" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The full urn normalized to lower case.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.urn_lower_encoded">
+<span class="sig-name descname"><span class="pre">urn_lower_encoded</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.urn_lower_encoded" title="Permalink to this definition"></a></dt>
+<dd><p>byte-like object.
+Conversion of the lower case urn to a byte-like object
+to be converted to sha256</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.urn_sha256_hashed">
+<span class="sig-name descname"><span class="pre">urn_sha256_hashed</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.urn_sha256_hashed" title="Permalink to this definition"></a></dt>
+<dd><p>object
+The sha256 hash version of the urn.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.urn_sha256_digest">
+<span class="sig-name descname"><span class="pre">urn_sha256_digest</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.urn_sha256_digest" title="Permalink to this definition"></a></dt>
+<dd><p>hex obj
+The hex representation of the sha2456 hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.urn_b32_hash_">
+<span class="sig-name descname"><span class="pre">urn_b32_hash_</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.urn_b32_hash_" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The value encoded again with b32 hash.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.urm_b32_cleaned">
+<span class="sig-name descname"><span class="pre">urm_b32_cleaned</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.urm_b32_cleaned" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The hash with trailing equal signs removed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.lower_case_b32">
+<span class="sig-name descname"><span class="pre">lower_case_b32</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.lower_case_b32" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The hash normalized again to lower case.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.final_urn_b32">
+<span class="sig-name descname"><span class="pre">final_urn_b32</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.final_urn_b32" title="Permalink to this definition"></a></dt>
+<dd><p>str
+The final output of the base32 applied to the sha256 and then
+made human readable.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.json_str">
+<span class="sig-name descname"><span class="pre">json_str</span></span><a class="headerlink" href="#einvoice.urn_hasher.Hasher.json_str" title="Permalink to this definition"></a></dt>
+<dd><p>str
+Holds urn_values for writing to json on the filesystem.</p>
+</dd></dl>
+
+<p>Returns:</p>
+<p>Raises:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.hasher">
+<span class="sig-name descname"><span class="pre">hasher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_specification</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_schema</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_party_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/urn_hasher.html#Hasher.hasher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.urn_hasher.Hasher.hasher" title="Permalink to this definition"></a></dt>
+<dd><p>Constructs the hashed urn for lookup</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="einvoice.urn_hasher.Hasher.write_hashes_to_file">
+<span class="sig-name descname"><span class="pre">write_hashes_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">urn_dictionary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/einvoice/urn_hasher.html#Hasher.write_hashes_to_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#einvoice.urn_hasher.Hasher.write_hashes_to_file" title="Permalink to this definition"></a></dt>
+<dd><p>Write the urn values to a file</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-einvoice">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-einvoice" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="einvoice" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="einvoice.conf.html" class="btn btn-neutral float-right" title="einvoice.conf package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Kelly Kinney.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
