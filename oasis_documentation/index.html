@@ -787,35 +787,8 @@
 </tr>
 </tbody>
 </table>
-<!-->
-<hr style="margin-top: 30px;
-        margin-left: auto;
-        margin-bottom: 20px;
-        margin-right: auto;">
-Interoperable components under the AS4 Usage Agreements as specified in Section 5.2 of the AS4 Profile of ebMS are non-normative.  (Excepting that the new AS4 Interoperabilty Profile for Four Corners Newtworks does attempt to make interoperation normative via P-Mode configuration.)  Samples of SOAP including XML/XMLNS and XSLT are included in Appendix A of the AS4 Profile.  
-
-The best infrastructure disappears and the process being implemented are seemless and agnostic to the infrastrucutre. The process don't care how the work gets done as long as it gets done. 
-
-P-Mode configuration is done at the corner/access point.  
-
-P-Mode information contained in messages do not change p-mode values on the Access Point.  
-
-P-Mode values are required and evaluated by the spec, but they only determine if the configuration is good when measured against the spec itself.  We're checking to see if the message meets the spec, the purpose of which is to meet the spec.  
-
-What are we trying to solve for here?  It can't messaging handling, as that's the job of the Access Point and once the message has specified it's type or required capability it's only job is to be transported to an endpoint for consumption.    
-
-But that has no impact on the actual configuration or capability offered by the Accees Point.  If the Access Point is not modified or changed by the P-Mode configuration, why is P-Mode configuration in the message? A message of a given type, such as an einvoice, should always be handled the same way by and Access Point. Even if every P-Mode item were required to indicate to the Access Point how to handle the message, Upon providing an identifier of the message type the Access Point will be configured to execute on the message without any other input from message.  It's not changing P-mode values on the fly, which is implied their requirement in the message, when their only purpose is to as Access Point configuration.
-
-  ofthe not convey any information about how the infrastructure should  There is no reason the message itself needs to indicate access point configuration, as there's no way the P-Modes are being impacted or configured by the messages.  If P-Modes were dynamic based on content in the messages, then requiring P-Mode configuration in the message would make sense. However since the access point P-mode configurations are not dynamically changing the P-Mode information is extraneous.  The message is not dynamically changing based on P-Modes, nor does it introspect itself to determine if it's own configuration is correct.  Rather, it's access point that must include these additonal   A well defined XSD (really this should be obtianed by an API call) 
-
-<hr style="margin-top: 30px;
-        margin-left: auto;
-        margin-bottom: 20px;
-        margin-right: auto;">
-There should be a namespace URI for the committee specfifcation called https://docs.oasos-open.org/bdxr/ns/bdx-as4/v1.0/profiles/202112. This is inferred from the ebXML Messaging V3 (ebMS3) namespace at http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707.
-
--->
-
+<p>Interoperable components under the AS4 Usage Agreements as specified in Section 5.2 of the AS4 Profile of ebMS are non-normative.  (Excepting that the new AS4 Interoperabilty Profile for Four Corners Newtworks does attempt to make interoperation normative via P-Mode configuration.)  Samples of SOAP including XML/XMLNS and XSLT are included in Appendix A of the AS4 Profile.  </p>
+<p>There should be a namespace URI for the committee specfifcation called https://docs.oasos-open.org/bdxr/ns/bdx-as4/v1.0/profiles/202112. This is inferred from the ebXML Messaging V3 (ebMS3) namespace at http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707.</p>
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;
