@@ -1,0 +1,1207 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/python_dev_env/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+    
+    
+      
+        <title>4. Configuring a Development Environment - e-Invoice Onboarding Toolkit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#546d78">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#install-and-config-of-a-python-dev-env" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="e-Invoice Onboarding Toolkit" class="md-header__button md-logo" aria-label="e-Invoice Onboarding Toolkit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            e-Invoice Onboarding Toolkit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. Configuring a Development Environment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    e-Invoice Onboarding Toolkit
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="e-Invoice Onboarding Toolkit" class="md-nav__button md-logo" aria-label="e-Invoice Onboarding Toolkit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    e-Invoice Onboarding Toolkit
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    e-Invoice Onboarding Toolkit
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        0. FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        1. Index
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        2. Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_and_resources/" class="md-nav__link">
+        3. Tools and Resources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4. Configuring a Development Environment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        4. Configuring a Development Environment
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-and-config-of-a-python-dev-env" class="md-nav__link">
+    Install and Config of a Python Dev Env
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-virtual-environment-to-use-for-dev" class="md-nav__link">
+    Create a virtual environment to use for Dev
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-support-for-style-and-code-checking-and-unit-testing" class="md-nav__link">
+    Add support for Style and Code checking and Unit Testing.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-and-flask" class="md-nav__link">
+    Docker and flask
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-documentation" class="md-nav__link">
+    Include Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-driven-development" class="md-nav__link">
+    Test Driven Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-editors-and-ides" class="md-nav__link">
+    Text Editors and IDEs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        5. Package Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working_with_the_code/" class="md-nav__link">
+        6. Working with the Code
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          7. Using the Code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="7. Using the Code" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          7. Using the Code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using_the_modules/" class="md-nav__link">
+        7a. The Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start_to_finish/" class="md-nav__link">
+        7b. Start-to-Finish
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_cases/" class="md-nav__link">
+        7c. Test Cases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_colab_pages/" class="md-nav__link">
+        7d. Google Colab Pages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_5" type="checkbox" id="__nav_8_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_5">
+          7e. Package/Library API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="7e. Package/Library API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_5">
+          <span class="md-nav__icon md-icon"></span>
+          7e. Package/Library API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/accessor/" class="md-nav__link">
+        accessor.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/app_logging/" class="md-nav__link">
+        app_logging.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/create_tracking_id/" class="md-nav__link">
+        create_tracking_id.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/dns_query/" class="md-nav__link">
+        dns_query.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/einvoice_message_package/" class="md-nav__link">
+        einvoice_message_package.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/line_item/" class="md-nav__link">
+        line_item.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/party_address/" class="md-nav__link">
+        party_address.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/semantic_model/" class="md-nav__link">
+        semantic_model.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/smp_query/" class="md-nav__link">
+        smp_query.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/urn_handler/" class="md-nav__link">
+        urn_handler.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/urn_hasher/" class="md-nav__link">
+        urn_hasher.py
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/urn/" class="md-nav__link">
+        urn.py
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flask_integration_on_docker/" class="md-nav__link">
+        7f. Flask Integration on Docker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_roadmap/" class="md-nav__link">
+        8. Project Roadmap
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enabling_infrastructure_components/" class="md-nav__link">
+        9. Enabling Infrastructure Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        10. Todo
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artifacts/" class="md-nav__link">
+        11. Project Artifacts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_workflow/" class="md-nav__link">
+        12. Workflow
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oasis_documentation/" class="md-nav__link">
+        13. OASIS Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_license/" class="md-nav__link">
+        14. License
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-and-config-of-a-python-dev-env" class="md-nav__link">
+    Install and Config of a Python Dev Env
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-virtual-environment-to-use-for-dev" class="md-nav__link">
+    Create a virtual environment to use for Dev
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-support-for-style-and-code-checking-and-unit-testing" class="md-nav__link">
+    Add support for Style and Code checking and Unit Testing.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-and-flask" class="md-nav__link">
+    Docker and flask
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include-documentation" class="md-nav__link">
+    Include Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-driven-development" class="md-nav__link">
+    Test Driven Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-editors-and-ides" class="md-nav__link">
+    Text Editors and IDEs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/einvocie/docs/python_dev_env.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+  <h1>4. Configuring a Development Environment</h1>
+
+<h3 id="install-and-config-of-a-python-dev-env">Install and Config of a Python Dev Env</h3>
+<p>This document outlines the creation of a Python Development Environment consistent with Python standards and best practices and appropriate as a starting point for professional software development with Python.  </p>
+<p>Important items for consideration include:
+- Installation of Python
+- Use of virtual environments for project and application segmentation.
+- Bringing in the required tools sets for:
+    - Style checking against PEP8
+    - Automated code checking using <code>flake8</code> and <code>tox</code>
+    - Includng documentation using Sphinx and reStructuredText.
+- Including Docker and flask
+- Incorporating Test Drive Development as a matter of practice.
+- Logging
+- Editors and other IDEs
+- Links to additional resources.</p>
+<p>Note:  This documentation assumes running on MacOS.  All tools should be available in Windows and various flavors of Linux.  Your mileage may vary. </p>
+<p>Install Homebrew using command:  </p>
+<pre><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+</code></pre>
+<p>Then install Python.</p>
+<pre><code>brew install python
+</code></pre>
+<pre><code>Install other tools you may need or want using Homebrew.  These will make life easier.
+brew install --cask visual-studio-code
+brew install node
+brew install r
+brew install rstudio
+brew install typescript
+brew install docker
+brew install --cask powershell
+</code></pre>
+<p>Upgrade pip to latest version right OOB.  (Note this is done using the Python3/pip3 call to avoid conflict with OS installed version of Python.)</p>
+<pre><code>pip3 install --upgrade pip
+</code></pre>
+<p>The pip update can also be doing using a call to Python itself, but the <code>python3</code> install!</p>
+<pre><code>python3 -m pip install --upgrade pip
+</code></pre>
+<p>Get a list of what's been installed in a "clean" install of Python.</p>
+<pre><code>pip3 list
+
+Package          Version
+---------------- ----------
+appdirs          1.4.4
+certifi          2020.12.5
+distlib          0.3.1
+filelock         3.0.12
+pip              21.1.2
+pipenv           2020.11.15
+setuptools       56.0.0
+six              1.16.0
+virtualenv       20.4.6
+virtualenv-clone 0.5.4
+</code></pre>
+<h2 id="create-a-virtual-environment-to-use-for-dev">Create a virtual environment to use for Dev</h2>
+<p>Creating virtual environments to use in Python programming can be done entirely with a packages that comes in the Pthyon install.  </p>
+<p>There are other tool-sets such as <a href="https://www.anaconda.com/products/individual">Anaconda</a> which provide a full set of development tools and frameworks to pick from, and include the ability to create and manage Python virtual environments with its Conda virtual environment manager.    </p>
+<p>There are other additional packages for Python such as <code>pyenv</code>, and <code>pipenv</code> which can be installed separately.  The example of shown offers one way to create the virtual environments which comes OOB in the Python install and offers a lot of manual control over the packages installed in the virtual environments themselves.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Command</th>
+<th>What it's doing/output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>cd</td>
+<td>Change to user home dir</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>pwd</td>
+<td>Print the working directory</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>/Users/kelly</td>
+</tr>
+<tr>
+<td>3.</td>
+<td>mkdir ./Dev ./Dev/virtualenvs</td>
+<td>Create working directories</td>
+</tr>
+<tr>
+<td>4.</td>
+<td>cd ./Dev/virtualenvs</td>
+<td>Change into the working directory</td>
+</tr>
+<tr>
+<td>5.</td>
+<td>pwd</td>
+<td>Print the working directory</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>/Users/kelly/Dev/virtualenvs</td>
+</tr>
+<tr>
+<td>6.</td>
+<td>virtualenv --python python3.9 e-Invoice</td>
+<td>Create the e-Invoice virtual environment</td>
+</tr>
+<tr>
+<td>7.</td>
+<td>ls -l</td>
+<td>list contents of current directory structure</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>drwxr-xr-x  7 kelly  staff  224 Jun 15 08:52 e-Invoice</td>
+</tr>
+<tr>
+<td>8.</td>
+<td>cd ./e-Invoice</td>
+<td>Change into the e-Invoice directory</td>
+</tr>
+<tr>
+<td>9.</td>
+<td>cd ../bin</td>
+<td>Change into the bin directory</td>
+</tr>
+<tr>
+<td>10.</td>
+<td>source ./activate</td>
+<td>source the activate file and make the current virtual environment active.</td>
+</tr>
+<tr>
+<td>11.</td>
+<td>python -m pip install --upgrade pip</td>
+<td>update version of pip</td>
+</tr>
+<tr>
+<td>12.</td>
+<td>pip list</td>
+<td>List the installed packages for this virtual env.  This will be a very small list to start as this is a clean virtual env, including <code>pip</code>, <code>setuptools</code>, and <code>wheel</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Additional packages or modules to be installed in e-Invoice include:
+Docker, flask, requests</p>
+<p><br /><br /></p>
+<h2 id="add-support-for-style-and-code-checking-and-unit-testing">Add support for Style and Code checking and Unit Testing.</h2>
+<p>The Python package <code>pep8</code> can be installed to do style checking consistent to <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8 -- Style Guide for Python Code</a>.</p>
+<pre><code>pip install pep8
+</code></pre>
+<p>Run your code against it in the following manner:</p>
+<pre><code>pep8 &lt;filename&gt;
+e.g., pep8 hello.py
+</code></pre>
+<p>then the output from the cosole using:</p>
+<pre><code>echo $?
+</code></pre>
+<p>Another module, flake8, checks for code style and errors simultanepously.  There are a number of custom plug-ins to focus on various aspects of code validation.  </p>
+<pre><code>pip install flake8
+</code></pre>
+<p>The <code>tox</code> tool can be used to manage dependencies in virtual environments and Unit Test.</p>
+<pre><code>pip install tox
+</code></pre>
+<p><br /><br /></p>
+<h2 id="docker-and-flask">Docker and flask</h2>
+<p>This project utilize <a href="https://www.docker.com">Docker</a> and <a href="https://pypi.org/project/Flask/">flask</a>.</p>
+<p>For support of Docker development on the Mac, use Homebrew as outlined above to install Docker locally.  If necessary to issue Docker commands or use the Docker API from with Python, include the Docker package in the virtual environment.</p>
+<pre><code>pip install docker
+</code></pre>
+<p>Install the flask framework using pip as well.</p>
+<pre><code>pip install flask
+</code></pre>
+<p><br /><br /></p>
+<h2 id="include-documentation">Include Documentation</h2>
+<p>To incorporate documentation into the application at every step, bring in the Sphinx package. </p>
+<pre><code>pip install sphinx
+</code></pre>
+<p>Then run sphix-quickstart in your project's top-level directory.</p>
+<p>Sphinx uses reStructured Text as a form of Markdown.  For a brief overview see <a href="https://docutils.sourceforge.io/docs/user/rst/quickstart.html">A ReStructuredText Primer</a> or <a href="https://docutils.sourceforge.io/docs/user/rst/quicktest.html">Quick reStructuredText</a>.</p>
+<p>Additonal support documenting the project may include utilzing a resource like <a href="http://readthedocs.org">Read the Docs</a>.</p>
+<ul>
+<li>See also: <a href="https://www.python.org/dev/peps/pep-0257/">PEP-257 Docstring Conventions</a> </li>
+</ul>
+<p><br /><br /></p>
+<h2 id="test-driven-development">Test Driven Development</h2>
+<p>Incorporate <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test-Driven Development</a> methodologies. <br />
+Create the test scenarios before the actual coding.  </p>
+<p>Primary source material for review can be found at <a href="https://www.obeythetestinggoat.com">obeythetestinggoat.com</a></p>
+<p><br /><br /></p>
+<h2 id="text-editors-and-ides">Text Editors and IDEs</h2>
+<p>There are numerous tools for text editing and softwre development.  Personal preference, specialization versus generalization, and cost may all play a part in choice of tools used for development.  Here is a short list of well known and supported tools available for free or under an Open Source license.  (No compensation isß received for any reference to materials on this page.)
+- <a href="https://code.visualstudio.com/">Visual Studio Code</a> by Microsoft.  "Built on Open Source" the Code version is free and has many plug-ins.  It's a mature IDE with the polish of a Microsoft product.  Not the behemouth of the full Visual Studio IDE.  Available for Windows/Mac/Linux.  There is a version of Visual Studio Code compiled with all the non-Open Source components removed called <a href="https://vscodium.com/">VSCodium</a>.  Or compile it from source available at GitHub resulting in a product called <a href="https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run">Code - OSS</a>.
+- <a href="https://atom.io/">Atom Text Editor</a>.  A highly customizable text editor which is programming language agnostic and completely open source and available (packaged and source) on GitHub.  Available for Windows/Mac/Linux. 
+- <a href="https://www.jetbrains.com/pycharm/">PyCharm Community Edition</a> by JetBrains. A Python specific IDE.  The Community Edition is Free and Open Source, albeit with some limited functionality. Available for Windows/Mac/Linux.</p>
+<ul>
+<li>(Optional) Install Jupyter lab and notebooks.Jupyter notebooks (deprecated in favor of JupyterLab, though the notebook format remains the same) are especially popular for use in Data Science and ML.  Runs locally on a Python framework. They are used to create documentation in Markdown and write and execute code that might not require an entire program.  Supports other languages such as R and Julia.  Can also be installed through Anaconda.  </li>
+</ul>
+<pre><code>cd /Users/kelly/Dev/virtualenvs
+virtualenv --python python3.9 jupiter
+python -m pip install --upgrade pip
+pip install jupyter
+pip install jupyterlab
+</code></pre>
+<p>Start jupyterlab by running it from within your Python virtualenv /bin directory.<br />
+At runtime, point it to the location of your GITHub root, e.g.,   </p>
+<pre><code>./jupyter-lab --notebook-dir /Users/kelly/GitHub
+</code></pre>
+<p><br /><br />                                          </p>
+<h2 id="additional-resources">Additional Resources</h2>
+<p>There is a wealth of high quality documentation and writing about Python in digital and paper print and on the web in addition to that directly refered to above.  As a starting point, see the following materials.  (Again, no compensation is received for any reference to materials on this page.)
+- <a href="https://docs.python-guide.org">The Hitchhiker's Guide to Python</a> by Kenneth Reitz and Tanya Schlusser.
+- <a href="https://nostarch.com/seriouspython">Serious Python</a> by Julien Danjoy
+- <a href="https://nsls-ii.github.io/scientific-python-cookiecutter/guiding-design-principles.html">Guiding Design Principles</a> from the <a href="https://nsls-ii.github.io/scientific-python-cookiecutter/index.html">Scientific Python Cookiecutter</a>.
+- <a href="https://www.python.org/doc/">Python Doc</a> - the official Python web site page of references to more documentation.</p>
+<div style="font-size: 12px;
+            padding: 15px;
+            border: 2px solid lightgray;
+            margin-top: 100px;
+            margin-left: 0px;
+            margin-bottom: 40px;
+            margin-right: auto;
+            width: 70%;
+            border-radius: 10px;">
+  <h4 style="font-size: 14px;
+            padding: 0px;
+            margin: 0px;">No Representations or Warranties</h5>
+  This software is free and Open Source offered under an MIT license. The developers of the software make no
+  representations or warranties as to the software or its fitness for a particular purpose. This code is meant for
+  educational and research purposes only. The code is offered "as-is" and is not intended to be used in a production
+  environment. It is intended for developers of software related to the 4-corners Model to use as a stepping-off point
+  for further development efforts.
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../tools_and_resources/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3. Tools and Resources" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              3. Tools and Resources
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../requirements/" class="md-footer__link md-footer__link--next" aria-label="Next: 5. Package Requirements" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              5. Package Requirements
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      
+    
+  </body>
+</html>
