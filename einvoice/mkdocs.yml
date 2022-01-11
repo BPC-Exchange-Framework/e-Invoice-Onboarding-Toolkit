@@ -1,0 +1,51 @@
+site_name: e-Invoice Onboarding Toolkit
+site_url: https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit
+edit_uri: ./einvocie/docs/
+repo_name: GitHub
+docs_dir: docs
+
+theme:
+  name: material
+  palette:
+   primary: blue grey
+   accent: indigo  
+  custom_dir: docs/custom_theme/
+
+plugins:
+  - search
+  - mkdocstrings
+  
+
+nav:
+  - 1. Index: index.md
+  - 2. Getting Started: getting_started.md
+  - 3. Tools and Resources: tools_and_resources.md
+  - 4. Configuring a Development Environment: python_dev_env.md
+  - 5. Package Requirements: requirements.md
+  - 6. Working with the Code: working_with_the_code.md
+  - 7. Using the Code:
+    - 7a. The Modules: using_the_modules.md
+    - 7b. Start-to-Finish: start_to_finish.md
+    - 7c. Test Cases: test_cases.md
+    - 7d. Google Colab Pages: google_colab_pages.md
+    - 7e. Package/Library API:
+          - accessor.py: ./api/accessor.md
+          - app_logging.py: ./api/app_logging.md
+          - create_tracking_id.py: ./api/create_tracking_id.md
+          - dns_query.py: ./api/dns_query.md
+          - einvoice_message_package.py: ./api/einvoice_message_package.md
+          - line_item.py: ./api/line_item.md
+          - party_address.py: ./api/party_address.md
+          - semantic_model.py: ./api/semantic_model.md
+          - smp_query.py: ./api/smp_query.md
+          - urn_handler.py: ./api/urn_handler.md
+          - urn_hasher.py: ./api/urn_hasher.md
+          - urn.py: ./api/urn.md
+    - 7f. Flask Integration on Docker: flask_integration_on_docker.md
+  - 8. Project Roadmap: project_roadmap.md
+  - 9. Enabling Infrastructure Components: enabling_infrastructure_components.md
+  - 10. Todo: todo.md
+  - 11. Project Artifacts: artifacts.md
+  - 12. Workflow: git_workflow.md
+  - 13. OASIS Documentation: oasis_documentation.md
+  - 14. License: _license.md

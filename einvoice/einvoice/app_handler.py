@@ -64,7 +64,7 @@ class SmlUrn:
 
     Returns:
         NA
-    
+
     Raises:
         NA
 
@@ -80,9 +80,8 @@ class SmlUrn:
 
     def party_urn(self) -> str:
         """Construct string for the party's URN"""
-        return (self.party_id_specification + ":"
-                + self.party_id_schema_type
-                + "::" + self.party_id)
+        return (self.party_id_specification + ":" +
+                self.party_id_schema_type + "::" + self.party_id)
     log.debug("party_urn: %s", party_urn)
 
     def final_urn(self) -> str:
