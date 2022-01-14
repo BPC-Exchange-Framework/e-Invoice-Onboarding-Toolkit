@@ -474,7 +474,7 @@
   
     <li class="md-nav__item">
       <a href="../api/einvoice_message_package/" class="md-nav__link">
-        einvoice_message_package.py
+        discovery_message_package.py
       </a>
     </li>
   
@@ -742,42 +742,18 @@
 <table>
 <thead>
 <tr>
-<th>Referenced Documents</th>
+<th>Documents</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html">OASIS ebXML Messaging Services Version 3.0: Part1, Core Features</a> OASIS Standard, October 1, 2007, has the namespace URI of:</td>
-</tr>
-<tr>
-<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/">ebXML Messaging Services Version 3.0 Core Features)</a> and references the XSD file:</td>
-</tr>
-<tr>
-<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd">ebms-header-3_0-200704</a> including snippets of sample XML and full SOAP for message headers.  Note that the Namespace URI identified in Part1 is incorrect and returns an error message.</td>
+<td><a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html">OASIS ebXML Messaging Services Version 3.0: Part1, Core Features</a> OASIS Standard, October 1, 2007, has:</td>
 </tr>
 <tr>
 <td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-v3-part2-cd-01.html">OASIS ebXML Messaging Services Version 3.0: Part 2, Advanced Features</a> dated June 30, 2010 with Normative Reference of:</td>
 </tr>
 <tr>
 <td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/rddl-ebms3-part2.html">ebXML Messaging Services Version 3.0: Part 2, Advanced Features</a> which is referenced by the following three namespace URIs.</td>
-</tr>
-<tr>
-<td>Namespace URI: <a href="http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/multihop/200902">ebXML Messaging V3 Part 2: Multihop Routing</a></td>
-</tr>
-<tr>
-<td>Namespace URI: <a href="http://docs.oasis-open.org/ebxml-msg/ns/v3.0/mf/2010/04/">ebXML Messaging V3 Part 2: Message Fragments</a></td>
-</tr>
-<tr>
-<td>Namespace URI: <a href="http://www.openhealth.org/RDDL/20040118/rddl-20040118.html">Resource Directory Description Language(RDDL) 2.0</a> and references the XSD files below.</td>
-</tr>
-<tr>
-<td>XSD File: <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-multihop-1_0-200902_refactored.xsd">XSD for Routing Input reference parameter</a></td>
-</tr>
-<tr>
-<td>XSD File: <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/mf.xsd">MessageFragment XSD</a></td>
-</tr>
-<tr>
-<td>XSD File: <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-header-3_0-200704_refactored.xsd">Refactored Core Messaging XSD</a></td>
 </tr>
 <tr>
 <td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/20707/ebms3-confprofiles-cs-01.html">OASIS ebXML Messaging Services 3.0 Conformance Profiles</a>, Committee Specification 1, dated April 24, 2010 references the same namespace URI of http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707.</td>
@@ -787,8 +763,50 @@
 </tr>
 </tbody>
 </table>
-<p>Interoperable components under the AS4 Usage Agreements as specified in Section 5.2 of the AS4 Profile of ebMS are non-normative.  (Excepting that the new AS4 Interoperabilty Profile for Four Corners Newtworks does attempt to make interoperation normative via P-Mode configuration.)  Samples of SOAP including XML/XMLNS and XSLT are included in Appendix A of the AS4 Profile.  </p>
-<p>There should be a namespace URI for the committee specfifcation called https://docs.oasos-open.org/bdxr/ns/bdx-as4/v1.0/profiles/202112. This is inferred from the ebXML Messaging V3 (ebMS3) namespace at http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707.</p>
+<table>
+<thead>
+<tr>
+<th>XSD Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>XSD File</strong>: <a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd">ebms-header-3_0-200704</a> including snippets of sample XML and full SOAP for message headers.  Note that the Namespace URI identified in Part1 is incorrect and returns an error message.</td>
+</tr>
+<tr>
+<td><strong>XSD File</strong>: <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-multihop-1_0-200902_refactored.xsd">XSD for Routing Input reference parameter</a></td>
+</tr>
+<tr>
+<td><strong>XSD File</strong>: <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/mf.xsd">MessageFragment XSD</a></td>
+</tr>
+<tr>
+<td><strong>XSD File</strong>: <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-header-3_0-200704_refactored.xsd">Refactored Core Messaging XSD</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Namespaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Namespace URI</em>: <a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/">ebXML Messaging Services Version 3.0 Core Features)</a> and references:</td>
+</tr>
+<tr>
+<td><em>Namespace URI</em>: <a href="http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/multihop/200902">ebXML Messaging V3 Part 2: Multihop Routing</a></td>
+</tr>
+<tr>
+<td><em>Namespace URI</em>: <a href="http://docs.oasis-open.org/ebxml-msg/ns/v3.0/mf/2010/04/">ebXML Messaging V3 Part 2: Message Fragments</a></td>
+</tr>
+<tr>
+<td><em>Namespace URI</em>: <a href="http://www.openhealth.org/RDDL/20040118/rddl-20040118.html">Resource Directory Description Language(RDDL) 2.0</a> and references the XSD files below.</td>
+</tr>
+</tbody>
+</table>
+<p>Interoperable components under the AS4 Usage Agreements as specified in Section 5.2 of the AS4 Profile of ebMS are non-normative.  (Excepting that the new AS4 Interoperabilty Profile for Four Corners Networks does attempt to make interoperation normative via P-Mode configuration.)  Samples of SOAP including XML/XMLNS and XSLT are included in Appendix A of the AS4 Profile.  </p>
+<p>There should be a namespace URI for the committee specfifcation called https://docs.oasis-open.org/bdxr/ns/bdx-as4/v1.0/profiles/202112. This is inferred from the ebXML Messaging V3 (ebMS3) namespace at http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707.</p>
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;

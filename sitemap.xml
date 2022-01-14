@@ -2,222 +2,157 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/Integrating/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/_license/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/artifacts/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/enabling_infrastructure_components/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/faq/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/flask_integration_on_docker/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/getting_started/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/git_workflow/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/google_colab_pages/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/oasis_documentation/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/project_roadmap/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/python_dev_env/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/requirements/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/start_to_finish/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/test_cases/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/todo/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/tools_and_resources/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/using_the_modules/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/working_with_the_code/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/accessor/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/app_logging/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/create_tracking_id/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/dns_query/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/einvoice_message_package/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/line_item/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/party_address/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/semantic_model/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/smp_query/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/urn/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/urn_handler/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/api/urn_hasher/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/accessor/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/app_logging/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/create_tracking_id/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/dns_query/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/einvoice_message_package/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/line_item/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/party_address/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/semantic_model/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/smp_query/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/urn/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/urn_handler/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/custom_theme/api/urn_hasher/</loc>
-         <lastmod>2022-01-11</lastmod>
+         <lastmod>2022-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -1,0 +1,283 @@
+../../e-Invoice-Onboarding-Toolkit
+├── einvoice
+│   ├── delivery
+│   │   ├── tests
+│   │   └── __init__.py
+│   ├── discovery
+│   │   ├── conf
+│   │   │   ├── __init__.py
+│   │   │   ├── config_tool.py
+│   │   │   └── smp_config.py
+│   │   ├── data
+│   │   │   ├── __init__.py
+│   │   │   ├── create_sample_data.py
+│   │   │   ├── item_list.csv
+│   │   │   └── per_item_list.csv
+│   │   ├── tests
+│   │   │   ├── __init__.py
+│   │   │   ├── ez_linter.sh
+│   │   │   ├── hardcore_linter.sh
+│   │   │   ├── magic_linter.py
+│   │   │   ├── test_accessor.py
+│   │   │   ├── test_app_logging.py
+│   │   │   ├── test_create_sample_data.py
+│   │   │   ├── test_create_tracking_id.py
+│   │   │   ├── test_dns_query.py
+│   │   │   ├── test_line_item.py
+│   │   │   ├── test_party_address.py
+│   │   │   ├── test_semantic_model.py
+│   │   │   ├── test_smp_query.py
+│   │   │   ├── test_urn.py
+│   │   │   ├── test_urn_hasher.py
+│   │   │   └── unaptr_response.json
+│   │   ├── __init__.py
+│   │   ├── accessor.py
+│   │   ├── app_handler.py
+│   │   ├── app_logging.py
+│   │   ├── create_tracking_id.py
+│   │   ├── dns_query.py
+│   │   ├── einvoice_message_package.py
+│   │   ├── line_item.py
+│   │   ├── party_address.py
+│   │   ├── semantic_model.py
+│   │   ├── smp_query.py
+│   │   ├── urn.py
+│   │   └── urn_hasher.py
+│   ├── docs
+│   │   ├── api
+│   │   │   ├── accessor.md
+│   │   │   ├── app_logging.md
+│   │   │   ├── create_tracking_id.md
+│   │   │   ├── dns_query.md
+│   │   │   ├── einvoice_message_package.md
+│   │   │   ├── line_item.md
+│   │   │   ├── party_address.md
+│   │   │   ├── semantic_model.md
+│   │   │   ├── smp_query.md
+│   │   │   ├── urn.md
+│   │   │   ├── urn_handler.md
+│   │   │   └── urn_hasher.md
+│   │   ├── custom_theme
+│   │   │   ├── api
+│   │   │   │   ├── accessor.md
+│   │   │   │   ├── app_logging.md
+│   │   │   │   ├── create_tracking_id.md
+│   │   │   │   ├── dns_query.md
+│   │   │   │   ├── einvoice_message_package.md
+│   │   │   │   ├── line_item.md
+│   │   │   │   ├── party_address.md
+│   │   │   │   ├── semantic_model.md
+│   │   │   │   ├── smp_query.md
+│   │   │   │   ├── urn.md
+│   │   │   │   ├── urn_handler.md
+│   │   │   │   └── urn_hasher.md
+│   │   │   ├── css
+│   │   │   └── main.html
+│   │   ├── drawio
+│   │   │   ├── Bounded Context - Entity Relationships 1.3.drawio
+│   │   │   ├── Bounded Context - Functional Capabilities 1.2.drawio
+│   │   │   └── Bounded Context - Participant 1.1.drawio
+│   │   ├── jupyterlab
+│   │   │   ├── dns_query.ipynb
+│   │   │   ├── naptr_lookup.ipynb
+│   │   │   ├── python_dev.ipynb
+│   │   │   ├── tracking_id_sandbox.ipynb
+│   │   │   ├── untitled.txt
+│   │   │   └── urn_hash_work.ipynb
+│   │   ├── pdf
+│   │   │   ├── Bounded Context - Entity Relationships 1.4.pdf
+│   │   │   ├── Bounded Context - Functional Capabilities 1.2.pdf
+│   │   │   ├── Bounded Context - Functional Capabilities 1.3.pdf
+│   │   │   ├── Bounded Context - Participant 1.1.pdf
+│   │   │   └── Bounded Context - Participants 1.2.pdf
+│   │   ├── Integrating.md
+│   │   ├── __init__.py
+│   │   ├── _license.md
+│   │   ├── artifacts.md
+│   │   ├── einvoice_design.xlsx
+│   │   ├── enabling_infrastructure_components.md
+│   │   ├── faq.md
+│   │   ├── flask_integration_on_docker.md
+│   │   ├── getting_started.md
+│   │   ├── git_workflow.md
+│   │   ├── google_colab_pages.md
+│   │   ├── index.md
+│   │   ├── oasis_documentation.md
+│   │   ├── project_roadmap.md
+│   │   ├── python_dev_env.md
+│   │   ├── requirements.md
+│   │   ├── start_to_finish.md
+│   │   ├── test_cases.md
+│   │   ├── todo.md
+│   │   ├── tools_and_resources.md
+│   │   ├── tree.txt
+│   │   ├── using_the_modules.md
+│   │   └── working_with_the_code.md
+│   ├── site
+│   │   ├── Integrating
+│   │   │   └── index.html
+│   │   ├── _license
+│   │   │   └── index.html
+│   │   ├── api
+│   │   │   ├── accessor
+│   │   │   │   └── index.html
+│   │   │   ├── app_logging
+│   │   │   │   └── index.html
+│   │   │   ├── create_tracking_id
+│   │   │   │   └── index.html
+│   │   │   ├── dns_query
+│   │   │   │   └── index.html
+│   │   │   ├── einvoice_message_package
+│   │   │   │   └── index.html
+│   │   │   ├── line_item
+│   │   │   │   └── index.html
+│   │   │   ├── party_address
+│   │   │   │   └── index.html
+│   │   │   ├── semantic_model
+│   │   │   │   └── index.html
+│   │   │   ├── smp_query
+│   │   │   │   └── index.html
+│   │   │   ├── urn
+│   │   │   │   └── index.html
+│   │   │   ├── urn_handler
+│   │   │   │   └── index.html
+│   │   │   └── urn_hasher
+│   │   │       └── index.html
+│   │   ├── artifacts
+│   │   │   └── index.html
+│   │   ├── assets
+│   │   │   ├── images
+│   │   │   │   └── favicon.png
+│   │   │   ├── javascripts
+│   │   │   │   ├── lunr
+│   │   │   │   │   ├── min
+│   │   │   │   │   │   ├── lunr.ar.min.js
+│   │   │   │   │   │   ├── lunr.da.min.js
+│   │   │   │   │   │   ├── lunr.de.min.js
+│   │   │   │   │   │   ├── lunr.du.min.js
+│   │   │   │   │   │   ├── lunr.es.min.js
+│   │   │   │   │   │   ├── lunr.fi.min.js
+│   │   │   │   │   │   ├── lunr.fr.min.js
+│   │   │   │   │   │   ├── lunr.hi.min.js
+│   │   │   │   │   │   ├── lunr.hu.min.js
+│   │   │   │   │   │   ├── lunr.it.min.js
+│   │   │   │   │   │   ├── lunr.ja.min.js
+│   │   │   │   │   │   ├── lunr.jp.min.js
+│   │   │   │   │   │   ├── lunr.multi.min.js
+│   │   │   │   │   │   ├── lunr.nl.min.js
+│   │   │   │   │   │   ├── lunr.no.min.js
+│   │   │   │   │   │   ├── lunr.pt.min.js
+│   │   │   │   │   │   ├── lunr.ro.min.js
+│   │   │   │   │   │   ├── lunr.ru.min.js
+│   │   │   │   │   │   ├── lunr.stemmer.support.min.js
+│   │   │   │   │   │   ├── lunr.sv.min.js
+│   │   │   │   │   │   ├── lunr.th.min.js
+│   │   │   │   │   │   ├── lunr.tr.min.js
+│   │   │   │   │   │   ├── lunr.vi.min.js
+│   │   │   │   │   │   └── lunr.zh.min.js
+│   │   │   │   │   ├── tinyseg.js
+│   │   │   │   │   └── wordcut.js
+│   │   │   │   ├── workers
+│   │   │   │   │   ├── search.361d90f1.min.js
+│   │   │   │   │   └── search.361d90f1.min.js.map
+│   │   │   │   ├── bundle.289a2a4b.min.js
+│   │   │   │   └── bundle.289a2a4b.min.js.map
+│   │   │   ├── stylesheets
+│   │   │   │   ├── main.bb3983ee.min.css
+│   │   │   │   ├── main.bb3983ee.min.css.map
+│   │   │   │   ├── palette.e6a45f82.min.css
+│   │   │   │   └── palette.e6a45f82.min.css.map
+│   │   │   └── _mkdocstrings.css
+│   │   ├── custom_theme
+│   │   │   ├── api
+│   │   │   │   ├── accessor
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── app_logging
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── create_tracking_id
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── dns_query
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── einvoice_message_package
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── line_item
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── party_address
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── semantic_model
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── smp_query
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── urn
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── urn_handler
+│   │   │   │   │   └── index.html
+│   │   │   │   └── urn_hasher
+│   │   │   │       └── index.html
+│   │   │   └── main.html
+│   │   ├── drawio
+│   │   │   ├── Bounded Context - Entity Relationships 1.3.drawio
+│   │   │   ├── Bounded Context - Functional Capabilities 1.2.drawio
+│   │   │   └── Bounded Context - Participant 1.1.drawio
+│   │   ├── enabling_infrastructure_components
+│   │   │   └── index.html
+│   │   ├── faq
+│   │   │   └── index.html
+│   │   ├── flask_integration_on_docker
+│   │   │   └── index.html
+│   │   ├── getting_started
+│   │   │   └── index.html
+│   │   ├── git_workflow
+│   │   │   └── index.html
+│   │   ├── google_colab_pages
+│   │   │   └── index.html
+│   │   ├── jupyterlab
+│   │   │   ├── dns_query.ipynb
+│   │   │   ├── naptr_lookup.ipynb
+│   │   │   ├── python_dev.ipynb
+│   │   │   ├── tracking_id_sandbox.ipynb
+│   │   │   ├── untitled.txt
+│   │   │   └── urn_hash_work.ipynb
+│   │   ├── oasis_documentation
+│   │   │   └── index.html
+│   │   ├── pdf
+│   │   │   ├── Bounded Context - Entity Relationships 1.4.pdf
+│   │   │   ├── Bounded Context - Functional Capabilities 1.2.pdf
+│   │   │   ├── Bounded Context - Functional Capabilities 1.3.pdf
+│   │   │   ├── Bounded Context - Participant 1.1.pdf
+│   │   │   └── Bounded Context - Participants 1.2.pdf
+│   │   ├── project_roadmap
+│   │   │   └── index.html
+│   │   ├── python_dev_env
+│   │   │   └── index.html
+│   │   ├── requirements
+│   │   │   └── index.html
+│   │   ├── search
+│   │   │   └── search_index.json
+│   │   ├── start_to_finish
+│   │   │   └── index.html
+│   │   ├── test_cases
+│   │   │   └── index.html
+│   │   ├── todo
+│   │   │   └── index.html
+│   │   ├── tools_and_resources
+│   │   │   └── index.html
+│   │   ├── using_the_modules
+│   │   │   └── index.html
+│   │   ├── working_with_the_code
+│   │   │   └── index.html
+│   │   ├── 404.html
+│   │   ├── __init__.py
+│   │   ├── einvoice_design.xlsx
+│   │   ├── index.html
+│   │   ├── objects.inv
+│   │   ├── sitemap.xml
+│   │   └── sitemap.xml.gz
+│   ├── __init__.py
+│   └── mkdocs.yml
+├── LICENSE
+├── README.md
+├── requirements.txt
+└── todo.md
+
+73 directories, 207 files
