@@ -25,11 +25,11 @@ ___Install Python. Use a minimum of Python 3.6.___
 * Run the command to create your virtual environment.  In this case the virtualization is created using **venv**.
   
 
-  ```python -m venv .einvoice```
+  ```python -m venv .discovery```
 
 * Source the script file to activate the virtual environment
 
-  ```source ./.einvoice/bin/activate```
+  ```source ./.discovery/bin/activate```
  
   This will place the virtual environment name at the beginning of the console prompt.
 

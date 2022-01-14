@@ -1,5 +1,5 @@
 ## e-invoice Onboarding Toolkit API<hr/>
-::: einvoice.accessor.Accessor
+::: discovery.accessor.Accessor
     handler: python
     selection:
       members:

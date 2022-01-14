@@ -1,6 +1,7 @@
 This is a repository for open source tools created to facilitate adoption and implementation of a 4-Corners interoperability framework.     
  
 
+* [FAQ](./faq.md)
 * [Index](./index.md)
 * [Getting Started](./getting_started.md)
 * [Tools and Resources](./tools_and_resources.md)
@@ -16,7 +17,7 @@ This is a repository for open source tools created to facilitate adoption and im
         - [app_logging.py](./api/app_logging.md)
         - [create_tracking_id.py](./api/create_tracking_id.md)
         - [dns_query.py](./api/dns_query.md)
-        - [einvoice_message_package.py](./api/einvoice_message_package.md)
+        - [discovery_message_package.py](./api/einvoice_message_package.md)
         - [line_item.py](./api/line_item.md)
         - [party_address.py](./api/party_address.md)
         - [semantic_model.py](./api/semantic_model.md)

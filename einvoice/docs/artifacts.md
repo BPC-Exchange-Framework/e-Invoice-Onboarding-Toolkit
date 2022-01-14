@@ -11,7 +11,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 This project inclues the following artifacts:  
 ```
 /e-Invoice-Onboarding-Toolkit  
-├── einvoice  
+├── discovery  
 │   ├── docs  
 │   │   ├── custom_theme  
 │   │   │   ├── css  
@@ -45,14 +45,14 @@ This project inclues the following artifacts:
 │   │   ├── _Footer.md  
 │   │   ├── _README.md  
 │   │   ├── \_\_init\_\_.py  
-│   │   ├── einvoice_design.xlsx  
+│   │   ├── discovery_design.xlsx  
 │   │   ├── git-workflow.md  
 │   │   ├── index.md  
 │   │   ├── python_dev_env.md  
 │   │   ├── requirements.md  
 │   │   ├── todo.md  
 │   │   └── tree.txt  
-│   ├── einvoice  
+│   ├── discovery  
 │   │   ├── conf  
 │   │   │   ├── \_\_init\_\_.py  
 │   │   │   ├── config_tool.py  
@@ -84,7 +84,7 @@ This project inclues the following artifacts:
 │   │   ├── app_logging.py  
 │   │   ├── create_tracking_id.py  
 │   │   ├── dns_query.py  
-│   │   ├── einvoice_message_package.py  
+│   │   ├── discovery_message_package.py  
 │   │   ├── line_item.py  
 │   │   ├── party_address.py  
 │   │   ├── semantic_model.py  
