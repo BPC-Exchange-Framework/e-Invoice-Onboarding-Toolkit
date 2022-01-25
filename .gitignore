@@ -83,7 +83,7 @@ geckodriver.log
 pyenv.cfg
 
 # mkdocs
-einvoice/site/
+discovery/site/
 
 # PyBuilder
 target/
@@ -123,6 +123,8 @@ lib/
 
 # mkdocs documentation
 site
+einvoice/site
+site/*
 
 # mypy
 .mypy_cache/
@@ -144,14 +146,21 @@ Discovery-Tools.code-workspace
 workspace.code-workspace
 ~$einvoice_design.xlsx
 einvoice/certificates/tests/logs/pytest-logs.txt
-einvoice/einvoice/tests/logs/pytest-logs.txt
+einvoice/discovery/tests/logs/pytest-logs.txt
 pytest-logs.txt
 cert.log
 .env
 einvoice/certificates/.env
-einvoice/einvoice/*/__pycache__
-einvoice/einvoice/__pycache__
-einvoice/einvoice/None
+einvoice/discovery/*/__pycache__
+einvoice/discovery/__pycache__
+einvoice/discovery/None
+einvoice/logs
+logs
+einvoice/docs/build
+einvoice/docs/source
+einvoice/docs/build/*
+einvoice/docs/source/*
+
 
 # certificate work
 *.pem

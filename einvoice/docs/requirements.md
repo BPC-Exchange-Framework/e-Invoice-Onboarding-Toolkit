@@ -1,28 +1,43 @@
-```
-Current installed packages:   
 
+Current installed packages:     
+Implement the packages in bold and most of the others should be brought along with.  Make sure to source the virtual enviroment first and then '_pip install <package>_' to bring in the package.  
+
+
+  
+ <hr/>
+
+alabaster
 astroid
 attrs
+Babel
 bandit
+beautifulsoup4
 black
 certifi
 cffi
 charset-normalizer
 click
-cryptography
-dnspython
+__cryptography__
+css-html-js-minify
+__dnspython__
+docformatter
+docopt
 docutils
+elementpath
 Faker
+fett
 flake8
 ghp-import
 gitdb
 GitPython
 idna
+imagesize
 importlib-metadata
 iniconfig
 isort
 Jinja2
 lazy-object-proxy
+lxml
 Markdown
 MarkupSafe
 mccabe
@@ -35,6 +50,7 @@ mkdocs-material-extensions
 mkdocstrings
 mypy
 mypy-extensions
+networkx
 packaging
 pathspec
 pbr
@@ -48,29 +64,49 @@ pyflakes
 Pygments
 pylint
 pymdown-extensions
+pymongo
 pyparsing
 pytest
 python-dateutil
 python-dotenv
+python-jsonrpc-server
+python-slugify
 pytkdocs
+pytz
 PyYAML
 pyyaml_env_tag
-requests
+__requests__
 six
 smmap
+snooty-lextudio
 snowballstemmer
+soupsieve
+Sphinx
+sphinx-material
+sphinxcontrib-applehelp
+sphinxcontrib-devhelp
+sphinxcontrib-htmlhelp
+sphinxcontrib-jsmath
+sphinxcontrib-qthelp
+sphinxcontrib-serializinghtml
 stevedore
 text-unidecode
 toml
 tomli
+toposort
 typing_extensions
+ujson
+Unidecode
+untokenize
 urllib3
 watchdog
 wrapt
-zipp   
-```    
-
-
+__xmlschema__
+__xsdata__
+zipp     
+       
+   
+<hr/>
 
 <div style="font-size: 12px;
             padding: 15px;
