@@ -26,7 +26,7 @@ load_dotenv(dotenv_path)
 def test_import_xsd_from_file():
     """Test the import_xsd module fetching from file"""
     log1 = create_logger("test_import_xsd_from_file")
-    filename = os.getenv("EBMS_XSD_FILE")
+    filename = "ebms-header-3_0-20220119.xsd"
     log1.info(f'Filename to load: {filename}')
     importer = ImportXSD()
     schema = importer.get_xsd_from_file(filename)
