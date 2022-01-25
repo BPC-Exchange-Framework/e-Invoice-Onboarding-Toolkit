@@ -156,6 +156,11 @@ einvoice/discovery/__pycache__
 einvoice/discovery/None
 einvoice/logs
 logs
+einvoice/docs/build
+einvoice/docs/source
+einvoice/docs/build/*
+einvoice/docs/source/*
+
 
 # certificate work
 *.pem
