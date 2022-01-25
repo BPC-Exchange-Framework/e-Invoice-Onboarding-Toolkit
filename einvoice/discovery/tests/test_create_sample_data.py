@@ -8,7 +8,7 @@
 """Testing code to create sample data."""
 
 from einvoice.discovery.data.create_sample_data import CreateSampleData
-from einvoice.discovery.app_handler import create_logger
+from einvoice.discovery.app_logging import create_logger
 
 
 def test_generate_fake_address():

@@ -1,5 +1,6 @@
 # Configuration file for the Sphinx documentation builder.
-#
+# pylint: disable=W0622,C0114,C0103
+# redefining built in copyright, missing docstring, name constants
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
@@ -52,8 +53,6 @@ napoleon_preprocess_types = False
 napoleon_type_aliases = None
 napoleon_attr_annotations = True
 
-
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -72,20 +71,22 @@ exclude_patterns = []
 html_theme = 'sphinx_material'
 
 html_theme_options = {
-    
+
     'nav_title': 'e-Invoice Onboarding Toolkit',
-    
-    'base_url': 'https://bpc-opensourcetools.github.io/e-Invoice-Onboarding-Toolkit/',
-    
+
+    'base_url':
+        'https://bpc-opensourcetools.github.io/e-Invoice-Onboarding-Toolkit/',
+
     'repo_name': 'e-Invoice Onboarding Toolkit',
-    
-    'repo_url': 'https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit',
-    
+
+    'repo_url':
+        'https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit',
+
     'color_primary': 'blue grey',
-    
+
     'color_accent': 'orange',
-    
-     # Visible levels of the global TOC; -1 means unlimited
+
+    # Visible levels of the global TOC; -1 means unlimited
     'globaltoc_depth': -1,
     # If False, expand all TOC entries
     'globaltoc_collapse': False,
