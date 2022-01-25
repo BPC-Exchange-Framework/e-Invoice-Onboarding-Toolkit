@@ -6,12 +6,11 @@
 # Date: 2021-07-16 (July 16th, 2021)
 #
 """
-A class to standardize log formatting across all application artifacts.
+Standard log formatting across all application artifacts.
 
-Define common loggers and format to be used across the application.
-Note that these logs are localized and non-persistent.
-If used with a Docker container,
-they cease to exist when the container does.
+Define common loggers and format used across the application.
+These logs are localized and non-persistent.
+If used with a Docker container, they cease to exist when the container does.
 
     Usage: (not meant to be called directly)
     log = create_logger("app_logging")
