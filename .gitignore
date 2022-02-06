@@ -133,6 +133,9 @@ dmypy.json
 
 # pycache
 __pycache__
+./einvoice/__pycache__
+./einvoice/delivery/__pycache__
+./einvoice/delivery/tests__pycache__
 .pyc
 .pyc
 .pyo
@@ -160,6 +163,7 @@ einvoice/docs/build
 einvoice/docs/source
 einvoice/docs/build/*
 einvoice/docs/source/*
+tree.out
 
 
 # certificate work
