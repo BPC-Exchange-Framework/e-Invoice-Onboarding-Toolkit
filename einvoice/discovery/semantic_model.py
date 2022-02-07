@@ -23,7 +23,10 @@ from einvoice.discovery.line_item import LineItem
 class EInvoice:
     """Represents an e-Invoice object.
 
+    The items required to represent an einvoice.
+
     Args:
+        NA
 
     Attributes:
         einvoice_uuid: str
@@ -40,16 +43,17 @@ class EInvoice:
             The total cost of all line_items.
 
     Raises:
+        NA
 
     Returns:
-
+        NA
     """
 
     einvoice_uuid: str
     einvoice_date: str
-    einvoice_sellers_address: Address()
-    einvoice_buyers_addres: Address()
-    einvoice_line_items: list(LineItem())
+    einvoice_sellers_address: Address
+    einvoice_buyers_addres: Address
+    einvoice_line_items: list[LineItem]
     einvoice_total: float = 0.0
 
     def calculate_einvoice_total(self) -> float:
@@ -57,11 +61,8 @@ class EInvoice:
         self.einvoice_total = 0.0
         if (len(self.einvoice_line_items)) > 0:
             for i in range(len(self.einvoice_line_items)):
-                if isinstance(
-                    float, self.einvoice_line_items[i].line_item_total
-                ):
-                    self.einvoice_total = (
-                        self.einvoice_total +
-                        self.einvoice_line_items[i].line_item_total
-                        )
+                self.einvoice_total = (
+                    self.einvoice_total +
+                    self.einvoice_line_items[i].line_item_total
+                )
         return self.einvoice_total

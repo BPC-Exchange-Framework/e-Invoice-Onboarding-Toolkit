@@ -5,9 +5,7 @@
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-10-14 (October 14th, 2021)
 #
-"""This is a test file to be run using pytest.
-
-"""
+"""Test file to be run using pytest."""
 
 # from einvoice.app_logging import create_logger
 # from einvoice.party_address import Address

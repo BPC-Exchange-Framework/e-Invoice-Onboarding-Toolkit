@@ -24,6 +24,7 @@ class LineItem:
     An e-Invoice will contain 1-n LineItem objects.
 
     Args:
+        NA
 
     Attributes:
         line_item_id: str
@@ -47,8 +48,10 @@ class LineItem:
             line_item_quantity * line_item_price_per_item.
 
     Returns:
+        NA
 
     Raises:
+        NA
     """
 
     line_item_id: str = ""

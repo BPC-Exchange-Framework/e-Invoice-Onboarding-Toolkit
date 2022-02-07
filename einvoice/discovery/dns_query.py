@@ -6,9 +6,9 @@
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-10-27 (October 27th, 2021)
 #
-"""Queries DNS services for NAPTR records"""
+"""Queries DNS services for NAPTR records."""
 import re
-from dns.resolver import dns
+import dns.resolver
 from einvoice.discovery.app_logging import create_logger
 
 
@@ -23,7 +23,7 @@ class DNSQuery:
         self.log = create_logger("DNSQuery")
 
     def naptr_lookup(self, urn, domain):
-        """Module to do the naptr dns query/look-up."""
+        """Execute the naptr dns query/look-up."""
         self.naptr_record = urn + "." + domain
         self.log.info(f"Look-up for urn: {self.naptr_record}")
         # Now let's look it up in the DNS system
@@ -38,7 +38,7 @@ class DNSQuery:
             self.smp_uri = self.smp_uri.decode()
         # Compile a regex pattern of the junk we need to strip
         # off the front side
-        pattern = re.compile(r'\!\^\.\*\$\!')
+        pattern = re.compile(r"\!\^\.\*\$\!")
         # Strip the front side junk from the uri
         self.smp_uri = re.sub(pattern, "", self.smp_uri)
         # Strip off the trailing bang "!" at the end of the uri.

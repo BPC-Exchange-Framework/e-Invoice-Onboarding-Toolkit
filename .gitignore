@@ -38,6 +38,7 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+environment.yml
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -125,6 +126,7 @@ lib/
 site
 einvoice/site
 site/*
+mkdocs.yml.old
 
 # mypy
 .mypy_cache/
@@ -133,6 +135,9 @@ dmypy.json
 
 # pycache
 __pycache__
+./einvoice/__pycache__
+./einvoice/delivery/__pycache__
+./einvoice/delivery/tests__pycache__
 .pyc
 .pyc
 .pyo
@@ -160,6 +165,7 @@ einvoice/docs/build
 einvoice/docs/source
 einvoice/docs/build/*
 einvoice/docs/source/*
+tree.out
 
 
 # certificate work

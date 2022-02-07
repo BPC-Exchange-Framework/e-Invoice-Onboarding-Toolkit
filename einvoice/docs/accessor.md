@@ -1,6 +1,7 @@
 ## e-invoice Onboarding Toolkit API<hr/>
-::: ./discovery.accessor.Accessor
-    handler: python
+::: ../discovery/accessor.Accessor
+    handler:
+      python:
     selection:
       members:
         - __init__

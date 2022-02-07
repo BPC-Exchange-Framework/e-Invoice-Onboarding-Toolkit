@@ -47,8 +47,10 @@ class Address:
             value is undefined.
 
     Returns:
+        NA
 
     Raises:
+        NA
     """
 
     org_id: str = ""

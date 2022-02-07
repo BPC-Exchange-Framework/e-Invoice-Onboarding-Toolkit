@@ -6,9 +6,8 @@
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-08-15 (August 15th, 2021)
 #
-"""This is a test file to be run using pytest.
+"""This is a test file to be run using pytest."""
 
-"""
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv

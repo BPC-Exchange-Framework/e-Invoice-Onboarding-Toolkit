@@ -64,30 +64,28 @@ class Accessor:
         self.schema_id = schema_id
         self.party_id = party_id
         self.hash_action = Hasher()
-        self.hash_dict = self.hash_action.hasher(self.specification,
-                                                 self.schema_id,
-                                                 self.party_id)
+        self.hash_dict = self.hash_action.hasher(
+            self.specification, self.schema_id, self.party_id
+        )
         return self.hash_dict
 
     def call_dns_lookup(self, hashed_urn, domain):
         """Look-up NAPTR record in the DNS."""
         self.naptr_lookup = DNSQuery()
-        self.smp_uri = self.naptr_lookup.naptr_lookup(hashed_urn,
-                                                      domain)
+        self.smp_uri = self.naptr_lookup.naptr_lookup(hashed_urn, domain)
         return self.smp_uri
 
     def call_smp_service_group_url(self, urn):
         """Create smp service group url query."""
         smp_handler = SMPQuery()
-        self.smp_service_group_url_response = smp_handler.\
-            query_service_group_url(urn)
+        self.smp_service_group_url_response\
+            = smp_handler.query_service_group_url(urn)
         return self.smp_service_group_url_response
 
     def call_smp_service_url(self, urn):
         """Create smp service group url query."""
         smp_handler = SMPQuery()
-        self.smp_service_url_response = smp_handler.\
-            query_service_url(urn)
+        self.smp_service_url_response = smp_handler.query_service_url(urn)
         return self.smp_service_url_response
 
     # if __name__ == "__main__":

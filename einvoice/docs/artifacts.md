@@ -1,7 +1,6 @@
 ## Project Artifacts<hr/>
   
-### 4-Corners Model and OASIS Specifications
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).  
+
   
  <br/> 
 
@@ -11,94 +10,131 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 This project inclues the following artifacts:  
 ```
 /e-Invoice-Onboarding-Toolkit  
-├── discovery  
-│   ├── docs  
-│   │   ├── custom_theme  
-│   │   │   ├── css  
-│   │   │   │   └── extra.css  
-│   │   │   └── main.html  
-│   │   ├── drawio  
-│   │   │   ├── Bounded Context - Entity Relationships 1.3.drawio  
-│   │   │   ├── Bounded Context - Functional Capabilities 1.2.drawio  
-│   │   │   └── Bounded Context - Participant 1.1.drawio  
-│   │   ├── jupyterlab  
-│   │   │   ├── dns_query.ipynb  
-│   │   │   ├── naptr_lookup.ipynb  
-│   │   │   ├── python_dev.ipynb  
-│   │   │   ├── tracking_id_sandbox.ipynb  
-│   │   │   ├── untitled.txt  
-│   │   │   └── urn_hash_work.ipynb  
-│   │   ├── pdf  
-│   │   │   ├── Bounded Context - Entity Relationships 1.4.pdf  
-│   │   │   ├── Bounded Context - Functional Capabilities 1.2.pdf  
-│   │   │   ├── Bounded Context - Functional Capabilities 1.3.pdf  
-│   │   │   ├── Bounded Context - Participant 1.1.pdf  
-│   │   │   └── Bounded Context - Participants 1.2.pdf  
-│   │   ├── Creating-a-Common-Dev-Environment.md  
-│   │   ├── Google-Colab-Pages.md  
-│   │   ├── Home.md  
-│   │   ├── Integrating.md  
-│   │   ├── LICENSE.md  
-│   │   ├── Project-Roadmap.md  
-│   │   ├── The-Main-Components.md  
-│   │   ├── Working-with-the-Code.md  
-│   │   ├── _Footer.md  
-│   │   ├── _README.md  
-│   │   ├── \_\_init\_\_.py  
-│   │   ├── discovery_design.xlsx  
-│   │   ├── git-workflow.md  
-│   │   ├── index.md  
-│   │   ├── python_dev_env.md  
-│   │   ├── requirements.md  
-│   │   ├── todo.md  
-│   │   └── tree.txt  
-│   ├── discovery  
-│   │   ├── conf  
-│   │   │   ├── \_\_init\_\_.py  
-│   │   │   ├── config_tool.py  
-│   │   │   └── smp_config.py  
-│   │   ├── data  
-│   │   │   ├── \_\_init\_\_.py  
-│   │   │   ├── create_sample_data.py  
-│   │   │   ├── item_list.csv  
-│   │   │   └── per_item_list.csv  
-│   │   ├── tests  
-│   │   │   ├── \_\_init\_\_.py  
-│   │   │   ├── hardcore_linter.sh  
-│   │   │   ├── magic_linter.py  
-│   │   │   ├── not_so_hard_linter.sh  
-│   │   │   ├── test_accessor.py  
-│   │   │   ├── test_app_logging.py  
-│   │   │   ├── test_create_sample_data.py  
-│   │   │   ├── test_create_tracking_id.py  
-│   │   │   ├── test_dns_query.py  
-│   │   │   ├── test_line_item.py  
-│   │   │   ├── test_party_address.py  
-│   │   │   ├── test_semantic_model.py  
-│   │   │   ├── test_smp_query.py  
-│   │   │   ├── test_urn.py  
-│   │   │   ├── test_urn_hasher.py  
-│   │   │   └── unaptr_response.json  
-│   │   ├── \_\_init\_\_.py  
-│   │   ├── accessor.py  
-│   │   ├── app_logging.py  
-│   │   ├── create_tracking_id.py  
-│   │   ├── dns_query.py  
-│   │   ├── discovery_message_package.py  
-│   │   ├── line_item.py  
-│   │   ├── party_address.py  
-│   │   ├── semantic_model.py  
-│   │   ├── smp_query.py  
-│   │   ├── urn.py  
-│   │   ├── urn_handler.py  
-│   │   └── urn_hasher.py  
-│   └── mkdocs.yml  
-├── LICENSE  
-├── README.md  
-├── requirements.txt  
-└── todo.md  
-  
-11 directories, 75 files  
+.
+├── LICENSE
+├── README.md
+├── ebms-header-3_0-20220119.xsd
+├── einvoice
+│   ├── __init__.py
+│   ├── delivery
+│   │   ├── __init__.py
+│   │   ├── ebms-header-3_0-20220119.xsd
+│   │   ├── import_xsd.py
+│   │   ├── sample_msg.xml
+│   │   └── tests
+│   │       ├── __init__.py
+│   │       ├── __pycache__
+│   │       └── test_import_xsd.py
+│   ├── discovery
+│   │   ├── __init__.py
+│   │   ├── accessor.py
+│   │   ├── app_handler.py
+│   │   ├── app_logging.py
+│   │   ├── conf
+│   │   │   ├── __init__.py
+│   │   │   ├── config_tool.py
+│   │   │   └── smp_config.py
+│   │   ├── create_tracking_id.py
+│   │   ├── data
+│   │   │   ├── __init__.py
+│   │   │   ├── create_sample_data.py
+│   │   │   ├── item_list.csv
+│   │   │   └── per_item_list.csv
+│   │   ├── dns_query.py
+│   │   ├── ebms-header-3_0-20220119.xsd
+│   │   ├── ebms-header.xml
+│   │   ├── einvoice_message_package.py
+│   │   ├── import_xsd.py
+│   │   ├── line_item.py
+│   │   ├── party_address.py
+│   │   ├── semantic_model.py
+│   │   ├── smp_query.py
+│   │   ├── tests
+│   │   │   ├── __init__.py
+│   │   │   ├── ebms-header-3_0-20220119.xsd
+│   │   │   ├── ez_linter.sh
+│   │   │   ├── hardcore_linter.sh
+│   │   │   ├── magic_linter.py
+│   │   │   ├── test_accessor.py
+│   │   │   ├── test_app_logging.py
+│   │   │   ├── test_create_sample_data.py
+│   │   │   ├── test_create_tracking_id.py
+│   │   │   ├── test_dns_query.py
+│   │   │   ├── test_import_xsd.py
+│   │   │   ├── test_line_item.py
+│   │   │   ├── test_party_address.py
+│   │   │   ├── test_semantic_model.py
+│   │   │   ├── test_smp_query.py
+│   │   │   ├── test_urn.py
+│   │   │   ├── test_urn_hasher.py
+│   │   │   └── unaptr_response.json
+│   │   ├── urn.py
+│   │   └── urn_hasher.py
+│   ├── docs
+│   │   ├── __init__.py
+│   │   ├── _license.md
+│   │   ├── accessor.md
+│   │   ├── app_logging.md
+│   │   ├── artifacts.md
+│   │   ├── create_tracking_id.md
+│   │   ├── custom_theme
+│   │   │   ├── css
+│   │   │   └── main.html
+│   │   ├── dns_query.md
+│   │   ├── drawio
+│   │   │   ├── Bounded Context - Entity Relationships 1.3.drawio
+│   │   │   ├── Bounded Context - Functional Capabilities 1.2.drawio
+│   │   │   └── Bounded Context - Participant 1.1.drawio
+│   │   ├── einvoice_design.xlsx
+│   │   ├── einvoice_message_package.md
+│   │   ├── enabling_infrastructure_components.md
+│   │   ├── faq.md
+│   │   ├── flask_integration_on_docker.md
+│   │   ├── getting_started.md
+│   │   ├── git_workflow.md
+│   │   ├── google_colab_pages.md
+│   │   ├── index.md
+│   │   ├── jupyterlab
+│   │   │   ├── Validate_bdx-as4.ipynb
+│   │   │   ├── Validate_bdx-as4_v2.ipynb
+│   │   │   ├── dns_query.ipynb
+│   │   │   ├── ebms-header-3_0-20210119.xsd
+│   │   │   ├── ebms-header-3_0-20220119.xsd
+│   │   │   ├── naptr_lookup.ipynb
+│   │   │   ├── python_dev.ipynb
+│   │   │   ├── sample_msg.xml
+│   │   │   ├── tracking_id_sandbox.ipynb
+│   │   │   ├── untitled.txt
+│   │   │   └── urn_hash_work.ipynb
+│   │   ├── line_item.md
+│   │   ├── oasis_documentation.md
+│   │   ├── party_address.md
+│   │   ├── pdf
+│   │   │   ├── Bounded Context - Entity Relationships 1.4.pdf
+│   │   │   ├── Bounded Context - Functional Capabilities 1.2.pdf
+│   │   │   ├── Bounded Context - Functional Capabilities 1.3.pdf
+│   │   │   ├── Bounded Context - Participant 1.1.pdf
+│   │   │   └── Bounded Context - Participants 1.2.pdf
+│   │   ├── project_roadmap.md
+│   │   ├── python_dev_env.md
+│   │   ├── requirements.md
+│   │   ├── semantic_model.md
+│   │   ├── smp_query.md
+│   │   ├── start_to_finish.md
+│   │   ├── test_cases.md
+│   │   ├── todo.md
+│   │   ├── tools_and_resources.md
+│   │   ├── urn.md
+│   │   ├── urn_handler.md
+│   │   ├── urn_hasher.md
+│   │   ├── using_the_modules.md
+│   │   └── working_with_the_code.md
+│   ├── mkdocs.yml
+│   └── mkdocs.yml.old
+├── requirements.txt
+└── todo.md
+
+14 directories, 108 files
 ```
 
 <div style="font-size: 12px;

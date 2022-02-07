@@ -9,13 +9,13 @@ theme:
   name: material
   palette:
    primary: blue grey
-   accent: orange  
+   accent: orange
 #  custom_dir: docs/custom_theme/
 
 plugins:
   - search
   - mkdocstrings
-  
+
 
 nav:
   - 0. FAQ: faq.md

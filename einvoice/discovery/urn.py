@@ -24,6 +24,7 @@ class Urn:
     The base URN to be constructed as a string.
 
     Args:
+        None
 
     Attributes:
         einvoice_tracking_id: str
@@ -42,13 +43,14 @@ class Urn:
         Urn as str.
 
     Raises:
-
+        NA
     """
+
     einvoice_id: str
     specification: str
     schema_id: str
     party_id: str
 
     def urn(self) -> str:
-        """Construct string for the party's URN"""
+        """Construct string for the party's URN."""
         return f"{self.specification}:{self.schema_id}::{self.party_id}"
