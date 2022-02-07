@@ -129,7 +129,7 @@ class Hasher:
         )
         self.log.info(
             f"Implemented using the lower() string method - {self.einvoice_id}"
-            )
+        )
 
         # encode the urn to a byte-like object.
         self.urn_lower_encoded = self.final_urn_lower_case.encode("utf-8")
@@ -145,12 +145,12 @@ class Hasher:
         # Apply the sha256 to the urn.
         self.urn_sha256_hashed = hashlib.sha256(self.urn_lower_encoded)
         self.msg = "Apply the SHA256 hash to the urn: "
-        self.msg = self.msg + self.urn_sha256_hashed
+        self.msg = self.msg + str(self.urn_sha256_hashed)
         self.msg = self.msg + " - " + self.einvoice_id
         self.log.info(self.msg)
         self.log.info(
             f"Implemented using hashlib.sha256() - {self.einvoice_id}"
-            )
+        )
 
         # Obtain the hash digest of the sha256 urn
         self.urn_sha256_digest = self.urn_sha256_hashed.digest()
@@ -183,12 +183,12 @@ class Hasher:
         )
         self.log.info(
             f"Implements rstrip() method of String - {self.einvoice_id}"
-            )
+        )
 
         # Convert the the output to lower case.
         self.lower_case_b32 = self.urn_b32_cleaned.lower()
         self.msg = "Convert all characters to lowercase: "
-        self.msg = self.msg + self.lower_case_b32
+        self.msg = self.msg + str(self.lower_case_b32)
         self.msg = self.msg + " - " + self.einvoice_id
         self.log.info(self.msg)
         self.msg = "Implements .lower() method of String - "

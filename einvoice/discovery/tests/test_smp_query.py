@@ -9,6 +9,7 @@
 #
 """This is a test file to be run using pytest."""
 from einvoice.discovery.smp_query import SMPQuery
+from einvoice.discovery.app_logging import create_logger
 
 
 def test_smp_query():
@@ -66,8 +67,12 @@ def test_smp_query():
         "%3AInvoice%23%23BPC-UBL-2.2",    # flake8: noqa: E501
     )
 
+    log = create_logger("test_smp_query")
+
     query = SMPQuery()
     for index, urn in enumerate(urns):
+        msg = f"Attemping urn: {urn}"
+        log.info(msg)
         service_group_url_test = query.smp_create_srvc_group_url_query(urn)
         service_url_test = query.smp_create_service_url_query(urn)
         assert service_group_url_test == service_group_urls[index]
