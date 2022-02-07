@@ -45,12 +45,10 @@ class CreateSampleData:
         f.per_item[]: A list of item sizes/groups/types to
             populate an e-Invoice.
             Populated by reading in from a CSV file.
-
-    Returns:
-
-    Raises:
     """
+
     def __init__(self):
+        """Entry point for the module.  Defines instance variables."""
         self.log = create_logger("create_sample_data")
         self.log.info("Generating e-Invoice Data!")
         self.fake = Faker()
@@ -82,8 +80,6 @@ class CreateSampleData:
             count:
                 The number of addresses requested.
 
-        Raises:
-
         Returns:
             A list of JSON entries with each one representing an
             address.
@@ -106,7 +102,7 @@ class CreateSampleData:
             self.zip_code = self.fake.postcode()
 
             # Create a JSON string of the Company.
-            self.company = str({"org_id":   self.org_id, "name": self.name,
+            self.company = str({"org_id": self.org_id, "name": self.name,
                                 "address_1": self.address_1,
                                 "address_2": self.address_2,
                                 "city": self.city, "state": self.state,
@@ -124,8 +120,6 @@ class CreateSampleData:
         Args:
             _count:
                 The number of line_items requested.
-
-        Raises:
 
         Returns:
             A list of JSON entries with each one representing a line item.
@@ -147,10 +141,11 @@ class CreateSampleData:
                                                   'OPQRSQSTeUVWXYZ')
             self.line_item_quantity = random.randint(1, 10)
             self.line_item_per_item = random.choice(self.per_item)
-            self.line_item_price_per_item = (random.randint(100, 10000))/100
+            self.line_item_price_per_item = (random.randint(100, 10000)) / 100
             self.line_item_name = random.choice(self.items)
-            self.line_item_total = (self.line_item_quantity
-                                    * self.line_item_price_per_item)
+            self.line_item_total = (
+                self.line_item_quantity * self.line_item_price_per_item
+            )
 
             # Create a JSON string of the sample_line_item
             self.sample_line_item = str({'Item ID': self.line_item_id,
@@ -169,7 +164,7 @@ class CreateSampleData:
         return self.line_items
 
     def write_json_to_file(self, json_object):
-        """Writes data to a json file."""
+        """Write data to a json file."""
         self.log = create_logger("create_sample_data")
 
         if len(json_object) < 1:

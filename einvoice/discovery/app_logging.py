@@ -17,6 +17,7 @@ If used with a Docker container, they cease to exist when the container does.
     log.debug("This message will be logged.")
 
 """
+
 import logging
 import os
 from os.path import join, dirname
@@ -24,12 +25,12 @@ from dotenv import load_dotenv
 
 
 def create_logger(name):
-    """This function creates a logger template for the discovery package.
+    """Implement a logger template.
 
     This function creates a consistant format and location for
     all application log files to write to.
     """
-    dotenv_path = join(dirname(__file__), '../.env')
+    dotenv_path = join(dirname(__file__), "../.env")
     load_dotenv(dotenv_path)
     app_log_file = str(os.getenv("APP_LOG_FILE"))
     web_response_file = str(os.getenv("WEB_RESPONSE_FILE"))
@@ -60,8 +61,7 @@ def create_logger(name):
     # Create a custom formatter for the response_logger
     response_format = "%(asctime)s - %(message)s"
     response_datefmt = "%Y%m%d:%H:%M:%S"
-    response_formatter = logging.Formatter(response_format,
-                                           response_datefmt)
+    response_formatter = logging.Formatter(response_format, response_datefmt)
 
     response_logger.setFormatter(response_formatter)
 

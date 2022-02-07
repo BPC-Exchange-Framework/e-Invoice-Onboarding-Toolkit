@@ -12,7 +12,7 @@ from einvoice.discovery.app_logging import create_logger
 
 
 def test_generate_fake_address():
-    """Pytest for creating sample data"""
+    """Pytest for creating sample data."""
     log1 = create_logger("test_generate_fake_addresses")
     data_factory = CreateSampleData()
     address = data_factory.generate_fake_address(4)

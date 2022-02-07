@@ -5,21 +5,19 @@
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-11-05 (November 11th, 2021)
 #
-"""This is a test file to be run using pytest.
-
-"""
+"""This is a test file to be run using pytest."""
 from einvoice.discovery.app_logging import create_logger
 from einvoice.discovery.create_tracking_id import CreateTrackingID
 
 
 def test_app_logging():
-    """Test application logging"""
+    """Test application logging."""
     log = create_logger("test_app_logging")
     log.info("Testing app loggin")
 
 
 def test_create_urn_id():
-    """Test creation of a urn"""
+    """Test creation of a urn."""
     log = create_logger("test_create_tracking_id")
     log.info("Begin tracking id creation.")
     id_size = 10

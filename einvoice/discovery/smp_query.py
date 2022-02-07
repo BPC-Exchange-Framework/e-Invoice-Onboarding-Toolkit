@@ -6,9 +6,7 @@
 # About: Query SMP REST API.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
-#
-""""Provides functionality for an SMPQuery 4-corner
-discovery"""
+"""Provides functionality for an SMPQuery Fourr-corner model discovery."""
 import re
 import os
 from os.path import join, dirname
@@ -19,6 +17,7 @@ from einvoice.discovery.app_logging import create_logger
 
 class SMPQuery:
     """Class to create and execute a RESt API query.
+
     See the ebXML standards for request API format.
 
     Args:
@@ -36,7 +35,8 @@ class SMPQuery:
     """
 
     def __init__(self):
-        dotenv_path = join(dirname(__file__), '../../.env')
+        """Define and instantiate variables."""
+        dotenv_path = join(dirname(__file__), "../../.env")
         load_dotenv(dotenv_path)
         self.protocol = str(os.getenv("PROTOCOL"))
         self.standard = str(os.getenv("STANDARD"))
@@ -72,8 +72,10 @@ class SMPQuery:
     def smp_create_srvc_group_url_query(self, urn):
         """Create first smp api query."""
         self.urn = urn
-        self.request_url = (self.protocol + "://" + self.domain + "/" +
-                            self.standard + "/" + self.urn)
+        self.request_url = (
+            self.protocol + "://" + self.domain +
+            "/" + self.standard + "/" + self.urn
+        )
         self.request_url = re.sub(":", "%3A", self.request_url)
         self.request_url = re.sub("https%3A", "https:", self.request_url)
         self.log.info(f"Service group url created: {self.request_url}")
@@ -82,9 +84,9 @@ class SMPQuery:
     def smp_create_service_url_query(self, urn):
         """Create second smp api query."""
         self.urn = urn
-        self.request_url = (self.protocol + "://" + self.domain + "/" +
-                            self.standard + "/" + self.urn + "/" +
-                            self.services + "/" + self.service_id)
+        self.request_url = (self.protocol + "://" + self.domain +
+                            "/" + self.standard + "/" + self.urn +
+                            "/" + self.services + "/" + self.service_id)
         self.request_url = re.sub(":", "%3A", self.request_url)
         self.request_url = re.sub("#", "%23", self.request_url)
         self.request_url = re.sub("https%3A", "https:", self.request_url)

@@ -38,6 +38,7 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+environment.yml
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -125,6 +126,7 @@ lib/
 site
 einvoice/site
 site/*
+mkdocs.yml.old
 
 # mypy
 .mypy_cache/

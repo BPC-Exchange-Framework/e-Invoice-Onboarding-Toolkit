@@ -1,14 +1,11 @@
-"""
-Test cases for dns_query
-
-"""
 # pylint: disable=C0415, E0401, W1514, W0611
 # import outside toplevel (os), unable to import 'dotvenv',
 # using open without explicitly specifying an encoding
+"""Test cases for dns_query."""
 
 
 def test_smp_config():
-    """ Test the SMP config"""
+    """Test the SMP config."""
     import os
     from os.path import join, dirname
     from dotenv import load_dotenv

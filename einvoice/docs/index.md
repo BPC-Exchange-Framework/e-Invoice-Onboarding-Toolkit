@@ -1,4 +1,8 @@
-This is a repository for open source tools created to facilitate adoption and implementation of a 4-Corners interoperability framework.     
+This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner interoperability framework model.   
+
+For Information about e-invoices and implementing the Four-Corner Model please visit the [Business Payments Coalition website](https://businesspaymentscoalition.org/electronic-invoices).  
+
+ Additional documentation, reference, materials and standards can be found on the [Oasis-Open.org website](https://www.oasis-open.org). Start with the [ebXML specification](http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html)
  
 
 * [FAQ](./faq.md)

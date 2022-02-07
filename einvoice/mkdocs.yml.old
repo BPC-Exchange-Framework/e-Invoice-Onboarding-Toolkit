@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
 site_name: e-Invoice Onboarding Toolkit
 site_url: https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit
 # edit_uri: ./discovery/docs/
@@ -7,15 +9,33 @@ docs_dir: docs
 
 theme:
   name: material
+  icon:
+  logo: material/xml
   palette:
-   primary: blue grey
-   accent: orange  
+  - scheme: default
+    primary: indigo
+    accent: light green
+    toggle:
+    icon: material/lightbulb-outline
+    name: Switch to dark mode
+  - scheme: slate
+    primary: pink
+    accent: yellow
+    toggle:
+    icon: material/lightbulb
+    name: Switch to light mode
 #  custom_dir: docs/custom_theme/
 
 plugins:
+  - autorefs
   - search
-#  - mkdocstrings
-  
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+      watch:
+        - einvoice
+
 
 nav:
   - 0. FAQ: faq.md
@@ -31,18 +51,18 @@ nav:
     - 7c. Test Cases: test_cases.md
     - 7d. Google Colab Pages: google_colab_pages.md
     - 7e. Package/Library API:
-#          - accessor.py: api/accessor.md
-#          - app_logging.py: ./api/app_logging.md
-#          - create_tracking_id.py: ./api/create_tracking_id.md
-#          - dns_query.py: ./api/dns_query.md
-#          - discovery_message_package.py: ./api/einvoice_message_package.md
-#          - line_item.py: ./api/line_item.md
-#          - party_address.py: ./api/party_address.md
-#          - semantic_model.py: ./api/semantic_model.md
-#          - smp_query.py: ./api/smp_query.md
-#          - urn_handler.py: ./api/urn_handler.md
-#          - urn_hasher.py: ./api/urn_hasher.md
-#          - urn.py: ./api/urn.md
+      - accessor.py: accessor.md
+      - app_logging.py: app_logging.md
+      - create_tracking_id.py: create_tracking_id.md
+      - dns_query.py: dns_query.md
+      - discovery_message_package.py: einvoice_message_package.md
+      - line_item.py: line_item.md
+      - party_address.py: party_address.md
+      - semantic_model.py: semantic_model.md
+      - smp_query.py: smp_query.md
+      - urn_handler.py: urn_handler.md
+      - urn_hasher.py: urn_hasher.md
+      - urn.py: urn.md
     - 7f. Flask Integration on Docker: flask_integration_on_docker.md
   - 8. Project Roadmap: project_roadmap.md
   - 9. Enabling Infrastructure Components: enabling_infrastructure_components.md
