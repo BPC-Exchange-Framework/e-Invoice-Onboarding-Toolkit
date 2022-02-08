@@ -137,7 +137,7 @@ dmypy.json
 __pycache__
 ./einvoice/__pycache__
 ./einvoice/delivery/__pycache__
-./einvoice/delivery/tests__pycache__
+./einvoice/delivery/tests/__pycache__
 .pyc
 .pyc
 .pyo
@@ -166,6 +166,10 @@ einvoice/docs/source
 einvoice/docs/build/*
 einvoice/docs/source/*
 tree.out
+einvoice/docs/jupyterlab/untitled.txt
+einvoice/mkdocs.yml.bak
+einvoice/mkdocs.yml.old
+einvoice/docs/index_orig.md
 
 
 # certificate work

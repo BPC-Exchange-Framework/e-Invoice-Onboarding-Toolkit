@@ -17,9 +17,5 @@
   <h4 style="font-size: 14px;
             padding: 0px;
             margin: 0px;">No Representations or Warranties</h5>
-  This software is free and Open Source offered under an MIT license. The developers of the software make no
-  representations or warranties as to the software or its fitness for a particular purpose. This code is meant for
-  educational and research purposes only. The code is offered "as-is" and is not intended to be used in a production
-  environment. It is intended for developers of software related to the 4-corners Model to use as a stepping-off point
-  for further development efforts.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </div>

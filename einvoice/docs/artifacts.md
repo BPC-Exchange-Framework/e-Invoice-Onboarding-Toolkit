@@ -1,13 +1,11 @@
-## Project Artifacts<hr/>
-  
-
-  
- <br/> 
+## The Repo(sitory)<hr/>
 
 
-### Project layout
+### Repository Layout
 
-This project inclues the following artifacts:  
+This project includes the following files, _i.e., "artifacts"_ in __.py__, .__md__, .__txt__ and other formats, updated as of:  
+__02/07/2022 (February 7th, 2022)__
+
 ```
 /e-Invoice-Onboarding-Toolkit  
 .
@@ -23,7 +21,6 @@ This project inclues the following artifacts:
 │   │   ├── sample_msg.xml
 │   │   └── tests
 │   │       ├── __init__.py
-│   │       ├── __pycache__
 │   │       └── test_import_xsd.py
 │   ├── discovery
 │   │   ├── __init__.py
@@ -44,7 +41,6 @@ This project inclues the following artifacts:
 │   │   ├── ebms-header-3_0-20220119.xsd
 │   │   ├── ebms-header.xml
 │   │   ├── einvoice_message_package.py
-│   │   ├── import_xsd.py
 │   │   ├── line_item.py
 │   │   ├── party_address.py
 │   │   ├── semantic_model.py
@@ -53,14 +49,18 @@ This project inclues the following artifacts:
 │   │   │   ├── __init__.py
 │   │   │   ├── ebms-header-3_0-20220119.xsd
 │   │   │   ├── ez_linter.sh
+│   │   │   ├── flake8_linter.sh
 │   │   │   ├── hardcore_linter.sh
 │   │   │   ├── magic_linter.py
+│   │   │   ├── mypy_linter.sh
+│   │   │   ├── pycodestyle_linter.sh
+│   │   │   ├── pydocstyle_linter.sh
+│   │   │   ├── pylint_linter.sh
 │   │   │   ├── test_accessor.py
 │   │   │   ├── test_app_logging.py
 │   │   │   ├── test_create_sample_data.py
 │   │   │   ├── test_create_tracking_id.py
 │   │   │   ├── test_dns_query.py
-│   │   │   ├── test_import_xsd.py
 │   │   │   ├── test_line_item.py
 │   │   │   ├── test_party_address.py
 │   │   │   ├── test_semantic_model.py
@@ -104,7 +104,6 @@ This project inclues the following artifacts:
 │   │   │   ├── python_dev.ipynb
 │   │   │   ├── sample_msg.xml
 │   │   │   ├── tracking_id_sandbox.ipynb
-│   │   │   ├── untitled.txt
 │   │   │   └── urn_hash_work.ipynb
 │   │   ├── line_item.md
 │   │   ├── oasis_documentation.md
@@ -129,12 +128,11 @@ This project inclues the following artifacts:
 │   │   ├── urn_hasher.md
 │   │   ├── using_the_modules.md
 │   │   └── working_with_the_code.md
-│   ├── mkdocs.yml
-│   └── mkdocs.yml.old
+│   └── mkdocs.yml
 ├── requirements.txt
 └── todo.md
 
-14 directories, 108 files
+13 directories, 109 files
 ```
 
 <div style="font-size: 12px;
@@ -144,14 +142,10 @@ This project inclues the following artifacts:
             margin-left: 0px;
             margin-bottom: 40px;
             margin-right: auto;
-            width: 90%;
+            width: 100%;
             border-radius: 10px;">
   <h4 style="font-size: 14px;
             padding: 0px;
             margin: 0px;">No Representations or Warranties</h5>
-  This software is free and Open Source offered under an MIT license. The developers of the software make no
-  representations or warranties as to the software or its fitness for a particular purpose. This code is meant for
-  educational and research purposes only. The code is offered "as-is" and is not intended to be used in a production
-  environment. It is intended for developers of software related to the 4-corners Model to use as a stepping-off point
-  for further development efforts.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </div>

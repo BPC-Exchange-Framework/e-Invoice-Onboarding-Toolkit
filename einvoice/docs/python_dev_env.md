@@ -16,7 +16,7 @@ Important items for consideration include:
 - Links to additional resources.
 
 
-Note:  This documentation assumes running on MacOS.  All tools should be available in Windows and various flavors of Linux.  Your mileage may vary. 
+Note:  This documentation assumes running on MacOS.  All tools should be available in Windows and various flavors of Linux.  Your mileage may vary.
 
 Install Homebrew using command:  
 ```
@@ -82,17 +82,17 @@ Step|Command|What it's doing/output
 1.|cd|Change to user home dir
 2.|pwd|Print the working directory
  | |/Users/kelly|output of pwd command
-3.|mkdir ./Dev ./Dev/virtualenvs|Create working directories 
+3.|mkdir ./Dev ./Dev/virtualenvs|Create working directories
 4.|cd ./Dev/virtualenvs|Change into the working directory
 5.|pwd| Print the working directory
  | |/Users/kelly/Dev/virtualenvs|
 6.|virtualenv --python python3.9 e-Invoice|Create the e-Invoice virtual environment
 7.|ls -l|list contents of current directory structure|
  |  |drwxr-xr-x  7 kelly  staff  224 Jun 15 08:52 e-Invoice
- 8.|cd ./e-Invoice|Change into the e-Invoice directory 
+ 8.|cd ./e-Invoice|Change into the e-Invoice directory
 9.|cd ../bin|Change into the bin directory
 10.|source ./activate | source the activate file and make the current virtual environment active.
-11.|python -m pip install --upgrade pip | update version of pip 
+11.|python -m pip install --upgrade pip | update version of pip
 12.|pip list | List the installed packages for this virtual env.  This will be a very small list to start as this is a clean virtual env, including ```pip```, ```setuptools```, and ```wheel```.
 
 Additional packages or modules to be installed in e-Invoice include:
@@ -113,7 +113,7 @@ e.g., pep8 hello.py
 ```
 
 then the output from the cosole using:
-``` 
+```
 echo $?
 ```
 
@@ -149,7 +149,7 @@ pip install flask
 <br /><br />
 
 ## Include Documentation
-To incorporate documentation into the application at every step, bring in the Sphinx package. 
+To incorporate documentation into the application at every step, bring in the Sphinx package.
 
 ```
 pip install sphinx
@@ -161,7 +161,7 @@ Sphinx uses reStructured Text as a form of Markdown.  For a brief overview see [
 
 Additonal support documenting the project may include utilzing a resource like [Read the Docs](http://readthedocs.org).
 
-- See also: [PEP-257 Docstring Conventions](https://www.python.org/dev/peps/pep-0257/) 
+- See also: [PEP-257 Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
 
 <br /><br />
 
@@ -178,7 +178,7 @@ Primary source material for review can be found at [obeythetestinggoat.com](http
 ## Text Editors and IDEs
 There are numerous tools for text editing and softwre development.  Personal preference, specialization versus generalization, and cost may all play a part in choice of tools used for development.  Here is a short list of well known and supported tools available for free or under an Open Source license.  (No compensation isß received for any reference to materials on this page.)
 - [Visual Studio Code](https://code.visualstudio.com/) by Microsoft.  "Built on Open Source" the Code version is free and has many plug-ins.  It's a mature IDE with the polish of a Microsoft product.  Not the behemouth of the full Visual Studio IDE.  Available for Windows/Mac/Linux.  There is a version of Visual Studio Code compiled with all the non-Open Source components removed called [VSCodium](https://vscodium.com/).  Or compile it from source available at GitHub resulting in a product called [Code - OSS](https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run).
-- [Atom Text Editor](https://atom.io/).  A highly customizable text editor which is programming language agnostic and completely open source and available (packaged and source) on GitHub.  Available for Windows/Mac/Linux. 
+- [Atom Text Editor](https://atom.io/).  A highly customizable text editor which is programming language agnostic and completely open source and available (packaged and source) on GitHub.  Available for Windows/Mac/Linux.
 - [PyCharm Community Edition](https://www.jetbrains.com/pycharm/) by JetBrains. A Python specific IDE.  The Community Edition is Free and Open Source, albeit with some limited functionality. Available for Windows/Mac/Linux.
 
  - (Optional) Install Jupyter lab and notebooks.Jupyter notebooks (deprecated in favor of JupyterLab, though the notebook format remains the same) are especially popular for use in Data Science and ML.  Runs locally on a Python framework. They are used to create documentation in Markdown and write and execute code that might not require an entire program.  Supports other languages such as R and Julia.  Can also be installed through Anaconda.  
@@ -190,7 +190,7 @@ python -m pip install --upgrade pip
 pip install jupyter
 pip install jupyterlab
 ```  
-  
+
 Start jupyterlab by running it from within your Python virtualenv /bin directory.  
 At runtime, point it to the location of your GITHub root, e.g.,   
 ```
@@ -222,9 +222,5 @@ There is a wealth of high quality documentation and writing about Python in digi
   <h4 style="font-size: 14px;
             padding: 0px;
             margin: 0px;">No Representations or Warranties</h5>
-  This software is free and Open Source offered under an MIT license. The developers of the software make no
-  representations or warranties as to the software or its fitness for a particular purpose. This code is meant for
-  educational and research purposes only. The code is offered "as-is" and is not intended to be used in a production
-  environment. It is intended for developers of software related to the 4-corners Model to use as a stepping-off point
-  for further development efforts.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </div>
