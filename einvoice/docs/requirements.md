@@ -1,112 +1,107 @@
 
-Current installed packages:     
-Implement the packages in bold and most of the others should be brought along with.  Make sure to source the virtual enviroment first and then '_pip install <package>_' to bring in the package.  
+Currently implemented packages:  
+
+This project utilizes the following packages, all of which should be available under an Open Source license via [Py](https://pypi.org/).
+List updated as of:  
+__02/07/2022 (February 7th, 2022)__
+
+Implement the packages in bold and most of the others should be brought along with.  Make sure to source the virtual environment first and then '_pip | conda install <package>_' to bring in the package.  
 
 
-  
+
  <hr/>
 
-alabaster
-astroid
-attrs
-Babel
-bandit
-beautifulsoup4
-black
-certifi
-cffi
-charset-normalizer
-click
-__cryptography__
-css-html-js-minify
-__dnspython__
-docformatter
-docopt
-docutils
-elementpath
-Faker
-fett
-flake8
-ghp-import
-gitdb
-GitPython
-idna
-imagesize
-importlib-metadata
-iniconfig
-isort
-Jinja2
-lazy-object-proxy
-lxml
-Markdown
-MarkupSafe
-mccabe
-mergedeep
-mkdocs
-mkdocs-autorefs
-mkdocs-bootstrap
-mkdocs-material
-mkdocs-material-extensions
-mkdocstrings
-mypy
-mypy-extensions
-networkx
-packaging
-pathspec
-pbr
-platformdirs
-pluggy
-py
-pycodestyle
-pycparser
-pydocstyle
-pyflakes
-Pygments
-pylint
-pymdown-extensions
-pymongo
-pyparsing
-pytest
-python-dateutil
-python-dotenv
-python-jsonrpc-server
-python-slugify
-pytkdocs
-pytz
-PyYAML
-pyyaml_env_tag
-__requests__
-six
-smmap
-snooty-lextudio
-snowballstemmer
-soupsieve
-Sphinx
-sphinx-material
-sphinxcontrib-applehelp
-sphinxcontrib-devhelp
-sphinxcontrib-htmlhelp
-sphinxcontrib-jsmath
-sphinxcontrib-qthelp
-sphinxcontrib-serializinghtml
-stevedore
-text-unidecode
-toml
-tomli
-toposort
-typing_extensions
-ujson
-Unidecode
-untokenize
-urllib3
-watchdog
-wrapt
-__xmlschema__
-__xsdata__
-zipp     
-       
-   
-<hr/>
+```
+ alabaster
+ argh
+ astroid
+ attrs
+ Babel
+ brotlipy
+ certifi
+ cffi
+ charset-normalizer
+ click
+ colorama
+ cryptography
+ dnspython
+ docutils
+ elementpath
+ Faker
+ flake8
+ future
+ ghp-import
+ idna
+ imagesize
+ importlib-metadata
+ iniconfig
+ isort
+ Jinja2
+ joblib
+ lazy-object-proxy
+ livereload
+ lunr
+ Markdown
+ MarkupSafe
+ mccabe
+ mergedeep
+ mkdocs
+ mkdocs-autorefs
+ mkdocs-bootstrap
+ mkdocs-material
+ mkdocs-material-extensions
+ mkdocstrings
+ mypy
+ mypy-extensions
+ nltk
+ packaging
+ platformdirs
+ pluggy
+ psutil
+ py
+ pycodestyle
+ pycparser
+ pydocstyle
+ pyflakes
+ Pygments
+ pylint
+ pymdown-extensions
+ pyOpenSSL
+ pyparsing
+ PySocks
+ pytest
+ python-dateutil
+ python-dotenv
+ pytkdocs
+ pytz
+ PyYAML
+ pyyaml_env_tag
+ regex
+ requests
+ six
+ snowballstemmer
+ Sphinx
+ sphinxcontrib-applehelp
+ sphinxcontrib-devhelp
+ sphinxcontrib-htmlhelp
+ sphinxcontrib-jsmath
+ sphinxcontrib-qthelp
+ sphinxcontrib-serializinghtml
+ text-unidecode
+ toml
+ tomli
+ tornado
+ tqdm
+ typing_extensions
+ urllib3
+ watchdog
+ wrapt
+ xmlschema
+ zipp
+```
+
+<br/>
+<br/>
 
 <div style="font-size: 12px;
             padding: 15px;
@@ -120,9 +115,5 @@ zipp
   <h4 style="font-size: 14px;
             padding: 0px;
             margin: 0px;">No Representations or Warranties</h5>
-  This software is free and Open Source offered under an MIT license. The developers of the software make no
-  representations or warranties as to the software or its fitness for a particular purpose. This code is meant for
-  educational and research purposes only. The code is offered "as-is" and is not intended to be used in a production
-  environment. It is intended for developers of software related to the 4-corners Model to use as a stepping-off point
-  for further development efforts.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </div>

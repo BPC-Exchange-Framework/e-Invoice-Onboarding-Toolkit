@@ -1,12 +1,16 @@
-This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner interoperability framework model.   
+## Welcome
+__Welcome to the e-Invoice Onboarding Toolkit__  
 
-For Information about e-invoices and implementing the Four-Corner Model please visit the [Business Payments Coalition website](https://businesspaymentscoalition.org/electronic-invoices).  
+This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner interoperability model framework.   
 
- Additional documentation, reference, materials and standards can be found on the [Oasis-Open.org website](https://www.oasis-open.org). Start with the [ebXML specification](http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html)
- 
+For information about e-invoices and implementing the Four-Corner Model please visit the [Business Payments Coalition website](https://businesspaymentscoalition.org/electronic-invoices).  
+
+ Additional documentation, reference materials, and standards can be found on the [Oasis-Open.org website](https://www.oasis-open.org). Start with the [ebXML specification](http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html)
+
+## This Project
 
 * [FAQ](./faq.md)
-* [Index](./index.md)
+* [Project Home](./index.md)
 * [Getting Started](./getting_started.md)
 * [Tools and Resources](./tools_and_resources.md)
 * [Configuring a Development Environment](./python_dev_env.md)
@@ -45,14 +49,10 @@ For Information about e-invoices and implementing the Four-Corner Model please v
             margin-left: 0px;
             margin-bottom: 40px;
             margin-right: auto;
-            width: 70%;
+            width: 100%;
             border-radius: 10px;">
   <h4 style="font-size: 14px;
             padding: 0px;
             margin: 0px;">No Representations or Warranties</h5>
-  This software is free and Open Source offered under an MIT license. The developers of the software make no
-  representations or warranties as to the software or its fitness for a particular purpose. This code is meant for
-  educational and research purposes only. The code is offered "as-is" and is not intended to be used in a production
-  environment. It is intended for developers of software related to the 4-corners Model to use as a stepping-off point
-  for further development efforts.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </div>
