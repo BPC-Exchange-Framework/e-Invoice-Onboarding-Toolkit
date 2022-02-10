@@ -418,6 +418,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additional-files" class="md-nav__link">
+    Additional Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-on-classes-with-modules" class="md-nav__link">
+    Note on classes with modules.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -843,6 +857,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additional-files" class="md-nav__link">
+    Additional Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-on-classes-with-modules" class="md-nav__link">
+    Note on classes with modules.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -862,8 +890,265 @@
 
 <h1 id="integrating-code-modules">Integrating Code Modules<hr/></h1>
 <h2 id="the-package-structure-and-using-the-modules">The Package Structure and Using the Modules</h2>
-<p>Getting the code to do something.  </p>
-<p><em>in progress</em></p>
+<p>How the package is organized.  </p>
+<p>The top level of the packages is named "einvoice."  It is the parent to all other packages and modules.  </p>
+<table>
+<thead>
+<tr>
+<th>Directory Structure</th>
+<th>dot Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./einvoice</td>
+<td>einvoice</td>
+</tr>
+</tbody>
+</table>
+<p>There are two sub-packages called discovery and delivery. A third directory named "docs" is also at this level and contains project documentation.  </p>
+<table>
+<thead>
+<tr>
+<th>Directory Structure</th>
+<th>dot Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./einvoice</td>
+<td>einvoice</td>
+</tr>
+<tr>
+<td>./einvoice/discovery</td>
+<td>einvoice.discovery</td>
+</tr>
+<tr>
+<td>./einvoice/delivery</td>
+<td>einvoice.delivery</td>
+</tr>
+<tr>
+<td>./einvoice/docs</td>
+<td>NA - does not contain code artifacts</td>
+</tr>
+</tbody>
+</table>
+<p>Third level directory contains the Python modules containing actual application code.  Within the discovery directory there is a "conf" directory intended for application configuration work, a "data" directory for files and applications to generate test data and scenarios, and a "tests" directory which contains executable modules to test the files in their immediate parent directory. The delivery directory contains a single sub-directory called "tests" which also contains executable test files.  </p>
+<table>
+<thead>
+<tr>
+<th>Directory Structure</th>
+<th>dot Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./einvoice</td>
+<td>einvoice</td>
+</tr>
+<tr>
+<td>./einvoice/discovery</td>
+<td>einvoice.discovery</td>
+</tr>
+<tr>
+<td>./einvoice/delivery</td>
+<td>einvoice.delivery</td>
+</tr>
+<tr>
+<td>./einvoice/docs</td>
+<td>NA - does not contain code artifacts</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/conf</td>
+<td>einvoice.discovery.conf</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/data</td>
+<td>einvoice.discovery.data</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/tests</td>
+<td>einvoice.discovery.tests</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
+<td>einvoice.discovery.accessor.Accessor, einvoice.discovery.app_logging.create_logger, etc.</td>
+</tr>
+<tr>
+<td>./einvoice/delivery/import_xsd</td>
+<td>einvoice.delivery.import_xsd.ImportXSD</td>
+</tr>
+<tr>
+<td>./einvoice/delivery/tests</td>
+<td>einvoice.delivery.tests</td>
+</tr>
+</tbody>
+</table>
+<p>Fourth level directories are the deepest in the application and contain code in the conf, data, and tests directories.  </p>
+<table>
+<thead>
+<tr>
+<th>Directory Structure</th>
+<th>dot Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./einvoice</td>
+<td>einvoice</td>
+</tr>
+<tr>
+<td>./einvoice/discovery</td>
+<td>einvoice.discovery</td>
+</tr>
+<tr>
+<td>./einvoice/delivery</td>
+<td>einvoice.delivery</td>
+</tr>
+<tr>
+<td>./einvoice/docs</td>
+<td>NA - does not contain code artifacts</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/conf</td>
+<td>einvoice.discovery.conf</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/data</td>
+<td>einvoice.discovery.data</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/tests</td>
+<td>einvoice.discovery.tests</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
+<td>einvoice.discovery.accessor.Accessor, einvoice.discovery.app_logging.create_logger, etc.</td>
+</tr>
+<tr>
+<td>./einvoice/delivery/import_xsd</td>
+<td>einvoice.delivery.import_xsd.ImportXSD</td>
+</tr>
+<tr>
+<td>./einvoice/delivery/tests</td>
+<td>einvoice.delivery.tests</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/conf/config_tool.py, smp_config.py</td>
+<td>einvoice.discovery.conf.config_tool.EInvoiceConfig, etc.</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/data/create_sample_data.py</td>
+<td>einvoice.discovery.data.create_sample_data.CreateSampleData</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/tests/test_app_logging.py</td>
+<td>einvoice.discovery.tests.test_app_logging.test_log_creation</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/tests/test_app_logging.py</td>
+<td>einvoice.delivery.tests.test_app_logging.test_import_xsd</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-files">Additional Files</h2>
+<p>Additional files included in the Project which are important.     </p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./einvoice/delivery/app.log</td>
+<td>application log created by app_logging.py for delivery sub-package.</td>
+</tr>
+<tr>
+<td>./einvoice/delivery/web_response.log</td>
+<td>Response logging to feed into a webservice for delivery sub-package.</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/app.log</td>
+<td>Application log created by app_logging.py for discovery sub-package.</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/web_response.log</td>
+<td>Response logging to feed into a webservice for discovery sub-package.</td>
+</tr>
+<tr>
+<td>./einvoice/docs</td>
+<td>Markdown files compiled into the project documentation.</td>
+</tr>
+<tr>
+<td>./einvoice/docs/jupyterlab</td>
+<td>Stored JupyterLab sandboxes which may be shared via Google Colab or downloaded and run on a Jupyter service instance.</td>
+</tr>
+<tr>
+<td>./einvoice/docs/pdf</td>
+<td>Stored PDF files (entity diagrams) which may be included in the documentation.</td>
+</tr>
+<tr>
+<td>./einvoice/docs/drawio</td>
+<td>Stored PDF files (vector graphic diagrams) which may be included in the documentation.</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/tests/ *.sh</td>
+<td>An assortment of shell scripts to run various linters on the modules.  Includes pylint, mypy, flake8, pycodestyle, pydocstyle, and combinations.</td>
+</tr>
+<tr>
+<td>./einvoice/discovery/data/item_list.csv, per_item_list.csv</td>
+<td>CSV files which contain same data values to populate an einvoice.</td>
+</tr>
+<tr>
+<td>.einvoice/.env .env.example.dev</td>
+<td>Configuration files which contain example values for testing purposes.</td>
+</tr>
+<tr>
+<td>ebms-header-3_20220119.xsd, sample_msg.xml</td>
+<td>XSD containing schema definition for for ebMS header and a sample message to test against it.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="note-on-classes-with-modules">Note on classes with modules.</h2>
+<details class="info" open="open"><summary>All module code is in classes and methods.</summary><p>All code in the discovery and delivery sub-packages is encapsulated in a class and a method within a class.  There are no excutable functions outside of a class.</p>
+<p><em>There is no entry point to execute this code and instantiate any of the classes or methods at the commandline.</em></p>
+<p>Examples of implementing and executing the code can be found in the <a href="../test_cases/">test cases</a>, <a href="../start_to_finish/">start-to-finish example</a>, or the <a href="../google_colab_pages/">JupyterLab/Notebooks</a>.</p>
+<p>Test cases are not encapsulated in classes or methods but are instead named functions.</p>
+</details>
+<p>The code is as Pythonic as possible in naming files for exactly what they do.  The functionality can be broken down as:</p>
+<ul>
+<li>
+<p>Dataclasses - modules which define some of the key entities at use in the project.</p>
+<ul>
+<li>urn.py - Dataclass for a urn.</li>
+<li>semantic_model.py - Dataclass for the semantic model (the einvoice itself).</li>
+<li>party_addresss.py - Dataclass for a party entity within the Four-Corner model.</li>
+<li>line_item.py - Dataclass for a line item on the semantic model (einvoice).</li>
+<li>einvoice_message_package.py - Dataclass to contain all the information to be transmitted, i.e., the payload, in the einvoice message.</li>
+</ul>
+</li>
+<li>
+<p>Specific workflow actions - modules which execute specific tasks within the process workflow.</p>
+<ul>
+<li>urn_hasher.py - takes the inputs of the party_id, specification, and schema_id and creates the NAPTR look-up uri.</li>
+<li>dns_query.py - take the NAPTR look-up uri and execute it against DNS. The output is the SMP uri and the existing urn is passed forward as well.  </li>
+<li>smp_query.py - receives the SMP uri and urn and creates two REST API calls to the endpoint based on the inputs.  Executes the webservice calls and receives a response.  Parses the response and returns it as a string containing the URI of corner 3 in the model.  </li>
+<li>import_xsd.py - takes as an input an XML file and checks its validity against an XSD.  In this case it is the XML of an ebMS message header checked against an AS4 conformance profile.</li>
+</ul>
+</li>
+<li>
+<p>Other "helper" modules -</p>
+<ul>
+<li>accessory.py - module to run the "Start-To-Finish" process, execute via test scripts.</li>
+<li>create_sample_data.py - construct sample data entities to use in testing the semantic model.</li>
+<li>create_tracking_id.py - create an arbitrary id with a given configuraiton to use to track the message through the process.  Could be used in lieu of a UUID.</li>
+<li>app_handler.py - module closest to being an executable form the command line.  A prototpye module to run the "Start-to-Finish" directly, if all required configuration is complete.  </li>
+<li>app_logger.py - a custom logging implemenation to be used by all the other modules, including test modules, to standardize output and aggregate to single stream each for app logging, to system out, and response to a webservice.</li>
+</ul>
+</li>
+</ul>
 <div style="font-size: 12px;
               padding: 15px;
               border: 2px solid lightgray;
@@ -871,7 +1156,7 @@
               margin-left: 0px;
               margin-bottom: 40px;
               margin-right: auto;
-              width: 70%;
+              width: 100%;
               border-radius: 10px;">
     <h4 style="font-size: 14px;
               padding: 0px;
