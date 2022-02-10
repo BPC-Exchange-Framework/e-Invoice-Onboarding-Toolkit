@@ -74,7 +74,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="indigo">
   
     
     
@@ -130,7 +130,7 @@
         
           
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
@@ -461,21 +461,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../enabling_infrastructure_components/" class="md-nav__link">
-        Enabling Infrastructure Components
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../todo/" class="md-nav__link">
         To do
       </a>
@@ -676,13 +661,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling_infrastructure_components" class="md-nav__link">
-    Enabling Infrastructure Components
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#todo" class="md-nav__link">
     To do
   </a>
@@ -842,13 +820,6 @@
         <li class="md-nav__item">
   <a href="#project_roadmap" class="md-nav__link">
     Project Roadmap
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enabling_infrastructure_components" class="md-nav__link">
-    Enabling Infrastructure Components
   </a>
   
 </li>
@@ -1025,7 +996,6 @@
 </ul>
 </li>
 <li><a href="#project_roadmap">Project Roadmap</a></li>
-<li><a href="#enabling_infrastructure_components">Enabling Infrastructure Components</a></li>
 <li><a href="#todo">To do</a></li>
 <li><a href="#artifacts">Project Artifacts</a></li>
 <li><a href="#git_workflow">Workflow</a></li>
@@ -1828,6 +1798,30 @@ List updated as of:<br />
   </div></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">e-Invoice Onboarding Tool-kit</h1>
 <h2 id="test_cases-working-with-the-code">Working with the code</h2>
 <h3 id="test_cases-test-cases">Test Cases</h3>
+<p>Every module includes a test module in the child /tests directory.  </p>
+<details class="note" open="open"><summary>Test cases are writen as functions, not classes.</summary><p>The test cases are written as functions and <strong>CAN</strong> be directly called from the command line.  </p>
+</details>
+<details class="important" open="open"><summary>Use Pytest to run the test cases.</summary><p>The use case for the test cases include using Pytest.<br />
+<strong>The Pytest package must be installed in your Python distribution.</strong></p>
+</details>
+<p>From the a terminal console, change directory into the ./einvoice/discovery or ./einvoice/delivery directory.  </p>
+<p>To see the list of available test files, either in your file browser or via the command line
+<div class="highlight"><pre><span></span><code>(&quot;dir .\tests\&quot; or &quot;ls -al ./tests/&quot;).
+</code></pre></div></p>
+<details class="important" open="open"><summary>Pytest <strong>must</strong> be executed from the parent dir.</summary><p>Out of the box, a quirk of Pytest is that without additional configuration it must be run from within the parent directory of where the test files are actually located.  </p>
+</details>
+<p>Pytest will automatically look for files formatted as test files, with "test" in the lead of the filename.  To execute an inidivdual test the syntax is:
+<div class="highlight"><pre><span></span><code>pytest tests/test_app_logging.py
+</code></pre></div></p>
+<p>No test is dependent on any other, and each may be run on it one, or run them all at once, in any order.  </p>
+<p>The test will run and either the "assert" statement inside will pass, or it will fail.  </p>
+<p>Failures MUST be resolved prior to attempting to check code into GitHub as our baseline CI/CD process checks for these failures before committing and will not continue if any are found.</p>
+<p>The included assert statements currently test a variety of cases up to validation of urn creation, query of the NAPTR DNS record, REST API call to the SMP, and validation of the ebMS header against the AS4 conformance profile.  </p>
+<figure>
+<p><img alt="Successful completion of all tests cases." src="../successful_tests.png" />
+  </p>
+<figcaption>Successful completion of all test cases.</figcaption>
+</figure>
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;
@@ -1835,17 +1829,37 @@ List updated as of:<br />
             margin-left: 0px;
             margin-bottom: 40px;
             margin-right: auto;
-            width: 70%;
+            width: 100%;
             border-radius: 10px;">
   <h4 style="font-size: 14px;
             padding: 0px;
             margin: 0px;">No Representations or Warranties</h5>
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="start_to_finish"><h1 id="start_to_finish-e-invoice-onboarding-tool-kit">e-Invoice Onboarding Tool-kit</h1>
-<h2 id="start_to_finish-working-with-the-code">Working with the code</h2>
-<h3 id="start_to_finish-start-to-finish">Start-to-Finish</h3>
-<p><br/></p>
+</div></section><section class="print-page" id="start_to_finish"><h1 id="start_to_finish-start-to-finish">Start-to-Finish</h1>
 <h2 id="start_to_finish-start-to-finish-integration">Start-to-Finish Integration</h2>
+<p>There is not currently an "end-to-end" test for the e-Invoice Four-Corner Model to validate the workflow in its entirety.  </p>
+<p>The next best use case is a "Start-to-Finish" of the discovery process.  </p>
+<p>This "Start-to-Finish" entails valdating:<br />
+1. The hashing functionality to derive the urn for look-up from the specification, the party ID, and the schema ID.<br />
+2. Executing the DNS NATPR lookup and extracting the relevant SMP URI.<br />
+3. Constructing the two REST requests including the <strong>smp service group url</strong> and the <strong>smp service url</strong>.<br />
+4. Executing the two REST requests to the SMP server.<br />
+5. Extracting the Corner 3 endpoint URI from the response from the SMP server.   </p>
+<p>This funcitonality is provided in the accessor.py module and validation is done in a single test case called test_accessor.py.</p>
+<p>Execute the "Start-to-Finish" test as reference in the <a href="#test_cases">more detailed instructions for running the test cases</a>.
+<div class="highlight"><pre><span></span><code>./einvoice/discovery/pytest tests/test_accessor.py
+</code></pre></div></p>
+<figure>
+<p><img alt="Successful completion of &quot;Start-to-Finish&quot; test case." src="../accessor_results.png" />
+  </p>
+<figcaption>Successful completion of "Start-to-Finish" test case.</figcaption>
+</figure>
+<p>Further review and analysis of the the Start-to_Finish process can be found in the app.log which for the accessor.py module resides in the ./einvoice/discovery directory.</p>
+<figure>
+<p><img alt="Review of the app.log." src="../app_log.png" />
+  </p>
+<figcaption>Successful completion of "Start-to-Finish" test case recorded in the app.log file.</figcaption>
+</figure>
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;
@@ -1868,17 +1882,17 @@ List updated as of:<br />
 <p><a href="https://colab.research.google.com/">Google Colab</a> pages implement <a href="https://jupyter.org/">JupyterLab </a> runtime with live sandbox environments.  Pages can be linked from the e-Invoice-Onboarding-Toolkit  GitHub repository, or pulled from the repository and saved locally by anyone with a Google account.  </p>
 <h3 id="google_colab_pages-urn-hashing-and-dns-naptr-lookup">urn hashing and DNS NAPTR lookup.</h3>
 <p>Colab page with examples of how to hash the specification, the schema_id, and the party_id to create the urn and perform the natpr dns query is at this <a href="#google_colab_pages-they jupyterlab file is named: https:-colab.research.google.com-drive-1kfmedmuapeaos6u9hns8icmqaury8znp?usp=sharing">Colab page</a>.  Examples 6, 7, 8,  and 9 run the hash and submit against DNS in real-time.<br />
-The JupyterLab file is: urn_hash_work.ipynb</p>
+The JupyterLab file is: <strong>urn_hash_work.ipynb</strong>.</p>
 <h2 id="google_colab_pages-smp-query">SMP query</h2>
 <p>Colab page with examples of how to transform the urn and party_id and submit it to the SMP uri is at this <a href="https://colab.research.google.com/drive/14EVSc0GyjU0H9776UEXqoEoD3x5Kn2RV?usp=sharing">Colab page</a>.<br />
-They JupyterLab file is: smp_url_transformations.ipynb</p>
+They JupyterLab file is: <strong>smp_url_transformations.ipynb</strong>.</p>
 <h2 id="google_colab_pages-ebms-message-header-validation">ebMS Message Header validation</h2>
 <p>Colab pages with examples of reading an XSD file and validating an XML file has two Google Colab pages for different aspects of the work.<br />
 Inspection and validation of the XSD file has this <a href="https://colab.research.google.com/drive/1zuPcP1ofEe8PReew9KbGY13EQJsNN8Es?usp=sharing">Google Colab Page</a>.
-The JupyterLab file is: ebMS XML 3 schema.ipynb.</p>
-<p>Validation of anxml file against the XSD is done using this <a href="https://colab.research.google.com/drive/1ExMZUD_5larW0wEuGJ5erHkFuoozcLCF?usp=sharing">Google Colab Page</a>
-The JupyterFile is: Validate_bdx-as4.ipynb</p>
-<p>For ease of access these files are copies stored on the drive of one of the project Developers and is free and open to anyone to view and run.   Interested individuals should make copies of the Labs for themselves and run on Google Colab under their own account or an instance of JupytyerLab running on Anaconda, VS Code, or Python install.</p>
+The JupyterLab file is: <strong>ebMS XML 3 schema.ipynb</strong>.</p>
+<p>Validation of an xml file against the XSD is done using this <a href="https://colab.research.google.com/drive/1ExMZUD_5larW0wEuGJ5erHkFuoozcLCF?usp=sharing">Google Colab Page</a>
+The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
+<p>For ease of access these files are copies stored on the drive of one of the project Developers and is free and open to anyone to view and run.   Interested individuals should make copies of the Labs for themselves and run on Google Colab under their own account or an instance of JupytyerLab running on Anaconda, VS Code, or a Python install.</p>
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;
@@ -1886,7 +1900,7 @@ The JupyterFile is: Validate_bdx-as4.ipynb</p>
             margin-left: 0px;
             margin-bottom: 40px;
             margin-right: auto;
-            width: 70%;
+            width: 100%;
             border-radius: 10px;">
   <h4 style="font-size: 14px;
             padding: 0px;
@@ -2016,20 +2030,6 @@ The JupyterFile is: Validate_bdx-as4.ipynb</p>
             margin-bottom: 40px;
             margin-right: auto;
             width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="enabling_infrastructure_components"><h1 id="enabling_infrastructure_components-additional-infrastructure-build-out">Additional Infrastructure Build-out</h1>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 70%;
             border-radius: 10px;">
   <h4 style="font-size: 14px;
             padding: 0px;
