@@ -15,7 +15,7 @@
     
     
       
-        <title>Configuring a Development Environment - e-Invoice Onboarding Toolkit</title>
+        <title>Configure a Python Dev Environment - e-Invoice Onboarding Toolkit</title>
       
     
     
@@ -39,6 +39,22 @@
         <style>:root{--md-text-font:"Poppins";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
     
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -64,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#install-and-config-of-a-python-dev-env" class="md-skip">
+        <a href="#configure-a-python-dev-environment" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configuring a Development Environment
+              Configure a Python Dev Environment
             
           </span>
         </div>
@@ -237,8 +253,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting_started/" class="md-nav__link">
-        Getting Started
+      <a href="../assumptions/" class="md-nav__link">
+        Assumptions
       </a>
     </li>
   
@@ -273,14 +289,16 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Configuring a Development Environment
+          Configure a Python Dev Environment
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Configuring a Development Environment
+        Configure a Python Dev Environment
       </a>
       
         
@@ -288,6 +306,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -297,8 +317,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-and-config-of-a-python-dev-env" class="md-nav__link">
-    Install and Config of a Python Dev Env
+  <a href="#installing-python" class="md-nav__link">
+    Installing Python
   </a>
   
 </li>
@@ -306,48 +326,6 @@
         <li class="md-nav__item">
   <a href="#create-a-virtual-environment-to-use-for-dev" class="md-nav__link">
     Create a virtual environment to use for Dev
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-support-for-style-and-code-checking-and-unit-testing" class="md-nav__link">
-    Add support for Style and Code checking and Unit Testing.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-and-flask" class="md-nav__link">
-    Docker and flask
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#include-documentation" class="md-nav__link">
-    Include Documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-driven-development" class="md-nav__link">
-    Test Driven Development
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#text-editors-and-ides" class="md-nav__link">
-    Text Editors and IDEs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-resources" class="md-nav__link">
-    Additional Resources
   </a>
   
 </li>
@@ -779,7 +757,7 @@
   
     <li class="md-nav__item">
       <a href="../oasis_documentation/" class="md-nav__link">
-        OASIS Documentation
+        OASIS Resources
       </a>
     </li>
   
@@ -795,6 +773,21 @@
     <li class="md-nav__item">
       <a href="../_license/" class="md-nav__link">
         License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print_page/" class="md-nav__link">
+        Print the Documentation
       </a>
     </li>
   
@@ -817,6 +810,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -825,8 +820,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-and-config-of-a-python-dev-env" class="md-nav__link">
-    Install and Config of a Python Dev Env
+  <a href="#installing-python" class="md-nav__link">
+    Installing Python
   </a>
   
 </li>
@@ -834,48 +829,6 @@
         <li class="md-nav__item">
   <a href="#create-a-virtual-environment-to-use-for-dev" class="md-nav__link">
     Create a virtual environment to use for Dev
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-support-for-style-and-code-checking-and-unit-testing" class="md-nav__link">
-    Add support for Style and Code checking and Unit Testing.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-and-flask" class="md-nav__link">
-    Docker and flask
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#include-documentation" class="md-nav__link">
-    Include Documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-driven-development" class="md-nav__link">
-    Test Driven Development
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#text-editors-and-ides" class="md-nav__link">
-    Text Editors and IDEs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-resources" class="md-nav__link">
-    Additional Resources
   </a>
   
 </li>
@@ -897,221 +850,173 @@
 </a>
 
 
-  <h1>Configuring a Development Environment</h1>
-
-<h3 id="install-and-config-of-a-python-dev-env">Install and Config of a Python Dev Env</h3>
-<p>This document outlines the creation of a Python Development Environment consistent with Python standards and best practices and appropriate as a starting point for professional software development with Python.  </p>
-<p>Important items for consideration include:
+<h1 id="configure-a-python-dev-environment">Configure a Python Dev Environment</h1>
+<p>Respecting individual preferences and work style these are some suggested guidelines  for creation of a Python development environment.  These are consistent with Python standards and best practices and appropriate as a starting point for professional software development in Python.  </p>
+<!-- _Important items for consideration include:_
 - Installation of Python
 - Use of virtual environments for project and application segmentation.
-- Bringing in the required tools sets for:
+- Including resources for:
     - Style checking against PEP8
-    - Automated code checking using <code>flake8</code> and <code>tox</code>
-    - Includng documentation using Sphinx and reStructuredText.
+    - Test drive-development including unit tests from the beginning.
+    - Include documentation using __docstrings__ while coding.
 - Including Docker and flask
 - Incorporating Test Drive Development as a matter of practice.
 - Logging
 - Editors and other IDEs
-- Links to additional resources.</p>
-<p>Note:  This documentation assumes running on MacOS.  All tools should be available in Windows and various flavors of Linux.  Your mileage may vary.</p>
-<p>Install Homebrew using command:<br />
-<div class="highlight"><pre><span></span><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
-</code></pre></div></p>
-<p>Then install Python.
-<div class="highlight"><pre><span></span><code>brew install python
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code>Install other tools you may need or want using Homebrew.  These will make life easier.
-brew install --cask visual-studio-code
-brew install node
-brew install r
-brew install rstudio
-brew install typescript
-brew install docker
-brew install --cask powershell
-</code></pre></div>
-<p>Upgrade pip to latest version right OOB.  (Note this is done using the Python3/pip3 call to avoid conflict with OS installed version of Python.)
-<div class="highlight"><pre><span></span><code>pip3 install --upgrade pip
-</code></pre></div>
-The pip update can also be doing using a call to Python itself, but the <code>python3</code> install!
-<div class="highlight"><pre><span></span><code>python3 -m pip install --upgrade pip
-</code></pre></div></p>
-<p>Get a list of what's been installed in a "clean" install of Python.
-<div class="highlight"><pre><span></span><code>pip3 list
+- Links to additional resources. -->
 
-Package          Version
----------------- ----------
-appdirs          1.4.4
-certifi          2020.12.5
-distlib          0.3.1
-filelock         3.0.12
-pip              21.1.2
-pipenv           2020.11.15
-setuptools       56.0.0
-six              1.16.0
-virtualenv       20.4.6
-virtualenv-clone 0.5.4
-</code></pre></div></p>
-<h2 id="create-a-virtual-environment-to-use-for-dev">Create a virtual environment to use for Dev</h2>
-<p>Creating virtual environments to use in Python programming can be done entirely with a packages that comes in the Pthyon install.  </p>
-<p>There are other tool-sets such as <a href="https://www.anaconda.com/products/individual">Anaconda</a> which provide a full set of development tools and frameworks to pick from, and include the ability to create and manage Python virtual environments with its Conda virtual environment manager.    </p>
-<p>There are other additional packages for Python such as <code>pyenv</code>, and <code>pipenv</code> which can be installed separately.  The example of shown offers one way to create the virtual environments which comes OOB in the Python install and offers a lot of manual control over the packages installed in the virtual environments themselves.</p>
+<h2 id="installing-python">Installing Python</h2>
+<p>The correct method of installing Python varies depending on the OS.  Here are some considerations based on popular OS.</p>
 <table>
 <thead>
 <tr>
-<th>Step</th>
-<th>Command</th>
-<th>What it's doing/output</th>
+<th>OS</th>
+<th>Considerations</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1.</td>
-<td>cd</td>
-<td>Change to user home dir</td>
+<td>MacOS</td>
+<td>Mac OS comes configured with Python 2.x. Don't attempt to remove it or replace it .  <a href="https://brew.sh">Homebrew</a> is a package installer for Mac. However given some past and outstanding issues between Homebrew and Python, versions of Python prior to Python 3.7 may generate errors on install.  <a href="https://developer.apple.com/xcode/">Apple XCode Developer Tools</a> installs Git and a version of Python.  Available through the App Store it is a large download and system intensive program.  A more granular installation would be the <a href="https://mac.install.guide/commandlinetools/4.html">XCode Command Line Tools</a> which installs Git combined with a Python install pulled directly from Python.org.</td>
 </tr>
 <tr>
-<td>2.</td>
-<td>pwd</td>
-<td>Print the working directory</td>
+<td>WindowsOS</td>
+<td>Python is now available on the <a href="https://www.microsoft.com/en-us/store/apps/windows">Windows Store</a>, though updates may lag behind current Python releases.  Ease of setting environment variables makes it easy to maintain multiple installed versions simultaneously.  This configuration is the easiest to integrate <a href="https://code.visualstudio.com/">VS Code</a> with Python.</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td>/Users/kelly</td>
+<td>Windows WLS2</td>
+<td>A fully native Python install on Ubuntu is available for <a href="https://docs.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux 2</a>.  The version of Python may need to be updated from a secondary repository as the official Ubuntu version trails official Python releases.  Integration between VS Code running on Windows and integration with WSL2 Python may not be seamless.</td>
 </tr>
 <tr>
-<td>3.</td>
-<td>mkdir ./Dev ./Dev/virtualenvs</td>
-<td>Create working directories</td>
-</tr>
-<tr>
-<td>4.</td>
-<td>cd ./Dev/virtualenvs</td>
-<td>Change into the working directory</td>
-</tr>
-<tr>
-<td>5.</td>
-<td>pwd</td>
-<td>Print the working directory</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>/Users/kelly/Dev/virtualenvs</td>
-</tr>
-<tr>
-<td>6.</td>
-<td>virtualenv --python python3.9 e-Invoice</td>
-<td>Create the e-Invoice virtual environment</td>
-</tr>
-<tr>
-<td>7.</td>
-<td>ls -l</td>
-<td>list contents of current directory structure</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>drwxr-xr-x  7 kelly  staff  224 Jun 15 08:52 e-Invoice</td>
-</tr>
-<tr>
-<td>8.</td>
-<td>cd ./e-Invoice</td>
-<td>Change into the e-Invoice directory</td>
-</tr>
-<tr>
-<td>9.</td>
-<td>cd ../bin</td>
-<td>Change into the bin directory</td>
-</tr>
-<tr>
-<td>10.</td>
-<td>source ./activate</td>
-<td>source the activate file and make the current virtual environment active.</td>
-</tr>
-<tr>
-<td>11.</td>
-<td>python -m pip install --upgrade pip</td>
-<td>update version of pip</td>
-</tr>
-<tr>
-<td>12.</td>
-<td>pip list</td>
-<td>List the installed packages for this virtual env.  This will be a very small list to start as this is a clean virtual env, including <code>pip</code>, <code>setuptools</code>, and <code>wheel</code>.</td>
+<td>Linux</td>
+<td>A variety of package managers based on the installed distro may impact the ease of installing current Python releases and updates, but overall this possibly the easiest to "OS" to install and maintain Python.</td>
 </tr>
 </tbody>
 </table>
-<p>Additional packages or modules to be installed in e-Invoice include:
-Docker, flask, requests</p>
-<p><br /><br /></p>
-<h2 id="add-support-for-style-and-code-checking-and-unit-testing">Add support for Style and Code checking and Unit Testing.</h2>
-<p>The Python package <code>pep8</code> can be installed to do style checking consistent to <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8 -- Style Guide for Python Code</a>.</p>
-<div class="highlight"><pre><span></span><code>pip install pep8
+<details class="info"><summary>Python3</summary><p>Python is "officially" referred to and invoked by specfiying either Python 2.x as  "Python2" or Python 3.x.x as "Python3."  The difference is generally trivial except on Macs where Python2 is included as part of the OS install.  </p>
+<p>On Mac and Linux based systems, adding an alias to .bashrc or .zshrc is an easy way to prevent inadvertent references to an incorrect version of Python, e.g.,
+<div class="highlight"><pre><span></span><code>alias python=&#39;python3&#39;
+alias pip=&#39;pip3&#39;
 </code></pre></div>
-<p>Run your code against it in the following manner:
-<div class="highlight"><pre><span></span><code>pep8 &lt;filename&gt;
-e.g., pep8 hello.py
-</code></pre></div></p>
-<p>then the output from the cosole using:
-<div class="highlight"><pre><span></span><code>echo $?
-</code></pre></div></p>
-<p>Another module, flake8, checks for code style and errors simultanepously.  There are a number of custom plug-ins to focus on various aspects of code validation.  </p>
-<div class="highlight"><pre><span></span><code>pip install flake8
-</code></pre></div>
-<p>The <code>tox</code> tool can be used to manage dependencies in virtual environments and Unit Test.</p>
-<div class="highlight"><pre><span></span><code>pip install tox
-</code></pre></div>
-<p><br /><br /></p>
-<h2 id="docker-and-flask">Docker and flask</h2>
-<p>This project utilize <a href="https://www.docker.com">Docker</a> and <a href="https://pypi.org/project/Flask/">flask</a>.</p>
-<p>For support of Docker development on the Mac, use Homebrew as outlined above to install Docker locally.  If necessary to issue Docker commands or use the Docker API from with Python, include the Docker package in the virtual environment.</p>
+Note that the above included an alias for pip to pip3 as well.  </p>
+</details>
+<h2 id="create-a-virtual-environment-to-use-for-dev">Create a virtual environment to use for Dev</h2>
+<p>A Python virtual environment is a development "sandbox" which allows for segmentation of development environments. This allows for management of different combinations and versions of Python releases, deployed packages, development and testing environments, and shifting between entirely different development projects. See the <a href="https://docs.python.org/3/library/venv.html">Python documentation for venv</a> for a more detailed explanation and rationalization of Python virtual environments.</p>
+<p>The use of Python virtual environments can't be overstated as a best practice to organize Python versions and package management. <a href="https://www.python.org/dev/peps/pep-0405/">PEP-405</a></p>
+<p>Creating virtual environments to use in Python programming can be done entirely with packages that are include in the Pthyon install or by additional third party applications.    </p>
+<p>The choice of tools to create and manage Python virtual environments is dependent on situation, preference, and use case.  </p>
+<table>
+<thead>
+<tr>
+<th>Tool/App</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.python.org/3/library/venv.html">venv</a></td>
+<td>Implementation of the virtualenv as a Python module included in the Python install since v.3.3.  This is the "goto" tool of choice.</td>
+</tr>
+<tr>
+<td><a href="https://virtualenv.pypa.io/en/latest/index.html">virtualenv</a></td>
+<td>Includes features not included in venv (see the <a href="https://virtualenv.pypa.io/en/latest/index.html">comparison</a>).</td>
+</tr>
+<tr>
+<td><a href="https://www.anaconda.com/">Anaconda</a></td>
+<td>A heavyweight package and virtual environment manager.  It acts as an "all in one" for Python application versions, package management, virtual environments, additional programming languages such as R and Julia and tools such as visualizers and IDEs. The full fledged install can overtax some systems and performance can suffer an overly ambitious installation configuration. A personal license for individuals is free for non-commercial use.  Use by for-profit or governmental organizations with more than 200 people requires licensing.</td>
+</tr>
+<tr>
+<td><a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a></td>
+<td>A slimmed down version of Anaconda focussed on virtual environment and package management, includes only conda and Python, not open source, but free.</td>
+</tr>
+<tr>
+<td><a href="https://docs.conda.io/en/latest/">conda</a></td>
+<td>The open source package manager utilized by Anaconda and miniconda.</td>
+</tr>
+<tr>
+<td><a href="https://pip.pypa.io/en/stable/">pip</a></td>
+<td>Included in Python 3.4 and later, this tool does not manage the virtual environment but does handle package management for both venv and virtualenv. Not all python tools have been integrated into the Anaconda repositories or packages for install.  Some, such as mkdocs, must still be installed via pip even when using Anaconda3 or miniconda.</td>
+</tr>
+</tbody>
+</table>
+<details class="failure"><summary>'virtualenv venv'" vs. "'venv virtualenv'</summary><p>Avoid the confusion of the typical example given in the documentation of <strong>virtualenv</strong> which uses the command executed as "virtualenv venv." This calls <strong>virtualenv</strong> to create a virtual environment named <strong>venv</strong>.  </p>
+<p>Compare with "venv virtualenv" which calls <strong>venv</strong> to create a virtual environment called <strong>virtualenv</strong>.  For most practical purposes when using Python 3.6 or greater it doesn't matter whether <strong>venv</strong> or <strong>virtualenv</strong> is used to create the virtual instance.</p>
+<p>But don't use "virtualenv venv."  That's just obnoxious.</p>
+</details>
+<details class="note"><summary>Other Python Tools</summary><p>Other tools such as <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a>, <a href="https://pipenv.pypa.io/en/latest/">pipenv</a>, <a href="https://github.com/berdario/pew">pew</a>, <a href="https://tox.wiki/en/latest/">tox</a> and <a href="https://nox.thea.codes/en/stable/">nox</a> may be useful but are not currnetly utilized in this project.  <a href="https://github.com/pyenv">Pyenv</a> was deprecated in Python 3.5 and not utilized.</p>
+</details>
+<!-- ## Docker and flask
+
+This project utilize [Docker](https://www.docker.com) and [flask](https://pypi.org/project/Flask/).
+
+For support of Docker development on the Mac, use Homebrew as outlined above to install Docker locally.  If necessary to issue Docker commands or use the Docker API from with Python, include the Docker package in the virtual environment.
+
 <div class="highlight"><pre><span></span><code>pip install docker
 </code></pre></div>
-<p>Install the flask framework using pip as well.</p>
-<p><div class="highlight"><pre><span></span><code>pip install flask
+
+Install the flask framework using pip as well.
+
+<div class="highlight"><pre><span></span><code>pip install flask
 </code></pre></div>
-<br /><br /></p>
-<h2 id="include-documentation">Include Documentation</h2>
-<p>To incorporate documentation into the application at every step, bring in the Sphinx package.</p>
+<br /><br />
+
+## Include Documentation
+To incorporate documentation into the application at every step, bring in the Sphinx package.
+
 <div class="highlight"><pre><span></span><code>pip install sphinx
 </code></pre></div>
-<p>Then run sphix-quickstart in your project's top-level directory.</p>
-<p>Sphinx uses reStructured Text as a form of Markdown.  For a brief overview see <a href="https://docutils.sourceforge.io/docs/user/rst/quickstart.html">A ReStructuredText Primer</a> or <a href="https://docutils.sourceforge.io/docs/user/rst/quicktest.html">Quick reStructuredText</a>.</p>
-<p>Additonal support documenting the project may include utilzing a resource like <a href="http://readthedocs.org">Read the Docs</a>.</p>
-<ul>
-<li>See also: <a href="https://www.python.org/dev/peps/pep-0257/">PEP-257 Docstring Conventions</a></li>
-</ul>
-<p><br /><br /></p>
-<h2 id="test-driven-development">Test Driven Development</h2>
-<p>Incorporate <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test-Driven Development</a> methodologies. <br />
-Create the test scenarios before the actual coding.  </p>
-<p>Primary source material for review can be found at <a href="https://www.obeythetestinggoat.com">obeythetestinggoat.com</a></p>
-<p><br /><br /></p>
-<h2 id="text-editors-and-ides">Text Editors and IDEs</h2>
-<p>There are numerous tools for text editing and softwre development.  Personal preference, specialization versus generalization, and cost may all play a part in choice of tools used for development.  Here is a short list of well known and supported tools available for free or under an Open Source license.  (No compensation isß received for any reference to materials on this page.)
-- <a href="https://code.visualstudio.com/">Visual Studio Code</a> by Microsoft.  "Built on Open Source" the Code version is free and has many plug-ins.  It's a mature IDE with the polish of a Microsoft product.  Not the behemouth of the full Visual Studio IDE.  Available for Windows/Mac/Linux.  There is a version of Visual Studio Code compiled with all the non-Open Source components removed called <a href="https://vscodium.com/">VSCodium</a>.  Or compile it from source available at GitHub resulting in a product called <a href="https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run">Code - OSS</a>.
-- <a href="https://atom.io/">Atom Text Editor</a>.  A highly customizable text editor which is programming language agnostic and completely open source and available (packaged and source) on GitHub.  Available for Windows/Mac/Linux.
-- <a href="https://www.jetbrains.com/pycharm/">PyCharm Community Edition</a> by JetBrains. A Python specific IDE.  The Community Edition is Free and Open Source, albeit with some limited functionality. Available for Windows/Mac/Linux.</p>
-<ul>
-<li>(Optional) Install Jupyter lab and notebooks.Jupyter notebooks (deprecated in favor of JupyterLab, though the notebook format remains the same) are especially popular for use in Data Science and ML.  Runs locally on a Python framework. They are used to create documentation in Markdown and write and execute code that might not require an entire program.  Supports other languages such as R and Julia.  Can also be installed through Anaconda.  </li>
-</ul>
+
+Then run sphix-quickstart in your project's top-level directory.
+
+Sphinx uses reStructured Text as a form of Markdown.  For a brief overview see [A ReStructuredText Primer](https://docutils.sourceforge.io/docs/user/rst/quickstart.html) or [Quick reStructuredText](https://docutils.sourceforge.io/docs/user/rst/quicktest.html).
+
+Additonal support documenting the project may include utilzing a resource like [Read the Docs](http://readthedocs.org).
+
+- See also: [PEP-257 Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
+
+<br /><br />
+
+## Test Driven Development
+
+Incorporate [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) methodologies.   
+Create the test scenarios before the actual coding.  
+
+Primary source material for review can be found at [obeythetestinggoat.com](https://www.obeythetestinggoat.com)
+
+
+<br /><br />
+
+## Text Editors and IDEs
+There are numerous tools for text editing and softwre development.  Personal preference, specialization versus generalization, and cost may all play a part in choice of tools used for development.  Here is a short list of well known and supported tools available for free or under an Open Source license.  (No compensation isß received for any reference to materials on this page.)
+- [Visual Studio Code](https://code.visualstudio.com/) by Microsoft.  "Built on Open Source" the Code version is free and has many plug-ins.  It's a mature IDE with the polish of a Microsoft product.  Not the behemouth of the full Visual Studio IDE.  Available for Windows/Mac/Linux.  There is a version of Visual Studio Code compiled with all the non-Open Source components removed called [VSCodium](https://vscodium.com/).  Or compile it from source available at GitHub resulting in a product called [Code - OSS](https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run).
+- [Atom Text Editor](https://atom.io/).  A highly customizable text editor which is programming language agnostic and completely open source and available (packaged and source) on GitHub.  Available for Windows/Mac/Linux.
+- [PyCharm Community Edition](https://www.jetbrains.com/pycharm/) by JetBrains. A Python specific IDE.  The Community Edition is Free and Open Source, albeit with some limited functionality. Available for Windows/Mac/Linux.
+
+ - (Optional) Install Jupyter lab and notebooks.Jupyter notebooks (deprecated in favor of JupyterLab, though the notebook format remains the same) are especially popular for use in Data Science and ML.  Runs locally on a Python framework. They are used to create documentation in Markdown and write and execute code that might not require an entire program.  Supports other languages such as R and Julia.  Can also be installed through Anaconda.  
+
 <div class="highlight"><pre><span></span><code>cd /Users/kelly/Dev/virtualenvs
 virtualenv --python python3.9 jupiter
 python -m pip install --upgrade pip
 pip install jupyter
 pip install jupyterlab
 </code></pre></div>
-<p>Start jupyterlab by running it from within your Python virtualenv /bin directory.<br />
-At runtime, point it to the location of your GITHub root, e.g., <br />
+
+Start jupyterlab by running it from within your Python virtualenv /bin directory.  
+At runtime, point it to the location of your GITHub root, e.g.,   
 <div class="highlight"><pre><span></span><code>./jupyter-lab --notebook-dir /Users/kelly/GitHub
-</code></pre></div></p>
-<p><br /><br />                                          </p>
-<h2 id="additional-resources">Additional Resources</h2>
-<p>There is a wealth of high quality documentation and writing about Python in digital and paper print and on the web in addition to that directly refered to above.  As a starting point, see the following materials.  (Again, no compensation is received for any reference to materials on this page.)
-- <a href="https://docs.python-guide.org">The Hitchhiker's Guide to Python</a> by Kenneth Reitz and Tanya Schlusser.
-- <a href="https://nostarch.com/seriouspython">Serious Python</a> by Julien Danjoy
-- <a href="https://nsls-ii.github.io/scientific-python-cookiecutter/guiding-design-principles.html">Guiding Design Principles</a> from the <a href="https://nsls-ii.github.io/scientific-python-cookiecutter/index.html">Scientific Python Cookiecutter</a>.
-- <a href="https://www.python.org/doc/">Python Doc</a> - the official Python web site page of references to more documentation.</p>
+</code></pre></div>
+
+<br /><br />                                          
+
+## Additional Resources
+
+There is a wealth of high quality documentation and writing about Python in digital and paper print and on the web in addition to that directly refered to above.  As a starting point, see the following materials.  (Again, no compensation is received for any reference to materials on this page.)
+- [The Hitchhiker's Guide to Python](https://docs.python-guide.org) by Kenneth Reitz and Tanya Schlusser.
+- [Serious Python](https://nostarch.com/seriouspython) by Julien Danjoy
+- [Guiding Design Principles](https://nsls-ii.github.io/scientific-python-cookiecutter/guiding-design-principles.html) from the [Scientific Python Cookiecutter](https://nsls-ii.github.io/scientific-python-cookiecutter/index.html).
+- [Python Doc](https://www.python.org/doc/) - the official Python web site page of references to more documentation.
+ -->
+
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;
@@ -1119,7 +1024,7 @@ At runtime, point it to the location of your GITHub root, e.g., <br />
             margin-left: 0px;
             margin-bottom: 40px;
             margin-right: auto;
-            width: 70%;
+            width: 100%;
             border-radius: 10px;">
   <h4 style="font-size: 14px;
             padding: 0px;
@@ -1195,6 +1100,8 @@ At runtime, point it to the location of your GITHub root, e.g., <br />
     
     
       <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+        <script src="../js/print-site.js"></script>
       
     
   </body>

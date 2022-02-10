@@ -40,6 +40,22 @@
       
     
     
+      <link rel="stylesheet" href="../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
+    
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -237,8 +253,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting_started/" class="md-nav__link">
-        Getting Started
+      <a href="../assumptions/" class="md-nav__link">
+        Assumptions
       </a>
     </li>
   
@@ -268,7 +284,7 @@
   
     <li class="md-nav__item">
       <a href="../python_dev_env/" class="md-nav__link">
-        Configuring a Development Environment
+        Configure a Python Dev Environment
       </a>
     </li>
   
@@ -430,6 +446,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           accessor.py
@@ -446,6 +464,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -454,8 +474,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#e-invoice-onboarding-toolkit-api" class="md-nav__link">
-    e-invoice Onboarding Toolkit API
+  <a href="#accessor-module" class="md-nav__link">
+    accessor Module
   </a>
   
 </li>
@@ -734,7 +754,7 @@
   
     <li class="md-nav__item">
       <a href="../oasis_documentation/" class="md-nav__link">
-        OASIS Documentation
+        OASIS Resources
       </a>
     </li>
   
@@ -750,6 +770,21 @@
     <li class="md-nav__item">
       <a href="../_license/" class="md-nav__link">
         License
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print_page/" class="md-nav__link">
+        Print the Documentation
       </a>
     </li>
   
@@ -772,6 +807,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -780,8 +817,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#e-invoice-onboarding-toolkit-api" class="md-nav__link">
-    e-invoice Onboarding Toolkit API
+  <a href="#accessor-module" class="md-nav__link">
+    accessor Module
   </a>
   
 </li>
@@ -803,35 +840,22 @@
 </a>
 
 
-  <h1>accessor.py</h1>
-
-<h2 id="e-invoice-onboarding-toolkit-api">e-invoice Onboarding Toolkit API<hr/></h2>
-<p>::: discovery.accessor
-    handler: python
-    selection:
-      members:
-        - <strong>init</strong>
-        - call_hash
-        - call_dns_lookup
-        - call_smp_service_group_url
-        - call_smp_service_url
-    rendering:
-      show_root_heading: true
-      show_source: true</p>
-<pre><code>  &lt;div style="font-size: 12px;
-              padding: 15px;
-              border: 2px solid lightgray;
-              margin-top: 100px;
-              margin-left: 0px;
-              margin-bottom: 40px;
-              margin-right: auto;
-              width: 70%;
-              border-radius: 10px;"&gt;
-    &lt;h4 style="font-size: 14px;
-              padding: 0px;
-              margin: 0px;"&gt;No Representations or Warranties&lt;/h5&gt;
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  &lt;/div&gt;
+<h1 id="e-invoice-onboarding-toolkit-api">e-invoice Onboarding Toolkit API<hr/></h1>
+<h2 id="accessor-module">accessor Module</h2>
+<p>:::  ./discovery.accessor.Accessor</p>
+<pre><code>&lt;!-- handler: python
+selection:
+  members:
+    - __init__
+    - call_hash
+    - call_dns_lookup
+    - call_smp_service_group_url
+    - call_smp_service_url
+rendering:
+  show_root_heading: true
+  show_source: true --&gt;
+  :docstring:
+  :members: call_has call_dns_lookup call_smp_service_group_url call_smp_service_url
 </code></pre>
 
               
@@ -902,6 +926,8 @@
     
     
       <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+        <script src="../js/print-site.js"></script>
       
     
   </body>
