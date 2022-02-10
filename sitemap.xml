@@ -76,6 +76,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/index_orig/</loc>
+         <lastmod>2022-02-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/line_item/</loc>
          <lastmod>2022-02-10</lastmod>
          <changefreq>daily</changefreq>

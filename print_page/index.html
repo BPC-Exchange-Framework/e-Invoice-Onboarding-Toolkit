@@ -1022,22 +1022,6 @@
 <li><a href="#test_cases">Test Cases</a></li>
 <li><a href="#start_to_finish">Start-to-Finish example</a></li>
 <li><a href="#google_colab_pages">JupyterLab/Notebooks</a></li>
-<li>Package/Library API<ul>
-<li><a href="#accessor">accessor.py</a></li>
-<li><a href="#app_logging">app_logging.py</a></li>
-<li><a href="#create_tracking_id">create_tracking_id.py</a></li>
-<li><a href="#dns_query">dns_query.py</a></li>
-<li><a href="#einvoice_message_package">discovery_message_package.py</a></li>
-<li><a href="#line_item">line_item.py</a></li>
-<li><a href="#party_address">party_address.py</a></li>
-<li><a href="#semantic_model">semantic_model.py</a></li>
-<li><a href="#smp_query">smp_query.py</a></li>
-<li><a href="#urn_handler">urn_handler.py</a></li>
-<li><a href="#urn_hasher">urn_hasher.py</a></li>
-<li><a href="#urn">urn.py</a></li>
-</ul>
-</li>
-<li><a href="#flask_integration_on_docker">Flask Integration on Docker</a></li>
 </ul>
 </li>
 <li><a href="#project_roadmap">Project Roadmap</a></li>
@@ -1523,61 +1507,25 @@ List updated as of:<br />
             margin: 0px;">No Representations or Warranties</h5>
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </div></section><section class="print-page" id="working_with_the_code"><h1 id="working_with_the_code-working-with-the-code">Working with the code.</h1>
-<p><strong><em>Install Python. Use a minimum of Python 3.6.  Recommended Python 3.10.</em></strong></p>
-<h2 id="working_with_the_code-create-a-python-viritual-environment">Create a Python viritual environment.</h2>
-<p>The benefits of creating and running the code in a Python virtual software development environment can't be overstated.</p>
-<p>Use the Python virtualization tool of your choice. Developers on the project have used conda, venv, virtualenv and pipenv.</p>
-<ul>
-<li>Create your virtual environment:</li>
-</ul>
-<p>Use pip for module and package management</p>
-<ul>
-<li>Update pip in your non-virtual python installation:</li>
-</ul>
-<p><code>python -m pip install --upgrade pip</code></p>
-<p>(If you are using a Mac or a system where the Python 3 install is not directly alias'ed or on path, substitute whatever is needed to call Python.)</p>
-<ul>
-<li>Execute "pip list" to see what's installed in the base Python installation.</li>
-</ul>
-<p><code>pip list</code></p>
-<p>There shouldn't be more than two or three packages.</p>
-<ul>
-<li>Run the command to create your virtual environment.  In this case the virtualization is created using <strong>venv</strong>.</li>
-</ul>
-<p><code>python -m venv .discovery</code></p>
-<ul>
-<li>Source the script file to activate the virtual environment</li>
-</ul>
-<p><code>source ./.discovery/bin/activate</code></p>
-<p>This will place the virtual environment name at the beginning of the console prompt.</p>
-<p>From here you are running in the virtual environment. Any modifications made to the environment should be isolated to your virtual Python instance. You can work on code located anywhere on your filesystem after activating the virtual environment.  </p>
-<p>When done working in the virtual environment, enter the following command to exit it.</p>
-<p><code>deactivate</code></p>
 <h2 id="working_with_the_code-get-the-code">Get the code</h2>
-<p>Viewers of this page are presumed to be able to access github.</p>
-<p>It is entirely possible to pull the code from github anonymously using a link from within the repo to do so.</p>
-<p>If you want to do more than anonymously pull code and contribute:</p>
+<p>The e-Invoice-Onbarding-Tool is a public repository.  The code is freely available under an MIT Licene for individuals and organizations to pull, review, and modify as they chose in order to further their participation with the project.</p>
+<p>It is entirely possible to pull the code from github anonymously using a link from within the repo.</p>
+<p>??? Tip  "Pull the code from GitHub."
+    * Look for the green "Code" button which will provide links to clone the code using https, ssh, the git desktop, or a zip file.</p>
+<pre><code> * This going to pull the repo at the root ./e-invoice-Onboarding-Toolkit.
+
+  * Open the folder as a project within your IDE or editor of choice.
+</code></pre>
+<p>Those who would like to become more involved and want to do more than anonymously pull code can contribute by:</p>
 <ol>
 <li>
-<p>Create a github account.</p>
+<p>Creating a github account if one hasn't already been created.</p>
 </li>
 <li>
-<p>install the github cli or the github desktop application</p>
+<p>Installing the github cli or the github desktop application</p>
 </li>
 <li>
-<p>Configure your personal profile and ssh keys to securely submit code to the repository.</p>
-</li>
-<li>
-<p>Pull the code from github.</p>
-</li>
-<li>
-<p>Look for the green "Code" button which will provide links to clone the code using https, ssh, the git desktop, or a zip file.</p>
-</li>
-<li>
-<p>This going to pull the repo at the root ./e-invoice-Onboarding-Toolkit.</p>
-</li>
-<li>
-<p>Open the folder as a project within your IDE or editor of choice.</p>
+<p>Configuring your personal profile and ssh keys to securely submit code to the repository.</p>
 </li>
 </ol>
 <div style="font-size: 12px;
@@ -1587,7 +1535,7 @@ List updated as of:<br />
               margin-left: 0px;
               margin-bottom: 40px;
               margin-right: auto;
-              width: 70%;
+              width: 100%;
               border-radius: 10px;">
     <h4 style="font-size: 14px;
               padding: 0px;
