@@ -462,21 +462,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#urn-creation-hashing-and-naptr-query-to-sml" class="md-nav__link">
-    urn creation, hashing, and naptr query to SML
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#smp-query" class="md-nav__link">
-    SMP query
+  <a href="#urn-hashing-and-dns-naptr-lookup" class="md-nav__link">
+    urn hashing and DNS NAPTR lookup.
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smp-query" class="md-nav__link">
+    SMP query
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ebms-message-header-validation" class="md-nav__link">
+    ebMS Message Header validation
+  </a>
   
 </li>
       
@@ -865,21 +872,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#urn-creation-hashing-and-naptr-query-to-sml" class="md-nav__link">
-    urn creation, hashing, and naptr query to SML
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#smp-query" class="md-nav__link">
-    SMP query
+  <a href="#urn-hashing-and-dns-naptr-lookup" class="md-nav__link">
+    urn hashing and DNS NAPTR lookup.
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smp-query" class="md-nav__link">
+    SMP query
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ebms-message-header-validation" class="md-nav__link">
+    ebMS Message Header validation
+  </a>
   
 </li>
       
@@ -901,12 +915,25 @@
 
 
 <h1 id="jupyter-notebooks-on-google-colab">Jupyter Notebooks on Google Colab<hr/></h1>
-<h3 id="colab-sandboxes">Colab Sandboxes</h3>
-<p><a href="https://colab.research.google.com/">Google Colab</a> pages which implement <a href="https://jupyter.org/">Jupyter Notebook</a> have been created as sandboxes to demonstrate implementation of the code without deploying a development or virtual environment. </p>
-<h4 id="urn-creation-hashing-and-naptr-query-to-sml">urn creation, hashing, and naptr query to SML</h4>
-<p>Colab page with examples of how to hash the specification, the schema_id, and the party_id to create the urn and perform the natpr dns query is at this <a href="https://colab.research.google.com/drive/1kfMedMUapeaOS6u9hnS8IcmQaury8znP?usp=sharing">Colab page</a>.  Examples 6, 7, 8,  and 9 run the hash and submit against DNS in real-time.  </p>
-<h4 id="smp-query">SMP query</h4>
-<p>Colab page with examples of how to transform the urn and party_id and submit it to the SMP uri is at this <a href="https://colab.research.google.com/drive/14EVSc0GyjU0H9776UEXqoEoD3x5Kn2RV?usp=sharing">Colab page</a>.</p>
+<h2 id="colab-sandboxes">Colab Sandboxes</h2>
+<p><a href="https://jupyter.org/">JupyterLab</a> is a sandbox development environment which allows for, among other things, rapid prototyping or testing of small units of code.  They provide a framework to execute code without building a whole application or even a complete module.</p>
+<p>Most of the code already incorporated into the project started out in a JupyterLab runtime environment.  </p>
+<p>JupyterLab is also great for documenting and demonstrating exactly what's going on with a piece of code.  </p>
+<p>JupyterLab artifacts worked on for the project are stored as static documents in GitHub in the e-Invoice-Onboarding-Toolkit project under ./einvoice/docs/jupyterlab.  </p>
+<p><a href="https://colab.research.google.com/">Google Colab</a> pages implement <a href="https://jupyter.org/">JupyterLab </a> runtime with live sandbox environments.  Pages can be linked from the e-Invoice-Onboarding-Toolkit  GitHub repository, or pulled from the repository and saved locally by anyone with a Google account.  </p>
+<h3 id="urn-hashing-and-dns-naptr-lookup">urn hashing and DNS NAPTR lookup.</h3>
+<p>Colab page with examples of how to hash the specification, the schema_id, and the party_id to create the urn and perform the natpr dns query is at this <a href="They JupyterLab file is named: https://colab.research.google.com/drive/1kfMedMUapeaOS6u9hnS8IcmQaury8znP?usp=sharing">Colab page</a>.  Examples 6, 7, 8,  and 9 run the hash and submit against DNS in real-time.<br />
+The JupyterLab file is: urn_hash_work.ipynb</p>
+<h2 id="smp-query">SMP query</h2>
+<p>Colab page with examples of how to transform the urn and party_id and submit it to the SMP uri is at this <a href="https://colab.research.google.com/drive/14EVSc0GyjU0H9776UEXqoEoD3x5Kn2RV?usp=sharing">Colab page</a>.<br />
+They JupyterLab file is: smp_url_transformations.ipynb</p>
+<h2 id="ebms-message-header-validation">ebMS Message Header validation</h2>
+<p>Colab pages with examples of reading an XSD file and validating an XML file has two Google Colab pages for different aspects of the work.<br />
+Inspection and validation of the XSD file has this <a href="https://colab.research.google.com/drive/1zuPcP1ofEe8PReew9KbGY13EQJsNN8Es?usp=sharing">Google Colab Page</a>.
+The JupyterLab file is: ebMS XML 3 schema.ipynb.</p>
+<p>Validation of anxml file against the XSD is done using this <a href="https://colab.research.google.com/drive/1ExMZUD_5larW0wEuGJ5erHkFuoozcLCF?usp=sharing">Google Colab Page</a>
+The JupyterFile is: Validate_bdx-as4.ipynb</p>
+<p>For ease of access these files are copies stored on the drive of one of the project Developers and is free and open to anyone to view and run.   Interested individuals should make copies of the Labs for themselves and run on Google Colab under their own account or an instance of JupytyerLab running on Anaconda, VS Code, or Python install.</p>
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;
@@ -919,11 +946,7 @@
   <h4 style="font-size: 14px;
             padding: 0px;
             margin: 0px;">No Representations or Warranties</h5>
-  This software is free and Open Source offered under an MIT license. The developers of the software make no
-  representations or warranties as to the software or its fitness for a particular purpose. This code is meant for
-  educational and research purposes only. The code is offered "as-is" and is not intended to be used in a production
-  environment. It is intended for developers of software related to the 4-corners Model to use as a stepping-off point
-  for further development efforts.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </div>
 
               
