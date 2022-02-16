@@ -15,7 +15,7 @@
     
     
       
-        <title>To do - e-Invoice Onboarding Toolkit</title>
+        <title>To do: - e-Invoice Onboarding Toolkit</title>
       
     
     
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              To do
+              To do:<hr>
             
           </span>
         </div>
@@ -245,6 +245,21 @@
   
   
     <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Project Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../faq/" class="md-nav__link">
         FAQ
       </a>
@@ -260,8 +275,8 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        Project Home
+      <a href="../outcomes/" class="md-nav__link">
+        Outcomes
       </a>
     </li>
   
@@ -353,18 +368,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_8">
+        <label class="md-nav__link" for="__nav_9">
           Using the Code
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Using the Code" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
+        <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Using the Code
         </label>
@@ -443,62 +458,6 @@
       <a href="../project_roadmap/" class="md-nav__link">
         Project Roadmap
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          To do
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        To do
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#list-of-deliverables" class="md-nav__link">
-    List of Deliverables
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -634,41 +593,14 @@
 <li>
 <p>A deployment package which includes Python code to:</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Create dataclass object comprised of specification, schema ID, party ID, and a sample JSON e-Invoice payload.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Construct the URN from the specification, schema ID, and party ID,</li>
-<li class="task-list-item"><input type="checkbox" checked/> Hash the URN per the requirements to create a NAPTR record for a DNS look-up to obtain SMP service URI.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Do the DNS look-up to obtain the SMP service URI.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Query the SMP URI using the ebXML spec.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Test cases implemented using Test Driven Development</li>
-<li class="task-list-item"><input type="checkbox" checked/> Create a sample e-Invoice dataclass.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Logging implemented through custom logging using standard Python modules.</li>
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Containerized web API/UI to implement the code/functionality above.</li>
-<li class="task-list-item"><input type="checkbox"/> Provided as a Docker image.</li>
 <li class="task-list-item"><input type="checkbox"/> (In-progress)_ Creation of "final" Python package which delivers code artifacts as a library.</li>
-</ul>
-</li>
-<li>
-<p>Documentation and code artifacts for Infrastructure components:</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Demonstrating implementation of DNS infrastructure using Amazon Route53 and code to provision, update, and delete NATPR records, acting as the SML.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Demonstrating implementation of SMP infrastructure to reply to the REST API for service functionally and AS4 final endpoint.    </li>
 </ul>
 </li>
 <li>
 <p>Documentation</p>
 <ul class="task-list">
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Generated from FastAPI or Flask</li>
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Generated from python docstring using Sphinx</li>
-<li class="task-list-item"><input type="checkbox" checked/> Previously created documentation and diagrams which were outcomes of analysis and process review.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> Jupyter Lab Notebooks running on Google Colab for real-time examples of a dev sandbox.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> Hash URN Notebook   (Hash URN and SML query are in the same Notebook)</li>
-<li class="task-list-item"><input type="checkbox" checked/> SML query Notebook  (Hash URN and SML query are in the same Notebook)</li>
-<li class="task-list-item"><input type="checkbox" checked/> SMP query Notebook</li>
-<li class="task-list-item"><input type="checkbox"/> Implementation Guide written by SEs and prepared with BSAs to facilitate utilization of the code and work product to be delivered via readthedocs.org site.</li>
-<li class="task-list-item"><input type="checkbox" checked/> <s>readthedocs.org site registration/creation</s></li>
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Create list of assumptions for starting point/baseline.</li>
-<li class="task-list-item"><input type="checkbox"/> Aggregation of above referenced artifacts.</li>
-<li class="task-list-item"><input type="checkbox"/> Documentation of supporting infrastructure including DNS and SMP provisioning specifically called out as a parallel value-add result of the project.
+<li class="task-list-item"><input type="checkbox"/> (In-progress) Generated from python docstring using <s>Sphinx</s> <strong>mkdocs-material</strong> framework</li>
+<li class="task-list-item"><input type="checkbox"/> (In-progress) Documentation of supporting infrastructure including DNS and SMP provisioning specifically called out as a parallel value-add result of the project.
 <br/>
 <br/>
 <br/></li>
@@ -677,13 +609,6 @@
 </ol>
 <hr style="height: 2px;border:none;color:#333;background-color:#333;">
 
-<ul>
-<li><strong>Notes</strong>:  <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Test-driven development methodology is being implemented to include test cases for code as it is being developed and delivered.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> CI/CD process implemented via Github workflow has been validated to ensure PEP8 code standards and checks using Flake8, pylint, and pytest are valid.  All changes and updates to code must pass CI/CD before it's merged into the repo.  </li>
-</ul>
-</li>
-</ul>
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;
@@ -707,41 +632,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../project_roadmap/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Project Roadmap" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Project Roadmap
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../artifacts/" class="md-footer__link md-footer__link--next" aria-label="Next: Project Artifacts" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Project Artifacts
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

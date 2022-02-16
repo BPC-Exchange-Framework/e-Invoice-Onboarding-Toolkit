@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#faq" class="md-skip">
+        <a href="#" class="md-skip">
           Skip to content
         </a>
       
@@ -251,6 +251,21 @@
   
   
     <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Project Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../faq/" class="md-nav__link">
         FAQ
       </a>
@@ -266,8 +281,8 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        Project Home
+      <a href="../outcomes/" class="md-nav__link">
+        Outcomes
       </a>
     </li>
   
@@ -359,18 +374,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_8">
+        <label class="md-nav__link" for="__nav_9">
           Using the Code
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Using the Code" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
+        <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Using the Code
         </label>
@@ -448,21 +463,6 @@
     <li class="md-nav__item">
       <a href="../project_roadmap/" class="md-nav__link">
         Project Roadmap
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../todo/" class="md-nav__link">
-        To do
       </a>
     </li>
   
@@ -564,6 +564,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#" class="md-nav__link">
+    Project Home
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#faq" class="md-nav__link">
     FAQ
   </a>
@@ -571,8 +578,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#" class="md-nav__link">
-    Project Home
+  <a href="#outcomes" class="md-nav__link">
+    Outcomes
   </a>
   
 </li>
@@ -656,13 +663,6 @@
         <li class="md-nav__item">
   <a href="#project_roadmap" class="md-nav__link">
     Project Roadmap
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#todo" class="md-nav__link">
-    To do
   </a>
   
 </li>
@@ -728,6 +728,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#" class="md-nav__link">
+    Project Home
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#faq" class="md-nav__link">
     FAQ
   </a>
@@ -735,8 +742,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#" class="md-nav__link">
-    Project Home
+  <a href="#outcomes" class="md-nav__link">
+    Outcomes
   </a>
   
 </li>
@@ -820,13 +827,6 @@
         <li class="md-nav__item">
   <a href="#project_roadmap" class="md-nav__link">
     Project Roadmap
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#todo" class="md-nav__link">
-    To do
   </a>
   
 </li>
@@ -914,7 +914,55 @@
                 </nav>
             </div>
         </section>
-        <section class="print-page" id="faq"><h1 id="faq-questions">Questions...</h1>
+        <section class="print-page" id="index"><h1 id="index-welcome">Welcome</h1>
+<p><strong>Welcome to the e-Invoice Onboarding Toolkit</strong>  </p>
+<p>This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner interoperability model framework.   </p>
+<p>The desired outcomes include:
+1. Hashing functionality to derive the urn for look-up in a DNS NAPTR record.<br />
+2. DNS NATPR lookup and extract the relevant SMP URI.<br />
+3. Two REST requests to an SMP server to retrieve a Corner 3 URI.<br />
+4. Execute the REST requests to the SMP server.<br />
+5. Extract the Corner 3 endpoint URI from the response from the SMP server.  <br />
+6. Validate an e-Invoice ebXML message header for compliance with an AS4 conformance profile.  </p>
+<p>For information about e-invoices and implementing the Four-Corner Model please visit the <a href="https://businesspaymentscoalition.org/electronic-invoices">Business Payments Coalition website</a>.  </p>
+<p>Additional documentation, reference materials, and standards can be found on the <a href="https://www.oasis-open.org">Oasis-Open.org website</a>. Start with the <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html">ebXML specification</a></p>
+<h2 id="index-this-project">This Project</h2>
+<ul>
+<li><a href="#.">Project Home</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#outcomes">Outcomes</a></li>
+<li><a href="#assumptions">Assumptions</a></li>
+<li><a href="#tools_and_resources">Tools and Resources</a></li>
+<li><a href="#python_dev_env">Configure a Python Environment</a></li>
+<li><a href="#requirements">Package Requirements</a></li>
+<li><a href="#working_with_the_code">Getting the Code</a></li>
+<li>Using the Code<ul>
+<li><a href="#using_the_modules">Using the Modules</a></li>
+<li><a href="#test_cases">Test Cases</a></li>
+<li><a href="#start_to_finish">Start-to-Finish example</a></li>
+<li><a href="#google_colab_pages">JupyterLab/Notebooks</a></li>
+</ul>
+</li>
+<li><a href="#project_roadmap">Project Roadmap</a></li>
+<li><a href="#artifacts">Project Artifacts</a></li>
+<li><a href="#git_workflow">Workflow</a></li>
+<li><a href="#oasis_documentation">Oasis Resources</a></li>
+<li><a href="#_license">License</a></li>
+</ul>
+<div style="font-size: 12px;
+            padding: 15px;
+            border: 2px solid lightgray;
+            margin-top: 100px;
+            margin-left: 0px;
+            margin-bottom: 40px;
+            margin-right: auto;
+            width: 100%;
+            border-radius: 10px;">
+  <h4 style="font-size: 14px;
+            padding: 0px;
+            margin: 0px;">No Representations or Warranties</h5>
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</div></section><section class="print-page" id="faq"><h1 id="faq-questions">Questions...</h1>
 <hr>
 <dl>
 <dt><strong>Q:</strong></dt>
@@ -974,34 +1022,125 @@
             padding: 0px;
             margin: 0px;">No Representations or Warranties</h5>
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="index"><h1 id="index-welcome">Welcome</h1>
-<p><strong>Welcome to the e-Invoice Onboarding Toolkit</strong>  </p>
-<p>This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner interoperability model framework.   </p>
-<p>For information about e-invoices and implementing the Four-Corner Model please visit the <a href="https://businesspaymentscoalition.org/electronic-invoices">Business Payments Coalition website</a>.  </p>
-<p>Additional documentation, reference materials, and standards can be found on the <a href="https://www.oasis-open.org">Oasis-Open.org website</a>. Start with the <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html">ebXML specification</a></p>
-<h2 id="index-this-project">This Project</h2>
-<ul>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#.">Project Home</a></li>
-<li><a href="#assumptions">Assumptions</a></li>
-<li><a href="#tools_and_resources">Tools and Resources</a></li>
-<li><a href="#python_dev_env">Configure a Python Environment</a></li>
-<li><a href="#requirements">Package Requirements</a></li>
-<li><a href="#working_with_the_code">Getting the Code</a></li>
-<li>Using the Code<ul>
-<li><a href="#using_the_modules">Using the Modules</a></li>
-<li><a href="#test_cases">Test Cases</a></li>
-<li><a href="#start_to_finish">Start-to-Finish example</a></li>
-<li><a href="#google_colab_pages">JupyterLab/Notebooks</a></li>
+</div></section><section class="print-page" id="outcomes"><h1 id="outcomes-project-outcomes">Project Outcomes:<hr></h1>
+<h2 id="outcomes-functionality">Functionality</h2>
+<ol>
+<li>Hashing functionality to derive the urn for look-up in a DNS NAPTR record.  </li>
+<li>DNS NATPR lookup and extract the relevant SMP URI.  </li>
+<li>Two REST requests to an SMP server to retrieve a Corner 3 URI.  </li>
+<li>Execute the REST requests to the SMP server.  </li>
+<li>Extract the Corner 3 endpoint URI from the response from the SMP server.    </li>
+<li>Validate an e-Invoice ebXML message header for compliance with an AS4 conformance profile.<br />
+<br/></li>
+</ol>
+<hr style="height: 2px;border:none;color:#333;background-color:#333;">
+
+<h2 id="outcomes-implementation">Implementation</h2>
+<ol>
+<li>
+<p>Functional  Python code:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> Construct the URN from the specification, schema ID, and party ID,<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> urn_hasher.py</li>
 </ul>
 </li>
-<li><a href="#project_roadmap">Project Roadmap</a></li>
-<li><a href="#todo">To do</a></li>
-<li><a href="#artifacts">Project Artifacts</a></li>
-<li><a href="#git_workflow">Workflow</a></li>
-<li><a href="#oasis_documentation">Oasis Resources</a></li>
-<li><a href="#_license">License</a></li>
+<li class="task-list-item"><input type="checkbox" checked/> Hash the URN per the requirements to create a NAPTR record for a DNS look-up to obtain SMP service URI.<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> urn_hasher.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
 </ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked/> Do the DNS look-up to obtain the SMP service URI.<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> dns_query.py</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked/> Query the SMP URI using the ebXML spec.<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> smp_query.py</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked/> Dataclass object comprised of specification, schema ID, party ID, and a sample JSON e-Invoice payload.<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> einvoice_message_package.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> line_item_py</li>
+<li class="task-list-item"><input type="checkbox" checked/> party_address.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> semnantic_model.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> urn.py</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked/> Test cases implemented using Test Driven Development<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> test_accessor.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_app_logging.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_create_sample_data.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_create_tracking_id.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_dns_query.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_import_xsd.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_line_item.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_party_address.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_semantic_model.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_smp_query.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_urn.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> test_urn_hasher.py</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked/> Logging implemented through custom logging using standard Python modules.<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> app_loggiing.py</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Documentation and code artifacts for Infrastructure components:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> Demonstrating implementation of DNS infrastructure using Amazon Route53 and code to provision, update, and delete NATPR records, acting as the SML.</li>
+<li class="task-list-item"><input type="checkbox" checked/> Demonstrating implementation of SMP infrastructure to reply to the REST API for service functionally and AS4 final endpoint.    </li>
+</ul>
+</li>
+<li>
+<p>Documentation</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> Previously created documentation and diagrams which were outcomes of analysis and process review.  </li>
+<li class="task-list-item"><input type="checkbox" checked/> Jupyter Lab Notebooks running on Google Colab for real-time examples of a dev sandbox.  <ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> Hash URN and SML query Lab Notebook   (Hash URN and SML query are in the same Notebook)</li>
+<li class="task-list-item"><input type="checkbox" checked/> SMP query Lab Notebook</li>
+<li class="task-list-item"><input type="checkbox" checked/> Review of AS4 XSD spec Lab Notebook</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" checked/> Validation of ebMS sample message header against AS4 XSD Lab Notebook</li>
+<li class="task-list-item"><input type="checkbox" checked/> <s>Implementation Guide </s> Documentation site written by SEs and prepared with BSAs to facilitate utilization of the code and work product to be delivered <s>via readthedocs.org site</s> though the github repository.</li>
+<li class="task-list-item"><input type="checkbox" checked/> <s>readthedocs.org site registration/creation</s> Create document set using <strong>mkdocs-material</strong>  hosted on github repository.</li>
+<li class="task-list-item"><input type="checkbox" checked/> Create <s>list of assumptions</s> <strong>FAQ</strong> and <strong>Outcomes</strong> pages for starting point/baseline documentation.</li>
+<li class="task-list-item"><input type="checkbox" checked/> Aggregation of above referenced artifacts hosted on github.<br />
+<br/></li>
+</ul>
+</li>
+</ol>
+<hr style="height: 2px;border:none;color:#333;background-color:#333;">
+
+<h2 id="outcomes-to-do">To do</h2>
+<ol>
+<li>
+<p>A deployment package which includes Python code to:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> (In-progress)_ Creation of "final" Python package which delivers code artifacts as a library.</li>
+</ul>
+</li>
+<li>
+<p>Documentation</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> (In-progress) Generated from python docstring using <s>Sphinx</s> <strong>mkdocs-material</strong> framework</li>
+<li class="task-list-item"><input type="checkbox"/> (In-progress) Documentation of supporting infrastructure including DNS and SMP provisioning specifically called out as a parallel value-add result of the project.<br />
+<br/></li>
+</ul>
+</li>
+</ol>
+<hr style="height: 2px;border:none;color:#333;background-color:#333;">
+<p><br/></p>
+<h2 id="outcomes-notes">Notes</h2>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> Test-driven development methodology is being implemented to include test cases for code as it is being developed and delivered.  </li>
+<li class="task-list-item"><input type="checkbox" checked/> CI/CD process implemented via Github workflow has been validated to ensure PEP8 code standards and checks using Flake8, pylint, and pytest are valid.  All changes and updates to code must pass CI/CD before it's merged into the repo.   </li>
+</ul>
+<p><br/><br/></p>
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;
@@ -2022,75 +2161,6 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </tr>
 </tbody>
 </table>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="todo"><h1 id="todo-to-do">To do:<hr></h1>
-<h2 id="todo-list-of-deliverables">List of Deliverables</h2>
-<ol>
-<li>
-<p>A deployment package which includes Python code to:</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Create dataclass object comprised of specification, schema ID, party ID, and a sample JSON e-Invoice payload.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Construct the URN from the specification, schema ID, and party ID,</li>
-<li class="task-list-item"><input type="checkbox" checked/> Hash the URN per the requirements to create a NAPTR record for a DNS look-up to obtain SMP service URI.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Do the DNS look-up to obtain the SMP service URI.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Query the SMP URI using the ebXML spec.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Test cases implemented using Test Driven Development</li>
-<li class="task-list-item"><input type="checkbox" checked/> Create a sample e-Invoice dataclass.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Logging implemented through custom logging using standard Python modules.</li>
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Containerized web API/UI to implement the code/functionality above.</li>
-<li class="task-list-item"><input type="checkbox"/> Provided as a Docker image.</li>
-<li class="task-list-item"><input type="checkbox"/> (In-progress)_ Creation of "final" Python package which delivers code artifacts as a library.</li>
-</ul>
-</li>
-<li>
-<p>Documentation and code artifacts for Infrastructure components:</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Demonstrating implementation of DNS infrastructure using Amazon Route53 and code to provision, update, and delete NATPR records, acting as the SML.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Demonstrating implementation of SMP infrastructure to reply to the REST API for service functionally and AS4 final endpoint.    </li>
-</ul>
-</li>
-<li>
-<p>Documentation</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Generated from FastAPI or Flask</li>
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Generated from python docstring using Sphinx</li>
-<li class="task-list-item"><input type="checkbox" checked/> Previously created documentation and diagrams which were outcomes of analysis and process review.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> Jupyter Lab Notebooks running on Google Colab for real-time examples of a dev sandbox.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> Hash URN Notebook   (Hash URN and SML query are in the same Notebook)</li>
-<li class="task-list-item"><input type="checkbox" checked/> SML query Notebook  (Hash URN and SML query are in the same Notebook)</li>
-<li class="task-list-item"><input type="checkbox" checked/> SMP query Notebook</li>
-<li class="task-list-item"><input type="checkbox"/> Implementation Guide written by SEs and prepared with BSAs to facilitate utilization of the code and work product to be delivered via readthedocs.org site.</li>
-<li class="task-list-item"><input type="checkbox" checked/> <s>readthedocs.org site registration/creation</s></li>
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Create list of assumptions for starting point/baseline.</li>
-<li class="task-list-item"><input type="checkbox"/> Aggregation of above referenced artifacts.</li>
-<li class="task-list-item"><input type="checkbox"/> Documentation of supporting infrastructure including DNS and SMP provisioning specifically called out as a parallel value-add result of the project.
-<br/>
-<br/>
-<br/></li>
-</ul>
-</li>
-</ol>
-<hr style="height: 2px;border:none;color:#333;background-color:#333;">
-
-<ul>
-<li><strong>Notes</strong>:  <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Test-driven development methodology is being implemented to include test cases for code as it is being developed and delivered.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> CI/CD process implemented via Github workflow has been validated to ensure PEP8 code standards and checks using Flake8, pylint, and pytest are valid.  All changes and updates to code must pass CI/CD before it's merged into the repo.  </li>
-</ul>
-</li>
-</ul>
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;
