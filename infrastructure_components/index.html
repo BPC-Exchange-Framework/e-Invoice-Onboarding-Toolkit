@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/enabling_infrastructure_components/">
+        <link rel="canonical" href="https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/infrastructure_components/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
     
     
       
-        <title>Additional Infrastructure Build-out - e-Invoice Onboarding Toolkit</title>
+        <title>Infrastructure Components - e-Invoice Onboarding Toolkit</title>
       
     
     
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Additional Infrastructure Build-out
+              Infrastructure Components
             
           </span>
         </div>
@@ -453,6 +453,69 @@
 
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Infrastructure Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Infrastructure Components
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sml" class="md-nav__link">
+    SML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smp" class="md-nav__link">
+    SMP
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
   
     <li class="md-nav__item">
       <a href="../project_roadmap/" class="md-nav__link">
@@ -557,6 +620,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sml" class="md-nav__link">
+    SML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smp" class="md-nav__link">
+    SMP
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -567,12 +652,75 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/edit/master/docs/enabling_infrastructure_components.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit/edit/master/docs/infrastructure_components.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 <h1 id="additional-infrastructure-build-out">Additional Infrastructure Build-out</h1>
+<p>The code is intended to interact with other participants in the Four-Corner Model,  including Access Providers, DNS servers and SMP service providers.</p>
+<h2 id="sml">SML</h2>
+<p><strong>Q:</strong>    </p>
+<p>How do you test the toolkit?  How do you create a NAPTR  DNS record entry on a domain? </p>
+<p><strong>A:</strong></p>
+<p>In order to do the SML look-up, the appropriate NAPTR records must be in place.  The assumption is that a NAPTR DNS record exists as a key:value pair.  A look-up of the "key" in the DNS of the NAPTR record will return the "value."  The "key" is the hashed value of the urn.  The value being sought and returned is the URI of the SMP for the next step in the Model.</p>
+<p>Access Point 1 in Corner 2 may be acting in the role of the SML and handling tasks associated with it.  Theses task could include:
+* Creating the URN
+* Creaing the hash value of the URN
+* Queryhing the DNS NATPR record record
+* Returning the SMP URI</p>
+<p>The Python modules provide examples of some ways  the tasks of SML could be accomplished, either as, or by, an Access Point or an organization on its own behalf.    </p>
+<p>For testing purposes the BPC has is running a DNS server on Amazon Web Services Route53 on the test domain of sc-b2b.us.   This allows for the registration of urn hashes in the DNS domain of sc-b2b.us.  These entiries are live in the DNS accessible worldwide.  </p>
+<p>A REST API is available at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register SML entries, which are the DNS NATPR records on the sc-b2b.us domain.  This process creates the urn hash based in inputs provided by the user.  Organizations wishing to register a test urn on the BPC test domain can reach  out to the BPC  or @mnkellyk for assistance in using the web interface.  </p>
+<p>Once these SML/DNS NATPR entries are created, they can queried using the toolkit to make public queries to DNS NAPTR look-up within a matter of seconds.</p>
+<p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/sml-service-r53">BPC-OpenSourceTools/sml-service-r53</a>.  </p>
+<h2 id="smp">SMP</h2>
+<p>The BPC also has an application to test the SMP REST API service calls on the same domain as the SML at  <a href="https://smp-api.sc-b2b.us/docs">https://smp-api.sc-b2b.us/docs</a> .  Again, this is a REST API to make web service calls to test the toolkit.  </p>
+<p>The SMP iitself s a web service queried by a SOAP API call to return the Corner 3 URI or terminal endpoint.  The specification for the actual API can be found in the document: <a href="http://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.html">Service Metadata Publishing (SMP) Version 2.0</a> dated 14 February 2021 as an Oasis standard.   </p>
+<p><strong>Section 5.4 Resources</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>URI</th>
+<th>Method</th>
+<th>XML resource root element</th>
+<th>HTTP Status</th>
+<th>Description of returned content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+</tr>
+<tr>
+<td>ServiceGroup</td>
+<td>./bdxr-smp-2/[{identifier scheme}::]{participant id} See section 3.6 for {participant id} format</td>
+<td>GET</td>
+<td>&lt;ServiceGroup></td>
+<td>200; 500; 404</td>
+<td>Holds the Participant Identifier of the recipient, and a list of references to individual ServiceMetadata resources that are associated with that participant identifier.</td>
+</tr>
+<tr>
+<td>ServiceMetadata</td>
+<td>./bdxr-smp-2/[{identifier scheme}::]{participant id}/services/{service ID} See section 3.7 for {service ID} format</td>
+<td>GET</td>
+<td>&lt;ServiceMetadata></td>
+<td>200; 500; 404</td>
+<td>Holds all of the metadata about a Service, or a redirection URL to another Service Metadata Publisher holding this information.</td>
+</tr>
+</tbody>
+</table>
+<p>The SMP service proivded by the BPC registers a urn for query.  Note that the API specification is essentially the urn with modifications to to include some additional service capability codes but mostly to accomodate characters that would otherwise be illegal in a URL.  </p>
+<p>After registering a urn(s) on the SML service, go to the SMP service at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register the urn there in order to get a reponse for testing SMP query functionality.</p>
+<p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/smp-service">BPC-OpenSourceTools/smp-service</a>.</p>
+<details class="warn"><summary>Client/server certificate trust implicit in the test doman.</summary><p>The SMP service specification has rules regarding Access Point and Reqestor security certificates (client) and SMP provider (server side)  security certificates to estabilish non-reputability, etc.   The BPC e-Invoice workgroup has not fully addressed the question of how the security certificate relationships are going to be managed.  As such, the test application does not validate the client/requestor or its Access Point.  It does return the security certificate of the server in its response, registered under letencrypt.org.  In the future, if rules were to be finalized, the security certicate relationship would need to be incorporated into the SMP REST API  protocol.   </p>
+</details>
 <div style="font-size: 12px;
             padding: 15px;
             border: 2px solid lightgray;
@@ -596,6 +744,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../google_colab_pages/" class="md-footer__link md-footer__link--prev" aria-label="Previous: JupyterLab/Notebooks" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              JupyterLab/Notebooks
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../project_roadmap/" class="md-footer__link md-footer__link--next" aria-label="Next: Project Roadmap" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Project Roadmap
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -461,6 +461,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../infrastructure_components/" class="md-nav__link">
+        Infrastructure Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../project_roadmap/" class="md-nav__link">
         Project Roadmap
       </a>
@@ -661,6 +676,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#infrastructure_components" class="md-nav__link">
+    Infrastructure Components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#project_roadmap" class="md-nav__link">
     Project Roadmap
   </a>
@@ -825,6 +847,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#infrastructure_components" class="md-nav__link">
+    Infrastructure Components
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#project_roadmap" class="md-nav__link">
     Project Roadmap
   </a>
@@ -924,7 +953,7 @@
 <li>Two REST requests to an SMP server to retrieve a Corner 3 URI.  </li>
 <li>Execute the REST requests to the SMP server.  </li>
 <li>Extract the Corner 3 endpoint URI from the response from the SMP server.    </li>
-<li>Validate an e-Invoice ebXML message header for compliance with an AS4 conformance profile.  </li>
+<li>Validate an e-Invoice ebMS message header for compliance with an AS4 conformance profile.  </li>
 </ol>
 </details>
 <p>For information about e-invoices and implementing the Four-Corner Model please visit the <a href="https://businesspaymentscoalition.org/electronic-invoices">Business Payments Coalition website</a>.  </p>
@@ -946,6 +975,7 @@
 <li><a href="#google_colab_pages">JupyterLab/Notebooks</a></li>
 </ul>
 </li>
+<li><a href="#infrastructure_components">Infrastructure Components</a></li>
 <li><a href="#project_roadmap">Project Roadmap</a></li>
 <li><a href="#artifacts">Project Artifacts</a></li>
 <li><a href="#git_workflow">Workflow</a></li>
@@ -1010,7 +1040,7 @@
 2. <a href="#test_cases">Test Cases</a> which demonstrate functionality of the modules.<br />
 3. Jupyter Notebook sandbox environments at <a href="#google_colab_pages">Google Colab Pages</a> which isolate and demonstrate the code in a sandbox.<br />
 4. Package/Library API see the <a href="#.">Index</a> for links to the code API on the modules themselves.<br />
-5. Integration of an example discovery process implemented in a <a href="#flask_integration_on_docker">Flask application on a Docker container</a> (forthcoming).  </dd>
+5. Integration of an example discovery process implemented in a <a href="#faq-flask_integration_on_docker.md">Flask application on a Docker container</a> (forthcoming).  </dd>
 </dl>
 <div style="font-size: 12px;
             padding: 15px;
@@ -1512,96 +1542,100 @@ There is a wealth of high quality documentation and writing about Python in digi
 <h2 id="requirements-currently-implemented-packages">Currently implemented packages:</h2>
 <p>This project utilizes the following packages, all of which should be available under an Open Source license via <a href="https://pypi.org/">Py</a>.
 List updated as of:<br />
-<strong>02/07/2022 (February 7th, 2022)</strong></p>
-<p>Implement the packages in bold and most of the others should be brought along with.  Make sure to source the virtual environment first and then '<em>pip | conda install <package></em>' to bring in the package.  </p>
+<strong>02/16/2022 (February 16th, 2022)</strong></p>
+<p>Make sure to source the virtual environment first and then '<em>pip | conda install <package></em>' to bring in the package.  </p>
 <hr/>
 
-<div class="highlight"><pre><span></span><code> alabaster
- argh
- astroid
- attrs
- Babel
- brotlipy
- certifi
- cffi
- charset-normalizer
- click
- colorama
- cryptography
- dnspython
- docutils
- elementpath
- Faker
- flake8
- future
- ghp-import
- idna
- imagesize
- importlib-metadata
- iniconfig
- isort
- Jinja2
- joblib
- lazy-object-proxy
- livereload
- lunr
- Markdown
- MarkupSafe
- mccabe
- mergedeep
- mkdocs
- mkdocs-autorefs
- mkdocs-bootstrap
- mkdocs-material
- mkdocs-material-extensions
- mkdocstrings
- mypy
- mypy-extensions
- nltk
- packaging
- platformdirs
- pluggy
- psutil
- py
- pycodestyle
- pycparser
- pydocstyle
- pyflakes
- Pygments
- pylint
- pymdown-extensions
- pyOpenSSL
- pyparsing
- PySocks
- pytest
- python-dateutil
- python-dotenv
- pytkdocs
- pytz
- PyYAML
- pyyaml_env_tag
- regex
- requests
- six
- snowballstemmer
- Sphinx
- sphinxcontrib-applehelp
- sphinxcontrib-devhelp
- sphinxcontrib-htmlhelp
- sphinxcontrib-jsmath
- sphinxcontrib-qthelp
- sphinxcontrib-serializinghtml
- text-unidecode
- toml
- tomli
- tornado
- tqdm
- typing_extensions
- urllib3
- watchdog
- wrapt
- xmlschema
- zipp
+<div class="highlight"><pre><span></span><code>alabaster
+argcomplete
+argh
+astroid
+attrs
+Babel
+brotlipy
+certifi
+cffi
+charset-normalizer
+click
+colorama
+conda
+conda-package-handling
+cryptography
+dnspython
+docutils
+elementpath
+Faker
+flake8
+future
+ghp-import
+idna
+imagesize
+importlib-metadata
+iniconfig
+isort
+Jinja2
+joblib
+lazy-object-proxy
+livereload
+lunr
+Markdown
+MarkupSafe
+mccabe
+mergedeep
+mkautodoc
+mkdocs
+mkdocs-autorefs
+mkdocs-bootstrap
+mkdocs-material
+mkdocs-material-extensions
+mkdocs-print-site-plugin
+mkdocstrings
+mypy
+mypy-extensions
+nltk
+packaging
+pipx
+platformdirs
+pluggy
+psutil
+py
+pycodestyle
+pycosat
+pycparser
+pydocstyle
+pyflakes
+Pygments
+pylint
+pymdown-extensions
+pyOpenSSL
+pyparsing
+PySocks
+pytest
+python-dateutil
+python-dotenv
+pytkdocs
+pytz
+PyYAML
+pyyaml_env_tag
+regex
+requests
+ruamel-yaml-conda
+six
+snowballstemmer
+text-unidecode
+toml
+tomli
+tornado
+tqdm
+types-requests
+types-urllib3
+typing_extensions
+urllib3
+userpath
+watchdog
+wrapt
+xmlschema
+zipp
 </code></pre></div>
 <p><br/>
 <br/></p>
@@ -1681,7 +1715,7 @@ List updated as of:<br />
 </tr>
 </tbody>
 </table>
-<p>There are two sub-packages called discovery and delivery. A third directory named "docs" is also at this level and contains project documentation.  </p>
+<p>There are two sub-packages called discovery and delivery. A directory named "test" contains unit tests for both delivery and discovery.  A third directory named "docs" is also at this level and contains project documentation.  </p>
 <table>
 <thead>
 <tr>
@@ -1701,6 +1735,10 @@ List updated as of:<br />
 <tr>
 <td>./einvoice/delivery</td>
 <td>einvoice.delivery</td>
+</tr>
+<tr>
+<td>./einvoice/test</td>
+<td>einvoice.test</td>
 </tr>
 <tr>
 <td>./einvoice/docs</td>
@@ -1708,7 +1746,7 @@ List updated as of:<br />
 </tr>
 </tbody>
 </table>
-<p>Third level directory contains the Python modules containing actual application code.  Within the discovery directory there is a "conf" directory intended for application configuration work, a "data" directory for files and applications to generate test data and scenarios, and a "tests" directory which contains executable modules to test the files in their immediate parent directory. The delivery directory contains a single sub-directory called "tests" which also contains executable test files.  </p>
+<p>Third level directory contains the Python modules containing actual application code.  Within the discovery directory there is a "conf" directory intended for application configuration work, a "data" directory for files and applications to generate test data and scenarios.   </p>
 <table>
 <thead>
 <tr>
@@ -1728,6 +1766,10 @@ List updated as of:<br />
 <tr>
 <td>./einvoice/delivery</td>
 <td>einvoice.delivery</td>
+</tr>
+<tr>
+<td>./einvoice/test</td>
+<td>einvoice.test</td>
 </tr>
 <tr>
 <td>./einvoice/docs</td>
@@ -1740,10 +1782,6 @@ List updated as of:<br />
 <tr>
 <td>./einvoice/discovery/data</td>
 <td>einvoice.discovery.data</td>
-</tr>
-<tr>
-<td>./einvoice/discovery/tests</td>
-<td>einvoice.discovery.tests</td>
 </tr>
 <tr>
 <td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
@@ -1759,7 +1797,7 @@ List updated as of:<br />
 </tr>
 </tbody>
 </table>
-<p>Fourth level directories are the deepest in the application and contain code in the conf, data, and tests directories.  </p>
+<p>Fourth level directories are the deepest in the application and contain code in the conf and data directories.  </p>
 <table>
 <thead>
 <tr>
@@ -1781,6 +1819,10 @@ List updated as of:<br />
 <td>einvoice.delivery</td>
 </tr>
 <tr>
+<td>./einvoice/test</td>
+<td>einvoice.test</td>
+</tr>
+<tr>
 <td>./einvoice/docs</td>
 <td>NA - does not contain code artifacts</td>
 </tr>
@@ -1793,20 +1835,16 @@ List updated as of:<br />
 <td>einvoice.discovery.data</td>
 </tr>
 <tr>
-<td>./einvoice/discovery/tests</td>
-<td>einvoice.discovery.tests</td>
-</tr>
-<tr>
 <td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
 <td>einvoice.discovery.accessor.Accessor, einvoice.discovery.app_logging.create_logger, etc.</td>
 </tr>
 <tr>
-<td>./einvoice/delivery/import_xsd</td>
-<td>einvoice.delivery.import_xsd.ImportXSD</td>
+<td>./einvoice/delivery/import_xsd.py</td>
+<td></td>
 </tr>
 <tr>
-<td>./einvoice/delivery/tests</td>
-<td>einvoice.delivery.tests</td>
+<td>einvoice.delivery.import_xsd.ImportXSD</td>
+<td></td>
 </tr>
 <tr>
 <td>./einvoice/discovery/conf/config_tool.py, smp_config.py</td>
@@ -1940,25 +1978,26 @@ List updated as of:<br />
   </div></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">e-Invoice Onboarding Tool-kit</h1>
 <h2 id="test_cases-working-with-the-code">Working with the code</h2>
 <h3 id="test_cases-test-cases">Test Cases</h3>
-<p>Every module includes a test module in the child /tests directory.  </p>
+<p>Every module includes a test module in the einvoice/test directory.  </p>
 <details class="note" open="open"><summary>Test cases are writen as functions, not classes.</summary><p>The test cases are written as functions and <strong>CAN</strong> be directly called from the command line.  </p>
 </details>
 <details class="important" open="open"><summary>Use Pytest to run the test cases.</summary><p>The use case for the test cases include using Pytest.<br />
 <strong>The Pytest package must be installed in your Python distribution.</strong></p>
 </details>
-<p>From the a terminal console, change directory into the ./einvoice/discovery or ./einvoice/delivery directory.  </p>
+<p>From the a terminal console, change directory into the ./einvoice/test  directory.  </p>
 <p>To see the list of available test files, either in your file browser or via the command line
-<div class="highlight"><pre><span></span><code>(&quot;dir .\tests\&quot; or &quot;ls -al ./tests/&quot;).
+<div class="highlight"><pre><span></span><code>(&quot;dir .\einvoice\tests\&quot; or &quot;ls -al ./einvoice/tests/&quot;).
 </code></pre></div></p>
-<details class="important" open="open"><summary>Pytest <strong>must</strong> be executed from the parent dir.</summary><p>Out of the box, a quirk of Pytest is that without additional configuration it must be run from within the parent directory of where the test files are actually located.  </p>
+<details class="important" open="open"><summary>The ./test directory <strong>must</strong> be at the same level as the code.</summary><p>Out of the box, Pytest requires that without additional configuration it must be executed from  a directory at the same level of the code that's being tested.  That is, test scripts are in ./einvoice/test and code files are in ./einvoice/discovery and ./einvoice/delivery.   </p>
 </details>
 <p>Pytest will automatically look for files formatted as test files, with "test" in the lead of the filename.  To execute an inidivdual test the syntax is:
-<div class="highlight"><pre><span></span><code>pytest tests/test_app_logging.py
+<div class="highlight"><pre><span></span><code>pytest test_app_logging.py
 </code></pre></div></p>
-<p>No test is dependent on any other, and each may be run on it one, or run them all at once, in any order.  </p>
-<p>The test will run and either the "assert" statement inside will pass, or it will fail.  </p>
+<p>No test is dependent on any other, and each may be run on its own, or run them all at once, in any order.  </p>
+<p>The test will run and either the "assert" statement(s) inside will pass, or it will fail.  </p>
 <p>Failures MUST be resolved prior to attempting to check code into GitHub as our baseline CI/CD process checks for these failures before committing and will not continue if any are found.</p>
 <p>The included assert statements currently test a variety of cases up to validation of urn creation, query of the NAPTR DNS record, REST API call to the SMP, and validation of the ebMS header against the AS4 conformance profile.  </p>
+<p>The test folder also contains a number of shell scripts to validate the code using  a number of linters including flake8, pylint, mypy, pycodestyte, and pydocstyle.   Prior to check in, all code has had warnings from all linters resolved or noted.  </p>
 <figure>
 <p><img alt="Successful completion of all tests cases." src="../successful_tests.png" />
   </p>
@@ -2048,7 +2087,84 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
             padding: 0px;
             margin: 0px;">No Representations or Warranties</h5>
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><h1 class='nav-section-title-end'>Ended: Using the Code</h1><section class="print-page" id="project_roadmap"><h1 id="project_roadmap-project-roadmap">Project Roadmap</h1>
+</div></section><h1 class='nav-section-title-end'>Ended: Using the Code</h1><section class="print-page" id="infrastructure_components"><h1 id="infrastructure_components-additional-infrastructure-build-out">Additional Infrastructure Build-out</h1>
+<p>The code is intended to interact with other participants in the Four-Corner Model,  including Access Providers, DNS servers and SMP service providers.</p>
+<h2 id="infrastructure_components-sml">SML</h2>
+<p><strong>Q:</strong>    </p>
+<p>How do you test the toolkit?  How do you create a NAPTR  DNS record entry on a domain? </p>
+<p><strong>A:</strong></p>
+<p>In order to do the SML look-up, the appropriate NAPTR records must be in place.  The assumption is that a NAPTR DNS record exists as a key:value pair.  A look-up of the "key" in the DNS of the NAPTR record will return the "value."  The "key" is the hashed value of the urn.  The value being sought and returned is the URI of the SMP for the next step in the Model.</p>
+<p>Access Point 1 in Corner 2 may be acting in the role of the SML and handling tasks associated with it.  Theses task could include:
+* Creating the URN
+* Creaing the hash value of the URN
+* Queryhing the DNS NATPR record record
+* Returning the SMP URI</p>
+<p>The Python modules provide examples of some ways  the tasks of SML could be accomplished, either as, or by, an Access Point or an organization on its own behalf.    </p>
+<p>For testing purposes the BPC has is running a DNS server on Amazon Web Services Route53 on the test domain of sc-b2b.us.   This allows for the registration of urn hashes in the DNS domain of sc-b2b.us.  These entiries are live in the DNS accessible worldwide.  </p>
+<p>A REST API is available at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register SML entries, which are the DNS NATPR records on the sc-b2b.us domain.  This process creates the urn hash based in inputs provided by the user.  Organizations wishing to register a test urn on the BPC test domain can reach  out to the BPC  or @mnkellyk for assistance in using the web interface.  </p>
+<p>Once these SML/DNS NATPR entries are created, they can queried using the toolkit to make public queries to DNS NAPTR look-up within a matter of seconds.</p>
+<p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/sml-service-r53">BPC-OpenSourceTools/sml-service-r53</a>.  </p>
+<h2 id="infrastructure_components-smp">SMP</h2>
+<p>The BPC also has an application to test the SMP REST API service calls on the same domain as the SML at  <a href="https://smp-api.sc-b2b.us/docs">https://smp-api.sc-b2b.us/docs</a> .  Again, this is a REST API to make web service calls to test the toolkit.  </p>
+<p>The SMP iitself s a web service queried by a SOAP API call to return the Corner 3 URI or terminal endpoint.  The specification for the actual API can be found in the document: <a href="http://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.html">Service Metadata Publishing (SMP) Version 2.0</a> dated 14 February 2021 as an Oasis standard.   </p>
+<p><strong>Section 5.4 Resources</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>URI</th>
+<th>Method</th>
+<th>XML resource root element</th>
+<th>HTTP Status</th>
+<th>Description of returned content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+</tr>
+<tr>
+<td>ServiceGroup</td>
+<td>./bdxr-smp-2/[{identifier scheme}::]{participant id} See section 3.6 for {participant id} format</td>
+<td>GET</td>
+<td>&lt;ServiceGroup></td>
+<td>200; 500; 404</td>
+<td>Holds the Participant Identifier of the recipient, and a list of references to individual ServiceMetadata resources that are associated with that participant identifier.</td>
+</tr>
+<tr>
+<td>ServiceMetadata</td>
+<td>./bdxr-smp-2/[{identifier scheme}::]{participant id}/services/{service ID} See section 3.7 for {service ID} format</td>
+<td>GET</td>
+<td>&lt;ServiceMetadata></td>
+<td>200; 500; 404</td>
+<td>Holds all of the metadata about a Service, or a redirection URL to another Service Metadata Publisher holding this information.</td>
+</tr>
+</tbody>
+</table>
+<p>The SMP service proivded by the BPC registers a urn for query.  Note that the API specification is essentially the urn with modifications to to include some additional service capability codes but mostly to accomodate characters that would otherwise be illegal in a URL.  </p>
+<p>After registering a urn(s) on the SML service, go to the SMP service at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register the urn there in order to get a reponse for testing SMP query functionality.</p>
+<p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/smp-service">BPC-OpenSourceTools/smp-service</a>.</p>
+<details class="warn"><summary>Client/server certificate trust implicit in the test doman.</summary><p>The SMP service specification has rules regarding Access Point and Reqestor security certificates (client) and SMP provider (server side)  security certificates to estabilish non-reputability, etc.   The BPC e-Invoice workgroup has not fully addressed the question of how the security certificate relationships are going to be managed.  As such, the test application does not validate the client/requestor or its Access Point.  It does return the security certificate of the server in its response, registered under letencrypt.org.  In the future, if rules were to be finalized, the security certicate relationship would need to be incorporated into the SMP REST API  protocol.   </p>
+</details>
+<div style="font-size: 12px;
+            padding: 15px;
+            border: 2px solid lightgray;
+            margin-top: 100px;
+            margin-left: 0px;
+            margin-bottom: 40px;
+            margin-right: auto;
+            width: 70%;
+            border-radius: 10px;">
+  <h4 style="font-size: 14px;
+            padding: 0px;
+            margin: 0px;">No Representations or Warranties</h5>
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</div></section><section class="print-page" id="project_roadmap"><h1 id="project_roadmap-project-roadmap">Project Roadmap</h1>
 <h3 id="project_roadmap-discovery-1-sml-naptr-dns-lookup">Discovery #1 - SML NAPTR DNS Lookup</h3>
 <ol>
 <li>Feature – Access Point A sends UNAPTR DNS query with a Party ID/Party ID Schema hash and obtains a valid response with connection information to the SMP.  </li>
@@ -2180,7 +2296,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </div></section><section class="print-page" id="artifacts"><h1 id="artifacts-the-repository">The Repo(sitory)<hr/></h1>
 <h3 id="artifacts-repository-layout">Repository Layout</h3>
 <p>This project includes the following files, <em>i.e., "artifacts"</em> in <strong>.py</strong>, .<strong>md</strong>, .<strong>txt</strong> and other formats, updated as of:<br />
-<strong>02/07/2022 (February 7th, 2022)</strong></p>
+<strong>02/16/2022 (February 16th, 2022)</strong></p>
 <div class="highlight"><pre><span></span><code>/e-Invoice-Onboarding-Toolkit  
 .
 ├── LICENSE
@@ -2194,8 +2310,6 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 │   │   ├── import_xsd.py
 │   │   ├── sample_msg.xml
 │   │   └── tests
-│   │       ├── __init__.py
-│   │       └── test_import_xsd.py
 │   ├── discovery
 │   │   ├── __init__.py
 │   │   ├── accessor.py
@@ -2219,37 +2333,18 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 │   │   ├── party_address.py
 │   │   ├── semantic_model.py
 │   │   ├── smp_query.py
-│   │   ├── tests
-│   │   │   ├── __init__.py
-│   │   │   ├── ebms-header-3_0-20220119.xsd
-│   │   │   ├── ez_linter.sh
-│   │   │   ├── flake8_linter.sh
-│   │   │   ├── hardcore_linter.sh
-│   │   │   ├── magic_linter.py
-│   │   │   ├── mypy_linter.sh
-│   │   │   ├── pycodestyle_linter.sh
-│   │   │   ├── pydocstyle_linter.sh
-│   │   │   ├── pylint_linter.sh
-│   │   │   ├── test_accessor.py
-│   │   │   ├── test_app_logging.py
-│   │   │   ├── test_create_sample_data.py
-│   │   │   ├── test_create_tracking_id.py
-│   │   │   ├── test_dns_query.py
-│   │   │   ├── test_line_item.py
-│   │   │   ├── test_party_address.py
-│   │   │   ├── test_semantic_model.py
-│   │   │   ├── test_smp_query.py
-│   │   │   ├── test_urn.py
-│   │   │   ├── test_urn_hasher.py
-│   │   │   └── unaptr_response.json
 │   │   ├── urn.py
 │   │   └── urn_hasher.py
 │   ├── docs
 │   │   ├── __init__.py
 │   │   ├── _license.md
 │   │   ├── accessor.md
+│   │   ├── accessor_results.png
+│   │   ├── app_handler.md
+│   │   ├── app_log.png
 │   │   ├── app_logging.md
 │   │   ├── artifacts.md
+│   │   ├── assumptions.md
 │   │   ├── create_tracking_id.md
 │   │   ├── custom_theme
 │   │   │   ├── css
@@ -2264,7 +2359,6 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 │   │   ├── enabling_infrastructure_components.md
 │   │   ├── faq.md
 │   │   ├── flask_integration_on_docker.md
-│   │   ├── getting_started.md
 │   │   ├── git_workflow.md
 │   │   ├── google_colab_pages.md
 │   │   ├── index.md
@@ -2281,6 +2375,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 │   │   │   └── urn_hash_work.ipynb
 │   │   ├── line_item.md
 │   │   ├── oasis_documentation.md
+│   │   ├── outcomes.md
 │   │   ├── party_address.md
 │   │   ├── pdf
 │   │   │   ├── Bounded Context - Entity Relationships 1.4.pdf
@@ -2294,6 +2389,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 │   │   ├── semantic_model.md
 │   │   ├── smp_query.md
 │   │   ├── start_to_finish.md
+│   │   ├── successful_tests.png
 │   │   ├── test_cases.md
 │   │   ├── todo.md
 │   │   ├── tools_and_resources.md
@@ -2302,11 +2398,35 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 │   │   ├── urn_hasher.md
 │   │   ├── using_the_modules.md
 │   │   └── working_with_the_code.md
-│   └── mkdocs.yml
+│   ├── mkdocs.yml
+│   └── test
+│       ├── __init__.py
+│       ├── ebms-header-3_0-20220119.xsd
+│       ├── ez_linter.sh
+│       ├── flake8_linter.sh
+│       ├── hardcore_linter.sh
+│       ├── magic_linter.py
+│       ├── mypy_linter.sh
+│       ├── pycodestyle_linter.sh
+│       ├── pydocstyle_linter.sh
+│       ├── pylint_linter.sh
+│       ├── test_accessor.py
+│       ├── test_app_logging.py
+│       ├── test_create_sample_data.py
+│       ├── test_create_tracking_id.py
+│       ├── test_dns_query.py
+│       ├── test_import_xsd.py
+│       ├── test_line_item.py
+│       ├── test_party_address.py
+│       ├── test_semantic_model.py
+│       ├── test_smp_query.py
+│       ├── test_urn.py
+│       ├── test_urn_hasher.py
+│       └── unaptr_response.json
 ├── requirements.txt
 └── todo.md
 
-13 directories, 109 files
+13 directories, 113 files
 </code></pre></div>
 <div style="font-size: 12px;
             padding: 15px;
@@ -2379,6 +2499,9 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </tr>
 <tr>
 <td><a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/AS4-profile/v1.0/os/AS4-profile-v1.0-os.html">AS4 Profile of ebMS 3.0 Version 1.0</a> dated January 23, 2013.</td>
+</tr>
+<tr>
+<td><a href="http://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.html">Service Metadata Publishing (SMP) Version 2.0</a> dated 14 February 2021 as an Oasis standard.</td>
 </tr>
 </tbody>
 </table>

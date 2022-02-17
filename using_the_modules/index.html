@@ -512,6 +512,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../infrastructure_components/" class="md-nav__link">
+        Infrastructure Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../project_roadmap/" class="md-nav__link">
         Project Roadmap
       </a>
@@ -676,7 +691,7 @@
 </tr>
 </tbody>
 </table>
-<p>There are two sub-packages called discovery and delivery. A third directory named "docs" is also at this level and contains project documentation.  </p>
+<p>There are two sub-packages called discovery and delivery. A directory named "test" contains unit tests for both delivery and discovery.  A third directory named "docs" is also at this level and contains project documentation.  </p>
 <table>
 <thead>
 <tr>
@@ -696,6 +711,10 @@
 <tr>
 <td>./einvoice/delivery</td>
 <td>einvoice.delivery</td>
+</tr>
+<tr>
+<td>./einvoice/test</td>
+<td>einvoice.test</td>
 </tr>
 <tr>
 <td>./einvoice/docs</td>
@@ -703,7 +722,7 @@
 </tr>
 </tbody>
 </table>
-<p>Third level directory contains the Python modules containing actual application code.  Within the discovery directory there is a "conf" directory intended for application configuration work, a "data" directory for files and applications to generate test data and scenarios, and a "tests" directory which contains executable modules to test the files in their immediate parent directory. The delivery directory contains a single sub-directory called "tests" which also contains executable test files.  </p>
+<p>Third level directory contains the Python modules containing actual application code.  Within the discovery directory there is a "conf" directory intended for application configuration work, a "data" directory for files and applications to generate test data and scenarios.   </p>
 <table>
 <thead>
 <tr>
@@ -723,6 +742,10 @@
 <tr>
 <td>./einvoice/delivery</td>
 <td>einvoice.delivery</td>
+</tr>
+<tr>
+<td>./einvoice/test</td>
+<td>einvoice.test</td>
 </tr>
 <tr>
 <td>./einvoice/docs</td>
@@ -735,10 +758,6 @@
 <tr>
 <td>./einvoice/discovery/data</td>
 <td>einvoice.discovery.data</td>
-</tr>
-<tr>
-<td>./einvoice/discovery/tests</td>
-<td>einvoice.discovery.tests</td>
 </tr>
 <tr>
 <td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
@@ -754,7 +773,7 @@
 </tr>
 </tbody>
 </table>
-<p>Fourth level directories are the deepest in the application and contain code in the conf, data, and tests directories.  </p>
+<p>Fourth level directories are the deepest in the application and contain code in the conf and data directories.  </p>
 <table>
 <thead>
 <tr>
@@ -776,6 +795,10 @@
 <td>einvoice.delivery</td>
 </tr>
 <tr>
+<td>./einvoice/test</td>
+<td>einvoice.test</td>
+</tr>
+<tr>
 <td>./einvoice/docs</td>
 <td>NA - does not contain code artifacts</td>
 </tr>
@@ -788,20 +811,16 @@
 <td>einvoice.discovery.data</td>
 </tr>
 <tr>
-<td>./einvoice/discovery/tests</td>
-<td>einvoice.discovery.tests</td>
-</tr>
-<tr>
 <td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
 <td>einvoice.discovery.accessor.Accessor, einvoice.discovery.app_logging.create_logger, etc.</td>
 </tr>
 <tr>
-<td>./einvoice/delivery/import_xsd</td>
-<td>einvoice.delivery.import_xsd.ImportXSD</td>
+<td>./einvoice/delivery/import_xsd.py</td>
+<td></td>
 </tr>
 <tr>
-<td>./einvoice/delivery/tests</td>
-<td>einvoice.delivery.tests</td>
+<td>einvoice.delivery.import_xsd.ImportXSD</td>
+<td></td>
 </tr>
 <tr>
 <td>./einvoice/discovery/conf/config_tool.py, smp_config.py</td>
