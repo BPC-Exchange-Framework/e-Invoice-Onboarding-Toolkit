@@ -1,3 +1,5 @@
+# Project Roadmap
+
 ### Discovery #1 - SML NAPTR DNS Lookup
 
 1.	Feature – Access Point A sends UNAPTR DNS query with a Party ID/Party ID Schema hash and obtains a valid response with connection information to the SMP.  
@@ -42,7 +44,7 @@
             margin-left: 0px;
             margin-bottom: 40px;
             margin-right: auto;
-            width: 70%;
+            width: 100%;
             border-radius: 10px;">
   <h4 style="font-size: 14px;
             padding: 0px;

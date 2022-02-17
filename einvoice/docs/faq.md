@@ -1,10 +1,10 @@
-### Questions...
+# Questions...
 <hr>
 __Q:__
 : Who is the audience for this project?   
 
 __A:__  
-: This software is intended for those interested in participating as service endpoints in a Four-Corners Model framework. The code to implement in the repository is written in the Python programing language. Other toolsets to facilitate the initiative such as Markdown or Docker may also be incorporated where appropriate.     
+: This software is intended for those interested in participating as service endpoints in a Four-Corner Model framework. The code to implement in the repository is written in the Python programing language. Other toolsets to facilitate the initiative such as Markdown or Docker may also be incorporated where appropriate.     
 
 <hr>
 
@@ -14,7 +14,7 @@ __Q:__
 __A:__
 : __Python__  
   1. Some knowledge of Python  
-  2. Python 3.6 or greater, _recommended is 3.10_.  
+  2. Python 3.6 or greater, _Python 3.10 or greater is recommended._.  
 
 <hr>
 __Q:__

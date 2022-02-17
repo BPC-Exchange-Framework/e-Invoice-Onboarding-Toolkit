@@ -1,137 +1,77 @@
-### Install and Config of a Python Dev Env
+# Configure a Python Dev Environment
 
-This document outlines the creation of a Python Development Environment consistent with Python standards and best practices and appropriate as a starting point for professional software development with Python.  
+Respecting individual preferences and work style these are some suggested guidelines  for creation of a Python development environment.  These are consistent with Python standards and best practices and appropriate as a starting point for professional software development in Python.  
 
-Important items for consideration include:
+<!-- _Important items for consideration include:_
 - Installation of Python
 - Use of virtual environments for project and application segmentation.
-- Bringing in the required tools sets for:
+- Including resources for:
     - Style checking against PEP8
-    - Automated code checking using ```flake8``` and ```tox```
-    - Includng documentation using Sphinx and reStructuredText.
+    - Test drive-development including unit tests from the beginning.
+    - Include documentation using __docstrings__ while coding.
 - Including Docker and flask
 - Incorporating Test Drive Development as a matter of practice.
 - Logging
 - Editors and other IDEs
-- Links to additional resources.
+- Links to additional resources. -->
 
 
-Note:  This documentation assumes running on MacOS.  All tools should be available in Windows and various flavors of Linux.  Your mileage may vary.
+## Installing Python
 
-Install Homebrew using command:  
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+The correct method of installing Python varies depending on the OS.  Here are some considerations based on popular OS.
 
-Then install Python.
-```
-brew install python
-```
+OS | Considerations
+----------- | -----------
+MacOS | Mac OS comes configured with Python 2.x. Don't attempt to remove it or replace it .  [Homebrew](https://brew.sh) is a package installer for Mac. However given some past and outstanding issues between Homebrew and Python, versions of Python prior to Python 3.7 may generate errors on install.  [Apple XCode Developer Tools](https://developer.apple.com/xcode/) installs Git and a version of Python.  Available through the App Store it is a large download and system intensive program.  A more granular installation would be the [XCode Command Line Tools](https://mac.install.guide/commandlinetools/4.html) which installs Git combined with a Python install pulled directly from Python.org.      
+WindowsOS | Python is now available on the [Windows Store](https://www.microsoft.com/en-us/store/apps/windows), though updates may lag behind current Python releases.  Ease of setting environment variables makes it easy to maintain multiple installed versions simultaneously.  This configuration is the easiest to integrate [VS Code](https://code.visualstudio.com/) with Python.
+Windows WLS2 | A fully native Python install on Ubuntu is available for [Windows Subsystem for Linux 2](https://docs.microsoft.com/en-us/windows/wsl/install).  The version of Python may need to be updated from a secondary repository as the official Ubuntu version trails official Python releases.  Integration between VS Code running on Windows and integration with WSL2 Python may not be seamless.
+Linux | A variety of package managers based on the installed distro may impact the ease of installing current Python releases and updates, but overall this possibly the easiest to "OS" to install and maintain Python.  
 
-```
-Install other tools you may need or want using Homebrew.  These will make life easier.
-brew install --cask visual-studio-code
-brew install node
-brew install r
-brew install rstudio
-brew install typescript
-brew install docker
-brew install --cask powershell
-```
+??? info "Python3"
+    Python is "officially" referred to and invoked by specfiying either Python 2.x as  "Python2" or Python 3.x.x as "Python3."  The difference is generally trivial except on Macs where Python2 is included as part of the OS install.  
 
+    On Mac and Linux based systems, adding an alias to .bashrc or .zshrc is an easy way to prevent inadvertent references to an incorrect version of Python, e.g.,
+    ```
+    alias python='python3'
+    alias pip='pip3'
+    ```
+    Note that the above included an alias for pip to pip3 as well.  
 
-Upgrade pip to latest version right OOB.  (Note this is done using the Python3/pip3 call to avoid conflict with OS installed version of Python.)
-```
-pip3 install --upgrade pip
-```
-The pip update can also be doing using a call to Python itself, but the `python3` install!
-```
-python3 -m pip install --upgrade pip
-```
-
-Get a list of what's been installed in a "clean" install of Python.
-```
-pip3 list
-
-Package          Version
----------------- ----------
-appdirs          1.4.4
-certifi          2020.12.5
-distlib          0.3.1
-filelock         3.0.12
-pip              21.1.2
-pipenv           2020.11.15
-setuptools       56.0.0
-six              1.16.0
-virtualenv       20.4.6
-virtualenv-clone 0.5.4
-```
 
 
 ## Create a virtual environment to use for Dev
 
-Creating virtual environments to use in Python programming can be done entirely with a packages that comes in the Pthyon install.  
+A Python virtual environment is a development "sandbox" which allows for segmentation of development environments. This allows for management of different combinations and versions of Python releases, deployed packages, development and testing environments, and shifting between entirely different development projects. See the [Python documentation for venv](https://docs.python.org/3/library/venv.html) for a more detailed explanation and rationalization of Python virtual environments.
 
-There are other tool-sets such as [Anaconda](https://www.anaconda.com/products/individual) which provide a full set of development tools and frameworks to pick from, and include the ability to create and manage Python virtual environments with its Conda virtual environment manager.    
+The use of Python virtual environments can't be overstated as a best practice to organize Python versions and package management. [PEP-405](https://www.python.org/dev/peps/pep-0405/)
 
-There are other additional packages for Python such as ```pyenv```, and ```pipenv``` which can be installed separately.  The example of shown offers one way to create the virtual environments which comes OOB in the Python install and offers a lot of manual control over the packages installed in the virtual environments themselves.
+Creating virtual environments to use in Python programming can be done entirely with packages that are include in the Pthyon install or by additional third party applications.    
 
+The choice of tools to create and manage Python virtual environments is dependent on situation, preference, and use case.  
 
-Step|Command|What it's doing/output
----|---|---
-1.|cd|Change to user home dir
-2.|pwd|Print the working directory
- | |/Users/kelly|output of pwd command
-3.|mkdir ./Dev ./Dev/virtualenvs|Create working directories
-4.|cd ./Dev/virtualenvs|Change into the working directory
-5.|pwd| Print the working directory
- | |/Users/kelly/Dev/virtualenvs|
-6.|virtualenv --python python3.9 e-Invoice|Create the e-Invoice virtual environment
-7.|ls -l|list contents of current directory structure|
- |  |drwxr-xr-x  7 kelly  staff  224 Jun 15 08:52 e-Invoice
- 8.|cd ./e-Invoice|Change into the e-Invoice directory
-9.|cd ../bin|Change into the bin directory
-10.|source ./activate | source the activate file and make the current virtual environment active.
-11.|python -m pip install --upgrade pip | update version of pip
-12.|pip list | List the installed packages for this virtual env.  This will be a very small list to start as this is a clean virtual env, including ```pip```, ```setuptools```, and ```wheel```.
+| Tool/App | Use Case |
+------------ | ------------
+| [venv](https://docs.python.org/3/library/venv.html) | Implementation of the virtualenv as a Python module included in the Python install since v.3.3.  This is the "goto" tool of choice. |
+| [virtualenv](https://virtualenv.pypa.io/en/latest/index.html) | Includes features not included in venv (see the [comparison](https://virtualenv.pypa.io/en/latest/index.html)). |  
+| [Anaconda](https://www.anaconda.com/)  | A heavyweight package and virtual environment manager.  It acts as an "all in one" for Python application versions, package management, virtual environments, additional programming languages such as R and Julia and tools such as visualizers and IDEs. The full fledged install can overtax some systems and performance can suffer an overly ambitious installation configuration. A personal license for individuals is free for non-commercial use.  Use by for-profit or governmental organizations with more than 200 people requires licensing. |
+| [miniconda](https://docs.conda.io/en/latest/miniconda.html) | A slimmed down version of Anaconda focussed on virtual environment and package management, includes only conda and Python, not open source, but free. |
+| [conda](https://docs.conda.io/en/latest/) | The open source package manager utilized by Anaconda and miniconda. |
+| [pip](https://pip.pypa.io/en/stable/) | Included in Python 3.4 and later, this tool does not manage the virtual environment but does handle package management for both venv and virtualenv. Not all python tools have been integrated into the Anaconda repositories or packages for install.  Some, such as mkdocs, must still be installed via pip even when using Anaconda3 or miniconda.  
 
-Additional packages or modules to be installed in e-Invoice include:
-Docker, flask, requests
+??? tip "'virtualenv venv' vs. 'venv virtualenv'"
+    Avoid the confusion of the typical example given in the documentation of __virtualenv__ which uses the command executed as "virtualenv venv." This calls __virtualenv__ to create a virtual environment named __venv__.  
 
-<br /><br />
-## Add support for Style and Code checking and Unit Testing.
-The Python package ```pep8``` can be installed to do style checking consistent to [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/).
+    Compare with "venv virtualenv" which calls __venv__ to create a virtual environment called __virtualenv__.  For most practical purposes when using Python 3.6 or greater it doesn't matter whether __venv__ or __virtualenv__ is used to create the virtual instance.
 
-```
-pip install pep8
-```
-
-Run your code against it in the following manner:
-```
-pep8 <filename>
-e.g., pep8 hello.py
-```
-
-then the output from the cosole using:
-```
-echo $?
-```
-
-Another module, flake8, checks for code style and errors simultanepously.  There are a number of custom plug-ins to focus on various aspects of code validation.  
-
-```
-pip install flake8
-```
+    But don't use "virtualenv venv."  That's just obnoxious.
 
 
-The ```tox``` tool can be used to manage dependencies in virtual environments and Unit Test.
+??? note "Other Python Tools"
+    Other tools such as [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/), [pipenv](https://pipenv.pypa.io/en/latest/), [pew](https://github.com/berdario/pew), [tox](https://tox.wiki/en/latest/) and [nox](https://nox.thea.codes/en/stable/) may be useful but are not currently utilized in this project.  [Pyenv](https://github.com/pyenv) was deprecated in Python 3.5 and not utilized.
 
-```
-pip install tox
-```
 
-<br /><br />
-## Docker and flask
+
+<!-- ## Docker and flask
 
 This project utilize [Docker](https://www.docker.com) and [flask](https://pypi.org/project/Flask/).
 
@@ -206,7 +146,7 @@ There is a wealth of high quality documentation and writing about Python in digi
 - [Serious Python](https://nostarch.com/seriouspython) by Julien Danjoy
 - [Guiding Design Principles](https://nsls-ii.github.io/scientific-python-cookiecutter/guiding-design-principles.html) from the [Scientific Python Cookiecutter](https://nsls-ii.github.io/scientific-python-cookiecutter/index.html).
 - [Python Doc](https://www.python.org/doc/) - the official Python web site page of references to more documentation.
-
+ -->
 
 
 
@@ -217,7 +157,7 @@ There is a wealth of high quality documentation and writing about Python in digi
             margin-left: 0px;
             margin-bottom: 40px;
             margin-right: auto;
-            width: 70%;
+            width: 100%;
             border-radius: 10px;">
   <h4 style="font-size: 14px;
             padding: 0px;

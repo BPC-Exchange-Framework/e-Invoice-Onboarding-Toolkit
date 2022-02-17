@@ -1,3 +1,5 @@
+# OASIS Resources
+
 Links to referenced authoritative sources:  
 
 ## Documents
@@ -8,6 +10,7 @@ Links to referenced authoritative sources:
 |[ebXML Messaging Services Version 3.0: Part 2, Advanced Features](https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/rddl-ebms3-part2.html) which is referenced by the following three namespace URIs.  |
 |[OASIS ebXML Messaging Services 3.0 Conformance Profiles](https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/20707/ebms3-confprofiles-cs-01.html), Committee Specification 1, dated April 24, 2010 references the same namespace URI of http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707.  |
 |[AS4 Profile of ebMS 3.0 Version 1.0](http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/AS4-profile/v1.0/os/AS4-profile-v1.0-os.html) dated January 23, 2013.  |
+| [Service Metadata Publishing (SMP) Version 2.0](http://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.html) dated 14 February 2021 as an Oasis standard.  |
 
 ## XML Schema Definitions
 |XSD Files|
