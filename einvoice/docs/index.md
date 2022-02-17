@@ -1,7 +1,17 @@
+# Project Home
+
 ## Welcome
 __Welcome to the e-Invoice Onboarding Toolkit__  
 
 This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner interoperability model framework.   
+
+???+ Important "Outcomes"
+    1. Hashing functionality to derive the urn for look-up in a DNS NAPTR record.  
+    2. DNS NATPR lookup and extract the relevant SMP URI.  
+    3. Two REST requests to an SMP server to retrieve a Corner 3 URI.  
+    4. Execute the REST requests to the SMP server.  
+    5. Extract the Corner 3 endpoint URI from the response from the SMP server.    
+    6. Validate an e-Invoice ebMS message header for compliance with an AS4 conformance profile.  
 
 For information about e-invoices and implementing the Four-Corner Model please visit the [Business Payments Coalition website](https://businesspaymentscoalition.org/electronic-invoices).  
 
@@ -9,37 +19,24 @@ For information about e-invoices and implementing the Four-Corner Model please v
 
 ## This Project
 
-* [FAQ](./faq.md)
 * [Project Home](./index.md)
-* [Getting Started](./getting_started.md)
+* [FAQ](./faq.md)
+* [Outcomes](./outcomes.md)
+* [Assumptions](./assumptions.md)
 * [Tools and Resources](./tools_and_resources.md)
-* [Configuring a Development Environment](./python_dev_env.md)
+* [Configure a Python Environment](./python_dev_env.md)
 * [Package Requirements](./requirements.md)
-* [Working with the Code](./working_with_the_code.md)
+* [Getting the Code](./working_with_the_code.md)
 * Using the Code
-    * [Start-to-Finish](./start_to_finish.md)
+    * [Using the Modules](./using_the_modules)
     * [Test Cases](./test_cases.md)
-    * [Google Colab Pages](./google_colab_pages.md)
-    * Package/Library API
-        - [accessor.py](accessor.md)
-        - [app_logging.py](app_logging.md)
-        - [create_tracking_id.py](create_tracking_id.md)
-        - [dns_query.py](dns_query.md)
-        - [discovery_message_package.py](einvoice_message_package.md)
-        - [line_item.py](line_item.md)
-        - [party_address.py](party_address.md)
-        - [semantic_model.py](semantic_model.md)
-        - [smp_query.py](smp_query.md)
-        - [urn_handler.py](urn_handler.md)
-        - [urn_hasher.py](urn_hasher.md)
-        - [urn.py](urn.md)
-    * [Flask Integration on Docker](./flask_integration_on_docker.md)
+    * [Start-to-Finish example](./start_to_finish.md)
+    * [JupyterLab/Notebooks](./google_colab_pages.md)
+* [Infrastructure Components](infrastructure_components.md)
 * [Project Roadmap](./project_roadmap.md )
-* [Enabling Infrastructure Components](./enabling_infrastructure_components.md)
-* [Todo](./todo.md)
 * [Project Artifacts](./artifacts.md)
 * [Workflow](./git_workflow.md)
-* [Oasis Documentation](./oasis_documentation.md)
+* [Oasis Resources](./oasis_documentation.md)
 * [License](./_license.md)
 
 <div style="font-size: 12px;

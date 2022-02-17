@@ -1,4 +1,4 @@
-## Sample git workflow<hr/>
+# Sample git workflow<hr/>
 
 ### A minimal git "script" to work with the code.
 

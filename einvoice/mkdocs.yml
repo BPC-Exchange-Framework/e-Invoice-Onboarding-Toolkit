@@ -11,15 +11,23 @@ theme:
   icon:
     logo: material/xml
   palette:
-   primary: pink
-   accent: lime green
+    - primary: blue grey
+      accent: deep orange
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - primary: cyan
+      accent: deep orange
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
   font:
     text: Poppins
     code: Roboto Mono
 
-plugins:
-  - search
-  #- mkdocstrings
+
 
 markdown_extensions:
   - def_list
@@ -28,38 +36,65 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist:
       clickable_checkbox: true
+  - mkautodoc
+  - attr_list
+  - md_in_html
 
-nav:
-  - FAQ: faq.md
+
+plugins:
+  - search
+  #- mkdocstrings
+  - print-site:
+      add_to_navigation: true
+      print_page_title: 'Print the Documentation'
+      add_print_site_banner: false
+      # Table of contents
+      add_table_of_contents: true
+      toc_title: 'Table of Contents'
+      toc_depth: 3
+      # Content-related
+      add_full_urls: false
+      enumerate_headings: true
+      enumerate_figures: true
+      add_cover_page: true
+      cover_page_template: ""
+      path_to_pdf: ""
+      include_css: true
+      enabled: true
+      exclude:
+
+
+nav: 
   - Project Home: index.md
-  - Getting Started: getting_started.md
+  - FAQ: faq.md
+  - Outcomes: outcomes.md
+  - Assumptions: assumptions.md
   - Tools and Resources: tools_and_resources.md
-  - Configuring a Development Environment: python_dev_env.md
+  - Configure a Python Dev Environment: python_dev_env.md
   - Package Requirements: requirements.md
-  - Working with the Code: working_with_the_code.md
+  - Getting the Code: working_with_the_code.md
   - Using the Code:
     - The Modules: using_the_modules.md
-    - Start-to-Finish: start_to_finish.md
     - Test Cases: test_cases.md
-    - Google Colab Pages: google_colab_pages.md
-    - Package/Library API:
-      - accessor.py: accessor.md
-      - app_logging.py: app_logging.md
-      - create_tracking_id.py: create_tracking_id.md
-      - dns_query.py: dns_query.md
-      - discovery_message_package.py: einvoice_message_package.md
-      - line_item.py: line_item.md
-      - party_address.py: party_address.md
-      - semantic_model.py: semantic_model.md
-      - smp_query.py: smp_query.md
-      - urn_handler.py: urn_handler.md
-      - urn_hasher.py: urn_hasher.md
-      - urn.py: urn.md
-    - Flask Integration on Docker: flask_integration_on_docker.md
+    - Start-to-Finish: start_to_finish.md
+    - JupyterLab/Notebooks: google_colab_pages.md
+    # - Package/Library API:
+    #   - accessor.py: accessor.md
+    #   - app_logging.py: app_logging.md
+    #   - create_tracking_id.py: create_tracking_id.md
+    #   - dns_query.py: dns_query.md
+    #   - discovery_message_package.py: einvoice_message_package.md
+    #   - line_item.py: line_item.md
+    #   - party_address.py: party_address.md
+    #   - semantic_model.py: semantic_model.md
+    #   - smp_query.py: smp_query.md
+    #   - urn_handler.py: urn_handler.md
+    #   - urn_hasher.py: urn_hasher.md
+    #   - urn.py: urn.md
+    # - Flask Integration on Docker: flask_integration_on_docker.md
+  - Infrastructure Components: infrastructure_components.md
   - Project Roadmap: project_roadmap.md
-  - Enabling Infrastructure Components: enabling_infrastructure_components.md
-  - To do: todo.md
   - Project Artifacts: artifacts.md
   - Workflow: git_workflow.md
-  - OASIS Documentation: oasis_documentation.md
+  - OASIS Resources: oasis_documentation.md
   - License: _license.md

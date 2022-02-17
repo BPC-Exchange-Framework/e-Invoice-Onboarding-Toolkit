@@ -1,66 +1,28 @@
-___Install Python. Use a minimum of Python 3.6.  Recommended Python 3.10.___
+# Getting the code.
 
-## Create a Python viritual environment.  
+## Pulling the code from GitHub
 
-  The benefits of creating and running the code in a Python virtual software development environment can't be overstated.
+The e-Invoice-Onbarding-Tool is a public repository.  The code is freely available under an MIT Licene for individuals and organizations to pull, review, and modify as they chose in order to further their participation with the project.
 
-  Use the Python virtualization tool of your choice. Developers on the project have used conda, venv, virtualenv and pipenv.
+It is entirely possible to pull the code from github anonymously using a link from within the repo.
 
-* Create your virtual environment:
+??? Tip "Pulling the code from GitHub"
+    * Look for the green "Code" button which will provide links to clone the code using https, ssh, the git desktop, or a zip file.
 
-  Use pip for module and package management
+    * This going to pull the repo at the root ./e-invoice-Onboarding-Toolkit.
 
-* Update pip in your non-virtual python installation:
+    * Open the folder as a project within your IDE or editor of choice.
 
-  ```python -m pip install --upgrade pip```
+Those who would like to become more involved and want to do more than anonymously pull code can contribute by:
 
-  (If you are using a Mac or a system where the Python 3 install is not directly alias'ed or on path, substitute whatever is needed to call Python.)
+1. Creating a GitHub account if one hasn't already been created.
 
-* Execute "pip list" to see what's installed in the base Python installation.
+2. Installing the GitHub CLI or the GitHub desktop application
 
-  ```pip list```
-
-  There shouldn't be more than two or three packages.
-
-* Run the command to create your virtual environment.  In this case the virtualization is created using **venv**.
+3. Configuring the personal profile and ssh keys to securely submit code to the repository.
 
 
-  ```python -m venv .discovery```
 
-* Source the script file to activate the virtual environment
-
-  ```source ./.discovery/bin/activate```
-
-  This will place the virtual environment name at the beginning of the console prompt.
-
-  From here you are running in the virtual environment. Any modifications made to the environment should be isolated to your virtual Python instance. You can work on code located anywhere on your filesystem after activating the virtual environment.  
-
-  When done working in the virtual environment, enter the following command to exit it.
-
-  ```deactivate```
-
-## Get the code
-
-  Viewers of this page are presumed to be able to access github.
-
-  It is entirely possible to pull the code from github anonymously using a link from within the repo to do so.
-
-  If you want to do more than anonymously pull code and contribute:
-
-  1. Create a github account.
-
-  2. install the github cli or the github desktop application
-
-  3. Configure your personal profile and ssh keys to securely submit code to the repository.
-
-
-* Pull the code from github.
-
-  * Look for the green "Code" button which will provide links to clone the code using https, ssh, the git desktop, or a zip file.
-
-  * This going to pull the repo at the root ./e-invoice-Onboarding-Toolkit.
-
-  * Open the folder as a project within your IDE or editor of choice.
 
 
 
@@ -71,7 +33,7 @@ ___Install Python. Use a minimum of Python 3.6.  Recommended Python 3.10.___
               margin-left: 0px;
               margin-bottom: 40px;
               margin-right: auto;
-              width: 70%;
+              width: 100%;
               border-radius: 10px;">
     <h4 style="font-size: 14px;
               padding: 0px;

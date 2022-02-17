@@ -39,6 +39,7 @@ wheels/
 *.egg
 MANIFEST
 environment.yml
+einvoice_design.xlsx
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -138,6 +139,8 @@ __pycache__
 ./einvoice/__pycache__
 ./einvoice/delivery/__pycache__
 ./einvoice/delivery/tests/__pycache__
+./einvoice/__pycache__
+./einvoice/test/__pycache__
 .pyc
 .pyc
 .pyo
@@ -170,7 +173,15 @@ einvoice/docs/jupyterlab/untitled.txt
 einvoice/mkdocs.yml.bak
 einvoice/mkdocs.yml.old
 einvoice/docs/index_orig.md
-
+einvoice/discovery/tests
+einvoice/discovery/tests/*
+envoice/delivery/tests/
+einvoice/delivery/tests/*
+einvoice/mkdocs.yml.*
+einvoice/app.log
+app.log/
+einvoice/web_response.log
+web_response.log
 
 # certificate work
 *.pem

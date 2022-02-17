@@ -1,10 +1,10 @@
-## The Repo(sitory)<hr/>
+# The Repo(sitory)<hr/>
 
 
 ### Repository Layout
 
 This project includes the following files, _i.e., "artifacts"_ in __.py__, .__md__, .__txt__ and other formats, updated as of:  
-__02/07/2022 (February 7th, 2022)__
+__02/16/2022 (February 16th, 2022)__
 
 ```
 /e-Invoice-Onboarding-Toolkit  
@@ -20,8 +20,6 @@ __02/07/2022 (February 7th, 2022)__
 │   │   ├── import_xsd.py
 │   │   ├── sample_msg.xml
 │   │   └── tests
-│   │       ├── __init__.py
-│   │       └── test_import_xsd.py
 │   ├── discovery
 │   │   ├── __init__.py
 │   │   ├── accessor.py
@@ -45,37 +43,18 @@ __02/07/2022 (February 7th, 2022)__
 │   │   ├── party_address.py
 │   │   ├── semantic_model.py
 │   │   ├── smp_query.py
-│   │   ├── tests
-│   │   │   ├── __init__.py
-│   │   │   ├── ebms-header-3_0-20220119.xsd
-│   │   │   ├── ez_linter.sh
-│   │   │   ├── flake8_linter.sh
-│   │   │   ├── hardcore_linter.sh
-│   │   │   ├── magic_linter.py
-│   │   │   ├── mypy_linter.sh
-│   │   │   ├── pycodestyle_linter.sh
-│   │   │   ├── pydocstyle_linter.sh
-│   │   │   ├── pylint_linter.sh
-│   │   │   ├── test_accessor.py
-│   │   │   ├── test_app_logging.py
-│   │   │   ├── test_create_sample_data.py
-│   │   │   ├── test_create_tracking_id.py
-│   │   │   ├── test_dns_query.py
-│   │   │   ├── test_line_item.py
-│   │   │   ├── test_party_address.py
-│   │   │   ├── test_semantic_model.py
-│   │   │   ├── test_smp_query.py
-│   │   │   ├── test_urn.py
-│   │   │   ├── test_urn_hasher.py
-│   │   │   └── unaptr_response.json
 │   │   ├── urn.py
 │   │   └── urn_hasher.py
 │   ├── docs
 │   │   ├── __init__.py
 │   │   ├── _license.md
 │   │   ├── accessor.md
+│   │   ├── accessor_results.png
+│   │   ├── app_handler.md
+│   │   ├── app_log.png
 │   │   ├── app_logging.md
 │   │   ├── artifacts.md
+│   │   ├── assumptions.md
 │   │   ├── create_tracking_id.md
 │   │   ├── custom_theme
 │   │   │   ├── css
@@ -90,7 +69,6 @@ __02/07/2022 (February 7th, 2022)__
 │   │   ├── enabling_infrastructure_components.md
 │   │   ├── faq.md
 │   │   ├── flask_integration_on_docker.md
-│   │   ├── getting_started.md
 │   │   ├── git_workflow.md
 │   │   ├── google_colab_pages.md
 │   │   ├── index.md
@@ -107,6 +85,7 @@ __02/07/2022 (February 7th, 2022)__
 │   │   │   └── urn_hash_work.ipynb
 │   │   ├── line_item.md
 │   │   ├── oasis_documentation.md
+│   │   ├── outcomes.md
 │   │   ├── party_address.md
 │   │   ├── pdf
 │   │   │   ├── Bounded Context - Entity Relationships 1.4.pdf
@@ -120,6 +99,7 @@ __02/07/2022 (February 7th, 2022)__
 │   │   ├── semantic_model.md
 │   │   ├── smp_query.md
 │   │   ├── start_to_finish.md
+│   │   ├── successful_tests.png
 │   │   ├── test_cases.md
 │   │   ├── todo.md
 │   │   ├── tools_and_resources.md
@@ -128,11 +108,35 @@ __02/07/2022 (February 7th, 2022)__
 │   │   ├── urn_hasher.md
 │   │   ├── using_the_modules.md
 │   │   └── working_with_the_code.md
-│   └── mkdocs.yml
+│   ├── mkdocs.yml
+│   └── test
+│       ├── __init__.py
+│       ├── ebms-header-3_0-20220119.xsd
+│       ├── ez_linter.sh
+│       ├── flake8_linter.sh
+│       ├── hardcore_linter.sh
+│       ├── magic_linter.py
+│       ├── mypy_linter.sh
+│       ├── pycodestyle_linter.sh
+│       ├── pydocstyle_linter.sh
+│       ├── pylint_linter.sh
+│       ├── test_accessor.py
+│       ├── test_app_logging.py
+│       ├── test_create_sample_data.py
+│       ├── test_create_tracking_id.py
+│       ├── test_dns_query.py
+│       ├── test_import_xsd.py
+│       ├── test_line_item.py
+│       ├── test_party_address.py
+│       ├── test_semantic_model.py
+│       ├── test_smp_query.py
+│       ├── test_urn.py
+│       ├── test_urn_hasher.py
+│       └── unaptr_response.json
 ├── requirements.txt
 └── todo.md
 
-13 directories, 109 files
+13 directories, 113 files
 ```
 
 <div style="font-size: 12px;
