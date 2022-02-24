@@ -12,7 +12,7 @@ __A:__
 
 In order to do the SML look-up, the appropriate NAPTR records must be in place.  The assumption is that a NAPTR DNS record exists as a key:value pair.  A look-up of the "key" in the DNS of the NAPTR record will return the "value."  The "key" is the hashed value of the urn.  The value being sought and returned is the URI of the SMP for the next step in the Model.
 
-Access Point 1 in Corner 2 may be acting in the role of the SML and handling tasks associated with it.  Theses task could include:
+Access Point 1 in Corner 2 may be acting in the role of the SML and handling tasks associated with it.  Theses task could include:   
 * Creating the URN
 * Creaing the hash value of the URN
 * Queryhing the DNS NATPR record record

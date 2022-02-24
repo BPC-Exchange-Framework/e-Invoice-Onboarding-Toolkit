@@ -46,7 +46,14 @@ __A:__
 5. Integration of an example discovery process implemented in a [Flask application on a Docker container](./flask_integration_on_docker.md) (forthcoming).  
 
 
+__Q:__
 
+:   How do I make sense of all this?  
+
+__A:__
+: 1. Review the [Domain-Driven Design used to implement the Four Corner Model](../pdf/Bounded%20Context%20-%20Functional%20Capabilities%201.3.pdf) which gives an overivew of the process and the Ubiquitous Language used in development.  
+: 2.   Review the [e-invoice workflow](../pdf/4-Corners_Workflow.pdf)
+: 3. Review the [Projrct Roadmap](../pdf/BP-OpenSourceToolsRoadmap.pdf)]
 
 <div style="font-size: 12px;
             padding: 15px;
