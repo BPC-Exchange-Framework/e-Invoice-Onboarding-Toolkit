@@ -946,7 +946,39 @@
         <section class="print-page" id="index"><h1 id="index-project-home">Project Home</h1>
 <h2 id="index-welcome">Welcome</h2>
 <p><strong>Welcome to the E-Invoice Onboarding Toolkit</strong>  </p>
-<p>This is a repository for open source software tools created to facilitate market adoption of E-Invoices implemented conformant with the Four-Corner interoperability model framework.   </p>
+<p>This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner interoperability model framework.   </p>
+<details class="alert"><summary>The three main features or goals of the project are oultined in the <a href="#projrct_roadmap.md">project roadmap</a>.</summary><table>
+<thead>
+<tr>
+<th>Roadmap Feature</th>
+<th>Feature Phase</th>
+<th>Purpose of Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feature #1 - SML NAPTR DNS Lookup</td>
+<td>Discovery</td>
+<td>1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the buyer.</td>
+</tr>
+<tr>
+<td>Freatute #2 - SMP REST API Query</td>
+<td>Discovery</td>
+<td>Contact the website  from the previous step to make sure the buyer can in fact handle  receiving an e-invoice and where to send it.</td>
+</tr>
+<tr>
+<td>Feature #3 - AS4 Message Exchange</td>
+<td>Delivery</td>
+<td>Validate that an e-mail message sent to the buyer is in the correct format.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>The 
+1.  Create an ID code based on the Buyer's party ID
+1. Look the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the buyer.
+1.  Contact the website  from the previous step to make sure the buyer can in fact handle  receiving an e-invoice and where to send it.
+1.  Validate that an e-mail message sent to the buyer is in the correct format.  </p>
 <details class="important" open="open"><summary>Outcomes</summary><ol>
 <li>Hashing functionality to derive the urn for look-up in a DNS NAPTR record.  </li>
 <li>DNS NATPR lookup and extract the relevant SMP URI.  </li>
