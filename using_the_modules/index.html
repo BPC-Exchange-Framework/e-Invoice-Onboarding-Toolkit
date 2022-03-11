@@ -52,6 +52,8 @@
     
       <link rel="stylesheet" href="../css/print-site-material.css">
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -476,8 +478,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../start_to_finish/" class="md-nav__link">
-        Start-to-Finish
+      <a href="../discovery_validation/" class="md-nav__link">
+        Discovery Validation
       </a>
     </li>
   
@@ -896,14 +898,14 @@
 </tr>
 <tr>
 <td>ebms-header-3_20220119.xsd, sample_msg.xml</td>
-<td>XSD containing schema definition for for ebMS header and a sample message to test against it.</td>
+<td>XSD containing schema definition for ebMS header and a sample message to test against it.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="note-on-classes-with-modules">Note on classes with modules.</h2>
 <details class="info" open="open"><summary>All module code is in classes and methods.</summary><p>All code in the discovery and delivery sub-packages is encapsulated in a class and a method within a class.  There are no excutable functions outside of a class.</p>
-<p><em>There is no entry point to execute this code and instantiate any of the classes or methods at the commandline.</em></p>
-<p>Examples of implementing and executing the code can be found in the <a href="../test_cases/">test cases</a>, <a href="../start_to_finish/">start-to-finish example</a>, or the <a href="../google_colab_pages/">JupyterLab/Notebooks</a>.</p>
+<p><em>There is no entry point to execute this code and instantiate any of the classes or methods at the command line at this time.</em></p>
+<p>Examples of implementing and executing the code can be found in the <a href="../test_cases/">test cases</a>, <a href="./start_to_finish.md">start-to-finish example</a>, or the <a href="../google_colab_pages/">JupyterLab/Notebooks</a>.</p>
 <p>Test cases are not encapsulated in classes or methods but are instead named functions.</p>
 </details>
 <p>The code is as Pythonic as possible in naming files for exactly what they do.  The functionality can be broken down as:</p>
@@ -930,7 +932,7 @@
 <li>
 <p>Other "helper" modules -</p>
 <ul>
-<li>accessory.py - module to run the "Start-To-Finish" process, execute via test scripts.</li>
+<li>accessor.py - module to run the "Start-To-Finish" process, execute via test scripts.</li>
 <li>create_sample_data.py - construct sample data entities to use in testing the semantic model.</li>
 <li>create_tracking_id.py - create an arbitrary id with a given configuraiton to use to track the message through the process.  Could be used in lieu of a UUID.</li>
 <li>app_handler.py - module closest to being an executable form the command line.  A prototpye module to run the "Start-to-Finish" directly, if all required configuration is complete.  </li>
@@ -938,20 +940,9 @@
 </ul>
 </li>
 </ul>
-<div style="font-size: 12px;
-              padding: 15px;
-              border: 2px solid lightgray;
-              margin-top: 100px;
-              margin-left: 0px;
-              margin-bottom: 40px;
-              margin-right: auto;
-              width: 100%;
-              border-radius: 10px;">
-    <h4 style="font-size: 14px;
-              padding: 0px;
-              margin: 0px;">No Representations or Warranties</h5>
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  </div>
+<p><br/>
+<br/>
+<br/></p>
 
               
             </article>
@@ -999,15 +990,42 @@
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
+      <div class="md-footer-copyright">
+    <div class="md-copyright">
+        
+         
+        <!-- <div class="md-copyright__highlight">
+        Copyright &copy; 2022 - BPC Open Source Tools Project
+      </div>
+      --->
+      <div class="md-copyright-display">
+        Copyright &copy; 2022 - BPC Open Source Tools Project</div>
+        <div class="md-footer-disclaimer-text">
+            <div class="md-footer-disclaimer-statement">
+                No Representations or Warranties
+            </div>
+
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+            LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+            EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+            AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+            OR OTHER DEALINGS IN THE SOFTWARE.
+
+        </div>
+
+
+
+        
+        
+        <div>
+            Made with
+            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+                Material for MkDocs
+            </a>
+            <div>
+                
+            </div>
+        </div>
       
     </div>
   </div>

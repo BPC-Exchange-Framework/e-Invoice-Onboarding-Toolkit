@@ -52,6 +52,8 @@
     
       <link rel="stylesheet" href="../css/print-site-material.css">
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -475,8 +477,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../start_to_finish/" class="md-nav__link">
-        Start-to-Finish
+      <a href="../discovery_validation/" class="md-nav__link">
+        Discovery Validation
       </a>
     </li>
   
@@ -681,8 +683,12 @@
 <strong>The Pytest package must be installed in your Python distribution.</strong></p>
 </details>
 <p>From the a terminal console, change directory into the ./einvoice/test  directory.  </p>
-<p>To see the list of available test files, either in your file browser or via the command line
-<div class="highlight"><pre><span></span><code>(&quot;dir .\einvoice\tests\&quot; or &quot;ls -al ./einvoice/tests/&quot;).
+<p>To see the list of available test files, use either the file browser or the command line.
+For Windows: 
+<div class="highlight"><pre><span></span><code>dir .\einvoice\tests\
+</code></pre></div>
+For Mac/*nix/WSL2:
+<div class="highlight"><pre><span></span><code>ls -al ./einvoice/tests/ 
 </code></pre></div></p>
 <details class="important" open="open"><summary>The ./test directory <strong>must</strong> be at the same level as the code.</summary><p>Out of the box, Pytest requires that without additional configuration it must be executed from  a directory at the same level of the code that's being tested.  That is, test scripts are in ./einvoice/test and code files are in ./einvoice/discovery and ./einvoice/delivery.   </p>
 </details>
@@ -691,7 +697,7 @@
 </code></pre></div></p>
 <p>No test is dependent on any other, and each may be run on its own, or run them all at once, in any order.  </p>
 <p>The test will run and either the "assert" statement(s) inside will pass, or it will fail.  </p>
-<p>Failures MUST be resolved prior to attempting to check code into GitHub as our baseline CI/CD process checks for these failures before committing and will not continue if any are found.</p>
+<p><strong>Failures MUST be resolved prior to attempting to check code into GitHub as our baseline CI/CD process checks for these failures before committing and will not continue if any are found.</strong></p>
 <p>The included assert statements currently test a variety of cases up to validation of urn creation, query of the NAPTR DNS record, REST API call to the SMP, and validation of the ebMS header against the AS4 conformance profile.  </p>
 <p>The test folder also contains a number of shell scripts to validate the code using  a number of linters including flake8, pylint, mypy, pycodestyte, and pydocstyle.   Prior to check in, all code has had warnings from all linters resolved or noted.  </p>
 <figure>
@@ -699,20 +705,9 @@
   </p>
 <figcaption>Successful completion of all test cases.</figcaption>
 </figure>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div>
+<p><br/>
+<br/>
+<br/></p>
 
               
             </article>
@@ -742,13 +737,13 @@
       
       
         
-        <a href="../start_to_finish/" class="md-footer__link md-footer__link--next" aria-label="Next: Start-to-Finish" rel="next">
+        <a href="../discovery_validation/" class="md-footer__link md-footer__link--next" aria-label="Next: Discovery Validation" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Start-to-Finish
+              Discovery Validation
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -760,15 +755,42 @@
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
+      <div class="md-footer-copyright">
+    <div class="md-copyright">
+        
+         
+        <!-- <div class="md-copyright__highlight">
+        Copyright &copy; 2022 - BPC Open Source Tools Project
+      </div>
+      --->
+      <div class="md-copyright-display">
+        Copyright &copy; 2022 - BPC Open Source Tools Project</div>
+        <div class="md-footer-disclaimer-text">
+            <div class="md-footer-disclaimer-statement">
+                No Representations or Warranties
+            </div>
+
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+            LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+            EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+            AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+            OR OTHER DEALINGS IN THE SOFTWARE.
+
+        </div>
+
+
+
+        
+        
+        <div>
+            Made with
+            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+                Material for MkDocs
+            </a>
+            <div>
+                
+            </div>
+        </div>
       
     </div>
   </div>

@@ -52,6 +52,8 @@
     
       <link rel="stylesheet" href="css/print-site-material.css">
     
+      <link rel="stylesheet" href="css/extra.css">
+    
     <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -286,8 +288,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#this-project" class="md-nav__link">
-    This Project
+  <a href="#project-goals" class="md-nav__link">
+    Project Goals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-outcomes" class="md-nav__link">
+    Project Outcomes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-map" class="md-nav__link">
+    Site Map
   </a>
   
 </li>
@@ -467,8 +483,8 @@
   
   
     <li class="md-nav__item">
-      <a href="start_to_finish/" class="md-nav__link">
-        Start-to-Finish
+      <a href="discovery_validation/" class="md-nav__link">
+        Discovery Validation
       </a>
     </li>
   
@@ -634,8 +650,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#this-project" class="md-nav__link">
-    This Project
+  <a href="#project-goals" class="md-nav__link">
+    Project Goals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-outcomes" class="md-nav__link">
+    Project Outcomes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-map" class="md-nav__link">
+    Site Map
   </a>
   
 </li>
@@ -660,8 +690,9 @@
 <h1 id="project-home">Project Home</h1>
 <h2 id="welcome">Welcome</h2>
 <p><strong>Welcome to the E-Invoice Onboarding Toolkit</strong>  </p>
-<p>This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner interoperability model framework.   </p>
-<details class="alert"><summary>The three main features or goals of the project are oultined in the <a href="./projrct_roadmap.md">project roadmap</a>.</summary><table>
+<p>This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner Model of an Exchange Framework.   </p>
+<h2 id="project-goals">Project Goals</h2>
+<details class="alert" open="open"><summary>GOALS: The features of the project as oultined in the <a href="./projrct_roadmap.md">project roadmap</a>. </summary><table>
 <thead>
 <tr>
 <th>Roadmap Feature</th>
@@ -673,38 +704,67 @@
 <tr>
 <td>Feature #1 - SML NAPTR DNS Lookup</td>
 <td>Discovery</td>
-<td>1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the buyer.</td>
+<td>1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the Buyer.</td>
 </tr>
 <tr>
-<td>Freatute #2 - SMP REST API Query</td>
+<td>Feature #2 - SMP REST API Query</td>
 <td>Discovery</td>
-<td>Contact the website  from the previous step to make sure the buyer can in fact handle  receiving an e-invoice and where to send it.</td>
+<td>3. Contact the website  from the previous step to make sure the Buyer can in fact handle receiving an e-invoice and where to send it.</td>
 </tr>
 <tr>
 <td>Feature #3 - AS4 Message Exchange</td>
 <td>Delivery</td>
-<td>Validate that an e-mail message sent to the buyer is in the correct format.</td>
+<td>4. Validate that an e-mail message sent to the Buyer is in the correct format.</td>
 </tr>
 </tbody>
 </table>
 </details>
-<p>The 
-1.  Create an ID code based on the Buyer's party ID
-1. Look the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the buyer.
-1.  Contact the website  from the previous step to make sure the buyer can in fact handle  receiving an e-invoice and where to send it.
-1.  Validate that an e-mail message sent to the buyer is in the correct format.  </p>
-<details class="important" open="open"><summary>Outcomes</summary><ol>
-<li>Hashing functionality to derive the urn for look-up in a DNS NAPTR record.  </li>
-<li>DNS NATPR lookup and extract the relevant SMP URI.  </li>
-<li>Two REST requests to an SMP server to retrieve a Corner 3 URI.  </li>
-<li>Execute the REST requests to the SMP server.  </li>
-<li>Extract the Corner 3 endpoint URI from the response from the SMP server.    </li>
-<li>Validate an E-Invoice ebMS message header for compliance with an AS4 conformance profile.  </li>
-</ol>
+<h2 id="project-outcomes">Project Outcomes</h2>
+<details class="important" open="open"><summary>OUTCOMES: How the features are implemented.</summary><table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th>Feature</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Hashing functionality to derive the urn for look-up in a DNS NAPTR record.</td>
+<td>Feature #1</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>2. Execute DNS NATPR lookup and extract the relevant SMP URI.</td>
+<td>Feature #1</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>3. Two REST requests to an SMP server using a SOAP API to retrieve a Corner 3 URI.</td>
+<td>Feature #1</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>4. Execute the wbe service requests to the SMP server.</td>
+<td>Feature #2</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>5. Extract the Corner 3 endpoint URI from the response from the SMP server.</td>
+<td>Feature #2</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>6. Validate an E-Invoice ebMS message header for compliance with an AS4 conformance profile.</td>
+<td>Feature #3</td>
+<td>Delivery</td>
+</tr>
+</tbody>
+</table>
 </details>
 <p>For information about E-Invoices and implementing the Four-Corner Model please visit the <a href="https://businesspaymentscoalition.org/electronic-invoices">Business Payments Coalition website</a>.  </p>
 <p>Additional documentation, reference materials, and standards can be found on the <a href="https://www.oasis-open.org">Oasis-Open.org website</a>. Start with the <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html">ebXML specification</a></p>
-<h2 id="this-project">This Project</h2>
+<h2 id="site-map">Site Map</h2>
 <ul>
 <li><a href=".">Project Home</a></li>
 <li><a href="faq/">FAQ</a></li>
@@ -717,7 +777,7 @@
 <li>Using the Code<ul>
 <li><a href="./using_the_modules">Using the Modules</a></li>
 <li><a href="test_cases/">Test Cases</a></li>
-<li><a href="start_to_finish/">Start-to-Finish example</a></li>
+<li><a href="discovery_validation/">Discovery Validation</a></li>
 <li><a href="google_colab_pages/">JupyterLab/Notebooks</a></li>
 </ul>
 </li>
@@ -728,20 +788,6 @@
 <li><a href="oasis_documentation/">Oasis Resources</a></li>
 <li><a href="_license/">License</a></li>
 </ul>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div>
 
               
             </article>
@@ -774,15 +820,42 @@
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
+      <div class="md-footer-copyright">
+    <div class="md-copyright">
+        
+         
+        <!-- <div class="md-copyright__highlight">
+        Copyright &copy; 2022 - BPC Open Source Tools Project
+      </div>
+      --->
+      <div class="md-copyright-display">
+        Copyright &copy; 2022 - BPC Open Source Tools Project</div>
+        <div class="md-footer-disclaimer-text">
+            <div class="md-footer-disclaimer-statement">
+                No Representations or Warranties
+            </div>
+
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+            LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+            EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+            AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+            OR OTHER DEALINGS IN THE SOFTWARE.
+
+        </div>
+
+
+
+        
+        
+        <div>
+            Made with
+            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+                Material for MkDocs
+            </a>
+            <div>
+                
+            </div>
+        </div>
       
     </div>
   </div>

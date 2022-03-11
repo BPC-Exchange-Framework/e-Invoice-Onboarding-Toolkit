@@ -52,6 +52,8 @@
     
       <link rel="stylesheet" href="../css/print-site-material.css">
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -467,8 +469,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../start_to_finish/" class="md-nav__link">
-        Start-to-Finish
+      <a href="../discovery_validation/" class="md-nav__link">
+        Discovery Validation
       </a>
     </li>
   
@@ -684,7 +686,7 @@
 <tbody>
 <tr>
 <td>MacOS</td>
-<td>Mac OS comes configured with Python 2.x. Don't attempt to remove it or replace it .  <a href="https://brew.sh">Homebrew</a> is a package installer for Mac. However given some past and outstanding issues between Homebrew and Python, versions of Python prior to Python 3.7 may generate errors on install.  <a href="https://developer.apple.com/xcode/">Apple XCode Developer Tools</a> installs Git and a version of Python.  Available through the App Store it is a large download and system intensive program.  A more granular installation would be the <a href="https://mac.install.guide/commandlinetools/4.html">XCode Command Line Tools</a> which installs Git combined with a Python install pulled directly from Python.org.</td>
+<td>Mac OS comes configured with Python 2.x. Don't attempt to remove it or replace it.  <a href="https://brew.sh">Homebrew</a> is a package installer for Mac. However given some past and outstanding issues between Homebrew and Python, versions of Python prior to Python 3.7 may generate errors on install.  <a href="https://developer.apple.com/xcode/">Apple XCode Developer Tools</a> installs Git and a version of Python.  Available through the App Store it is a large download and system intensive program.  A more granular installation would be the <a href="https://mac.install.guide/commandlinetools/4.html">XCode Command Line Tools</a> which installs Git combined with a Python install pulled directly from Python.org.</td>
 </tr>
 <tr>
 <td>WindowsOS</td>
@@ -750,94 +752,11 @@ Note that the above included an alias for pip to pip3 as well.  </p>
 <p>Compare with "venv virtualenv" which calls <strong>venv</strong> to create a virtual environment called <strong>virtualenv</strong>.  For most practical purposes when using Python 3.6 or greater it doesn't matter whether <strong>venv</strong> or <strong>virtualenv</strong> is used to create the virtual instance.</p>
 <p>But don't use "virtualenv venv."  That's just obnoxious.</p>
 </details>
-<details class="note"><summary>Other Python Tools</summary><p>Other tools such as <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a>, <a href="https://pipenv.pypa.io/en/latest/">pipenv</a>, <a href="https://github.com/berdario/pew">pew</a>, <a href="https://tox.wiki/en/latest/">tox</a> and <a href="https://nox.thea.codes/en/stable/">nox</a> may be useful but are not currently utilized in this project.  <a href="https://github.com/pyenv">Pyenv</a> was deprecated in Python 3.5 and not utilized.</p>
+<details class="note" open="open"><summary>Other Python Tools</summary><p>Other tools such as <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a>, <a href="https://pipenv.pypa.io/en/latest/">pipenv</a>, <a href="https://github.com/berdario/pew">pew</a>, <a href="https://tox.wiki/en/latest/">tox</a> and <a href="https://nox.thea.codes/en/stable/">nox</a> may be useful but are not currently utilized in this project.  <a href="https://github.com/pyenv">Pyenv</a> was deprecated in Python 3.5 and not utilized.</p>
 </details>
-<!-- ## Docker and flask
-
-This project utilize [Docker](https://www.docker.com) and [flask](https://pypi.org/project/Flask/).
-
-For support of Docker development on the Mac, use Homebrew as outlined above to install Docker locally.  If necessary to issue Docker commands or use the Docker API from with Python, include the Docker package in the virtual environment.
-
-<div class="highlight"><pre><span></span><code>pip install docker
-</code></pre></div>
-
-Install the flask framework using pip as well.
-
-<div class="highlight"><pre><span></span><code>pip install flask
-</code></pre></div>
-<br /><br />
-
-## Include Documentation
-To incorporate documentation into the application at every step, bring in the Sphinx package.
-
-<div class="highlight"><pre><span></span><code>pip install sphinx
-</code></pre></div>
-
-Then run sphix-quickstart in your project's top-level directory.
-
-Sphinx uses reStructured Text as a form of Markdown.  For a brief overview see [A ReStructuredText Primer](https://docutils.sourceforge.io/docs/user/rst/quickstart.html) or [Quick reStructuredText](https://docutils.sourceforge.io/docs/user/rst/quicktest.html).
-
-Additonal support documenting the project may include utilzing a resource like [Read the Docs](http://readthedocs.org).
-
-- See also: [PEP-257 Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
-
-<br /><br />
-
-## Test Driven Development
-
-Incorporate [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) methodologies.   
-Create the test scenarios before the actual coding.  
-
-Primary source material for review can be found at [obeythetestinggoat.com](https://www.obeythetestinggoat.com)
-
-
-<br /><br />
-
-## Text Editors and IDEs
-There are numerous tools for text editing and softwre development.  Personal preference, specialization versus generalization, and cost may all play a part in choice of tools used for development.  Here is a short list of well known and supported tools available for free or under an Open Source license.  (No compensation isß received for any reference to materials on this page.)
-- [Visual Studio Code](https://code.visualstudio.com/) by Microsoft.  "Built on Open Source" the Code version is free and has many plug-ins.  It's a mature IDE with the polish of a Microsoft product.  Not the behemouth of the full Visual Studio IDE.  Available for Windows/Mac/Linux.  There is a version of Visual Studio Code compiled with all the non-Open Source components removed called [VSCodium](https://vscodium.com/).  Or compile it from source available at GitHub resulting in a product called [Code - OSS](https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run).
-- [Atom Text Editor](https://atom.io/).  A highly customizable text editor which is programming language agnostic and completely open source and available (packaged and source) on GitHub.  Available for Windows/Mac/Linux.
-- [PyCharm Community Edition](https://www.jetbrains.com/pycharm/) by JetBrains. A Python specific IDE.  The Community Edition is Free and Open Source, albeit with some limited functionality. Available for Windows/Mac/Linux.
-
- - (Optional) Install Jupyter lab and notebooks.Jupyter notebooks (deprecated in favor of JupyterLab, though the notebook format remains the same) are especially popular for use in Data Science and ML.  Runs locally on a Python framework. They are used to create documentation in Markdown and write and execute code that might not require an entire program.  Supports other languages such as R and Julia.  Can also be installed through Anaconda.  
-
-<div class="highlight"><pre><span></span><code>cd /Users/kelly/Dev/virtualenvs
-virtualenv --python python3.9 jupiter
-python -m pip install --upgrade pip
-pip install jupyter
-pip install jupyterlab
-</code></pre></div>
-
-Start jupyterlab by running it from within your Python virtualenv /bin directory.  
-At runtime, point it to the location of your GITHub root, e.g.,   
-<div class="highlight"><pre><span></span><code>./jupyter-lab --notebook-dir /Users/kelly/GitHub
-</code></pre></div>
-
-<br /><br />                                          
-
-## Additional Resources
-
-There is a wealth of high quality documentation and writing about Python in digital and paper print and on the web in addition to that directly refered to above.  As a starting point, see the following materials.  (Again, no compensation is received for any reference to materials on this page.)
-- [The Hitchhiker's Guide to Python](https://docs.python-guide.org) by Kenneth Reitz and Tanya Schlusser.
-- [Serious Python](https://nostarch.com/seriouspython) by Julien Danjoy
-- [Guiding Design Principles](https://nsls-ii.github.io/scientific-python-cookiecutter/guiding-design-principles.html) from the [Scientific Python Cookiecutter](https://nsls-ii.github.io/scientific-python-cookiecutter/index.html).
-- [Python Doc](https://www.python.org/doc/) - the official Python web site page of references to more documentation.
- -->
-
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div>
+<p><br/>
+<br/>
+<br/></p>
 
               
             </article>
@@ -885,15 +804,42 @@ There is a wealth of high quality documentation and writing about Python in digi
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
+      <div class="md-footer-copyright">
+    <div class="md-copyright">
+        
+         
+        <!-- <div class="md-copyright__highlight">
+        Copyright &copy; 2022 - BPC Open Source Tools Project
+      </div>
+      --->
+      <div class="md-copyright-display">
+        Copyright &copy; 2022 - BPC Open Source Tools Project</div>
+        <div class="md-footer-disclaimer-text">
+            <div class="md-footer-disclaimer-statement">
+                No Representations or Warranties
+            </div>
+
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+            LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+            EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+            AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+            OR OTHER DEALINGS IN THE SOFTWARE.
+
+        </div>
+
+
+
+        
+        
+        <div>
+            Made with
+            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+                Material for MkDocs
+            </a>
+            <div>
+                
+            </div>
+        </div>
       
     </div>
   </div>

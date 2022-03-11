@@ -52,6 +52,8 @@
     
       <link rel="stylesheet" href="../css/print-site-material.css">
     
+      <link rel="stylesheet" href="../css/extra.css">
+    
     <script>__md_scope=new URL("/BPC-OpenSourceTools/E-Invoice-Onboarding-Toolkit/",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -425,8 +427,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../start_to_finish/" class="md-nav__link">
-        Start-to-Finish
+      <a href="../discovery_validation/" class="md-nav__link">
+        Discovery Validation
       </a>
     </li>
   
@@ -657,8 +659,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#start_to_finish" class="md-nav__link">
-    Start-to-Finish
+  <a href="#discovery_validation" class="md-nav__link">
+    Discovery Validation
   </a>
   
 </li>
@@ -828,8 +830,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#start_to_finish" class="md-nav__link">
-    Start-to-Finish
+  <a href="#discovery_validation" class="md-nav__link">
+    Discovery Validation
   </a>
   
 </li>
@@ -927,6 +929,11 @@
     
 
     
+    <tr>
+        <td>Copyright</td>
+        <td>Copyright &copy; 2022 - BPC Open Source Tools Project</td>
+    </tr>
+    
 
 </table>
 
@@ -946,8 +953,9 @@
         <section class="print-page" id="index"><h1 id="index-project-home">Project Home</h1>
 <h2 id="index-welcome">Welcome</h2>
 <p><strong>Welcome to the E-Invoice Onboarding Toolkit</strong>  </p>
-<p>This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner interoperability model framework.   </p>
-<details class="alert"><summary>The three main features or goals of the project are oultined in the <a href="#projrct_roadmap.md">project roadmap</a>.</summary><table>
+<p>This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner Model of an Exchange Framework.   </p>
+<h2 id="index-project-goals">Project Goals</h2>
+<details class="alert" open="open"><summary>GOALS: The features of the project as oultined in the <a href="#projrct_roadmap.md">project roadmap</a>. </summary><table>
 <thead>
 <tr>
 <th>Roadmap Feature</th>
@@ -959,38 +967,67 @@
 <tr>
 <td>Feature #1 - SML NAPTR DNS Lookup</td>
 <td>Discovery</td>
-<td>1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the buyer.</td>
+<td>1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the Buyer.</td>
 </tr>
 <tr>
-<td>Freatute #2 - SMP REST API Query</td>
+<td>Feature #2 - SMP REST API Query</td>
 <td>Discovery</td>
-<td>Contact the website  from the previous step to make sure the buyer can in fact handle  receiving an e-invoice and where to send it.</td>
+<td>3. Contact the website  from the previous step to make sure the Buyer can in fact handle receiving an e-invoice and where to send it.</td>
 </tr>
 <tr>
 <td>Feature #3 - AS4 Message Exchange</td>
 <td>Delivery</td>
-<td>Validate that an e-mail message sent to the buyer is in the correct format.</td>
+<td>4. Validate that an e-mail message sent to the Buyer is in the correct format.</td>
 </tr>
 </tbody>
 </table>
 </details>
-<p>The 
-1.  Create an ID code based on the Buyer's party ID
-1. Look the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the buyer.
-1.  Contact the website  from the previous step to make sure the buyer can in fact handle  receiving an e-invoice and where to send it.
-1.  Validate that an e-mail message sent to the buyer is in the correct format.  </p>
-<details class="important" open="open"><summary>Outcomes</summary><ol>
-<li>Hashing functionality to derive the urn for look-up in a DNS NAPTR record.  </li>
-<li>DNS NATPR lookup and extract the relevant SMP URI.  </li>
-<li>Two REST requests to an SMP server to retrieve a Corner 3 URI.  </li>
-<li>Execute the REST requests to the SMP server.  </li>
-<li>Extract the Corner 3 endpoint URI from the response from the SMP server.    </li>
-<li>Validate an E-Invoice ebMS message header for compliance with an AS4 conformance profile.  </li>
-</ol>
+<h2 id="index-project-outcomes">Project Outcomes</h2>
+<details class="important" open="open"><summary>OUTCOMES: How the features are implemented.</summary><table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th>Feature</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Hashing functionality to derive the urn for look-up in a DNS NAPTR record.</td>
+<td>Feature #1</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>2. Execute DNS NATPR lookup and extract the relevant SMP URI.</td>
+<td>Feature #1</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>3. Two REST requests to an SMP server using a SOAP API to retrieve a Corner 3 URI.</td>
+<td>Feature #1</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>4. Execute the wbe service requests to the SMP server.</td>
+<td>Feature #2</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>5. Extract the Corner 3 endpoint URI from the response from the SMP server.</td>
+<td>Feature #2</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>6. Validate an E-Invoice ebMS message header for compliance with an AS4 conformance profile.</td>
+<td>Feature #3</td>
+<td>Delivery</td>
+</tr>
+</tbody>
+</table>
 </details>
 <p>For information about E-Invoices and implementing the Four-Corner Model please visit the <a href="https://businesspaymentscoalition.org/electronic-invoices">Business Payments Coalition website</a>.  </p>
 <p>Additional documentation, reference materials, and standards can be found on the <a href="https://www.oasis-open.org">Oasis-Open.org website</a>. Start with the <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html">ebXML specification</a></p>
-<h2 id="index-this-project">This Project</h2>
+<h2 id="index-site-map">Site Map</h2>
 <ul>
 <li><a href="#.">Project Home</a></li>
 <li><a href="#faq">FAQ</a></li>
@@ -1003,7 +1040,7 @@
 <li>Using the Code<ul>
 <li><a href="#using_the_modules">Using the Modules</a></li>
 <li><a href="#test_cases">Test Cases</a></li>
-<li><a href="#start_to_finish">Start-to-Finish example</a></li>
+<li><a href="#discovery_validation">Discovery Validation</a></li>
 <li><a href="#google_colab_pages">JupyterLab/Notebooks</a></li>
 </ul>
 </li>
@@ -1013,21 +1050,7 @@
 <li><a href="#git_workflow">Workflow</a></li>
 <li><a href="#oasis_documentation">Oasis Resources</a></li>
 <li><a href="#_license">License</a></li>
-</ul>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="faq"><h1 id="faq-questions">Questions...</h1>
+</ul></section><section class="print-page" id="faq"><h1 id="faq-questions">Questions...</h1>
 <hr>
 <dl>
 <dt><strong>Q:</strong></dt>
@@ -1068,7 +1091,7 @@
 </dd>
 <dt><strong>A:</strong></dt>
 <dd>There are a number of ways the code can be examined or worked with:<br />
-1. <a href="#start_to_finish">Start to finish example of the  URI discovery process</a>.<br />
+1. <a href="#faq-start_to_finish.md">Start to finish example of the  URI discovery process</a>.<br />
 2. <a href="#test_cases">Test Cases</a> which demonstrate functionality of the modules.<br />
 3. Jupyter Notebook sandbox environments at <a href="#google_colab_pages">Google Colab Pages</a> which isolate and demonstrate the code in a sandbox.<br />
 4. Package/Library API see the <a href="#.">Index</a> for links to the code API on the modules themselves.<br />
@@ -1086,20 +1109,9 @@
 </ol>
 </dd>
 </dl>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="outcomes"><h1 id="outcomes-project-outcomes">Project Outcomes:<hr></h1>
+<p><br/>
+<br/>
+<br/></p></section><section class="print-page" id="outcomes"><h1 id="outcomes-project-outcomes">Project Outcomes:<hr></h1>
 <h2 id="outcomes-functionality">Functionality</h2>
 <ol>
 <li>Hashing functionality to derive the urn for look-up in a DNS NAPTR record.  </li>
@@ -1217,21 +1229,9 @@
 <li class="task-list-item"><input type="checkbox" checked/> Test-driven development methodology is being implemented to include test cases for code as it is being developed and delivered.  </li>
 <li class="task-list-item"><input type="checkbox" checked/> CI/CD process implemented via Github workflow has been validated to ensure PEP8 code standards and checks using Flake8, pylint, and pytest are valid.  All changes and updates to code must pass CI/CD before it's merged into the repo.   </li>
 </ul>
-<p><br/><br/></p>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="assumptions"><h1 id="assumptions-diving-in-to-the-e-invoice-onboarding-toolkit">Diving in to the E-Invoice Onboarding Toolkit</h1>
+<p><br/>
+<br/>
+<br/></p></section><section class="print-page" id="assumptions"><h1 id="assumptions-diving-in-to-the-e-invoice-onboarding-toolkit">Diving in to the E-Invoice Onboarding Toolkit</h1>
 <h4 id="assumptions-about">About</h4>
 <p>This project offers examples of Python code written to interact with an access point or discovery service of a Four-Corner Model.   </p>
 <p>Please see the <a href="https://businesspaymentscoalition.org/electronic-invoices/">Business Payments Coalition</a> website for more information and an explanation of the Model.  </p>
@@ -1240,20 +1240,9 @@
 <p>The software included with the project assumes a baseline understanding of the Four-Corner Model and its constituent components.  </p>
 <h5 id="assumptions-python">Python</h5>
 <p>The primary programming language chosen for the project is Python.  To implement and run the code in <a href="https://github.com/BPC-OpenSourceTools/E-Invoice-Onboarding-Toolkit">this project</a> requires a working knowledge of Python. This wiki and additional documentation are intended to further outline how the software is designed to implement the Four-Corner Model.  </p>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="tools_and_resources"><h1 id="tools_and_resources-tools-and-resources">Tools and Resources</h1>
+<p><br/>
+<br/>
+<br/></p></section><section class="print-page" id="tools_and_resources"><h1 id="tools_and_resources-tools-and-resources">Tools and Resources</h1>
 <p><strong>GOAL:</strong> Create, test, deploy, and maintain code to the highest professional standards.</p>
 <p><strong>HOW:</strong> Tools and best practices which facilitate development of high quality code with testable and reproducible outcomes.</p>
 <h3 id="tools_and_resources-quick-guide">Quick Guide</h3>
@@ -1391,20 +1380,9 @@
 <li><ins>Architecture Patterns with Python</ins> by Harry J.W. Percival and Bob Gregory</li>
 <li><ins>Pro Git</ins> by Scott Chacon and Ben Straub. <a href="https://git-scm.com/book/en/v2">Available as a free download</a> under an open source license.</li>
 </ul>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="python_dev_env"><h1 id="python_dev_env-configure-a-python-dev-environment">Configure a Python Dev Environment</h1>
+<p><br/>
+<br/>
+<br/></p></section><section class="print-page" id="python_dev_env"><h1 id="python_dev_env-configure-a-python-dev-environment">Configure a Python Dev Environment</h1>
 <p>Respecting individual preferences and work style these are some suggested guidelines  for creation of a Python development environment.  These are consistent with Python standards and best practices and appropriate as a starting point for professional software development in Python.  </p>
 <!-- _Important items for consideration include:_
 - Installation of Python
@@ -1431,7 +1409,7 @@
 <tbody>
 <tr>
 <td>MacOS</td>
-<td>Mac OS comes configured with Python 2.x. Don't attempt to remove it or replace it .  <a href="https://brew.sh">Homebrew</a> is a package installer for Mac. However given some past and outstanding issues between Homebrew and Python, versions of Python prior to Python 3.7 may generate errors on install.  <a href="https://developer.apple.com/xcode/">Apple XCode Developer Tools</a> installs Git and a version of Python.  Available through the App Store it is a large download and system intensive program.  A more granular installation would be the <a href="https://mac.install.guide/commandlinetools/4.html">XCode Command Line Tools</a> which installs Git combined with a Python install pulled directly from Python.org.</td>
+<td>Mac OS comes configured with Python 2.x. Don't attempt to remove it or replace it.  <a href="https://brew.sh">Homebrew</a> is a package installer for Mac. However given some past and outstanding issues between Homebrew and Python, versions of Python prior to Python 3.7 may generate errors on install.  <a href="https://developer.apple.com/xcode/">Apple XCode Developer Tools</a> installs Git and a version of Python.  Available through the App Store it is a large download and system intensive program.  A more granular installation would be the <a href="https://mac.install.guide/commandlinetools/4.html">XCode Command Line Tools</a> which installs Git combined with a Python install pulled directly from Python.org.</td>
 </tr>
 <tr>
 <td>WindowsOS</td>
@@ -1497,99 +1475,16 @@ Note that the above included an alias for pip to pip3 as well.  </p>
 <p>Compare with "venv virtualenv" which calls <strong>venv</strong> to create a virtual environment called <strong>virtualenv</strong>.  For most practical purposes when using Python 3.6 or greater it doesn't matter whether <strong>venv</strong> or <strong>virtualenv</strong> is used to create the virtual instance.</p>
 <p>But don't use "virtualenv venv."  That's just obnoxious.</p>
 </details>
-<details class="note"><summary>Other Python Tools</summary><p>Other tools such as <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a>, <a href="https://pipenv.pypa.io/en/latest/">pipenv</a>, <a href="https://github.com/berdario/pew">pew</a>, <a href="https://tox.wiki/en/latest/">tox</a> and <a href="https://nox.thea.codes/en/stable/">nox</a> may be useful but are not currently utilized in this project.  <a href="https://github.com/pyenv">Pyenv</a> was deprecated in Python 3.5 and not utilized.</p>
+<details class="note" open="open"><summary>Other Python Tools</summary><p>Other tools such as <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a>, <a href="https://pipenv.pypa.io/en/latest/">pipenv</a>, <a href="https://github.com/berdario/pew">pew</a>, <a href="https://tox.wiki/en/latest/">tox</a> and <a href="https://nox.thea.codes/en/stable/">nox</a> may be useful but are not currently utilized in this project.  <a href="https://github.com/pyenv">Pyenv</a> was deprecated in Python 3.5 and not utilized.</p>
 </details>
-<!-- ## Docker and flask
-
-This project utilize [Docker](https://www.docker.com) and [flask](https://pypi.org/project/Flask/).
-
-For support of Docker development on the Mac, use Homebrew as outlined above to install Docker locally.  If necessary to issue Docker commands or use the Docker API from with Python, include the Docker package in the virtual environment.
-
-<div class="highlight"><pre><span></span><code>pip install docker
-</code></pre></div>
-
-Install the flask framework using pip as well.
-
-<div class="highlight"><pre><span></span><code>pip install flask
-</code></pre></div>
-<br /><br />
-
-## Include Documentation
-To incorporate documentation into the application at every step, bring in the Sphinx package.
-
-<div class="highlight"><pre><span></span><code>pip install sphinx
-</code></pre></div>
-
-Then run sphix-quickstart in your project's top-level directory.
-
-Sphinx uses reStructured Text as a form of Markdown.  For a brief overview see [A ReStructuredText Primer](https://docutils.sourceforge.io/docs/user/rst/quickstart.html) or [Quick reStructuredText](https://docutils.sourceforge.io/docs/user/rst/quicktest.html).
-
-Additonal support documenting the project may include utilzing a resource like [Read the Docs](http://readthedocs.org).
-
-- See also: [PEP-257 Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
-
-<br /><br />
-
-## Test Driven Development
-
-Incorporate [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) methodologies.   
-Create the test scenarios before the actual coding.  
-
-Primary source material for review can be found at [obeythetestinggoat.com](https://www.obeythetestinggoat.com)
-
-
-<br /><br />
-
-## Text Editors and IDEs
-There are numerous tools for text editing and softwre development.  Personal preference, specialization versus generalization, and cost may all play a part in choice of tools used for development.  Here is a short list of well known and supported tools available for free or under an Open Source license.  (No compensation isß received for any reference to materials on this page.)
-- [Visual Studio Code](https://code.visualstudio.com/) by Microsoft.  "Built on Open Source" the Code version is free and has many plug-ins.  It's a mature IDE with the polish of a Microsoft product.  Not the behemouth of the full Visual Studio IDE.  Available for Windows/Mac/Linux.  There is a version of Visual Studio Code compiled with all the non-Open Source components removed called [VSCodium](https://vscodium.com/).  Or compile it from source available at GitHub resulting in a product called [Code - OSS](https://github.com/Microsoft/vscode/wiki/How-to-Contribute#build-and-run).
-- [Atom Text Editor](https://atom.io/).  A highly customizable text editor which is programming language agnostic and completely open source and available (packaged and source) on GitHub.  Available for Windows/Mac/Linux.
-- [PyCharm Community Edition](https://www.jetbrains.com/pycharm/) by JetBrains. A Python specific IDE.  The Community Edition is Free and Open Source, albeit with some limited functionality. Available for Windows/Mac/Linux.
-
- - (Optional) Install Jupyter lab and notebooks.Jupyter notebooks (deprecated in favor of JupyterLab, though the notebook format remains the same) are especially popular for use in Data Science and ML.  Runs locally on a Python framework. They are used to create documentation in Markdown and write and execute code that might not require an entire program.  Supports other languages such as R and Julia.  Can also be installed through Anaconda.  
-
-<div class="highlight"><pre><span></span><code>cd /Users/kelly/Dev/virtualenvs
-virtualenv --python python3.9 jupiter
-python -m pip install --upgrade pip
-pip install jupyter
-pip install jupyterlab
-</code></pre></div>
-
-Start jupyterlab by running it from within your Python virtualenv /bin directory.  
-At runtime, point it to the location of your GITHub root, e.g.,   
-<div class="highlight"><pre><span></span><code>./jupyter-lab --notebook-dir /Users/kelly/GitHub
-</code></pre></div>
-
-<br /><br />                                          
-
-## Additional Resources
-
-There is a wealth of high quality documentation and writing about Python in digital and paper print and on the web in addition to that directly refered to above.  As a starting point, see the following materials.  (Again, no compensation is received for any reference to materials on this page.)
-- [The Hitchhiker's Guide to Python](https://docs.python-guide.org) by Kenneth Reitz and Tanya Schlusser.
-- [Serious Python](https://nostarch.com/seriouspython) by Julien Danjoy
-- [Guiding Design Principles](https://nsls-ii.github.io/scientific-python-cookiecutter/guiding-design-principles.html) from the [Scientific Python Cookiecutter](https://nsls-ii.github.io/scientific-python-cookiecutter/index.html).
-- [Python Doc](https://www.python.org/doc/) - the official Python web site page of references to more documentation.
- -->
-
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="requirements"><h1 id="requirements-project-package-requirements">Project Package Requirements</h1>
+<p><br/>
+<br/>
+<br/></p></section><section class="print-page" id="requirements"><h1 id="requirements-project-package-requirements">Project Package Requirements</h1>
 <h2 id="requirements-currently-implemented-packages">Currently implemented packages:</h2>
 <p>This project utilizes the following packages, all of which should be available under an Open Source license via <a href="https://pypi.org/">Py</a>.
 List updated as of:<br />
 <strong>02/16/2022 (February 16th, 2022)</strong></p>
-<p>Make sure to source the virtual environment first and then '<em>pip | conda install <package></em>' to bring in the package.  </p>
+<p>Make sure to source the virtual environment first and then '<em>pip install &lt;package></em>' or '<em>conda install &lt;package></em>' to bring in the package.  </p>
 <hr/>
 
 <div class="highlight"><pre><span></span><code>alabaster
@@ -1684,23 +1579,10 @@ xmlschema
 zipp
 </code></pre></div>
 <p><br/>
-<br/></p>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="working_with_the_code"><h1 id="working_with_the_code-getting-the-code">Getting the code.</h1>
+<br/>
+<br/></p></section><section class="print-page" id="working_with_the_code"><h1 id="working_with_the_code-getting-the-code">Getting the code.</h1>
 <h2 id="working_with_the_code-pulling-the-code-from-github">Pulling the code from GitHub</h2>
-<p>The E-Invoice-Onbarding-Tool is a public repository.  The code is freely available under an MIT Licene for individuals and organizations to pull, review, and modify as they chose in order to further their participation with the project.</p>
+<p>The <a href="https://github.com/BPC-OpenSourceTools/E-Invoice-Onboarding-Toolkit/">E-Invoice-Onboarding-Toolkiy</a> is a public repository.  The code is freely available under an MIT License for individuals and organizations to pull, review, and modify as they chose in order to further their participation with the project.</p>
 <p>It is entirely possible to pull the code from github anonymously using a link from within the repo.</p>
 <details class="tip"><summary>Pulling the code from GitHub</summary><ul>
 <li>
@@ -1725,21 +1607,13 @@ zipp
 <li>
 <p>Configuring the personal profile and ssh keys to securely submit code to the repository.</p>
 </li>
+<li>
+<p>Contributing code and creating pull requests to integrate with the repo.  </p>
+</li>
 </ol>
-<div style="font-size: 12px;
-              padding: 15px;
-              border: 2px solid lightgray;
-              margin-top: 100px;
-              margin-left: 0px;
-              margin-bottom: 40px;
-              margin-right: auto;
-              width: 100%;
-              border-radius: 10px;">
-    <h4 style="font-size: 14px;
-              padding: 0px;
-              margin: 0px;">No Representations or Warranties</h5>
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  </div></section>
+<p><br/>
+<br/>
+<br/></p></section>
                         <h1 class='nav-section-title' id='section-using-the-code'>
                             Using the Code <a class='headerlink' href='#section-using-the-code' title='Permanent link'>↵</a>
                         </h1>
@@ -1966,14 +1840,14 @@ zipp
 </tr>
 <tr>
 <td>ebms-header-3_20220119.xsd, sample_msg.xml</td>
-<td>XSD containing schema definition for for ebMS header and a sample message to test against it.</td>
+<td>XSD containing schema definition for ebMS header and a sample message to test against it.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="using_the_modules-note-on-classes-with-modules">Note on classes with modules.</h2>
 <details class="info" open="open"><summary>All module code is in classes and methods.</summary><p>All code in the discovery and delivery sub-packages is encapsulated in a class and a method within a class.  There are no excutable functions outside of a class.</p>
-<p><em>There is no entry point to execute this code and instantiate any of the classes or methods at the commandline.</em></p>
-<p>Examples of implementing and executing the code can be found in the <a href="#test_cases">test cases</a>, <a href="#start_to_finish">start-to-finish example</a>, or the <a href="#google_colab_pages">JupyterLab/Notebooks</a>.</p>
+<p><em>There is no entry point to execute this code and instantiate any of the classes or methods at the command line at this time.</em></p>
+<p>Examples of implementing and executing the code can be found in the <a href="#test_cases">test cases</a>, <a href="#using_the_modules-start_to_finish.md">start-to-finish example</a>, or the <a href="#google_colab_pages">JupyterLab/Notebooks</a>.</p>
 <p>Test cases are not encapsulated in classes or methods but are instead named functions.</p>
 </details>
 <p>The code is as Pythonic as possible in naming files for exactly what they do.  The functionality can be broken down as:</p>
@@ -2000,7 +1874,7 @@ zipp
 <li>
 <p>Other "helper" modules -</p>
 <ul>
-<li>accessory.py - module to run the "Start-To-Finish" process, execute via test scripts.</li>
+<li>accessor.py - module to run the "Start-To-Finish" process, execute via test scripts.</li>
 <li>create_sample_data.py - construct sample data entities to use in testing the semantic model.</li>
 <li>create_tracking_id.py - create an arbitrary id with a given configuraiton to use to track the message through the process.  Could be used in lieu of a UUID.</li>
 <li>app_handler.py - module closest to being an executable form the command line.  A prototpye module to run the "Start-to-Finish" directly, if all required configuration is complete.  </li>
@@ -2008,20 +1882,9 @@ zipp
 </ul>
 </li>
 </ul>
-<div style="font-size: 12px;
-              padding: 15px;
-              border: 2px solid lightgray;
-              margin-top: 100px;
-              margin-left: 0px;
-              margin-bottom: 40px;
-              margin-right: auto;
-              width: 100%;
-              border-radius: 10px;">
-    <h4 style="font-size: 14px;
-              padding: 0px;
-              margin: 0px;">No Representations or Warranties</h5>
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-  </div></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
+<p><br/>
+<br/>
+<br/></p></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
 <h2 id="test_cases-working-with-the-code">Working with the code</h2>
 <h3 id="test_cases-test-cases">Test Cases</h3>
 <p>Every module includes a test module in the einvoice/test directory.  </p>
@@ -2031,8 +1894,12 @@ zipp
 <strong>The Pytest package must be installed in your Python distribution.</strong></p>
 </details>
 <p>From the a terminal console, change directory into the ./einvoice/test  directory.  </p>
-<p>To see the list of available test files, either in your file browser or via the command line
-<div class="highlight"><pre><span></span><code>(&quot;dir .\einvoice\tests\&quot; or &quot;ls -al ./einvoice/tests/&quot;).
+<p>To see the list of available test files, use either the file browser or the command line.
+For Windows: 
+<div class="highlight"><pre><span></span><code>dir .\einvoice\tests\
+</code></pre></div>
+For Mac/*nix/WSL2:
+<div class="highlight"><pre><span></span><code>ls -al ./einvoice/tests/ 
 </code></pre></div></p>
 <details class="important" open="open"><summary>The ./test directory <strong>must</strong> be at the same level as the code.</summary><p>Out of the box, Pytest requires that without additional configuration it must be executed from  a directory at the same level of the code that's being tested.  That is, test scripts are in ./einvoice/test and code files are in ./einvoice/discovery and ./einvoice/delivery.   </p>
 </details>
@@ -2041,7 +1908,7 @@ zipp
 </code></pre></div></p>
 <p>No test is dependent on any other, and each may be run on its own, or run them all at once, in any order.  </p>
 <p>The test will run and either the "assert" statement(s) inside will pass, or it will fail.  </p>
-<p>Failures MUST be resolved prior to attempting to check code into GitHub as our baseline CI/CD process checks for these failures before committing and will not continue if any are found.</p>
+<p><strong>Failures MUST be resolved prior to attempting to check code into GitHub as our baseline CI/CD process checks for these failures before committing and will not continue if any are found.</strong></p>
 <p>The included assert statements currently test a variety of cases up to validation of urn creation, query of the NAPTR DNS record, REST API call to the SMP, and validation of the ebMS header against the AS4 conformance profile.  </p>
 <p>The test folder also contains a number of shell scripts to validate the code using  a number of linters including flake8, pylint, mypy, pycodestyte, and pydocstyle.   Prior to check in, all code has had warnings from all linters resolved or noted.  </p>
 <figure>
@@ -2049,21 +1916,10 @@ zipp
   </p>
 <figcaption>Successful completion of all test cases.</figcaption>
 </figure>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="start_to_finish"><h1 id="start_to_finish-start-to-finish">Start-to-Finish</h1>
-<h2 id="start_to_finish-start-to-finish-integration">Start-to-Finish Integration</h2>
+<p><br/>
+<br/>
+<br/></p></section><section class="print-page" id="discovery_validation"><h1 id="discovery_validation-start-to-finish">Start-to-Finish</h1>
+<h2 id="discovery_validation-start-to-finish-integration">Start-to-Finish Integration</h2>
 <p>There is not currently an "end-to-end" test for the E-Invoice Four-Corner Model to validate the workflow in its entirety.  </p>
 <p>The next best use case is a "Start-to-Finish" of the discovery process.  </p>
 <p>This "Start-to-Finish" entails valdating:<br />
@@ -2087,20 +1943,9 @@ zipp
   </p>
 <figcaption>Successful completion of "Start-to-Finish" test case recorded in the app.log file.</figcaption>
 </figure>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="google_colab_pages"><h1 id="google_colab_pages-jupyter-notebooks-on-google-colab">Jupyter Notebooks on Google Colab<hr/></h1>
+<p><br/>
+<br/>
+<br/></p></section><section class="print-page" id="google_colab_pages"><h1 id="google_colab_pages-jupyter-notebooks-on-google-colab">Jupyter Notebooks on Google Colab<hr/></h1>
 <h2 id="google_colab_pages-colab-sandboxes">Colab Sandboxes</h2>
 <p><a href="https://jupyter.org/">JupyterLab</a> is a sandbox development environment which allows for, among other things, rapid prototyping or testing of small units of code.  They provide a framework to execute code without building a whole application or even a complete module.</p>
 <p>Most of the code already incorporated into the project started out in a JupyterLab runtime environment.  </p>
@@ -2231,8 +2076,8 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </tr>
 <tr>
 <td>Transform and format contents of Seller’s request to create UNAPTR DNS query.</td>
-<td>Access Point A   Yes</td>
-<td></td>
+<td>Access Point A</td>
+<td>Yes</td>
 </tr>
 <tr>
 <td>Query DNS.</td>
@@ -2325,21 +2170,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 <td>No</td>
 </tr>
 </tbody>
-</table>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="artifacts"><h1 id="artifacts-the-repository">The Repo(sitory)<hr/></h1>
+</table></section><section class="print-page" id="artifacts"><h1 id="artifacts-the-repository">The Repo(sitory)<hr/></h1>
 <h3 id="artifacts-repository-layout">Repository Layout</h3>
 <p>This project includes the following files, <em>i.e., "artifacts"</em> in <strong>.py</strong>, .<strong>md</strong>, .<strong>txt</strong> and other formats, updated as of:<br />
 <strong>02/16/2022 (February 16th, 2022)</strong></p>
@@ -2473,21 +2304,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 └── todo.md
 
 13 directories, 113 files
-</code></pre></div>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="git_workflow"><h1 id="git_workflow-sample-git-workflow">Sample git workflow<hr/></h1>
+</code></pre></div></section><section class="print-page" id="git_workflow"><h1 id="git_workflow-sample-git-workflow">Sample git workflow<hr/></h1>
 <h3 id="git_workflow-a-minimal-git-script-to-work-with-the-code">A minimal git "script" to work with the code.</h3>
 <p>This is a sample workflow of a very rudimentary process to create a branch in Github, add code, and push up to the repo on Github.  </p>
 <ol>
@@ -2640,15 +2457,42 @@ SOFTWARE.</p></section></div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
+      <div class="md-footer-copyright">
+    <div class="md-copyright">
+        
+         
+        <!-- <div class="md-copyright__highlight">
+        Copyright &copy; 2022 - BPC Open Source Tools Project
+      </div>
+      --->
+      <div class="md-copyright-display">
+        Copyright &copy; 2022 - BPC Open Source Tools Project</div>
+        <div class="md-footer-disclaimer-text">
+            <div class="md-footer-disclaimer-statement">
+                No Representations or Warranties
+            </div>
+
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+            LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+            EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+            AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+            OR OTHER DEALINGS IN THE SOFTWARE.
+
+        </div>
+
+
+
+        
+        
+        <div>
+            Made with
+            <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+                Material for MkDocs
+            </a>
+            <div>
+                
+            </div>
+        </div>
       
     </div>
   </div>
