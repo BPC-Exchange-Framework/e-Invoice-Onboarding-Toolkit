@@ -993,7 +993,7 @@
 </thead>
 <tbody>
 <tr>
-<td>1. Hashing functionality to derive the urn for look-up in a DNS NAPTR record.</td>
+<td>1. Hashing functionality to derive the URN for look-up in a DNS NAPTR record.</td>
 <td>Feature #1</td>
 <td>Discovery</td>
 </tr>
@@ -1065,7 +1065,7 @@
 <dd>What do I need in order to use this code?  </dd>
 <dt><strong>A:</strong></dt>
 <dd><strong>Python</strong><br />
-  1. Some knowledge of Python<br />
+  1. Intermediate knowledge of Python.<br />
   2. Python 3.6 or greater, <em>Python 3.10 or greater is recommended.</em>.  </dd>
 </dl>
 <hr>
@@ -1073,14 +1073,16 @@
 <dt><strong>Q:</strong></dt>
 <dd>Does this code provide a full end-to-end solution to process an e-invoice?  </dd>
 <dt><strong>A:</strong></dt>
-<dd>This code answers some very domain specific questions regarding e-invoice functionality in a Four-Corners Model framework.<br />
-<em>Specifically it's helpful with:</em><br />
-1. The hashing functionality to derive the urn for look-up in a DNS NAPTR record.<br />
-2. How to do the DNS NATPR lookup and extract the relevant SMP URI.<br />
-3. How to construct the two REST requests to an SMP server to retrieve a Corner 3 URI.<br />
-4. How to execute the REST requests to the SMP server.<br />
-5. How to extract the Corner 3 endpoint URI from the response from the SMP server.  <br />
-6. Validating an E-Invoice ebXML message header for compliance with an AS4 conformance profile.  </dd>
+<dd>This code answers some very domain specific questions regarding e-invoice discovery and delivery using a Four-Corners exchange framework.  <br />
+Specifically it's helpful with:<br />
+1.  Discovery <br />
+  a. The hashing functionality to derive the URN for look-up in a DNS NAPTR record.<br />
+  b. How to do the DNS NATPR lookup and extract the relevant SMP URI.<br />
+  c. How to construct the two REST requests to an SMP server to retrieve a Corner 3 URI.<br />
+  d. How to execute the REST requests to the SMP server.<br />
+  e. How to extract the Corner 3 endpoint URI from the response from the SMP server.  <br />
+  1.  Delivery<br />
+  a. Validating an e-invoice ebXML message header for compliance with an AS4 conformance profile.  </dd>
 </dl>
 <hr>
 
@@ -1089,13 +1091,15 @@
 <dd>
 <p>How do I use the code?  </p>
 </dd>
-<dt><strong>A:</strong></dt>
-<dd>There are a number of ways the code can be examined or worked with:<br />
-1. <a href="#faq-start_to_finish.md">Start to finish example of the  URI discovery process</a>.<br />
+</dl>
+<p><strong>A:</strong>
+Here are some ways the code can be examined or worked with:<br />
+1. <a href="#faq-delivery_validation.md">Delivery Valdiation</a> of the URI discovery process..<br />
 2. <a href="#test_cases">Test Cases</a> which demonstrate functionality of the modules.<br />
 3. Jupyter Notebook sandbox environments at <a href="#google_colab_pages">Google Colab Pages</a> which isolate and demonstrate the code in a sandbox.<br />
 4. Package/Library API see the <a href="#.">Index</a> for links to the code API on the modules themselves.<br />
-5. Integration of an example discovery process implemented in a <a href="#faq-flask_integration_on_docker.md">Flask application on a Docker container</a> (forthcoming).  </dd>
+5. Integration of an example discovery process implemented in a <a href="#faq-flask_integration_on_docker.md">Flask application on a Docker container</a> (forthcoming).  </p>
+<dl>
 <dt><strong>Q:</strong></dt>
 <dd>
 <p>How do I make sense of all this?  </p>
@@ -1114,12 +1118,14 @@
 <br/></p></section><section class="print-page" id="outcomes"><h1 id="outcomes-project-outcomes">Project Outcomes:<hr></h1>
 <h2 id="outcomes-functionality">Functionality</h2>
 <ol>
-<li>Hashing functionality to derive the urn for look-up in a DNS NAPTR record.  </li>
-<li>DNS NATPR lookup and extract the relevant SMP URI.  </li>
-<li>Two REST requests to an SMP server to retrieve a Corner 3 URI.  </li>
-<li>Execute the REST requests to the SMP server.  </li>
-<li>Extract the Corner 3 endpoint URI from the response from the SMP server.    </li>
-<li>Validate an E-Invoice ebXML message header for compliance with an AS4 conformance profile.<br />
+<li>Discovery<br />
+    a. Hashing functionality to derive the URN for look-up in a DNS NAPTR record. <br />
+    b.  DNS NATPR lookup and extract the relevant SMP URI.<br />
+    c.  Two REST requests to an SMP server to retrieve a Corner 3 URI.<br />
+    d.  Execute the REST requests to the SMP server.<br />
+     e.  Extract the Corner 3 endpoint URI from the response from the SMP server.    </li>
+<li>Delivery<br />
+  a.  Validate an e-invoice ebXML message header for compliance with an AS4 conformance profile.<br />
 <br/></li>
 </ol>
 <hr style="height: 2px;border:none;color:#333;background-color:#333;">
@@ -1138,12 +1144,12 @@
 <li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
 </ul>
 </li>
-<li class="task-list-item"><input type="checkbox" checked/> Do the DNS look-up to obtain the SMP service URI.<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> Execute DNS look-up to obtain the SMP service URI.<ul class="task-list">
 <li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
 <li class="task-list-item"><input type="checkbox" checked/> dns_query.py</li>
 </ul>
 </li>
-<li class="task-list-item"><input type="checkbox" checked/> Query the SMP URI using the ebXML spec.<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> Query the SMP URI using the ebXML specifcation.<ul class="task-list">
 <li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
 <li class="task-list-item"><input type="checkbox" checked/> smp_query.py</li>
 </ul>
@@ -1153,7 +1159,7 @@
 <li class="task-list-item"><input type="checkbox" checked/> line_item_py</li>
 <li class="task-list-item"><input type="checkbox" checked/> party_address.py</li>
 <li class="task-list-item"><input type="checkbox" checked/> semnantic_model.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> urn.py</li>
+<li class="task-list-item"><input type="checkbox" checked/> URN.py</li>
 </ul>
 </li>
 <li class="task-list-item"><input type="checkbox" checked/> Test cases implemented using Test Driven Development<ul class="task-list">
@@ -1191,14 +1197,14 @@
 <li class="task-list-item"><input type="checkbox" checked/> Jupyter Lab Notebooks running on Google Colab for real-time examples of a dev sandbox.  <ul class="task-list">
 <li class="task-list-item"><input type="checkbox" checked/> Hash URN and SML query Lab Notebook   (Hash URN and SML query are in the same Notebook)</li>
 <li class="task-list-item"><input type="checkbox" checked/> SMP query Lab Notebook</li>
-<li class="task-list-item"><input type="checkbox" checked/> Review of AS4 XSD spec Lab Notebook</li>
+<li class="task-list-item"><input type="checkbox" checked/> Review of AS4 XSD specification Lab Notebook</li>
 </ul>
 </li>
 <li class="task-list-item"><input type="checkbox" checked/> Validation of ebMS sample message header against AS4 XSD Lab Notebook</li>
-<li class="task-list-item"><input type="checkbox" checked/> <s>Implementation Guide </s> Documentation site written by SEs and prepared with BSAs to facilitate utilization of the code and work product to be delivered <s>via readthedocs.org site</s> though the github repository.</li>
-<li class="task-list-item"><input type="checkbox" checked/> <s>readthedocs.org site registration/creation</s> Create document set using <strong>mkdocs-material</strong>  hosted on github repository.</li>
+<li class="task-list-item"><input type="checkbox" checked/> <s>Implementation Guide </s> Documentation site written to facilitate utilization of the code and work product to be delivered <s>via readthedocs.org site</s> though the GitHub repository.</li>
+<li class="task-list-item"><input type="checkbox" checked/> <s>readthedocs.org site registration/creation</s> Create document set using <strong>mkdocs-material</strong>  hosted on GitHub repository.</li>
 <li class="task-list-item"><input type="checkbox" checked/> Create <s>list of assumptions</s> <strong>FAQ</strong> and <strong>Outcomes</strong> pages for starting point/baseline documentation.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Aggregation of above referenced artifacts hosted on github.<br />
+<li class="task-list-item"><input type="checkbox" checked/> Consolidation of documentation in the GitHub repository.<br />
 <br/></li>
 </ul>
 </li>
@@ -1217,7 +1223,7 @@
 <p>Documentation</p>
 <ul class="task-list">
 <li class="task-list-item"><input type="checkbox"/> (In-progress) Generated from python docstring using <s>Sphinx</s> <strong>mkdocs-material</strong> framework</li>
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Documentation of supporting infrastructure including DNS and SMP provisioning specifically called out as a parallel value-add result of the project.<br />
+<li class="task-list-item"><input type="checkbox"/> (In-progress) Documentation of supporting infrastructure including DNS and SMP provisioning.<br />
 <br/></li>
 </ul>
 </li>
@@ -1227,11 +1233,11 @@
 <h2 id="outcomes-notes">Notes</h2>
 <ul class="task-list">
 <li class="task-list-item"><input type="checkbox" checked/> Test-driven development methodology is being implemented to include test cases for code as it is being developed and delivered.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> CI/CD process implemented via Github workflow has been validated to ensure PEP8 code standards and checks using Flake8, pylint, and pytest are valid.  All changes and updates to code must pass CI/CD before it's merged into the repo.   </li>
+<li class="task-list-item"><input type="checkbox" checked/> CI/CD process implemented via GitHub workflow has been validated to ensure PEP8 code standards and checks using flake8, pylint, and pytest are valid.  All changes and updates to code must pass CI/CD before it's merged into the repo.   </li>
 </ul>
 <p><br/>
 <br/>
-<br/></p></section><section class="print-page" id="assumptions"><h1 id="assumptions-diving-in-to-the-e-invoice-onboarding-toolkit">Diving in to the E-Invoice Onboarding Toolkit</h1>
+<br/></p></section><section class="print-page" id="assumptions"><h1 id="assumptions-about-the-e-invoice-onboarding-toolkit">About the E-Invoice Onboarding Toolkit</h1>
 <h4 id="assumptions-about">About</h4>
 <p>This project offers examples of Python code written to interact with an access point or discovery service of a Four-Corner Model.   </p>
 <p>Please see the <a href="https://businesspaymentscoalition.org/electronic-invoices/">Business Payments Coalition</a> website for more information and an explanation of the Model.  </p>
@@ -1250,7 +1256,7 @@
 <thead>
 <tr>
 <th>Tool</th>
-<th>Minimal requirementsß</th>
+<th>Minimal requirements</th>
 </tr>
 </thead>
 <tbody>
@@ -1277,7 +1283,7 @@
 <p>All effort will be made to remain within the <a href="https://docs.python.org/3.10/library/index.html">Python Standard Library</a>. Other publicly hosted packages with an open source license may be implemented.</p>
 <h4 id="tools_and_resources-version-of-python">Version of Python</h4>
 <p><em>Select a minimum version of Python 3.6. This will include newer features such as f-string.</em> <strong><em>Python 3.10 is recommended.</em></strong></p>
-<h3 id="tools_and_resources-computer-spec">Computer Spec</h3>
+<h3 id="tools_and_resources-computer-specification">Computer Specification</h3>
 <div class="admonition warning">
 <p class="admonition-title">You will need a computer which is able to download and run Python 3.6.</p>
 </div>
@@ -1300,7 +1306,7 @@
 </tr>
 <tr>
 <td>Windows w/WSL2</td>
-<td>Great implementation of Ubuntu on Windows is truly impressive.  Integration of virtual environments and Python executable with an IDE like VS Code can be finicky.</td>
+<td>WSL2 allows implementation of native Ubuntu on Windows for a linux based Python install while using Windows tools. Integration of virtual environments and Python executable with an IDE like VS Code can be finicky.</td>
 </tr>
 <tr>
 <td>Linux</td>
@@ -1316,7 +1322,6 @@
 </tr>
 </tbody>
 </table>
-<p>These options show that there is nothing proprietary, exclusive, or given preference other than resource availability and personal preference.</p>
 <h4 id="tools_and_resources-additional-configuration-and-environment-considerations">Additional Configuration and Environment Considerations</h4>
 <p>Future looking consideration for implementation of additional Python enabling technology in support of scalability, portability, and resiliency includes:</p>
 <h5 id="tools_and_resources-frameworks">Frameworks:</h5>
@@ -1330,7 +1335,6 @@
 <ul>
 <li>Docker</li>
 </ul>
-<p>Local testing of Docker containerization may be done on a desktop, however a cloud implementation is the typical endpoint for a container deployment.</p>
 <p>Cloud services such as:</p>
 <ul>
 <li>Amazon Web Services (AWS) including lambdas and Route53 DNS</li>
@@ -1338,9 +1342,9 @@
 <li>RedHat OpenShift</li>
 </ul>
 <p>Additional infrastructure components may be implemented by the Project for testing or prototyping utilization of cloud services.</p>
-<p>The implementation of a cloud service and choice of provider is entirely the responsibility of the implementer of the code. Code artifacts included here which implement cloud services are examples for research and educational purposes only.  No preference or endorsement is given to any provider.  </p>
+<p>Local testing of Docker containerization may be done on a desktop.  Choice of a cloud  infrastrucute provider to host and mange Docker contaners is at the discretion of the application implementer.</p>
 <h4 id="tools_and_resources-python-programming-methodologies-standards-and-tools">Python Programming Methodologies, Standards, and Tools:</h4>
-<p>Some standards:</p>
+<p>Python Coding Standards:</p>
 <ul>
 <li><a href="https://pep20.org">PEP20</a></li>
 <li><a href="https://pep8.org">PEP8</a></li>
@@ -1704,7 +1708,7 @@ zipp
 <td>einvoice.discovery.data</td>
 </tr>
 <tr>
-<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
+<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, URN.py</td>
 <td>einvoice.discovery.accessor.Accessor, einvoice.discovery.app_logging.create_logger, etc.</td>
 </tr>
 <tr>
@@ -1755,7 +1759,7 @@ zipp
 <td>einvoice.discovery.data</td>
 </tr>
 <tr>
-<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
+<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, URN.py</td>
 <td>einvoice.discovery.accessor.Accessor, einvoice.discovery.app_logging.create_logger, etc.</td>
 </tr>
 <tr>
@@ -1855,7 +1859,7 @@ zipp
 <li>
 <p>Dataclasses - modules which define some of the key entities at use in the project.</p>
 <ul>
-<li>urn.py - Dataclass for a urn.</li>
+<li>URN.py - Dataclass for a URN.</li>
 <li>semantic_model.py - Dataclass for the semantic model (the einvoice itself).</li>
 <li>party_addresss.py - Dataclass for a party entity within the Four-Corner model.</li>
 <li>line_item.py - Dataclass for a line item on the semantic model (einvoice).</li>
@@ -1866,8 +1870,8 @@ zipp
 <p>Specific workflow actions - modules which execute specific tasks within the process workflow.</p>
 <ul>
 <li>urn_hasher.py - takes the inputs of the party_id, specification, and schema_id and creates the NAPTR look-up uri.</li>
-<li>dns_query.py - take the NAPTR look-up uri and execute it against DNS. The output is the SMP uri and the existing urn is passed forward as well.  </li>
-<li>smp_query.py - receives the SMP uri and urn and creates two REST API calls to the endpoint based on the inputs.  Executes the webservice calls and receives a response.  Parses the response and returns it as a string containing the URI of corner 3 in the model.  </li>
+<li>dns_query.py - take the NAPTR look-up uri and execute it against DNS. The output is the SMP uri and the existing URN is passed forward as well.  </li>
+<li>smp_query.py - receives the SMP uri and URN and creates two REST API calls to the endpoint based on the inputs.  Executes the webservice calls and receives a response.  Parses the response and returns it as a string containing the URI of corner 3 in the model.  </li>
 <li>import_xsd.py - takes as an input an XML file and checks its validity against an XSD.  In this case it is the XML of an ebMS message header checked against an AS4 conformance profile.</li>
 </ul>
 </li>
@@ -1923,7 +1927,7 @@ For Mac/*nix/WSL2:
 <p>There is not currently an "end-to-end" test for the E-Invoice Four-Corner Model to validate the workflow in its entirety.  </p>
 <p>The next best use case is a "Start-to-Finish" of the discovery process.  </p>
 <p>This "Start-to-Finish" entails valdating:<br />
-1. The hashing functionality to derive the urn for look-up from the specification, the party ID, and the schema ID.<br />
+1. The hashing functionality to derive the URN for look-up from the specification, the party ID, and the schema ID.<br />
 2. Executing the DNS NATPR lookup and extracting the relevant SMP URI.<br />
 3. Constructing the two REST requests including the <strong>smp service group url</strong> and the <strong>smp service url</strong>.<br />
 4. Executing the two REST requests to the SMP server.<br />
@@ -1952,11 +1956,11 @@ For Mac/*nix/WSL2:
 <p>JupyterLab is also great for documenting and demonstrating exactly what's going on with a piece of code.  </p>
 <p>JupyterLab artifacts worked on for the project are stored as static documents in GitHub in the E-Invoice-Onboarding-Toolkit project under ./einvoice/docs/jupyterlab.  </p>
 <p><a href="https://colab.research.google.com/">Google Colab</a> pages implement <a href="https://jupyter.org/">JupyterLab </a> runtime with live sandbox environments.  Pages can be linked from the E-Invoice-Onboarding-Toolkit  GitHub repository, or pulled from the repository and saved locally by anyone with a Google account.  </p>
-<h3 id="google_colab_pages-urn-hashing-and-dns-naptr-lookup">urn hashing and DNS NAPTR lookup.</h3>
-<p>Colab page with examples of how to hash the specification, the schema_id, and the party_id to create the urn and perform the natpr dns query is at this <a href="https://colab.research.google.com/drive/1kfMedMUapeaOS6u9hnS8IcmQaury8znP?usp=sharing">Colab page</a>.  Examples 6, 7, 8,  and 9 run the hash and submit against DNS in real-time.<br />
+<h3 id="google_colab_pages-urn-hashing-and-dns-naptr-lookup">URN hashing and DNS NAPTR lookup.</h3>
+<p>Colab page with examples of how to hash the specification, the schema_id, and the party_id to create the URN and perform the natpr dns query is at this <a href="https://colab.research.google.com/drive/1kfMedMUapeaOS6u9hnS8IcmQaury8znP?usp=sharing">Colab page</a>.  Examples 6, 7, 8,  and 9 run the hash and submit against DNS in real-time.<br />
 The JupyterLab file is: <strong>urn_hash_work.ipynb</strong>.</p>
 <h2 id="google_colab_pages-smp-query">SMP query</h2>
-<p>Colab page with examples of how to transform the urn and party_id and submit it to the SMP uri is at this <a href="https://colab.research.google.com/drive/14EVSc0GyjU0H9776UEXqoEoD3x5Kn2RV?usp=sharing">Colab page</a>.<br />
+<p>Colab page with examples of how to transform the URN and party_id and submit it to the SMP uri is at this <a href="https://colab.research.google.com/drive/14EVSc0GyjU0H9776UEXqoEoD3x5Kn2RV?usp=sharing">Colab page</a>.<br />
 They JupyterLab file is: <strong>smp_url_transformations.ipynb</strong>.</p>
 <h2 id="google_colab_pages-ebms-message-header-validation">ebMS Message Header validation</h2>
 <p>Colab pages with examples of reading an XSD file and validating an XML file has two Google Colab pages for different aspects of the work.<br />
@@ -1984,15 +1988,15 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 <p><strong>Q:</strong>    </p>
 <p>How do you test the toolkit?  How do you create a NAPTR  DNS record entry on a domain? </p>
 <p><strong>A:</strong></p>
-<p>In order to do the SML look-up, the appropriate NAPTR records must be in place.  The assumption is that a NAPTR DNS record exists as a key:value pair.  A look-up of the "key" in the DNS of the NAPTR record will return the "value."  The "key" is the hashed value of the urn.  The value being sought and returned is the URI of the SMP for the next step in the Model.</p>
+<p>In order to do the SML look-up, the appropriate NAPTR records must be in place.  The assumption is that a NAPTR DNS record exists as a key:value pair.  A look-up of the "key" in the DNS of the NAPTR record will return the "value."  The "key" is the hashed value of the URN.  The value being sought and returned is the URI of the SMP for the next step in the Model.</p>
 <p>Access Point 1 in Corner 2 may be acting in the role of the SML and handling tasks associated with it.  Theses task could include: <br />
 * Creating the URN
 * Creaing the hash value of the URN
 * Queryhing the DNS NATPR record record
 * Returning the SMP URI</p>
 <p>The Python modules provide examples of some ways  the tasks of SML could be accomplished, either as, or by, an Access Point or an organization on its own behalf.    </p>
-<p>For testing purposes the BPC has is running a DNS server on Amazon Web Services Route53 on the test domain of sc-b2b.us.   This allows for the registration of urn hashes in the DNS domain of sc-b2b.us.  These entiries are live in the DNS accessible worldwide.  </p>
-<p>A REST API is available at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register SML entries, which are the DNS NATPR records on the sc-b2b.us domain.  This process creates the urn hash based in inputs provided by the user.  Organizations wishing to register a test urn on the BPC test domain can reach  out to the BPC  or @mnkellyk for assistance in using the web interface.  </p>
+<p>For testing purposes the BPC is running a DNS server on Amazon Web Services Route53 on the test domain of sc-b2b.us.   This allows for the registration of URN hashes in the DNS domain of sc-b2b.us.  These entiries are live in the DNS accessible worldwide.  </p>
+<p>A REST API is available at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register SML entries, which are the DNS NATPR records on the sc-b2b.us domain.  This process creates the URN hash based in inputs provided by the user.  Organizations wishing to register a test URN on the BPC test domain can reach  out to the BPC  or @mnkellyk for assistance in using the web interface.  </p>
 <p>Once these SML/DNS NATPR entries are created, they can queried using the toolkit to make public queries to DNS NAPTR look-up within a matter of seconds.</p>
 <p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/sml-service-r53">BPC-OpenSourceTools/sml-service-r53</a>.  </p>
 <h2 id="infrastructure_components-smp">SMP</h2>
@@ -2037,8 +2041,8 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </tr>
 </tbody>
 </table>
-<p>The SMP service proivded by the BPC registers a urn for query.  Note that the API specification is essentially the urn with modifications to include some additional service capability codes but mostly to accomodate characters that would otherwise be illegal in a URL.  </p>
-<p>After registering a urn(s) on the SML service, go to the SMP service at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register the urn there in order to get a reponse for testing SMP query functionality.</p>
+<p>The SMP service proivded by the BPC registers a URN for query.  Note that the API specification is essentially the URN with modifications to include some additional service capability codes but mostly to accomodate characters that would otherwise be illegal in a URL.  </p>
+<p>After registering a URN(s) on the SML service, go to the SMP service at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register the URN there in order to get a reponse for testing SMP query functionality.</p>
 <p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/smp-service">BPC-OpenSourceTools/smp-service</a>.</p>
 <details class="warn"><summary>Client/server certificate trust implicit in the test doman.</summary><p>The SMP service specification has rules regarding Access Point and Reqestor security certificates (client) and SMP provider (server side)  security certificates to estabilish non-reputability, etc.   The BPC E-Invoice workgroup has not fully addressed the question of how the security certificate relationships are going to be managed.  As such, the test application does not validate the client/requestor or its Access Point.  It does return the security certificate of the server in its response, registered under letencrypt.org.  In the future, if rules were to be finalized, the security certicate relationship would need to be incorporated into the SMP REST API  protocol.   </p>
 </details>

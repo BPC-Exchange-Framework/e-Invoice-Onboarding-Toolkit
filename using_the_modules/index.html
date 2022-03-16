@@ -762,7 +762,7 @@
 <td>einvoice.discovery.data</td>
 </tr>
 <tr>
-<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
+<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, URN.py</td>
 <td>einvoice.discovery.accessor.Accessor, einvoice.discovery.app_logging.create_logger, etc.</td>
 </tr>
 <tr>
@@ -813,7 +813,7 @@
 <td>einvoice.discovery.data</td>
 </tr>
 <tr>
-<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
+<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, URN.py</td>
 <td>einvoice.discovery.accessor.Accessor, einvoice.discovery.app_logging.create_logger, etc.</td>
 </tr>
 <tr>
@@ -913,7 +913,7 @@
 <li>
 <p>Dataclasses - modules which define some of the key entities at use in the project.</p>
 <ul>
-<li>urn.py - Dataclass for a urn.</li>
+<li>URN.py - Dataclass for a URN.</li>
 <li>semantic_model.py - Dataclass for the semantic model (the einvoice itself).</li>
 <li>party_addresss.py - Dataclass for a party entity within the Four-Corner model.</li>
 <li>line_item.py - Dataclass for a line item on the semantic model (einvoice).</li>
@@ -924,8 +924,8 @@
 <p>Specific workflow actions - modules which execute specific tasks within the process workflow.</p>
 <ul>
 <li>urn_hasher.py - takes the inputs of the party_id, specification, and schema_id and creates the NAPTR look-up uri.</li>
-<li>dns_query.py - take the NAPTR look-up uri and execute it against DNS. The output is the SMP uri and the existing urn is passed forward as well.  </li>
-<li>smp_query.py - receives the SMP uri and urn and creates two REST API calls to the endpoint based on the inputs.  Executes the webservice calls and receives a response.  Parses the response and returns it as a string containing the URI of corner 3 in the model.  </li>
+<li>dns_query.py - take the NAPTR look-up uri and execute it against DNS. The output is the SMP uri and the existing URN is passed forward as well.  </li>
+<li>smp_query.py - receives the SMP uri and URN and creates two REST API calls to the endpoint based on the inputs.  Executes the webservice calls and receives a response.  Parses the response and returns it as a string containing the URI of corner 3 in the model.  </li>
 <li>import_xsd.py - takes as an input an XML file and checks its validity against an XSD.  In this case it is the XML of an ebMS message header checked against an AS4 conformance profile.</li>
 </ul>
 </li>

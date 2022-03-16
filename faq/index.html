@@ -614,7 +614,7 @@
 <dd>What do I need in order to use this code?  </dd>
 <dt><strong>A:</strong></dt>
 <dd><strong>Python</strong><br />
-  1. Some knowledge of Python<br />
+  1. Intermediate knowledge of Python.<br />
   2. Python 3.6 or greater, <em>Python 3.10 or greater is recommended.</em>.  </dd>
 </dl>
 <hr>
@@ -622,14 +622,16 @@
 <dt><strong>Q:</strong></dt>
 <dd>Does this code provide a full end-to-end solution to process an e-invoice?  </dd>
 <dt><strong>A:</strong></dt>
-<dd>This code answers some very domain specific questions regarding e-invoice functionality in a Four-Corners Model framework.<br />
-<em>Specifically it's helpful with:</em><br />
-1. The hashing functionality to derive the urn for look-up in a DNS NAPTR record.<br />
-2. How to do the DNS NATPR lookup and extract the relevant SMP URI.<br />
-3. How to construct the two REST requests to an SMP server to retrieve a Corner 3 URI.<br />
-4. How to execute the REST requests to the SMP server.<br />
-5. How to extract the Corner 3 endpoint URI from the response from the SMP server.  <br />
-6. Validating an E-Invoice ebXML message header for compliance with an AS4 conformance profile.  </dd>
+<dd>This code answers some very domain specific questions regarding e-invoice discovery and delivery using a Four-Corners exchange framework.  <br />
+Specifically it's helpful with:<br />
+1.  Discovery <br />
+  a. The hashing functionality to derive the URN for look-up in a DNS NAPTR record.<br />
+  b. How to do the DNS NATPR lookup and extract the relevant SMP URI.<br />
+  c. How to construct the two REST requests to an SMP server to retrieve a Corner 3 URI.<br />
+  d. How to execute the REST requests to the SMP server.<br />
+  e. How to extract the Corner 3 endpoint URI from the response from the SMP server.  <br />
+  1.  Delivery<br />
+  a. Validating an e-invoice ebXML message header for compliance with an AS4 conformance profile.  </dd>
 </dl>
 <hr>
 
@@ -638,13 +640,15 @@
 <dd>
 <p>How do I use the code?  </p>
 </dd>
-<dt><strong>A:</strong></dt>
-<dd>There are a number of ways the code can be examined or worked with:<br />
-1. <a href="./start_to_finish.md">Start to finish example of the  URI discovery process</a>.<br />
+</dl>
+<p><strong>A:</strong>
+Here are some ways the code can be examined or worked with:<br />
+1. <a href="./delivery_validation.md">Delivery Valdiation</a> of the URI discovery process..<br />
 2. <a href="../test_cases/">Test Cases</a> which demonstrate functionality of the modules.<br />
 3. Jupyter Notebook sandbox environments at <a href="../google_colab_pages/">Google Colab Pages</a> which isolate and demonstrate the code in a sandbox.<br />
 4. Package/Library API see the <a href="..">Index</a> for links to the code API on the modules themselves.<br />
-5. Integration of an example discovery process implemented in a <a href="./flask_integration_on_docker.md">Flask application on a Docker container</a> (forthcoming).  </dd>
+5. Integration of an example discovery process implemented in a <a href="./flask_integration_on_docker.md">Flask application on a Docker container</a> (forthcoming).  </p>
+<dl>
 <dt><strong>Q:</strong></dt>
 <dd>
 <p>How do I make sense of all this?  </p>
