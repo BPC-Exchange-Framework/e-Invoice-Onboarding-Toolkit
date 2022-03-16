@@ -855,7 +855,7 @@
 <p>The primary programming language for the project is Python.  Knowledge of other enabling technologies, specifically shell scripting (e.g., ZSH, BASH, or PowerShell) and CommonMark or GitHub Flavored Markdown may be helpful.</p>
 <p>All effort will be made to remain within the <a href="https://docs.python.org/3.10/library/index.html">Python Standard Library</a>. Other publicly hosted packages with an open source license may be implemented.</p>
 <h4 id="version-of-python">Version of Python</h4>
-<p><em>Select a minimum version of Python 3.6. This will include newer features such as f-string.</em> <strong><em>Python 3.10 is recommended.</em></strong></p>
+<p><em>Select a minimum version of Python 3.6. This will include newer features such as f-string.</em> <strong>Python 3.10 is recommended.</strong></p>
 <h3 id="computer-specification">Computer Specification</h3>
 <div class="admonition warning">
 <p class="admonition-title">You will need a computer which is able to download and run Python 3.6.</p>
@@ -915,24 +915,23 @@
 <li>RedHat OpenShift</li>
 </ul>
 <p>Additional infrastructure components may be implemented by the Project for testing or prototyping utilization of cloud services.</p>
-<p>Local testing of Docker containerization may be done on a desktop.  Choice of a cloud  infrastrucute provider to host and mange Docker contaners is at the discretion of the application implementer.</p>
+<p>Local testing of Docker containerization may be done on a desktop.  Choice of a cloud infrastrucute provider to host and mange Docker contaners is at the discretion of the application implementer.</p>
 <h4 id="python-programming-methodologies-standards-and-tools">Python Programming Methodologies, Standards, and Tools:</h4>
 <p>Python Coding Standards:</p>
 <ul>
-<li><a href="https://pep20.org">PEP20</a></li>
-<li><a href="https://pep8.org">PEP8</a></li>
+<li><a href="https://pep20.org">PEP20</a> - The Zen of Python</li>
+<li><a href="https://pep8.org">PEP8</a> -  The Style Guide for Python Code</li>
 <li><a href="https://nsls-ii.github.io/scientific-python-cookiecutter/guiding-design-principles.html">Guiding Design Principles</a> from the <a href="https://nsls-ii.github.io/scientific-python-cookiecutter/index.html">Scientific Python Cookiecutter</a>.</li>
 <li><a href="https://www.python.org/doc/">Python Doc</a> the official Python web site page of references to more documentation.</li>
 <li><em>See the list of books below for additional guidance on standards and best practices in Python development</em>.</li>
 </ul>
-<p>Tools to implement the standards(preferred ones in <strong>bold</strong>) .</p>
+<p>Tools in bold are used to validate code against PEP8 and PEP20 standards and must complete successfully in order to do a pull into GitHub,  <strong>bold</strong>) .</p>
 <ul>
 <li><strong>flake8</strong></li>
 <li>autopep8</li>
 <li><strong>pylint</strong></li>
 <li><strong>pytest</strong></li>
 <li>unittest</li>
-<li>black (Careful! - Handles most formatting well but line character length may not be handed as desired.)</li>
 <li>bandit</li>
 <li><strong>mypy</strong></li>
 <li><strong>pycodestyle</strong></li>
@@ -940,20 +939,24 @@
 </ul>
 <h4 id="development-methodologies">Development methodologies</h4>
 <ul>
-<li>Documentation and use of <strong><em>docstrings</em></strong></li>
-<li>Domain Driven Design</li>
-<li>Test Driven Development</li>
+<li>Documentation and use of <strong>docstrings</strong><ul>
+<li><a href="https://peps.python.org/pep-0257/">PEP257</a></li>
+<li>[Google/numpy style docstings as documented in the <a href="https://google.github.io/styleguide/pyguide.html">Google Python Style Guide</a>.  This document is also provides additional best practices for professional Python devleopers.  </li>
+</ul>
+</li>
+<li>Domain Driven Design.  See the list of books below for original and supplemental sources material by Eric Evans and Vaughn Vernon.</li>
+<li>Test Driven Development.  See the list of books below for original source material by Harry J.W. Percival. </li>
 <li>Agile principles applied appropriate to the the size and state of the project.</li>
 </ul>
 <h4 id="books">Books</h4>
 <p>There are many great reference materials in print and on the Internet about Python development.</p>
-<p>The list below contains some of the titles the developers consider the most helpful and authoritative, regardless of level of expertise with Python. (Titles and author only, no affiliate links.)</p>
+<p>Below are references that may be helpful. </p>
 <ul>
 <li><ins>The Hitchhiker's Guide to Python</ins> by Kenneth Reitz and Tanya Schlusser.  Online for free at <a href="https://docs.python-guide.org/">docs.python-guide.org</a>.  </li>
 <li><ins>Serious Python</ins> by Julien Danjou</li>
 <li><ins>Domain-Driven Design Distilled</ins> by Vaughn Vernon</li>
 <li><ins>Domain Driven Design: Tackling Complexity in the Heart of Software</ins> by Eric Evans</li>
-<li><ins>Test Driven Development with Python: Obey the Testing Goat, etc.</ins> by Harry J.W. Percival. Also <a href="https://www.obeythetestinggoat.com/">available online for free</a>, which works for a quick reference in a pinch.</li>
+<li><ins>Test Driven Development with Python: Obey the Testing Goat, etc.</ins> by Harry J.W. Percival. Also <a href="https://www.obeythetestinggoat.com/">available online for free</a>.</li>
 <li><ins>Architecture Patterns with Python</ins> by Harry J.W. Percival and Bob Gregory</li>
 <li><ins>Pro Git</ins> by Scott Chacon and Ben Straub. <a href="https://git-scm.com/book/en/v2">Available as a free download</a> under an open source license.</li>
 </ul>

@@ -750,6 +750,10 @@
 <td>einvoice.test</td>
 </tr>
 <tr>
+<td>./einvoice/tests/test_app_logging.py</td>
+<td>einvoice.discovery.tests.test_app_logging.test_log_creation</td>
+</tr>
+<tr>
 <td>./einvoice/docs</td>
 <td>NA - does not contain code artifacts</td>
 </tr>
@@ -762,16 +766,12 @@
 <td>einvoice.discovery.data</td>
 </tr>
 <tr>
-<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, URN.py</td>
+<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
 <td>einvoice.discovery.accessor.Accessor, einvoice.discovery.app_logging.create_logger, etc.</td>
 </tr>
 <tr>
 <td>./einvoice/delivery/import_xsd</td>
 <td>einvoice.delivery.import_xsd.ImportXSD</td>
-</tr>
-<tr>
-<td>./einvoice/delivery/tests</td>
-<td>einvoice.delivery.tests</td>
 </tr>
 </tbody>
 </table>
@@ -832,18 +832,10 @@
 <td>./einvoice/discovery/data/create_sample_data.py</td>
 <td>einvoice.discovery.data.create_sample_data.CreateSampleData</td>
 </tr>
-<tr>
-<td>./einvoice/discovery/tests/test_app_logging.py</td>
-<td>einvoice.discovery.tests.test_app_logging.test_log_creation</td>
-</tr>
-<tr>
-<td>./einvoice/discovery/tests/test_app_logging.py</td>
-<td>einvoice.delivery.tests.test_app_logging.test_import_xsd</td>
-</tr>
 </tbody>
 </table>
 <h2 id="additional-files">Additional Files</h2>
-<p>Additional files included in the Project which are important.     </p>
+<p>Additional files included in the project which are important.     </p>
 <table>
 <thead>
 <tr>
@@ -854,7 +846,7 @@
 <tbody>
 <tr>
 <td>./einvoice/delivery/app.log</td>
-<td>application log created by app_logging.py for delivery sub-package.</td>
+<td>Application log created by app_logging.py for delivery sub-package.</td>
 </tr>
 <tr>
 <td>./einvoice/delivery/web_response.log</td>
@@ -885,12 +877,12 @@
 <td>Stored PDF files (vector graphic diagrams) which may be included in the documentation.</td>
 </tr>
 <tr>
-<td>./einvoice/discovery/tests/ *.sh</td>
-<td>An assortment of shell scripts to run various linters on the modules.  Includes pylint, mypy, flake8, pycodestyle, pydocstyle, and combinations.</td>
-</tr>
-<tr>
 <td>./einvoice/discovery/data/item_list.csv, per_item_list.csv</td>
 <td>CSV files which contain same data values to populate an einvoice.</td>
+</tr>
+<tr>
+<td>./einvoice/tests/ *.sh</td>
+<td>An assortment of shell scripts to run various linters on the modules.  Includes pylint, mypy, flake8, pycodestyle, pydocstyle, and combinations.</td>
 </tr>
 <tr>
 <td>.einvoice/.env .env.example.dev</td>
@@ -898,7 +890,7 @@
 </tr>
 <tr>
 <td>ebms-header-3_20220119.xsd, sample_msg.xml</td>
-<td>XSD containing schema definition for ebMS header and a sample message to test against it.</td>
+<td>XSD containing schema definition for ebMS header and a sample message to test against.</td>
 </tr>
 </tbody>
 </table>
@@ -913,7 +905,7 @@
 <li>
 <p>Dataclasses - modules which define some of the key entities at use in the project.</p>
 <ul>
-<li>URN.py - Dataclass for a URN.</li>
+<li>urn.py - Dataclass definition of an urn object.</li>
 <li>semantic_model.py - Dataclass for the semantic model (the einvoice itself).</li>
 <li>party_addresss.py - Dataclass for a party entity within the Four-Corner model.</li>
 <li>line_item.py - Dataclass for a line item on the semantic model (einvoice).</li>
@@ -934,8 +926,8 @@
 <ul>
 <li>accessor.py - module to run the "Start-To-Finish" process, execute via test scripts.</li>
 <li>create_sample_data.py - construct sample data entities to use in testing the semantic model.</li>
-<li>create_tracking_id.py - create an arbitrary id with a given configuraiton to use to track the message through the process.  Could be used in lieu of a UUID.</li>
-<li>app_handler.py - module closest to being an executable form the command line.  A prototpye module to run the "Start-to-Finish" directly, if all required configuration is complete.  </li>
+<li>create_tracking_id.py - create an arbitrary id with a given configuration to use to track the message through the process.  Could be used in lieu of a UUID.</li>
+<li>app_handler.py - module closest to being an executable form the command line.  A prototyye module to run the delivery validation directly, if all required configuration is complete.  </li>
 <li>app_logger.py - a custom logging implemenation to be used by all the other modules, including test modules, to standardize output and aggregate to single stream each for app logging, to system out, and response to a webservice.</li>
 </ul>
 </li>

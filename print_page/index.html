@@ -1282,7 +1282,7 @@ Here are some ways the code can be examined or worked with:<br />
 <p>The primary programming language for the project is Python.  Knowledge of other enabling technologies, specifically shell scripting (e.g., ZSH, BASH, or PowerShell) and CommonMark or GitHub Flavored Markdown may be helpful.</p>
 <p>All effort will be made to remain within the <a href="https://docs.python.org/3.10/library/index.html">Python Standard Library</a>. Other publicly hosted packages with an open source license may be implemented.</p>
 <h4 id="tools_and_resources-version-of-python">Version of Python</h4>
-<p><em>Select a minimum version of Python 3.6. This will include newer features such as f-string.</em> <strong><em>Python 3.10 is recommended.</em></strong></p>
+<p><em>Select a minimum version of Python 3.6. This will include newer features such as f-string.</em> <strong>Python 3.10 is recommended.</strong></p>
 <h3 id="tools_and_resources-computer-specification">Computer Specification</h3>
 <div class="admonition warning">
 <p class="admonition-title">You will need a computer which is able to download and run Python 3.6.</p>
@@ -1342,24 +1342,23 @@ Here are some ways the code can be examined or worked with:<br />
 <li>RedHat OpenShift</li>
 </ul>
 <p>Additional infrastructure components may be implemented by the Project for testing or prototyping utilization of cloud services.</p>
-<p>Local testing of Docker containerization may be done on a desktop.  Choice of a cloud  infrastrucute provider to host and mange Docker contaners is at the discretion of the application implementer.</p>
+<p>Local testing of Docker containerization may be done on a desktop.  Choice of a cloud infrastrucute provider to host and mange Docker contaners is at the discretion of the application implementer.</p>
 <h4 id="tools_and_resources-python-programming-methodologies-standards-and-tools">Python Programming Methodologies, Standards, and Tools:</h4>
 <p>Python Coding Standards:</p>
 <ul>
-<li><a href="https://pep20.org">PEP20</a></li>
-<li><a href="https://pep8.org">PEP8</a></li>
+<li><a href="https://pep20.org">PEP20</a> - The Zen of Python</li>
+<li><a href="https://pep8.org">PEP8</a> -  The Style Guide for Python Code</li>
 <li><a href="https://nsls-ii.github.io/scientific-python-cookiecutter/guiding-design-principles.html">Guiding Design Principles</a> from the <a href="https://nsls-ii.github.io/scientific-python-cookiecutter/index.html">Scientific Python Cookiecutter</a>.</li>
 <li><a href="https://www.python.org/doc/">Python Doc</a> the official Python web site page of references to more documentation.</li>
 <li><em>See the list of books below for additional guidance on standards and best practices in Python development</em>.</li>
 </ul>
-<p>Tools to implement the standards(preferred ones in <strong>bold</strong>) .</p>
+<p>Tools in bold are used to validate code against PEP8 and PEP20 standards and must complete successfully in order to do a pull into GitHub,  <strong>bold</strong>) .</p>
 <ul>
 <li><strong>flake8</strong></li>
 <li>autopep8</li>
 <li><strong>pylint</strong></li>
 <li><strong>pytest</strong></li>
 <li>unittest</li>
-<li>black (Careful! - Handles most formatting well but line character length may not be handed as desired.)</li>
 <li>bandit</li>
 <li><strong>mypy</strong></li>
 <li><strong>pycodestyle</strong></li>
@@ -1367,20 +1366,24 @@ Here are some ways the code can be examined or worked with:<br />
 </ul>
 <h4 id="tools_and_resources-development-methodologies">Development methodologies</h4>
 <ul>
-<li>Documentation and use of <strong><em>docstrings</em></strong></li>
-<li>Domain Driven Design</li>
-<li>Test Driven Development</li>
+<li>Documentation and use of <strong>docstrings</strong><ul>
+<li><a href="https://peps.python.org/pep-0257/">PEP257</a></li>
+<li>[Google/numpy style docstings as documented in the <a href="https://google.github.io/styleguide/pyguide.html">Google Python Style Guide</a>.  This document is also provides additional best practices for professional Python devleopers.  </li>
+</ul>
+</li>
+<li>Domain Driven Design.  See the list of books below for original and supplemental sources material by Eric Evans and Vaughn Vernon.</li>
+<li>Test Driven Development.  See the list of books below for original source material by Harry J.W. Percival. </li>
 <li>Agile principles applied appropriate to the the size and state of the project.</li>
 </ul>
 <h4 id="tools_and_resources-books">Books</h4>
 <p>There are many great reference materials in print and on the Internet about Python development.</p>
-<p>The list below contains some of the titles the developers consider the most helpful and authoritative, regardless of level of expertise with Python. (Titles and author only, no affiliate links.)</p>
+<p>Below are references that may be helpful. </p>
 <ul>
 <li><ins>The Hitchhiker's Guide to Python</ins> by Kenneth Reitz and Tanya Schlusser.  Online for free at <a href="https://docs.python-guide.org/">docs.python-guide.org</a>.  </li>
 <li><ins>Serious Python</ins> by Julien Danjou</li>
 <li><ins>Domain-Driven Design Distilled</ins> by Vaughn Vernon</li>
 <li><ins>Domain Driven Design: Tackling Complexity in the Heart of Software</ins> by Eric Evans</li>
-<li><ins>Test Driven Development with Python: Obey the Testing Goat, etc.</ins> by Harry J.W. Percival. Also <a href="https://www.obeythetestinggoat.com/">available online for free</a>, which works for a quick reference in a pinch.</li>
+<li><ins>Test Driven Development with Python: Obey the Testing Goat, etc.</ins> by Harry J.W. Percival. Also <a href="https://www.obeythetestinggoat.com/">available online for free</a>.</li>
 <li><ins>Architecture Patterns with Python</ins> by Harry J.W. Percival and Bob Gregory</li>
 <li><ins>Pro Git</ins> by Scott Chacon and Ben Straub. <a href="https://git-scm.com/book/en/v2">Available as a free download</a> under an open source license.</li>
 </ul>
@@ -1413,23 +1416,23 @@ Here are some ways the code can be examined or worked with:<br />
 <tbody>
 <tr>
 <td>MacOS</td>
-<td>Mac OS comes configured with Python 2.x. Don't attempt to remove it or replace it.  <a href="https://brew.sh">Homebrew</a> is a package installer for Mac. However given some past and outstanding issues between Homebrew and Python, versions of Python prior to Python 3.7 may generate errors on install.  <a href="https://developer.apple.com/xcode/">Apple XCode Developer Tools</a> installs Git and a version of Python.  Available through the App Store it is a large download and system intensive program.  A more granular installation would be the <a href="https://mac.install.guide/commandlinetools/4.html">XCode Command Line Tools</a> which installs Git combined with a Python install pulled directly from Python.org.</td>
+<td>Mac OS comes configured with Python 2.x. This version of Python is required by the OS and removal will impair system function.  <a href="https://brew.sh">Homebrew</a> is a package installer for Mac. Using Homebrew  to install Python versions prior to 3.7 may generate errors on  instal due to deprecated libraries.  That isues has been resolved for versions 3.7 and higher.<a href="https://developer.apple.com/xcode/">Apple XCode Developer Tools</a> installs Git and a version of Python.  Available through the App Store it is a large download and system intensive program which may not run smoothly on older or less robust systmes.  A more granular installation would be the <a href="https://mac.install.guide/commandlinetools/4.html">XCode Command Line Tools</a> which installs Git combined with a Python install pulled directly from Python.org.</td>
 </tr>
 <tr>
 <td>WindowsOS</td>
-<td>Python is now available on the <a href="https://www.microsoft.com/en-us/store/apps/windows">Windows Store</a>, though updates may lag behind current Python releases.  Ease of setting environment variables makes it easy to maintain multiple installed versions simultaneously.  This configuration is the easiest to integrate <a href="https://code.visualstudio.com/">VS Code</a> with Python.</td>
+<td>Python is now available on the <a href="https://www.microsoft.com/en-us/store/apps/windows">Windows Store</a>, though updates may lag behind current Python releases at python.org before arriving on the Windows Store.  The option to set environment variables via a UI on a per user basis facilitates multiple installed versions simultaneously.  <a href="https://code.visualstudio.com/">VS Code</a> from Miscrosoft integrates direcltly with a system installled version of Python.</td>
 </tr>
 <tr>
 <td>Windows WLS2</td>
-<td>A fully native Python install on Ubuntu is available for <a href="https://docs.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux 2</a>.  The version of Python may need to be updated from a secondary repository as the official Ubuntu version trails official Python releases.  Integration between VS Code running on Windows and integration with WSL2 Python may not be seamless.</td>
+<td>A fully native Python install on Ubuntu is available for <a href="https://docs.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux 2</a>.  The version of Python may need to be updated from a secondary repository as the official Ubuntu version trails official Python releases.  Integration between VS Code running on Windows and integration with WSL2 Python may require custom configuration.</td>
 </tr>
 <tr>
 <td>Linux</td>
-<td>A variety of package managers based on the installed distro may impact the ease of installing current Python releases and updates, but overall this possibly the easiest to "OS" to install and maintain Python.</td>
+<td>A variety of package managers based on the installed distro enable installation and updates through a GUI or command line.</td>
 </tr>
 </tbody>
 </table>
-<details class="info"><summary>Python3</summary><p>Python is "officially" referred to and invoked by specfiying either Python 2.x as  "Python2" or Python 3.x.x as "Python3."  The difference is generally trivial except on Macs where Python2 is included as part of the OS install.  </p>
+<details class="info"><summary>Python3</summary><p>Python is officially referred to and invoked by specfiying either Python 2.x as  "Python2" or Python 3.x.x as "Python3."  The difference is generally trivial except on Macs where Python2 is included as part of the OS install.  </p>
 <p>On Mac and Linux based systems, adding an alias to .bashrc or .zshrc is an easy way to prevent inadvertent references to an incorrect version of Python, e.g.,
 <div class="highlight"><pre><span></span><code>alias python=&#39;python3&#39;
 alias pip=&#39;pip3&#39;
@@ -1437,9 +1440,9 @@ alias pip=&#39;pip3&#39;
 Note that the above included an alias for pip to pip3 as well.  </p>
 </details>
 <h2 id="python_dev_env-create-a-virtual-environment-to-use-for-dev">Create a virtual environment to use for Dev</h2>
-<p>A Python virtual environment is a development "sandbox" which allows for segmentation of development environments. This allows for management of different combinations and versions of Python releases, deployed packages, development and testing environments, and shifting between entirely different development projects. See the <a href="https://docs.python.org/3/library/venv.html">Python documentation for venv</a> for a more detailed explanation and rationalization of Python virtual environments.</p>
+<p>A Python virtual environment is a development sandbox which allows for segmentation of development environments. This allows for management of different combinations and versions of Python releases, deployed packages, development and testing environments, and shifting between entirely different development projects. See the <a href="https://docs.python.org/3/library/venv.html">Python documentation for venv</a> for a more detailed explanation and rationalization of Python virtual environments.</p>
 <p>The use of Python virtual environments can't be overstated as a best practice to organize Python versions and package management. <a href="https://www.python.org/dev/peps/pep-0405/">PEP-405</a></p>
-<p>Creating virtual environments to use in Python programming can be done entirely with packages that are include in the Pthyon install or by additional third party applications.    </p>
+<p>Creating virtual environments to use in Python programming can be done entirely with packages that are include in the Python install or by additional third party applications.    </p>
 <p>The choice of tools to create and manage Python virtual environments is dependent on situation, preference, and use case.  </p>
 <table>
 <thead>
@@ -1451,7 +1454,7 @@ Note that the above included an alias for pip to pip3 as well.  </p>
 <tbody>
 <tr>
 <td><a href="https://docs.python.org/3/library/venv.html">venv</a></td>
-<td>Implementation of the virtualenv as a Python module included in the Python install since v.3.3.  This is the "goto" tool of choice.</td>
+<td>Implementation of the virtualenv as a Python module included in the Python install since v.3.3.  This tool does not require installation outside of the Python distribution itself.</td>
 </tr>
 <tr>
 <td><a href="https://virtualenv.pypa.io/en/latest/index.html">virtualenv</a></td>
@@ -1459,11 +1462,11 @@ Note that the above included an alias for pip to pip3 as well.  </p>
 </tr>
 <tr>
 <td><a href="https://www.anaconda.com/">Anaconda</a></td>
-<td>A heavyweight package and virtual environment manager.  It acts as an "all in one" for Python application versions, package management, virtual environments, additional programming languages such as R and Julia and tools such as visualizers and IDEs. The full fledged install can overtax some systems and performance can suffer an overly ambitious installation configuration. A personal license for individuals is free for non-commercial use.  Use by for-profit or governmental organizations with more than 200 people requires licensing.</td>
+<td>A heavyweight package and virtual environment manager.  It acts as an "all in one" for Python application versions, package management, virtual environments, additional programming languages such as R and Julia and tools such as visualizers and IDEs. The full fledged install can overtax some systems and performance can suffer from an overly ambitious installation configuration. A personal license for individuals is free for non-commercial use.  Use by for-profit or governmental organizations with more than 200 people requires licensing.</td>
 </tr>
 <tr>
 <td><a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a></td>
-<td>A slimmed down version of Anaconda focussed on virtual environment and package management, includes only conda and Python, not open source, but free.</td>
+<td>A slimmed down version of Anaconda focused on virtual environment and package management, includes only conda and Python, not open source, but free.</td>
 </tr>
 <tr>
 <td><a href="https://docs.conda.io/en/latest/">conda</a></td>
@@ -1477,15 +1480,15 @@ Note that the above included an alias for pip to pip3 as well.  </p>
 </table>
 <details class="tip"><summary>'virtualenv venv' vs. 'venv virtualenv'</summary><p>Avoid the confusion of the typical example given in the documentation of <strong>virtualenv</strong> which uses the command executed as "virtualenv venv." This calls <strong>virtualenv</strong> to create a virtual environment named <strong>venv</strong>.  </p>
 <p>Compare with "venv virtualenv" which calls <strong>venv</strong> to create a virtual environment called <strong>virtualenv</strong>.  For most practical purposes when using Python 3.6 or greater it doesn't matter whether <strong>venv</strong> or <strong>virtualenv</strong> is used to create the virtual instance.</p>
-<p>But don't use "virtualenv venv."  That's just obnoxious.</p>
+<p>It's recommended to  name a virutal environment with a single word unique identifier as the word will be prefixed to the terminal command line when the virtual environment  is activated. </p>
 </details>
-<details class="note" open="open"><summary>Other Python Tools</summary><p>Other tools such as <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a>, <a href="https://pipenv.pypa.io/en/latest/">pipenv</a>, <a href="https://github.com/berdario/pew">pew</a>, <a href="https://tox.wiki/en/latest/">tox</a> and <a href="https://nox.thea.codes/en/stable/">nox</a> may be useful but are not currently utilized in this project.  <a href="https://github.com/pyenv">Pyenv</a> was deprecated in Python 3.5 and not utilized.</p>
+<details class="note" open="open"><summary>Other Python Tools</summary><p>Other tools such as <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a>, <a href="https://pipenv.pypa.io/en/latest/">pipenv</a>, <a href="https://github.com/berdario/pew">pew</a>, <a href="https://tox.wiki/en/latest/">tox</a> and <a href="https://nox.thea.codes/en/stable/">nox</a>, <a href="https://python-poetry.org/">poetry</a>, and <a href="https://black.readthedocs.io/en/stable/">black</a> may be useful but are not currently utilized in this project.  <a href="https://github.com/pyenv">Pyenv</a> was deprecated in Python 3.5 and not utilized.</p>
 </details>
 <p><br/>
 <br/>
 <br/></p></section><section class="print-page" id="requirements"><h1 id="requirements-project-package-requirements">Project Package Requirements</h1>
 <h2 id="requirements-currently-implemented-packages">Currently implemented packages:</h2>
-<p>This project utilizes the following packages, all of which should be available under an Open Source license via <a href="https://pypi.org/">Py</a>.
+<p>This project utilizes the following packages, all of which should be available under an Open Source license via <a href="https://pypi.org/">PyPI</a>.
 List updated as of:<br />
 <strong>02/16/2022 (February 16th, 2022)</strong></p>
 <p>Make sure to source the virtual environment first and then '<em>pip install &lt;package></em>' or '<em>conda install &lt;package></em>' to bring in the package.  </p>
@@ -1586,14 +1589,14 @@ zipp
 <br/>
 <br/></p></section><section class="print-page" id="working_with_the_code"><h1 id="working_with_the_code-getting-the-code">Getting the code.</h1>
 <h2 id="working_with_the_code-pulling-the-code-from-github">Pulling the code from GitHub</h2>
-<p>The <a href="https://github.com/BPC-OpenSourceTools/E-Invoice-Onboarding-Toolkit/">E-Invoice-Onboarding-Toolkiy</a> is a public repository.  The code is freely available under an MIT License for individuals and organizations to pull, review, and modify as they chose in order to further their participation with the project.</p>
-<p>It is entirely possible to pull the code from github anonymously using a link from within the repo.</p>
+<p>The <a href="https://github.com/BPC-OpenSourceTools/E-Invoice-Onboarding-Toolkit/">E-Invoice-Onboarding-Toolkit</a> is a public repository.  The code is freely available under an MIT License for individuals and organizations to pull, review, and modify as they chose in order to further their participation with the project.</p>
+<p>It is entirely possible to pull the code from GitHub anonymously using a link from within the repo.</p>
 <details class="tip"><summary>Pulling the code from GitHub</summary><ul>
 <li>
 <p>Look for the green "Code" button which will provide links to clone the code using https, ssh, the git desktop, or a zip file.</p>
 </li>
 <li>
-<p>This going to pull the repo at the root ./e-invoice-Onboarding-Toolkit.</p>
+<p>This is going to pull the repo at the root ./e-invoice-Onboarding-Toolkit level so this directory must not already exist when pulled down or it will overwrite the contents of the pre-existing directlry.</p>
 </li>
 <li>
 <p>Open the folder as a project within your IDE or editor of choice.</p>
@@ -1609,7 +1612,7 @@ zipp
 <p>Installing the GitHub CLI or the GitHub desktop application</p>
 </li>
 <li>
-<p>Configuring the personal profile and ssh keys to securely submit code to the repository.</p>
+<p>Configuring the personal profile and Secure Shell/SSH keys to securely submit code to the repository.</p>
 </li>
 <li>
 <p>Contributing code and creating pull requests to integrate with the repo.  </p>
@@ -1696,6 +1699,10 @@ zipp
 <td>einvoice.test</td>
 </tr>
 <tr>
+<td>./einvoice/tests/test_app_logging.py</td>
+<td>einvoice.discovery.tests.test_app_logging.test_log_creation</td>
+</tr>
+<tr>
 <td>./einvoice/docs</td>
 <td>NA - does not contain code artifacts</td>
 </tr>
@@ -1708,16 +1715,12 @@ zipp
 <td>einvoice.discovery.data</td>
 </tr>
 <tr>
-<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, URN.py</td>
+<td>./einvoice/discovery/accessor.py, app_handler.py, app_logging.py, create_tracking_id.py, dns_query.py, einvoice_message_package.py, line_item.py, party_address.py, semantic_model.py, smp_query.py, urn_hasher.py, urn.py</td>
 <td>einvoice.discovery.accessor.Accessor, einvoice.discovery.app_logging.create_logger, etc.</td>
 </tr>
 <tr>
 <td>./einvoice/delivery/import_xsd</td>
 <td>einvoice.delivery.import_xsd.ImportXSD</td>
-</tr>
-<tr>
-<td>./einvoice/delivery/tests</td>
-<td>einvoice.delivery.tests</td>
 </tr>
 </tbody>
 </table>
@@ -1778,18 +1781,10 @@ zipp
 <td>./einvoice/discovery/data/create_sample_data.py</td>
 <td>einvoice.discovery.data.create_sample_data.CreateSampleData</td>
 </tr>
-<tr>
-<td>./einvoice/discovery/tests/test_app_logging.py</td>
-<td>einvoice.discovery.tests.test_app_logging.test_log_creation</td>
-</tr>
-<tr>
-<td>./einvoice/discovery/tests/test_app_logging.py</td>
-<td>einvoice.delivery.tests.test_app_logging.test_import_xsd</td>
-</tr>
 </tbody>
 </table>
 <h2 id="using_the_modules-additional-files">Additional Files</h2>
-<p>Additional files included in the Project which are important.     </p>
+<p>Additional files included in the project which are important.     </p>
 <table>
 <thead>
 <tr>
@@ -1800,7 +1795,7 @@ zipp
 <tbody>
 <tr>
 <td>./einvoice/delivery/app.log</td>
-<td>application log created by app_logging.py for delivery sub-package.</td>
+<td>Application log created by app_logging.py for delivery sub-package.</td>
 </tr>
 <tr>
 <td>./einvoice/delivery/web_response.log</td>
@@ -1831,12 +1826,12 @@ zipp
 <td>Stored PDF files (vector graphic diagrams) which may be included in the documentation.</td>
 </tr>
 <tr>
-<td>./einvoice/discovery/tests/ *.sh</td>
-<td>An assortment of shell scripts to run various linters on the modules.  Includes pylint, mypy, flake8, pycodestyle, pydocstyle, and combinations.</td>
-</tr>
-<tr>
 <td>./einvoice/discovery/data/item_list.csv, per_item_list.csv</td>
 <td>CSV files which contain same data values to populate an einvoice.</td>
+</tr>
+<tr>
+<td>./einvoice/tests/ *.sh</td>
+<td>An assortment of shell scripts to run various linters on the modules.  Includes pylint, mypy, flake8, pycodestyle, pydocstyle, and combinations.</td>
 </tr>
 <tr>
 <td>.einvoice/.env .env.example.dev</td>
@@ -1844,7 +1839,7 @@ zipp
 </tr>
 <tr>
 <td>ebms-header-3_20220119.xsd, sample_msg.xml</td>
-<td>XSD containing schema definition for ebMS header and a sample message to test against it.</td>
+<td>XSD containing schema definition for ebMS header and a sample message to test against.</td>
 </tr>
 </tbody>
 </table>
@@ -1859,7 +1854,7 @@ zipp
 <li>
 <p>Dataclasses - modules which define some of the key entities at use in the project.</p>
 <ul>
-<li>URN.py - Dataclass for a URN.</li>
+<li>urn.py - Dataclass definition of an urn object.</li>
 <li>semantic_model.py - Dataclass for the semantic model (the einvoice itself).</li>
 <li>party_addresss.py - Dataclass for a party entity within the Four-Corner model.</li>
 <li>line_item.py - Dataclass for a line item on the semantic model (einvoice).</li>
@@ -1880,8 +1875,8 @@ zipp
 <ul>
 <li>accessor.py - module to run the "Start-To-Finish" process, execute via test scripts.</li>
 <li>create_sample_data.py - construct sample data entities to use in testing the semantic model.</li>
-<li>create_tracking_id.py - create an arbitrary id with a given configuraiton to use to track the message through the process.  Could be used in lieu of a UUID.</li>
-<li>app_handler.py - module closest to being an executable form the command line.  A prototpye module to run the "Start-to-Finish" directly, if all required configuration is complete.  </li>
+<li>create_tracking_id.py - create an arbitrary id with a given configuration to use to track the message through the process.  Could be used in lieu of a UUID.</li>
+<li>app_handler.py - module closest to being an executable form the command line.  A prototyye module to run the delivery validation directly, if all required configuration is complete.  </li>
 <li>app_logger.py - a custom logging implemenation to be used by all the other modules, including test modules, to standardize output and aggregate to single stream each for app logging, to system out, and response to a webservice.</li>
 </ul>
 </li>
@@ -1891,8 +1886,8 @@ zipp
 <br/></p></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
 <h2 id="test_cases-working-with-the-code">Working with the code</h2>
 <h3 id="test_cases-test-cases">Test Cases</h3>
-<p>Every module includes a test module in the einvoice/test directory.  </p>
-<details class="note" open="open"><summary>Test cases are writen as functions, not classes.</summary><p>The test cases are written as functions and <strong>CAN</strong> be directly called from the command line.  </p>
+<p>Every module includes a test module in the ./einvoice/test directory.  </p>
+<details class="note" open="open"><summary>Test cases are written as functions, not classes.</summary><p>The test cases are written as functions and <strong>CAN</strong> be directly called from the command line.  </p>
 </details>
 <details class="important" open="open"><summary>Use Pytest to run the test cases.</summary><p>The use case for the test cases include using Pytest.<br />
 <strong>The Pytest package must be installed in your Python distribution.</strong></p>
@@ -1907,14 +1902,14 @@ For Mac/*nix/WSL2:
 </code></pre></div></p>
 <details class="important" open="open"><summary>The ./test directory <strong>must</strong> be at the same level as the code.</summary><p>Out of the box, Pytest requires that without additional configuration it must be executed from  a directory at the same level of the code that's being tested.  That is, test scripts are in ./einvoice/test and code files are in ./einvoice/discovery and ./einvoice/delivery.   </p>
 </details>
-<p>Pytest will automatically look for files formatted as test files, with "test" in the lead of the filename.  To execute an inidivdual test the syntax is:
+<p>Pytest will automatically look for files formatted as test files, with "test" in the lead of the filename.  To execute an inidividual test the syntax is:
 <div class="highlight"><pre><span></span><code>pytest test_app_logging.py
 </code></pre></div></p>
 <p>No test is dependent on any other, and each may be run on its own, or run them all at once, in any order.  </p>
-<p>The test will run and either the "assert" statement(s) inside will pass, or it will fail.  </p>
+<p>The test will run and either the "assert" statement(s) inside will pass or it will fail.  </p>
 <p><strong>Failures MUST be resolved prior to attempting to check code into GitHub as our baseline CI/CD process checks for these failures before committing and will not continue if any are found.</strong></p>
-<p>The included assert statements currently test a variety of cases up to validation of urn creation, query of the NAPTR DNS record, REST API call to the SMP, and validation of the ebMS header against the AS4 conformance profile.  </p>
-<p>The test folder also contains a number of shell scripts to validate the code using  a number of linters including flake8, pylint, mypy, pycodestyte, and pydocstyle.   Prior to check in, all code has had warnings from all linters resolved or noted.  </p>
+<p>The included assert statements currently test a variety of cases up to validation of URN creation, query of the NAPTR DNS record, REST API call to the SMP, and validation of the ebMS header against the AS4 conformance profile.  </p>
+<p>The test folder also contains a number of shell scripts to validate the code using  a number of linters including flake8, pylint, mypy, pycodestyte, and pydocstyle.   Prior to check in, all code must have all warnings from all linters resolved or noted.  </p>
 <figure>
 <p><img alt="Successful completion of all tests cases." src="../successful_tests.png" />
   </p>
@@ -1926,7 +1921,7 @@ For Mac/*nix/WSL2:
 <h2 id="discovery_validation-start-to-finish-integration">Start-to-Finish Integration</h2>
 <p>There is not currently an "end-to-end" test for the E-Invoice Four-Corner Model to validate the workflow in its entirety.  </p>
 <p>The next best use case is a "Start-to-Finish" of the discovery process.  </p>
-<p>This "Start-to-Finish" entails valdating:<br />
+<p>Discovery validation entails testing:<br />
 1. The hashing functionality to derive the URN for look-up from the specification, the party ID, and the schema ID.<br />
 2. Executing the DNS NATPR lookup and extracting the relevant SMP URI.<br />
 3. Constructing the two REST requests including the <strong>smp service group url</strong> and the <strong>smp service url</strong>.<br />
@@ -1953,55 +1948,43 @@ For Mac/*nix/WSL2:
 <h2 id="google_colab_pages-colab-sandboxes">Colab Sandboxes</h2>
 <p><a href="https://jupyter.org/">JupyterLab</a> is a sandbox development environment which allows for, among other things, rapid prototyping or testing of small units of code.  They provide a framework to execute code without building a whole application or even a complete module.</p>
 <p>Most of the code already incorporated into the project started out in a JupyterLab runtime environment.  </p>
-<p>JupyterLab is also great for documenting and demonstrating exactly what's going on with a piece of code.  </p>
+<p>JupyterLab is also useful for introspection of a piece of code.  </p>
 <p>JupyterLab artifacts worked on for the project are stored as static documents in GitHub in the E-Invoice-Onboarding-Toolkit project under ./einvoice/docs/jupyterlab.  </p>
 <p><a href="https://colab.research.google.com/">Google Colab</a> pages implement <a href="https://jupyter.org/">JupyterLab </a> runtime with live sandbox environments.  Pages can be linked from the E-Invoice-Onboarding-Toolkit  GitHub repository, or pulled from the repository and saved locally by anyone with a Google account.  </p>
 <h3 id="google_colab_pages-urn-hashing-and-dns-naptr-lookup">URN hashing and DNS NAPTR lookup.</h3>
-<p>Colab page with examples of how to hash the specification, the schema_id, and the party_id to create the URN and perform the natpr dns query is at this <a href="https://colab.research.google.com/drive/1kfMedMUapeaOS6u9hnS8IcmQaury8znP?usp=sharing">Colab page</a>.  Examples 6, 7, 8,  and 9 run the hash and submit against DNS in real-time.<br />
+<p>The Colab JupyterLab Notebook with examples of how to hash the specification, the schema_id, and the party_id to create the URN and perform the NAPTR DNS query is at this <a href="https://colab.research.google.com/drive/1kfMedMUapeaOS6u9hnS8IcmQaury8znP?usp=sharing">Colab page</a>.  Examples 6, 7, 8,  and 9 run the hash and submit against a DNS in real-time.<br />
 The JupyterLab file is: <strong>urn_hash_work.ipynb</strong>.</p>
 <h2 id="google_colab_pages-smp-query">SMP query</h2>
-<p>Colab page with examples of how to transform the URN and party_id and submit it to the SMP uri is at this <a href="https://colab.research.google.com/drive/14EVSc0GyjU0H9776UEXqoEoD3x5Kn2RV?usp=sharing">Colab page</a>.<br />
-They JupyterLab file is: <strong>smp_url_transformations.ipynb</strong>.</p>
+<p>The Colab JupyterLab Notebook page with examples of how to transform the URN and party_id and submit it to the SMP URI is at this <a href="https://colab.research.google.com/drive/14EVSc0GyjU0H9776UEXqoEoD3x5Kn2RV?usp=sharing">Colab page</a>.<br />
+They JupyterLab Notebook file is: <strong>smp_url_transformations.ipynb</strong>.</p>
 <h2 id="google_colab_pages-ebms-message-header-validation">ebMS Message Header validation</h2>
-<p>Colab pages with examples of reading an XSD file and validating an XML file has two Google Colab pages for different aspects of the work.<br />
+<p>The Colab JupyterLab Notebook  pages with examples of reading an XSD file and validating an XML file has two Google Colab pages for different aspects of the work.<br />
 Inspection and validation of the XSD file has this <a href="https://colab.research.google.com/drive/1zuPcP1ofEe8PReew9KbGY13EQJsNN8Es?usp=sharing">Google Colab Page</a>.
 The JupyterLab file is: <strong>ebMS XML 3 schema.ipynb</strong>.</p>
 <p>Validation of an xml file against the XSD is done using this <a href="https://colab.research.google.com/drive/1ExMZUD_5larW0wEuGJ5erHkFuoozcLCF?usp=sharing">Google Colab Page</a>
 The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
-<p>For ease of access these files are copies stored on the drive of one of the project Developers and is free and open to anyone to view and run.   Interested individuals should make copies of the Labs for themselves and run on Google Colab under their own account or an instance of JupytyerLab running on Anaconda, VS Code, or a Python install.</p>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><h1 class='nav-section-title-end'>Ended: Using the Code</h1><section class="print-page" id="infrastructure_components"><h1 id="infrastructure_components-additional-infrastructure-build-out">Additional Infrastructure Build-out</h1>
+<p>For ease of access these files are copies stored on the drive of one of the project Developers and is free and open to anyone to view and run.   Interested individuals should make copies of the Labs for themselves and run on Google Colab under their own account or an instance of JupytyerLab running on Anaconda, VS Code, or a Python install.</p></section><h1 class='nav-section-title-end'>Ended: Using the Code</h1><section class="print-page" id="infrastructure_components"><h1 id="infrastructure_components-additional-infrastructure-build-out">Additional Infrastructure Build-out</h1>
 <p>The code is intended to interact with other participants in the Four-Corner Model,  including Access Providers, DNS servers and SMP service providers.</p>
 <h2 id="infrastructure_components-sml">SML</h2>
 <p><strong>Q:</strong>    </p>
 <p>How do you test the toolkit?  How do you create a NAPTR  DNS record entry on a domain? </p>
 <p><strong>A:</strong></p>
-<p>In order to do the SML look-up, the appropriate NAPTR records must be in place.  The assumption is that a NAPTR DNS record exists as a key:value pair.  A look-up of the "key" in the DNS of the NAPTR record will return the "value."  The "key" is the hashed value of the URN.  The value being sought and returned is the URI of the SMP for the next step in the Model.</p>
-<p>Access Point 1 in Corner 2 may be acting in the role of the SML and handling tasks associated with it.  Theses task could include: <br />
-* Creating the URN
-* Creaing the hash value of the URN
-* Queryhing the DNS NATPR record record
-* Returning the SMP URI</p>
+<p>In order to do the SML look-up, the appropriate NAPTR records must be in place.  The assumption is that a NAPTR DNS record exists as a key:value pair.  A look-up of the "key" in the DNS of the NAPTR record will return the "value."  The "key" is the hashed value of the urn.  The value being sought and returned is the URI of the SMP for the next step in the Model.</p>
+<p>Access Point 1 in Corner 2 may be acting in the role of the SML and handling tasks associated with it.  Theses task could include:   </p>
+<ul>
+<li>Constructing the URN  </li>
+<li>Creaitng the hash value of the URN  </li>
+<li>Queryhing the DNS NATPR record URN</li>
+<li>Returning the SMP URI  </li>
+</ul>
 <p>The Python modules provide examples of some ways  the tasks of SML could be accomplished, either as, or by, an Access Point or an organization on its own behalf.    </p>
-<p>For testing purposes the BPC is running a DNS server on Amazon Web Services Route53 on the test domain of sc-b2b.us.   This allows for the registration of URN hashes in the DNS domain of sc-b2b.us.  These entiries are live in the DNS accessible worldwide.  </p>
-<p>A REST API is available at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register SML entries, which are the DNS NATPR records on the sc-b2b.us domain.  This process creates the URN hash based in inputs provided by the user.  Organizations wishing to register a test URN on the BPC test domain can reach  out to the BPC  or @mnkellyk for assistance in using the web interface.  </p>
-<p>Once these SML/DNS NATPR entries are created, they can queried using the toolkit to make public queries to DNS NAPTR look-up within a matter of seconds.</p>
+<p>For testing purposes there is an application to update a DNS entry with a NAPTR record key:value pair of URN:SMP URI repsonse.  The applicatiion updates a the DNS via Amazon Web Services Route53 using the test domain of sc-b2b.us.   This allows for the registration of URN hashes in the DNS domain of sc-b2b.us.  These entries are live in the DNS and accessible worldwide.  </p>
+<p>The REST API is available at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register SML entries, which are the DNS NATPR records on the sc-b2b.us domain.  This process creates the URN hash based in inputs provided by the user.  Organizations wishing to register a test URN to use for validation can open an issue in the project for assistance in using the web interface.  </p>
+<p>Once these SML/DNS NATPR entries are created, they can queried using the toolkit to make public queries to DNS NAPTR look-up as soon as propated through the DNS.</p>
 <p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/sml-service-r53">BPC-OpenSourceTools/sml-service-r53</a>.  </p>
 <h2 id="infrastructure_components-smp">SMP</h2>
-<p>The BPC also has an application to test the SMP REST API service calls on the same domain as the SML at  <a href="https://smp-api.sc-b2b.us/docs">https://smp-api.sc-b2b.us/docs</a> .  Again, this is a REST API to make web service calls to test the toolkit.  </p>
-<p>The SMP iitself s a web service queried by a SOAP API call to return the Corner 3 URI or terminal endpoint.  The specification for the actual API can be found in the document: <a href="http://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.html">Service Metadata Publishing (SMP) Version 2.0</a> dated 14 February 2021 as an Oasis standard.   </p>
+<p>There is an application to test the SMP REST API service calls on the same domain as the SML at  <a href="https://smp-api.sc-b2b.us/docs">https://smp-api.sc-b2b.us/docs</a> .  This is a REST API to make web service calls to test the toolkit.  </p>
+<p>The SMP s a web service queried by a SOAP API call to return the Corner 3 URI or terminal endpoint.  The specification for the actual API can be found in the document: <a href="http://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.html">Service Metadata Publishing (SMP) Version 2.0</a> dated 14 February 2021 as an Oasis standard.   </p>
 <p><strong>Section 5.4 Resources</strong>  </p>
 <table>
 <thead>
@@ -2015,14 +1998,6 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>test</td>
-<td>test</td>
-<td>test</td>
-<td>test</td>
-<td>test</td>
-<td>test</td>
-</tr>
 <tr>
 <td>ServiceGroup</td>
 <td>./bdxr-smp-2/[{identifier scheme}::]{participant id} See section 3.6 for {participant id} format</td>
@@ -2041,25 +2016,9 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </tr>
 </tbody>
 </table>
-<p>The SMP service proivded by the BPC registers a URN for query.  Note that the API specification is essentially the URN with modifications to include some additional service capability codes but mostly to accomodate characters that would otherwise be illegal in a URL.  </p>
-<p>After registering a URN(s) on the SML service, go to the SMP service at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register the URN there in order to get a reponse for testing SMP query functionality.</p>
-<p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/smp-service">BPC-OpenSourceTools/smp-service</a>.</p>
-<details class="warn"><summary>Client/server certificate trust implicit in the test doman.</summary><p>The SMP service specification has rules regarding Access Point and Reqestor security certificates (client) and SMP provider (server side)  security certificates to estabilish non-reputability, etc.   The BPC E-Invoice workgroup has not fully addressed the question of how the security certificate relationships are going to be managed.  As such, the test application does not validate the client/requestor or its Access Point.  It does return the security certificate of the server in its response, registered under letencrypt.org.  In the future, if rules were to be finalized, the security certicate relationship would need to be incorporated into the SMP REST API  protocol.   </p>
-</details>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="project_roadmap"><h1 id="project_roadmap-project-roadmap">Project Roadmap</h1>
+<p>The SMP service provided by the BPC registers a URN for query.  Note that the API specification is essentially the URN with modifications to include some additional service capability codes but mostly to accomodate characters that would otherwise be illegal in a URL.  </p>
+<p>After registering a URN(s) on the SML service, go to the SMP service at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register the urn there in order to get a reponse for testing SMP query functionality.</p>
+<p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/smp-service">BPC-OpenSourceTools/smp-service</a>.</p></section><section class="print-page" id="project_roadmap"><h1 id="project_roadmap-project-roadmap">Project Roadmap</h1>
 <h3 id="project_roadmap-discovery-1-sml-naptr-dns-lookup">Discovery #1 - SML NAPTR DNS Lookup</h3>
 <ol>
 <li>Feature – Access Point A sends UNAPTR DNS query with a Party ID/Party ID Schema hash and obtains a valid response with connection information to the SMP.  </li>
@@ -2079,7 +2038,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 <td>No</td>
 </tr>
 <tr>
-<td>Transform and format contents of Seller’s request to create UNAPTR DNS query.</td>
+<td>Transform and format contents of Seller’s request to create UNAPTR DNS query</td>
 <td>Access Point A</td>
 <td>Yes</td>
 </tr>
@@ -2089,7 +2048,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 <td>Yes</td>
 </tr>
 <tr>
-<td>Return response to query.</td>
+<td>Return response to query</td>
 <td>SML – Reply from UNAPTR DNS query.</td>
 <td>No</td>
 </tr>
@@ -2174,7 +2133,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 <td>No</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="artifacts"><h1 id="artifacts-the-repository">The Repo(sitory)<hr/></h1>
+</table></section><section class="print-page" id="artifacts"><h1 id="artifacts-the-repository">The Repository<hr/></h1>
 <h3 id="artifacts-repository-layout">Repository Layout</h3>
 <p>This project includes the following files, <em>i.e., "artifacts"</em> in <strong>.py</strong>, .<strong>md</strong>, .<strong>txt</strong> and other formats, updated as of:<br />
 <strong>02/16/2022 (February 16th, 2022)</strong></p>
@@ -2343,7 +2302,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
   environment. It is intended for developers of software related to the 4-corners Model to use as a stepping-off point
   for further development efforts.
 </div></section><section class="print-page" id="oasis_documentation"><h1 id="oasis_documentation-oasis-resources">OASIS Resources</h1>
-<p>Links to referenced authoritative sources:  </p>
+<p>Reference Links:  </p>
 <h2 id="oasis_documentation-documents">Documents</h2>
 <table>
 <thead>
@@ -2412,27 +2371,13 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 <td><em>Namespace URI</em>: <a href="http://docs.oasis-open.org/ebxml-msg/ns/v3.0/mf/2010/04/">ebXML Messaging V3 Part 2: Message Fragments</a></td>
 </tr>
 <tr>
-<td><em>Namespace URI</em>: <a href="http://www.openhealth.org/RDDL/20040118/rddl-20040118.html">Resource Directory Description Language(RDDL) 2.0</a> and references the XSD files below.</td>
+<td><em>Namespace URI</em>: <a href="http://docs.oasis-open.org/RDDL/20040118/rddl-20040118.html">Resource Directory Description Language(RDDL) 2.0</a> and references the XSD files below.</td>
 </tr>
 </tbody>
 </table>
-<details class="warning" open="open"><summary>TBD</summary><p>Interoperable components under the AS4 Usage Agreements as specified in Section 5.2 of the <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/AS4-profile/v1.0/os/AS4-profile-v1.0-os.html">AS4 Profile of ebMS</a> are non-normative.  (Excepting that the new AS4 Interoperability Profile for Four-Corners Model networks does attempt to make interoperation normative via P-Mode configuration.)  Samples of SOAP including XML, XMLNS and XSLT are included in Appendix A of the AS4 Profile.  </p>
-<p>It can be inferred from the ebXML Messaging V3 (ebMS3) namespace at <a href="http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707">http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707</a> that a namespace URI for the November 12th, 2021 Committee Conformance Profile specification would be called something similar to <ins>https://docs.oasis-open.org/bdxr/ns/bdx-as4/v1.0/profiles/202112</ins>. That namespace or similar guidance has not yet been articulated by the Committee.</p>
-</details>
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div></section><section class="print-page" id="_license"><h1 id="_license-mit-license">MIT License</h1>
+<p><br/>
+<br/>
+<br/></p></section><section class="print-page" id="_license"><h1 id="_license-mit-license">MIT License</h1>
 <p>Copyright (c) 2022 BPC Open Source Tools Project</p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

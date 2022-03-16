@@ -676,8 +676,8 @@
 <h1 id="e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
 <h2 id="working-with-the-code">Working with the code</h2>
 <h3 id="test-cases">Test Cases</h3>
-<p>Every module includes a test module in the einvoice/test directory.  </p>
-<details class="note" open="open"><summary>Test cases are writen as functions, not classes.</summary><p>The test cases are written as functions and <strong>CAN</strong> be directly called from the command line.  </p>
+<p>Every module includes a test module in the ./einvoice/test directory.  </p>
+<details class="note" open="open"><summary>Test cases are written as functions, not classes.</summary><p>The test cases are written as functions and <strong>CAN</strong> be directly called from the command line.  </p>
 </details>
 <details class="important" open="open"><summary>Use Pytest to run the test cases.</summary><p>The use case for the test cases include using Pytest.<br />
 <strong>The Pytest package must be installed in your Python distribution.</strong></p>
@@ -692,14 +692,14 @@ For Mac/*nix/WSL2:
 </code></pre></div></p>
 <details class="important" open="open"><summary>The ./test directory <strong>must</strong> be at the same level as the code.</summary><p>Out of the box, Pytest requires that without additional configuration it must be executed from  a directory at the same level of the code that's being tested.  That is, test scripts are in ./einvoice/test and code files are in ./einvoice/discovery and ./einvoice/delivery.   </p>
 </details>
-<p>Pytest will automatically look for files formatted as test files, with "test" in the lead of the filename.  To execute an inidivdual test the syntax is:
+<p>Pytest will automatically look for files formatted as test files, with "test" in the lead of the filename.  To execute an inidividual test the syntax is:
 <div class="highlight"><pre><span></span><code>pytest test_app_logging.py
 </code></pre></div></p>
 <p>No test is dependent on any other, and each may be run on its own, or run them all at once, in any order.  </p>
-<p>The test will run and either the "assert" statement(s) inside will pass, or it will fail.  </p>
+<p>The test will run and either the "assert" statement(s) inside will pass or it will fail.  </p>
 <p><strong>Failures MUST be resolved prior to attempting to check code into GitHub as our baseline CI/CD process checks for these failures before committing and will not continue if any are found.</strong></p>
-<p>The included assert statements currently test a variety of cases up to validation of urn creation, query of the NAPTR DNS record, REST API call to the SMP, and validation of the ebMS header against the AS4 conformance profile.  </p>
-<p>The test folder also contains a number of shell scripts to validate the code using  a number of linters including flake8, pylint, mypy, pycodestyte, and pydocstyle.   Prior to check in, all code has had warnings from all linters resolved or noted.  </p>
+<p>The included assert statements currently test a variety of cases up to validation of URN creation, query of the NAPTR DNS record, REST API call to the SMP, and validation of the ebMS header against the AS4 conformance profile.  </p>
+<p>The test folder also contains a number of shell scripts to validate the code using  a number of linters including flake8, pylint, mypy, pycodestyte, and pydocstyle.   Prior to check in, all code must have all warnings from all linters resolved or noted.  </p>
 <figure>
 <p><img alt="Successful completion of all tests cases." src="../successful_tests.png" />
   </p>
