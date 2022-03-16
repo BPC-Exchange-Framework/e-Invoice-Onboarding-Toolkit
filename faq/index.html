@@ -624,14 +624,14 @@
 <dt><strong>A:</strong></dt>
 <dd>This code answers some very domain specific questions regarding e-invoice discovery and delivery using a Four-Corners exchange framework.  <br />
 Specifically it's helpful with:<br />
-1.  Discovery <br />
-  a. The hashing functionality to derive the URN for look-up in a DNS NAPTR record.<br />
-  b. How to do the DNS NATPR lookup and extract the relevant SMP URI.<br />
-  c. How to construct the two REST requests to an SMP server to retrieve a Corner 3 URI.<br />
-  d. How to execute the REST requests to the SMP server.<br />
-  e. How to extract the Corner 3 endpoint URI from the response from the SMP server.  <br />
-  1.  Delivery<br />
-  a. Validating an e-invoice ebXML message header for compliance with an AS4 conformance profile.  </dd>
+<em> Discovery <br />
+    1. The hashing functionality to derive the URN for look-up in a DNS NAPTR record.<br />
+    1.  How to do the DNS NATPR lookup and extract the relevant SMP URI.<br />
+    1. How to construct the two REST requests to an SMP server to retrieve a Corner 3 URI.<br />
+     1.  How to execute the REST requests to the SMP server.<br />
+    1. How to extract the Corner 3 endpoint URI from the response from the SMP server.  <br />
+</em> Delivery<br />
+    1. Validating an e-invoice ebXML message header for compliance with an AS4 conformance profile.  </dd>
 </dl>
 <hr>
 
@@ -643,25 +643,23 @@ Specifically it's helpful with:<br />
 </dl>
 <p><strong>A:</strong>
 Here are some ways the code can be examined or worked with:<br />
-1. <a href="./delivery_validation.md">Delivery Valdiation</a> of the URI discovery process..<br />
+1. <a href="../discovery_validation/">Discovery Valdiation</a> of the URI discovery process..<br />
 2. <a href="../test_cases/">Test Cases</a> which demonstrate functionality of the modules.<br />
 3. Jupyter Notebook sandbox environments at <a href="../google_colab_pages/">Google Colab Pages</a> which isolate and demonstrate the code in a sandbox.<br />
-4. Package/Library API see the <a href="..">Index</a> for links to the code API on the modules themselves.<br />
-5. Integration of an example discovery process implemented in a <a href="./flask_integration_on_docker.md">Flask application on a Docker container</a> (forthcoming).  </p>
+4. Package/Library API see the <a href="..">Index</a> for links to the code API on the modules themselves.  </p>
+<!-- 5. Integration of an example discovery process implemented in a [Flask application on a Docker container](./flask_integration_on_docker.md) (forthcoming).  
+-->
+
 <dl>
 <dt><strong>Q:</strong></dt>
 <dd>
 <p>How do I make sense of all this?  </p>
 </dd>
-<dt><strong>A:</strong></dt>
-<dd>
-<ol>
-<li>Review the <a href="../pdf/Bounded%20Context%20-%20Functional%20Capabilities%201.3.pdf">Domain-Driven Design used to implement the Four Corner Model</a> which gives an overivew of the process and the Ubiquitous Language used in development.  </li>
-<li>Review the <a href="../pdf/4-Corners_Workflow.pdf">e-invoice workflow</a></li>
-<li>Review the <a href="../pdf/BP-OpenSourceToolsRoadmap.pdf">Projrct Roadmap</a></li>
-</ol>
-</dd>
 </dl>
+<p><strong>A:</strong>
+1. Review the <a href="../pdf/Bounded_Context-Functional_Capabilities_1.3.pdf">Domain-Driven Design used to implement the Four Corner Model</a> which gives an overiew of the process and the Ubiquitous Language used in development.<br />
+1.   Review the <a href="../pdf/4-Corners_Workflow.pdf">e-invoice workflow</a>
+1. Review the <a href="../pdf/BP-OpenSourceToolsRoadmap.pdf">Project Roadmap</a></p>
 <p><br/>
 <br/>
 <br/></p>

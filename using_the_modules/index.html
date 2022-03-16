@@ -897,7 +897,7 @@
 <h2 id="note-on-classes-with-modules">Note on classes with modules.</h2>
 <details class="info" open="open"><summary>All module code is in classes and methods.</summary><p>All code in the discovery and delivery sub-packages is encapsulated in a class and a method within a class.  There are no excutable functions outside of a class.</p>
 <p><em>There is no entry point to execute this code and instantiate any of the classes or methods at the command line at this time.</em></p>
-<p>Examples of implementing and executing the code can be found in the <a href="../test_cases/">test cases</a>, <a href="./start_to_finish.md">start-to-finish example</a>, or the <a href="../google_colab_pages/">JupyterLab/Notebooks</a>.</p>
+<p>Examples of implementing and executing the code can be found in the <a href="../test_cases/">test cases</a>, <a href="../discovery_validation/">Discovery Validation</a>, or the <a href="../google_colab_pages/">JupyterLab/Notebooks</a>.</p>
 <p>Test cases are not encapsulated in classes or methods but are instead named functions.</p>
 </details>
 <p>The code is as Pythonic as possible in naming files for exactly what they do.  The functionality can be broken down as:</p>
@@ -924,7 +924,7 @@
 <li>
 <p>Other "helper" modules -</p>
 <ul>
-<li>accessor.py - module to run the "Start-To-Finish" process, execute via test scripts.</li>
+<li>accessor.py - module to run the Delivery Validation process, executed via test scripts.</li>
 <li>create_sample_data.py - construct sample data entities to use in testing the semantic model.</li>
 <li>create_tracking_id.py - create an arbitrary id with a given configuration to use to track the message through the process.  Could be used in lieu of a UUID.</li>
 <li>app_handler.py - module closest to being an executable form the command line.  A prototyye module to run the delivery validation directly, if all required configuration is complete.  </li>
