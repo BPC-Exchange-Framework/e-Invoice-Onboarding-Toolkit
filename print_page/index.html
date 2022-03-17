@@ -1050,7 +1050,7 @@
 <li><a href="#git_workflow">Workflow</a></li>
 <li><a href="#oasis_documentation">Oasis Resources</a></li>
 <li><a href="#_license">License</a></li>
-</ul></section><section class="print-page" id="faq"><h1 id="faq-questions">Questions...</h1>
+</ul></section><section class="print-page" id="faq"><h1 id="faq-faq">FAQ</h1>
 <hr>
 <dl>
 <dt><strong>Q:</strong></dt>
@@ -1075,14 +1075,14 @@
 <dt><strong>A:</strong></dt>
 <dd>This code answers some very domain specific questions regarding e-invoice discovery and delivery using a Four-Corners exchange framework.  <br />
 Specifically it's helpful with:<br />
-<em> Discovery <br />
-    1. The hashing functionality to derive the URN for look-up in a DNS NAPTR record.<br />
-    1.  How to do the DNS NATPR lookup and extract the relevant SMP URI.<br />
-    1. How to construct the two REST requests to an SMP server to retrieve a Corner 3 URI.<br />
-     1.  How to execute the REST requests to the SMP server.<br />
-    1. How to extract the Corner 3 endpoint URI from the response from the SMP server.  <br />
-</em> Delivery<br />
-    1. Validating an e-invoice ebXML message header for compliance with an AS4 conformance profile.  </dd>
+<strong>Discovery</strong> <br />
+  1. The hashing functionality to derive the URN for look-up in a DNS NAPTR record.<br />
+  2.  How to do the DNS NATPR lookup and extract the relevant SMP URI.<br />
+  3. How to construct the two REST requests to an SMP server to retrieve a Corner 3 URI.<br />
+  4. How to execute the REST requests to the SMP server.<br />
+  5.  How to extract the Corner 3 endpoint URI from the response from the SMP server.  <br />
+<strong>Delivery</strong><br />
+  1. Validating an e-invoice ebXML message header for compliance with an AS4 conformance profile.  </dd>
 </dl>
 <hr>
 
@@ -1091,26 +1091,16 @@ Specifically it's helpful with:<br />
 <dd>
 <p>How do I use the code?  </p>
 </dd>
+<dt><strong>A:</strong></dt>
+<dd>Here are some ways the code can be examined or worked with:<br />
+  1. <a href="#discovery_validation">Discovery Valdiation</a> of the URI discovery process..<br />
+  2. <a href="#test_cases">Test Cases</a> which demonstrate functionality of the modules.<br />
+ 3. Jupyter Notebook sandbox environments at <a href="#google_colab_pages">Google Colab Pages</a> which isolate and demonstrate the code in a sandbox.<br />
+  4. Package/Library API see the <a href="#.">Index</a> for links to the code API on the modules themselves.  </dd>
 </dl>
-<p><strong>A:</strong>
-Here are some ways the code can be examined or worked with:<br />
-1. <a href="#discovery_validation">Discovery Valdiation</a> of the URI discovery process..<br />
-2. <a href="#test_cases">Test Cases</a> which demonstrate functionality of the modules.<br />
-3. Jupyter Notebook sandbox environments at <a href="#google_colab_pages">Google Colab Pages</a> which isolate and demonstrate the code in a sandbox.<br />
-4. Package/Library API see the <a href="#.">Index</a> for links to the code API on the modules themselves.  </p>
 <!-- 5. Integration of an example discovery process implemented in a [Flask application on a Docker container](./flask_integration_on_docker.md) (forthcoming).  
 -->
 
-<dl>
-<dt><strong>Q:</strong></dt>
-<dd>
-<p>How do I make sense of all this?  </p>
-</dd>
-</dl>
-<p><strong>A:</strong>
-1. Review the <a href="../pdf/Bounded_Context-Functional_Capabilities_1.3.pdf">Domain-Driven Design used to implement the Four Corner Model</a> which gives an overiew of the process and the Ubiquitous Language used in development.<br />
-1.   Review the <a href="../pdf/4-Corners_Workflow.pdf">e-invoice workflow</a>
-1. Review the <a href="../pdf/BP-OpenSourceToolsRoadmap.pdf">Project Roadmap</a></p>
 <p><br/>
 <br/>
 <br/></p></section><section class="print-page" id="outcomes"><h1 id="outcomes-project-outcomes">Project Outcomes:<hr></h1>
@@ -1281,10 +1271,6 @@ Here are some ways the code can be examined or worked with:<br />
 <p>All effort will be made to remain within the <a href="https://docs.python.org/3.10/library/index.html">Python Standard Library</a>. Other publicly hosted packages with an open source license may be implemented.</p>
 <h4 id="tools_and_resources-version-of-python">Version of Python</h4>
 <p><em>Select a minimum version of Python 3.6. This will include newer features such as f-string.</em> <strong>Python 3.10 is recommended.</strong></p>
-<h3 id="tools_and_resources-computer-specification">Computer Specification</h3>
-<div class="admonition warning">
-<p class="admonition-title">You will need a computer which is able to download and run Python 3.6.</p>
-</div>
 <h3 id="tools_and_resources-operating-system">Operating System</h3>
 <table>
 <thead>
@@ -1296,7 +1282,7 @@ Here are some ways the code can be examined or worked with:<br />
 <tbody>
 <tr>
 <td>Mac OS</td>
-<td>Included system version of Python 2.x must be respected.  Make sure to use Python virtual environments. Homebrew package manager is a plus.</td>
+<td>Included system version of Python 2.x must be respected.  Make sure to use Python virtual environments.</td>
 </tr>
 <tr>
 <td>Windows</td>
