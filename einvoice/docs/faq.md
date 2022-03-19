@@ -1,4 +1,4 @@
-# Questions...
+# FAQ
 <hr>
 __Q:__
 : Who is the audience for this project?   
@@ -13,7 +13,7 @@ __Q:__
 
 __A:__
 : __Python__  
-  1. Some knowledge of Python  
+  1. Intermediate knowledge of Python.  
   2. Python 3.6 or greater, _Python 3.10 or greater is recommended._.  
 
 <hr>
@@ -21,14 +21,16 @@ __Q:__
 : Does this code provide a full end-to-end solution to process an e-invoice?  
 
 __A:__  
-: This code answers some very domain specific questions regarding e-invoice functionality in a Four-Corners Model framework.  
-_Specifically it's helpful with:_  
-1. The hashing functionality to derive the urn for look-up in a DNS NAPTR record.  
-2. How to do the DNS NATPR lookup and extract the relevant SMP URI.  
-3. How to construct the two REST requests to an SMP server to retrieve a Corner 3 URI.  
-4. How to execute the REST requests to the SMP server.  
-5. How to extract the Corner 3 endpoint URI from the response from the SMP server.    
-6. Validating an e-Invoice ebXML message header for compliance with an AS4 conformance profile.  
+: This code answers some very domain specific questions regarding e-invoice discovery and delivery using a Four-Corners exchange framework.    
+Specifically it's helpful with:  
+__Discovery__   
+  1. The hashing functionality to derive the URN for look-up in a DNS NAPTR record.  
+  2.  How to do the DNS NATPR lookup and extract the relevant SMP URI.  
+  3. How to construct the two REST requests to an SMP server to retrieve a Corner 3 URI.  
+  4. How to execute the REST requests to the SMP server.  
+  5.  How to extract the Corner 3 endpoint URI from the response from the SMP server.    
+__Delivery__  
+  1. Validating an e-invoice ebXML message header for compliance with an AS4 conformance profile.  
 
 <hr>
 
@@ -37,35 +39,15 @@ __Q:__
 
 :   How do I use the code?  
 
-__A:__
-: There are a number of ways the code can be examined or worked with:  
-1. [Start to finish example of the  URI discovery process](./start_to_finish.md).  
-2. [Test Cases](./test_cases.md) which demonstrate functionality of the modules.  
-3. Jupyter Notebook sandbox environments at [Google Colab Pages](./google_colab_pages.md) which isolate and demonstrate the code in a sandbox.  
-4. Package/Library API see the [Index](./index.md) for links to the code API on the modules themselves.  
-5. Integration of an example discovery process implemented in a [Flask application on a Docker container](./flask_integration_on_docker.md) (forthcoming).  
+__A:__   
+: Here are some ways the code can be examined or worked with:  
+  1. [Discovery Valdiation](./discovery_validation.md) of the URI discovery process..  
+  2. [Test Cases](./test_cases.md) which demonstrate functionality of the modules.  
+ 3. Jupyter Notebook sandbox environments at [Google Colab Pages](./google_colab_pages.md) which isolate and demonstrate the code in a sandbox.  
+  4. Package/Library API see the [Index](./index.md) for links to the code API on the modules themselves.  
+<!-- 5. Integration of an example discovery process implemented in a [Flask application on a Docker container](./flask_integration_on_docker.md) (forthcoming).  
+-->
 
-
-__Q:__
-
-:   How do I make sense of all this?  
-
-__A:__
-: 1. Review the [Domain-Driven Design used to implement the Four Corner Model](../pdf/Bounded%20Context%20-%20Functional%20Capabilities%201.3.pdf) which gives an overivew of the process and the Ubiquitous Language used in development.  
-: 2.   Review the [e-invoice workflow](../pdf/4-Corners_Workflow.pdf)
-: 3. Review the [Projrct Roadmap](../pdf/BP-OpenSourceToolsRoadmap.pdf)]
-
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div>
+<br/>
+<br/>
+<br/>

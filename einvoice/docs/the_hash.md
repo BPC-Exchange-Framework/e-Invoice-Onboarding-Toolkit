@@ -2,10 +2,10 @@ The Four-Corner Model is premised on a NAPTR DNS look-up to obtain the location 
 
 The assumption is that a NAPTR DNS record exists as a key:value pair.  A look-up of the "key" in the DNS of the NAPTR record will return the "value."
 
-The "key" is the hashed value of the urn.
-The urn is the composite of the specification, the schema_id, and the party_id. 
+The "key" is the hashed value of the URN.
+The URN is the composite of the specification, the schema_id, and the party_id. 
 The hash is:
-1) concattonate the elements of the urn into a single string value. Note a single colon between the specification and the schema_id and double colon between the schema_id and the party_id.
+1) concattonate the elements of the URN into a single string value. Note a single colon between the specification and the schema_id and double colon between the schema_id and the party_id.
 specification + ":"  + schema_id + "::" + party_id
 
 

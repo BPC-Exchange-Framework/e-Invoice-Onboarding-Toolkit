@@ -1,0 +1,53 @@
+﻿# A primer to the Four-Corner Model Framework for handling e-invoices.
+
+The ___Four-Corner Model Framework___ provides a mechanism for a Seller to transmit an invoice in electronic format to a Buyer.  The Frameworks seeks to address issues such as network reliability and security concenrs such as message authentication and non-repudiation.  
+
+## The Corners
+
+1. Corner #1 is the Seller, initiating the e-invoice process.  
+2. Corner #4 is the Buyer, the terminal endpoint of the process, and recipient of the e-invoice.
+3. Corner #2 is also Access Point #1, the first of two.
+4. Corner #3 is also Access Point #2, the second of two.
+
+## Additional Service Providers
+
+Two additional types of service providers and messaging protocol are part of the Framework. 
+1. The Service Metadata Locator or "SML." 
+2. The Service Metadata Publisher or "SMP."
+3. The AS4 Message protocol.    
+
+
+This boils down to three technical tasks/jobs:
+1. Take three data inputs and create a DNS look-up and then execute the look-up.
+2. Take the results of the DNS lookup and using the prior inputs create two additional SOAP API queries and execute them against the endpoint retrieved in Step 1.
+3. Format an email message with a specific message header compliant with the  AS4 protocol.  
+
+We need to do 3 Things:
+A DNS look-up.
+A SOAP API webservice call.
+Format an email message header.
+
+
+## The SML 
+The SML is a NAPTR record.  That is a specialized DNS entry which when queried correctly  provides the URI for the SMP the next step in the process.  __The SML is a DNS look-up.__ 
+The format of the look-up is a hash whish is created from the party ID of the buyer, provided by the buyer to the seller and the URN speciificiation and schema ID of agreed upon by the framework pargicipants.  This open source project provides code create a valid NAPTR DNS query to do a participant lookup in a DNS.  
+
+Access Point #1 in Corner #2 may do the following:
+Receive the URN specification, schema ID and party ID and create the URN necessary to do the NAPTR DNS look—up. Mandatory
+Register participants NAPTR record under the participants own domain, or provide a third party domain to register and administer the NAPTR records.  
+Create and execute the SMP SOAP API calls to a webservice to obtain the service 
+Host an SMP webservice to return SOAP API calls to obtain the service capability and endpoint of the buyer.  
+Provide a Private Key Infrastructure to enable security key and message signing as specifified by the Frameowork.  
+
+
+## The SMP
+The SMP is a website which when queried returns the service capability of the buyer to receive the e-invvoice and the terminal URI  for forwarding.  This URI is is Access Point number #2 in  Corner #3.  The query to the SMP is in the form of a SOAP API call.  Two requests are made to the SMP as spcified by the framework.  
+
+
+# The AS4 Message Protocol
+The message transmitted to the final endpoint must utilize the AS4 message protocol.  The protoocl specfifies an XML format message header as a "wrapper" for the message.  
+
+The SMP and the SML fuctionality are not necessairly povided by either of the Access Points.  In that sense they are not in any corner per se.  Since the SML is literally a DNS look-up of a key:value pair in a registrered domain, once the key:value pair is created on the domain it is accessible via DNS look-up to anyone on the world with the knowlddge of construciting the query.  
+
+
+The Access Points are service providers which in term provide access to other third party proivders of services which are further defined within the framework.  These additional service providers are defined by the Framework

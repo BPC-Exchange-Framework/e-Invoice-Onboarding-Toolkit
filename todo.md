@@ -1,16 +1,16 @@
-# e-Invoice Open Source Toolkit Project 
+# E-Invoice Open Source Toolkit Project 
 ## List of Deliverables
 
 1.	A deployment package which includes:
 
 Python code to:
-- [x] Create dataclass object comprised of specification, schema ID, party ID, and a sample JSON e-Invoice payload. 
+- [x] Create dataclass object comprised of specification, schema ID, party ID, and a sample JSON E-Invoice payload. 
 - [x] Construct the URN from the specification, schema ID, and party ID,
 - [x] Hash the URN per the requirements to create a NAPTR record for a DNS look-up to obtain SMP service URI.
 - [x] Do the DNS look-up to obtain the SMP service URI.
 - [x] Query the SMP URI using the ebXML spec.
 - [x] Test cases implemented using Test Driven Development
-- [x] Create a sample e-Invoice dataclass.
+- [x] Create a sample E-Invoice dataclass.
 - [x] Logging implemented through custom logging using standard Python modules.
 - [ ] [In-progress] Containerized web API/UI to implement the code/functionality above.
     - [ ] Provided as a Docker image.
@@ -37,5 +37,5 @@ Python code to:
 Notes:
 * Test drive development methodology is being implemented to include test cases for code as it is being developed and delivered.  
 * CI/CD process implemented via Github workflow has been validated to ensure PEP8 code standards and checks using Flake8, pylint, and pytest are valid.  All changes and updates to code must pass CI/CD before it's merged into the repo. 
-* Cerfitificate work has been determined to be out of scope at this time and will be removed from the e-Invoice Onboarding Toolkit repository.  [@mnkellyk](@mnkellyk) will host this content under their personal repo available pursuant to a GPL3 license for use by anyone who may have an interest or benefit from it.    
+* Cerfitificate work has been determined to be out of scope at this time and will be removed from the E-Invoice Onboarding Toolkit repository.  [@mnkellyk](@mnkellyk) will host this content under their personal repo available pursuant to a GPL3 license for use by anyone who may have an interest or benefit from it.    
 

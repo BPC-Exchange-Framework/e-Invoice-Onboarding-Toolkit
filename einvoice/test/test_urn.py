@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 # File: test_urn.py
-# About: e-Invoice testing suite; urn.
+# About: E-Invoice testing suite; urn.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-08-15 (August 15th, 2021)
 #

@@ -1,0 +1,28 @@
+.md-content a {
+	text-decoration: underline
+  }
+  .md-copyright-display {
+	  color: lightgray;
+  }
+  .md-footer-copyright {
+	color: lightgray;
+	margin-left:20%;
+  }
+  .md-footer-disclaimer-text {
+    padding:.7rem;
+ 	border: 2px solid lightgray;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	margin-right: auto;
+	width: 80%;
+	color:lightgray;
+	border-radius: 10px;
+  }
+  .md-footer-disclaimer-statement {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: lightgrey;
+    padding: 0px;
+    margin: 0px;
+  }

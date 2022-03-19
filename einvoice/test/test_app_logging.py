@@ -2,7 +2,7 @@
 # pylint: disable=W1203
 # Not using lazy % formatting
 # File: test_app_logger.py
-# About: e-Invoice testing suite; app_logger.
+# About: E-Invoice testing suite; app_logger.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-27 (July 27th, 2021)
 #

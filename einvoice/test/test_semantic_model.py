@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 # File: test_einvoice.py
-# About: e-Invoice testing suite; discovery.
+# About: E-Invoice testing suite; discovery.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-10-14 (October 14th, 2021)
 #

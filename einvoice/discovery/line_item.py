@@ -8,7 +8,7 @@
 """The dataclass definition of a line items in an einvoice.
 
 This is a model defined for a line item of in
-an e-Invoice which can be used in a four
+an E-Invoice which can be used in a four
 corners distributed e-services implementation.
 
     Usage:
@@ -21,7 +21,7 @@ from dataclasses import dataclass
 class LineItem:
     """Dataclass which represents a single line item on an invoice.
 
-    An e-Invoice will contain 1-n LineItem objects.
+    An E-Invoice will contain 1-n LineItem objects.
 
     Args:
         NA

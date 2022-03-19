@@ -34,9 +34,9 @@ from einvoice.discovery.app_logging import create_logger
 
 
 class EInvoiceConfig:
-    """Configure default settings for e-Invoice.
+    """Configure default settings for E-Invoice.
 
-    This class creates some baseline configurations for e-Invoice handling.py
+    This class creates some baseline configurations for E-Invoice handling.py
 
     Attributes:
     defaults: obj
@@ -62,7 +62,7 @@ class EInvoiceConfig:
             self.load_defaults(self.filename)
 
     def write_json_to_file(self, einvoice_data, filename):
-        """Write the e-Inovice to a JSON file."""
+        """Write the E-Inovice to a JSON file."""
         json_str = dumps(einvoice_data.__dict__)
         self.log.info(json_str)
 

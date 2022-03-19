@@ -6,7 +6,7 @@ __HOW:__ Tools and best practices which facilitate development of high quality c
 
 ### Quick Guide
 
-| Tool | Minimal requirementsß |
+| Tool | Minimal requirements |
 | --- | --- |
 | Programming Language | Python 3.6 or above. |
 | Computer | Supports running Python 3.6 or above. |
@@ -21,24 +21,19 @@ All effort will be made to remain within the [Python Standard Library](https://d
 
 #### Version of Python
 
-*Select a minimum version of Python 3.6. This will include newer features such as f-string.* ***Python 3.10 is recommended.***
-
-### Computer Spec
-
-!!! Warning "You will need a computer which is able to download and run Python 3.6."
+*Select a minimum version of Python 3.6. This will include newer features such as f-string.* **Python 3.10 is recommended.**
 
 ### Operating System
 
 OS | Considerations  
 ----------- | -----------  
- Mac OS | Included system version of Python 2.x must be respected.  Make sure to use Python virtual environments. Homebrew package manager is a plus.  
+ Mac OS | Included system version of Python 2.x must be respected.  Make sure to use Python virtual environments. 
  Windows | Latest version of Python are now available on the Windows Store.  Anaconda3 is an especially good option in this OS.  
- Windows w/WSL2 | Great implementation of Ubuntu on Windows is truly impressive.  Integration of virtual environments and Python executable with an IDE like VS Code can be finicky.  
+ Windows w/WSL2 |  WSL2 allows implementation of native Ubuntu on Windows for a linux based Python install while using Windows tools. Integration of virtual environments and Python executable with an IDE like VS Code can be finicky.  
  Linux | Native support for distributed technologies, i.e., Kubernetes and Docker.    
  Chrome OS | Limited on-device resources but a growing number of online and cloud development options, e.g., AWS, Azure, OpenShift, JupyterLab and Notebooks.  
  Raspberry PI | With native Python support, Linux packages, and cloud options there is no reason dev is not an option.  
 
-These options show that there is nothing proprietary, exclusive, or given preference other than resource availability and personal preference.
 
 #### Additional Configuration and Environment Considerations
 
@@ -55,7 +50,7 @@ Future looking consideration for implementation of additional Python enabling te
 
 * Docker
 
-Local testing of Docker containerization may be done on a desktop, however a cloud implementation is the typical endpoint for a container deployment.
+
 
 
 Cloud services such as:
@@ -67,26 +62,25 @@ Cloud services such as:
 
 Additional infrastructure components may be implemented by the Project for testing or prototyping utilization of cloud services.
 
-The implementation of a cloud service and choice of provider is entirely the responsibility of the implementer of the code. Code artifacts included here which implement cloud services are examples for research and educational purposes only.  No preference or endorsement is given to any provider.  
+Local testing of Docker containerization may be done on a desktop.  Choice of a cloud infrastrucute provider to host and mange Docker contaners is at the discretion of the application implementer.
 
 #### Python Programming Methodologies, Standards, and Tools:
 
-Some standards:
+Python Coding Standards:
 
-* [PEP20](https://pep20.org)
-* [PEP8](https://pep8.org)
+* [PEP20](https://pep20.org) - The Zen of Python
+* [PEP8](https://pep8.org) -  The Style Guide for Python Code
 * [Guiding Design Principles](https://nsls-ii.github.io/scientific-python-cookiecutter/guiding-design-principles.html) from the [Scientific Python Cookiecutter](https://nsls-ii.github.io/scientific-python-cookiecutter/index.html).
 * [Python Doc](https://www.python.org/doc/) the official Python web site page of references to more documentation.
 * _See the list of books below for additional guidance on standards and best practices in Python development_.
 
-Tools to implement the standards(preferred ones in __bold__) .
+Tools in bold are used to validate code against PEP8 and PEP20 standards and must complete successfully in order to do a pull into GitHub,  __bold__) .
 
 * __flake8__
 * autopep8
 * __pylint__
 * __pytest__
 * unittest
-* black (Careful! - Handles most formatting well but line character length may not be handed as desired.)
 * bandit
 * __mypy__
 * __pycodestyle__
@@ -95,38 +89,29 @@ Tools to implement the standards(preferred ones in __bold__) .
 
 
 #### Development methodologies  
-* Documentation and use of ___docstrings___
-* Domain Driven Design
-* Test Driven Development
+* Documentation and use of __docstrings__
+    * [PEP257](https://peps.python.org/pep-0257/)
+    * [Google/numpy style docstings as documented in the [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html).  This document is also provides additional best practices for professional Python devleopers.  
+* Domain Driven Design.  See the list of books below for original and supplemental sources material by Eric Evans and Vaughn Vernon.
+* Test Driven Development.  See the list of books below for original source material by Harry J.W. Percival. 
 * Agile principles applied appropriate to the the size and state of the project.
 
 #### Books
 
 There are many great reference materials in print and on the Internet about Python development.
 
-The list below contains some of the titles the developers consider the most helpful and authoritative, regardless of level of expertise with Python. (Titles and author only, no affiliate links.)
+Below are references that may be helpful. 
 
 * <ins>The Hitchhiker's Guide to Python</ins> by Kenneth Reitz and Tanya Schlusser.  Online for free at [docs.python-guide.org](https://docs.python-guide.org/).  
 * <ins>Serious Python</ins> by Julien Danjou
 * <ins>Domain-Driven Design Distilled</ins> by Vaughn Vernon
 * <ins>Domain Driven Design: Tackling Complexity in the Heart of Software</ins> by Eric Evans
-* <ins>Test Driven Development with Python: Obey the Testing Goat, etc.</ins> by Harry J.W. Percival. Also [available online for free](https://www.obeythetestinggoat.com/), which works for a quick reference in a pinch.
+* <ins>Test Driven Development with Python: Obey the Testing Goat, etc.</ins> by Harry J.W. Percival. Also [available online for free](https://www.obeythetestinggoat.com/).
 * <ins>Architecture Patterns with Python</ins> by Harry J.W. Percival and Bob Gregory
 * <ins>Pro Git</ins> by Scott Chacon and Ben Straub. [Available as a free download](https://git-scm.com/book/en/v2) under an open source license.
 
 
 
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div>
+<br/>
+<br/>
+<br/>

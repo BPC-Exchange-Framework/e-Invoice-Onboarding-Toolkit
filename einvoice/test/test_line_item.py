@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 # File: test_line_item.py
-# About: e-Invoice testing suite; line_item.
+# About: E-Invoice testing suite; line_item.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-08-15 (August 15th, 2021)
 #
