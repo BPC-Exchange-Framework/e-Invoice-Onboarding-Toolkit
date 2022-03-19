@@ -94,7 +94,7 @@ Tools to implement the standards(preferred ones in __bold__) .
 
 
 
-Development methodologies
+#### Development methodologies  
 * Documentation and use of ___docstrings___
 * Domain Driven Design
 * Test Driven Development
@@ -106,7 +106,7 @@ There are many great reference materials in print and on the Internet about Pyth
 
 The list below contains some of the titles the developers consider the most helpful and authoritative, regardless of level of expertise with Python. (Titles and author only, no affiliate links.)
 
-* <ins>The Hitchhiker's Guide to Python</ins> by Kenneth Reitz and Tanya Schlusser.  On-line for free at [docs.python-guide.org](https://docs.python-guide.org/).  
+* <ins>The Hitchhiker's Guide to Python</ins> by Kenneth Reitz and Tanya Schlusser.  Online for free at [docs.python-guide.org](https://docs.python-guide.org/).  
 * <ins>Serious Python</ins> by Julien Danjou
 * <ins>Domain-Driven Design Distilled</ins> by Vaughn Vernon
 * <ins>Domain Driven Design: Tackling Complexity in the Heart of Software</ins> by Eric Evans
