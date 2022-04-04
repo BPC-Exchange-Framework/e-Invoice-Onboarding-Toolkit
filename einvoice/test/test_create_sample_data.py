@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 # File: test_create_sample_data.py
-# About: e-Invoice testing suite; create_sample_data
+# About: E-Invoice testing suite; create_sample_data
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-10-17 (October 17th, 2021)
 #

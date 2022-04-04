@@ -3,12 +3,12 @@
 
 ## Start-to-Finish Integration
 
-There is not currently an "end-to-end" test for the e-Invoice Four-Corner Model to validate the workflow in its entirety.  
+There is not currently an "end-to-end" test for the E-Invoice Four-Corner Model to validate the workflow in its entirety.  
 
 The next best use case is a "Start-to-Finish" of the discovery process.  
 
-This "Start-to-Finish" entails valdating:  
-1. The hashing functionality to derive the urn for look-up from the specification, the party ID, and the schema ID.  
+Discovery validation entails testing:  
+1. The hashing functionality to derive the URN for look-up from the specification, the party ID, and the schema ID.  
 2. Executing the DNS NATPR lookup and extracting the relevant SMP URI.  
 3. Constructing the two REST requests including the __smp service group url__ and the __smp service url__.  
 4. Executing the two REST requests to the SMP server.  
@@ -38,17 +38,6 @@ Further review and analysis of the the Start-to_Finish process can be found in t
 
 
 
-<div style="font-size: 12px;
-            padding: 15px;
-            border: 2px solid lightgray;
-            margin-top: 100px;
-            margin-left: 0px;
-            margin-bottom: 40px;
-            margin-right: auto;
-            width: 100%;
-            border-radius: 10px;">
-  <h4 style="font-size: 14px;
-            padding: 0px;
-            margin: 0px;">No Representations or Warranties</h5>
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</div>
+<br/>
+<br/>
+<br/>

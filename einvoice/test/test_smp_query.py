@@ -3,7 +3,7 @@
 #
 # long lines of test data
 # File: test_smp_query.py
-# About: e-Invoice testing suite; smp_query.
+# About: E-Invoice testing suite; smp_query.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-11-18 (November 18th, 2021)
 #

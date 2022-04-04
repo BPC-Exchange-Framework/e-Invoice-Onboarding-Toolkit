@@ -8,7 +8,7 @@
 """The dataclass definition of a party's address.
 
 This is a model defined for the Address of a party in
-an e-Invoice which can be used in a four
+an E-Invoice which can be used in a four
 corners distributed e-services implementation.
 
     Usage:

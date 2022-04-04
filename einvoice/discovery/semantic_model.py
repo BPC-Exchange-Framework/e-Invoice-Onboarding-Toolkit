@@ -6,9 +6,9 @@
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-06-20 (June 20, 2021)
 #
-"""The classes and functions which define a prototype e-Invoice.
+"""The classes and functions which define a prototype E-Invoice.
 
-This is a model definition of an e-Invoice which can be used in a four
+This is a model definition of an E-Invoice which can be used in a four
 corners distributed e-services implementation.
 
     Usage:
@@ -21,7 +21,7 @@ from einvoice.discovery.line_item import LineItem
 
 @dataclass
 class EInvoice:
-    """Represents an e-Invoice object.
+    """Represents an E-Invoice object.
 
     The items required to represent an einvoice.
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 # File: test_party_address.py
-# About: e-Invoice testing suite; party_address.
+# About: E-Invoice testing suite; party_address.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-08-15 (August 15th, 2021)
 #

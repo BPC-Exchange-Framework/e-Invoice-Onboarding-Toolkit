@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 # File: test_create_tracking_id.py
-# About: e-Invoice testing suite; create_tracking_id.
+# About: E-Invoice testing suite; create_tracking_id.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-11-05 (November 11th, 2021)
 #

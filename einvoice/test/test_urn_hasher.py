@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 # File: test_hasher_hasher.py
-# About: e-Invoice testing suite; app_handler.
+# About: E-Invoice testing suite; app_handler.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-27 (July 27th, 2021)
 #

@@ -1,15 +1,21 @@
-site_name: e-Invoice Onboarding Toolkit
-site_url: https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit
+site_name: E-Invoice Onboarding Toolkit
+site_url: https://github.com/BPC-OpenSourceTools/E-Invoice-Onboarding-Toolkit
 #edit_uri: ./discovery/docs/
-repo_name: e-Invoice Onboarding Toolkit
-repo_url: https://github.com/BPC-OpenSourceTools/e-Invoice-Onboarding-Toolkit
+repo_name: E-Invoice Onboarding Toolkit
+repo_url: https://github.com/BPC-OpenSourceTools/E-Invoice-Onboarding-Toolkit
 docs_dir: docs
 
 
 theme:
   name: material
+  # name: mkdocs
+  # name: readthedocs
   icon:
     logo: material/xml
+
+  custom_dir: overrides
+  
+
   palette:
     - primary: blue grey
       accent: deep orange
@@ -27,7 +33,10 @@ theme:
     text: Poppins
     code: Roboto Mono
 
+extra_css:
+  - css/extra.css
 
+copyright: Copyright &copy; 2022 - BPC Open Source Tools Project
 
 markdown_extensions:
   - def_list
@@ -76,7 +85,7 @@ nav:
   - Using the Code:
     - The Modules: using_the_modules.md
     - Test Cases: test_cases.md
-    - Start-to-Finish: start_to_finish.md
+    - Discovery Validation: discovery_validation.md
     - JupyterLab/Notebooks: google_colab_pages.md
     # - Package/Library API:
     #   - accessor.py: accessor.md
@@ -92,7 +101,7 @@ nav:
     #   - urn_hasher.py: urn_hasher.md
     #   - urn.py: urn.md
     # - Flask Integration on Docker: flask_integration_on_docker.md
-  - Infrastructure Components: infrastructure_components.md
+ #  - Infrastructure Components: infrastructure_components.md
   - Project Roadmap: project_roadmap.md
   - Project Artifacts: artifacts.md
   - Workflow: git_workflow.md

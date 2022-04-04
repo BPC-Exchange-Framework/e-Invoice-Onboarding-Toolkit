@@ -2,7 +2,7 @@
 # pylint: disable=W1203
 # lazy % formatting
 # File: test_import_xsd.py
-# About: e-Invoice testing suite; import xsd.
+# About: E-Invoice testing suite; import xsd.
 # Development: Kelly Kinney
 # Date: 2022-01-19 (January 19th, 2022)
 """Run tests for import_xsd.py.
