@@ -62,7 +62,7 @@ Cloud services such as:
 
 Additional infrastructure components may be implemented by the Project for testing or prototyping utilization of cloud services.
 
-Local testing of Docker containerization may be done on a desktop.  Choice of a cloud infrastrucute provider to host and mange Docker contaners is at the discretion of the application implementer.
+Local testing of Docker containerization may be done on a desktop.  Choice of a cloud infrastructure provider to host and mange Docker containers is at the discretion of the application implementer.
 
 #### Python Programming Methodologies, Standards, and Tools:
 

@@ -101,7 +101,7 @@ nav:
     #   - urn_hasher.py: urn_hasher.md
     #   - urn.py: urn.md
     # - Flask Integration on Docker: flask_integration_on_docker.md
-  - Infrastructure Components: infrastructure_components.md
+ #  - Infrastructure Components: infrastructure_components.md
   - Project Roadmap: project_roadmap.md
   - Project Artifacts: artifacts.md
   - Workflow: git_workflow.md
