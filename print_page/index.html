@@ -463,21 +463,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure_components/" class="md-nav__link">
-        Infrastructure Components
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../project_roadmap/" class="md-nav__link">
         Project Roadmap
       </a>
@@ -678,13 +663,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#infrastructure_components" class="md-nav__link">
-    Infrastructure Components
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#project_roadmap" class="md-nav__link">
     Project Roadmap
   </a>
@@ -849,13 +827,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#infrastructure_components" class="md-nav__link">
-    Infrastructure Components
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#project_roadmap" class="md-nav__link">
     Project Roadmap
   </a>
@@ -967,7 +938,7 @@
 <tr>
 <td>Feature #1 - SML NAPTR DNS Lookup</td>
 <td>Discovery</td>
-<td>1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the Buyer.</td>
+<td>1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look up donethe ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the Buyer.</td>
 </tr>
 <tr>
 <td>Feature #2 - SMP REST API Query</td>
@@ -1008,7 +979,7 @@
 <td>Discovery</td>
 </tr>
 <tr>
-<td>4. Execute the wbe service requests to the SMP server.</td>
+<td>4. Execute the web service requests to the SMP server.</td>
 <td>Feature #2</td>
 <td>Discovery</td>
 </tr>
@@ -1025,7 +996,7 @@
 </tbody>
 </table>
 </details>
-<p>For information about E-Invoices and implementing the Four-Corner Model please visit the <a href="https://businesspaymentscoalition.org/electronic-invoices">Business Payments Coalition website</a>.  </p>
+<p>For information about E-Invoices and the Four-Corner Model please visit the <a href="https://businesspaymentscoalition.org/electronic-invoices">Business Payments Coalition website</a>.  </p>
 <p>Additional documentation, reference materials, and standards can be found on the <a href="https://www.oasis-open.org">Oasis-Open.org website</a>. Start with the <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html">ebXML specification</a></p>
 <h2 id="index-site-map">Site Map</h2>
 <ul>
@@ -1044,7 +1015,9 @@
 <li><a href="#google_colab_pages">JupyterLab/Notebooks</a></li>
 </ul>
 </li>
-<li><a href="#infrastructure_components">Infrastructure Components</a></li>
+</ul>
+<!-- * [Infrastructure Components](infrastructure_components.md) -->
+<ul>
 <li><a href="#project_roadmap">Project Roadmap</a></li>
 <li><a href="#artifacts">Project Artifacts</a></li>
 <li><a href="#git_workflow">Workflow</a></li>
@@ -1228,7 +1201,7 @@ Specifically it's helpful with:<br />
 <br/></p></section><section class="print-page" id="assumptions"><h1 id="assumptions-about-the-e-invoice-onboarding-toolkit">About the E-Invoice Onboarding Toolkit</h1>
 <h4 id="assumptions-about">About</h4>
 <p>This project offers examples of Python code written to interact with an access point or discovery service of a Four-Corner Model.   </p>
-<p>Please see the <a href="https://businesspaymentscoalition.org/electronic-invoices/">Business Payments Coalition</a> website for more information and an explanation of the Model.  </p>
+<p>Please see the <a href="https://businesspaymentscoalition.org/electronic-invoices/">Business Payments Coalition</a> website for more information and an <a href="https://businesspaymentscoalition.org/wp-content/uploads/20191031-bpc-overview.pdf">overview of the Model</a>.  </p>
 <h4 id="assumptions-assumptions">Assumptions</h4>
 <h5 id="assumptions-the-four-corner-model">The Four-Corner Model</h5>
 <p>The software included with the project assumes a baseline understanding of the Four-Corner Model and its constituent components.  </p>
@@ -1326,7 +1299,7 @@ Specifically it's helpful with:<br />
 <li>RedHat OpenShift</li>
 </ul>
 <p>Additional infrastructure components may be implemented by the Project for testing or prototyping utilization of cloud services.</p>
-<p>Local testing of Docker containerization may be done on a desktop.  Choice of a cloud infrastrucute provider to host and mange Docker contaners is at the discretion of the application implementer.</p>
+<p>Local testing of Docker containerization may be done on a desktop.  Choice of a cloud infrastructure provider to host and mange Docker containers is at the discretion of the application implementer.</p>
 <h4 id="tools_and_resources-python-programming-methodologies-standards-and-tools">Python Programming Methodologies, Standards, and Tools:</h4>
 <p>Python Coding Standards:</p>
 <ul>
@@ -1947,65 +1920,7 @@ Inspection and validation of the XSD file has this <a href="https://colab.resear
 The JupyterLab file is: <strong>ebMS XML 3 schema.ipynb</strong>.</p>
 <p>Validation of an xml file against the XSD is done using this <a href="https://colab.research.google.com/drive/1ExMZUD_5larW0wEuGJ5erHkFuoozcLCF?usp=sharing">Google Colab Page</a>
 The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
-<p>For ease of access these files are copies stored on the drive of one of the project Developers and is free and open to anyone to view and run.   Interested individuals should make copies of the Labs for themselves and run on Google Colab under their own account or an instance of JupytyerLab running on Anaconda, VS Code, or a Python install.</p></section><h1 class='nav-section-title-end'>Ended: Using the Code</h1><section class="print-page" id="infrastructure_components"><h1 id="infrastructure_components-additional-infrastructure-build-out">Additional Infrastructure Build-out</h1>
-<p>The code is intended to interact with other participants in the Four-Corner Model,  including Access Providers, DNS servers and SMP service providers.</p>
-<h2 id="infrastructure_components-sml">SML</h2>
-<p><strong>Q:</strong>    </p>
-<p>How do you test the toolkit?  How do you create a NAPTR  DNS record entry on a domain? </p>
-<p><strong>A:</strong></p>
-<p>In order to do the SML look-up, the appropriate NAPTR records must be in place.  The assumption is that a NAPTR DNS record exists as a key:value pair.  A look-up of the "key" in the DNS of the NAPTR record will return the "value."  The "key" is the hashed value of the urn.  The value being sought and returned is the URI of the SMP for the next step in the Model.</p>
-<p>Access Point 1 in Corner 2 may be acting in the role of the SML and handling tasks associated with it.  Theses task could include:   </p>
-<ul>
-<li>Constructing the URN  </li>
-<li>Creaitng the hash value of the URN  </li>
-<li>Queryhing the DNS NATPR record URN</li>
-<li>Returning the SMP URI  </li>
-</ul>
-<p>The Python modules provide examples of some ways  the tasks of SML could be accomplished, either as, or by, an Access Point or an organization on its own behalf.    </p>
-<p>For testing purposes there is an application to update a DNS entry with a NAPTR record key:value pair of URN:SMP URI repsonse.  The applicatiion updates a the DNS via Amazon Web Services Route53 using the test domain of sc-b2b.us.   This allows for the registration of URN hashes in the DNS domain of sc-b2b.us.  These entries are live in the DNS and accessible worldwide.  </p>
-<p>The REST API is available at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register SML entries, which are the DNS NATPR records on the sc-b2b.us domain.  This process creates the URN hash based in inputs provided by the user.  Organizations wishing to register a test URN to use for validation can open an issue in the project for assistance in using the web interface.  </p>
-<p>Once these SML/DNS NATPR entries are created, they can queried using the toolkit to make public queries to DNS NAPTR look-up as soon as propated through the DNS.</p>
-<p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/sml-service-r53">BPC-OpenSourceTools/sml-service-r53</a>.  </p>
-<h2 id="infrastructure_components-smp">SMP</h2>
-<p>There is an application to test the SMP REST API service calls on the same domain as the SML at  <a href="https://smp-api.sc-b2b.us/docs">https://smp-api.sc-b2b.us/docs</a> .  This is a REST API to make web service calls to test the toolkit.  </p>
-<p>The SMP s a web service queried by a SOAP API call to return the Corner 3 URI or terminal endpoint.  The specification for the actual API can be found in the document: <a href="http://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.html">Service Metadata Publishing (SMP) Version 2.0</a> dated 14 February 2021 as an Oasis standard.   </p>
-<p><strong>Section 5.4 Resources</strong>  </p>
-<table>
-<thead>
-<tr>
-<th>Resource</th>
-<th>URI</th>
-<th>Method</th>
-<th>XML resource root element</th>
-<th>HTTP Status</th>
-<th>Description of returned content</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ServiceGroup</td>
-<td>./bdxr-smp-2/[{identifier scheme}::]{participant id} See section 3.6 for {participant id} format</td>
-<td>GET</td>
-<td>&lt;ServiceGroup></td>
-<td>200; 500; 404</td>
-<td>Holds the Participant Identifier of the recipient, and a list of references to individual ServiceMetadata resources that are associated with that participant identifier.</td>
-</tr>
-<tr>
-<td>ServiceMetadata</td>
-<td>./bdxr-smp-2/[{identifier scheme}::]{participant id}/services/{service ID} See section 3.7 for {service ID} format</td>
-<td>GET</td>
-<td>&lt;ServiceMetadata></td>
-<td>200; 500; 404</td>
-<td>Holds all of the metadata about a Service, or a redirection URL to another Service Metadata Publisher holding this information.</td>
-</tr>
-</tbody>
-</table>
-<p>The SMP service registers a URN for query.  Note that the API specification is essentially the URN with modifications to include some additional service capability codes but mostly to accomodate characters that would otherwise be illegal in a URL.  </p>
-<p>After registering a URN(s) on the SML service, go to the SMP service at <a href="https://sml-api.sc-b2b.us/docs">https://sml-api.sc-b2b.us/docs</a> to register the urn there in order to get a reponse for testing SMP query functionality.</p>
-<p>The code implemented to create the NAPTR DNS record on AWS Route53 is available in the GitHub repository:  <a href="https://github.com/BPC-OpenSourceTools/smp-service">BPC-OpenSourceTools/smp-service</a>.</p>
-<p><br/>
-<br/>
-<br/></p></section><section class="print-page" id="project_roadmap"><h1 id="project_roadmap-project-roadmap">Project Roadmap</h1>
+<p>For ease of access these files are copies stored on the drive of one of the project Developers and is free and open to anyone to view and run.   Interested individuals should make copies of the Labs for themselves and run on Google Colab under their own account or an instance of JupytyerLab running on Anaconda, VS Code, or a Python install.</p></section><h1 class='nav-section-title-end'>Ended: Using the Code</h1><section class="print-page" id="project_roadmap"><h1 id="project_roadmap-project-roadmap">Project Roadmap</h1>
 <h3 id="project_roadmap-discovery-1-sml-naptr-dns-lookup">Discovery #1 - SML NAPTR DNS Lookup</h3>
 <ol>
 <li>Feature – Access Point A sends UNAPTR DNS query with a Party ID/Party ID Schema hash and obtains a valid response with connection information to the SMP.  </li>
