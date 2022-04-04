@@ -11,7 +11,7 @@ Please see the [Business Payments Coalition](https://businesspaymentscoalition.o
 The software included with the project assumes a baseline understanding of the Four-Corner Model and its constituent components.  
 <figure markdown>
   ![The Four Corner Model.](./4corners.png)
-  <figcaption>Successful completion of all test cases.</figcaption>
+  <figcaption></figcaption>
 </figure>
 
 ##### Python     
