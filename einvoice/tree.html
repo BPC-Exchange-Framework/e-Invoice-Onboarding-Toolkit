@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="Author" content="Made by 'tree'">
+ <meta name="GENERATOR" content="$Version: $ tree v1.8.0 (c) 1996 - 2018 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro $">
+ <title>Directory Tree</title>
+ <style type="text/css">
+  <!-- 
+  BODY { font-family : ariel, monospace, sans-serif; }
+  P { font-weight: normal; font-family : ariel, monospace, sans-serif; color: black; background-color: transparent;}
+  B { font-weight: normal; color: black; background-color: transparent;}
+  A:visited { font-weight : normal; text-decoration : none; background-color : transparent; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  A:link    { font-weight : normal; text-decoration : none; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  A:hover   { color : #000000; font-weight : normal; text-decoration : underline; background-color : yellow; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  A:active  { color : #000000; font-weight: normal; background-color : transparent; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  .VERSION { font-size: small; font-family : arial, sans-serif; }
+  .NORM  { color: black;  background-color: transparent;}
+  .FIFO  { color: purple; background-color: transparent;}
+  .CHAR  { color: yellow; background-color: transparent;}
+  .DIR   { color: blue;   background-color: transparent;}
+  .BLOCK { color: yellow; background-color: transparent;}
+  .LINK  { color: aqua;   background-color: transparent;}
+  .SOCK  { color: fuchsia;background-color: transparent;}
+  .EXEC  { color: green;  background-color: transparent;}
+  -->
+ </style>
+</head>
+<body>
+	<h1>Directory Tree</h1><p>
+	<a class="NORM" href="baseHREF">baseHREF</a><br>
+	├── <a class="NORM" href="baseHREF/.env.example.dev">.env.example.dev</a><br>
+	├── <a class="NORM" href="baseHREF/__init__.py">__init__.py</a><br>
+	├── <a class="DIR" href="baseHREF/delivery/">delivery</a><br>
+	│   ├── <a class="NORM" href="baseHREF/delivery/__init__.py">__init__.py</a><br>
+	│   ├── <a class="EXEC" href="baseHREF/delivery/ebms-header-3_0-20220119.xsd">ebms-header-3_0-20220119.xsd</a><br>
+	│   ├── <a class="NORM" href="baseHREF/delivery/import_xsd.py">import_xsd.py</a><br>
+	│   └── <a class="NORM" href="baseHREF/delivery/sample_msg.xml">sample_msg.xml</a><br>
+	├── <a class="DIR" href="baseHREF/discovery/">discovery</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/__init__.py">__init__.py</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/accessor.py">accessor.py</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/app_handler.py">app_handler.py</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/app_logging.py">app_logging.py</a><br>
+	│   ├── <a class="DIR" href="baseHREF/discovery/conf/">conf</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/conf/__init__.py">__init__.py</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/conf/config_tool.py">config_tool.py</a><br>
+	│   │   └── <a class="NORM" href="baseHREF/discovery/conf/smp_config.py">smp_config.py</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/create_tracking_id.py">create_tracking_id.py</a><br>
+	│   ├── <a class="DIR" href="baseHREF/discovery/data/">data</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/data/__init__.py">__init__.py</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/data/create_sample_data.py">create_sample_data.py</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/data/item_list.csv">item_list.csv</a><br>
+	│   │   └── <a class="NORM" href="baseHREF/discovery/data/per_item_list.csv">per_item_list.csv</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/dns_query.py">dns_query.py</a><br>
+	│   ├── <a class="EXEC" href="baseHREF/discovery/ebms-header-3_0-20220119.xsd">ebms-header-3_0-20220119.xsd</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/ebms-header.xml">ebms-header.xml</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/einvoice_message_package.py">einvoice_message_package.py</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/line_item.py">line_item.py</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/party_address.py">party_address.py</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/semantic_model.py">semantic_model.py</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/smp_query.py">smp_query.py</a><br>
+	│   ├── <a class="DIR" href="baseHREF/discovery/tests/">tests</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/__init__.py">__init__.py</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/ebms-header-3_0-20220119.xsd">ebms-header-3_0-20220119.xsd</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/ez_linter.sh">ez_linter.sh</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/flake8_linter.sh">flake8_linter.sh</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/hardcore_linter.sh">hardcore_linter.sh</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/magic_linter.py">magic_linter.py</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/mypy_linter.sh">mypy_linter.sh</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/pycodestyle_linter.sh">pycodestyle_linter.sh</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/pydocstyle_linter.sh">pydocstyle_linter.sh</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/pylint_linter.sh">pylint_linter.sh</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/tests/test_accessor.py">test_accessor.py</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/tests/test_app_logging.py">test_app_logging.py</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/tests/test_create_sample_data.py">test_create_sample_data.py</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/tests/test_create_tracking_id.py">test_create_tracking_id.py</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/test_dns_query.py">test_dns_query.py</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/test_line_item.py">test_line_item.py</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/test_party_address.py">test_party_address.py</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/tests/test_semantic_model.py">test_semantic_model.py</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/discovery/tests/test_smp_query.py">test_smp_query.py</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/test_urn.py">test_urn.py</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/discovery/tests/test_urn_hasher.py">test_urn_hasher.py</a><br>
+	│   │   └── <a class="NORM" href="baseHREF/discovery/tests/unaptr_response.json">unaptr_response.json</a><br>
+	│   ├── <a class="NORM" href="baseHREF/discovery/urn.py">urn.py</a><br>
+	│   └── <a class="NORM" href="baseHREF/discovery/urn_hasher.py">urn_hasher.py</a><br>
+	├── <a class="DIR" href="baseHREF/docs/">docs</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/4corners.png">4corners.png</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/Four-Conrner-primer.md.txt">Four-Conrner-primer.md.txt</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/__init__.py">__init__.py</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/_license.md">_license.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/accessor.md">accessor.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/accessor_results.png">accessor_results.png</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/app_handler.md">app_handler.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/app_log.png">app_log.png</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/app_logging.md">app_logging.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/artifacts.md">artifacts.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/assumptions.md">assumptions.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/create_tracking_id.md">create_tracking_id.md</a><br>
+	│   ├── <a class="DIR" href="baseHREF/docs/css/">css</a><br>
+	│   │   └── <a class="NORM" href="baseHREF/docs/css/extra.css">extra.css</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/discovery_validation.md">discovery_validation.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/dns_query.md">dns_query.md</a><br>
+	│   ├── <a class="DIR" href="baseHREF/docs/drawio/">drawio</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/drawio/Bounded Context - Entity Relationships 1.3.drawio">Bounded Context - Entity Relationships 1.3.drawio</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/drawio/Bounded Context - Functional Capabilities 1.2.drawio">Bounded Context - Functional Capabilities 1.2.drawio</a><br>
+	│   │   └── <a class="NORM" href="baseHREF/docs/drawio/Bounded Context - Participant 1.1.drawio">Bounded Context - Participant 1.1.drawio</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/einvoice_design.xlsx">einvoice_design.xlsx</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/einvoice_message_package.md">einvoice_message_package.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/faq.md">faq.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/git_workflow.md">git_workflow.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/google_colab_pages.md">google_colab_pages.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/index.md">index.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/infrastructure_components.md">infrastructure_components.md</a><br>
+	│   ├── <a class="DIR" href="baseHREF/docs/jupyterlab/">jupyterlab</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/jupyterlab/Validate_bdx-as4.ipynb">Validate_bdx-as4.ipynb</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/jupyterlab/Validate_bdx-as4_v2.ipynb">Validate_bdx-as4_v2.ipynb</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/jupyterlab/dns_query.ipynb">dns_query.ipynb</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/docs/jupyterlab/ebms-header-3_0-20210119.xsd">ebms-header-3_0-20210119.xsd</a><br>
+	│   │   ├── <a class="EXEC" href="baseHREF/docs/jupyterlab/ebms-header-3_0-20220119.xsd">ebms-header-3_0-20220119.xsd</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/jupyterlab/naptr_lookup.ipynb">naptr_lookup.ipynb</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/jupyterlab/python_dev.ipynb">python_dev.ipynb</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/jupyterlab/sample_msg.xml">sample_msg.xml</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/jupyterlab/tracking_id_sandbox.ipynb">tracking_id_sandbox.ipynb</a><br>
+	│   │   └── <a class="NORM" href="baseHREF/docs/jupyterlab/urn_hash_work.ipynb">urn_hash_work.ipynb</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/line_item.md">line_item.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/oasis_documentation.md">oasis_documentation.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/outcomes.md">outcomes.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/party_address.md">party_address.md</a><br>
+	│   ├── <a class="DIR" href="baseHREF/docs/pdf/">pdf</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/pdf/4-Corners_Workflow.pdf">4-Corners_Workflow.pdf</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/pdf/BP-OpenSourceToolsRoadmap.pdf">BP-OpenSourceToolsRoadmap.pdf</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/pdf/Bounded Context - Functional Capabilities 1.2.pdf">Bounded Context - Functional Capabilities 1.2.pdf</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/pdf/Bounded Context - Participant 1.1.pdf">Bounded Context - Participant 1.1.pdf</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/pdf/Bounded Context - Participants 1.2.pdf">Bounded Context - Participants 1.2.pdf</a><br>
+	│   │   ├── <a class="NORM" href="baseHREF/docs/pdf/Bounded _Context-Entity_Relationships_1.4.pdf">Bounded _Context-Entity_Relationships_1.4.pdf</a><br>
+	│   │   └── <a class="NORM" href="baseHREF/docs/pdf/Bounded_Context-Functional_Capabilities_1.3.pdf">Bounded_Context-Functional_Capabilities_1.3.pdf</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/project_roadmap.md">project_roadmap.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/python_dev_env.md">python_dev_env.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/requirements.md">requirements.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/semantic_model.md">semantic_model.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/smp_query.md">smp_query.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/successful_tests.png">successful_tests.png</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/test_cases.md">test_cases.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/the_hash.md">the_hash.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/todo.md">todo.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/tools_and_resources.md">tools_and_resources.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/urn.md">urn.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/urn_handler.md">urn_handler.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/urn_hasher.md">urn_hasher.md</a><br>
+	│   ├── <a class="NORM" href="baseHREF/docs/using_the_modules.md">using_the_modules.md</a><br>
+	│   └── <a class="NORM" href="baseHREF/docs/working_with_the_code.md">working_with_the_code.md</a><br>
+	├── <a class="NORM" href="baseHREF/mkdocs.yml">mkdocs.yml</a><br>
+	└── <a class="DIR" href="baseHREF/test/">test</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="NORM" href="baseHREF/test/__init__.py">__init__.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/ebms-header-3_0-20220119.xsd">ebms-header-3_0-20220119.xsd</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/ez_linter.sh">ez_linter.sh</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/flake8_linter.sh">flake8_linter.sh</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/hardcore_linter.sh">hardcore_linter.sh</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/magic_linter.py">magic_linter.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/mypy_linter.sh">mypy_linter.sh</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/pycodestyle_linter.sh">pycodestyle_linter.sh</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/pydocstyle_linter.sh">pydocstyle_linter.sh</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/pylint_linter.sh">pylint_linter.sh</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="NORM" href="baseHREF/test/test_accessor.py">test_accessor.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="NORM" href="baseHREF/test/test_app_logging.py">test_app_logging.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="NORM" href="baseHREF/test/test_create_sample_data.py">test_create_sample_data.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="NORM" href="baseHREF/test/test_create_tracking_id.py">test_create_tracking_id.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/test_dns_query.py">test_dns_query.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/test_import_xsd.py">test_import_xsd.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/test_line_item.py">test_line_item.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/test_party_address.py">test_party_address.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="NORM" href="baseHREF/test/test_semantic_model.py">test_semantic_model.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="NORM" href="baseHREF/test/test_smp_query.py">test_smp_query.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/test_urn.py">test_urn.py</a><br>
+	&nbsp;&nbsp;&nbsp; ├── <a class="EXEC" href="baseHREF/test/test_urn_hasher.py">test_urn_hasher.py</a><br>
+	&nbsp;&nbsp;&nbsp; └── <a class="NORM" href="baseHREF/test/unaptr_response.json">unaptr_response.json</a><br>
+	<br><br>
+	</p>
+	<p>
+
+11 directories, 135 files
+	<br><br>
+	</p>
+	<hr>
+	<p class="VERSION">
+		 tree v1.8.0 © 1996 - 2018 by Steve Baker and Thomas Moore <br>
+		 HTML output hacked and copyleft © 1998 by Francesc Rocher <br>
+		 JSON output hacked and copyleft © 2014 by Florian Sesser <br>
+		 Charsets / OS/2 support © 2001 by Kyosuke Tokoro
+	</p>
+</body>
+</html>

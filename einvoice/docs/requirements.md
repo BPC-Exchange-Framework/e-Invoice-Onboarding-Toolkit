@@ -5,7 +5,7 @@
 
 This project utilizes the following packages, all of which should be available under an Open Source license via [PyPI](https://pypi.org/).
 List updated as of:  
-__02/16/2022 (February 16th, 2022)__
+__04/13/2022 (April 14th, 2022)__
 
 Make sure to source the virtual environment first and then '_pip install <package\>_' or '_conda install <package\>_' to bring in the package.  
 
@@ -15,7 +15,6 @@ Make sure to source the virtual environment first and then '_pip install <packag
 
 ```
 alabaster
-argcomplete
 argh
 astroid
 attrs
@@ -26,9 +25,8 @@ cffi
 charset-normalizer
 click
 colorama
-conda
-conda-package-handling
 cryptography
+dill
 dnspython
 docutils
 elementpath
@@ -58,17 +56,16 @@ mkdocs-material
 mkdocs-material-extensions
 mkdocs-print-site-plugin
 mkdocstrings
+mkdocstrings-python-legacy
 mypy
 mypy-extensions
 nltk
 packaging
-pipx
 platformdirs
 pluggy
 psutil
 py
 pycodestyle
-pycosat
 pycparser
 pydocstyle
 pyflakes
@@ -87,7 +84,6 @@ PyYAML
 pyyaml_env_tag
 regex
 requests
-ruamel-yaml-conda
 six
 snowballstemmer
 text-unidecode
@@ -95,11 +91,8 @@ toml
 tomli
 tornado
 tqdm
-types-requests
-types-urllib3
 typing_extensions
 urllib3
-userpath
 watchdog
 wrapt
 xmlschema
