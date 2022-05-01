@@ -2,6 +2,14 @@
 ## Working with the code
 ### Test Cases
 
+#### Using an .env file
+
+???+ Warn "Copy the .env.example.dev to .env"
+    Some of the test cases rely on local variables imported at runtime.  These values are in the ".env.example.dev" file.  This file is at the ./einvoice root of the project.  The file MUST be copied or renamed to ".env" in order for all of the tests to complete successfully. (The tests may also be refactored manually to refer to local dev enivornment variables.) 
+
+
+#### Test modules
+
 Every module includes a test module in the ./einvoice/test directory.  
 
 ???+ note "Test cases are written as functions, not classes."
@@ -17,11 +25,11 @@ From the a terminal console, change directory into the ./einvoice/test  director
 To see the list of available test files, use either the file browser or the command line.
 For Windows: 
 ```
-dir .\einvoice\tests\
+dir .\einvoice\test\
 ```
 For Mac/*nix/WSL2:
 ```
-ls -al ./einvoice/tests/ 
+ls -al ./einvoice/test/ 
 ```
 
 

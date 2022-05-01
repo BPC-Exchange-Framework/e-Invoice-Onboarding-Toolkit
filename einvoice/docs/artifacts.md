@@ -4,22 +4,23 @@
 ### Repository Layout
 
 This project includes the following files, _i.e., "artifacts"_ in __.py__, .__md__, .__txt__ and other formats, updated as of:  
-__02/16/2022 (February 16th, 2022)__
+__04/13/2022 (April 13th, 2022)__
 
 ```
 /E-Invoice-Onboarding-Toolkit  
 .
+├── .gitignore
 ├── LICENSE
 ├── README.md
 ├── ebms-header-3_0-20220119.xsd
 ├── einvoice
+│   ├── .env.example.dev
 │   ├── __init__.py
 │   ├── delivery
 │   │   ├── __init__.py
 │   │   ├── ebms-header-3_0-20220119.xsd
 │   │   ├── import_xsd.py
-│   │   ├── sample_msg.xml
-│   │   └── tests
+│   │   └── sample_msg.xml
 │   ├── discovery
 │   │   ├── __init__.py
 │   │   ├── accessor.py
@@ -43,9 +44,34 @@ __02/16/2022 (February 16th, 2022)__
 │   │   ├── party_address.py
 │   │   ├── semantic_model.py
 │   │   ├── smp_query.py
+│   │   ├── tests
+│   │   │   ├── __init__.py
+│   │   │   ├── ebms-header-3_0-20220119.xsd
+│   │   │   ├── ez_linter.sh
+│   │   │   ├── flake8_linter.sh
+│   │   │   ├── hardcore_linter.sh
+│   │   │   ├── magic_linter.py
+│   │   │   ├── mypy_linter.sh
+│   │   │   ├── pycodestyle_linter.sh
+│   │   │   ├── pydocstyle_linter.sh
+│   │   │   ├── pylint_linter.sh
+│   │   │   ├── test_accessor.py
+│   │   │   ├── test_app_logging.py
+│   │   │   ├── test_create_sample_data.py
+│   │   │   ├── test_create_tracking_id.py
+│   │   │   ├── test_dns_query.py
+│   │   │   ├── test_line_item.py
+│   │   │   ├── test_party_address.py
+│   │   │   ├── test_semantic_model.py
+│   │   │   ├── test_smp_query.py
+│   │   │   ├── test_urn.py
+│   │   │   ├── test_urn_hasher.py
+│   │   │   └── unaptr_response.json
 │   │   ├── urn.py
 │   │   └── urn_hasher.py
 │   ├── docs
+│   │   ├── 4corners.png
+│   │   ├── Four-Conrner-primer.md.txt
 │   │   ├── __init__.py
 │   │   ├── _license.md
 │   │   ├── accessor.md
@@ -56,9 +82,9 @@ __02/16/2022 (February 16th, 2022)__
 │   │   ├── artifacts.md
 │   │   ├── assumptions.md
 │   │   ├── create_tracking_id.md
-│   │   ├── custom_theme
-│   │   │   ├── css
-│   │   │   └── main.html
+│   │   ├── css
+│   │   │   └── extra.css
+│   │   ├── discovery_validation.md
 │   │   ├── dns_query.md
 │   │   ├── drawio
 │   │   │   ├── Bounded Context - Entity Relationships 1.3.drawio
@@ -66,12 +92,11 @@ __02/16/2022 (February 16th, 2022)__
 │   │   │   └── Bounded Context - Participant 1.1.drawio
 │   │   ├── einvoice_design.xlsx
 │   │   ├── einvoice_message_package.md
-│   │   ├── enabling_infrastructure_components.md
 │   │   ├── faq.md
-│   │   ├── flask_integration_on_docker.md
 │   │   ├── git_workflow.md
 │   │   ├── google_colab_pages.md
 │   │   ├── index.md
+│   │   ├── infrastructure_components.md
 │   │   ├── jupyterlab
 │   │   │   ├── Validate_bdx-as4.ipynb
 │   │   │   ├── Validate_bdx-as4_v2.ipynb
@@ -88,19 +113,21 @@ __02/16/2022 (February 16th, 2022)__
 │   │   ├── outcomes.md
 │   │   ├── party_address.md
 │   │   ├── pdf
-│   │   │   ├── Bounded Context - Entity Relationships 1.4.pdf
+│   │   │   ├── 4-Corners_Workflow.pdf
+│   │   │   ├── BP-OpenSourceToolsRoadmap.pdf
 │   │   │   ├── Bounded Context - Functional Capabilities 1.2.pdf
-│   │   │   ├── Bounded Context - Functional Capabilities 1.3.pdf
 │   │   │   ├── Bounded Context - Participant 1.1.pdf
-│   │   │   └── Bounded Context - Participants 1.2.pdf
+│   │   │   ├── Bounded Context - Participants 1.2.pdf
+│   │   │   ├── Bounded _Context-Entity_Relationships_1.4.pdf
+│   │   │   └── Bounded_Context-Functional_Capabilities_1.3.pdf
 │   │   ├── project_roadmap.md
 │   │   ├── python_dev_env.md
 │   │   ├── requirements.md
 │   │   ├── semantic_model.md
 │   │   ├── smp_query.md
-│   │   ├── start_to_finish.md
 │   │   ├── successful_tests.png
 │   │   ├── test_cases.md
+│   │   ├── the_hash.md
 │   │   ├── todo.md
 │   │   ├── tools_and_resources.md
 │   │   ├── urn.md
@@ -136,5 +163,5 @@ __02/16/2022 (February 16th, 2022)__
 ├── requirements.txt
 └── todo.md
 
-13 directories, 113 files
+12 directories, 141 files
 ```

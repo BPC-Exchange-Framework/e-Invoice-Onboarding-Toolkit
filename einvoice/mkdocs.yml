@@ -1,8 +1,8 @@
 site_name: E-Invoice Onboarding Toolkit
-site_url: https://github.com/BPC-OpenSourceTools/E-Invoice-Onboarding-Toolkit
+site_url: https://github.com/BPC-Exchange-Framework/E-Invoice-Onboarding-Toolkit
 #edit_uri: ./discovery/docs/
 repo_name: E-Invoice Onboarding Toolkit
-repo_url: https://github.com/BPC-OpenSourceTools/E-Invoice-Onboarding-Toolkit
+repo_url: https://github.com/BPC-Exchange-Framework/E-Invoice-Onboarding-Toolkit
 docs_dir: docs
 
 
@@ -14,7 +14,7 @@ theme:
     logo: material/xml
 
   custom_dir: overrides
-  
+  config.extra.generator: false
 
   palette:
     - primary: blue grey
@@ -36,7 +36,7 @@ theme:
 extra_css:
   - css/extra.css
 
-copyright: Copyright &copy; 2022 - BPC Open Source Tools Project
+copyright: Copyright &copy; 2022 - BPC Exchange Framework Open Source Tools Project
 
 markdown_extensions:
   - def_list
@@ -87,8 +87,8 @@ nav:
     - Test Cases: test_cases.md
     - Discovery Validation: discovery_validation.md
     - JupyterLab/Notebooks: google_colab_pages.md
-    # - Package/Library API:
-    #   - accessor.py: accessor.md
+    - Package/Library API:
+      - accessor.py: accessor.md
     #   - app_logging.py: app_logging.md
     #   - create_tracking_id.py: create_tracking_id.md
     #   - dns_query.py: dns_query.md
