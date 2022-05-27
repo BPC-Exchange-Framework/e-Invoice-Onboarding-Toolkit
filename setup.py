@@ -3,7 +3,7 @@ from setuptools import find_namespace_packages, setup, find_packages
 setup(
     name='e-Invoice Onboarding Toolkit',
     versions='0.99.20',
-    packages=find_packages(include=['einvoice', 'einvoice.*', 'einvoice.discovery', 'einvoice.discovery.*', 'einvoice.delivery','einvoice.delivery.*'])
+    packages=find_packages(include=['einvoice', 'einvoice.*', 'einvoice.discovery', 'einvoice.discovery.*', 'einvoice.delivery','einvoice.delivery.*']),
     install_requires=[
         'appdirs==1.4.4'
        'argh==0.26.2'
@@ -109,11 +109,12 @@ setup(
        'watchdog==2.1.7'
        'wrapt==1.14.1'
        'xmlschema==1.10.0'
-       'zipp==3.8.0'       
+       'zipp==3.8.0' 
+    ],
     extras_require={
         'sandbox':[
             
         ]
     }
-    ]
+   
 )
