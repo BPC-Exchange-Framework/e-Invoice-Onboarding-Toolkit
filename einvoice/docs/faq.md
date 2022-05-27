@@ -1,6 +1,7 @@
 # FAQ
-<hr>
-__Q:__
+<hr>  
+
+__Q:__  
 : Who is the audience for this project?   
 
 __A:__  
@@ -16,7 +17,8 @@ __A:__
   1. Intermediate knowledge of Python.  
   2. Python 3.6 or greater, _Python 3.10 or greater is recommended._.  
 
-<hr>
+<hr>  
+
 __Q:__
 : Does this code provide a full end-to-end solution to process an e-invoice?  
 

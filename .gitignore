@@ -84,9 +84,6 @@ instance/
 geckodriver.log
 pyenv.cfg
 
-# mkdocs
-discovery/site/
-
 # PyBuilder
 target/
 

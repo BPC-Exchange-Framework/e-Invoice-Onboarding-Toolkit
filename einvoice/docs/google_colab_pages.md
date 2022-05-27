@@ -15,12 +15,12 @@ JupyterLab artifacts worked on for the project are stored as static documents in
 
 
 ### URN hashing and DNS NAPTR lookup.
-The Colab JupyterLab Notebook with examples of how to hash the specification, the schema_id, and the party_id to create the URN and perform the NAPTR DNS query is at this [Colab page](https://colab.research.google.com/drive/1kfMedMUapeaOS6u9hnS8IcmQaury8znP?usp=sharing).  Examples 6, 7, 8,  and 9 run the hash and submit against a DNS in real-time.  
+The Colab JupyterLab Notebook with examples of how to hash the specification, the schema_id, and the party_id to create the URN and perform the NAPTR DNS query is at this [Colab page](https://colab.research.google.com/drive/1rn4o9517szE4LtfcrJPlAs69tFLsxA1c#scrollTo=c02a1a1c-4b93-4aed-bb17-928b3118747c).  Examples 6, 7, 8,  and 9 run the hash and submit against a DNS in real-time.  
 The JupyterLab file is: __urn_hash_work.ipynb__.
-
+a
 
 ## SMP query
-The Colab JupyterLab Notebook page with examples of how to transform the URN and party_id and submit it to the SMP URI is at this [Colab page](https://colab.research.google.com/drive/14EVSc0GyjU0H9776UEXqoEoD3x5Kn2RV?usp=sharing).  
+The Colab JupyterLab Notebook page with examples of how to transform the URN and party_id and submit it to the SMP URI is at this [Colab page](ccc).  
 They JupyterLab Notebook file is: __smp_url_transformations.ipynb__.
 
 

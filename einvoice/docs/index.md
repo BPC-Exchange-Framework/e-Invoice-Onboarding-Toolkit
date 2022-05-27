@@ -46,6 +46,17 @@ For information about E-Invoices and the Four-Corner Model please visit the [Bus
     * [JupyterLab/Notebooks](./google_colab_pages.md)
 * Package/Library API
     * [accessor.py](./accessor.md)
+    * [app_handler.py](./app_handler.md)
+    * [app_logging.py](./app_logging.md)
+    * [create_tracking_id.py](./create_tracking_id.md)
+    * [dns_query.py](./dns_query.md)
+    * [einvoice_message_package.py](./einvoice_message_package.md)
+    * [line_item.py](./line_item.md)
+    * [party_address.py](./party_address.md)
+    * [semantic_model.py](./semantic_model.md)
+    * [smp_query.py](./smp_query.md)
+    * [urn_hasher.py](./urn_hasher.md)
+    * [urn.py](./urn.md)
 <!-- * [Infrastructure Components](infrastructure_components.md) -->
 * [Project Roadmap](./project_roadmap.md )
 * [Project Artifacts](./artifacts.md)
