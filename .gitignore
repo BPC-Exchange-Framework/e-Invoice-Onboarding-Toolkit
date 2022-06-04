@@ -125,6 +125,9 @@ site
 einvoice/site
 site/*
 mkdocs.yml.old
+overrides
+overrides/*
+discovery/site/
 
 # mypy
 .mypy_cache/
@@ -179,6 +182,8 @@ einvoice/app.log
 app.log/
 einvoice/web_response.log
 web_response.log
+environment.yml
+tree.html
 
 # certificate work
 *.pem

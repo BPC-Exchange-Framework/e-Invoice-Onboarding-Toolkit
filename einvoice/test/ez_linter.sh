@@ -2,38 +2,34 @@
 echo "Begin all checks..."
 echo "Begin pylint check..."
 cd ../discovery/conf/
-DIR=$(pwd) &> /dev/null
-cd - &> /dev/null
-echo "Pylint code in $DIR"
-pylint ../discovery/conf/*.py
+DIR=$(pwd)
+echo "Pylint code in ${DIR}"
+pylint *.py
+cd ../../test
 
 
 cd ../discovery/data/
-DIR=$(pwd) &> /dev/null
-cd - &> /dev/null
-echo "Pylint code in $DIR"
-pylint ../discovery/data/*.py
+DIR=$(pwd)
+echo "Pylint code in ${DIR}"
+pylint *.py
+cd ../../test
 
 
-cd ./
-DIR=$(pwd) &> /dev/null
-cd - &> /dev/null
-echo "Pylint code in $DIR"
-pylint ./*.py
+DIR=$(pwd)
+echo "Pylint code in ${DIR}"
+pylint *.py
 
 
 cd ../discovery/
-DIR=$(pwd) &> /dev/null
-cd - &> /dev/null
-echo "Pylint code in $DIR"
-pylint ../discovery/*.py
+DIR=$(pwd)
+echo "Pylint code in ${DIR}"
+pylint *.py
 
 
 cd ../delivery/
-DIR=$(pwd) &> /dev/null
-cd - &> /dev/null
-echo "Pylint code in $DIR"
-pylint ../delivery/*.py
+DIR=$(pwd)
+echo "Pylint code in ${DIR}"
+pylint *.py
 
 
 echo "End pylint check..."
@@ -42,39 +38,29 @@ echo "Begin flake8 check..."
 
 
 cd ../discovery/conf/
-DIR=$(pwd) &> /dev/null
-cd - &> /dev/null
+DIR=$(pwd)
 echo "Flake8 check code in $DIR"
-flake8 ../discovery/conf/*.py
+flake8 *.py
+cd ../../test
 
 
 cd ../discovery/data/
-DIR=$(pwd) &> /dev/null
-cd - &> /dev/null
+DIR=$(pwd)
 echo "Flake8 check code in $DIR"
-flake8 ../discovery/data/*.py
+flake8 *.py
+cd ../../test
 
 
-cd ./
-DIR=$(pwd) &> /dev/null
-cd - &> /dev/null
+DIR=$(pwd)
 echo "Flake8 check code in $DIR"
-flake8 ./*.py
-
-
-cd ../discovery/
-DIR=$(pwd) &> /dev/null
-cd - &> /dev/null
-echo "Flake8 check code in $DIR"
-flake8 ../discovery/*.py
+flake8 *.py
 
 
 cd ../delivery/
-DIR=$(pwd) &> /dev/null
-cd - &> /dev/null
+DIR=$(pwd)
 echo "Flake8 check code in $DIR"
-pylint ../delivery/*.py
-cd 
+flake8 *.py
+cd ../test
 
 echo "End flake8 check..."
 echo "If there are no issues to this point then it should pass github CI/CD"

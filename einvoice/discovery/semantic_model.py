@@ -53,16 +53,24 @@ class EInvoice:
     einvoice_date: str
     einvoice_sellers_address: Address
     einvoice_buyers_addres: Address
-    einvoice_line_items: list[LineItem]
+    einvoice_line_items: list
     einvoice_total: float = 0.0
 
-    def calculate_einvoice_total(self) -> float:
-        """Sum the line items to get an invoice total."""
+    def calculate_einvoice_total_loop(self, line_items) -> float:
+        """Sum the line items to get an invoice total using looping."""
         self.einvoice_total = 0.0
+        self.einvoice_line_items = LineItem[line_items]
         if (len(self.einvoice_line_items)) > 0:
             for i in range(len(self.einvoice_line_items)):
                 self.einvoice_total = (
                     self.einvoice_total +
                     self.einvoice_line_items[i].line_item_total
                 )
+        return self.einvoice_total
+
+    def calculate_einvoice_total_list_comprehension(self, line_items) -> float:
+        """Sum the line items to get invoice total using list comprehension."""
+        self.einvoice_total = 0.0
+        self.einvoice_line_items = LineItem[line_items]
+        self.einvoice_total = sum(line_items.line_item_total)
         return self.einvoice_total
