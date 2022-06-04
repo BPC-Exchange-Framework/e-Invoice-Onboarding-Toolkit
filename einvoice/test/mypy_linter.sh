@@ -1,8 +1,11 @@
 #mypy
 echo "Begin mypy check..."
-mypy ../conf/*.py
-mypy ../data/*.py
+mypy ../discovery/conf/*.py
+mypy ../discovery/data/*.py
 mypy ./*.py
-mypy ../*.py
-pylint ../*.py
+mypy ../delivery/*.py
+pylint ../discovery/conf/*.py
+pylint ../discovery/data/*.py
+pylint ./*.py
+pylint ../delivery/*.py
 echo "End mypy check..."

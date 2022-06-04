@@ -1,28 +1,31 @@
 .md-content a {
-	text-decoration: underline
+	/* text-decoration: underline   */
   }
   .md-copyright-display {
-	  color: lightgray;
+	  color: snow;
+	  font-size: 120%;
   }
   .md-footer-copyright {
-	color: lightgray;
 	margin-left:20%;
+	font-size: 120%;
   }
   .md-footer-disclaimer-text {
+	font-size: 120%;
     padding:.7rem;
- 	border: 2px solid lightgray;
+ 	border: 3px solid lightgray;
 	margin-top: 15px;
 	margin-bottom: 20px;
 	margin-left: 0px;
 	margin-right: auto;
 	width: 80%;
-	color:lightgray;
+	background-color: snow;
+	color: slategrey;
 	border-radius: 10px;
   }
   .md-footer-disclaimer-statement {
 	font-size: 1.2em;
 	font-weight: bold;
-	color: lightgrey;
+	color: slategrey;
     padding: 0px;
     margin: 0px;
   }

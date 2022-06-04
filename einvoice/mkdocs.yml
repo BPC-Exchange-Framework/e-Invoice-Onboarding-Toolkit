@@ -30,7 +30,8 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode
   font:
-    text: Poppins
+    # text: Poppins
+    text: Roboto
     code: Roboto Mono
 
 extra_css:
@@ -48,11 +49,49 @@ markdown_extensions:
   - mkautodoc
   - attr_list
   - md_in_html
+  - codehilite
+
+
+nav: 
+  - Project Home: index.md
+  - FAQ: faq.md
+  - Outcomes: outcomes.md
+  - Assumptions: assumptions.md
+  - Tools and Resources: tools_and_resources.md
+  - Configure a Python Dev Environment: python_dev_env.md
+  - Package Requirements: requirements.md
+  - Getting the code: working_with_the_code.md
+  - Using the code:
+    - The Modules: using_the_modules.md
+    - Test Cases: test_cases.md
+    - Discovery Validation: discovery_validation.md
+    - JupyterLab/Notebooks: google_colab_pages.md
+    - Package/Library:
+      - accessor.py: accessor.md
+      - app_handler.py: app_handler.md
+      - app_logging.py: app_logging.md
+      - create_tracking_id.py: create_tracking_id.md
+      - dns_query.py: dns_query.md
+      - einvoice_message_package.py: einvoice_message_package.md
+      - line_item.py: line_item.md
+      - party_address.py: party_address.md
+      - semantic_model.py: semantic_model.md
+      - smp_query.py: smp_query.md
+      - urn_handler.py: urn_handler.md
+      - urn_hasher.py: urn_hasher.md
+      - urn.py: urn.md
+    # - Flask Integration on Docker: flask_integration_on_docker.md
+ #  - Infrastructure Components: infrastructure_components.md
+  - Project Roadmap: project_roadmap.md
+  - Project Artifacts: artifacts.md
+  - Workflow: git_workflow.md
+  - OASIS Resources: oasis_documentation.md
+  - License: _license.md
 
 
 plugins:
   - search
-  #- mkdocstrings
+  - mkdocstrings
   - print-site:
       add_to_navigation: true
       print_page_title: 'Print the Documentation'
@@ -71,39 +110,3 @@ plugins:
       include_css: true
       enabled: true
       exclude:
-
-
-nav: 
-  - Project Home: index.md
-  - FAQ: faq.md
-  - Outcomes: outcomes.md
-  - Assumptions: assumptions.md
-  - Tools and Resources: tools_and_resources.md
-  - Configure a Python Dev Environment: python_dev_env.md
-  - Package Requirements: requirements.md
-  - Getting the Code: working_with_the_code.md
-  - Using the Code:
-    - The Modules: using_the_modules.md
-    - Test Cases: test_cases.md
-    - Discovery Validation: discovery_validation.md
-    - JupyterLab/Notebooks: google_colab_pages.md
-    - Package/Library API:
-      - accessor.py: accessor.md
-    #   - app_logging.py: app_logging.md
-    #   - create_tracking_id.py: create_tracking_id.md
-    #   - dns_query.py: dns_query.md
-    #   - discovery_message_package.py: einvoice_message_package.md
-    #   - line_item.py: line_item.md
-    #   - party_address.py: party_address.md
-    #   - semantic_model.py: semantic_model.md
-    #   - smp_query.py: smp_query.md
-    #   - urn_handler.py: urn_handler.md
-    #   - urn_hasher.py: urn_hasher.md
-    #   - urn.py: urn.md
-    # - Flask Integration on Docker: flask_integration_on_docker.md
- #  - Infrastructure Components: infrastructure_components.md
-  - Project Roadmap: project_roadmap.md
-  - Project Artifacts: artifacts.md
-  - Workflow: git_workflow.md
-  - OASIS Resources: oasis_documentation.md
-  - License: _license.md
