@@ -15,7 +15,7 @@
     
     
       
-        <title>Creating the SML URN Hash - E-Invoice Onboarding Toolkit</title>
+        <title>SML Hash Functionality - E-Invoice Onboarding Toolkit</title>
       
     
     
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creating the SML URN Hash
+              SML Hash Functionality
             
           </span>
         </div>
@@ -369,12 +369,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
       
       
       
@@ -399,6 +401,186 @@
     <li class="md-nav__item">
       <a href="../using_the_modules/" class="md-nav__link">
         The Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SML Hash Functionality
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        SML Hash Functionality
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-create-the-hash" class="md-nav__link">
+    Example - Create the hash
+  </a>
+  
+    <nav class="md-nav" aria-label="Example - Create the hash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-import-modules" class="md-nav__link">
+    1. Import Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-concatonate-the-string" class="md-nav__link">
+    2. Concatonate the string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-convert-to-lower-case" class="md-nav__link">
+    3. Convert to lower-case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-encode-as-utf-8" class="md-nav__link">
+    4. Encode as utf-8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-create-sha256-hash" class="md-nav__link">
+    5. Create sha256 hash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-obtain-the-digest" class="md-nav__link">
+    6. Obtain the 'digest'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-encode-into-base32mkl" class="md-nav__link">
+    7.  Encode into base32?mkl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-strip-off-extras" class="md-nav__link">
+    8.  Strip off extras
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-convert-back-to-a-string" class="md-nav__link">
+    9. Convert back to a String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-convert-to-lower-case" class="md-nav__link">
+    10. Convert to lower-case
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-output" class="md-nav__link">
+    Final Output
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    Output
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns_query_sml/" class="md-nav__link">
+        DNS Query for SML urn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smp_rest_query/" class="md-nav__link">
+        SMP REST API Query
       </a>
     </li>
   
@@ -456,18 +638,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_5" type="checkbox" id="__nav_9_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" type="checkbox" id="__nav_9_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_9_5">
+        <label class="md-nav__link" for="__nav_9_8">
           Package/Library API
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Package/Library API" data-md-level="2">
-        <label class="md-nav__title" for="__nav_9_5">
+        <label class="md-nav__title" for="__nav_9_8">
           <span class="md-nav__icon md-icon"></span>
           Package/Library API
         </label>
@@ -667,8 +849,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-encode-into-base32" class="md-nav__link">
-    7.  Encode into base32?"
+  <a href="#7-encode-into-base32mkl" class="md-nav__link">
+    7.  Encode into base32?mkl
   </a>
   
 </li>
@@ -814,7 +996,7 @@ print (f"URN hashed using sha256 {sha256_urn}")
 print(f"Digest of buffered stream containing results thus far: {sha256_digest}")
 </code></pre>
 <p><br/>  </p>
-<h3 id="7-encode-into-base32">7.  Encode into base32?"</h3>
+<h3 id="7-encode-into-base32mkl">7.  Encode into base32?mkl</h3>
 <details class="note">
 <summary>Why encode in base32?</summary>
 <p>Encryption using sha256 results in a one-way hash. The original value of the URN is not intended to be derived from that hash as that is cryptographically impossible.  However, encoding the sha256 hash into base32 is NOT one way.  <br/><br/>The sha256 hash is 256 bits, or 32 bytes. A two digit hexadecimal representation of the 32 byte hash is 64 characters long.  Since base32 encoding has a character set of 32 compared to hexadecimal's 16, the sha256 hashed value can be reresented in 32 characters in base32 instead of the 64 required for hex.  <br/><br/>
@@ -928,6 +1110,41 @@ The final result: yn5tj7bteln4c5o4mtul7yvnq3pwu6dpmipcof4pwcbsd3avvn7a
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../using_the_modules/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The Modules" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              The Modules
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../dns_query_sml/" class="md-footer__link md-footer__link--next" aria-label="Next: DNS Query for SML urn" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              DNS Query for SML urn
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
