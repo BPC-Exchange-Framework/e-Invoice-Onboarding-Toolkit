@@ -447,6 +447,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#information-needed-to-create-the-urn" class="md-nav__link">
+    Information needed to create the URN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-create-the-hash" class="md-nav__link">
     Example - Create the hash
   </a>
@@ -799,6 +806,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#information-needed-to-create-the-urn" class="md-nav__link">
+    Information needed to create the URN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-create-the-hash" class="md-nav__link">
     Example - Create the hash
   </a>
@@ -923,8 +937,17 @@
 
 
 <h1 id="creating-the-sml-urn-hash">Creating the SML URN Hash</h1>
-<p>This is the process used to create and has a URN to query a DNS NAPTR record.   This provides elaboration on the process as described in Section 3.2 of the <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/f3844411c40dd4b84276fd3ef6020d247afd83c4/BPC%20SML%20Profile%20Version%201.0.pdf">BPC SML Profile Version 1.0</a> document found on the <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot">BPC-Exchange-Framework/BPC-Market-Pilot Github site</a>.  </p>
-<p>Three data points are required to create the URN hash:<br />
+<p>The SML look-up is a NAPTR DNS query which returns the URL of the SMP. The record queried is a URN constructed from the combined Specification, Schema, and Party ID and then hashed.  After the hash is created, the URN is combined with the look-up domain.  This combination is the record locator for the information in the DNS.  </p>
+<p>The Python code, as script, function, or method, provides elaboration and implementation of the process as described in Section 3.2 of the <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/f3844411c40dd4b84276fd3ef6020d247afd83c4/BPC%20SML%20Profile%20Version%201.0.pdf">BPC SML Profile Version 1.0</a> document found on the <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot">BPC-Exchange-Framework/BPC-Market-Pilot Github site</a>.<br />
+<br/></p>
+<div class="admonition important">
+<p class="admonition-title">The BPC SML Domain</p>
+<p>The BPC SML Domain is:
+<strong>bpcb2b.net</strong></p>
+</div>
+<p><br/></p>
+<h2 id="information-needed-to-create-the-urn">Information needed to create the URN</h2>
+<p>Three data points are required to create the URN:<br />
  
 <ul>
    <li>Specification  (urn:oasis:names:tc:ebcore:partyid-type)</li>
@@ -935,8 +958,8 @@
 <div class="admonition note">
 <p class="admonition-title">Note on non-fuctional requirements</p>
 <p>This process to create a URN hash for look-up does not specify or require the Specification, 
-Schema, or PartyID in a particular format.  The normative standard articulated for ebCorePartyId referenced in the <a href="https://docs.oasis-open.org/bdxr/BDX-Location/v1.0/os/BDX-Location-v1.0-os.html">Business Document Metadata Service Location Version 1.0</a> referring to the <a href="https://docs.oasis-open.org/ebcore/PartyIdType/v1.0/PartyIdType-1.0.odt">OASIS ebCore Party Id Type Techinical Specification Version 1.0</a> provides normative guidelines for the Specification and Schema.    <br />
-It is not the prupose to of this code to validate or enforce compliance with those standards.  Conformance to those are assumed in this example.  </p>
+Schema, or PartyID in a particular format.  The standard articulated for an ebCorePartyId referenced in the <a href="https://docs.oasis-open.org/bdxr/BDX-Location/v1.0/os/BDX-Location-v1.0-os.html">Business Document Metadata Service Location Version 1.0</a> referring to the <a href="https://docs.oasis-open.org/ebcore/PartyIdType/v1.0/PartyIdType-1.0.odt">OASIS ebCore Party Id Type Techinical Specification Version 1.0</a> provides normative guidelines for the Specification and Schema.    <br />
+This code does not validate or enforce compliance with those standards.  Conformance to those are assumed, however the code works on any string of data.  </p>
 </div>
 <p><br/>  </p>
 <h2 id="example-create-the-hash">Example - Create the hash</h2>
