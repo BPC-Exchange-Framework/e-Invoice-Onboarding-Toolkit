@@ -2240,7 +2240,53 @@ print(smp_uri)
 <h2 id="dns_query_sml-output">Output</h2>
 <pre><code>&lt;class 'dns.resolver.Answer'&gt;
 !^.*$!https://my-smp-url.com/0123456789!
-</code></pre></section><section class="print-page" id="smp_rest_query"><h1 id="smp_rest_query-smp-rest-api-query">SMP REST API Query</h1></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
+</code></pre></section><section class="print-page" id="smp_rest_query"><h1 id="smp_rest_query-smp-rest-api-query">SMP REST API Query</h1>
+<p>Query to an SMP to obtain terminal or final "Endpoint" destination of the e-invoice is implemented by two REST web service calls.  </p>
+<p>See the BPC SMP Profile Version 1.0 (https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/f3844411c40dd4b84276fd3ef6020d247afd83c4/BPC%20SMP%20Profile%20Version%201.0.pdf) document for some general guidance as to the form of this  service call.  See the OASIS website for the <a href="https://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.docx">authoritative OASIS SMP 2.0 specification</a>.</p>
+<p>Section 3 of the BPC SMP profile regarding the REST interfacace specifies in Section 3.1 that client authentication must not be required when accessing SMP [server] resources.    </p>
+<p>The actual REST API for the webservice calls is referenced in section 3.2 of the BPC SMP profile, mandating the implementation as spcified in section 5.2 of the OASIS SMP 2.0 standard.  </p>
+<p>!!!+ note "The BPC SMP Profile implements the OASIS SMP 2.0 Specification"
+    Per section 3.2 of the BPC SMP profile, the BPC profile is an impelmentation of the OASIS SMP 2.0 standard.  <br/><br/>To the extent that section 6 of the BPC Profile has a requirement that the SMP client "must" validate the signature of the SMP [server response] as directed in section 5.6.2.2  of the OASIS SMP 2.0 standard, the OASIS standard is permissive and says the SMP client "may" verify the signature.</p>
+<p>While both the BPC SMP Profile and the OASIS SMP 2.0 standard are replete with non-functional requirements for an SMP client, less light is shed on the constructing the actual call.  Section 5.4 of the OASIS SMP 2.0 standard most directly addresses the required REST call.</p>
+<h2 id="smp_rest_query-the-rest-webservice-calls-to-the-smp-service">The REST Webservice calls to the SMP service</h2>
+<h3 id="smp_rest_query-call-1-to-obtain-servicegroup-data">Call #1 to obtain ServiceGroup data</h3>
+<p>The first webserivce call is construced of:</p>
+<h4 id="smp_rest_query-1a-the-webservice-being-queried-with-fully-qualfied-domain">1a. The webservice being queried with fully qualfied domain.</h4>
+<p>The fully qualifiled web based SMP application uri with domain is the first element of the URL.  In the development and test environment of the Onboarding Toolkit the uri or web address was "smp-api.sc-b2b.us"  <strong>This value will  be different in the Market Pilot.</strong></p>
+<h4 id="smp_rest_query-1b-the-smp-rest-binding">1b.  The SMP Rest Binding</h4>
+<p>Section 5.5 of the OASIS SMP 2.0 Standard directs the SMP REST Binding should be <code>oasis-bdxr-smp-2</code>.   In the prior Section 5.4 "Resources" the exmaple URI indicates an SMP Binding of <code>bdxr-smp-2</code>.  The development and test environment of the Onboarding Toolkit the SMP Binding used <code>bdxr-smp-2</code>.</p>
+<h4 id="smp_rest_query-1c-the-pre-hash-urn">1c.  The pre-hash URN</h4>
+<p>The next element in the call to obtain the ServiceGroup data is the Specification, Schema, and PartyID used to create the URN for the SML NATPR DNS Query.  The OASIS SMP 2.0 standard calls these the <code>identifier schema</code> and the <code>participant id</code>.  When concatenated together, they form the pre-hash urn.</p>
+<h4 id="smp_rest_query-1d-create-the-string">1d. Create the string</h4>
+<p>The ServiceGroup webservice call then takes the format of:
+https://\&lt;<em>webservice.domain</em>>/\&lt;<em>smp_rest_binding</em>>/\&lt;<em>urn</em>> where the <strong>URN</strong> is \&lt;<em>specification</em>>:\&lt;<em>schema</em>>::\&lt;<em>party_id</em>>.<br />
+Using the terms employed by OASIS SMP 2.0 standard  the URL is constructed as:<br />
+https://\&lt;<em>webservice.domain</em>>/\&lt;<em>smp_rest_binding</em>>/\&lt;<em>identifier\
+_scheme</em>>::\&lt;<em>participant_id</em>></p>
+<p>#### 1e. Make the webservice call</p>
+<h2 id="smp_rest_query-example">Example</h2>
+<pre><code>protocol = "https"
+uri = "smp-api.sc-b2b.us"
+standard = "bdxr-smp-2"
+identifier_scheme = "urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088"
+participant_id = "123456789"
+urn = identifier_scheme + "::" + participant_id 
+query_url_1 = protocol + "://" + uri + ":" + identifier_scheme + "::" + participant_id
+query_url_2 = protocol + "://" + uri + ":" + urn
+print(f"Value of query_url_1: {query_url_1}")
+print(f"Value of query_url_2: {query_url_2}")
+print(f"constructed urls are the same: {query_url_1 == query_url_2}")
+</code></pre>
+<h2 id="smp_rest_query-output">Output</h2>
+<pre><code>Value of query_url_1: https://smp-api.sc-b2b.us:urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088::123456789
+Value of query_url_2: https://smp-api.sc-b2b.us:urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088::123456789
+constructed urls are the same: True
+</code></pre>
+<h3 id="smp_rest_query-call-2-to-obtain-servicemetadata">Call #2 to obtain ServiceMetadata</h3>
+<p>!!!+ important "Inferring values for the ServiceMetadata REST webservice call"
+    In the BPC Proof of Concept and creation of the Onboarding Toolkit, the service and document schemas defined by the SMP were static.<br />
+    The values had to be agreed 
+    The QName Subtype Identifier was used.   validation of the queries resulted in assumption of the  value of some ServiceMetadata parameters.  <br/><br/></p></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
 <h2 id="test_cases-working-with-the-code">Working with the code</h2>
 <h3 id="test_cases-test-cases">Test Cases</h3>
 <h4 id="test_cases-using-an-env-file">Using an .env file</h4>
