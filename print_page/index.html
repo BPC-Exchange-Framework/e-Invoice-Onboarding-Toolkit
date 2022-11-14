@@ -601,8 +601,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../oasis_documentation/" class="md-nav__link">
-        OASIS Resources
+      <a href="../glossary/" class="md-nav__link">
+        Glossary of Terms
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standards/" class="md-nav__link">
+        Standards
       </a>
     </li>
   
@@ -798,15 +813,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#oasis_documentation" class="md-nav__link">
-    19. OASIS Resources
+  <a href="#glossary" class="md-nav__link">
+    19. Glossary of Terms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standards" class="md-nav__link">
+    20. Standards
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_license" class="md-nav__link">
-    20. License
+    21. License
   </a>
   
 </li>
@@ -983,15 +1005,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#oasis_documentation" class="md-nav__link">
-    19. OASIS Resources
+  <a href="#glossary" class="md-nav__link">
+    19. Glossary of Terms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standards" class="md-nav__link">
+    20. Standards
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_license" class="md-nav__link">
-    20. License
+    21. License
   </a>
   
 </li>
@@ -1064,7 +1093,7 @@
 <p>This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner Model of an Exchange Framework.   </p>
 <h2 id="index-project-goals">Project Goals</h2>
 <details class="alert" open="open">
-<summary>GOALS: The features of the project as oultined in the <a href="#project_roadmap">project roadmap</a>. </summary>
+<summary>GOALS: The features of the project as outlined in the <a href="#project_roadmap">project roadmap</a>. </summary>
 <table>
 <thead>
 <tr>
@@ -1077,7 +1106,7 @@
 <tr>
 <td>Feature #1 - SML NAPTR DNS Lookup</td>
 <td>Discovery</td>
-<td>1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look up the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the Buyer.</td>
+<td>1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look up the ID code up in a global internet database to get the address of a website which has more information about the Buyer.</td>
 </tr>
 <tr>
 <td>Feature #2 - SMP REST API Query</td>
@@ -1169,7 +1198,8 @@
 <li><a href="#project_roadmap">Project Roadmap</a></li>
 <li><a href="#artifacts">Project Artifacts</a></li>
 <li><a href="#git_workflow">Workflow</a></li>
-<li><a href="#oasis_documentation">Oasis Resources</a></li>
+<li><a href="#glossary">Glossary of Terms</a></li>
+<li><a href="#standards">Standards</a></li>
 <li><a href="#_license">License</a></li>
 </ul></section><section class="print-page" id="faq"><h1 id="faq-faq">FAQ</h1>
 <hr>
@@ -1997,7 +2027,7 @@ zipp
 <p><br/>
 <br/>
 <br/></p></section><section class="print-page" id="sml_hash_func"><h1 id="sml_hash_func-creating-the-sml-urn-hash">Creating the SML URN Hash</h1>
-<p>The SML look-up is a NAPTR DNS query which returns the URL of the SMP. The record queried is a URN constructed from the combined Specification, Schema, and Party ID and then hashed.  After the hash is created, the URN is combined with the look-up domain.  This combination is the record locator for the information in the DNS.  </p>
+<p>The SML look-up is a NAPTR DNS query which returns the URL of the SMP. The record queried is a URN constructed from the combined Specification, Schema, and Party ID and then hashed.  After the hash is created, the URN is combined with the look-up domain.  This combination of URN and domain is the record locator for the information in the DNS.  </p>
 <p>The Python code, as script, function, or method, provides elaboration and implementation of the process as described in Section 3.2 of the <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/f3844411c40dd4b84276fd3ef6020d247afd83c4/BPC%20SML%20Profile%20Version%201.0.pdf">BPC SML Profile Version 1.0</a> document found on the <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot">BPC-Exchange-Framework/BPC-Market-Pilot Github site</a>.<br />
 <br/></p>
 <div class="admonition important">
@@ -2016,13 +2046,13 @@ zipp
 </ul></p>
 <p><br/></p>
 <div class="admonition note">
-<p class="admonition-title">Note on non-fuctional requirements</p>
+<p class="admonition-title">Note on non-functional requirements</p>
 <p>This process to create a URN hash for look-up does not specify or require the Specification, 
-Schema, or PartyID in a particular format.  The standard articulated for an ebCorePartyId referenced in the <a href="https://docs.oasis-open.org/bdxr/BDX-Location/v1.0/os/BDX-Location-v1.0-os.html">Business Document Metadata Service Location Version 1.0</a> referring to the <a href="https://docs.oasis-open.org/ebcore/PartyIdType/v1.0/PartyIdType-1.0.odt">OASIS ebCore Party Id Type Techinical Specification Version 1.0</a> provides normative guidelines for the Specification and Schema.    <br />
+Schema, or PartyID in a particular format.  The standard articulated for an ebCorePartyId referenced in the <a href="https://docs.oasis-open.org/bdxr/BDX-Location/v1.0/os/BDX-Location-v1.0-os.html">Business Document Metadata Service Location Version 1.0</a> referring to the <a href="https://docs.oasis-open.org/ebcore/PartyIdType/v1.0/PartyIdType-1.0.odt">OASIS ebCore Party Id Type Technical Specification Version 1.0</a> provides normative guidelines for the Specification and Schema.    <br />
 This code does not validate or enforce compliance with those standards.  Conformance to those are assumed, however the code works on any string of data.  </p>
 </div>
 <p><br/>  </p>
-<h2 id="sml_hash_func-example-create-the-hash">Example - Create the hash</h2>
+<h2 id="sml_hash_func-example-creating-the-urn-hash">Example - Creating the URN hash</h2>
 <p><br/>  </p>
 <h3 id="sml_hash_func-1-import-modules">1. Import Modules</h3>
 <p>The <code>hashlib</code> and <code>bas64</code> Python modules are used in this process.  </p>
@@ -2030,9 +2060,9 @@ This code does not validate or enforce compliance with those standards.  Conform
 import base64
 </code></pre>
 <p><br/>    </p>
-<h3 id="sml_hash_func-2-concatonate-the-string">2. Concatonate the string</h3>
+<h3 id="sml_hash_func-2-concatenate-the-string">2. Concatenate the string</h3>
 <p>Strings are a primitive data type in Python.  Instantiate and initialize string variables for the 
-individual data values and concatonate them into a single string.   Simple validation of the correct 
+individual data values and concatenate them into a single string.   Simple validation of the correct 
 format of the urn is included.  </p>
 <pre><code>specification = "urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme"  
 schema = "BPC01"  
@@ -2040,11 +2070,11 @@ party_id = "bpcBusid01"
 urn = specification + ":" + schema + "::" + party_id  
 urn_test_case = 
     "urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme:BPC01::bpcBusid01"
-print(f"urn is concatonated properly: {urn == urn_test_case}")  
+print(f"urn is concatenated properly: {urn == urn_test_case}")  
 print(urn)
 </code></pre>
 <div class="admonition important">
-<p class="admonition-title">Punctuaion</p>
+<p class="admonition-title">Punctuation</p>
 <p>Note the use of a single and a double colon as separators between the values.  These are 
 includes as part of the string and are <strong>required</strong>.  </p>
 </div>
@@ -2074,20 +2104,20 @@ print (f"URN hashed using sha256 {sha256_urn}")
 <p><br/>    </p>
 <h3 id="sml_hash_func-6-obtain-the-digest">6. Obtain the 'digest'</h3>
 <p>The digest is the concatenation of all of the data fed into the hash so far, i.e., the current value.<br />
-(Though implemented as a single operation here, the buffered protocol allows for additions and updates to the hash.)  The <code>digest()</code> method is included in the hashlib module.</p>
+(Though implemented as a single operation here, the buffered protocol allows for additions and updates to the hash.)  The <code>digest()</code> method is included in the <code>hashlib</code> module.</p>
 <pre><code>sha256_digest = sha256_urn.digest()
 print(f"Digest of buffered stream containing results thus far: {sha256_digest}")
 </code></pre>
 <p><br/>  </p>
-<h3 id="sml_hash_func-7-encode-into-base32mkl">7.  Encode into base32?mkl</h3>
+<h3 id="sml_hash_func-7-encode-into-base32">7.  Encode into base32</h3>
 <details class="note">
 <summary>Why encode in base32?</summary>
-<p>Encryption using sha256 results in a one-way hash. The original value of the URN is not intended to be derived from that hash as that is cryptographically impossible.  However, encoding the sha256 hash into base32 is NOT one way.  <br/><br/>The sha256 hash is 256 bits, or 32 bytes. A two digit hexadecimal representation of the 32 byte hash is 64 characters long.  Since base32 encoding has a character set of 32 compared to hexadecimal's 16, the sha256 hashed value can be reresented in 32 characters in base32 instead of the 64 required for hex.  <br/><br/>
-The irreversible sha256 hash implies that the process is cryptographically meaningful.  It is not.  The value is ultimately used as a dictionary look-up in the DNS record <em>for a given domain</em>. Where a common specification and schema are in use by many participants, it becomes imperative that the PartyIDs are unique <em>for a specific domain</em>.  Otherwise, while a sha256 hash can't be reversed, it can be <strong>duplicated</strong>.  <br/><br/>
+<p>Encryption using sha256 results in a one-way hash. The original value of the URN is not intended to be derived from that hash as that is cryptographically impossible.  (Encoding the sha256 hash into base32 is <strong>not</strong> one way.)  <br/><br/>The sha256 hash is 256 bits, or 32 bytes. A two digit hexadecimal representation of the 32 byte hash is 64 characters long.  Since base32 encoding has a character set of 32 compared to hexadecimal's 16, the sha256 hashed value can be represented in 32 characters in base32 instead of the 64 required for hex.  <br/><br/>
+The irreversibility of the sha256 hash implies that the process is cryptographically significant.  It is not.  The hashed URN is ultimately used as a dictionary look-up in the DNS record <em>for a given domain</em>. Where a common specification and schema are in use by many participants, it becomes imperative that the PartyIDs are unique <em>for a specific domain</em>.  Otherwise, while a sha256 hash can't be reversed, it can be <strong>duplicated</strong>.  <br/><br/>
 The output of this process is a 256 bit/32 byte value represented in a base 32 character set.</p>
 </details>
 <p>Take the digest entry, still a bytes-like object, and encode it in base32, 
-resulting in a string 32 chacters in length.  This implements the <code>b32encode</code> 
+resulting in a string 32 characters in length.  This implements the <code>b32encode</code> 
 method of the base64 module.</p>
 <pre><code>b32_urn = base64.b32encode(sha256_digest)
 print(f"The base32 encoded representation of the URN: {b32_urn}")
@@ -2138,7 +2168,7 @@ This implements the String <code>lower()</code> method again.  </p>
     urn = specification + ":" + schema + "::" + party_id
     urn_test_case = 
         "urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme:BPC01::bpcBusid01"
-    print(f"urn is concatonated properly: {urn == urn_test_case}")
+    print(f"urn is concatenated properly: {urn == urn_test_case}")
     print(urn)
     # make sure it's converted to lower case
     lower_case_urn = urn.lower()
@@ -2167,7 +2197,7 @@ This implements the String <code>lower()</code> method again.  </p>
 <hr>
 <p><br/>  </p>
 <h2 id="sml_hash_func-output">Output</h2>
-<pre><code>urn is concatonated properly: True
+<pre><code>urn is concatenated properly: True
 urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme:BPC01::bpcBusid01
 URN converted to lower case: urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme:bpc01::bpcbusid01
 URN encoded as utf-8: b'urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme:bpc01::bpcbusid01'
@@ -2178,13 +2208,13 @@ The URN with any padding removed b'YN5TJ7BTELN4C5O4MTUL7YVNQ3PWU6DPMIPCOF4PWCBSD
 The final result: yn5tj7bteln4c5o4mtul7yvnq3pwu6dpmipcof4pwcbsd3avvn7a
 </code></pre>
 <p><br/><br/></p></section><section class="print-page" id="dns_query_sml"><h1 id="dns_query_sml-dns-query-functionality">DNS Query Functionality</h1>
-<p>The code to query the DNS for any record, NAPTR or otherwise, is fairly trivial in Python.  </p>
+<p>The code below provides an example of how to query a DNS record, specifically using the NAPTR <strong>regex</strong> protocol.   The important take-away from this exercise is the knowing the NAPTR fields treated as a <strong>set</strong> , using Python to iterate it, and using the regexp field to directly access the data.</p>
 <div class="admonition important">
 <p class="admonition-title">The BPC SML Domain</p>
 <p>The BPC SML Domain is:
 <strong>bpcb2b.net</strong></p>
 </div>
-<h2 id="dns_query_sml-example-query-a-dns-naptr-record">Example - Query a DNS NAPTR Record</h2>
+<h2 id="dns_query_sml-example-querying-a-dns-naptr-record">Example - Querying a DNS NAPTR Record</h2>
 <h3 id="dns_query_sml-1-import-the-necessary-module">1.  Import the necessary module</h3>
 <p>The example implements the <code>dns.resolver</code> Python module.   </p>
 <pre><code>import dns.resolver
@@ -2204,10 +2234,10 @@ The final result: yn5tj7bteln4c5o4mtul7yvnq3pwu6dpmipcof4pwcbsd3avvn7a
 <h3 id="dns_query_sml-4-the-naptr-dns-query-response">4. The NAPTR DNS query response</h3>
 <p><br/></p>
 <h4 id="dns_query_sml-4a-the-response-as-rdata">4a.  The response as Rdata</h4>
-<p>Rdata is typed data in one of the known DNS datatypes, i.e., an IPv4 address for a host, MX record, or NAPTR record.  RRset is an Rdata object which supports the Python set API.  For details on RRset see <a href="https://dnspython.readthedocs.io/en/latest/rdata-set-classes.html">Rdataset, RRset, and Node Classes</a>.<br />
+<p>Rdata is typed data in one of the known DNS data types, i.e., an IPv4 address for a host, MX record, or NAPTR record.  RRset is an Rdata object which supports the Python <strong>set</strong> API.  For details on RRset see <a href="https://dnspython.readthedocs.io/en/latest/rdata-set-classes.html">Rdataset, RRset, and Node Classes</a>.<br />
 <br/></p>
 <h4 id="dns_query_sml-4b-the-fields-in-the-naptr-response">4b. The fields in the NAPTR response</h4>
-<p>The returned Rdata data set is in the format as <a href="https://www.ietf.org/rfc/rfc2915.txt">specified by the NATPR protocol</a> and contains the fields: </p>
+<p>The returned Rdata data set is in the format as <a href="https://www.ietf.org/rfc/rfc2915.txt">specified by the NATPR protocol</a> and contains the following fields which may be iterated as a set: </p>
 <pre><code>Domain TTL Class Type Order Preference Flags Service Regexp Replacement
 </code></pre>
 <p>The set values are iterated using:  </p>
@@ -2241,29 +2271,56 @@ print(smp_uri)
 <pre><code>&lt;class 'dns.resolver.Answer'&gt;
 !^.*$!https://my-smp-url.com/0123456789!
 </code></pre></section><section class="print-page" id="smp_rest_query"><h1 id="smp_rest_query-smp-rest-api-query">SMP REST API Query</h1>
-<p>Query to an SMP to obtain terminal or final "Endpoint" destination of the e-invoice is implemented by two REST web service calls.  </p>
-<p>See the BPC SMP Profile Version 1.0 (https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/f3844411c40dd4b84276fd3ef6020d247afd83c4/BPC%20SMP%20Profile%20Version%201.0.pdf) document for some general guidance as to the form of this  service call.  See the OASIS website for the <a href="https://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.docx">authoritative OASIS SMP 2.0 specification</a>.</p>
-<p>Section 3 of the BPC SMP profile regarding the REST interfacace specifies in Section 3.1 that client authentication must not be required when accessing SMP [server] resources.    </p>
-<p>The actual REST API for the webservice calls is referenced in section 3.2 of the BPC SMP profile, mandating the implementation as spcified in section 5.2 of the OASIS SMP 2.0 standard.  </p>
-<p>!!!+ note "The BPC SMP Profile implements the OASIS SMP 2.0 Specification"
-    Per section 3.2 of the BPC SMP profile, the BPC profile is an impelmentation of the OASIS SMP 2.0 standard.  <br/><br/>To the extent that section 6 of the BPC Profile has a requirement that the SMP client "must" validate the signature of the SMP [server response] as directed in section 5.6.2.2  of the OASIS SMP 2.0 standard, the OASIS standard is permissive and says the SMP client "may" verify the signature.</p>
-<p>While both the BPC SMP Profile and the OASIS SMP 2.0 standard are replete with non-functional requirements for an SMP client, less light is shed on the constructing the actual call.  Section 5.4 of the OASIS SMP 2.0 standard most directly addresses the required REST call.</p>
-<h2 id="smp_rest_query-the-rest-webservice-calls-to-the-smp-service">The REST Webservice calls to the SMP service</h2>
-<h3 id="smp_rest_query-call-1-to-obtain-servicegroup-data">Call #1 to obtain ServiceGroup data</h3>
-<p>The first webserivce call is construced of:</p>
-<h4 id="smp_rest_query-1a-the-webservice-being-queried-with-fully-qualfied-domain">1a. The webservice being queried with fully qualfied domain.</h4>
-<p>The fully qualifiled web based SMP application uri with domain is the first element of the URL.  In the development and test environment of the Onboarding Toolkit the uri or web address was "smp-api.sc-b2b.us"  <strong>This value will  be different in the Market Pilot.</strong></p>
-<h4 id="smp_rest_query-1b-the-smp-rest-binding">1b.  The SMP Rest Binding</h4>
-<p>Section 5.5 of the OASIS SMP 2.0 Standard directs the SMP REST Binding should be <code>oasis-bdxr-smp-2</code>.   In the prior Section 5.4 "Resources" the exmaple URI indicates an SMP Binding of <code>bdxr-smp-2</code>.  The development and test environment of the Onboarding Toolkit the SMP Binding used <code>bdxr-smp-2</code>.</p>
-<h4 id="smp_rest_query-1c-the-pre-hash-urn">1c.  The pre-hash URN</h4>
-<p>The next element in the call to obtain the ServiceGroup data is the Specification, Schema, and PartyID used to create the URN for the SML NATPR DNS Query.  The OASIS SMP 2.0 standard calls these the <code>identifier schema</code> and the <code>participant id</code>.  When concatenated together, they form the pre-hash urn.</p>
-<h4 id="smp_rest_query-1d-create-the-string">1d. Create the string</h4>
-<p>The ServiceGroup webservice call then takes the format of:
+<p>Query to an SMP service to obtain terminal or final "Endpoint" destination of the e-invoice is implemented using two REST API web service calls.   </p>
+<h2 id="smp_rest_query-references">References</h2>
+<ul>
+<li>See the <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/f3844411c40dd4b84276fd3ef6020d247afd83c4/BPC%20SMP%20Profile%20Version%201.0.pdf">BPC SMP Profile Version 1.0</a> (the "Profile") document for general guidance to the format of this service call.  </li>
+<li>See the OASIS website for the authoritative <a href="https://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.docx">OASIS SMP 2.0 Standard</a> (the "Standard").   </li>
+<li>Section 3 of the BPC SMP Profile referencing the REST interface specifies in Section 3.1 that client authentication must not be required when accessing SMP [server] resources.    </li>
+<li>The REST API for the web service calls are referenced in section 3.2 of the BPC SMP Profile, mandating implementation as provided in section 5.2 of the OASIS SMP 2.0 Standard.    </li>
+</ul>
+<details class="note">
+<summary>The BPC SMP Profile implements the OASIS SMP 2.0 Standard</summary>
+<p>Section 3.2 of the BPC SMP Profile mandates implementation of the OASIS SMP 2.0 standard.  <br/><br/>To the extent that Section 6 of the BPC Profile has a requirement that the SMP client <strong>MUST</strong> validate the signature of the SMP [server response] as directed in section 5.6.2.2  of the OASIS standard, the OASIS standard is permissive and says the SMP client <strong>MAY</strong> verify the signature.</p>
+</details>
+<h2 id="smp_rest_query-the-rest-web-service-calls-to-the-smp-service">The REST Web Service calls to the SMP service</h2>
+<p>!!!+ Important "The rules for constructing the ServiceGroup  REST API web service call.
+    In Section 5.4 "Resources" The OASIS SMP Standard provides the format used to create the ServiceGroup REST API web service call.  This specifies the <strong>oasis-bdxr-smp-2(bdxr-smp-2)</strong> SMP REST binding, the "identifier scheme" and the "participant id."  The "identifier scheme" is literally the URN specifying the format the participant ID is going to take.  </p>
+<h2 id="smp_rest_query-1-service-group-discovery">1. Service Group Discovery</h2>
+<p>The first REST API query to the Service Group is created using the SMP REST binding, "identifier scheme" and "participant ID."  </p>
+<h3 id="smp_rest_query-creating-the-smp-rest-api-call-1-to-obtain-servicegroup-data">Creating the SMP REST API call #1 to obtain ServiceGroup data</h3>
+<p><span style="font-size: 120%;">The first web service call to obtain the ServiceGroup data is constructed from:</span></p>
+<h4 id="smp_rest_query-1a-use-the-smp-web-service-being-queried-with-its-fully-qualified-domain">1a. Use the SMP web service being queried with its fully qualified domain.</h4>
+<ul>
+<li>Not specified, but implied to make a web service call, is the scheme or protocol of "https://"   </li>
+<li>Further unspecified, but implied as it is required, is the fully qualified application server domain and reference to any sub-domains. In the case of the example, this is "smp-api.sc-b2b.us."  The subdomain is "smp-api." The second-level domain is "sc-b2b." The top level domain is "us."</li>
+<li>The only REST method required to be supported by the OASIS SMP Standard is "GET."  Everything after the domain specification is the "resource" uri of the GET method request.  </li>
+</ul>
+<p>In the development environment of the Onboarding Toolkit the first part of the URL will be: https://smp-api.sc-b2b.us/,</p>
+<p><strong>This value will  be different in the Market Pilot.</strong><br />
+In the Market Pilot, use the value <em>bpcb2b.net</em>.  The URL will begin with https://bpcb22.net/</p>
+<h4 id="smp_rest_query-1b-the-smp-rest-binding">1b.  The SMP REST Binding</h4>
+<p>Section 5.5 of the OASIS SMP 2.0 Standard directs the SMP REST Binding should be <code>oasis-bdxr-smp-2</code>.   In the prior Section 5.4 "Resources" the example URI indicates an SMP Binding of <code>bdxr-smp-2</code>.  The development and test environment of the Onboarding Toolkit the SMP Binding used <code>bdxr-smp-2</code>.
+The Onboarding Toolkit dev URL then grows to: https://smp-api.sc-b2b.us/bdxr-smp-2/
+The Market Pilot URL grows to: https://bpcb22.net/bdxr-smp-2/</p>
+<h4 id="smp_rest_query-1c-the-identifier-scheme">1c.  The Identifier Scheme</h4>
+<p>The next element in the call to obtain the ServiceGroup data is the "identifier scheme" which identifies the format of the PartyID.  This value should already be known, as it is the Specification and the Scheme used when creating the hash value for SML U-NAPTR DNS look-up.  Together, the Specification and the Scheme create the "identifier scheme," which defines the format of the party ID.   </p>
+<p>Detailed requirements of the identifier scheme are found in the |<a href="http://docs.oasis-open.org/ebcore/PartyIdType/v1.0/CS01/PartyIdType-1.0.html">OASIS ebCore Party Id Type Technical Specification Version 1.0</a>|<strong>ebCorePartyID</strong>|.</p>
+<p>An example of a "normative" value for the identifier scheme is: urn:oasis:names:tc:ebcore:partyid-type:iso6523.  </p>
+<p>The Onboarding Toolkit dev URL then grows to: https:\/\/smp-api.sc-b2b.us\/bdxr-smp-2\/urn:oasis:names:tc:ebcore:partyid-type:iso6523
+The Market Pilot URL grows to: https:\/\/bpcb22.net\/bdxr-smp-2\/urn:oasis:names:tc:ebcore:partyid-type:iso6523</p>
+<h4 id="smp_rest_query-1d-append-the-partyid">1d. Append the PartyID</h4>
+<p>Add the party ID to the whole thing.  The specific format of the </p>
+<h4 id="smp_rest_query-1e-create-the-string">1e. Create the string</h4>
+<p>The ServiceGroup web service call then takes the format of:
 https://\&lt;<em>webservice.domain</em>>/\&lt;<em>smp_rest_binding</em>>/\&lt;<em>urn</em>> where the <strong>URN</strong> is \&lt;<em>specification</em>>:\&lt;<em>schema</em>>::\&lt;<em>party_id</em>>.<br />
-Using the terms employed by OASIS SMP 2.0 standard  the URL is constructed as:<br />
+Using the terms employed by the OASIS SMP 2.0 specification  the URL is constructed as:<br />
 https://\&lt;<em>webservice.domain</em>>/\&lt;<em>smp_rest_binding</em>>/\&lt;<em>identifier\
 _scheme</em>>::\&lt;<em>participant_id</em>></p>
-<p>#### 1e. Make the webservice call</p>
+<h2 id="smp_rest_query-2-service-metadata-query">2. Service Metadata Query</h2>
+<p>The response of the Service Group Discovery returns information necessary to construct the Service Metadata Query.  The BPC SMP Profile requires that the Service Group Discovery REST API call must not be skipped and that the presence of Service Metadata should not be assumed.</p>
+<p><br/>
+  #### 1e. Make the web service call</p>
 <h2 id="smp_rest_query-example">Example</h2>
 <pre><code>protocol = "https"
 uri = "smp-api.sc-b2b.us"
@@ -2283,7 +2340,7 @@ Value of query_url_2: https://smp-api.sc-b2b.us:urn:oasis:names:tc:ebcore:partyi
 constructed urls are the same: True
 </code></pre>
 <h3 id="smp_rest_query-call-2-to-obtain-servicemetadata">Call #2 to obtain ServiceMetadata</h3>
-<p>!!!+ important "Inferring values for the ServiceMetadata REST webservice call"
+<p>!!!+ important "Inferring values for the ServiceMetadata REST web service call"
     In the BPC Proof of Concept and creation of the Onboarding Toolkit, the service and document schemas defined by the SMP were static.<br />
     The values had to be agreed 
     The QName Subtype Identifier was used.   validation of the queries resulted in assumption of the  value of some ServiceMetadata parameters.  <br/><br/></p></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
@@ -2678,37 +2735,66 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 <code>git checkout main</code><br />
 <code>git merge &lt;branch you want to merge here&gt;</code> <br />
 <code>git push</code>  to push main changes up to remote branch</li>
-</ol></section><section class="print-page" id="oasis_documentation"><h1 id="oasis_documentation-oasis-resources">OASIS Resources</h1>
+</ol></section><section class="print-page" id="glossary"><h1 id="glossary-glossary-of-common-terms">Glossary of Common Terms</h1>
+<p>Below are some of the terms used in context of the project.
+|Term|Definition|
+|------|------|<br />
+|<strong>The Four Corners</strong> |  The Four Corner Model is two parties and two intermediaries, each having a "corner."   The parties are the buyer and the seller. The seller initiates the process of sending an e-invoice to the recipient who is the buyer.|<br />
+|<strong>Corner 1</strong> | The Seller|
+|<strong>Corner 2</strong> | The Seller's intermediary or "Access Point 1."|
+|<strong>Corner 3</strong> | The Buyer's intermediary or "Access Point 2."|
+|<strong>Corner 4</strong> | The Buyer|
+|<strong>SML</strong>  |  Service Metadata Locator|<br />
+|<strong>SMP</strong>  |  Service Metadata Publishing|  </p></section><section class="print-page" id="standards"><h1 id="standards-standards">Standards</h1>
 <p>Reference Links:  </p>
-<h2 id="oasis_documentation-documents">Documents</h2>
+<h2 id="standards-documents">Documents</h2>
 <table>
 <thead>
 <tr>
-<th>OASIS Specifications</th>
+<th>Reference Standard</th>
+<th>Component</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html">OASIS ebXML Messaging Services Version 3.0: Part1, Core Features</a> OASIS Standard, October 1, 2007, has:</td>
+<td><a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/f3844411c40dd4b84276fd3ef6020d247afd83c4/BPC%20SML%20Profile%20Version%201.0.pdf">BPC SML Profile Version 1.0.</a> dated 04 January, 2022.</td>
+<td><strong>SML</strong></td>
 </tr>
 <tr>
-<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-v3-part2-cd-01.html">OASIS ebXML Messaging Services Version 3.0: Part 2, Advanced Features</a> dated June 30, 2010 with Normative Reference of:</td>
+<td><a href="http://docs.oasis-open.org/bdxr/BDX-Location/v1.0/os/BDX-Location-v1.0-os.html">Business Document Metadata Service Location Version 1.0</a> OASIS Standard dated 01 August 2017.</td>
+<td><strong>SML</strong></td>
 </tr>
 <tr>
-<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/rddl-ebms3-part2.html">ebXML Messaging Services Version 3.0: Part 2, Advanced Features</a> which is referenced by the following three namespace URIs.</td>
+<td><a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/f3844411c40dd4b84276fd3ef6020d247afd83c4/BPC%20SMP%20Profile%20Version%201.0.pdf">BPC SMP Profile Version 1.0</a> dated 04 January, 2022.</td>
+<td><strong>SMP</strong></td>
 </tr>
 <tr>
-<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/20707/ebms3-confprofiles-cs-01.html">OASIS ebXML Messaging Services 3.0 Conformance Profiles</a>, Committee Specification 1, dated April 24, 2010 references the same namespace URI of http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707.</td>
+<td><a href="http://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.html">Service Metadata Publishing (SMP) Version 2.0</a> OASIS Standard dated 14 February 2021.</td>
+<td><strong>SMP</strong></td>
+</tr>
+<tr>
+<td><a href="http://docs.oasis-open.org/ebcore/PartyIdType/v1.0/CS01/PartyIdType-1.0.html">OASIS ebCore Party Id Type Technical Specification Version 1.0</a></td>
+<td><strong>ebCorePartyID</strong></td>
+</tr>
+<tr>
+<td><a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html">OASIS ebXML Messaging Services Version 3.0: Part1, Core Features</a> OASIS Standard, October 1, 2007</td>
+<td><strong>ebXML</strong></td>
+</tr>
+<tr>
+<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-v3-part2-cd-01.html">OASIS ebXML Messaging Services Version 3.0: Part 2, Advanced Features</a> dated June 30, 2010</td>
+<td><strong>ebXML</strong></td>
+</tr>
+<tr>
+<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/rddl-ebms3-part2.html">ebXML Messaging Services Version 3.0: Part 2, Advanced Features</a></td>
+<td><strong>ebXML</strong></td>
 </tr>
 <tr>
 <td><a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/AS4-profile/v1.0/os/AS4-profile-v1.0-os.html">AS4 Profile of ebMS 3.0 Version 1.0</a> dated January 23, 2013.</td>
-</tr>
-<tr>
-<td><a href="http://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.html">Service Metadata Publishing (SMP) Version 2.0</a> dated 14 February 2021 as an Oasis standard.</td>
+<td><strong>AS4</strong></td>
 </tr>
 </tbody>
 </table>
-<h2 id="oasis_documentation-xml-schema-definitions">XML Schema Definitions</h2>
+<h2 id="standards-xml-schema-definitions">XML Schema Definitions</h2>
 <table>
 <thead>
 <tr>
@@ -2730,7 +2816,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="oasis_documentation-namespace-uris">Namespace URIs</h2>
+<h2 id="standards-namespace-uris">Namespace URIs</h2>
 <table>
 <thead>
 <tr>
@@ -2739,13 +2825,10 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </thead>
 <tbody>
 <tr>
-<td><em>Namespace URI</em>: <a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/">ebXML Messaging Services Version 3.0 Core Features)</a> and references:</td>
+<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/">ebXML Messaging Services Version 3.0 Core Features)</a></td>
 </tr>
 <tr>
-<td><em>Namespace URI</em>: <a href="http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/multihop/200902">ebXML Messaging V3 Part 2: Multihop Routing</a></td>
-</tr>
-<tr>
-<td><em>Namespace URI</em>: <a href="http://docs.oasis-open.org/ebxml-msg/ns/v3.0/mf/2010/04/">ebXML Messaging V3 Part 2: Message Fragments</a></td>
+<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/20707/ebms3-confprofiles-cs-01.html">OASIS ebXML Messaging Services 3.0 Conformance Profiles</a>, Committee Specification 1, dated April 24, 2010 references the same namespace URI of http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707.</td>
 </tr>
 </tbody>
 </table>

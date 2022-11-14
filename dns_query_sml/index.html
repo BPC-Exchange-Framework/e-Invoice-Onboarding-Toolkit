@@ -461,11 +461,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-query-a-dns-naptr-record" class="md-nav__link">
-    Example - Query a DNS NAPTR Record
+  <a href="#example-querying-a-dns-naptr-record" class="md-nav__link">
+    Example - Querying a DNS NAPTR Record
   </a>
   
-    <nav class="md-nav" aria-label="Example - Query a DNS NAPTR Record">
+    <nav class="md-nav" aria-label="Example - Querying a DNS NAPTR Record">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -720,8 +720,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../oasis_documentation/" class="md-nav__link">
-        OASIS Resources
+      <a href="../glossary/" class="md-nav__link">
+        Glossary of Terms
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standards/" class="md-nav__link">
+        Standards
       </a>
     </li>
   
@@ -784,11 +799,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-query-a-dns-naptr-record" class="md-nav__link">
-    Example - Query a DNS NAPTR Record
+  <a href="#example-querying-a-dns-naptr-record" class="md-nav__link">
+    Example - Querying a DNS NAPTR Record
   </a>
   
-    <nav class="md-nav" aria-label="Example - Query a DNS NAPTR Record">
+    <nav class="md-nav" aria-label="Example - Querying a DNS NAPTR Record">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -893,13 +908,13 @@
 
 
 <h1 id="dns-query-functionality">DNS Query Functionality</h1>
-<p>The code to query the DNS for any record, NAPTR or otherwise, is fairly trivial in Python.  </p>
+<p>The code below provides an example of how to query a DNS record, specifically using the NAPTR <strong>regex</strong> protocol.   The important take-away from this exercise is the knowing the NAPTR fields treated as a <strong>set</strong> , using Python to iterate it, and using the regexp field to directly access the data.</p>
 <div class="admonition important">
 <p class="admonition-title">The BPC SML Domain</p>
 <p>The BPC SML Domain is:
 <strong>bpcb2b.net</strong></p>
 </div>
-<h2 id="example-query-a-dns-naptr-record">Example - Query a DNS NAPTR Record</h2>
+<h2 id="example-querying-a-dns-naptr-record">Example - Querying a DNS NAPTR Record</h2>
 <h3 id="1-import-the-necessary-module">1.  Import the necessary module</h3>
 <p>The example implements the <code>dns.resolver</code> Python module.   </p>
 <pre><code>import dns.resolver
@@ -919,10 +934,10 @@
 <h3 id="4-the-naptr-dns-query-response">4. The NAPTR DNS query response</h3>
 <p><br/></p>
 <h4 id="4a-the-response-as-rdata">4a.  The response as Rdata</h4>
-<p>Rdata is typed data in one of the known DNS datatypes, i.e., an IPv4 address for a host, MX record, or NAPTR record.  RRset is an Rdata object which supports the Python set API.  For details on RRset see <a href="https://dnspython.readthedocs.io/en/latest/rdata-set-classes.html">Rdataset, RRset, and Node Classes</a>.<br />
+<p>Rdata is typed data in one of the known DNS data types, i.e., an IPv4 address for a host, MX record, or NAPTR record.  RRset is an Rdata object which supports the Python <strong>set</strong> API.  For details on RRset see <a href="https://dnspython.readthedocs.io/en/latest/rdata-set-classes.html">Rdataset, RRset, and Node Classes</a>.<br />
 <br/></p>
 <h4 id="4b-the-fields-in-the-naptr-response">4b. The fields in the NAPTR response</h4>
-<p>The returned Rdata data set is in the format as <a href="https://www.ietf.org/rfc/rfc2915.txt">specified by the NATPR protocol</a> and contains the fields: </p>
+<p>The returned Rdata data set is in the format as <a href="https://www.ietf.org/rfc/rfc2915.txt">specified by the NATPR protocol</a> and contains the following fields which may be iterated as a set: </p>
 <pre><code>Domain TTL Class Type Order Preference Flags Service Regexp Replacement
 </code></pre>
 <p>The set values are iterated using:  </p>

@@ -454,11 +454,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-create-the-hash" class="md-nav__link">
-    Example - Create the hash
+  <a href="#example-creating-the-urn-hash" class="md-nav__link">
+    Example - Creating the URN hash
   </a>
   
-    <nav class="md-nav" aria-label="Example - Create the hash">
+    <nav class="md-nav" aria-label="Example - Creating the URN hash">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -469,8 +469,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-concatonate-the-string" class="md-nav__link">
-    2. Concatonate the string
+  <a href="#2-concatenate-the-string" class="md-nav__link">
+    2. Concatenate the string
   </a>
   
 </li>
@@ -504,8 +504,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-encode-into-base32mkl" class="md-nav__link">
-    7.  Encode into base32?mkl
+  <a href="#7-encode-into-base32" class="md-nav__link">
+    7.  Encode into base32
   </a>
   
 </li>
@@ -742,8 +742,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../oasis_documentation/" class="md-nav__link">
-        OASIS Resources
+      <a href="../glossary/" class="md-nav__link">
+        Glossary of Terms
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../standards/" class="md-nav__link">
+        Standards
       </a>
     </li>
   
@@ -813,11 +828,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-create-the-hash" class="md-nav__link">
-    Example - Create the hash
+  <a href="#example-creating-the-urn-hash" class="md-nav__link">
+    Example - Creating the URN hash
   </a>
   
-    <nav class="md-nav" aria-label="Example - Create the hash">
+    <nav class="md-nav" aria-label="Example - Creating the URN hash">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -828,8 +843,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-concatonate-the-string" class="md-nav__link">
-    2. Concatonate the string
+  <a href="#2-concatenate-the-string" class="md-nav__link">
+    2. Concatenate the string
   </a>
   
 </li>
@@ -863,8 +878,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-encode-into-base32mkl" class="md-nav__link">
-    7.  Encode into base32?mkl
+  <a href="#7-encode-into-base32" class="md-nav__link">
+    7.  Encode into base32
   </a>
   
 </li>
@@ -937,7 +952,7 @@
 
 
 <h1 id="creating-the-sml-urn-hash">Creating the SML URN Hash</h1>
-<p>The SML look-up is a NAPTR DNS query which returns the URL of the SMP. The record queried is a URN constructed from the combined Specification, Schema, and Party ID and then hashed.  After the hash is created, the URN is combined with the look-up domain.  This combination is the record locator for the information in the DNS.  </p>
+<p>The SML look-up is a NAPTR DNS query which returns the URL of the SMP. The record queried is a URN constructed from the combined Specification, Schema, and Party ID and then hashed.  After the hash is created, the URN is combined with the look-up domain.  This combination of URN and domain is the record locator for the information in the DNS.  </p>
 <p>The Python code, as script, function, or method, provides elaboration and implementation of the process as described in Section 3.2 of the <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/f3844411c40dd4b84276fd3ef6020d247afd83c4/BPC%20SML%20Profile%20Version%201.0.pdf">BPC SML Profile Version 1.0</a> document found on the <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot">BPC-Exchange-Framework/BPC-Market-Pilot Github site</a>.<br />
 <br/></p>
 <div class="admonition important">
@@ -956,13 +971,13 @@
 </ul></p>
 <p><br/></p>
 <div class="admonition note">
-<p class="admonition-title">Note on non-fuctional requirements</p>
+<p class="admonition-title">Note on non-functional requirements</p>
 <p>This process to create a URN hash for look-up does not specify or require the Specification, 
-Schema, or PartyID in a particular format.  The standard articulated for an ebCorePartyId referenced in the <a href="https://docs.oasis-open.org/bdxr/BDX-Location/v1.0/os/BDX-Location-v1.0-os.html">Business Document Metadata Service Location Version 1.0</a> referring to the <a href="https://docs.oasis-open.org/ebcore/PartyIdType/v1.0/PartyIdType-1.0.odt">OASIS ebCore Party Id Type Techinical Specification Version 1.0</a> provides normative guidelines for the Specification and Schema.    <br />
+Schema, or PartyID in a particular format.  The standard articulated for an ebCorePartyId referenced in the <a href="https://docs.oasis-open.org/bdxr/BDX-Location/v1.0/os/BDX-Location-v1.0-os.html">Business Document Metadata Service Location Version 1.0</a> referring to the <a href="https://docs.oasis-open.org/ebcore/PartyIdType/v1.0/PartyIdType-1.0.odt">OASIS ebCore Party Id Type Technical Specification Version 1.0</a> provides normative guidelines for the Specification and Schema.    <br />
 This code does not validate or enforce compliance with those standards.  Conformance to those are assumed, however the code works on any string of data.  </p>
 </div>
 <p><br/>  </p>
-<h2 id="example-create-the-hash">Example - Create the hash</h2>
+<h2 id="example-creating-the-urn-hash">Example - Creating the URN hash</h2>
 <p><br/>  </p>
 <h3 id="1-import-modules">1. Import Modules</h3>
 <p>The <code>hashlib</code> and <code>bas64</code> Python modules are used in this process.  </p>
@@ -970,9 +985,9 @@ This code does not validate or enforce compliance with those standards.  Conform
 import base64
 </code></pre>
 <p><br/>    </p>
-<h3 id="2-concatonate-the-string">2. Concatonate the string</h3>
+<h3 id="2-concatenate-the-string">2. Concatenate the string</h3>
 <p>Strings are a primitive data type in Python.  Instantiate and initialize string variables for the 
-individual data values and concatonate them into a single string.   Simple validation of the correct 
+individual data values and concatenate them into a single string.   Simple validation of the correct 
 format of the urn is included.  </p>
 <pre><code>specification = "urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme"  
 schema = "BPC01"  
@@ -980,11 +995,11 @@ party_id = "bpcBusid01"
 urn = specification + ":" + schema + "::" + party_id  
 urn_test_case = 
     "urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme:BPC01::bpcBusid01"
-print(f"urn is concatonated properly: {urn == urn_test_case}")  
+print(f"urn is concatenated properly: {urn == urn_test_case}")  
 print(urn)
 </code></pre>
 <div class="admonition important">
-<p class="admonition-title">Punctuaion</p>
+<p class="admonition-title">Punctuation</p>
 <p>Note the use of a single and a double colon as separators between the values.  These are 
 includes as part of the string and are <strong>required</strong>.  </p>
 </div>
@@ -1014,20 +1029,20 @@ print (f"URN hashed using sha256 {sha256_urn}")
 <p><br/>    </p>
 <h3 id="6-obtain-the-digest">6. Obtain the 'digest'</h3>
 <p>The digest is the concatenation of all of the data fed into the hash so far, i.e., the current value.<br />
-(Though implemented as a single operation here, the buffered protocol allows for additions and updates to the hash.)  The <code>digest()</code> method is included in the hashlib module.</p>
+(Though implemented as a single operation here, the buffered protocol allows for additions and updates to the hash.)  The <code>digest()</code> method is included in the <code>hashlib</code> module.</p>
 <pre><code>sha256_digest = sha256_urn.digest()
 print(f"Digest of buffered stream containing results thus far: {sha256_digest}")
 </code></pre>
 <p><br/>  </p>
-<h3 id="7-encode-into-base32mkl">7.  Encode into base32?mkl</h3>
+<h3 id="7-encode-into-base32">7.  Encode into base32</h3>
 <details class="note">
 <summary>Why encode in base32?</summary>
-<p>Encryption using sha256 results in a one-way hash. The original value of the URN is not intended to be derived from that hash as that is cryptographically impossible.  However, encoding the sha256 hash into base32 is NOT one way.  <br/><br/>The sha256 hash is 256 bits, or 32 bytes. A two digit hexadecimal representation of the 32 byte hash is 64 characters long.  Since base32 encoding has a character set of 32 compared to hexadecimal's 16, the sha256 hashed value can be reresented in 32 characters in base32 instead of the 64 required for hex.  <br/><br/>
-The irreversible sha256 hash implies that the process is cryptographically meaningful.  It is not.  The value is ultimately used as a dictionary look-up in the DNS record <em>for a given domain</em>. Where a common specification and schema are in use by many participants, it becomes imperative that the PartyIDs are unique <em>for a specific domain</em>.  Otherwise, while a sha256 hash can't be reversed, it can be <strong>duplicated</strong>.  <br/><br/>
+<p>Encryption using sha256 results in a one-way hash. The original value of the URN is not intended to be derived from that hash as that is cryptographically impossible.  (Encoding the sha256 hash into base32 is <strong>not</strong> one way.)  <br/><br/>The sha256 hash is 256 bits, or 32 bytes. A two digit hexadecimal representation of the 32 byte hash is 64 characters long.  Since base32 encoding has a character set of 32 compared to hexadecimal's 16, the sha256 hashed value can be represented in 32 characters in base32 instead of the 64 required for hex.  <br/><br/>
+The irreversibility of the sha256 hash implies that the process is cryptographically significant.  It is not.  The hashed URN is ultimately used as a dictionary look-up in the DNS record <em>for a given domain</em>. Where a common specification and schema are in use by many participants, it becomes imperative that the PartyIDs are unique <em>for a specific domain</em>.  Otherwise, while a sha256 hash can't be reversed, it can be <strong>duplicated</strong>.  <br/><br/>
 The output of this process is a 256 bit/32 byte value represented in a base 32 character set.</p>
 </details>
 <p>Take the digest entry, still a bytes-like object, and encode it in base32, 
-resulting in a string 32 chacters in length.  This implements the <code>b32encode</code> 
+resulting in a string 32 characters in length.  This implements the <code>b32encode</code> 
 method of the base64 module.</p>
 <pre><code>b32_urn = base64.b32encode(sha256_digest)
 print(f"The base32 encoded representation of the URN: {b32_urn}")
@@ -1078,7 +1093,7 @@ This implements the String <code>lower()</code> method again.  </p>
     urn = specification + ":" + schema + "::" + party_id
     urn_test_case = 
         "urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme:BPC01::bpcBusid01"
-    print(f"urn is concatonated properly: {urn == urn_test_case}")
+    print(f"urn is concatenated properly: {urn == urn_test_case}")
     print(urn)
     # make sure it's converted to lower case
     lower_case_urn = urn.lower()
@@ -1107,7 +1122,7 @@ This implements the String <code>lower()</code> method again.  </p>
 <hr>
 <p><br/>  </p>
 <h2 id="output">Output</h2>
-<pre><code>urn is concatonated properly: True
+<pre><code>urn is concatenated properly: True
 urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme:BPC01::bpcBusid01
 URN converted to lower case: urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme:bpc01::bpcbusid01
 URN encoded as utf-8: b'urn:oasis:names:tc:ebcore:partyid-type:unregistered:myscheme:bpc01::bpcbusid01'
