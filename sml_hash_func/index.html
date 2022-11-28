@@ -970,12 +970,11 @@
     <li>PartyID</li>
 </ul></p>
 <p><br/></p>
-<div class="admonition note">
-<p class="admonition-title">Note on non-functional requirements</p>
-<p>This process to create a URN hash for look-up does not specify or require the Specification, 
-Schema, or PartyID in a particular format.  The standard articulated for an ebCorePartyId referenced in the <a href="https://docs.oasis-open.org/bdxr/BDX-Location/v1.0/os/BDX-Location-v1.0-os.html">Business Document Metadata Service Location Version 1.0</a> referring to the <a href="https://docs.oasis-open.org/ebcore/PartyIdType/v1.0/PartyIdType-1.0.odt">OASIS ebCore Party Id Type Technical Specification Version 1.0</a> provides normative guidelines for the Specification and Schema.    <br />
-This code does not validate or enforce compliance with those standards.  Conformance to those are assumed, however the code works on any string of data.  </p>
-</div>
+<details class="note">
+<summary>Format of Specification, Schema, and Party ID is assumed to be conformant</summary>
+<p>The standard articulated for an <strong>ebCorePartyId</strong> referenced in the <a href="https://docs.oasis-open.org/bdxr/BDX-Location/v1.0/os/BDX-Location-v1.0-os.html">Business Document Metadata Service Location Version 1.0</a> referring to the <a href="https://docs.oasis-open.org/ebcore/PartyIdType/v1.0/PartyIdType-1.0.odt">OASIS ebCore Party Id Type Technical Specification Version 1.0</a> provides normative guidelines for the values used for the Specification and Schema.      </p>
+<p>This code does not validate or enforce compliance with those standards. There is no Inspection or validation of values used for the Specification, Schema, and Party ID used to create a URN hash for look-up.  Conformance for those values are assumed, however the code works on any string of data. </p>
+</details>
 <p><br/>  </p>
 <h2 id="example-creating-the-urn-hash">Example - Creating the URN hash</h2>
 <p><br/>  </p>

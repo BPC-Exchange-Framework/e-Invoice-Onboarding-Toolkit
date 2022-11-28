@@ -908,7 +908,7 @@
 
 
 <h1 id="dns-query-functionality">DNS Query Functionality</h1>
-<p>The code below provides an example of how to query a DNS record, specifically using the NAPTR <strong>regex</strong> protocol.   The important take-away from this exercise is the knowing the NAPTR fields treated as a <strong>set</strong> , using Python to iterate it, and using the regexp field to directly access the data.</p>
+<p>The code below provides an example of how to query a DNS record, specifically using the NAPTR <strong>regexp</strong> field specified in the NAPTR protocol.   NAPTR fields are treated as a <strong>set</strong> , using Python to iterate it, and using the regexp field to directly access the data.</p>
 <div class="admonition important">
 <p class="admonition-title">The BPC SML Domain</p>
 <p>The BPC SML Domain is:
@@ -938,7 +938,7 @@
 <br/></p>
 <h4 id="4b-the-fields-in-the-naptr-response">4b. The fields in the NAPTR response</h4>
 <p>The returned Rdata data set is in the format as <a href="https://www.ietf.org/rfc/rfc2915.txt">specified by the NATPR protocol</a> and contains the following fields which may be iterated as a set: </p>
-<pre><code>Domain TTL Class Type Order Preference Flags Service Regexp Replacement
+<pre><code>Order Preference Flags Service Regexp Replacement
 </code></pre>
 <p>The set values are iterated using:  </p>
 <pre><code>for a in lookup.rrset:

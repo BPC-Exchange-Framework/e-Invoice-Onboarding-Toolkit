@@ -533,8 +533,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1e-create-the-string" class="md-nav__link">
-    1e. Create the string
+  <a href="#1e-create-the-string-for-the-smp-rest-api-query" class="md-nav__link">
+    1e. Create the string for the SMP REST API Query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1f-substitute-hex-into-the-url-for-successful-web-service-call" class="md-nav__link">
+    1f. Substitute hex into the URL for successful web service call
   </a>
   
 </li>
@@ -546,13 +553,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-service-metadata-query" class="md-nav__link">
-    2. Service Metadata Query
-  </a>
   
 </li>
       
@@ -568,7 +568,14 @@
     Output
   </a>
   
-    <nav class="md-nav" aria-label="Output">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-service-metadata-query" class="md-nav__link">
+    2. Service Metadata Query
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Service Metadata Query">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -877,8 +884,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1e-create-the-string" class="md-nav__link">
-    1e. Create the string
+  <a href="#1e-create-the-string-for-the-smp-rest-api-query" class="md-nav__link">
+    1e. Create the string for the SMP REST API Query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1f-substitute-hex-into-the-url-for-successful-web-service-call" class="md-nav__link">
+    1f. Substitute hex into the URL for successful web service call
   </a>
   
 </li>
@@ -890,13 +904,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-service-metadata-query" class="md-nav__link">
-    2. Service Metadata Query
-  </a>
   
 </li>
       
@@ -912,7 +919,14 @@
     Output
   </a>
   
-    <nav class="md-nav" aria-label="Output">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-service-metadata-query" class="md-nav__link">
+    2. Service Metadata Query
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Service Metadata Query">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -954,15 +968,24 @@
 <li>See the <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/f3844411c40dd4b84276fd3ef6020d247afd83c4/BPC%20SMP%20Profile%20Version%201.0.pdf">BPC SMP Profile Version 1.0</a> (the "Profile") document for general guidance to the format of this service call.  </li>
 <li>See the OASIS website for the authoritative <a href="https://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.docx">OASIS SMP 2.0 Standard</a> (the "Standard").   </li>
 <li>Section 3 of the BPC SMP Profile referencing the REST interface specifies in Section 3.1 that client authentication must not be required when accessing SMP [server] resources.    </li>
-<li>The REST API for the web service calls are referenced in section 3.2 of the BPC SMP Profile, mandating implementation as provided in section 5.2 of the OASIS SMP 2.0 Standard.    </li>
+<li>The REST API for the web service calls are referenced in section 3.2 of the BPC SMP Profile, mandating implementation as provided in section 5.2 of the OASIS SMP 2.0 Standard.  <br />
+<br/></li>
 </ul>
-<details class="note">
+<details class="note" open="open">
 <summary>The BPC SMP Profile implements the OASIS SMP 2.0 Standard</summary>
 <p>Section 3.2 of the BPC SMP Profile mandates implementation of the OASIS SMP 2.0 standard.  <br/><br/>To the extent that Section 6 of the BPC Profile has a requirement that the SMP client <strong>MUST</strong> validate the signature of the SMP [server response] as directed in section 5.6.2.2  of the OASIS standard, the OASIS standard is permissive and says the SMP client <strong>MAY</strong> verify the signature.</p>
 </details>
+<details class="warning">
+<summary>Functional versus non-functional requirements</summary>
+<p>Software engineering best practices including separation of concerns and SOLID Principles, specifically the single responsibility principle, limit the functional scope to the minimum necessary to  achieve the desired outcome.</p>
+<p>Minimum Viable Product as outlined in the Project Goals, Project Roadmap, and Project Outcomes is achieved by abstraction of non-functional requirements.  </p>
+<p>For example, the logic to calculate the hash necessary for the SML DNS look-up query is the same regardless of the value of the specification, the schema, or the party ID.  Validation of the specification, the schema, and the party ID may be Business Requirements, and each of those may have their own functional requirements.  In relation to creation of the hash for the DNS look-up query or the construction of the SMP REST API web service call, they are non-functional requirements; they do not impact or change the logic or behavior of those modules.  </p>
+</details>
 <h2 id="the-rest-web-service-calls-to-the-smp-service">The REST Web Service calls to the SMP service</h2>
-<p>!!!+ Important "The rules for constructing the ServiceGroup  REST API web service call.
-    In Section 5.4 "Resources" The OASIS SMP Standard provides the format used to create the ServiceGroup REST API web service call.  This specifies the <strong>oasis-bdxr-smp-2(bdxr-smp-2)</strong> SMP REST binding, the "identifier scheme" and the "participant id."  The "identifier scheme" is literally the URN specifying the format the participant ID is going to take.  </p>
+<details class="important" open="open">
+<summary>The rules for constructing the ServiceGroup  REST API web service call.</summary>
+<p>In Section 5.4 "Resources" The OASIS SMP Standard provides the format used to create the ServiceGroup REST API web service call.  This specifies the <strong>oasis-bdxr-smp-2(bdxr-smp-2)</strong> SMP REST binding, the "identifier scheme" and the "participant id."  The "identifier scheme" is literally the URN specifying the format the participant ID is going to take.  </p>
+</details>
 <h2 id="1-service-group-discovery">1. Service Group Discovery</h2>
 <p>The first REST API query to the Service Group is created using the SMP REST binding, "identifier scheme" and "participant ID."  </p>
 <h3 id="creating-the-smp-rest-api-call-1-to-obtain-servicegroup-data">Creating the SMP REST API call #1 to obtain ServiceGroup data</h3>
@@ -973,31 +996,37 @@
 <li>Further unspecified, but implied as it is required, is the fully qualified application server domain and reference to any sub-domains. In the case of the example, this is "smp-api.sc-b2b.us."  The subdomain is "smp-api." The second-level domain is "sc-b2b." The top level domain is "us."</li>
 <li>The only REST method required to be supported by the OASIS SMP Standard is "GET."  Everything after the domain specification is the "resource" uri of the GET method request.  </li>
 </ul>
-<p>In the development environment of the Onboarding Toolkit the first part of the URL will be: https://smp-api.sc-b2b.us/,</p>
-<p><strong>This value will  be different in the Market Pilot.</strong><br />
-In the Market Pilot, use the value <em>bpcb2b.net</em>.  The URL will begin with https://bpcb22.net/</p>
+<p>Using these guidelines, in the development environment of the Onboarding Toolkit the first part of the URL is: <code>https://smp-api.sc-b2b.us/.</code> <em>This value will  be different in the Market Pilot.</em>  In the Market Pilot, use the value <em>bpcb2b.net</em>.  The URL will begin with <code>https://bpcb22.net/</code>  </p>
 <h4 id="1b-the-smp-rest-binding">1b.  The SMP REST Binding</h4>
-<p>Section 5.5 of the OASIS SMP 2.0 Standard directs the SMP REST Binding should be <code>oasis-bdxr-smp-2</code>.   In the prior Section 5.4 "Resources" the example URI indicates an SMP Binding of <code>bdxr-smp-2</code>.  The development and test environment of the Onboarding Toolkit the SMP Binding used <code>bdxr-smp-2</code>.
-The Onboarding Toolkit dev URL then grows to: https://smp-api.sc-b2b.us/bdxr-smp-2/
-The Market Pilot URL grows to: https://bpcb22.net/bdxr-smp-2/</p>
+<p>Section 5.5 of the OASIS SMP 2.0 Standard provides the SMP REST Binding should be <code>oasis-bdxr-smp-2</code>.     However, In the prior Section 5.4 "Resources" the example URI indicates an SMP Binding of <code>bdxr-smp-2</code>.    </p>
+<p>The development and test environment of the Onboarding Toolkit use <code>bdxr-smp-2</code> for the value of the SMP Binding.  </p>
+<p>The Onboarding Toolkit dev URL becomes: <code>https://smp-api.sc-b2b.us/bdxr-smp-2/</code>    </p>
+<p>The Market Pilot URL becomes: <code>https://bpcb22.net/bdxr-smp-2/</code></p>
 <h4 id="1c-the-identifier-scheme">1c.  The Identifier Scheme</h4>
-<p>The next element in the call to obtain the ServiceGroup data is the "identifier scheme" which identifies the format of the PartyID.  This value should already be known, as it is the Specification and the Scheme used when creating the hash value for SML U-NAPTR DNS look-up.  Together, the Specification and the Scheme create the "identifier scheme," which defines the format of the party ID.   </p>
-<p>Detailed requirements of the identifier scheme are found in the |<a href="http://docs.oasis-open.org/ebcore/PartyIdType/v1.0/CS01/PartyIdType-1.0.html">OASIS ebCore Party Id Type Technical Specification Version 1.0</a>|<strong>ebCorePartyID</strong>|.</p>
-<p>An example of a "normative" value for the identifier scheme is: urn:oasis:names:tc:ebcore:partyid-type:iso6523.  </p>
-<p>The Onboarding Toolkit dev URL then grows to: https:\/\/smp-api.sc-b2b.us\/bdxr-smp-2\/urn:oasis:names:tc:ebcore:partyid-type:iso6523
-The Market Pilot URL grows to: https:\/\/bpcb22.net\/bdxr-smp-2\/urn:oasis:names:tc:ebcore:partyid-type:iso6523</p>
+<p>The next element in the call to obtain the ServiceGroup data is the "identifier scheme" which identifies the format of the PartyID.  This value should already be known, as it is the Specification and the Schema used when creating the hash value for the SML NAPTR DNS look-up.  Together, the Specification and the Scheme create the "identifier scheme," which defines the <em>format</em> of the party ID.   </p>
+<p>Detailed requirements of the identifier scheme are found in the <a href="http://docs.oasis-open.org/ebcore/PartyIdType/v1.0/CS01/PartyIdType-1.0.html">OASIS ebCore Party Id Type Technical Specification Version 1.0</a>  for the <strong>ebCorePartyID</strong>.</p>
+<p>From the documentation, an example of a normative value for the identifier scheme is: <strong>urn:oasis:names:tc:ebcore:partyid-type:iso6523</strong>.  </p>
+<p>The Onboarding Toolkit dev URL then becomes: <code>https://smp-api.sc-b2b.us/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523</code>   </p>
+<p>The Market Pilot URL becomes: <code>https://bpcb22.net\/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523</code></p>
 <h4 id="1d-append-the-partyid">1d. Append the PartyID</h4>
-<p>Add the party ID to the whole thing.  The specific format of the </p>
-<h4 id="1e-create-the-string">1e. Create the string</h4>
+<p>After starting with the protocol, the fully qualified domain name of the SMP Application Server, the SMP Rest Binding, and the Identifier Scheme, the last component of the ServeGroup look-up REST API web service call is the party ID.  This should be the same value as that used in creating the hash for the SML DNS look-up.  </p>
+<p>As an example, if the party id is "bpcBusid01"... <br />
+The Onboarding Toolkit dev URN is (the same as in the SML DNS look-up): <code>urn:oasis:names:tc:ebcore:partyid-type:iso6523/bpcBusid01</code>   </p>
+<p>The Market Pilot URN is (also the same as in the SML DNS look-up): <code>urn:oasis:names:tc:ebcore:partyid-type:iso6523/bpcBusid01</code></p>
+<h4 id="1e-create-the-string-for-the-smp-rest-api-query">1e. Create the string for the SMP REST API Query</h4>
+<p>The ServiceGroup web service call then takes the format of:<code>https://smp-api.sc-b2b.us/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523/bpcBusid01</code></p>
+<p>Using the terminology employed by the OASIS SMP 2.0 specification the URL is constructed as:  <code>https://bpcb22.net/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523/bpcBusid01</code></p>
+<h4 id="1f-substitute-hex-into-the-url-for-successful-web-service-call">1f. Substitute hex into the URL for successful web service call</h4>
+<p>The URL to be used for the SML REST API query is defective in that it has illegal characters that can't be parsed into a recognizable web address.  The extra colons ":" will cause problems.  To remedy this do a string search/replace substitution on the offending punctuation and convert it to hex representation which can be handled by the browser.  The hex representation of a colon is "\3A."  Substitute "\3A" in the URL every place where it is used as part  of the resource and the literal protocol.  </p>
 <p>The ServiceGroup web service call then takes the format of:
-https://\&lt;<em>webservice.domain</em>>/\&lt;<em>smp_rest_binding</em>>/\&lt;<em>urn</em>> where the <strong>URN</strong> is \&lt;<em>specification</em>>:\&lt;<em>schema</em>>::\&lt;<em>party_id</em>>.<br />
-Using the terms employed by the OASIS SMP 2.0 specification  the URL is constructed as:<br />
-https://\&lt;<em>webservice.domain</em>>/\&lt;<em>smp_rest_binding</em>>/\&lt;<em>identifier\
-_scheme</em>>::\&lt;<em>participant_id</em>></p>
-<h2 id="2-service-metadata-query">2. Service Metadata Query</h2>
+<code>https://smp-api.sc-b2b.us/bdxr-smp-2/urn\3Aoasis\3Anames\3Atc\3Aebcore\3Apartyid-type\3Aiso6523\3A\3AbpcBusid01</code></p>
+<p>Using the terminology employed by the OASIS SMP 2.0 specification the URL is constructed as:  <code>https://bpcb22.net\/bdxr-smp-2/urn\3Aoasis\3Anames\3Atc\3Aebcore\3Apartyid-type\3Aiso6523\3A\3AbpcBusid01</code></p>
+<details class="note">
+<summary>Test the SMP REST API web service call</summary>
+<p>When the URL is constructed properly it is a simple matter to copy and paste it into a web browser.  The response should  be the SMP ServiceGroup look-up data in XML format.</p>
+</details>
+<p>#### 1g. Make the web service call</p>
 <p>The response of the Service Group Discovery returns information necessary to construct the Service Metadata Query.  The BPC SMP Profile requires that the Service Group Discovery REST API call must not be skipped and that the presence of Service Metadata should not be assumed.</p>
-<p><br/>
-  #### 1e. Make the web service call</p>
 <h2 id="example">Example</h2>
 <pre><code>protocol = "https"
 uri = "smp-api.sc-b2b.us"
@@ -1016,6 +1045,7 @@ print(f"constructed urls are the same: {query_url_1 == query_url_2}")
 Value of query_url_2: https://smp-api.sc-b2b.us:urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088::123456789
 constructed urls are the same: True
 </code></pre>
+<h2 id="2-service-metadata-query">2. Service Metadata Query</h2>
 <h3 id="call-2-to-obtain-servicemetadata">Call #2 to obtain ServiceMetadata</h3>
 <p>!!!+ important "Inferring values for the ServiceMetadata REST web service call"
     In the BPC Proof of Concept and creation of the Onboarding Toolkit, the service and document schemas defined by the SMP were static.<br />
