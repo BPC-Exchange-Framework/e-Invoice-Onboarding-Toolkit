@@ -2245,10 +2245,11 @@ The final result: yn5tj7bteln4c5o4mtul7yvnq3pwu6dpmipcof4pwcbsd3avvn7a
 <p><br/></p>
 <h4 id="dns_query_sml-4c-the-regexp-field-of-the-natpr-response">4c. The "regexp" field of the NATPR response</h4>
 <p>The value of the "regexp" field contains the terminal address of the SMP in the format of a regular expression, which is how it would otherwise be used if doing a Session Initiation Protocol (SIP) lookup. <br />
-The value is directly accessed using:<br />
-     for a in lookup.rrset:
-        smp_uri = a.regexp
-<br/></p>
+The value is directly accessed using:   </p>
+<pre><code> for a in lookup.rrset:
+    smp_uri = a.regexp
+</code></pre>
+<p><br/></p>
 <h4 id="dns_query_sml-4d-the-response-as-a-string">4d. The response as a string</h4>
 <p>Use the String decode() method to change the returned response from Binary to String format.    </p>
 <pre><code>smp_uri = smp_uri.decode()
@@ -2333,7 +2334,7 @@ The Onboarding Toolkit dev URN is (the same as in the SML DNS look-up): <code>ur
 <summary>Test the SMP REST API web service call</summary>
 <p>When the URL is constructed properly it is a simple matter to copy and paste it into a web browser.  The response should  be the SMP ServiceGroup look-up data in XML format.</p>
 </details>
-<p>#### 1g. Make the web service call</p>
+<h4 id="smp_rest_query-1g-make-the-web-service-call">1g. Make the web service call</h4>
 <p>The response of the Service Group Discovery returns information necessary to construct the Service Metadata Query.  The BPC SMP Profile requires that the Service Group Discovery REST API call must not be skipped and that the presence of Service Metadata should not be assumed.</p>
 <h2 id="smp_rest_query-example">Example</h2>
 <pre><code>protocol = "https"
@@ -2355,10 +2356,11 @@ constructed urls are the same: True
 </code></pre>
 <h2 id="smp_rest_query-2-service-metadata-query">2. Service Metadata Query</h2>
 <h3 id="smp_rest_query-call-2-to-obtain-servicemetadata">Call #2 to obtain ServiceMetadata</h3>
-<p>!!!+ important "Inferring values for the ServiceMetadata REST web service call"
-    In the BPC Proof of Concept and creation of the Onboarding Toolkit, the service and document schemas defined by the SMP were static.<br />
-    The values had to be agreed 
-    The QName Subtype Identifier was used.   validation of the queries resulted in assumption of the  value of some ServiceMetadata parameters.  <br/><br/></p></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
+<details class="important" open="open">
+<summary>Inferring values for the ServiceMetadata REST web service call</summary>
+<p>In the BPC Proof of Concept and creation of the Onboarding Toolkit, the service and document schemas defined by the SMP were static.  </p>
+<p>The QName Subtype Identifier was used.   Validation of the queries resulted in assumption of the  value of some ServiceMetadata parameters.  <br/><br/></p>
+</details></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
 <h2 id="test_cases-working-with-the-code">Working with the code</h2>
 <h3 id="test_cases-test-cases">Test Cases</h3>
 <h4 id="test_cases-using-an-env-file">Using an .env file</h4>
@@ -2751,16 +2753,45 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 <code>git merge &lt;branch you want to merge here&gt;</code> <br />
 <code>git push</code>  to push main changes up to remote branch</li>
 </ol></section><section class="print-page" id="glossary"><h1 id="glossary-glossary-of-common-terms">Glossary of Common Terms</h1>
-<p>Below are some of the terms used in context of the project.
-|Term|Definition|
-|------|------|<br />
-|<strong>The Four Corners</strong> |  The Four Corner Model is two parties and two intermediaries, each having a "corner."   The parties are the buyer and the seller. The seller initiates the process of sending an e-invoice to the recipient who is the buyer.|<br />
-|<strong>Corner 1</strong> | The Seller|
-|<strong>Corner 2</strong> | The Seller's intermediary or "Access Point 1."|
-|<strong>Corner 3</strong> | The Buyer's intermediary or "Access Point 2."|
-|<strong>Corner 4</strong> | The Buyer|
-|<strong>SML</strong>  |  Service Metadata Locator|<br />
-|<strong>SMP</strong>  |  Service Metadata Publishing|  </p></section><section class="print-page" id="standards"><h1 id="standards-standards">Standards</h1>
+<p>Below are some of the terms used in context of the project.   </p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The Four Corners</td>
+<td>The Four Corner Model is two parties and two intermediaries, each having a corner.   The parties are the buyer and the seller. The seller initiates the process of sending an e-invoice to the recipient who is the buyer.</td>
+</tr>
+<tr>
+<td>Corner 1</td>
+<td>The Seller</td>
+</tr>
+<tr>
+<td>Corner 2</td>
+<td>The Seller's intermediary or Access Point 1.</td>
+</tr>
+<tr>
+<td>Corner 3</td>
+<td>The Buyer's intermediary or Access Point 2.</td>
+</tr>
+<tr>
+<td>Corner 4</td>
+<td>The Buyer</td>
+</tr>
+<tr>
+<td>SML</td>
+<td>Service Metadata Locator</td>
+</tr>
+<tr>
+<td>SMP</td>
+<td>Service Metadata Publishing</td>
+</tr>
+</tbody>
+</table></section><section class="print-page" id="standards"><h1 id="standards-standards">Standards</h1>
 <p>Reference Links:  </p>
 <h2 id="standards-documents">Documents</h2>
 <table>
@@ -2809,44 +2840,23 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="standards-xml-schema-definitions">XML Schema Definitions</h2>
-<table>
-<thead>
-<tr>
-<th>XSD Files</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>XSD File</strong>: <a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd">ebms-header-3_0-200704</a> including snippets of sample XML and full SOAP for message headers.  Note that the Namespace URI identified in Part1 is incorrect and returns an error message.</td>
-</tr>
-<tr>
-<td><strong>XSD File</strong>: <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-multihop-1_0-200902_refactored.xsd">XSD for Routing Input reference parameter</a></td>
-</tr>
-<tr>
-<td><strong>XSD File</strong>: <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/mf.xsd">MessageFragment XSD</a></td>
-</tr>
-<tr>
-<td><strong>XSD File</strong>: <a href="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-header-3_0-200704_refactored.xsd">Refactored Core Messaging XSD</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="standards-namespace-uris">Namespace URIs</h2>
-<table>
-<thead>
-<tr>
-<th>Namespaces</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/">ebXML Messaging Services Version 3.0 Core Features)</a></td>
-</tr>
-<tr>
-<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/20707/ebms3-confprofiles-cs-01.html">OASIS ebXML Messaging Services 3.0 Conformance Profiles</a>, Committee Specification 1, dated April 24, 2010 references the same namespace URI of http://docs.oasis-open.org/ebxml-msg/ns/ebms/v3.0/profiles/200707.</td>
-</tr>
-</tbody>
-</table>
+<!--
+## XML Schema Definitions
+|XSD Files|
+|----|
+|**XSD File**: [ebms-header-3_0-200704](https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd) including snippets of sample XML and full SOAP for message headers.  Note that the Namespace URI identified in Part1 is incorrect and returns an error message.  |
+|    **XSD File**: [XSD for Routing Input reference parameter](http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-multihop-1_0-200902_refactored.xsd)  |
+|    **XSD File**: [MessageFragment XSD](http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/mf.xsd)  |
+|    **XSD File**: [Refactored Core Messaging XSD](http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/ebms-header-3_0-200704_refactored.xsd)  |
+
+## Namespace URIs
+|Namespaces|
+|----|
+|[ebXML Messaging Services Version 3.0 Core Features](https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/cs02/ebms_core-3.0-spec-cs-02.html) |
+|[OASIS ebXML Messaging Services 3.0 Conformance Profiles](https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/200707/ebms3-confprofiles.html)|
+
+-->
+
 <p><br/>
 <br/>
 <br/></p></section><section class="print-page" id="_license"><h1 id="_license-mit-license">MIT License</h1>

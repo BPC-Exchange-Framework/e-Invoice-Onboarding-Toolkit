@@ -546,6 +546,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#1g-make-the-web-service-call" class="md-nav__link">
+    1g. Make the web service call
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -897,6 +904,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#1g-make-the-web-service-call" class="md-nav__link">
+    1g. Make the web service call
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1025,7 +1039,7 @@ The Onboarding Toolkit dev URN is (the same as in the SML DNS look-up): <code>ur
 <summary>Test the SMP REST API web service call</summary>
 <p>When the URL is constructed properly it is a simple matter to copy and paste it into a web browser.  The response should  be the SMP ServiceGroup look-up data in XML format.</p>
 </details>
-<p>#### 1g. Make the web service call</p>
+<h4 id="1g-make-the-web-service-call">1g. Make the web service call</h4>
 <p>The response of the Service Group Discovery returns information necessary to construct the Service Metadata Query.  The BPC SMP Profile requires that the Service Group Discovery REST API call must not be skipped and that the presence of Service Metadata should not be assumed.</p>
 <h2 id="example">Example</h2>
 <pre><code>protocol = "https"
@@ -1047,10 +1061,11 @@ constructed urls are the same: True
 </code></pre>
 <h2 id="2-service-metadata-query">2. Service Metadata Query</h2>
 <h3 id="call-2-to-obtain-servicemetadata">Call #2 to obtain ServiceMetadata</h3>
-<p>!!!+ important "Inferring values for the ServiceMetadata REST web service call"
-    In the BPC Proof of Concept and creation of the Onboarding Toolkit, the service and document schemas defined by the SMP were static.<br />
-    The values had to be agreed 
-    The QName Subtype Identifier was used.   validation of the queries resulted in assumption of the  value of some ServiceMetadata parameters.  <br/><br/></p>
+<details class="important" open="open">
+<summary>Inferring values for the ServiceMetadata REST web service call</summary>
+<p>In the BPC Proof of Concept and creation of the Onboarding Toolkit, the service and document schemas defined by the SMP were static.  </p>
+<p>The QName Subtype Identifier was used.   Validation of the queries resulted in assumption of the  value of some ServiceMetadata parameters.  <br/><br/></p>
+</details>
 
 
 

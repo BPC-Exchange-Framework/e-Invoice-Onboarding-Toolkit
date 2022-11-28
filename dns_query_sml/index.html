@@ -946,10 +946,11 @@
 <p><br/></p>
 <h4 id="4c-the-regexp-field-of-the-natpr-response">4c. The "regexp" field of the NATPR response</h4>
 <p>The value of the "regexp" field contains the terminal address of the SMP in the format of a regular expression, which is how it would otherwise be used if doing a Session Initiation Protocol (SIP) lookup. <br />
-The value is directly accessed using:<br />
-     for a in lookup.rrset:
-        smp_uri = a.regexp
-<br/></p>
+The value is directly accessed using:   </p>
+<pre><code> for a in lookup.rrset:
+    smp_uri = a.regexp
+</code></pre>
+<p><br/></p>
 <h4 id="4d-the-response-as-a-string">4d. The response as a string</h4>
 <p>Use the String decode() method to change the returned response from Binary to String format.    </p>
 <pre><code>smp_uri = smp_uri.decode()
