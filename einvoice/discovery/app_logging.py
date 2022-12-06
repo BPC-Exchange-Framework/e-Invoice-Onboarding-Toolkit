@@ -5,17 +5,14 @@
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
 #
-"""
-Standard log formatting across all application artifacts.
+"""Standard log formatting across all application artifacts.
 
 Define common loggers and format used across the application.
 These logs are localized and non-persistent.
 If used with a Docker container, they cease to exist when the container does.
-
     Usage: (not meant to be called directly)
     log = create_logger("app_logging")
     log.debug("This message will be logged.")
-
 """
 
 import logging
@@ -27,7 +24,7 @@ from dotenv import load_dotenv
 def create_logger(name):
     """Implement a logger template.
 
-    This function creates a consistant format and location for
+    This function creates a consistent format and location for
     all application log files to write to.
     """
     dotenv_path = join(dirname(__file__), "../.env")

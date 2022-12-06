@@ -11,28 +11,23 @@
 Creates a random 10 character alphanumeric id to track the request
 through the process end-to-end.
 """
-
 import secrets
 import string
-from einvoice.discovery.app_logging import create_logger
 
+LOGGER = __name__
 
 class CreateTrackingID:
     """Class to create a tracking Id for the discovery."""
 
     def __init__(self):
         """Entry point into app and define variables at class instantiation."""
-        self.log = create_logger("create_tracking_id")
         self.tracking_id = ""
-        self.alphabet = string.ascii_uppercase + string.digits
-        self.log.info(
-            "Created domain of allowed "
-            "characters for tracking id: %s", self.alphabet
-        )
+        self.alphabet = string.ascii_lowercase + string.digits
 
-    def create_tracking_id(self, id_size):
+    def create_tracking_id(self, id_size, log):
         """Create uuid not associated with mac address, node or timestamp."""
+        log.info("List of allowed characters is: %s", self.alphabet)
+        self.tracking_id = "ei_"
         for _ in range(id_size):
-            self.tracking_id = self.tracking_id\
-                + (secrets.choice(self.alphabet))
+            self.tracking_id = self.tracking_id + (secrets.choice(self.alphabet))
         return self.tracking_id

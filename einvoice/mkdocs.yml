@@ -31,6 +31,10 @@ theme:
         name: Switch to light mode
   font:
     text: Poppins
+    # text: Roboto
+    # text: "Noto Sans"
+    # text: Ubuntu
+    # text: Red Hat Text
     code: Roboto Mono
 
 extra_css:
@@ -45,7 +49,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist:
       clickable_checkbox: true
-  - mkautodoc
+  # - mkautodoc
   - attr_list
   - md_in_html
 
@@ -84,6 +88,9 @@ nav:
   - Getting the Code: working_with_the_code.md
   - Using the Code:
     - The Modules: using_the_modules.md
+    - SML Hash Functionality: sml_hash_func.md
+    - DNS Query for SML urn: dns_query_sml.md
+    - SMP REST API Query: smp_rest_query.md
     - Test Cases: test_cases.md
     - Discovery Validation: discovery_validation.md
     - JupyterLab/Notebooks: google_colab_pages.md
@@ -105,5 +112,6 @@ nav:
   - Project Roadmap: project_roadmap.md
   - Project Artifacts: artifacts.md
   - Workflow: git_workflow.md
-  - OASIS Resources: oasis_documentation.md
+  - Glossary of Terms: glossary.md
+  - Standards: standards.md
   - License: _license.md

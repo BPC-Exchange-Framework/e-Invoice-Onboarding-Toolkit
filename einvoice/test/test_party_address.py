@@ -6,12 +6,13 @@
 # Date: 2021-08-15 (August 15th, 2021)
 #
 """Test file to be run using pytest."""
-from einvoice.discovery.app_logging import create_logger
+from einvoice.config import Logger
 from einvoice.discovery.party_address import Address
 
+LOGGER = __name__
 
 def create_address():
-    """Test helper to create an instace of an object to test."""
+    """Test helper to create an instance of an object to test."""
     some_address = Address("01245zyx", "Big Corporate Company",
                            "123 Main Street", "Attn: Accounts Payable",
                            "Springfield", "Confusion", "90210")
@@ -20,7 +21,8 @@ def create_address():
 
 def test_party_address():
     """Test case for party_address."""
-    log = create_logger("test_party_address")
+    test_logger = Logger()
+    log = test_logger.create_logger()
     log.debug("Begin testing party_address.")
     another_address = create_address()
     assert another_address.org_id == "01245zyx"

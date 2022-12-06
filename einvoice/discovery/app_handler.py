@@ -33,7 +33,7 @@ from dataclasses import dataclass
 import hashlib
 import base64
 from json import dumps
-from einvoice.discovery.app_logging import create_logger
+from einvoice.config import Logger
 
 log = create_logger("handler")
 
@@ -107,7 +107,6 @@ def create_sml_lookup(_urn="", _schema="", _id=""):
     if _id != "":
         lookup_str.party_id = _id
     lookup_str.final_urn = lookup_str.party_urn()
-    # lookup_str.final_urn = (_urn + ":" + _schema + "::" + _id)
     log_msg = ("Constructed urn from dataclass definition %s",
                lookup_str.final_urn)
     log.debug(log_msg)
@@ -138,9 +137,6 @@ def apply_base32_hash(_smlurn_obj):
 
     # Convert it back to a string so it can be handled by json
     _smlurn_obj.urn_base32_hash = b_string_base32_hash.decode("utf-8")
-    # log_msg = ("Base32 conversion of shaw256 is %s".
-    #          str(_smlurn_obj.urn_base32_hash))
-    # log.debug(log_msg)
     return _smlurn_obj
 
 

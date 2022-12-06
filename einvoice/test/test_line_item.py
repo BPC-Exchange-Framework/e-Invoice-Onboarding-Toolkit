@@ -6,12 +6,13 @@
 # Date: 2021-08-15 (August 15th, 2021)
 #
 """Test file to be run using pytest."""
-from einvoice.discovery.app_logging import create_logger
+from einvoice.config import Logger
 from einvoice.discovery.line_item import LineItem
 
+LOGGER = __name__
 
 def create_line_item():
-    """Test helper to create an instace of an object to test."""
+    """Test helper to create an instance of an object to test."""
     some_line_item = LineItem("KCAL-0.0001", "Case",
                               "Diet Cola", "Tastes better than Slurm.",
                               144, 10.29)
@@ -20,7 +21,8 @@ def create_line_item():
 
 def test_line_item():
     """Test case for line_item."""
-    log = create_logger("test_line_item")
+    test_logger = Logger()
+    log = test_logger.create_logger()
     log.debug("Begin testing line_item.")
     another_line_item = create_line_item()
     assert another_line_item.line_item_id == "KCAL-0.0001"

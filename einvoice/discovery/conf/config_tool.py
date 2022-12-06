@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# pylint: disable=W1514, R0201, E1120
+# pylint: disable=W1514, E1120
 # False positive on requiring explicit encoding, method could be a function
 # known bug with E1120 false positive
 # File: config_tool.py
@@ -30,7 +30,7 @@ None
 """
 import os.path
 from json import dumps
-from einvoice.discovery.app_logging import create_logger
+from einvoice.config import Logger
 
 
 class EInvoiceConfig:
