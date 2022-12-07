@@ -11,3 +11,5 @@
 # from einvoice.party_address import Address
 # from einvoice.line_item import LineItem
 # from einvoice.data.create_sample_data import CreateSampleData
+
+LOGGER = __name__

@@ -169,6 +169,7 @@ einvoice/docs/source
 einvoice/docs/build/*
 einvoice/docs/source/*
 tree.out
+tree.html
 einvoice/docs/jupyterlab/untitled.txt
 einvoice/mkdocs.yml.bak
 einvoice/mkdocs.yml.old
@@ -179,9 +180,24 @@ envoice/delivery/tests/
 einvoice/delivery/tests/*
 einvoice/mkdocs.yml.*
 einvoice/app.log
-app.log/
+app.log
 einvoice/web_response.log
 web_response.log
+requirements_20221019.txt
+test/ez_linter.sh
+test/flake8_linter.sh
+test/hardcore_linter.sh
+test/magic_linter.py
+test/mypy_linter.sh
+test/pycodestyle_linter.sh
+test/pydocstyle_linter.sh
+test/pylint_linter.sh
+test/unaptr_response.json
+test/unaptr_response.json.bak
+unrequirements.txt
+conf
+conf/*
+mkdocs.yml
 
 # certificate work
 *.pem

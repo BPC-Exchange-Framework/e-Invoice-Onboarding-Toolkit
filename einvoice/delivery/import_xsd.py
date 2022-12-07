@@ -6,45 +6,36 @@
 # Development: Kelly Kinney
 # # Date: 2022-01-19 (January 19th, 2022)
 #
-'''Import an XSD file for use by a calling application.
+"""Import an XSD file for use by a calling application.
 
-   Return a string version of XSD pulled off the web.
+Return a string version of XSD pulled off the web.
 
-'''
+"""
 import xmlschema
-from einvoice.discovery.app_logging import create_logger
+
+LOGGER = __name__
 
 
 class ImportXSD:
-    """Import an XSD file from the Internet.
-    """
+    """Import an XSD file from the Internet."""
 
     def __init__(self):
         """Define and instantiate variables."""
         self.filename = ""
-        self.log = create_logger("import_xsd")
         self.schema_xsd = None
         self.schema = {}
         self.request = ""
 
-    def get_xsd_from_file(self, filename):
+    def get_xsd_from_file(self, filename, log):
         """Import the specified XSD file."""
         self.schema_xsd = xmlschema.XMLSchema(filename)
-        self.log.info(f'Loading schema from file {filename}')
-        self.log.info(self.schema_xsd)
-        # self.log.info("Begin enumeration of schema elements.")
-        # for component in self.schema_xsd.iter_components():
-        #     self.log.info(f'{component}')
-        # self.log.info("Finished enumeration of schema elements.")
+        log.info(f'Loading schema from file {filename}')
+        log.info(self.schema_xsd)
         return self.schema
 
-    def get_xsd_from_internet(self, uri):
-        """Import the xsd from an URI"""
+    def get_xsd_from_internet(self, uri, log):
+        """Import the xsd from an URI."""
         self.schema_xsd = xmlschema.XMLSchema(uri)
-        self.log.info(f'Loading schema from uri {uri}')
-        self.log.info(self.schema_xsd)
-        # self.log.info("Begin enumeration of schema elements.")
-        # for component in self.schema_xsd.iter_components():
-        #     self.log.info(f'{component}')
-        # self.log.info("Finished enumeration of schema elements.")
+        log.info(f'Loading schema from uri {uri}')
+        log.info(self.schema_xsd)
         return self.schema_xsd

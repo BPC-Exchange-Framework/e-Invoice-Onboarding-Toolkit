@@ -8,13 +8,16 @@
 """Testing code to create sample data."""
 
 from einvoice.discovery.data.create_sample_data import CreateSampleData
-from einvoice.discovery.app_logging import create_logger
+from einvoice.config import Logger
+
+LOGGER = __name__
 
 
 def test_generate_fake_address():
     """Pytest for creating sample data."""
-    log1 = create_logger("test_generate_fake_addresses")
+    test_logger = Logger()
+    log = test_logger.create_logger()
     data_factory = CreateSampleData()
-    address = data_factory.generate_fake_address(4)
-    log1.info(address)
+    address = data_factory.generate_fake_address(log, 4)
+    log.info(address)
     return address

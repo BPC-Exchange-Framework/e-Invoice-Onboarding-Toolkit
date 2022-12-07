@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# pylint: disable=W1514, R0201, E1120
+# pylint: disable=W1514, E1120
 # False positive on requiring explicit encoding, method could be a function
 # known bug with E1120 false positive
 # File: config_tool.py
@@ -8,15 +8,15 @@
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-17 (July 17th, 2021)
 #
-"""The classes and functions which support programatic configuration updates.
+"""The classes and functions which support programmatic configuration updates.
 
 The configuration values are stored in a dictionary written to a JSON file.
 The values are read on demand by other package and module files as necessary.
-This allows for the programtic maintenance of the file.
+This allows for the programmatic maintenance of the file.
 
 Args: str
 ei_conf_fn: the file name containing the values to load.
-This is filename can be dynamiclaly saved to support multiple versions.
+This is filename can be dynamically saved to support multiple versions.
 
 Attributes:
 None
@@ -30,7 +30,8 @@ None
 """
 import os.path
 from json import dumps
-from einvoice.discovery.app_logging import create_logger
+
+LOGGER = __name__
 
 
 class EInvoiceConfig:
@@ -53,7 +54,6 @@ class EInvoiceConfig:
 
     def __init__(self):
         """Define values made available across the application."""
-        self.log = create_logger("config_tool")
         self.filename = "./einvoice.json"
         self.json_str = ""
         # Check to see if a default file exists and if not
@@ -61,10 +61,10 @@ class EInvoiceConfig:
         if not os.path.exists(self.filename):
             self.load_defaults(self.filename)
 
-    def write_json_to_file(self, einvoice_data, filename):
-        """Write the E-Inovice to a JSON file."""
+    def write_json_to_file(self, einvoice_data, filename, log):
+        """Write the E-Invoice to a JSON file."""
         json_str = dumps(einvoice_data.__dict__)
-        self.log.info(json_str)
+        log.info(json_str)
 
         try:
             with open(filename, "w") as output:
@@ -73,7 +73,7 @@ class EInvoiceConfig:
             print("Error writing to file", err)
 
     @classmethod
-    def load_defaults(cls, filename="./einvoice.json"):
+    def load_defaults(cls, log, filename="./einvoice.json"):
         """Initialize library of default values.
 
         Args:
@@ -103,7 +103,7 @@ class EInvoiceConfig:
         cls.defaults["default_party_id_spec"] = \
             "urn:oasis:names:tc:ebcore:partyid-"\
             "type:unregistered:myscheme"
-        cls.defaults["def_prty_schma_typ"] = "BPC01"
+        cls.defaults["def_party_schema_typ"] = "BPC01"
         cls.defaults["default_party_id"] = "bpcBusid01"
-        cls.write_json_to_file(cls.defaults, cls.filename)
+        cls.write_json_to_file(cls, cls.defaults, cls.filename, log)
         return cls.defaults

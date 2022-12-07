@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
 # pylint: disable=W0613, W1203. R0902
-# unused arguments, use of lazy % formating,
+# unused arguments, use of lazy % formatting,
 # too many instance attributes
 # File: smp_query.py
 # About: Query SMP REST API.
 # Development: Kelly Kinney, Leo Rubiano
 # Date: 2021-07-16 (July 16th, 2021)
-"""Provides functionality for an SMPQuery Fourr-corner model discovery."""
-import re
+"""Provides functionality for an SMPQuery Four-corner model discovery."""
 import os
 from os.path import join, dirname
+import warnings
+with warnings.catch_warnings():
+    warnings.filterwarnings("ignore", category=RuntimeWarning)
+    import requests
 from dotenv import load_dotenv
-import requests
-from einvoice.discovery.app_logging import create_logger
+
+LOGGER = __name__
 
 
 class SMPQuery:
@@ -43,7 +46,6 @@ class SMPQuery:
         self.service_id = str(os.getenv("SERVICE_ID"))
         self.services = str(os.getenv("SERVICES"))
         self.domain = str(os.getenv("DOMAIN"))
-        self.log = create_logger("smp_query")
         self.request_url = None
         self.urn = None
         self.smp_uri = None
@@ -53,47 +55,52 @@ class SMPQuery:
         self.srvc_url_reply = None
         self.response = None
 
-    def query_service_group_url(self, urn):
-        """Make required calls to the SMP to obain service group url info."""
+    def query_service_group_url(self, urn, log):
+        """Make required calls to the SMP to obtain service group url info."""
         self.urn = urn
-        self.srvc_grp_url_qry = self.smp_create_srvc_group_url_query(self.urn)
-        self.srvc_grp_url_reply = self.smp_execute_qry(self.srvc_grp_url_qry)
-        self.log.info(f"Service group url response: {self.srvc_grp_url_reply}")
+        self.srvc_grp_url_qry = (
+            self.smp_create_srvc_group_url_query(self.urn, log)
+        )
+        self.srvc_grp_url_reply = (
+            self.smp_execute_qry(self.srvc_grp_url_qry, log)
+        )
+        log.info(f"Service group url response: {self.srvc_grp_url_reply}")
         return self.srvc_grp_url_reply
 
-    def query_service_url(self, urn):
-        """Make required calls to the SMP to obain service url info."""
+    def query_service_url(self, urn, log):
+        """Make required calls to the SMP to obtain service url info."""
         self.urn = urn
-        self.srvc_url_qry = self.smp_create_service_url_query(self.urn)
-        self.srvc_url_reply = self.smp_execute_qry(self.srvc_url_qry)
-        self.log.info(f"Service group url response: {self.srvc_url_reply}")
+        self.srvc_url_qry = self.smp_create_service_url_query(self.urn, log)
+        self.srvc_url_reply = self.smp_execute_qry(self.srvc_url_qry, log)
+        log.info(f"Service group url response: {self.srvc_url_reply}")
         return self.srvc_url_reply
 
-    def smp_create_srvc_group_url_query(self, urn):
+    def smp_create_srvc_group_url_query(self, urn, log):
         """Create first smp api query."""
         self.urn = urn
         self.request_url = (
             self.protocol + "://" + self.domain +
             "/" + self.standard + "/" + self.urn
         )
-        self.request_url = re.sub(":", "%3A", self.request_url)
-        self.request_url = re.sub("https%3A", "https:", self.request_url)
-        self.log.info(f"Service group url created: {self.request_url}")
+        self.request_url = self.request_url.replace(":", "%3A")
+        self.request_url = self.request_url.replace("https%3A", "https:")
+        log.info(f"Service group url created: {self.request_url}")
         return self.request_url
 
-    def smp_create_service_url_query(self, urn):
+    def smp_create_service_url_query(self, urn, log):
         """Create second smp api query."""
         self.urn = urn
         self.request_url = (self.protocol + "://" + self.domain +
                             "/" + self.standard + "/" + self.urn +
                             "/" + self.services + "/" + self.service_id)
-        self.request_url = re.sub(":", "%3A", self.request_url)
-        self.request_url = re.sub("#", "%23", self.request_url)
-        self.request_url = re.sub("https%3A", "https:", self.request_url)
-        self.log.info(f"Service url created: {self.request_url}")
+        self.request_url = self.request_url.replace(":", "%3A")
+        self.request_url = self.request_url.replace("#", "%23")
+        self.request_url = self.request_url.replace("https%3A", "https:")
+        log.info(f"Service url created: {self.request_url}")
         return self.request_url
 
-    def smp_execute_qry(self, url):
+    def smp_execute_qry(self, url, log):
         """Execute an api query."""
-        self.response = requests.get(url)
-        return self.response.text
+        self.response = requests.get(url, verify=False)
+        log.info(f"SMP execute raw response: {self.response}")
+        return self.response.content

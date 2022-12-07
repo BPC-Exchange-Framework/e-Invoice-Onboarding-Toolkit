@@ -6,10 +6,10 @@ __Welcome to the E-Invoice Onboarding Toolkit__
 This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner Model of an Exchange Framework.   
 
 ## Project Goals
-???+ Alert "GOALS: The features of the project as oultined in the [project roadmap](./project_roadmap.md). "
+???+ Alert "GOALS: The features of the project as outlined in the [project roadmap](./project_roadmap.md). "
     Roadmap Feature | Feature Phase | Purpose of Feature  
     ------ | ------ | ------
-    Feature #1 - SML NAPTR DNS Lookup | Discovery |  1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look up the ID code up in a globabl internet datatbase to get the address of a website which has more informaiton about the Buyer.
+    Feature #1 - SML NAPTR DNS Lookup | Discovery |  1.  Create an ID code based on the Buyer's party ID  <br/> 2. Look up the ID code up in a global internet database to get the address of a website which has more information about the Buyer.
     Feature #2 - SMP REST API Query | Discovery |  3. Contact the website  from the previous step to make sure the Buyer can in fact handle receiving an e-invoice and where to send it. |
     Feature #3 - AS4 Message header format validation.  | Delivery |  4. Validate that an e-mail message sent to the Buyer is in the correct format.  
 
@@ -41,6 +41,9 @@ For information about E-Invoices and the Four-Corner Model please visit the [Bus
 * [Getting the Code](./working_with_the_code.md)
 * Using the Code
     * [Using the Modules](./using_the_modules)
+    * [SML Hash Functionality](./sml_hash_func)
+    * [DNS Query for SML urn](./dns_query_sml)
+    * [SMP REST API Query](./smp_rest_query)
     * [Test Cases](./test_cases.md)
     * [Discovery Validation](./discovery_validation.md)
     * [JupyterLab/Notebooks](./google_colab_pages.md)
@@ -50,6 +53,7 @@ For information about E-Invoices and the Four-Corner Model please visit the [Bus
 * [Project Roadmap](./project_roadmap.md )
 * [Project Artifacts](./artifacts.md)
 * [Workflow](./git_workflow.md)
-* [Oasis Resources](./oasis_documentation.md)
+* [Glossary of Terms](./glossary.md)
+* [Standards](./standards.md)
 * [License](./_license.md)
 
