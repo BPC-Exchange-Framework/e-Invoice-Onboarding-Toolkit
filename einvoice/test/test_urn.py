@@ -11,13 +11,13 @@ from einvoice.discovery.urn import Urn
 
 LOGGER = __name__
 
+
 def create_urn():
     """Test helper to create an instance of an object to test."""
     some_urn = Urn("ABCDEFG123", "urn:oasis:names:tc:ebcore:partyid-type",
                    "iso6523", "0123456789")
     return some_urn
 
-LOGGER = __name__
 
 def test_urn():
     """Test case for party_address."""

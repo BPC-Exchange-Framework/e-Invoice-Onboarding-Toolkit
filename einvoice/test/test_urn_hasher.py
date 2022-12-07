@@ -29,6 +29,7 @@ def ash_hash(urn):
 #
 #############################################
 
+
 def hasher_1(test_dict):
     """Test case #1 hasher."""
     log.info("Test case hash_1")
@@ -53,6 +54,7 @@ def hasher_1(test_dict):
 #
 #############################################
 
+
 def hasher_2(test_dict):
     """Test case #1 hasher."""
     log.info("Test case hash_2")
@@ -61,9 +63,14 @@ def hasher_2(test_dict):
          test_dict['spec'], test_dict['schema'], test_dict['party_id'],
          log
     )
-    test_case_hash = "6c24uvqpxrfyweqimfxmsuym3bbjvoikuwmmidquz2a2zzyikdya"
+    test_case_hash = (
+        "6c24uvqpxrfyweqimfxmsuym3bbjvoikuwmmidquz2a2zzyikdya"
+    )
     assert test_value.get("urn_hash") == test_case_hash
-    test_case_urn = test_dict['spec'] + ":" + test_dict['schema'] +  "::" + test_dict['party_id']
+    test_case_urn = (
+        test_dict['spec'] + ":" + test_dict['schema'] + "::" +
+        test_dict['party_id']
+    )
     assert test_value.get("final_urn") == test_case_urn
     assert test_value.get("urn_hash") == ash_hash(test_case_urn)
     return test_value
@@ -73,6 +80,7 @@ def hasher_2(test_dict):
 #  Test Case 3
 #
 #############################################
+
 
 def hasher_3(test_dict):
     """Test case #1 hasher."""
@@ -84,7 +92,10 @@ def hasher_3(test_dict):
     )
     test_case_hash = "bc2ntkxz42amx3a5rmjbsaesp5ucuc3iciposkd3qwnj6b4wjh2q"
     assert test_value.get("urn_hash") == test_case_hash
-    test_case_urn = 'urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088::ean-7638725972413'
+    test_case_urn = (
+        'urn:oasis:names:tc:ebcore:partyid-type:'
+        'iso6523:0088::ean-7638725972413'
+    )
     assert test_value.get("final_urn") == test_case_urn
     assert test_value.get("urn_hash") == ash_hash(test_case_urn)
     return test_value
@@ -94,6 +105,7 @@ def hasher_3(test_dict):
 #  Test Case 4
 #
 #############################################
+
 
 def hasher_4(test_dict):
     """Test case #1 hasher."""
@@ -105,7 +117,10 @@ def hasher_4(test_dict):
     )
     test_case_hash = "rixkdb2u5xxf7vtieezqvakx5r2bc3iugzeqd35ibeddloeapf6a"
     assert test_value.get("urn_hash") == test_case_hash
-    test_case_urn = test_dict['spec'] + ":" + test_dict['schema'] +  "::" + test_dict['party_id']
+    test_case_urn = (
+        test_dict['spec'] + ":" + test_dict['schema'] + "::" +
+        test_dict['party_id']
+    )
     assert test_value.get("final_urn") == test_case_urn
     assert test_value.get("urn_hash") == ash_hash(test_case_urn)
     return test_value
@@ -115,6 +130,7 @@ def hasher_4(test_dict):
 #  Test Case 5
 #
 #############################################
+
 
 def hasher_5(test_dict):
     """Test case #1 hasher."""
@@ -126,10 +142,14 @@ def hasher_5(test_dict):
     )
     test_case_hash = "jc4swjyiphrll4gfhlu2edehpwlkmqmsncc2lc3so7m5jvgjkewa"
     assert test_value.get("urn_hash") == test_case_hash
-    test_case_urn = test_dict['spec'] + ":" + test_dict['schema'] +  "::" + test_dict['party_id']
+    test_case_urn = (
+        test_dict['spec'] + ":" + test_dict['schema'] + "::" +
+        test_dict['party_id']
+    )
     assert test_value.get("final_urn") == test_case_urn
     assert test_value.get("urn_hash") == ash_hash(test_case_urn)
     return test_value
+
 
 def test_runner():
     """Executer the test scenarios."""

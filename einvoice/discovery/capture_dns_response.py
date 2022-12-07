@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 
 LOGGER = __name__
 
+
 class DNSResponse:
     """Class to write response from DNS query to file."""
 
@@ -27,17 +28,15 @@ class DNSResponse:
         self.dns_list = []
         self.dns_dict = {}
         self.output_file = str(os.getenv("DNS_RESPONSE_FILE"))
-        self.log = None
 
-    def write_dns_response(self, dns_response, logger):
+    def write_dns_response(self, dns_response, log):
         """Write the urn values to a file."""
-        self.log = logger
-        date_fmt  = self.date_obj.strftime("%Y%m%d%H%M%S")
+        date_fmt = self.date_obj.strftime("%Y%m%d%H%M%S")
         self.output_file = self.output_file + "_" + date_fmt + ".json"
-        self.log.info(f"Writing out DNS response to file {self.output_file}")
+        log.info(f"Writing out DNS response to file {self.output_file}")
         self.dns_dict = dns_response
-        self.log.info(f"This is the raw input {self.dns_dict}")
-        self.log.info(f"Writing the DNS response to file.{self.dns_dict}")
+        log.info(f"This is the raw input {self.dns_dict}")
+        log.info(f"Writing the DNS response to file.{self.dns_dict}")
         json_str = dumps(self.dns_dict)
         with open(self.output_file, "w", encoding="utf-8") as output:
             output.write(json_str)

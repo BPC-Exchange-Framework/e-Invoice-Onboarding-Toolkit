@@ -16,6 +16,7 @@ from einvoice.config import Logger
 
 LOGGER = __name__
 
+
 def test_accessor():
     """Pytest case for test_accessor."""
     accessor_test = Accessor()
@@ -45,14 +46,16 @@ def test_accessor():
     test_final_urn = test_urn["final_urn"]
     assert test_final_urn == example_urn.lower()
 
-    hashed_urn = accessor_test.call_hash(test_specification, test_schema_type_id, test_party_id,
-                                                                       log)
+    hashed_urn = accessor_test.call_hash(test_specification,
+                                         test_schema_type_id,
+                                         test_party_id, log)
     log.info("Hashed urn: %s", hashed_urn)
     assert hashed_urn["urn_hash"] == (
         "vs2l6dxjq4it3hrsosbhb75"
         "xo4wpa4agukpprc2nnm3jepvdbjya"
     )
-    smp_results = accessor_test.call_dns_lookup(hashed_urn["urn_hash"], domain, log)
+    smp_results = accessor_test.call_dns_lookup(hashed_urn["urn_hash"],
+                                                domain, log)
     log.info(smp_results[0])
     assert smp_results[0] == "https://my-smp-url.com/"
     assert smp_results[1]['order'] == 100

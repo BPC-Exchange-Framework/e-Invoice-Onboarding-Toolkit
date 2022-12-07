@@ -1,0 +1,1 @@
+["https://my-smp-url.com/", {"order": 100, "preference": 100, "flags": "U", "service": "oasis-bdxr-smp-2", "regexp": "!^.*$!https://my-smp-url.com/!", "replacement": "."}]

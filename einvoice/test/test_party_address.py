@@ -11,6 +11,7 @@ from einvoice.discovery.party_address import Address
 
 LOGGER = __name__
 
+
 def create_address():
     """Test helper to create an instance of an object to test."""
     some_address = Address("01245zyx", "Big Corporate Company",

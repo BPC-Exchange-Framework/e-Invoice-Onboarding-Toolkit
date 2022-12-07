@@ -15,6 +15,7 @@ import xmlschema
 
 LOGGER = __name__
 
+
 class ImportXSD:
     """Import an XSD file from the Internet."""
 

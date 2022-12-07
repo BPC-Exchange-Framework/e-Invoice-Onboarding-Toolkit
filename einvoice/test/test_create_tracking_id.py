@@ -11,6 +11,7 @@ from einvoice.discovery.create_tracking_id import CreateTrackingID
 
 LOGGER = __name__
 
+
 def test_create_urn_id():
     """Test creation of a urn."""
     test_logger = Logger()

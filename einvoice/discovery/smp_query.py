@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 
 LOGGER = __name__
 
+
 class SMPQuery:
     """Class to create and execute a RESt API query.
 
@@ -45,7 +46,6 @@ class SMPQuery:
         self.service_id = str(os.getenv("SERVICE_ID"))
         self.services = str(os.getenv("SERVICES"))
         self.domain = str(os.getenv("DOMAIN"))
-        self.log = None
         self.request_url = None
         self.urn = None
         self.smp_uri = None
@@ -55,27 +55,28 @@ class SMPQuery:
         self.srvc_url_reply = None
         self.response = None
 
-    def query_service_group_url(self, urn, logger):
+    def query_service_group_url(self, urn, log):
         """Make required calls to the SMP to obtain service group url info."""
-        self.log = logger
         self.urn = urn
-        self.srvc_grp_url_qry = self.smp_create_srvc_group_url_query(self.urn, self.log)
-        self.srvc_grp_url_reply = self.smp_execute_qry(self.srvc_grp_url_qry, self.log)
-        self.log.info(f"Service group url response: {self.srvc_grp_url_reply}")
+        self.srvc_grp_url_qry = (
+            self.smp_create_srvc_group_url_query(self.urn, log)
+        )
+        self.srvc_grp_url_reply = (
+            self.smp_execute_qry(self.srvc_grp_url_qry, log)
+        )
+        log.info(f"Service group url response: {self.srvc_grp_url_reply}")
         return self.srvc_grp_url_reply
 
-    def query_service_url(self, urn, logger):
+    def query_service_url(self, urn, log):
         """Make required calls to the SMP to obtain service url info."""
-        self.log = logger
         self.urn = urn
-        self.srvc_url_qry = self.smp_create_service_url_query(self.urn, self.log)
-        self.srvc_url_reply = self.smp_execute_qry(self.srvc_url_qry, self.log)
-        self.log.info(f"Service group url response: {self.srvc_url_reply}")
+        self.srvc_url_qry = self.smp_create_service_url_query(self.urn, log)
+        self.srvc_url_reply = self.smp_execute_qry(self.srvc_url_qry, log)
+        log.info(f"Service group url response: {self.srvc_url_reply}")
         return self.srvc_url_reply
 
-    def smp_create_srvc_group_url_query(self, urn, logger):
+    def smp_create_srvc_group_url_query(self, urn, log):
         """Create first smp api query."""
-        self.log = logger
         self.urn = urn
         self.request_url = (
             self.protocol + "://" + self.domain +
@@ -83,26 +84,23 @@ class SMPQuery:
         )
         self.request_url = self.request_url.replace(":", "%3A")
         self.request_url = self.request_url.replace("https%3A", "https:")
-        self.log.info(f"Service group url created: {self.request_url}")
+        log.info(f"Service group url created: {self.request_url}")
         return self.request_url
 
-    def smp_create_service_url_query(self, urn, logger):
+    def smp_create_service_url_query(self, urn, log):
         """Create second smp api query."""
-        self.log = logger
         self.urn = urn
         self.request_url = (self.protocol + "://" + self.domain +
                             "/" + self.standard + "/" + self.urn +
                             "/" + self.services + "/" + self.service_id)
         self.request_url = self.request_url.replace(":", "%3A")
-        self.request_url =self.request_url.replace("#", "%23")
+        self.request_url = self.request_url.replace("#", "%23")
         self.request_url = self.request_url.replace("https%3A", "https:")
-        self.log.info(f"Service url created: {self.request_url}")
+        log.info(f"Service url created: {self.request_url}")
         return self.request_url
 
-    def smp_execute_qry(self, url, logger):
+    def smp_execute_qry(self, url, log):
         """Execute an api query."""
-        self.log = logger
         self.response = requests.get(url, verify=False)
-        self.log.info(f"SMP execute raw response: {self.response}")
+        log.info(f"SMP execute raw response: {self.response}")
         return self.response.content
-    

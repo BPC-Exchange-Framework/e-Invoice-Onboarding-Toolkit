@@ -11,6 +11,7 @@ from einvoice.config import Logger
 
 LOGGER = __name__
 
+
 def test_config():
     """Pytest case for test_accessor."""
     test_logger = Logger()

@@ -1,8 +1,9 @@
 # pylint: disable=C0415, E0401, W1514, W0611
-# import outside toplevel (os), unable to import 'dotvenv',
+# import outside toplevel (os), unable to import 'dotenv',
 # using open without explicitly specifying an encoding
 """Test cases for dns_query."""
 
+LOGGER = __name__
 
 def test_smp_config():
     """Test the SMP config."""

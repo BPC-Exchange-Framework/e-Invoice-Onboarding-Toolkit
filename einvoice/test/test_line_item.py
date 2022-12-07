@@ -11,6 +11,7 @@ from einvoice.discovery.line_item import LineItem
 
 LOGGER = __name__
 
+
 def create_line_item():
     """Test helper to create an instance of an object to test."""
     some_line_item = LineItem("KCAL-0.0001", "Case",

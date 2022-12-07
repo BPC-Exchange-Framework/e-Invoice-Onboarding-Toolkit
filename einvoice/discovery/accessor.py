@@ -15,6 +15,7 @@ from einvoice.discovery.urn_hasher import Hasher
 
 LOGGER = __name__
 
+
 class Accessor:
     """Class to define walk through of end-to-end processing.
 

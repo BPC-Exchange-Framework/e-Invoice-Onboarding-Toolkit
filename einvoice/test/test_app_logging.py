@@ -23,6 +23,9 @@ from os.path import join, dirname
 from dotenv import load_dotenv
 from einvoice.discovery.app_logging import create_logger
 
+LOGGER = __name__
+
+
 # Test the logging functionality using built-in Pytest "caplog"
 def log_creation(logger):
     """Test to validate logging is writing properly to a log."""
@@ -37,11 +40,13 @@ def log_creation(logger):
     assert os.path.exists(web_response_file)
     log.info("assert os.path.exists(" + web_response_file + "): true")
 
+
 # Test the logging functionality using built-in Pytest "caplog"
 def log_insert_1(logger):
     """Test to validate logging is writing properly to a log."""
     log = logger
     log.info("Insert test message")
+
 
 # Another quick test of the log functionality as a baseline - has handlers.
 def log_handlers(logger):
@@ -51,12 +56,14 @@ def log_handlers(logger):
     if log.hasHandlers():
         log.info("Logger has handlers.")
 
+
 def test_app_logging():
     """Function to execute other tests."""
     logger = create_logger(__name__)
     log_creation(logger)
     log_insert_1(logger)
     log_handlers(logger)
+
 
 def test_log_insert_2(caplog):
     """This is a pytest to validate logging is writing properly to a log."""

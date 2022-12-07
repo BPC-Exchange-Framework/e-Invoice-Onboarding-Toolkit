@@ -12,11 +12,12 @@ from einvoice.config import Logger
 
 LOGGER = __name__
 
+
 def test_generate_fake_address():
     """Pytest for creating sample data."""
     test_logger = Logger()
     log = test_logger.create_logger()
     data_factory = CreateSampleData()
-    address = data_factory.generate_fake_address(4)
+    address = data_factory.generate_fake_address(log, 4)
     log.info(address)
     return address

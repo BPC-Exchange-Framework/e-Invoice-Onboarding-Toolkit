@@ -16,6 +16,7 @@ import string
 
 LOGGER = __name__
 
+
 class CreateTrackingID:
     """Class to create a tracking Id for the discovery."""
 
@@ -29,5 +30,7 @@ class CreateTrackingID:
         log.info("List of allowed characters is: %s", self.alphabet)
         self.tracking_id = "ei_"
         for _ in range(id_size):
-            self.tracking_id = self.tracking_id + (secrets.choice(self.alphabet))
+            self.tracking_id = (
+                self.tracking_id + (secrets.choice(self.alphabet))
+            )
         return self.tracking_id

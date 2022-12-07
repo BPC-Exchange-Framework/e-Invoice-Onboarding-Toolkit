@@ -20,6 +20,7 @@ from einvoice.discovery.create_tracking_id import CreateTrackingID
 
 LOGGER = __name__
 
+
 class Hasher:
     """Construct a base URN for the SML query and prepares the hashes.
 
@@ -112,19 +113,22 @@ class Hasher:
         # Call the method which actually puts the urn together.
         self.final_urn = self.urn.urn()
         log.info(
-            f"Created urn from input - {self.final_urn} - {self.einvoice_id}"
+            "Created urn from input - {self.final_urn} - {self.einvoice_id}"
         )
         log.info(
-            f"Implemented via the urn dataclass in the urn module. - {self.einvoice_id}"
+            "Implemented via the urn dataclass in the urn module. "
+            "- %s", self.einvoice_id
         )
 
         # Make sure the urn is in all lowercase
         self.final_urn_lower_case = self.final_urn.lower()
         log.info(
-            f"Converted urn to lower case - {self.final_urn_lower_case} - {self.einvoice_id}"
+            "Converted urn to lower case - {self.final_urn_lower_case} "
+            "- %s=", self.einvoice_id
         )
         log.info(
-            f"Implemented using the lower() string method - {self.einvoice_id}"
+            "Implemented using the lower() string method "
+            "- %s", self.einvoice_id
         )
 
         # encode the urn to a byte-like object.
@@ -134,7 +138,8 @@ class Hasher:
             self.final_urn_lower_case + "-" + self.einvoice_id
         )
         log.info(
-            f'Implemented using the .encode("utf-8") string method - {self.einvoice_id}'
+            'Implemented using the .encode("utf-8") string method '
+            '- %s', self.einvoice_id
         )
 
         # Apply the sha256 to the urn.
@@ -144,38 +149,40 @@ class Hasher:
         self.msg = self.msg + " - " + self.einvoice_id
         log.info(self.msg)
         log.info(
-            f"Implemented using hashlib.sha256() - {self.einvoice_id}"
+            "Implemented using hashlib.sha256() - {self.einvoice_id}"
         )
 
         # Obtain the hash digest of the sha256 urn
         self.urn_sha256_digest = self.urn_sha256_hashed.digest()
         log.info(
-            f"Obtain the hex digest of the SHA256 hashed urn {self.urn_sha256_digest} -"
-            "{self.einvoice_id}"
+            f"Digest of the SHA256 hashed urn {self.urn_sha256_digest} - "
+            " %s", self.einvoice_id
         )
         log.info(
-            "Implemented using .digest of the hashlib module. "
-            "Output returned is the digest of the byte string. - " + self.einvoice_id
+            "Implemented using .digest of the hashlib module. " +
+            "Output returned is the digest of the byte string. - " +
+            self.einvoice_id
         )
 
         # Obtain the base32 has of the hex digest of the sha256 encoded urn
         self.urn_b32_hash = base64.b32encode(self.urn_sha256_digest)
         log.info(
-            f"Obtain the base32 hash of the hex digest of the SHA256\
-            encoded urn: {self.urn_b32_hash} - {self.einvoice_id}"
+            "Obtain the base32 hash of the hex digest of the SHA256" +
+            "encoded urn: %s - %s", self.urn_b32_hash, self.einvoice_id
         )
         log.info(
-            f"Implemented using the b32encode method of the base64 package. - {self.einvoice_id}"
+            "Implemented using the b32encode method of the " +
+            "base64 package. - %s", self.einvoice_id
         )
 
         # Strip the output of extraneous equal signs
         self.urn_b32_cleaned = self.urn_b32_hash.rstrip(b"=")
         log.info(
-            f"Strip out the equals sign from the output: \
+            "Strip out the equals sign from the output: \
             {self.urn_b32_cleaned} -  {self.einvoice_id}"
         )
         log.info(
-            f"Implements rstrip() method of String - {self.einvoice_id}"
+            "Implements rstrip() method of String - {self.einvoice_id}"
         )
 
         # Convert the the output to lower case.

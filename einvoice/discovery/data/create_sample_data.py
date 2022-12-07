@@ -27,10 +27,9 @@ import csv
 import random
 from json import dumps
 from faker import Faker
-from einvoice.config import Logger
-
 
 LOGGER = __name__
+
 
 class CreateSampleData:
     """An instance of the CreateSampleData object.
@@ -50,9 +49,6 @@ class CreateSampleData:
 
     def __init__(self):
         """Entry point for the module.  Defines instance variables."""
-        test_logger = Logger()
-        self.log = test_logger.create_logger()
-        self.log.info("Generating E-Invoice Data!")
         self.fake = Faker()
         self.companies = []
         self.org_id = ""
@@ -75,7 +71,7 @@ class CreateSampleData:
         self.line_item_total = 0.0
         self.sample_line_item = ""
 
-    def generate_fake_address(self, count=1):
+    def generate_fake_address(self, log, count=1):
         """Generate as many fake addresses as requested.
 
         Args:
@@ -108,11 +104,11 @@ class CreateSampleData:
 
             self.companies.append(self.company)
 
-            self.log.info("Created a data for company: %s", self.company)
+            log.info("Created data for company: %s", self.company)
 
         return self.companies
 
-    def create_sample_list_items(self, count=1):
+    def create_sample_list_items(self, log, count=1):
         """Generate as many fake line_items as requested.
 
         Args:
@@ -155,18 +151,17 @@ class CreateSampleData:
 
             self.line_items.append(self.sample_line_item)
 
-            self.log.info("Created line item entry: %s",
-                           self.sample_line_item)
+            log.info("Created line item entry: %s", self.sample_line_item)
 
         return self.line_items
 
-    def write_json_to_file(self, json_object):
+    def write_json_to_file(self, json_object, log):
         """Write data to a json file."""
         if len(json_object) < 1:
-            self.log.info("Risk of EOB with no objects to write.")
+            log.info("Risk of EOB with no objects to write.")
             return
 
         for i, obj in enumerate(json_object):
             json_str = dumps(obj.__dict__)
-            self.log.info("List item %s: %s", str(i), json_str)
+            log.info("List item %s: %s", str(i), json_str)
             print(json_str)

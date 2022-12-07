@@ -33,9 +33,6 @@ from dataclasses import dataclass
 import hashlib
 import base64
 from json import dumps
-from einvoice.config import Logger
-
-log = create_logger("handler")
 
 
 @dataclass
@@ -72,26 +69,18 @@ class SmlUrn:
 
     """
 
-    log.debug("Created an instance of SmlUrn")
     party_id_specification: str = "urn:oasis:names:tc:ebcore:partyid-type"
-    log.debug("party_id_specification: %s", party_id_specification)
     party_id_schema_type: str = "iso6523"
-    log.debug("party_id_schema_type: %s", party_id_schema_type)
     party_id: str = "0123456789"
-    log.debug("party_id: %s", party_id)
 
     def party_urn(self) -> str:
         """Construct string for the party's URN."""
         return self.party_id_specification +\
             ":" + self.party_id_schema_type + "::" + self.party_id
 
-    log.debug("party_urn: %s", party_urn)
-
     def final_urn(self) -> str:
         """Return the urn as essentially a constant."""
         return str(self.party_urn)
-
-    log.debug("final_urn: %s", final_urn)
 
     urn_shaw256_hash: str = ""
     urn_base32_hash: str = ""
@@ -107,28 +96,20 @@ def create_sml_lookup(_urn="", _schema="", _id=""):
     if _id != "":
         lookup_str.party_id = _id
     lookup_str.final_urn = lookup_str.party_urn()
-    log_msg = ("Constructed urn from dataclass definition %s",
-               lookup_str.final_urn)
-    log.debug(log_msg)
     return lookup_str
 
 
 def apply_shaw256_hash(_smlurn_obj):
     """Apply SHA256 hash to the lookup."""
-    log.debug("Applying shaw256 hash.")
     _data = _smlurn_obj.final_urn
     encoded_data = _data.encode()
     hash256 = hashlib.sha256(encoded_data)
     _smlurn_obj.urn_shaw256_hash = hash256.hexdigest()
-    log_msg = ("Hex version of shaw256 hash  is  %s",
-               _smlurn_obj.urn_shaw256_hash)
-    log.debug(log_msg)
     return _smlurn_obj
 
 
 def apply_base32_hash(_smlurn_obj):
     """Apply Base32 encoding per the spec."""
-    log.debug("Applying Base32 to shaw256 hash.")
     _string = _smlurn_obj.urn_shaw256_hash
     # first convert to a byte-like object
     b_string = _string.encode("utf-8")
@@ -142,7 +123,6 @@ def apply_base32_hash(_smlurn_obj):
 
 def write_urn_to_json(_smlurn, _filename):
     """Write the urn values to a file."""
-    log.debug("Writing the SMLURN object to file.")
     json_str = dumps(_smlurn.__dict__)
     with open(_filename, "w", encoding=str) as my_file:
         my_file.write(json_str)
