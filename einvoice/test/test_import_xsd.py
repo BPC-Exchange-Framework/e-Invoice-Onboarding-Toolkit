@@ -23,7 +23,7 @@ log = test_logger.create_logger()
 
 def test_import_xsd_from_file():
     """Test the import_xsd module fetching from file."""
-    filename = "ebms-header-3_0-20220119.xsd"
+    filename = "../delivery/ebms-header-3_0-20220119.xsd"
     log.info(f'Filename to load: {filename}')
     importer = ImportXSD()
     schema = importer.get_xsd_from_file(filename, log)

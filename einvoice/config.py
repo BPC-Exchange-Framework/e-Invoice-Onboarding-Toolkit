@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-#
+# pylint: disable=R0903,
 # File: config.py
-# About: Project level configuration file per
-# 'https://docs.python.org/3/faq/programming.html
-# #how-do-i-share-global-variables-across-modules'
+# About: Project level configuration file
 # Development: Kelly Kinney
 # Date: 2022-12-03 (December 3rd, 2022)
 #

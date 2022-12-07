@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# pylint: disable=R0902
+# pylint: disable=R0902, R0914
 # Too many instance attributes
 # File: accessor.py
 # About: SML and SMP discovery

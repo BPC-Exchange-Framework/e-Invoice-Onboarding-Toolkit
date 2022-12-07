@@ -1,16 +1,12 @@
 # pylint
 echo "Begin all checks..."
 echo "Begin pylint check..."
-pylint ../discovery/conf/*.py
-pylint ../discovery/data/*.py
 pylint ./*.py
 pylint ../discovery/*.py
 pylint ../delivery/*.py
 echo "End pylint check..."
 echo "Begin flake8 check..."
 # flake8
-flake8 ../discovery/conf/*.py
-flake8 ../discovery/data/*.py
 flake8 ./*.py
 flake8 ../*.py
 flake8 ../discovery/*.py
