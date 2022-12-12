@@ -2508,7 +2508,230 @@ except Exception as err:
     <X509Data>
         <X509Certificate>
             and specific <X509Certificate> nodes</p></section><section class="print-page" id="as4"><h1 id="as4-as4-header-validation">AS4 Header Validation</h1>
-<p>The AS4 SOAP header of the email wrapper or "envelope for the e-invoice must be conformant to ebXML messaging standards.</p></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
+<p>The OST Delivery component is concerned with validating the SOAP message header of the email used to exchange the invoice payload. The AS4 SOAP header of the email wrapper or "envelope" for the e-invoice must be conformant to ebXML messaging standards.  The initial implementation specification can be found at: <a href="#as4-docs.oasis-open.org-ebxml-msg-ebms-v3.0-core-os-ebms_core-3.0-spec-os">XML Namespace for AS4 Profile of ebMS 3.0 Version 1.0</a>.</p>
+<p>In November, 2021 the EBXML workgroup promulgated a conformance profile to supplement the original ebms specification with additional P-mode parameters not originally included in the specification.  The new profile did not provide a namespace nor specific technical specification in the form of an .XSD file or examples to validate the additional parameters.  </p>
+<p>Absent such a reference, review of additional resources identified a <a href="https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/browse/output/doc/schemas/send-pmode-schema.xsd">sample XSD hosted by ec.europa.eu</a> (The European Commission).  This example XSD seems to meet many of the requirements as specified by the EBXML workgroup, and is thus consistent with the newly formulated rules and yet provides concrete guidance as a specification implemented by PEPPOL.<br />
+</br></p>
+<details class="warn" open="open">
+<summary>Use of EU Schema for Validation</summary>
+<p>The EU schema used as an exmaple should be considered non-normative for the new EBXML workgroup specification, and further, <strong>non-conformant</strong> as some of the specified P-modes are not directly addressed by the EU schema definition.</p>
+</details>
+<p>Where there is variance between EU standards and those of the EBXML workgroup, the methods provided to validate an XML header is valid when used against and well formed XSD.</p>
+<h2 id="as4-the-pmode-specifications">The PMode specifications.</h2>
+<p>The approved November, 2021 ebXML workgroup conformance profile provided for the following PMode configurations.
+<strong>NOTE:</strong> All sample xml is from the EU send-pmode-schema.xsd.</p>
+<p></br>
+</br></p>
+<p><strong>PMode.Agreement</strong><br />
+<em>Allowed Value: http://bpcpilot.change.me/tempagreement.html.</em>  </p>
+<pre><code>&lt;xs:complexType name="AgreementReference"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" name="Value" type="xs:string" /&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" name="Type" type="xs:string" /&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" name="PModeId" type="xs:string" /&gt;
+    &lt;/xs:sequence&gt;
+</code></pre>
+<p></br>
+</br></p>
+<p>These P-Modes were already included as part of the previous ebms/AS4 spec:  </p>
+<p></br>
+</br></p>
+<p><strong>PMode[1].ReceptionAwareness.Retry</strong>  <br />
+<em>Allowed Value: True</em>  </p>
+<pre><code> &lt;xs:complexType name="ReceptionAwareness"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element minOccurs="1" maxOccurs="1" name="IsEnabled" type="xs:boolean" /&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" default="5" name="RetryCount" type="xs:int" /&gt;  
+        &lt;xs:element minOccurs="0" maxOccurs="1" default="00:01:00" name="RetryInterval" type="xs:string"/&gt;
+    &lt;/xs:sequence&gt;|
+</code></pre>
+<p></br>
+</br></p>
+<p><strong>PMode[1].Security.X509.Encryption.Encryp</strong><br />
+<em>Allowed Value: True</em>  </p>
+<pre><code>&lt;xs:complexType name="Security"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" name="Signing" type="tns:Signing" /&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" name="Encryption" type="tns:Encryption" /&gt;
+    &lt;/xs:sequence&gt;
+</code></pre>
+<p></br>
+</br></p>
+<p><strong>PMode[1].Security.X509.Encryption.Algorithm</strong><br />
+<em>Allowed value: <em>http://www.w3.org/2009/xmlenc11#aes256-gcm</em></em>  </p>
+<pre><code>&lt;xs:complexType name="Signing"&gt;&lt;xs:sequence&gt;
+&lt;xs:element minOccurs="1" maxOccurs="1" name="IsEnabled" type="xs:boolean" /&gt;
+    &lt;xs:choice minOccurs="1" maxOccurs="1"&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" name="CertificateFindCriteria" type="tns:CertificateFindCriteria" /&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" name="PrivateKeyCertificate" type="tns:PrivateKeyCertificate" /&gt;
+    &lt;/xs:choice&gt; 
+    &lt;xs:element minOccurs="0" maxOccurs="1" default="BSTReference" name="KeyReferenceMethod" type="tns:X509ReferenceType" /&gt;\
+    &lt;xs:element minOccurs="0" maxOccurs="1" default="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" name="Algorithm" type="xs:string" /&gt;
+    &lt;xs:element minOccurs="0" maxOccurs="1" default="http://www.w3.org/2001/04/xmlenc#sha256" name="HashFunction" type="xs:string" /&gt;
+&lt;/xs:sequence&gt;
+</code></pre>
+<p></br>
+</br></p>
+<p>These P-Mode values are "net new" as of the November, 2021 ebXML workgroup specification change. </p>
+<p></br>
+</br></p>
+<p><strong>PMode[1].ReceptionAwareness.Retry.Parameters</strong><br />
+<em>Allowed Value: Unknown.  The text of the specification reads: "Access points must retry at least five times over six hours with no fewer than 15 seconds between attempts, and shall not continue retrying for longer than twelve hours, at which point they should throw a missing receipt error as specified in the AS4 Profile of ebMS 3.0 Version 1.0 specification."  The data type specified in the requirement is "Constant."</em>  </p>
+<pre><code>&lt;xs:complexType name="ReceptionAwareness"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element minOccurs="1" maxOccurs="1" name="IsEnabled" type="xs:boolean" /&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" default="5" name="RetryCount" type="xs:int" /&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" default="00:01:00" name="RetryInterval" type="xs:string" /&gt;
+    &lt;/xs:sequence&gt;|
+</code></pre>
+<p></br>
+</br></p>
+<p><strong>PMode[1].ReceptionAwareness.DetectDuplicates.Parameters</strong><br />
+<em>Allowed Value: Unknown.   The text of the spec reads: "A receiving Access Point MUST detect if a received message is a duplicate of a message already received within 30 days."    The data type specified in the requirement is "Constant."</em>  </p>
+<pre><code>NA
+</code></pre>
+<p></br>
+</br></p>
+<p><strong>PMode[1].ErrorHandling.Report.MissingReceiptNotifyProducer</strong>
+<em>Allowed Value: True</em></p>
+<pre><code>&lt;xs:complexType name="SendHandling"&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element minOccurs="1" maxOccurs="1" name="NotifyMessageProducer" type="xs:boolean" /&gt;
+        &lt;xs:element minOccurs="0" maxOccurs="1" name="NotifyMethod" type="tns:Method" /&gt;
+    &lt;/xs:sequence&gt;|
+</code></pre>
+<p></br>
+</br></p>
+<p>A "reference implementation" is provided which demonstrates how to implemente code which inspects/interogates an XML Schema Definition (.xsd) and validates an xml file against it.  This is valuable to compare an AS4 message header in XML format against any defined standard.  </p>
+<h2 id="as4-the-xsd-files">The XSD files.</h2>
+<p>As examples for a reference implementation, two XML Schema Defiintion files will are publicly available for review and testing purposes. </p>
+<p>The first is the <a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd">ebMS-3 XML Infoset</a>.  This is a conformance profile dated April of 2007.  </p>
+<p>The second is the previously referenced ec.europa.eu <a href="https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/browse/output/doc/schemas/send-pmode-schema.xsd">send-pmode-schema.xsd</a></p>
+<p>Both files can be accessed from a local download, or via the Internet directly.  </p>
+<h2 id="as4-obtain-the-schema-using-xmlschema">Obtain the schema using xmlschema</h2>
+<p>The Python package used is the <a href="https://github.com/sissaschool/xmlschema">xmlschema</a>. Documentation is available at <a href="https://xmlschema.readthedocs.io/en/latest/">xmlschema.readthedocs.io</a>.  Install using <strong>pip</strong>.</p>
+<h3 id="as4-example-1-query-the-xsd">Example #1 Query the XSD</h3>
+<pre><code>import xmlschema
+
+ebMS3_xsd = xmlschema.XMLSchema('https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd')
+print (ebMS3_xsd)
+
+ec_xsd = xmlschema.XMLSchema('https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/raw/output/doc/schemas/send-pmode-schema.xsd?at=refs%2Fheads%2FRelease%2Fv4.0.1')
+print (ec_xsd)
+</code></pre>
+<h3 id="as4-output-1">Output #1</h3>
+<pre><code>    XMLSchema10(name='ebms-header-3_0-200704.xsd', namespace='http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/')
+    XMLSchema10(name='send-pmode-schema.xsd?at=refs%2Fheads%2FRelease%2Fv4.0.1', namespace='eu:edelivery:as4:pmode')
+</code></pre>
+<h3 id="as4-example-2-output-the-xml-elements">Example #2 Output the XML Elements</h3>
+<pre><code>import xmlschema
+
+ebMS3_xsd = xmlschema.XMLSchema('https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd')
+for element in ebMS3_xsd.iter_components():
+    print('Element: ', element)
+
+
+ec_xsd = xmlschema.XMLSchema('https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/raw/output/doc/schemas/send-pmode-schema.xsd?at=refs%2Fheads%2FRelease%2Fv4.0.1')
+for element in ec_xsd.iter_components():
+    print('Element: ', element)
+</code></pre>
+<h3 id="as4-output-2">Output #2</h3>
+<pre><code>Element:  XMLSchema10(name='ebms-header-3_0-200704.xsd', namespace='http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/')
+Element:  XsdAtomicRestriction(name='tns:non-empty-string')
+Element:  XsdMinLengthFacet(value=1, fixed=False)
+Element:  XsdComplexType(name='tns:Messaging')
+Element:  XsdAttributeGroup(['id', '{http://schemas.xmlsoap.org/soap/envelope/}mustUnderstand', '{http://www.w3.org/2003/05/soap-envelope}mustUnderstand', XsdAnyAttribute(namespace=['##other'], process_contents='lax')])
+Element:  XsdAttribute(name='id')
+[...]
+
+
+Element:  XMLSchema10(name='send-pmode-schema.xsd?at=refs%2Fheads%2FRelease%2Fv4.0.1', namespace='eu:edelivery:as4:pmode')
+Element:  XsdAtomicRestriction(name='tns:MessageExchangePattern')
+Element:  XsdEnumerationFacets(['OneWay', 'TwoWay'])
+Element:  XsdAtomicRestriction(name='tns:MessageExchangePatternBinding')
+Element:  XsdEnumerationFacets(['Push', 'Pull'])
+Element:  XsdAtomicRestriction(name='tns:TlsVersion')
+[...]
+</code></pre>
+<h3 id="as4-example-3-load-and-validate-xml-against-the-xsd">Example #3 Load and validate XML against the XSD</h3>
+<p>xmlschema has two methods to validate a xml message against and xsd.<br />
+The first method uses <code>xsd.is_valid(xml)</code>
+The second method uses <code>xsd.valdate(xml)</code></p>
+<p>The first method is more verbose than then second, which is nearly silent and raises an exception of type  xmlschema.exceptions.XMLSchemaValidationError.</p>
+<p>``</p>
+<pre><code>ebMS3_xsd = xmlschema.XMLSchema('https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd')
+
+
+ec_xsd = xmlschema.XMLSchema('https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/raw/output/doc/schemas/send-pmode-schema.xsd?at=refs%2Fheads%2FRelease%2Fv4.0.1')
+
+xml_msg = "./sample_msg.xml"
+print(xml_msg)
+
+msg_is_valid = ebMS3_xsd.is_valid(xml_msg)
+print("\n\nxml message is valid: ", msg_is_valid)
+msg_is_valid = ebMS3_xsd.validate(xml_msg)
+print("\n\nxml message is valid: ", msg_is_valid)
+
+msg_is_valid = ec_xsd.is_valid(xml_msg)
+print("\n\nxml message is valid: ", msg_is_valid)
+msg_is_valid = ec_xsd.validate(xml_msg)
+print("\n\nxml message is valid: ", msg_is_valid)
+</code></pre>
+<h3 id="as4-output-3">Output #3</h3>
+<pre><code>./sample_msg.xml
+
+
+xml message is valid:  True
+
+
+xml message is valid:  None
+
+
+xml message is valid:  False
+
+
+1678 """
+   1679 Validates an XML data against the XSD schema/component instance.
+   1680 
+   (...)
+   1700 :raises: :exc:`XMLSchemaValidationError` if the XML data instance is invalid.
+   1701 """
+   1702 for error in self.iter_errors(source, path, schema_path, use_defaults, namespaces,
+   1703                               max_depth, extra_validator, allow_empty):
+-&gt; 1704     raise error
+
+XMLSchemaValidationError: failed validating &lt;Element '{http://www.w3.org/2003/05/soap-envelope}Envelope' at 0x111a08a40&gt; with XMLSchema10(name='send-pmode-schema.xsd?at=refs%2Fheads%2FRelease%2Fv4.0.1', namespace='eu:edelivery:as4:pmode'):
+
+Reason: &lt;Element '{http://www.w3.org/2003/05/soap-envelope}Envelope' at 0x111a08a40&gt; is not an element of the schema
+
+Instance:
+
+  &lt;S12:Envelope xmlns="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:2" xmlns:S12="http://www.w3.org/2003/05/soap-envelope" xmlns:eb="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"&gt;
+      &lt;S12:Header&gt;
+          &lt;eb:Messaging S12:mustUnderstand="true" id="_9ecb9d3c-cef8-4006-ac18-f425c5c7ae3d"&gt;
+              &lt;eb:UserMessage&gt;
+                  &lt;eb:MessageInfo&gt;
+                      &lt;eb:Timestamp&gt;2011-04-03T14:49:28.886Z&lt;/eb:Timestamp&gt;
+                      &lt;eb:MessageId&gt;2011-921@5209999001264.example.com&lt;/eb:MessageId&gt;
+                  &lt;/eb:MessageInfo&gt;
+                  &lt;eb:PartyInfo&gt;
+                      &lt;eb:From&gt;
+                          &lt;eb:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088"&gt;5209999001264&lt;/eb:PartyId&gt;
+                          &lt;eb:Role&gt;Seller&lt;/eb:Role&gt;
+                      &lt;/eb:From&gt;
+                      &lt;eb:To&gt;
+                          &lt;eb:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088"&gt;5209999001295&lt;/eb:PartyId&gt;
+                          &lt;eb:Role&gt;Buyer&lt;/eb:Role&gt;
+                      &lt;/eb:To&gt;
+                  &lt;/eb:PartyInfo&gt;
+                  &lt;eb:CollaborationInfo&gt;
+                      &lt;eb:Service&gt;http://docs.oasis-open.org/ebxml-msg/as4/200902/service&lt;/eb:Service&gt;
+      ...
+      ...
+  &lt;/S12:Envelope&gt;
+
+Path: /S12:Envelope
+</code></pre></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
 <h2 id="test_cases-working-with-the-code">Working with the code</h2>
 <h3 id="test_cases-test-cases">Test Cases</h3>
 <h4 id="test_cases-using-an-env-file">Using an .env file</h4>
@@ -2980,6 +3203,10 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 </tr>
 <tr>
 <td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/part2/201004/rddl-ebms3-part2.html">ebXML Messaging Services Version 3.0: Part 2, Advanced Features</a></td>
+<td><strong>ebXML</strong></td>
+</tr>
+<tr>
+<td><a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/200707/ebms3-confprofiles.html">OASIS ebXML Messaging Services 3.0 Conformance Profiles  Committee Specification 1.0 dated 24 April 2010</a></td>
 <td><strong>ebXML</strong></td>
 </tr>
 <tr>
