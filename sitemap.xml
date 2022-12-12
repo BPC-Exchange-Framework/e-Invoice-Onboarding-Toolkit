@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/BPC-Exchange-Framework/E-Invoice-Onboarding-Toolkit/as4/</loc>
+         <lastmod>2022-12-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/BPC-Exchange-Framework/E-Invoice-Onboarding-Toolkit/assumptions/</loc>
          <lastmod>2022-12-12</lastmod>
          <changefreq>daily</changefreq>
