@@ -689,21 +689,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../project_roadmap/" class="md-nav__link">
-        Project Roadmap
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../artifacts/" class="md-nav__link">
         Project Artifacts
       </a>
@@ -922,33 +907,43 @@
 
 
 <h1 id="dns-query-functionality">DNS Query Functionality</h1>
-<p>The code below provides an example of how to query a DNS record, specifically using the NAPTR <strong>regexp</strong> field specified in the NAPTR protocol.   NAPTR fields are treated as a <strong>set</strong> , using Python to iterate it, and using the regexp field to directly access the data.</p>
+<p>The code below provides an example of how to query a DNS record, specifically using the NAPTR <strong>regexp</strong> field specified in the NAPTR protocol.   NAPTR fields are treated as a <strong>set</strong> , using Python to iterate it, and using the regexp field to directly access the data.
+<br/>
+<br/></p>
 <div class="admonition important">
 <p class="admonition-title">The BPC SML Domain</p>
 <p>The BPC SML Domain is:
 <strong>bpcb2b.net</strong></p>
 </div>
+<p><br/>
+<br/></p>
 <h2 id="example-querying-a-dns-naptr-record">Example - Querying a DNS NAPTR Record</h2>
 <h3 id="1-import-the-necessary-module">1.  Import the necessary module</h3>
 <p>The example implements the <code>dns.resolver</code> Python module.   </p>
 <pre><code>import dns.resolver
 </code></pre>
+<p><br/>
+<br/></p>
 <h3 id="2-provide-the-hashed-urn-for-look-up">2. Provide the hashed URN for look-up</h3>
 <p>For the example, the URN is already created, hashed, and the domain of "sc-b2b.us" is appended.  (This was functional at the time of initial development.)   </p>
 <pre><code>hashed_value = "6c24uvqpxrfyweqimfxmsuym3bbjvoikuwmmidquz2a2zzyikdya.sc-b2b.us"
 </code></pre>
+<p><br/>
+<br/></p>
 <h3 id="3-do-the-dns-look-up">3. Do the DNS look-up</h3>
 <p>The look-up is returned from the <code>resolve()</code> method of    <code>dns.resolver.</code>  In this implementation, the method takes two parameters, the query string, and the look-up type.  See <a href="https://dnspython.readthedocs.io/en/latest/resolver-functions.html">Resolver Functions and the Default Resolver</a> for the complete method signature.<br />
 <br/></p>
 <div class="admonition note">
 <p class="admonition-title">dns.resolver.resolve() return type is dns.resolver.Answer</p>
-<p>The dns.resolver.resolve() method return type is <strong>dns.resolver.Answer</strong>.  See <a href="https://dnspython.readthedocs.io/en/latest/resolver-class.html">The dns.resolver.Resolver and dns.resolver.Answer Classes</a> for details on the Answer response class. 
-<br/></p>
+<p>The dns.resolver.resolve() method return type is <strong>dns.resolver.Answer</strong>.  See <a href="https://dnspython.readthedocs.io/en/latest/resolver-class.html">The dns.resolver.Resolver and dns.resolver.Answer Classes</a> for details on the Answer response class. </p>
 </div>
+<p><br/>
+<br/></p>
 <h3 id="4-the-naptr-dns-query-response">4. The NAPTR DNS query response</h3>
 <p><br/></p>
 <h4 id="4a-the-response-as-rdata">4a.  The response as Rdata</h4>
 <p>Rdata is typed data in one of the known DNS data types, i.e., an IPv4 address for a host, MX record, or NAPTR record.  RRset is an Rdata object which supports the Python <strong>set</strong> API.  For details on RRset see <a href="https://dnspython.readthedocs.io/en/latest/rdata-set-classes.html">Rdataset, RRset, and Node Classes</a>.<br />
+<br/>W222
 <br/></p>
 <h4 id="4b-the-fields-in-the-naptr-response">4b. The fields in the NAPTR response</h4>
 <p>The returned Rdata data set is in the format as <a href="https://www.ietf.org/rfc/rfc2915.txt">specified by the NATPR protocol</a> and contains the following fields which may be iterated as a set: </p>
@@ -957,19 +952,22 @@
 <p>The set values are iterated using:  </p>
 <pre><code>for a in lookup.rrset:
 </code></pre>
-<p><br/></p>
+<p><br/>
+<br/></p>
 <h4 id="4c-the-regexp-field-of-the-natpr-response">4c. The "regexp" field of the NATPR response</h4>
 <p>The value of the "regexp" field contains the terminal address of the SMP in the format of a regular expression, which is how it would otherwise be used if doing a Session Initiation Protocol (SIP) lookup. <br />
 The value is directly accessed using:   </p>
 <pre><code> for a in lookup.rrset:
     smp_uri = a.regexp
 </code></pre>
-<p><br/></p>
+<p><br/>
+<br/></p>
 <h4 id="4d-the-response-as-a-string">4d. The response as a string</h4>
 <p>Use the String decode() method to change the returned response from Binary to String format.    </p>
 <pre><code>smp_uri = smp_uri.decode()
 </code></pre>
 <p>The final response is the terminal SMP URL in the NAPTR regular expression substitution format.<br />
+<br/>
 <br/></p>
 <h2 id="code">Code</h2>
 <pre><code>import dns.resolver
@@ -982,10 +980,14 @@ for a in lookup.rrset:
 smp_uri = smp_uri.decode()
 print(smp_uri)
 </code></pre>
+<p><br/>
+<br/></p>
 <h2 id="output">Output</h2>
 <pre><code>&lt;class 'dns.resolver.Answer'&gt;
 !^.*$!https://my-smp-url.com/0123456789!
 </code></pre>
+<p><br/>
+<br/></p>
 
 
 

@@ -669,21 +669,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../project_roadmap/" class="md-nav__link">
-        Project Roadmap
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../artifacts/" class="md-nav__link">
         Project Artifacts
       </a>
@@ -884,18 +869,17 @@
 <h1 id="as4-header-validation">AS4 Header Validation</h1>
 <p>The OST Delivery component is concerned with validating the SOAP message header of the email used to exchange the invoice payload. The AS4 SOAP header of the email wrapper or "envelope" for the e-invoice must be conformant to ebXML messaging standards.  The initial implementation specification can be found at: <a href="docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html">XML Namespace for AS4 Profile of ebMS 3.0 Version 1.0</a>.</p>
 <p>In November, 2021 the EBXML workgroup promulgated a conformance profile to supplement the original ebms specification with additional P-mode parameters not originally included in the specification.  The new profile did not provide a namespace nor specific technical specification in the form of an .XSD file or examples to validate the additional parameters.  </p>
-<p>Absent such a reference, review of additional resources identified a <a href="https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/browse/output/doc/schemas/send-pmode-schema.xsd">sample XSD hosted by ec.europa.eu</a> (The European Commission).  This example XSD seems to meet many of the requirements as specified by the EBXML workgroup, and is thus consistent with the newly formulated rules and yet provides concrete guidance as a specification implemented by PEPPOL.<br />
+<p>Absent such a reference, review of additional resources identified a <a href="https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/browse/output/doc/schemas/send-pmode-schema.xsd">sample XSD hosted by ec.europa.eu</a> (The European Commission).  This XSD meets many of the requirements as specified by the ebXML workgroup and is consistent with the newly formulated rules and yet provides concrete guidance as a specification implemented by PEPPOL.<br />
 </br></p>
 <details class="warn" open="open">
 <summary>Use of EU Schema for Validation</summary>
-<p>The EU schema used as an exmaple should be considered non-normative for the new EBXML workgroup specification, and further, <strong>non-conformant</strong> as some of the specified P-modes are not directly addressed by the EU schema definition.</p>
+<p>The EU schema used as an exmaple should be considered non-normative for the new EBXML workgroup specification, and further, <strong>non-conformant</strong> as some of the specified P-modes are not directly addressed by the EU schema definition.   </p>
+<p>Where there is variance between EU standards and those of the ebXML workgroup, the methods provided to validate an XML header is valid when used against and well formed XSD.</p>
 </details>
-<p>Where there is variance between EU standards and those of the EBXML workgroup, the methods provided to validate an XML header is valid when used against and well formed XSD.</p>
 <h2 id="the-pmode-specifications">The PMode specifications.</h2>
-<p>The approved November, 2021 ebXML workgroup conformance profile provided for the following PMode configurations.
-<strong>NOTE:</strong> All sample xml is from the EU send-pmode-schema.xsd.</p>
-<p></br>
-</br></p>
+<p>The approved November, 2021 ebXML workgroup conformance profile provided for the following PMode configurations.  </p>
+<p><strong>NOTE:</strong> All sample xml is from the EU send-pmode-schema.xsd.</p>
+<p></br></p>
 <p><strong>PMode.Agreement</strong><br />
 <em>Allowed Value: http://bpcpilot.change.me/tempagreement.html.</em>  </p>
 <pre><code>&lt;xs:complexType name="AgreementReference"&gt;
@@ -907,9 +891,8 @@
 </code></pre>
 <p></br>
 </br></p>
-<p>These P-Modes were already included as part of the previous ebms/AS4 spec:  </p>
-<p></br>
-</br></p>
+<p>These P-Modes were already included as part of the previous ebms/AS4 spec:<br />
+ <br/></p>
 <p><strong>PMode[1].ReceptionAwareness.Retry</strong>  <br />
 <em>Allowed Value: True</em>  </p>
 <pre><code> &lt;xs:complexType name="ReceptionAwareness"&gt;
@@ -976,14 +959,19 @@
 </code></pre>
 <p></br>
 </br></p>
+<details class="info" open="open">
+<summary>Reference Implementation</summary>
 <p>A "reference implementation" is provided which demonstrates how to implemente code which inspects/interogates an XML Schema Definition (.xsd) and validates an xml file against it.  This is valuable to compare an AS4 message header in XML format against any defined standard.  </p>
+</details>
 <h2 id="the-xsd-files">The XSD files.</h2>
-<p>As examples for a reference implementation, two XML Schema Defiintion files will are publicly available for review and testing purposes. </p>
-<p>The first is the <a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd">ebMS-3 XML Infoset</a>.  This is a conformance profile dated April of 2007.  </p>
-<p>The second is the previously referenced ec.europa.eu <a href="https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/browse/output/doc/schemas/send-pmode-schema.xsd">send-pmode-schema.xsd</a></p>
+<p>As examples for a reference implementation, two XML Schema Defiintion files will be used which are publicly available for review and testing purposes. </p>
+<p>The first XSD is the <a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd">ebMS-3 XML Infoset</a>.  This is a conformance profile dated April of 2007.  </p>
+<p>The second XSD is the previously referenced ec.europa.eu <a href="https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/browse/output/doc/schemas/send-pmode-schema.xsd">send-pmode-schema.xsd</a></p>
 <p>Both files can be accessed from a local download, or via the Internet directly.  </p>
 <h2 id="obtain-the-schema-using-xmlschema">Obtain the schema using xmlschema</h2>
-<p>The Python package used is the <a href="https://github.com/sissaschool/xmlschema">xmlschema</a>. Documentation is available at <a href="https://xmlschema.readthedocs.io/en/latest/">xmlschema.readthedocs.io</a>.  Install using <strong>pip</strong>.</p>
+<p>The Python package used is the <a href="https://github.com/sissaschool/xmlschema">xmlschema</a>. Documentation is available at <a href="https://xmlschema.readthedocs.io/en/latest/">xmlschema.readthedocs.io</a>.  Install using <strong>pip</strong>.
+<br/>
+<br/></p>
 <h3 id="example-1-query-the-xsd">Example #1 Query the XSD</h3>
 <pre><code>import xmlschema
 
@@ -997,6 +985,8 @@ print (ec_xsd)
 <pre><code>    XMLSchema10(name='ebms-header-3_0-200704.xsd', namespace='http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/')
     XMLSchema10(name='send-pmode-schema.xsd?at=refs%2Fheads%2FRelease%2Fv4.0.1', namespace='eu:edelivery:as4:pmode')
 </code></pre>
+<p><br/>
+<br/></p>
 <h3 id="example-2-output-the-xml-elements">Example #2 Output the XML Elements</h3>
 <pre><code>import xmlschema
 
@@ -1027,6 +1017,8 @@ Element:  XsdEnumerationFacets(['Push', 'Pull'])
 Element:  XsdAtomicRestriction(name='tns:TlsVersion')
 [...]
 </code></pre>
+<p><br/>
+<br/></p>
 <h3 id="example-3-load-and-validate-xml-against-the-xsd">Example #3 Load and validate XML against the XSD</h3>
 <p>xmlschema has two methods to validate a xml message against and xsd.<br />
 The first method uses <code>xsd.is_valid(xml)</code>
@@ -1106,6 +1098,8 @@ Instance:
 
 Path: /S12:Envelope
 </code></pre>
+<p><br/>
+<br/></p>
 
 
 

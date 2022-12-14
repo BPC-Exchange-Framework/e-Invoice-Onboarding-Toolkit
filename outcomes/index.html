@@ -321,27 +321,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#to-do" class="md-nav__link">
-    To do
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -626,21 +605,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../project_roadmap/" class="md-nav__link">
-        Project Roadmap
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../artifacts/" class="md-nav__link">
         Project Artifacts
       </a>
@@ -756,27 +720,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#to-do" class="md-nav__link">
-    To do
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -810,113 +753,6 @@
   a.  Validate an e-invoice ebXML message header for compliance with an AS4 conformance profile.<br />
 <br/></li>
 </ol>
-<hr style="height: 2px;border:none;color:#333;background-color:#333;">
-
-<h2 id="implementation">Implementation</h2>
-<ol>
-<li>
-<p>Functional  Python code:</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Construct the URN from the specification, schema ID, and party ID,<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> urn_hasher.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Hash the URN per the requirements to create a NAPTR record for a DNS look-up to obtain SMP service URI.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> urn_hasher.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Execute DNS look-up to obtain the SMP service URI.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> dns_query.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Query the SMP URI using the ebXML specifcation.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> smp_query.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Dataclass object comprised of specification, schema ID, party ID, and a sample JSON E-Invoice payload.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> einvoice_message_package.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> line_item_py</li>
-<li class="task-list-item"><input type="checkbox" checked/> party_address.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> semnantic_model.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> URN.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Test cases implemented using Test Driven Development<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> test_accessor.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_app_logging.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_create_sample_data.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_create_tracking_id.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_dns_query.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_import_xsd.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_line_item.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_party_address.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_semantic_model.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_smp_query.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_urn.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_urn_hasher.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Logging implemented through custom logging using standard Python modules.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> app_loggiing.py</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Documentation and code artifacts for Infrastructure components:</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Demonstrating implementation of DNS infrastructure using Amazon Route53 and code to provision, update, and delete NATPR records, acting as the SML.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Demonstrating implementation of SMP infrastructure to reply to the REST API for service functionally and AS4 final endpoint.    </li>
-</ul>
-</li>
-<li>
-<p>Documentation</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Previously created documentation and diagrams which were outcomes of analysis and process review.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> Jupyter Lab Notebooks running on Google Colab for real-time examples of a dev sandbox.  <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Hash URN and SML query Lab Notebook   (Hash URN and SML query are in the same Notebook)</li>
-<li class="task-list-item"><input type="checkbox" checked/> SMP query Lab Notebook</li>
-<li class="task-list-item"><input type="checkbox" checked/> Review of AS4 XSD specification Lab Notebook</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Validation of ebMS sample message header against AS4 XSD Lab Notebook</li>
-<li class="task-list-item"><input type="checkbox" checked/> <s>Implementation Guide </s> Documentation site written to facilitate utilization of the code and work product to be delivered <s>via readthedocs.org site</s> though the GitHub repository.</li>
-<li class="task-list-item"><input type="checkbox" checked/> <s>readthedocs.org site registration/creation</s> Create document set using <strong>mkdocs-material</strong>  hosted on GitHub repository.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Create <s>list of assumptions</s> <strong>FAQ</strong> and <strong>Outcomes</strong> pages for starting point/baseline documentation.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Consolidation of documentation in the GitHub repository.<br />
-<br/></li>
-</ul>
-</li>
-</ol>
-<hr style="height: 2px;border:none;color:#333;background-color:#333;">
-
-<h2 id="to-do">To do</h2>
-<ol>
-<li>
-<p>A deployment package which includes Python code to:</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox"/> (In-progress)_ Creation of "final" Python package which delivers code artifacts as a library.</li>
-</ul>
-</li>
-<li>
-<p>Documentation</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Generated from python docstring using <s>Sphinx</s> <strong>mkdocs-material</strong> framework</li>
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Documentation of supporting infrastructure including DNS and SMP provisioning.<br />
-<br/></li>
-</ul>
-</li>
-</ol>
-<hr style="height: 2px;border:none;color:#333;background-color:#333;">
-<p><br/></p>
-<h2 id="notes">Notes</h2>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Test-driven development methodology is being implemented to include test cases for code as it is being developed and delivered.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> CI/CD process implemented via GitHub workflow has been validated to ensure PEP8 code standards and checks using flake8, pylint, and pytest are valid.  All changes and updates to code must pass CI/CD before it's merged into the repo.   </li>
-</ul>
 <p><br/>
 <br/>
 <br/></p>

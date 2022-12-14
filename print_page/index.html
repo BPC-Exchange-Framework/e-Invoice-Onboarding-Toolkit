@@ -570,21 +570,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../project_roadmap/" class="md-nav__link">
-        Project Roadmap
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../artifacts/" class="md-nav__link">
         Project Artifacts
       </a>
@@ -813,43 +798,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project_roadmap" class="md-nav__link">
-    17. Project Roadmap
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#artifacts" class="md-nav__link">
-    18. Project Artifacts
+    17. Project Artifacts
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#git_workflow" class="md-nav__link">
-    19. Workflow
+    18. Workflow
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#glossary" class="md-nav__link">
-    20. Glossary of Terms
+    19. Glossary of Terms
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#standards" class="md-nav__link">
-    21. Standards
+    20. Standards
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_license" class="md-nav__link">
-    22. License
+    21. License
   </a>
   
 </li>
@@ -1012,43 +990,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project_roadmap" class="md-nav__link">
-    17. Project Roadmap
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#artifacts" class="md-nav__link">
-    18. Project Artifacts
+    17. Project Artifacts
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#git_workflow" class="md-nav__link">
-    19. Workflow
+    18. Workflow
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#glossary" class="md-nav__link">
-    20. Glossary of Terms
+    19. Glossary of Terms
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#standards" class="md-nav__link">
-    21. Standards
+    20. Standards
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_license" class="md-nav__link">
-    22. License
+    21. License
   </a>
   
 </li>
@@ -1217,14 +1188,12 @@
 <li><a href="#google_colab_pages">JupyterLab/Notebooks</a></li>
 </ul>
 </li>
-<li>Package/Library API<ul>
-<li><a href="#accessor">accessor.py</a></li>
 </ul>
-</li>
-</ul>
-<!-- * [Infrastructure Components](infrastructure_components.md) -->
+<!-- * Package/Library API
+    * [accessor.py](./accessor.md)
+<!-- * [Infrastructure Components](infrastructure_components.md) 
+* [Project Roadmap](./project_roadmap.md )-->
 <ul>
-<li><a href="#project_roadmap">Project Roadmap</a></li>
 <li><a href="#artifacts">Project Artifacts</a></li>
 <li><a href="#git_workflow">Workflow</a></li>
 <li><a href="#glossary">Glossary of Terms</a></li>
@@ -1273,7 +1242,7 @@ Specifically it's helpful with:<br />
 </dd>
 <dt><strong>A:</strong></dt>
 <dd>Here are some ways the code can be examined or worked with:<br />
-  1. <a href="#discovery_validation">Discovery Valdiation</a> of the URI discovery process..<br />
+  1. <a href="#discovery_validation">Discovery Validation</a> of the URI discovery process..<br />
   2. <a href="#test_cases">Test Cases</a> which demonstrate functionality of the modules.<br />
  3. Jupyter Notebook sandbox environments at <a href="#google_colab_pages">Google Colab Pages</a> which isolate and demonstrate the code in a sandbox.<br />
   4. Package/Library API see the <a href="#.">Index</a> for links to the code API on the modules themselves.  </dd>
@@ -1296,113 +1265,6 @@ Specifically it's helpful with:<br />
   a.  Validate an e-invoice ebXML message header for compliance with an AS4 conformance profile.<br />
 <br/></li>
 </ol>
-<hr style="height: 2px;border:none;color:#333;background-color:#333;">
-
-<h2 id="outcomes-implementation">Implementation</h2>
-<ol>
-<li>
-<p>Functional  Python code:</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Construct the URN from the specification, schema ID, and party ID,<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> urn_hasher.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Hash the URN per the requirements to create a NAPTR record for a DNS look-up to obtain SMP service URI.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> urn_hasher.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Execute DNS look-up to obtain the SMP service URI.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> dns_query.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Query the SMP URI using the ebXML specifcation.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> accessor.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> smp_query.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Dataclass object comprised of specification, schema ID, party ID, and a sample JSON E-Invoice payload.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> einvoice_message_package.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> line_item_py</li>
-<li class="task-list-item"><input type="checkbox" checked/> party_address.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> semnantic_model.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> URN.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Test cases implemented using Test Driven Development<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> test_accessor.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_app_logging.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_create_sample_data.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_create_tracking_id.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_dns_query.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_import_xsd.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_line_item.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_party_address.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_semantic_model.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_smp_query.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_urn.py</li>
-<li class="task-list-item"><input type="checkbox" checked/> test_urn_hasher.py</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Logging implemented through custom logging using standard Python modules.<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> app_loggiing.py</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Documentation and code artifacts for Infrastructure components:</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Demonstrating implementation of DNS infrastructure using Amazon Route53 and code to provision, update, and delete NATPR records, acting as the SML.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Demonstrating implementation of SMP infrastructure to reply to the REST API for service functionally and AS4 final endpoint.    </li>
-</ul>
-</li>
-<li>
-<p>Documentation</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Previously created documentation and diagrams which were outcomes of analysis and process review.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> Jupyter Lab Notebooks running on Google Colab for real-time examples of a dev sandbox.  <ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Hash URN and SML query Lab Notebook   (Hash URN and SML query are in the same Notebook)</li>
-<li class="task-list-item"><input type="checkbox" checked/> SMP query Lab Notebook</li>
-<li class="task-list-item"><input type="checkbox" checked/> Review of AS4 XSD specification Lab Notebook</li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" checked/> Validation of ebMS sample message header against AS4 XSD Lab Notebook</li>
-<li class="task-list-item"><input type="checkbox" checked/> <s>Implementation Guide </s> Documentation site written to facilitate utilization of the code and work product to be delivered <s>via readthedocs.org site</s> though the GitHub repository.</li>
-<li class="task-list-item"><input type="checkbox" checked/> <s>readthedocs.org site registration/creation</s> Create document set using <strong>mkdocs-material</strong>  hosted on GitHub repository.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Create <s>list of assumptions</s> <strong>FAQ</strong> and <strong>Outcomes</strong> pages for starting point/baseline documentation.</li>
-<li class="task-list-item"><input type="checkbox" checked/> Consolidation of documentation in the GitHub repository.<br />
-<br/></li>
-</ul>
-</li>
-</ol>
-<hr style="height: 2px;border:none;color:#333;background-color:#333;">
-
-<h2 id="outcomes-to-do">To do</h2>
-<ol>
-<li>
-<p>A deployment package which includes Python code to:</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox"/> (In-progress)_ Creation of "final" Python package which delivers code artifacts as a library.</li>
-</ul>
-</li>
-<li>
-<p>Documentation</p>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Generated from python docstring using <s>Sphinx</s> <strong>mkdocs-material</strong> framework</li>
-<li class="task-list-item"><input type="checkbox"/> (In-progress) Documentation of supporting infrastructure including DNS and SMP provisioning.<br />
-<br/></li>
-</ul>
-</li>
-</ol>
-<hr style="height: 2px;border:none;color:#333;background-color:#333;">
-<p><br/></p>
-<h2 id="outcomes-notes">Notes</h2>
-<ul class="task-list">
-<li class="task-list-item"><input type="checkbox" checked/> Test-driven development methodology is being implemented to include test cases for code as it is being developed and delivered.  </li>
-<li class="task-list-item"><input type="checkbox" checked/> CI/CD process implemented via GitHub workflow has been validated to ensure PEP8 code standards and checks using flake8, pylint, and pytest are valid.  All changes and updates to code must pass CI/CD before it's merged into the repo.   </li>
-</ul>
 <p><br/>
 <br/>
 <br/></p></section><section class="print-page" id="assumptions"><h1 id="assumptions-about-the-e-invoice-onboarding-toolkit">About the E-Invoice Onboarding Toolkit</h1>
@@ -1413,17 +1275,13 @@ Specifically it's helpful with:<br />
 <h5 id="assumptions-the-four-corner-model">The Four-Corner Model</h5>
 <p>The software included with the project assumes a baseline understanding of the Four-Corner Model and its constituent components.  </p>
 <figure>
-<p><img alt="The Four Corner Model." src="../4corners.png" />
-  </p>
-<figcaption>Successful completion of all test cases.</figcaption>
+<p><img alt="The Four Corner Model." src="../4corners.png" /></p>
 </figure>
 <h5 id="assumptions-python">Python</h5>
 <p>The primary programming language chosen for the project is Python.  To implement and run the code in <a href="https://github.com/BPC-OpenSourceTools/E-Invoice-Onboarding-Toolkit">this project</a> requires a working knowledge of Python. This wiki and additional documentation are intended to further outline how the software is designed to implement the Four-Corner Model.  </p>
 <p><br/>
 <br/>
 <br/></p></section><section class="print-page" id="tools_and_resources"><h1 id="tools_and_resources-tools-and-resources">Tools and Resources</h1>
-<p><strong>GOAL:</strong> Create, test, deploy, and maintain code to the highest professional standards.</p>
-<p><strong>HOW:</strong> Tools and best practices which facilitate development of high quality code with testable and reproducible outcomes.</p>
 <h3 id="tools_and_resources-quick-guide">Quick Guide</h3>
 <table>
 <thead>
@@ -1487,31 +1345,10 @@ Specifically it's helpful with:<br />
 </tr>
 <tr>
 <td>Raspberry PI</td>
-<td>With native Python support, Linux packages, and cloud options there is no reason dev is not an option.</td>
+<td>ative Python support, Linux packages, and cloud options.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="tools_and_resources-additional-configuration-and-environment-considerations">Additional Configuration and Environment Considerations</h4>
-<p>Future looking consideration for implementation of additional Python enabling technology in support of scalability, portability, and resiliency includes:</p>
-<h5 id="tools_and_resources-frameworks">Frameworks:</h5>
-<ul>
-<li>Django</li>
-<li>Flask</li>
-<li>FastAPI</li>
-<li>OpenAPI  </li>
-</ul>
-<h5 id="tools_and_resources-containerization-and-cloud-services">Containerization and Cloud Services:</h5>
-<ul>
-<li>Docker</li>
-</ul>
-<p>Cloud services such as:</p>
-<ul>
-<li>Amazon Web Services (AWS) including lambdas and Route53 DNS</li>
-<li>Microsoft Azure</li>
-<li>RedHat OpenShift</li>
-</ul>
-<p>Additional infrastructure components may be implemented by the Project for testing or prototyping utilization of cloud services.</p>
-<p>Local testing of Docker containerization may be done on a desktop.  Choice of a cloud infrastructure provider to host and mange Docker containers is at the discretion of the application implementer.</p>
 <h4 id="tools_and_resources-python-programming-methodologies-standards-and-tools">Python Programming Methodologies, Standards, and Tools:</h4>
 <p>Python Coding Standards:</p>
 <ul>
@@ -1544,9 +1381,12 @@ Specifically it's helpful with:<br />
 <li>Test Driven Development.  See the list of books below for original source material by Harry J.W. Percival. </li>
 <li>Agile principles applied appropriate to the the size and state of the project.</li>
 </ul>
-<h4 id="tools_and_resources-books">Books</h4>
+<p><br/></p>
+<hr>
+<p><br/></p>
+<details class="info">
+<summary>Helpful Python resources</summary>
 <p>There are many great reference materials in print and on the Internet about Python development.</p>
-<p>Below are references that may be helpful. </p>
 <ul>
 <li><ins>The Hitchhiker's Guide to Python</ins> by Kenneth Reitz and Tanya Schlusser.  Online for free at <a href="https://docs.python-guide.org/">docs.python-guide.org</a>.  </li>
 <li><ins>Serious Python</ins> by Julien Danjou</li>
@@ -1556,6 +1396,7 @@ Specifically it's helpful with:<br />
 <li><ins>Architecture Patterns with Python</ins> by Harry J.W. Percival and Bob Gregory</li>
 <li><ins>Pro Git</ins> by Scott Chacon and Ben Straub. <a href="https://git-scm.com/book/en/v2">Available as a free download</a> under an open source license.</li>
 </ul>
+</details>
 <p><br/>
 <br/>
 <br/></p></section><section class="print-page" id="python_dev_env"><h1 id="python_dev_env-configure-a-python-dev-environment">Configure a Python Dev Environment</h1>
@@ -2250,33 +2091,43 @@ The URN with any padding removed b'YN5TJ7BTELN4C5O4MTUL7YVNQ3PWU6DPMIPCOF4PWCBSD
 The final result: yn5tj7bteln4c5o4mtul7yvnq3pwu6dpmipcof4pwcbsd3avvn7a
 </code></pre>
 <p><br/><br/></p></section><section class="print-page" id="dns_query_sml"><h1 id="dns_query_sml-dns-query-functionality">DNS Query Functionality</h1>
-<p>The code below provides an example of how to query a DNS record, specifically using the NAPTR <strong>regexp</strong> field specified in the NAPTR protocol.   NAPTR fields are treated as a <strong>set</strong> , using Python to iterate it, and using the regexp field to directly access the data.</p>
+<p>The code below provides an example of how to query a DNS record, specifically using the NAPTR <strong>regexp</strong> field specified in the NAPTR protocol.   NAPTR fields are treated as a <strong>set</strong> , using Python to iterate it, and using the regexp field to directly access the data.
+<br/>
+<br/></p>
 <div class="admonition important">
 <p class="admonition-title">The BPC SML Domain</p>
 <p>The BPC SML Domain is:
 <strong>bpcb2b.net</strong></p>
 </div>
+<p><br/>
+<br/></p>
 <h2 id="dns_query_sml-example-querying-a-dns-naptr-record">Example - Querying a DNS NAPTR Record</h2>
 <h3 id="dns_query_sml-1-import-the-necessary-module">1.  Import the necessary module</h3>
 <p>The example implements the <code>dns.resolver</code> Python module.   </p>
 <pre><code>import dns.resolver
 </code></pre>
+<p><br/>
+<br/></p>
 <h3 id="dns_query_sml-2-provide-the-hashed-urn-for-look-up">2. Provide the hashed URN for look-up</h3>
 <p>For the example, the URN is already created, hashed, and the domain of "sc-b2b.us" is appended.  (This was functional at the time of initial development.)   </p>
 <pre><code>hashed_value = "6c24uvqpxrfyweqimfxmsuym3bbjvoikuwmmidquz2a2zzyikdya.sc-b2b.us"
 </code></pre>
+<p><br/>
+<br/></p>
 <h3 id="dns_query_sml-3-do-the-dns-look-up">3. Do the DNS look-up</h3>
 <p>The look-up is returned from the <code>resolve()</code> method of    <code>dns.resolver.</code>  In this implementation, the method takes two parameters, the query string, and the look-up type.  See <a href="https://dnspython.readthedocs.io/en/latest/resolver-functions.html">Resolver Functions and the Default Resolver</a> for the complete method signature.<br />
 <br/></p>
 <div class="admonition note">
 <p class="admonition-title">dns.resolver.resolve() return type is dns.resolver.Answer</p>
-<p>The dns.resolver.resolve() method return type is <strong>dns.resolver.Answer</strong>.  See <a href="https://dnspython.readthedocs.io/en/latest/resolver-class.html">The dns.resolver.Resolver and dns.resolver.Answer Classes</a> for details on the Answer response class. 
-<br/></p>
+<p>The dns.resolver.resolve() method return type is <strong>dns.resolver.Answer</strong>.  See <a href="https://dnspython.readthedocs.io/en/latest/resolver-class.html">The dns.resolver.Resolver and dns.resolver.Answer Classes</a> for details on the Answer response class. </p>
 </div>
+<p><br/>
+<br/></p>
 <h3 id="dns_query_sml-4-the-naptr-dns-query-response">4. The NAPTR DNS query response</h3>
 <p><br/></p>
 <h4 id="dns_query_sml-4a-the-response-as-rdata">4a.  The response as Rdata</h4>
 <p>Rdata is typed data in one of the known DNS data types, i.e., an IPv4 address for a host, MX record, or NAPTR record.  RRset is an Rdata object which supports the Python <strong>set</strong> API.  For details on RRset see <a href="https://dnspython.readthedocs.io/en/latest/rdata-set-classes.html">Rdataset, RRset, and Node Classes</a>.<br />
+<br/>W222
 <br/></p>
 <h4 id="dns_query_sml-4b-the-fields-in-the-naptr-response">4b. The fields in the NAPTR response</h4>
 <p>The returned Rdata data set is in the format as <a href="https://www.ietf.org/rfc/rfc2915.txt">specified by the NATPR protocol</a> and contains the following fields which may be iterated as a set: </p>
@@ -2285,19 +2136,22 @@ The final result: yn5tj7bteln4c5o4mtul7yvnq3pwu6dpmipcof4pwcbsd3avvn7a
 <p>The set values are iterated using:  </p>
 <pre><code>for a in lookup.rrset:
 </code></pre>
-<p><br/></p>
+<p><br/>
+<br/></p>
 <h4 id="dns_query_sml-4c-the-regexp-field-of-the-natpr-response">4c. The "regexp" field of the NATPR response</h4>
 <p>The value of the "regexp" field contains the terminal address of the SMP in the format of a regular expression, which is how it would otherwise be used if doing a Session Initiation Protocol (SIP) lookup. <br />
 The value is directly accessed using:   </p>
 <pre><code> for a in lookup.rrset:
     smp_uri = a.regexp
 </code></pre>
-<p><br/></p>
+<p><br/>
+<br/></p>
 <h4 id="dns_query_sml-4d-the-response-as-a-string">4d. The response as a string</h4>
 <p>Use the String decode() method to change the returned response from Binary to String format.    </p>
 <pre><code>smp_uri = smp_uri.decode()
 </code></pre>
 <p>The final response is the terminal SMP URL in the NAPTR regular expression substitution format.<br />
+<br/>
 <br/></p>
 <h2 id="dns_query_sml-code">Code</h2>
 <pre><code>import dns.resolver
@@ -2310,10 +2164,14 @@ for a in lookup.rrset:
 smp_uri = smp_uri.decode()
 print(smp_uri)
 </code></pre>
+<p><br/>
+<br/></p>
 <h2 id="dns_query_sml-output">Output</h2>
 <pre><code>&lt;class 'dns.resolver.Answer'&gt;
 !^.*$!https://my-smp-url.com/0123456789!
-</code></pre></section><section class="print-page" id="smp_rest_query"><h1 id="smp_rest_query-smp-rest-api-query">SMP REST API Query</h1>
+</code></pre>
+<p><br/>
+<br/></p></section><section class="print-page" id="smp_rest_query"><h1 id="smp_rest_query-smp-rest-api-query">SMP REST API Query</h1>
 <p>Query to an SMP service to obtain terminal or final "Endpoint" destination of the e-invoice is implemented using two REST API web service calls.   </p>
 <h2 id="smp_rest_query-references">References</h2>
 <ul>
@@ -2321,23 +2179,30 @@ print(smp_uri)
 <li>See the OASIS website for the authoritative <a href="https://docs.oasis-open.org/bdxr/bdx-smp/v2.0/bdx-smp-v2.0.docx">OASIS SMP 2.0 Standard</a> (the "Standard").   </li>
 <li>Section 3 of the BPC SMP Profile referencing the REST interface specifies in Section 3.1 that client authentication must not be required when accessing SMP [server] resources.    </li>
 <li>The REST API for the web service calls are referenced in section 3.2 of the BPC SMP Profile, mandating implementation as provided in section 5.2 of the OASIS SMP 2.0 Standard.  <br />
+<br/>
 <br/></li>
 </ul>
 <details class="note" open="open">
 <summary>The BPC SMP Profile implements the OASIS SMP 2.0 Standard</summary>
 <p>Section 3.2 of the BPC SMP Profile mandates implementation of the OASIS SMP 2.0 standard.  <br/><br/>To the extent that Section 6 of the BPC Profile has a requirement that the SMP client <strong>MUST</strong> validate the signature of the SMP [server response] as directed in section 5.6.2.2  of the OASIS standard, the OASIS standard is permissive and says the SMP client <strong>MAY</strong> verify the signature.</p>
 </details>
+<p><br/>
+<br/></p>
 <details class="warning">
 <summary>Functional versus non-functional requirements</summary>
 <p>Software engineering best practices including separation of concerns and SOLID Principles, specifically the single responsibility principle, limit the functional scope to the minimum necessary to achieve the desired outcome.</p>
 <p>Minimum Viable Product as outlined in the Project Goals, Project Roadmap, and Project Outcomes is achieved by abstraction of non-functional requirements.  </p>
 <p>The logic to calculate the hash necessary for the SML DNS look-up query <em>does not change</em> regardless of the value of the specification, the schema, or the party ID.  Values provided for this data should be checked against rules from the BPC Policy and the OASIS Standard to ensure data integrity.  Separating validation of the data and computation of the URN hash provides for flexibility in changes to both rules governing the format of the data and implementation of the URN hash logic. </p>
 </details>
+<p><br/>
+<br/></p>
 <h2 id="smp_rest_query-the-rest-web-service-calls-to-the-smp-service">The REST Web Service calls to the SMP service</h2>
 <details class="important" open="open">
 <summary>The rules for constructing the ServiceGroup  REST API web service call.</summary>
 <p>In Section 5.4 "Resources" The OASIS SMP Standard provides the format used to create the ServiceGroup REST API web service call.  This specifies the <strong>oasis-bdxr-smp-2(bdxr-smp-2)</strong> SMP REST binding, the "identifier scheme" and the "participant id."  The "identifier scheme" is literally the URN specifying the format the participant ID is going to take.  </p>
 </details>
+<p><br/>
+<br/></p>
 <h2 id="smp_rest_query-1-service-group-discovery">1. Service Group Discovery</h2>
 <p>The first REST API query to the Service Group is created using the SMP REST binding, "identifier scheme" and "participant ID."  </p>
 <h3 id="smp_rest_query-creating-the-smp-rest-api-call-1-to-obtain-servicegroup-data">Creating the SMP REST API call #1 to obtain ServiceGroup data</h3>
@@ -2348,37 +2213,53 @@ print(smp_uri)
 <li>Further unspecified, but implied as it is required, is the fully qualified application server domain and reference to any sub-domains. In the case of the example, this is "smp-api.sc-b2b.us."  The subdomain is "smp-api." The second-level domain is "sc-b2b." The top level domain is "us."</li>
 <li>The only REST method required to be supported by the OASIS SMP Standard is "GET."  Everything after the domain specification is the "resource" uri of the GET method request.  </li>
 </ul>
-<p>Using these guidelines, in the development environment of the Onboarding Toolkit the first part of the URL is: <code>https://smp-api.sc-b2b.us/.</code> <em>This value will  be different in the Market Pilot.</em>  In the Market Pilot, use the value <em>bpcb2b.net</em>.  The URL will begin with <code>https://bpcb22.net/</code>  </p>
+<p>Using these guidelines, in the development environment of the Onboarding Toolkit the first part of the URL is: <code>https://smp-api.sc-b2b.us/.</code> <em>This value will  be different in the Market Pilot.</em>  In the Market Pilot, use the value <em>bpcb2b.net</em>.  The URL will begin with <code>https://bpcb22.net/</code><br />
+<br/>
+<br/></p>
 <h4 id="smp_rest_query-1b-the-smp-rest-binding">1b.  The SMP REST Binding</h4>
 <p>Section 5.5 of the OASIS SMP 2.0 Standard provides the SMP REST Binding should be <code>oasis-bdxr-smp-2</code>.     However, In the prior Section 5.4 "Resources" the example URI indicates an SMP Binding of <code>bdxr-smp-2</code>.    </p>
 <p>The development and test environment of the Onboarding Toolkit use <code>bdxr-smp-2</code> for the value of the SMP Binding.  </p>
 <p>The Onboarding Toolkit dev URL becomes: <code>https://smp-api.sc-b2b.us/bdxr-smp-2/</code>    </p>
 <p>The Market Pilot URL becomes: <code>https://bpcb22.net/bdxr-smp-2/</code></p>
+<p><br/>
+<br/></p>
 <h4 id="smp_rest_query-1c-the-identifier-scheme">1c.  The Identifier Scheme</h4>
 <p>The next element in the call to obtain the ServiceGroup data is the "identifier scheme" which identifies the format of the PartyID.  This value should already be known, as it is the Specification and the Schema used when creating the hash value for the SML NAPTR DNS look-up.  Together, the Specification and the Scheme create the "identifier scheme," which defines the <em>format</em> of the party ID.   </p>
 <p>Detailed requirements of the identifier scheme are found in the <a href="http://docs.oasis-open.org/ebcore/PartyIdType/v1.0/CS01/PartyIdType-1.0.html">OASIS ebCore Party Id Type Technical Specification Version 1.0</a>  for the <strong>ebCorePartyID</strong>.</p>
 <p>From the documentation, an example of a normative value for the identifier scheme is: <strong>urn:oasis:names:tc:ebcore:partyid-type:iso6523</strong>.  </p>
 <p>The Onboarding Toolkit dev URL then becomes: <code>https://smp-api.sc-b2b.us/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523</code>   </p>
-<p>The Market Pilot URL becomes: <code>https://bpcb22.net\/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523</code></p>
+<p>The Market Pilot URL becomes: <code>https://bpcb22.net\/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523</code>
+<br/>
+<br/></p>
 <h4 id="smp_rest_query-1d-append-the-partyid">1d. Append the PartyID</h4>
 <p>After starting with the protocol, the fully qualified domain name of the SMP Application Server, the SMP Rest Binding, and the Identifier Scheme, the last component of the ServeGroup look-up REST API web service call is the party ID.  This should be the same value as that used in creating the hash for the SML DNS look-up.  </p>
 <p>As an example, if the party id is "bpcBusid01"... <br />
 The Onboarding Toolkit dev URN is (the same as in the SML DNS look-up): <code>urn:oasis:names:tc:ebcore:partyid-type:iso6523/bpcBusid01</code>   </p>
 <p>The Market Pilot URN is (also the same as in the SML DNS look-up): <code>urn:oasis:names:tc:ebcore:partyid-type:iso6523/bpcBusid01</code></p>
+<p><br/>
+<br/></p>
 <h4 id="smp_rest_query-1e-create-the-string-for-the-smp-rest-api-query">1e. Create the string for the SMP REST API Query</h4>
 <p>The ServiceGroup web service call then takes the format of:<code>https://smp-api.sc-b2b.us/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523/bpcBusid01</code></p>
 <p>Using the terminology employed by the OASIS SMP 2.0 specification the URL is constructed as:  <code>https://bpcb22.net/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523/bpcBusid01</code></p>
+<p><br/>
+<br/></p>
 <h4 id="smp_rest_query-1f-substitute-hex-into-the-url-for-successful-web-service-call">1f. Substitute hex into the URL for successful web service call</h4>
 <p>The URL to be used for the SML REST API query is defective in that it has illegal characters that can't be parsed into a recognizable web address.  The extra colons ":" will cause problems.  To remedy this do a string search/replace substitution on the offending punctuation and convert it to hex representation which can be handled by the browser.  The hex representation of a colon is "\3A."  Substitute "\3A" in the URL every place where it is used as part  of the resource and the literal protocol.  </p>
 <p>The ServiceGroup web service call then takes the format of:
 <code>https://smp-api.sc-b2b.us/bdxr-smp-2/urn\3Aoasis\3Anames\3Atc\3Aebcore\3Apartyid-type\3Aiso6523\3A\3AbpcBusid01</code></p>
-<p>Using the terminology employed by the OASIS SMP 2.0 specification the URL is constructed as:  <code>https://bpcb22.net\/bdxr-smp-2/urn\3Aoasis\3Anames\3Atc\3Aebcore\3Apartyid-type\3Aiso6523\3A\3AbpcBusid01</code></p>
+<p>Using the terminology employed by the OASIS SMP 2.0 specification the URL is constructed as:  <code>https://bpcb22.net\/bdxr-smp-2/urn\3Aoasis\3Anames\3Atc\3Aebcore\3Apartyid-type\3Aiso6523\3A\3AbpcBusid01</code>
+<br/>
+<br/></p>
 <details class="note">
 <summary>Test the SMP REST API web service call</summary>
 <p>When the URL is constructed properly it is a simple matter to copy and paste it into a web browser.  The response should be the SMP ServiceGroup look-up data in XML format.</p>
 </details>
+<p><br/>
+<br/></p>
 <h4 id="smp_rest_query-1g-make-the-web-service-call">1g. Make the web service call</h4>
-<p>The response of the Service Group Discovery returns information necessary to construct the Service Metadata Query.  The BPC SMP Profile requires that the Service Group Discovery REST API call must not be skipped and that the presence of Service Metadata should not be assumed.</p>
+<p>The response of the Service Group Discovery returns information necessary to construct the Service Metadata Query.  The BPC SMP Profile requires that the Service Group Discovery REST API call must not be skipped and that the presence of Service Metadata should not be assumed.
+<br/>
+<br/></p>
 <h2 id="smp_rest_query-example">Example</h2>
 <pre><code>import requests
 
@@ -2401,25 +2282,29 @@ response = requests.get(query_url)
 print(response.text)
 </code></pre>
 <h2 id="smp_rest_query-output">Output</h2>
-<p>https://smp-api.sc-b2b.us/bdxr-smp-2/urn%3Aoasis%3Anames%3Atc%3Aebcore%3Apartyid-type%3Aiso6523%3A0088%3A%3A1234567890</p>
-<?xml version="1.0" encoding="utf-8"?>
-<p><ServiceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/bdxr/ns/SMP/2/ServiceGroup" xmlns:ext="http://docs.oasis-open.org/bdxr/ns/SMP/2/ExtensionComponents" xmlns:sma="http://docs.oasis-open.org/bdxr/ns/SMP/2/AggregateComponents" xmlns:smb="http://docs.oasis-open.org/bdxr/ns/SMP/2/BasicComponents">
-    <smb:SMPVersionID>2.0</smb:SMPVersionID>
-    <smb:ParticipantID schemeID="urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088">1234567890</smb:ParticipantID>
-    <sma:ServiceReference>
-        <smb:ID schemeID="bdx-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-1::Invoice##BPC-UBL-2.2</smb:ID>
-        <sma:Process>
-            <smb:ID schemeID="bpcprocess">test:poc:01</smb:ID>
-        </sma:Process>
-    </sma:ServiceReference>
-   </ServiceGroup></p>
+<pre><code>https://smp-api.sc-b2b.us/bdxr-smp-2/urn%3Aoasis%3Anames%3Atc%3Aebcore%3Apartyid-type%3Aiso6523%3A0088%3A%3A1234567890
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;ServiceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/bdxr/ns/SMP/2/ServiceGroup" xmlns:ext="http://docs.oasis-open.org/bdxr/ns/SMP/2/ExtensionComponents" xmlns:sma="http://docs.oasis-open.org/bdxr/ns/SMP/2/AggregateComponents" xmlns:smb="http://docs.oasis-open.org/bdxr/ns/SMP/2/BasicComponents"&gt;
+&lt;smb:SMPVersionID&gt;2.0&lt;/smb:SMPVersionID&gt;
+&lt;smb:ParticipantID schemeID="urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088"&gt;1234567890&lt;/smb:ParticipantID&gt;
+&lt;sma:ServiceReference&gt;
+    &lt;smb:ID schemeID="bdx-docid-qns"&gt;urn:oasis:names:specification:ubl:schema:xsd:Invoice-1::Invoice##BPC-UBL-2.2&lt;/smb:ID&gt;
+    &lt;sma:Process&gt;
+        &lt;smb:ID schemeID="bpcprocess"&gt;test:poc:01&lt;/smb:ID&gt;
+    &lt;/sma:Process&gt;
+&lt;/sma:ServiceReference&gt;
+&lt;/ServiceGroup&gt;
+</code></pre>
+<p><br/>
+<br/></p>
 <h2 id="smp_rest_query-2-service-metadata-query">2. Service Metadata Query</h2>
 <h3 id="smp_rest_query-call-2-to-obtain-servicemetadata">Call #2 to obtain ServiceMetadata</h3>
 <h4 id="smp_rest_query-2a-use-python-requests-module">2a. Use Python requests  module</h4>
-<p>The value of a Service Group Query URL can be used directly with the Python Requests module.  See Python <a href="https://requests.readthedocs.io/en/latest/">Requests</a> for the complete Requests API.<br />
-<strong>Note:</strong> Best practice is to enclose a Request in a try/except block to handle error responses.</p>
+<p>The value of a Service Group Query URL can be used directly with the Python Requests module.  See Python <a href="https://requests.readthedocs.io/en/latest/">Requests</a> for the complete Requests API.  </p>
+<p><strong>Note:</strong> Best practice is to enclose a Request in a try/except block to handle error responses.  </p>
 <pre><code>from requests.exceptions import HTTPError
 import xml.etree.ElementTree as ET
+
 
 try:
     response = requests.get(service_group_query)   # service_group_query is the Service Group URL
@@ -2433,57 +2318,82 @@ except HTTPError as http_err:
 except Exception as err:
     print(f'Other error occurred: {err}')
 </code></pre>
-<p>The response is in XML format. <br />
-    &lt;?xml version="1.0" encoding="utf-8"?&gt;
-    <ServiceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/bdxr/ns/SMP/2/ServiceGroup" xmlns:ext="http://docs.oasis-open.org/bdxr/ns/SMP/2/ExtensionComponents" xmlns:sma="http://docs.oasis-open.org/bdxr/ns/SMP/2/AggregateComponents" xmlns:smb="http://docs.oasis-open.org/bdxr/ns/SMP/2/BasicComponents">
-        <smb:SMPVersionID>2.0</smb:SMPVersionID>
-        <smb:ParticipantID schemeID="urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088">1234567890</smb:ParticipantID>
-        <sma:ServiceReference>
-            <smb:ID schemeID="bdx-docid-qns">urn:oasis:names:specification:ubl:schema:xsd:Invoice-1::Invoice##BPC-UBL-2.2</smb:ID>
-            <sma:Process>
-                <smb:ID schemeID="bpcprocess">test:poc:01</smb:ID>
-            </sma:Process>
-        </sma:ServiceReference>
-    </ServiceGroup></p>
+<p><br/>
+<br/>
+The response is in XML format.   </p>
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;ServiceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/bdxr/ns/SMP/2/ServiceGroup" xmlns:ext="http://docs.oasis-open.org/bdxr/ns/SMP/2/ExtensionComponents" xmlns:sma="http://docs.oasis-open.org/bdxr/ns/SMP/2/AggregateComponents" xmlns:smb="http://docs.oasis-open.org/bdxr/ns/SMP/2/BasicComponents"&gt;
+    &lt;smb:SMPVersionID&gt;2.0&lt;/smb:SMPVersionID&gt;
+    &lt;smb:ParticipantID schemeID="urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088"&gt;1234567890&lt;/smb:ParticipantID&gt;
+    &lt;sma:ServiceReference&gt;
+        &lt;smb:ID schemeID="bdx-docid-qns"&gt;urn:oasis:names:specification:ubl:schema:xsd:Invoice-1::Invoice##BPC-UBL-2.2&lt;/smb:ID&gt;
+        &lt;sma:Process&gt;
+            &lt;smb:ID schemeID="bpcprocess"&gt;test:poc:01&lt;/smb:ID&gt;
+        &lt;/sma:Process&gt;
+    &lt;/sma:ServiceReference&gt;
+&lt;/ServiceGroup&gt;
+</code></pre>
+<p><br/>
+<br/></p>
 <details class="warn">
 <summary>The XML of the Service Group response</summary>
 <p>The Service Group response as provided by the element text of the ID XML node which is a child of the Service Reference with a value of "bdx-docid-qns" is in XML format.  Future adoption of a JSON response by a service provider will include a value indicating the JSON format being implemented.  </p>
-<p>The format of the XML response to the Service Group web service API has multiple schemeID attributes.  \n <br />
-<ServiceGroup>
-    <SMPVersionID> </SMPVersionID>
-    <ParticipantID> </ParticipantID>    attrib:schemeID
-    <ServiceReference> 
-        <ID> </ID>                      attrib:schemeID
-        <Process>  </Process>
-            <ID>  </ID>                 attrib:schemeIO
-    </ServiceReference> 
-</ServiceGroup>\n <br />
-The elements "ParticipantID, ID (as a child element of ServiceReference), and ID (a child element of Process) all contain an attribute of "schemeID."\n  Careful review of the combninatoion of the "tag,", "text," and "attrib" values of each XML element is necessary to differentiate the XML nodes.</p>
+<p>The format of the XML response to the Service Group web service API has multiple schemeID attributes.   </p>
+<pre><code>&lt;ServiceGroup&gt;
+
+    &lt;SMPVersionID&gt; &lt;/SMPVersionID&gt;
+
+    &lt;ParticipantID&gt; &lt;/ParticipantID&gt;    attrib:schemeID
+
+    &lt;ServiceReference&gt;
+
+        &lt;ID&gt; &lt;/ID&gt;                      attrib:schemeID
+
+        &lt;Process&gt;  &lt;/Process&gt;
+
+           &lt;ID&gt;  &lt;/ID&gt;                  attrib:schemeIO
+
+    &lt;/ServiceReference&gt;
+
+&lt;/ServiceGroup&gt;
+</code></pre>
+<p>The elements "ParticipantID, ID (as a child element of ServiceReference), and ID (a child element of Process) all contain an attribute of "schemeID."   </p>
+<p>Careful review of the combninatoion of the "tag,", "text," and "attrib" values of each XML element is necessary to differentiate the XML nodes.</p>
 </details>
-<p>The response from the Service Group API web service call is in XML.  Use the <a href="https://docs.python.org/3/library/xml.etree.elementtree.html">xml.etree.ElementTree</a> to inspect the contents of the HTTP GET request.  Using the "response.content" field returns values "byte-like" objects not amenable to direct interogation.  The "response.text" field returns String values which provide the ability to investigate element tag, text, and attrib fields without decoding from binary.</p>
-<h4 id="smp_rest_query-2b-use-the-terminal-urn">2b. Use the terminal urn</h4>
-<p>The Service Group response contains the termainal, or final, urn of the corner three service which will handle the e-invoice on behalf of the buyer.  This is in the schemeID attribute of the ID node, which is a child of the ServiceReference node.   This value will be nearly indentical to the urn, however it will also have a service capability appended to it which will describe the e-invpoice funtionality.   </p>
+<p>The response from the Service Group API web service call is in XML.  </p>
+<p>Use the <a href="https://docs.python.org/3/library/xml.etree.elementtree.html">xml.etree.ElementTree</a> to inspect the contents of the HTTP GET request.  </p>
+<p>Using the "response.content" field returns values "byte-like" objects not amenable to direct interogation.  </p>
+<p>The "response.text" field returns String values which provide the ability to investigate element tag, text, and attrib fields without decoding from binary.</p>
+<p><br/></p>
+<h4 id="smp_rest_query-2b-use-the-service-capability">2b. Use the  service capability</h4>
+<p>The Service Group response contains the service capability of the corner three service which will handle the e-invoice on behalf of the buyer.  </p>
+<p>This is in the schemeID attribute of the ID node, which is a child of the ServiceReference node.   This value will be nearly indentical to the urn, however it will also have a service capability appended to it which will describe the e-invpoice funtionality.   </p>
 <p>A non-normative example of Service capability would be e-invoice functionality pursant to the UBL standard.</p>
 <pre><code>Includes:  Invoice-1::Invoice##BPC-UBL-2
 
 urn:oasis:names:specification:ubl:schema:xsd:Invoice-1::Invoice##BPC-UBL-2.2
 </code></pre>
 <p>Further guidance as to the value of the ServiceReference conformant to the ebsXML standard will be implemented by actual service providers.  </p>
-<h4 id="smp_rest_query-2c-construct-the-terminal-endpoint">2c. Construct the terminal endpoint.</h4>
-<p>The terminal endpoint for the SMP web service API call implements the oringinal URN, a modifier indicating "service" and the terimainl URN.  </p>
+<p><br/></p>
+<h4 id="smp_rest_query-2c-construct-the-service-rest-api-endpoint">2c. Construct the Service REST API endpoint.</h4>
+<p>The URL for the SMP REST web service API call implements the oringinal URN, a modifier indicating "service" and the service capability.  </p>
 <pre><code>https://smp-api.sc-b2b.us/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088/1234567890/
 + services
 + urn:oasis:names:specification:ubl:schema:xsd:Invoice-1::Invoice##BPC-UBL-2.2
 
 https://smp-api.sc-b2b.us/bdxr-smp-2/urn:oasis:names:tc:ebcore:partyid-type:iso6523:0088/1234567890/services/urn:oasis:names:specification:ubl:schema:xsd:Invoice-1::Invoice##BPC-UBL-2.2
 </code></pre>
+<p><br/>
+<br/></p>
 <h4 id="smp_rest_query-2c-substitute-for-prohibited-characters-in-the-url">2c. Substitute for prohibited characters in the URL</h4>
 <p>The final Service web service API call includes characters which are not permitted in URLs, ":".  Transform the URL to include string representations of these characters so the URL will process correctly. </p>
 <p>Note that the first occurrence of the colon in the protocol ("https://") is required required, so must be preserved.</p>
 <pre><code>https://smp-api.sc-b2b.us/bdxr-smp-2/urn%3Aoasis%3Anames%3Atc%3Aebcore%3Apartyid-type%3Aiso6523%3A0088/1234567890/services/urn%3Aoasis%3Anames%3Aspecification%3Aubl%3Aschema%3Axsd%3AInvoice-1%3A%3AInvoice##BPC-UBL-2.2
 </code></pre>
-<h4 id="smp_rest_query-2d-run-the-query-using-the-terminal-url">2d. Run the query  using the terminal URL</h4>
-<p>The termnal Service web service API call implements the same Python Requests module as the Service Group.  </p>
+<p><br/>
+<br/></p>
+<h4 id="smp_rest_query-2d-run-the-query-using-the-service-capability">2d. Run the query  using the service capability</h4>
+<p>The Service web service API call implements the same Python Requests module as the Service Group.  </p>
 <pre><code>from requests.exceptions import HTTPError
 import xml.etree.ElementTree as ET
 
@@ -2499,6 +2409,8 @@ except HTTPError as http_err:
 except Exception as err:
     print(f'Other error occurred: {err}')
 </code></pre>
+<p><br/>
+<br/></p>
 <h4 id="smp_rest_query-2e-service-response-post-processing">2e. Service response post-processing</h4>
 <p>The handling of the response from the Service API query is the same as that for Service Group API query.</p>
 <p>The terminal endpoint is the child node "AddressURI" of the "Endpoint" element.</p>
@@ -2507,21 +2419,22 @@ except Exception as err:
 <p>Evaluation of certificate responses is accessed through the "Signature" element and relevant child nodes of <KeyInfo>
     <X509Data>
         <X509Certificate>
-            and specific <X509Certificate> nodes</p></section><section class="print-page" id="as4"><h1 id="as4-as4-header-validation">AS4 Header Validation</h1>
+            and specific <X509Certificate> nodes</p>
+<p><br/>
+<br/></p></section><section class="print-page" id="as4"><h1 id="as4-as4-header-validation">AS4 Header Validation</h1>
 <p>The OST Delivery component is concerned with validating the SOAP message header of the email used to exchange the invoice payload. The AS4 SOAP header of the email wrapper or "envelope" for the e-invoice must be conformant to ebXML messaging standards.  The initial implementation specification can be found at: <a href="#as4-docs.oasis-open.org-ebxml-msg-ebms-v3.0-core-os-ebms_core-3.0-spec-os">XML Namespace for AS4 Profile of ebMS 3.0 Version 1.0</a>.</p>
 <p>In November, 2021 the EBXML workgroup promulgated a conformance profile to supplement the original ebms specification with additional P-mode parameters not originally included in the specification.  The new profile did not provide a namespace nor specific technical specification in the form of an .XSD file or examples to validate the additional parameters.  </p>
-<p>Absent such a reference, review of additional resources identified a <a href="https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/browse/output/doc/schemas/send-pmode-schema.xsd">sample XSD hosted by ec.europa.eu</a> (The European Commission).  This example XSD seems to meet many of the requirements as specified by the EBXML workgroup, and is thus consistent with the newly formulated rules and yet provides concrete guidance as a specification implemented by PEPPOL.<br />
+<p>Absent such a reference, review of additional resources identified a <a href="https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/browse/output/doc/schemas/send-pmode-schema.xsd">sample XSD hosted by ec.europa.eu</a> (The European Commission).  This XSD meets many of the requirements as specified by the ebXML workgroup and is consistent with the newly formulated rules and yet provides concrete guidance as a specification implemented by PEPPOL.<br />
 </br></p>
 <details class="warn" open="open">
 <summary>Use of EU Schema for Validation</summary>
-<p>The EU schema used as an exmaple should be considered non-normative for the new EBXML workgroup specification, and further, <strong>non-conformant</strong> as some of the specified P-modes are not directly addressed by the EU schema definition.</p>
+<p>The EU schema used as an exmaple should be considered non-normative for the new EBXML workgroup specification, and further, <strong>non-conformant</strong> as some of the specified P-modes are not directly addressed by the EU schema definition.   </p>
+<p>Where there is variance between EU standards and those of the ebXML workgroup, the methods provided to validate an XML header is valid when used against and well formed XSD.</p>
 </details>
-<p>Where there is variance between EU standards and those of the EBXML workgroup, the methods provided to validate an XML header is valid when used against and well formed XSD.</p>
 <h2 id="as4-the-pmode-specifications">The PMode specifications.</h2>
-<p>The approved November, 2021 ebXML workgroup conformance profile provided for the following PMode configurations.
-<strong>NOTE:</strong> All sample xml is from the EU send-pmode-schema.xsd.</p>
-<p></br>
-</br></p>
+<p>The approved November, 2021 ebXML workgroup conformance profile provided for the following PMode configurations.  </p>
+<p><strong>NOTE:</strong> All sample xml is from the EU send-pmode-schema.xsd.</p>
+<p></br></p>
 <p><strong>PMode.Agreement</strong><br />
 <em>Allowed Value: http://bpcpilot.change.me/tempagreement.html.</em>  </p>
 <pre><code>&lt;xs:complexType name="AgreementReference"&gt;
@@ -2533,9 +2446,8 @@ except Exception as err:
 </code></pre>
 <p></br>
 </br></p>
-<p>These P-Modes were already included as part of the previous ebms/AS4 spec:  </p>
-<p></br>
-</br></p>
+<p>These P-Modes were already included as part of the previous ebms/AS4 spec:<br />
+ <br/></p>
 <p><strong>PMode[1].ReceptionAwareness.Retry</strong>  <br />
 <em>Allowed Value: True</em>  </p>
 <pre><code> &lt;xs:complexType name="ReceptionAwareness"&gt;
@@ -2602,14 +2514,19 @@ except Exception as err:
 </code></pre>
 <p></br>
 </br></p>
+<details class="info" open="open">
+<summary>Reference Implementation</summary>
 <p>A "reference implementation" is provided which demonstrates how to implemente code which inspects/interogates an XML Schema Definition (.xsd) and validates an xml file against it.  This is valuable to compare an AS4 message header in XML format against any defined standard.  </p>
+</details>
 <h2 id="as4-the-xsd-files">The XSD files.</h2>
-<p>As examples for a reference implementation, two XML Schema Defiintion files will are publicly available for review and testing purposes. </p>
-<p>The first is the <a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd">ebMS-3 XML Infoset</a>.  This is a conformance profile dated April of 2007.  </p>
-<p>The second is the previously referenced ec.europa.eu <a href="https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/browse/output/doc/schemas/send-pmode-schema.xsd">send-pmode-schema.xsd</a></p>
+<p>As examples for a reference implementation, two XML Schema Defiintion files will be used which are publicly available for review and testing purposes. </p>
+<p>The first XSD is the <a href="https://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd">ebMS-3 XML Infoset</a>.  This is a conformance profile dated April of 2007.  </p>
+<p>The second XSD is the previously referenced ec.europa.eu <a href="https://ec.europa.eu/digital-building-blocks/code/projects/EDELIVERY/repos/eessi-as4.net/browse/output/doc/schemas/send-pmode-schema.xsd">send-pmode-schema.xsd</a></p>
 <p>Both files can be accessed from a local download, or via the Internet directly.  </p>
 <h2 id="as4-obtain-the-schema-using-xmlschema">Obtain the schema using xmlschema</h2>
-<p>The Python package used is the <a href="https://github.com/sissaschool/xmlschema">xmlschema</a>. Documentation is available at <a href="https://xmlschema.readthedocs.io/en/latest/">xmlschema.readthedocs.io</a>.  Install using <strong>pip</strong>.</p>
+<p>The Python package used is the <a href="https://github.com/sissaschool/xmlschema">xmlschema</a>. Documentation is available at <a href="https://xmlschema.readthedocs.io/en/latest/">xmlschema.readthedocs.io</a>.  Install using <strong>pip</strong>.
+<br/>
+<br/></p>
 <h3 id="as4-example-1-query-the-xsd">Example #1 Query the XSD</h3>
 <pre><code>import xmlschema
 
@@ -2623,6 +2540,8 @@ print (ec_xsd)
 <pre><code>    XMLSchema10(name='ebms-header-3_0-200704.xsd', namespace='http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/')
     XMLSchema10(name='send-pmode-schema.xsd?at=refs%2Fheads%2FRelease%2Fv4.0.1', namespace='eu:edelivery:as4:pmode')
 </code></pre>
+<p><br/>
+<br/></p>
 <h3 id="as4-example-2-output-the-xml-elements">Example #2 Output the XML Elements</h3>
 <pre><code>import xmlschema
 
@@ -2653,6 +2572,8 @@ Element:  XsdEnumerationFacets(['Push', 'Pull'])
 Element:  XsdAtomicRestriction(name='tns:TlsVersion')
 [...]
 </code></pre>
+<p><br/>
+<br/></p>
 <h3 id="as4-example-3-load-and-validate-xml-against-the-xsd">Example #3 Load and validate XML against the XSD</h3>
 <p>xmlschema has two methods to validate a xml message against and xsd.<br />
 The first method uses <code>xsd.is_valid(xml)</code>
@@ -2731,7 +2652,9 @@ Instance:
   &lt;/S12:Envelope&gt;
 
 Path: /S12:Envelope
-</code></pre></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
+</code></pre>
+<p><br/>
+<br/></p></section><section class="print-page" id="test_cases"><h1 id="test_cases-e-invoice-onboarding-tool-kit">E-Invoice Onboarding Tool-kit</h1>
 <h2 id="test_cases-working-with-the-code">Working with the code</h2>
 <h3 id="test_cases-test-cases">Test Cases</h3>
 <h4 id="test_cases-using-an-env-file">Using an .env file</h4>
@@ -2831,122 +2754,7 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 <h2 id="accessor-accessor-module">accessor Module</h2>
 <p>::: ../discovery.accessor.Accessor
     :docstring:
-    :members: call_hash call_dns_lookup call_smp_service_group_url call_smp_service_url</p></section><h1 class='nav-section-title-end'>Ended: Package/Library API</h1><h1 class='nav-section-title-end'>Ended: Using the Code</h1><section class="print-page" id="project_roadmap"><h1 id="project_roadmap-project-roadmap">Project Roadmap</h1>
-<h3 id="project_roadmap-discovery-1-sml-naptr-dns-lookup">Discovery #1 - SML NAPTR DNS Lookup</h3>
-<ol>
-<li>Feature – Access Point A sends UNAPTR DNS query with a Party ID/Party ID Schema hash and obtains a valid response with connection information to the SMP.  </li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Actor</th>
-<th>Scoped?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Generate the request to Access Point A, which includes Party ID, Party ID Schema, Invoice Data</td>
-<td>Seller</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Transform and format contents of Seller’s request to create UNAPTR DNS query</td>
-<td>Access Point A</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Query DNS.</td>
-<td>Access Point A</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Return response to query</td>
-<td>SML – Reply from UNAPTR DNS query.</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Receive query response from DNS, which is the URI to the SMP</td>
-<td>Access Point A</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
-<h3 id="project_roadmap-discovery-2-smp-rest-api-query">Discovery #2 - SMP REST API Query</h3>
-<ol>
-<li>Feature –Access Point A sends a REST API query to the SMP URI to obtain a valid response with connection info of target Access Point and customers invoice capabilities.  </li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Actor</th>
-<th>Scoped?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Send response with SMP URI to Access Point.</td>
-<td>SML</td>
-<td>No (not in this feature)</td>
-</tr>
-<tr>
-<td>Create REST query to service provider to obtain buyer’s service capabilities.</td>
-<td>Access Point A</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Send REST query to service provider to obtain participant’s service capabilities.</td>
-<td>Access Point A</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Receive query and send response with Sellers Capabilities and route to endpoint.</td>
-<td>SMP</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Receive response to query of participant’s capabilities.</td>
-<td>Access Point A</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
-<h3 id="project_roadmap-delivery-as4-message-exchange">Delivery - AS4 Message Exchange</h3>
-<ol>
-<li>Feature – An invoice with a semantically correct format is delivered using AS4 protocol.  </li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Actor</th>
-<th>Scoped?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Compose semantically correct E-Invoice based on response from service provider about participant’s capabilities.</td>
-<td>Access Point A</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Format E-Invoice in compliant AS4 format.</td>
-<td>Access Point A</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Send E-Invoice to final destination obtained from SMP service provider.</td>
-<td>Access Point A</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Receives the request.</td>
-<td>Access Point B</td>
-<td>No</td>
-</tr>
-</tbody>
-</table></section><section class="print-page" id="artifacts"><h1 id="artifacts-the-repository">The Repository<hr/></h1>
+    :members: call_hash call_dns_lookup call_smp_service_group_url call_smp_service_url</p></section><h1 class='nav-section-title-end'>Ended: Package/Library API</h1><h1 class='nav-section-title-end'>Ended: Using the Code</h1><section class="print-page" id="artifacts"><h1 id="artifacts-the-repository">The Repository<hr/></h1>
 <h3 id="artifacts-repository-layout">Repository Layout</h3>
 <p>This project includes the following files, <em>i.e., "artifacts"</em> in <strong>.py</strong>, .<strong>md</strong>, .<strong>txt</strong> and other formats, updated as of:<br />
 <strong>04/13/2022 (April 13th, 2022)</strong></p>
@@ -3108,6 +2916,11 @@ The JupyterFile is: <strong>Validate_bdx-as4.ipynb</strong>.</p>
 
 12 directories, 141 files
 </code></pre></div></section><section class="print-page" id="git_workflow"><h1 id="git_workflow-sample-git-workflow">Sample git workflow<hr/></h1>
+<p>Use to:<br />
+<em> create a branch<br />
+</em> add code to the branch<br />
+<em> commit code to the repo<br />
+</em> push code to the repo  </p>
 <h3 id="git_workflow-a-minimal-git-script-to-work-with-the-code">A minimal git "script" to work with the code.</h3>
 <p>This is a sample workflow of a very rudimentary process to create a branch in Github, add code, and push up to the repo on Github.  </p>
 <ol>
