@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#
+# noqa: R0903
 # File: discovery_message_package.py
 # About: Dataclass definition of an discovery message package
 # Development: Kelly Kinney, Leo Rubiano
@@ -9,12 +9,10 @@
 
 from dataclasses import dataclass
 from einvoice.discovery.urn import Urn
-from einvoice.discovery.semantic_model import EInvoice
 
 
 @dataclass
-class EinvoiceMessagePackageP:
+class EinvoiceMessagePackageP:                  # noqa: R0903
     """Class defining the einvoice message package."""
 
     einvoice_urn: Urn
-    einvoice_invoice: EInvoice

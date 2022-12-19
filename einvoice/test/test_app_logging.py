@@ -23,26 +23,18 @@ from os.path import join, dirname
 from dotenv import load_dotenv
 from einvoice.discovery.app_logging import create_logger
 
-LOGGER = __name__
 
-
-# Test the logging functionality using built-in Pytest "caplog"
 def log_creation(logger):
     """Test to validate logging is writing properly to a log."""
     dotenv_path = join(dirname(__file__), '../.env')
     load_dotenv(dotenv_path)
     app_log_file = str(os.getenv("APP_LOG_FILE"))
-    web_response_file = str(os.getenv("WEB_RESPONSE_FILE"))
     log = logger
-    log.info("Insert test message")
-    assert os.path.exists(app_log_file)
+    assert os.path.exists('../app.log')
     log.info("assert os.path.exists(" + app_log_file + "): true")
-    assert os.path.exists(web_response_file)
-    log.info("assert os.path.exists(" + web_response_file + "): true")
 
 
-# Test the logging functionality using built-in Pytest "caplog"
-def log_insert_1(logger):
+def log_insert(logger):
     """Test to validate logging is writing properly to a log."""
     log = logger
     log.info("Insert test message")
@@ -59,19 +51,20 @@ def log_handlers(logger):
 
 def test_app_logging():
     """Function to execute other tests."""
-    logger = create_logger(__name__)
+    logger = create_logger()
     log_creation(logger)
-    log_insert_1(logger)
+    log_insert(logger)
     log_handlers(logger)
 
 
-def test_log_insert_2(caplog):
+def test_log_insert(caplog):
     """This is a pytest to validate logging is writing properly to a log."""
-    log3 = create_logger("test_log_insert_2")
+    log = create_logger()
     log_test_uuid = str(uuid4())
-    log3.info(f"Adding uuid to log for testing {log_test_uuid}")
+    log.info(f"Adding uuid to log for testing {log_test_uuid}")
     for record in caplog.records:
+        log.info(caplog.text)
         assert record.levelname != "CRITICAL"
-    assert log_test_uuid in caplog.text
+        assert log_test_uuid in caplog.records
     if log_test_uuid in caplog.text:
-        log3.info("Found uuid %s in log", log_test_uuid)
+        log.info("Found uuid %s in log", log_test_uuid)

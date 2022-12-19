@@ -40,17 +40,12 @@ For information about E-Invoices and the Four-Corner Model please visit the [Bus
 * [Package Requirements](./requirements.md)
 * [Getting the Code](./working_with_the_code.md)
 * Using the Code
-    * [Using the Modules](./using_the_modules)
     * [SML Hash Functionality](./sml_hash_func)
     * [DNS Query for SML urn](./dns_query_sml)
     * [SMP REST API Query](./smp_rest_query)
     * [Test Cases](./test_cases.md)
     * [Discovery Validation](./discovery_validation.md)
     * [JupyterLab/Notebooks](./google_colab_pages.md)
-* Package/Library API
-    * [accessor.py](./accessor.md)
-<!-- * [Infrastructure Components](infrastructure_components.md) -->
-* [Project Roadmap](./project_roadmap.md )
 * [Project Artifacts](./artifacts.md)
 * [Workflow](./git_workflow.md)
 * [Glossary of Terms](./glossary.md)

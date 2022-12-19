@@ -12,13 +12,11 @@ from dotenv import load_dotenv
 from einvoice.delivery.import_xsd import ImportXSD
 from einvoice.config import Logger
 
-LOGGER = __name__
 
 dotenv_path = join(dirname(__file__), '../../.env')
 load_dotenv(dotenv_path)
 
-test_logger = Logger()
-log = test_logger.create_logger()
+log = Logger().create_logger()
 
 
 def test_import_xsd_from_file():

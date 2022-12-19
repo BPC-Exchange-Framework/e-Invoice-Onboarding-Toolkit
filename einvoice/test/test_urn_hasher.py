@@ -11,10 +11,8 @@ from base64 import b32encode
 from einvoice.discovery.urn_hasher import Hasher
 from einvoice.config import Logger
 
-LOGGER = __name__
 
-test_logger = Logger()
-log = test_logger.create_logger()
+log = Logger().create_logger()
 
 
 def ash_hash(urn):

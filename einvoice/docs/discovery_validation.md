@@ -18,7 +18,7 @@ This funcitonality is provided in the accessor.py module and validation is done 
 
 Execute the "Start-to-Finish" test as reference in the [more detailed instructions for running the test cases](./test_cases.md).
 ```
-./einvoice/discovery/pytest tests/test_accessor.py
+./einvoice/discovery/pytest tests/framework_model.py
 ```
 
 

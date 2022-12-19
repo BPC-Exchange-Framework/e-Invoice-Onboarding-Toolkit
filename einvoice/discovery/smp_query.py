@@ -15,8 +15,6 @@ with warnings.catch_warnings():
     import requests
 from dotenv import load_dotenv
 
-LOGGER = __name__
-
 
 class SMPQuery:
     """Class to create and execute a RESt API query.

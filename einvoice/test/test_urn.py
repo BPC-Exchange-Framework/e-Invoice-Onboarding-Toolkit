@@ -9,8 +9,6 @@
 from einvoice.config import Logger
 from einvoice.discovery.urn import Urn
 
-LOGGER = __name__
-
 
 def create_urn():
     """Test helper to create an instance of an object to test."""
@@ -21,8 +19,7 @@ def create_urn():
 
 def test_urn():
     """Test case for party_address."""
-    test_logger = Logger()
-    log = test_logger.create_logger()
+    log = Logger().create_logger()
     log.info("Begin testing urn creation.")
     another_urn = create_urn()
     assert another_urn.specification == "urn:oasis:names:tc:ebcore:"\

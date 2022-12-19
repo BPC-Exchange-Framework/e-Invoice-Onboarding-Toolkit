@@ -9,11 +9,8 @@
 """This is a test file to be run using pytest."""
 from einvoice.config import Logger
 
-LOGGER = __name__
-
 
 def test_config():
     """Pytest case for test_accessor."""
-    test_logger = Logger()
-    log = test_logger.create_logger()
+    log = Logger().create_logger()
     log.info("Testing config")

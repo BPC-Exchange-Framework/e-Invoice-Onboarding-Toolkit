@@ -14,8 +14,6 @@ through the process end-to-end.
 import secrets
 import string
 
-LOGGER = __name__
-
 
 class CreateTrackingID:
     """Class to create a tracking Id for the discovery."""

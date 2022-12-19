@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# pylint: disable=R0903, W1203, W1309
+# pylint: disable=R0903, W1203, W1309, R0915
 # Too few public methods, use lazy formatting,
 # f string without interpolated value error is false.
 # File: dns_query.py
@@ -12,8 +12,6 @@ import re
 import logging
 import dns.resolver
 from einvoice.discovery.capture_dns_response import DNSResponse
-
-LOGGER = __name__
 
 
 class DNSQuery:
