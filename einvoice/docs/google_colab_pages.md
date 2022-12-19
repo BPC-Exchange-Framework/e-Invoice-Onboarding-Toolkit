@@ -30,7 +30,7 @@ Inspection and validation of the XSD file has this [Google Colab Page](https://c
 The JupyterLab file is: __ebMS XML 3 schema.ipynb__.
 
 Validation of an xml file against the XSD is done using this [Google Colab Page](https://colab.research.google.com/drive/1ExMZUD_5larW0wEuGJ5erHkFuoozcLCF?usp=sharing)
-The JupyterFile is: __Validate_bdx-as4.ipynb__.
+The JupyterFile is: __validate_bdx-as4.ipynb__.
 
 For ease of access these files are copies stored on the drive of one of the project Developers and is free and open to anyone to view and run.   Interested individuals should make copies of the Labs for themselves and run on Google Colab under their own account or an instance of JupytyerLab running on Anaconda, VS Code, or a Python install.
 

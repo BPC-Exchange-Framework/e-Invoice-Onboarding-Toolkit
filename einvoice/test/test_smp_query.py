@@ -11,8 +11,6 @@
 from einvoice.discovery.smp_query import SMPQuery
 from einvoice.config import Logger
 
-LOGGER = __name__
-
 
 def test_smp_query():
     """Test smp_query."""
@@ -51,8 +49,7 @@ def test_smp_query():
         service_url + "mnkellyk" + services    # flake8: noqa: E501
     )
 
-    test_logger = Logger()
-    log = test_logger.create_logger()
+    log = Logger().create_logger()
 
     query = SMPQuery()
     for index, urn in enumerate(urns):

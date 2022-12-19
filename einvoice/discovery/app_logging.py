@@ -16,12 +16,14 @@ If used with a Docker container, they cease to exist when the container does.
 """
 
 import logging
+import logging.config
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv
+import yaml
 
 
-def create_logger(name):
+def create_logger():
     """Implement a logger template.
 
     This function creates a consistent format and location for
@@ -29,42 +31,13 @@ def create_logger(name):
     """
     dotenv_path = join(dirname(__file__), "../.env")
     load_dotenv(dotenv_path)
-    app_log_file = str(os.getenv("APP_LOG_FILE"))
-    web_response_file = str(os.getenv("WEB_RESPONSE_FILE"))
+    log_config = str(os.getenv("LOG_CONFIG_FILE"))
 
-    logger = logging.getLogger(name)
-    logger.setLevel(logging.INFO)
+    with open(log_config, 'r', encoding='utf-8') as file_name:
+        config = yaml.safe_load(file_name.read())
+        logging.config.dictConfig(config)
+        print(config)
 
-    # create file handler which writes to an application log view.
-    file_logger = logging.FileHandler(app_log_file)
-    file_logger.setLevel(logging.INFO)
+    log = logging.getLogger(__name__)
 
-    # create console handler which writes to the console
-    console_logger = logging.StreamHandler()
-    console_logger.setLevel(logging.INFO)
-
-    # create a logger to handle responses
-    response_logger = logging.FileHandler(web_response_file)
-    response_logger.setLevel(logging.INFO)
-
-    # Create a custom formatter and add it to the handlers
-    _format = "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
-    datefmt = "%m/%d/%Y %I:%M:%S %p"
-    formatter = logging.Formatter(_format, datefmt)
-
-    file_logger.setFormatter(formatter)
-    console_logger.setFormatter(formatter)
-
-    # Create a custom formatter for the response_logger
-    response_format = "%(asctime)s - %(message)s"
-    response_datefmt = "%Y%m%d:%H:%M:%S"
-    response_formatter = logging.Formatter(response_format, response_datefmt)
-
-    response_logger.setFormatter(response_formatter)
-
-    # Associate the the handlers to the loggers
-    logger.addHandler(file_logger)
-    logger.addHandler(console_logger)
-    logger.addHandler(response_logger)
-
-    return logger
+    return log

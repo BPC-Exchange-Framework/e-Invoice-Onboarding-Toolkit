@@ -18,8 +18,6 @@ from json import dumps
 from einvoice.discovery.urn import Urn
 from einvoice.discovery.create_tracking_id import CreateTrackingID
 
-LOGGER = __name__
-
 
 class Hasher:
     """Construct a base URN for the SML query and prepares the hashes.

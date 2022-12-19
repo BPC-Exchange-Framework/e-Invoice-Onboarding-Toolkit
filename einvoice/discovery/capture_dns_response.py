@@ -13,8 +13,6 @@ from json import dumps
 from datetime import datetime
 from dotenv import load_dotenv
 
-LOGGER = __name__
-
 
 class DNSResponse:
     """Class to write response from DNS query to file."""

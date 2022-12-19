@@ -8,8 +8,6 @@
 """Configuration file with global values and single logging instance."""
 from einvoice.discovery.app_logging import create_logger
 
-LOGGER = __name__
-
 
 class Logger():
     """Define and instantiate a logging object for the entire package."""
@@ -20,10 +18,9 @@ class Logger():
 
     def create_logger(self):
         """Create an instance of a logger for the entire application.."""
-        self.log = create_logger(LOGGER)
+        self.log = create_logger()
         self.log.info("Called log file instance in config.")
         return self.log
-
 
 def get_logger(self):
     """Return the currently instantiated log."""
