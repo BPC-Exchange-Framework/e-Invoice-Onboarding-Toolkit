@@ -76,6 +76,7 @@ pytest
 pytest-html
 pytest-metadata
 python-dateutil
+python-dotenv
 python-json-logger
 pytz
 PyYAML
