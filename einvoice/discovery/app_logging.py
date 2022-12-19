@@ -17,6 +17,9 @@ If used with a Docker container, they cease to exist when the container does.
 
 import logging
 import logging.config
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
 import yaml
 
 
@@ -26,7 +29,11 @@ def create_logger():
     This function creates a consistent format and location for
     all application log files to write to.
     """
-    with open('log.yml', 'r', encoding='utf-8') as file_name:
+    dotenv_path = join(dirname(__file__), "../.env")
+    load_dotenv(dotenv_path)
+    log_config = str(os.getenv("LOG_CONFIG_FILE"))
+
+    with open(log_config, 'r', encoding='utf-8') as file_name:
         config = yaml.safe_load(file_name.read())
         logging.config.dictConfig(config)
         print(config)
