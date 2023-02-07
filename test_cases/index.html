@@ -771,7 +771,7 @@ For Mac/*nix/WSL2:
 <p>The test will run and either the "assert" statement(s) inside will pass or it will fail.  </p>
 <p><strong>Failures MUST be resolved prior to attempting to check code into GitHub as our baseline CI/CD process checks for these failures before committing and will not continue if any are found.</strong></p>
 <p>The included assert statements currently test a variety of cases up to validation of URN creation, query of the NAPTR DNS record, REST API call to the SMP, and validation of the ebMS header against the AS4 conformance profile.  </p>
-<p>The test folder also contains a number of shell scripts to validate the code using  a number of linters including flake8, pylint, mypy, pycodestyte, and pydocstyle.   Prior to check in, all code must have all warnings from all linters resolved or noted.  </p>
+<p>Prior to check in, all code must have all warnings from all linters resolved or noted.  </p>
 <figure>
 <p><img alt="Successful completion of all tests cases." src="../successful_tests.png" />
   </p>
