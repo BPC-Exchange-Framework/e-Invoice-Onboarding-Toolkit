@@ -1912,7 +1912,7 @@ constructed urls are the same: True
 <h4 id="test_cases-using-an-env-file">Using an .env file</h4>
 <details class="warn" open="open">
 <summary>Copy the .env.example.dev to .env</summary>
-<p>Some of the test cases rely on local variables imported at runtime.  These values are in the ".env.example.dev" file.  This file is at the ./einvoice root of the project.  The file MUST be copied or renamed to ".env" in order for all of the tests to complete successfully. (The tests may also be refactored manually to refer to local dev enivornment variables.) </p>
+<p>Some of the test cases rely on local variables imported at runtime.  These values are in the ".env.example.dev" file.  This file is at the ./einvoice root of the project.  The file MUST be copied or renamed to ".env" in order for all of the tests to complete successfully. (The tests may also be refactored manually to refer to local dev environment variables.) </p>
 </details>
 <h4 id="test_cases-test-modules">Test modules</h4>
 <p>Every module includes a test module in the ./einvoice/test directory.  </p>
@@ -1937,7 +1937,7 @@ For Mac/*nix/WSL2:
 <summary>The ./test directory <strong>must</strong> be at the same level as the code.</summary>
 <p>Out of the box, Pytest requires that without additional configuration it must be executed from  a directory at the same level of the code that's being tested.  That is, test scripts are in ./einvoice/test and code files are in ./einvoice/discovery and ./einvoice/delivery.   </p>
 </details>
-<p>Pytest will automatically look for files formatted as test files, with "test" in the lead of the filename.  To execute an inidividual test the syntax is:
+<p>Pytest will automatically look for files formatted as test files, with "test" in the lead of the filename.  To execute an individual test the syntax is:
 <div class="highlight"><pre><span></span><code>pytest test_app_logging.py
 </code></pre></div></p>
 <p>No test is dependent on any other, and each may be run on its own, or run them all at once, in any order.  </p>
