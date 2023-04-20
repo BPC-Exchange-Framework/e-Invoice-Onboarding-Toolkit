@@ -14,7 +14,7 @@ Discovery validation entails testing:
 4. Executing the two REST requests to the SMP server.  
 5. Extracting the Corner 3 endpoint URI from the response from the SMP server.   
 
-This funcitonality is provided in the accessor.py module and validation is done in a single test case called test_accessor.py.
+This functionality is provided in the accessor.py module and validation is done in a single test case called framework_model.py.
 
 Execute the "Start-to-Finish" test as reference in the [more detailed instructions for running the test cases](./test_cases.md).
 ```
@@ -28,7 +28,7 @@ Execute the "Start-to-Finish" test as reference in the [more detailed instructio
 </figure>
 
 
-Further review and analysis of the the Start-to_Finish process can be found in the app.log which for the accessor.py module resides in the ./einvoice/discovery directory.
+Further review and analysis of the the Start-to_Finish process can be found in the app.log which for the accessor.py module resides in the ./einvoice directory.
 
 <figure markdown>
   ![Review of the app.log.](./app_log.png)
