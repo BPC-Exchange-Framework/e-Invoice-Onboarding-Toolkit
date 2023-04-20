@@ -1,9 +1,34 @@
-# Project Home
+# e-Delivery Onboarding Toolkit   
+This is a repository for open source software tools created to facilitate market adoption of the Digital Business Networks Alliance (DBNA)Document Exchange Framework, which is a four corner model of an e-Delivery Network.   
+  
+## Background
+An overall understanding of a four-corner model of an e-Delivery Network before beginning the project is a prerequisite to beginning the project.
 
-## Welcome
-__Welcome to the E-Invoice Onboarding Toolkit__  
+![Diagram representing the four-corner model of an e-delivery network.](./Four_corner_pic.png "The Four-Corner Model of an e-Delivery Network")
 
-This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner Model of an Exchange Framework.   
+
+The exchange framework involves two network processes, discovery and delivery. The code for these two processes is included in this toolkit.  
+  
+ The discovery process includes the processes and technology used to discover (e.g., look up) the capabilities of another party, where and how to send an invoice and/or other messages and validate and authenticate credentials. This includes registry services and other decentralized discovery mechanisms. It takes place when the sending access point pings the locator registry (the Service Metadata Locator, or SML) to get the address of the receiving access point’s services registry (the Service Metadata Publisher or SMP.) The SMP provides details about a selected participant’s access point for receiving electronic business documents and of its capabilities to receive specific document types and to support related business processes.   
+    
+ The delivery process is the actual end-to-end message delivery between the sending and receiving access points.
+     
+Operation of the e-Delivery network is explained in greater detail at [BPC Framework Overview](https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/main/BPC%20Framework%20Overview.pdf).  
+     
+## Prerequisites  
+     
+The code for this project is stored on GitHub. The developer must have experience working in Python.   
+
+__Tool__ | __Minimum requirement__
+------ | ------
+Programming language | Python 3.6 or above, Python 3.10 recommended
+Computer | Supports running Python 3.6 or above
+OS|Mac, Windows or Windows w/WSL2
+Programming resources | [BPC-Exchange-Framework/e-Invoice-Onboarding-Toolkit](https://github.com/BPC-Exchange-Framework/e-Invoice-Onboarding-Toolkit)  
+  
+  
+## Installing   
+Download the code from [BPC-Exchange-Framework/e-Invoice-Onboarding-Toolkit](https://github.com/BPC-Exchange-Framework/e-Invoice-Onboarding-Toolkit).
 
 ## Project Goals
 ???+ Alert "GOALS: The features of the project as outlined in the [project roadmap](./project_roadmap.md). "
