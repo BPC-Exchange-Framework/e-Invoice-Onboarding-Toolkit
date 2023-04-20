@@ -983,10 +983,45 @@
                 </nav>
             </div>
         </section>
-        <section class="print-page" id="index"><h1 id="index-project-home">Project Home</h1>
-<h2 id="index-welcome">Welcome</h2>
-<p><strong>Welcome to the E-Invoice Onboarding Toolkit</strong>  </p>
-<p>This is a repository for open source software tools created to facilitate market adoption of e-invoices implemented conformant with the Four-Corner Model of an Exchange Framework.   </p>
+        <section class="print-page" id="index"><h1 id="index-e-delivery-onboarding-toolkit">e-Delivery Onboarding Toolkit</h1>
+<p>This is a repository for open source software tools created to facilitate market adoption of the Digital Business Networks Alliance (DBNA)Document Exchange Framework, which is a four corner model of an e-Delivery Network.   </p>
+<h2 id="index-background">Background</h2>
+<p>An overall understanding of a four-corner model of an e-Delivery Network before beginning the project is a prerequisite to beginning the project.</p>
+<p><img alt="Diagram representing the four-corner model of an e-delivery network." src="../Four_corner_pic.png" title="The Four-Corner Model of an e-Delivery Network" /></p>
+<p>The exchange framework involves two network processes, discovery and delivery. The code for these two processes is included in this toolkit.  </p>
+<p>The discovery process includes the processes and technology used to discover (e.g., look up) the capabilities of another party, where and how to send an invoice and/or other messages and validate and authenticate credentials. This includes registry services and other decentralized discovery mechanisms. It takes place when the sending access point pings the locator registry (the Service Metadata Locator, or SML) to get the address of the receiving access point’s services registry (the Service Metadata Publisher or SMP.) The SMP provides details about a selected participant’s access point for receiving electronic business documents and of its capabilities to receive specific document types and to support related business processes.   </p>
+<p>The delivery process is the actual end-to-end message delivery between the sending and receiving access points.</p>
+<p>Operation of the e-Delivery network is explained in greater detail at <a href="https://github.com/BPC-Exchange-Framework/BPC-Market-Pilot/blob/main/BPC%20Framework%20Overview.pdf">BPC Framework Overview</a>.  </p>
+<h2 id="index-prerequisites">Prerequisites</h2>
+<p>The code for this project is stored on GitHub. The developer must have experience working in Python.   </p>
+<table>
+<thead>
+<tr>
+<th><strong>Tool</strong></th>
+<th><strong>Minimum requirement</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Programming language</td>
+<td>Python 3.6 or above, Python 3.10 recommended</td>
+</tr>
+<tr>
+<td>Computer</td>
+<td>Supports running Python 3.6 or above</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Mac, Windows or Windows w/WSL2</td>
+</tr>
+<tr>
+<td>Programming resources</td>
+<td><a href="https://github.com/BPC-Exchange-Framework/e-Invoice-Onboarding-Toolkit">BPC-Exchange-Framework/e-Invoice-Onboarding-Toolkit</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="index-installing">Installing</h2>
+<p>Download the code from <a href="https://github.com/BPC-Exchange-Framework/e-Invoice-Onboarding-Toolkit">BPC-Exchange-Framework/e-Invoice-Onboarding-Toolkit</a>.</p>
 <h2 id="index-project-goals">Project Goals</h2>
 <details class="alert" open="open">
 <summary>GOALS: The features of the project as outlined in the <a href="#project_roadmap">project roadmap</a>. </summary>
@@ -1164,7 +1199,7 @@ Specifically it's helpful with:<br />
 <h5 id="assumptions-the-four-corner-model">The Four-Corner Model</h5>
 <p>The software included with the project assumes a baseline understanding of the Four-Corner Model and its constituent components.  </p>
 <figure>
-<p><img alt="The Four Corner Model." src="../4corners.png" />
+<p><img alt="The Four Corner Model." src="../assumptions/4corners.png" />
   </p>
 <figcaption>Successful completion of all test cases.</figcaption>
 </figure>
@@ -1946,7 +1981,7 @@ For Mac/*nix/WSL2:
 <p>The included assert statements currently test a variety of cases up to validation of URN creation, query of the NAPTR DNS record, REST API call to the SMP, and validation of the ebMS header against the AS4 conformance profile.  </p>
 <p>Prior to check in, all code must have all warnings from all linters resolved or noted.  </p>
 <figure>
-<p><img alt="Successful completion of all tests cases." src="../successful_tests.png" />
+<p><img alt="Successful completion of all tests cases." src="../test_cases/successful_tests.png" />
   </p>
 <figcaption>Successful completion of all test cases.</figcaption>
 </figure>
@@ -1973,7 +2008,7 @@ For Mac/*nix/WSL2:
 </figure>
 <p>Further review and analysis of the the Start-to_Finish process can be found in the app.log which for the accessor.py module resides in the ./einvoice directory.</p>
 <figure>
-<p><img alt="Review of the app.log." src="../app_log.png" />
+<p><img alt="Review of the app.log." src="../discovery_validation/app_log.png" />
   </p>
 <figcaption>Successful completion of "Start-to-Finish" test case recorded in the app.log file.</figcaption>
 </figure>
